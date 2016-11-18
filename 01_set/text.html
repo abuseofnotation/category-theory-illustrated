@@ -1,0 +1,112 @@
+<h1 id="bear-with-me-for-a-sec">Bear With Me for a Sec</h1>
+<h1 id="sets">Sets</h1>
+<p>A set is a collection of things... Because set theory is, like Category theory, abstract, the things can be anything you want. Consider, for example these balls: </p>
+<p><img src="elements.svg" alt="Balls"><br>For example let&#39;s construct a set, call it A, consisting of <em>all</em> of them. This is how we can mark it:</p>
+<p><img src="all.svg" alt="The set of all balls"></p>
+<p>This may look childish at first, but this set is just as valid as the sets of all natural numbers.</p>
+<p>The key difference between a given set of items and the items themselves is that the set summarizes the things which it contains i.e. enables you to reason about several things as if they were one.</p>
+<h2 id="subsets">Subsets</h2>
+<p>Let&#39;s construct one more set. The set of <em>all balls that are warm color</em>. Again I will give it a name - W:</p>
+<p><img src="subset.svg" alt="W - the set of all balls of warm colors"></p>
+<p>Notice that W contains just elements that are also present in A. That is, every element of the set of W is also an element in the set A. When two sets have this relation exists, we may say that W is a <em>subset</em> of A, and draw a graphic like this one:</p>
+<p><img src="set_subset.svg" alt="W and A together"></p>
+<p>[ W \subset A ]</p>
+<h2 id="singleton-sets">Singleton Sets</h2>
+<p>The set of all <em>red balls</em> contains just one ball:</p>
+<p><img src="singleton.svg" alt="The singleton set of red balls"></p>
+<p>You may find it contradictory that we say that sets are just for summarizing several elements into one, but we still have sets that contain just one element. Actually is perfectly useful. If I ask you to make a set of all books that you are reading right now, you shouldn&#39;t have trouble doing it just because you are reading just this one book currently.</p>
+<h2 id="the-empty-set">The Empty set</h2>
+<p>Of course if 1 is a valid answer, so can be zero. If we want a set of all <em>black balls</em>  B or all the <em>white balls</em>, W, the answer to all these questions is the same - the empty set.</p>
+<p><img src="void.svg" alt="The empty set"></p>
+<p>Note that two sets that contain the same elements are equivalent, which means that, there is no difference between the set that contains zero <em>balls</em>, and the set that contains zero <em>numbers</em>, for instance. </p>
+<p>In other words, the empty set is unique set, which makes it a very special one.<br>[ B = W = \varnothing ]</p>
+<p>For example, it is a subset of every other set. </p>
+<p>[ \forall A  A \subset \varnothing ]</p>
+<p>We will encounter the empty set again.</p>
+<h1 id="functions">Functions</h1>
+<p>A function is a relationship between two sets which matches each element of one set, called the <em>domain</em> of the function, with exactly one element from another set, called the converse domain, or the <em>codomain</em>. </p>
+<p>Here is a function, <em>f</em> which maps each ball from the set <em>A</em> to its opposite color:<br><img src="function_one_one.svg" alt="Opposite colors"></p>
+<p>[ f: A -&gt; A ]</p>
+<p>This is probably the simplest type of function there exists. Firstly because its domain and codomain are the same set, and secondly, because it expresses a so called one-to-one relationship, which means each element from one set is connected to just one other element from the other set.</p>
+<p>But a functions are much more powerful than that. They can also express many-to-one relationships. In other words, there can be many elements from the domain of the function, which relate to the same element from the codomain (but not the other way around).</p>
+<p>The domain can be bigger than the codomain in which case several elements from the domain will be mapped to the same element from the codomain:<br><img src="function_big_small.svg" alt="Function from a bigger set to a smaller one"></p>
+<p>The domain can be smaller than the codomain in which case some elements from the codomain will not play a part.<br><img src="function_small_big.svg" alt="Function from a bigger set to a smaller one"></p>
+<p>However you cannot have a domain element which is not mapped to anything, or which is mapped to more than one element. In other words (and this is also the reason that functions are the way they are) if you give a function an element of its domain, it should always be able to give you back exactly one element of its codomain. </p>
+<p>Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask can most probably be expressed as a function.</p>
+<p>The question &quot;How far are we from New York?&quot; is a function with a domain the set of places in the world and the set of positive numbers as its codomain.</p>
+<p>The question &quot;Who is my father?&quot; is a function whose domain is the set of all people in the world and the same set as its codomain.<br>Note that the question &quot;Who is my child?&quot; is <em>NOT</em> a function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.</p>
+<p>Question: Do these functions and sets <em>express</em> something? Should a function express something in order to be valid? </p>
+<h2 id="the-identity-function">The Identity Function</h2>
+<p>For each set <em>G</em>, no matter what it represents, we can define the function that does nothing, called the identity function for s or <em>idG</em> - a function in which the set is both domain and codomain, and each element is mapped to itself:</p>
+<p><img src="function_identity.svg" alt="The identity function"></p>
+<p>You can think of <strong>idS</strong> as a function which represents the set in the realm of functions. It&#39;s existence allows us to prove many theorems that we &quot;know&quot; by intuition, formally.</p>
+<h2 id="functions-and-subsets">Functions and Subsets</h2>
+<p>For each set and subset, no matter what they represent, we can define the function that maps each element of the subset to itself:<br><img src="subset-set.svg" alt="A function from subset to set"></p>
+<h2 id="functions-and-the-empty-set">Functions and the Empty Set</h2>
+<p>There is a unique function between the empty set and any other set.</p>
+<p>//TODO</p>
+<p>What? Remember that the empty set is a subset of any other set?</p>
+<p>Question: What about the other way around.</p>
+<h2 id="functions-and-singleton-sets">Functions and Singleton Sets</h2>
+<p>There is a unique function from any set to any singletone set.</p>
+<p>//TODO</p>
+<p>Question: What about the other way around.</p>
+<h1 id="sets-functions-and-numerical-operation">Sets, Functions and Numerical Operation</h1>
+<p>All mathematical operations can be expressed as functions, acting on the set of all numbers. Actually there are several such sets, such the set of positive whole numbers, (also called &quot;natural&quot; numbers), which is called <code>N</code>: {1, 2, 3... InfinityTODO}, the set of both positive and negative whole numbers (called <code>Z</code> for some reason) and so on.</p>
+<p>For example, squaring a number is a function - its domain is the set of all numbers and its codomain is the set of all positive numbers (remember that the square of a number is always positive). Because both sets are infinite, we cannot draw the whole function, however we can draw a part of it: </p>
+<p><img src="square.svg" alt="The square function"></p>
+<p>All numbers from the codomain will have two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. </p>
+<p>Zero from the domain will be connected to the zero from the codomain, so to itself, and this is OK.</p>
+<p>Some numbers aren&#39;t the square of any other number. That is also OK.</p>
+<p>Overall everything is OK, as long as you can always provide exactly one result (also known as &quot;The result&quot;) per value, and in mathematics almost always do. Actually most types of numbers were created so mathematical operations are valid functions:</p>
+<blockquote>
+<p>Every generalisation of number has ﬁrst presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible. </p>
+</blockquote>
+<p>Most mathematical operations, such as addition, multiplication etc. require two numbers in order to produce a result. Depending on what we need, we may present those operations as functions from the sets of <em>tuples</em> of numbers, to the set of numbers, or we may say that they take a number and return a function. More on that later.</p>
+<h1 id="sets-and-functions-in-programming">Sets and Functions in Programming</h1>
+<p>Sets are used extensively in programming, except that there they are called <em>types</em> or also <em>classes</em>. All sets of number that we discussed earlier also exist as types, and there are also some non-mathematical types:</p>
+<p>The simplest type, <code>Boolen</code> is nothing more than a set of two values - <code>true</code> and <code>false</code>:</p>
+<p><img src="boolean.svg" alt="Set of boolean values"></p>
+<p>Another very basic set in programming is the set of keyboard characters, or <code>Char</code>: </p>
+<p><img src="char.svg" alt="Set of characters"></p>
+<p>Characters are actually used rarely by themselves and mostly as parts of sequences.</p>
+<p>Most of the types of programming are composite types - they are a combination of the limited types that are listed here. Again, we will cover these later.</p>
+<p>Question: What is the equivalent of subsets in programming?</p>
+<p>Functions in programming resemble mathematical functions. A function that takes an argument of type <code>Char</code> and returns a <code>Boolean</code> is nothing more than a mapping between the two sets that we covered above. For example here is a function which checks if a given character is a letter.</p>
+<p><img src="char_boolean.svg" alt="A function from Char to Boolean"></p>
+<p>However functions in programming can also be quite different from mathematical functions - they can perform various operations that have nothing to do with returning a value. These operations are called side effects. Most common programming languages and paradigms were created at a times when the computer resources were much more limited than today, and programming - much more cumberstone, so people had bigger problems than the fact that their functions were not mathematically sound. That is why even today most languages don&#39;t have a way to handle side effects without creating phony functions, or to differentiate between functions that have side effects from real functions. But that is another story.</p>
+<h1 id="functional-composition-">Functional Composition </h1>
+<p>Let&#39;s assume that we have two functions, <strong>g</strong> and <strong>f</strong> and the codomain of the first one is the same set as the domain of the second.</p>
+<p><img src="functions_matching.svg" alt="Matching functions"></p>
+<p>Then we can apply the first function <strong>g</strong> to some set then apply the second function to the result of the first one (we can do that because each function produces exactly one result).</p>
+<p><img src="functions_one_after_another.svg" alt="Applying one function after another"></p>
+<p>Lastly, we can define a new function, (lets call it <strong>h</strong>) that has the same effect as if we applied the above two functions in the manner described above. The resulting function is called the <em>composition</em> of the other two functions, and is denoted <strong>f ∘ g</strong> (notice that the first function is on the right, so its similar to <strong>b = f(g(a)</strong>).</p>
+<p><img src="functions_compose.svg" alt="Functional composition"></p>
+<p>Composition is the essence of all things categorical. The key insight is that the result of composing two parts is no more complex than the parts themselves. </p>
+<h2 id="representing-composition-with-commutative-diagrams">Representing Composition with Commutative Diagrams</h2>
+<p>We may view the last diagram not as a definition of <strong>h</strong>, but as a statement that reads &quot;<strong>h</strong> is equivalent to <strong>f ∘ g</strong>&quot;. The equivalence is expressed by the fact that if you follow the arrow <strong>g</strong> for any element of set <strong>A</strong> you will get to the same element of the set <strong>C</strong> as if you follow the <strong>g</strong> and then follow <strong>f</strong>. Diagrams that express equivalence of sequences of function application, such as this one, are called <em>commutative diagrams</em> or diagrams which commute.</p>
+<p><img src="functions_compose.svg" alt="Functional composition"></p>
+<p>If we &quot;zoom-out&quot; the last diagram so it does not show the elements of the sets, we get a more general diagram for functional composition.</p>
+<p><img src="functions_compose_sets.svg" alt="Functional composition for sets"></p>
+<p>In fact, because the diagram commutes, so all paths, starting from each set element lead the same corresponding element from the resulting set), ennumerating the elements is redundant. So we can, for example, redefine functional composition in the following, visual, way:</p>
+<p>The composition of two functions <strong>f</strong> and <strong>g</strong> is a third function defined in such a way that this diagram commutes.</p>
+<p><img src="functions_compose_general.svg" alt="Functional composition - general definition"></p>
+<p>You will see more definitions like this in the future.</p>
+<h1 id="isomorphisms">Isomorphisms</h1>
+<p>Let&#39;s go back to the function that demonstrated a one-to-one relationship:</p>
+<p><img src="function_one_one.svg" alt="Opposite colors"></p>
+<p>Notice that the function is invertible, that is if you flip its arrows you get another valid function:</p>
+<p><img src="isomorphism_one_one.svg" alt="Opposite colors"></p>
+<p>Invertible functions are called isomorphisms. When there is an invertible function between two sets we can say that the sets are isomorphic. For example the temperature measured in Celcius, is isomorphic to the temperature, measured in Fahrenheit.</p>
+<p>More formally, two sets are isomorphic if there exist functions <strong>f: W -&gt; B</strong> and its reverse <strong>g B -&gt; W</strong>, such that <strong>f ∘ g = idB</strong> and <strong>g ∘ f = idW</strong> (notice how the identity function comes in handy).</p>
+<h2 id="isomorphism-and-equality">Isomorphism and equality</h2>
+<p>The concept of an isomorphism is strongly related to the concept of equality (that is why it is denoted with <strong>≅</strong>, which is almost the same as <strong>=</strong>). </p>
+<p>For example, the identity function is reversible so each set is isomorphic to itself.</p>
+<p><img src="isomorphism_identity.svg" alt="The identity function"></p>
+<p>Intuitively if two sets of things are isomorphic, this means that having an element from one of them, allows you to easily obtain an element from the other.</p>
+<p>For example if you have a function &quot;is the husband of&quot; the set of all married men, as a domain and the set of all married woman as codomain, and the corresponding function, &quot;is the wife of&quot;, then we may say that the sets of married men and married woman (ignoring some exceptions) are isomorphic. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between him/her and the same person or object. For example my wive&#39;s father is my father-in-law. Her cat, is to me is &quot;my wive&#39;s cat&quot;. If my wife has a red hair, I am a person who is married to a person that has red hair and so on.</p>
+<h2 id="isomorphisms-between-singleton-sets">Isomorphisms Between Singleton Sets</h2>
+<p>Between any two singleton sets, we may define the only possible function.</p>
+<p>The function is invertible, which means that all singleton sets are isomorphic to one another.</p>
+<p>Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. Expressing this in everyday terms is not always as intuitive, as the examples there, but consider that all of us are sharing one and the same universe.</p>
+<p>Task: Think of two singleton sets, and try to pinpoint the relation that they have.</p>

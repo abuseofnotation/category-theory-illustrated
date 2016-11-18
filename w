@@ -79,13 +79,6 @@ The domain can be smaller than the codomain in which case some elements from the
 
 However you cannot have a domain element which is not mapped to anything, or which is mapped to more than one element. In other words (and this is also the reason that functions are the way they are) if you give a function an element of its domain, it should always be able to give you back exactly one element of its codomain. 
 
-Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask can most probably be expressed as a function.
-
-The question "How far are we from New York?" is a function with a domain the set of places in the world and the set of positive numbers as its codomain.
-
-The question "Who is my father?" is a function whose domain is the set of all people in the world and the same set as its codomain. 
-Note that the question "Who is my child?" is *NOT* a function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.
-
 Question: Do these functions and sets *express* something? Should a function express something in order to be valid? 
 
 The Identity Function
@@ -101,26 +94,6 @@ Functions and Subsets
 ---
 For each set and subset, no matter what they represent, we can define the function that maps each element of the subset to itself:
 ![A function from subset to set](subset-set.svg)
-
-Functions and the Empty Set
----
-
-There is a unique function between the empty set and any other set.
-
-//TODO
-
-What? Remember that the empty set is a subset of any other set?
-
-Question: What about the other way around.
-
-Functions and Singleton Sets
----
-
-There is a unique function from any set to any singletone set.
-
-//TODO
-
-Question: What about the other way around.
 
 Sets, Functions and Numerical Operation
 ===
@@ -163,12 +136,21 @@ Most of the types of programming are composite types - they are a combination of
 
 Question: What is the equivalent of subsets in programming?
 
-Functions in programming resemble mathematical functions. A function that takes an argument of type `Char` and returns a `Boolean` is nothing more than a mapping between the two sets that we covered above. For example here is a function which checks if a given character is a letter.
+Functions in programming resemble mathematical functions. A function that takes an argument of type `Char` and returns a `Boolean` is nothing more than a mapping between the two sets that we covered above:
 
 ![A function from Char to Boolean](char_boolean.svg)
 
-However functions in programming can also be quite different from mathematical functions - they can perform various operations that have nothing to do with returning a value. These operations are called side effects. Most common programming languages and paradigms were created at a times when the computer resources were much more limited than today, and programming - much more cumberstone, so people had bigger problems than the fact that their functions were not mathematically sound. That is why even today most languages don't have a way to handle side effects without creating phony functions, or to differentiate between functions that have side effects from real functions. But that is another story.
+However functions in programming can also be quite different from mathematical functions - they can perform various operations that have nothing to do with returning a value. These operations are called side effects. Most common programming languages and paradigms were created at a times when the computer resources were much more limited than today, and programming - much more cumberstone, so people had bigger problems than the fact that their functions were not mathematically sound. That is why they didn't have a way to handle side effects, or to differentiate functions that have side effects from the ones that don't. But that is another story.
 
+Some more examples
+===
+
+Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask can possibly be expressed as a function.
+
+The question "How far are we from New York?" is a function with a domain the set of places in the world and the set of positive numbers as its codomain.
+
+The question "Who is my father?" is a function whose domain is the set of all people in the world and the same set as its codomain. 
+Note that the question "Who is my child?" is *NOT* a function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.
 
 Functional Composition 
 ===
@@ -200,7 +182,7 @@ If we "zoom-out" the last diagram so it does not show the elements of the sets, 
 
 ![Functional composition for sets](functions_compose_sets.svg)
 
-In fact, because the diagram commutes, so all paths, starting from each set element lead the same corresponding element from the resulting set), ennumerating the elements is redundant. So we can, for example, redefine functional composition in the following, visual, way:
+In fact, if we note that the diagram commutes (or that all paths with the same paths, starting from each set element lead the same corresponding element from the resulting set), then ennumerating the elements becomes redundant. So we can, for example, redefine functional composition in the following way:
 
 The composition of two functions **f** and **g** is a third function defined in such a way that this diagram commutes.
 
@@ -234,15 +216,17 @@ For example, the identity function is reversible so each set is isomorphic to it
 
 Intuitively if two sets of things are isomorphic, this means that having an element from one of them, allows you to easily obtain an element from the other.
 
-For example if you have a function "is the husband of" the set of all married men, as a domain and the set of all married woman as codomain, and the corresponding function, "is the wife of", then we may say that the sets of married men and married woman (ignoring some exceptions) are isomorphic. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between him/her and the same person or object. For example my wive's father is my father-in-law. Her cat, is to me is "my wive's cat". If my wife has a red hair, I am a person who is married to a person that has red hair and so on.
+For example if you have a function "is the husband of" the set of all married men, as a domain and the set of all married woman as codomain, and the corresponding function, "is the wife of", then we may say that the sets of married men and married woman (ignoring some exceptions) are isomorphic. That is not to say that you are the same person as your significant other, but rather that every relation between yourself or any other object is also a relation about with him and the same object.
+
+For example my wive's father is my father-in-law.
+
+
 
 Isomorphisms Between Singleton Sets
 ---
 
-Between any two singleton sets, we may define the only possible function.
+For any two singleton sets, we may define the only possible function, which is also an isomorphism. 
 
-The function is invertible, which means that all singleton sets are isomorphic to one another.
+This means that all singleton sets are isomorphic.
 
-Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. Expressing this in everyday terms is not always as intuitive, as the examples there, but consider that all of us are sharing one and the same universe.
-
-Task: Think of two singleton sets, and try to pinpoint the relation that they have.
+Note that
