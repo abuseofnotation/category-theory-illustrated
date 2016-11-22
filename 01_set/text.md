@@ -1,7 +1,7 @@
 Bear With Me for a Set
 ===
 
-We will begin with sets and the gradually we will reveal why.
+We will begin our inquiry by looking at the basic theory of sets. You will understand why shortly. For now it is suffice to say that sets are an example of a category. Don't think about it yet.
 
 Preface: What is an Abstract Theory
 ===
@@ -15,7 +15,8 @@ Set theory is different. It is not created for to provide rigorous explaination 
 Sets
 ===
 
-A set is a collection of things where, the "things" can be anything you want. Consider, for example these balls: 
+
+Everything in set theory is defined in therms of sets. A set is a collection of things where, the "things" can be anything you want. Consider, for example these balls: 
 
 ![Balls](elements.svg)
 
@@ -28,8 +29,9 @@ The example may look childish, but in fact this set is just as valid as any othe
 The things that are contained in the set are called its *elements*. A set is like a summary of its elements. It is also defined by its elements - two sets that contain of the same elements are also the same.
 
 The key insight about what a set it is that it enables you to reason about several things as if they were one.
+
  
-Subsets
+Subsets 
 ---
 
 Let's construct one more set. The set of *all balls that are warm color*. I will call it **Y**, because in the diagram its coloured in **y**ellow.
@@ -144,9 +146,9 @@ Question: Again, what about the other way around?
 Sets, Functions and Numerical Operation
 ===
 
-All mathematical operations can be expressed as functions, acting on the set of numbers. Actually there are several such sets, such the set of positive whole numbers, (also called "natural" numbers), **N := {1, 2, 3... ∞}**, the set of both positive and negative whole numbers **Z := {-∞... -3 -2, -1, 0, 1, 2, 3... ∞}**.
+All mathematical operations can be expressed as functions, acting on the set of numbers. Actually there are several such sets, such the set of positive whole numbers, (also called "natural" numbers), **N := {1, 2, 3... ∞}**, the set of both positive and negative whole numbers **Z := {-∞... -3 -2, -1, 0, 1, 2, 3... ∞}**. And the set of "Real" numbers which include all numbers that I know of.
 
-For example, squaring a number is a function from the set of all numbers to the set of all positive numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
+For example, squaring a number is a function from the set of real numbers to the set of real positive numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
 
 ![The square function](square.svg)
 
@@ -182,7 +184,7 @@ Most of the types of programming are composite types - they are a combination of
 
 Question: What is the type equivalent of subsets in programming?
 
-Question: Do you recognize some of the functions we defined in programming languages you know?
+Question: Do you recognize some of the basic functions we defined in programming languages you know?
 
 Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, and element that belong to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function which that takes an argument of type `Char` and returns a `Boolean`, depending whether the character is a letter.
 
