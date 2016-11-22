@@ -1,19 +1,27 @@
-<h1 id="bear-with-me-for-a-set">Bear With Me for a Set</h1>
+<h1 id="bear-with-me-for-a-set-what-is-an-abstract-theory">Bear With Me for a Set: What is an abstract theory</h1>
+<blockquote>
+<p>Instead of asking what can be defined and deduced from what is assumed to begin with, we ask instead what more general ideas and principles can be found, in terms of which what was our starting-point can be defined or deduced.</p>
+</blockquote>
+<p>Most scientific and mathematical theories have a specific domain, to which they are related, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example Darwin&#39;s theory of evolution is created so it explains how different biological species came to be. And quantum mechanics is a description of what particles are at the low scale. Even the work of most mathematicians, although it is not bound to a specific domain, is strongly related to it, as differential equations are liked to the description of events that change over time. </p>
+<p>Set theory is different. It is not created for to provide rigorous explaination of how a particular phenonemum works, but to try to provide a more general framework for explaining all kinds of phenomena. Theories that are like that are called <em>abstract</em> theories. All theories <em>use abstraction</em>, else they would be pretty useless (without it Darwin would have to speak about specific animal species, or even a individual animals) but few are inherently abstract, so some of their core concepts are left unspecified. Or in other world , all theories are applicable outside of their domains, but set theory does not have a domain in the first place. </p>
+<p>In this chapter</p>
 <h1 id="sets">Sets</h1>
-<p>A set is a collection of things... Because set theory is, like Category theory, abstract, the things can be anything you want. Consider, for example these balls: </p>
-<p><img src="elements.svg" alt="Balls"><br>For example let&#39;s construct a set, call it <strong>G</strong> (as grey), consisting of <em>all</em> of them. This is how we can mark it:</p>
+<p>A set is a collection of things where, the &quot;things&quot; can be anything you want. Consider, for example these balls: </p>
+<p><img src="elements.svg" alt="Balls"></p>
+<p>For example let&#39;s construct a set, call it <strong>G</strong> (as grey), consisting of <em>all</em> of them. This is how we can mark it:</p>
 <p><img src="all.svg" alt="The set of all balls"></p>
-<p>The example may look childish, but in fact this set is just as valid as any other.</p>
-<p>The things that are contained in the set are called its <em>elements</em>. A set is like a summary of its elements, i.e. it enables you to reason about several things as if they were one.</p>
+<p>The example may look childish, but in fact this set is just as valid as any other set.</p>
+<p>The things that are contained in the set are called its <em>elements</em>. A set is like a summary of its elements. It is also defined by its elements - two sets that contain of the same elements are also the same.</p>
+<p>The key insight about what a set it is that it enables you to reason about several things as if they were one.</p>
 <h2 id="subsets">Subsets</h2>
-<p>Let&#39;s construct one more set. The set of <em>all balls that are warm color</em>. I will call it <strong>Y</strong> ,because in the graphic its coloured in <strong>y</strong>ellow.</p>
-<p><img src="subset.svg" alt="W - the set of all balls of warm colors"></p>
-<p>Notice that W contains just elements that are also present in <strong>G</strong>. That is, every element of the set of <strong>Y</strong> is also an element in the set <strong>G</strong>. When two sets have this relation, we may say that <strong>Y</strong> is a <em>subset</em> of <strong>G</strong> (or <strong>Y ⊆ G</strong>), and draw a graphic like this one:</p>
-<p><img src="set_subset.svg" alt="W and A together"></p>
+<p>Let&#39;s construct one more set. The set of <em>all balls that are warm color</em>. I will call it <strong>Y</strong>, because in the diagram its coloured in <strong>y</strong>ellow.</p>
+<p><img src="subset.svg" alt="Y - the set of all balls of warm colors"></p>
+<p>Notice that <strong>Y</strong> contains just elements that are also present in <strong>G</strong>. That is, every element of the set of <strong>Y</strong> is also an element in the set <strong>G</strong>. When two sets have this relation, we may say that <strong>Y</strong> is a <em>subset</em> of <strong>G</strong> (or <strong>Y ⊆ G</strong>).</p>
+<p><img src="set_subset.svg" alt="Y and G together"></p>
 <h2 id="singleton-sets">Singleton Sets</h2>
 <p>The set of all <em>red balls</em> contains just one ball.</p>
 <p><img src="singleton.svg" alt="The singleton set of red balls"></p>
-<p>Above I said that sets are all about for summarizing <em>several</em> elements into one, but still sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore if I have a function which expects a set of given items, here shouldn&#39;t be any issue if the &quot;items&quot; are just one item (if I ask you to make a set of all books that you are reading right now, you shouldn&#39;t have trouble doing it just because you cannot read several books simultaneously).</p>
+<p>Like we said above, sets are all about for summarizing <em>several</em> elements into one. Still sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore if I have a function which expects a set of given items, here shouldn&#39;t be any issue if the &quot;items&quot; are just one item. Or to take a real-life example, the set of queeens of England is a singleton set. The set of books written by the American writer Harper Lee were a singleton - she has written just one novel, until 2015.</p>
 <h2 id="the-empty-set">The Empty set</h2>
 <p>Of course if one is a valid answer, so can be zero. If we want a set of all <em>black balls</em>  <strong>B</strong> or all the <em>white balls</em>, <strong>W</strong>, the answer to all these questions is the same - the empty set. Or in other words.</p>
 <p><img src="void.svg" alt="The empty set"></p>
@@ -24,16 +32,16 @@
 <p>A function is a relationship between two sets which matches each element of one set, called the <em>domain</em> of the function, with exactly one element from another set, called the converse domain, or the <em>codomain</em> of the function.</p>
 <p>Here is a function, <strong>f</strong> which maps each ball from the set <strong>R</strong> to the ball with the opposite color in another set <strong>G</strong> ( in mathematics a function&#39;s name is often acompanied by the names of its domain and codomain, like this: <strong>f: R → G</strong>)</p>
 <p><img src="function_one_one.svg" alt="Opposite colors"></p>
-<p>This is probably one of the simpler types of functions there exists. That is because it encodes a <em>one-to-one relationship</em> between the sets - <em>one</em> element from the domain is connected to exactly <em>one</em> element from the codomain and the other way around.</p>
-<p>But functions can also express relationships of the type <em>many-to-one</em>, where <em>many</em> elements from the domain might relate to <em>one</em> element from the codomain (but not the other way around).</p>
+<p>This is probably one of the simpler types of functions there exists. That is because it encodes a <em>one-to-one relationship</em> between the sets - <em>one</em> element from the domain is connected to exactly <em>one</em> element from the codomain (and the other way around).</p>
+<p>But functions can also express relationships of the type <em>many-to-one</em>, where <em>many</em> elements from the domain might be connected to <em>one</em> element from the codomain (but not the other way around).</p>
 <p>For example a function can express a relationship in which several elements from the domain relate to the same element of the codomain.</p>
 <p><img src="function_big_small.svg" alt="Function from a bigger set to a smaller one"></p>
 <p>It can also express relationships in which some elements from the codomain do not play a part.</p>
 <p><img src="function_small_big.svg" alt="Function from a smaller set to a bigger one"></p>
-<p>One thing that you cannot have is a function in which a domain element is not mapped to anything, or is mapped to more than one codomain element. That would mean the relationship expressed by it is <em>many-to-many</em>, and as we said in the beginning, functions only model many-to-one relationships. There is a reason for this, and we will discuss it shortly.</p>
+<p>One thing that you cannot have is a domain element which is not mapped to anything, or which is mapped to more than one codomain element. That would mean the relationship expressed by the function will be <em>many-to-many</em>, and, as we said in the beginning, functions only model many-to-one relationships. There is a reason for that &quot;design decision&quot;, and we will arrive at it shortly.</p>
 <p>Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask can most probably be expressed as a function.</p>
 <p>The question &quot;How far are we from New York?&quot; is a function with a domain the set of places in the world and a codomain, consisting of the set of all positive numbers </p>
-<p>Question: Some people might say that the codomain of the function is bigger than it should be. How would you refine it?</p>
+<p>Question: Some people might say that the codomain of this function is bigger than it should be. How would you refine it?</p>
 <p>The question &quot;Who is my father?&quot; is a function whose domain is the set of all people in the world.<br>Question: What is the codomain of this function?</p>
 <p>Note that the question &quot;Who is my child?&quot; is <em>NOT</em> a straightforward function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.</p>
 <p>Question: Do all functions that we drew at the beginning <em>express</em> something? Do you think that a function should express something in order to be valid? </p>
@@ -89,7 +97,7 @@
 <h1 id="functional-composition-">Functional Composition </h1>
 <p>Let&#39;s assume that we have two functions, <strong>g: Y → P</strong> and <strong>f: P → G</strong> and the codomain of the first one is the same set as the domain of the second.</p>
 <p><img src="functions_matching.svg" alt="Matching functions"></p>
-<p>If we apply the first function <strong>g</strong> to some element from set <strong>Y</strong>, we will get an element of the set <strong>P</strong>. Then, if we apply the second function <strong>f</strong> to <em>that</em> element, we will get an element from type <strong>G</strong></p>
+<p>If we apply the first function <strong>g</strong> to some element from set <strong>Y</strong>, we will get an element of the set <strong>P</strong>. Then, if we apply the second function <strong>f</strong> to <em>that</em> element, we will get an element from type <strong>G</strong>.</p>
 <p><img src="functions_one_after_another.svg" alt="Applying one function after another"></p>
 <p>We can define a new function, that is the equivalent to performing the operation described above. Lets call it <strong>h: Y → G</strong>. We may say that <strong>h</strong> is the <em>composition</em> of <strong>g</strong> and <strong>f</strong>, or <strong>h = f ∘ g</strong> (notice that the first function is on the right, so its similar to <strong>b = f(g(a)</strong>).</p>
 <p><img src="functions_compose.svg" alt="Functional composition"></p>
@@ -98,27 +106,36 @@
 <h2 id="representing-composition-with-commutative-diagrams">Representing Composition with Commutative Diagrams</h2>
 <p>In the last diagram, the equivalence between <strong>f ∘ g</strong> and the new function <strong>h</strong> is expressed by the fact that if you follow the arrow <strong>h</strong> for any element of set <strong>Y</strong> you will get to the same element of the set <strong>G</strong> as the one you will get if you follow the <strong>g</strong> and then follow <strong>f</strong>. Diagrams that express such equivalence between sequences of function application are called <em>commutative diagrams</em>.</p>
 <p><img src="functions_compose.svg" alt="Functional composition"></p>
-<p>If we &quot;zoom-out&quot; the last diagram so it does not show the individual set elements, we get a more general diagram for functional composition.</p>
+<p>If we &quot;zoom-out&quot; the last diagram so it does not show the individual set elements, we get a more general view of functional composition.</p>
 <p><img src="functions_compose_sets.svg" alt="Functional composition for sets"></p>
-<p>In fact, because the diagram commutes (all arrows, starting from a given set element ultimately lead to the same corresponding element from the resulting set), ennumerating the elements is redundant. So we can, for example, redefine functional composition in the following, visual, way:</p>
+<p>In fact, because the diagram commutes (that is, all arrows, starting from a given set element ultimately lead to the same corresponding element from the resulting set), ennumerating the elements is redundant. Having this insight allows us to redefine functional composition in the following, more visual, way:</p>
 <p>The composition of two functions <strong>f</strong> and <strong>g</strong> is a third function <strong>h</strong> defined in such a way that this diagram commutes.</p>
 <p><img src="functions_compose_general.svg" alt="Functional composition - general definition"></p>
-<p>You will see more definitions like this in the future.</p>
+<p>This is called an <em>external diagram</em>, by the way (and the ones that we saw before are internal).</p>
+<h2 id="the-power-of-composition">The Power of Composition</h2>
+<p>To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.</p>
+<p>If we have a function <strong>g: P → Y </strong> from set <strong>P</strong> to set <strong>Y</strong>, then for every function <strong>f</strong> from the set <strong>Y</strong> to any other set, there is a corresponding function <strong>f ∘ g</strong> from the set <strong>P</strong> to the same set. In other words every time you create a new function. </p>
+<p><img src="morphism_general.svg" alt="Functional composition connect"></p>
+<p>For example, if we again take the relationship between a person and his father as a function, with the set of all people in the world as a domain, and the set of all people that have children as its codomain, then each person whom my father is related to is automatically my relative - my father&#39;s father is my grandfather, my father&#39;s wife is my mother and so on.  </p>
 <h1 id="isomorphisms">Isomorphisms</h1>
-<p>Let&#39;s go back to the function that demonstrated a one-to-one relationship:</p>
+<p>Let&#39;s go back to the function that demonstrated a one-to-one relationship.</p>
 <p><img src="function_one_one.svg" alt="Opposite colors"></p>
 <p>Notice that the function is invertible, that is if you flip its arrows you get another valid function:</p>
 <p><img src="isomorphism_one_one.svg" alt="Opposite colors"></p>
-<p>Invertible functions are called <em>isomorphisms</em>. When there is an invertible function between two sets we can say that the sets are <em>isomorphic</em>. For example the temperature measured in Celcius, is isomorphic to the temperature, measured in Fahrenheit.</p>
+<p>Invertible functions are called <em>isomorphisms</em>. When there is an invertible function between two sets we can say that the sets are <em>isomorphic</em>. For example, the temperature measured in Celcius, is isomorphic to the temperature, measured in Fahrenheit.</p>
 <p>More formally, two sets <strong>R</strong> and <strong>G</strong> are isomorphic, or <strong>R ≅ G</strong> if there exist functions <strong>f: G → R</strong> and its reverse <strong>g R → G</strong>, such that <strong>f ∘ g = idR</strong> and <strong>g ∘ f = idG</strong> (notice how the identity function comes in handy).</p>
 <h2 id="isomorphism-and-equality">Isomorphism and equality</h2>
 <p>The concept of an isomorphism is strongly related to the concept of equality (that is why it is denoted with <strong>≅</strong>, which is almost the same as <strong>=</strong>). </p>
-<p>For example, the identity function is reversible, so each set is isomorphic to itself.</p>
+<p>For example, we all know that everything is equal to itself. Well, if you look closely you would see that the identity function is reversible (its reverse is itself), so each set is isomorphic to itself.</p>
 <p><img src="isomorphism_identity.svg" alt="The identity function"></p>
-<p>Intuitively if two sets of things are isomorphic, this means that having an element from one of them, allows you to easily obtain an element from the other.</p>
-<p>For example if you have a function &quot;is the husband of&quot; the set of all married men, as a domain and the set of all married woman as codomain, and the corresponding function, &quot;is the wife of&quot;, then we may say that the sets of married men and married woman (ignoring some exceptions) are isomorphic. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between him/her and the same person or object. For example my wive&#39;s father is my father-in-law. Her cat, is to me is &quot;my wive&#39;s cat&quot;. If my wife has a red hair, I am a person who is married to a person that has red hair and so on.</p>
+<p>Note that an isomorphism between two sets does not imply that their <em>elements</em> are similar to one another, as some of the examples might suggest. It rather implies that they have similar <em>structure</em>, in other words a function that involves one of the sets, can easily be converted to a function involving the other set. </p>
+<p><img src="isomorphism_general.svg" alt="The architecture of isomorphism"></p>
+<p>For example, if you have a function &quot;is the husband of&quot; that goes from the set of all married men to the set of all married women,  and the corresponding function, &quot;is the wife of&quot;, that would make the sets of married men and married woman isomorphic (ignoring some exceptions). That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between him/her and the same person or object, and vice versa. </p>
 <h2 id="isomorphisms-between-singleton-sets">Isomorphisms Between Singleton Sets</h2>
 <p>Between any two singleton sets, we may define the only possible function.</p>
+<p><img src="singleton_function.svg" alt="The only possible function between sungletons"></p>
 <p>The function is invertible, which means that all singleton sets are isomorphic to one another.</p>
-<p>Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. Expressing this in everyday terms is not always as intuitive, as the examples there, but consider that all of us are sharing one and the same universe.</p>
+<p><img src="singleton_isomorphism.svg" alt="Isomorphic singletons"></p>
+<p>Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. </p>
+<p>Question: Try to come up with a good example that shows how a statement that demonstrates the isomorphism between singleton sets (I obviously couldn&#39;t). Consider that all of people and objects are sharing one and the same universe.</p>
 <p>Task: Think of two singleton sets, and try to pinpoint the relation that they have.</p>
