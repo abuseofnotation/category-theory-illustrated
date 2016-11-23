@@ -67,9 +67,18 @@ Discovered in 1921 Kazimierz Kuratowski, this one uses just the component of the
 Defining products in Terms of Functions 
 ---
 
-In the previous chapter we provided a definition of a product by *zooming in* the individual elements of the sets and seeing what they are made of. This resulted in a very *low-level* view of the construct. This time we will try to do the opposite, and be as oblivious to the contents of our sets as possible. Instead of zooming in we will zoom out, and try define the product in terms of functions. Let's begin with the definition of the product.
+In the previous chapter we provided a definition of a product by *zooming in* the individual elements of the sets and seeing what they are made of. This gave us a *low-level* view of products. This time we will try to do the opposite, and be as oblivious to the contents of our sets as possible. Instead of zooming in we will zoom out, and try define the product in terms of functions and functional composition. Effectively we will be working at a higher level of abstraction.
+
+So let's begin with an external diagram, showing the definition of the product. Disclaimer: I know that this is a somewhat weird notation, but don't worry, we will not be using it for very long.
 
 ![Product, external diagram](product_external.svg)
 
-This diagram already contains the first piece of the puzzle - the product of sets *Y* and *B* is a set **G**, such that there exista function **G → Y** and a function **G → B**
+This diagram already contains the first piece of the puzzle - if the product of sets **Y** and **B**, is a set **G**, there has to be one function **G → Y** and one function **G → B** which give back the elements. However, the product of **G** and **B** is not the only set which for which such functions can be defined. For example a set of triples of **Y x B x R** for some random element **R** also does. If there is a function from **G** to **B** then the set **G** itself meets our condition for being the product, because it is connected to **B** and to itself. And depending on our specific case there can be many other other such objects.
 
+![Product, external diagram](product_candidates.svg)
+
+So what do all these "imposter" sets have in common with the "true" product? Simple - they should all be converted to it, using a functions. 
+
+In order for a set **I** to serve as an impostor for the product of **B** and **Y** and there should be a functions **I → B** and **I → Y**. And because the product of **B** an **Y**  is nothing more than the sum of its pairs, there should also be a function **I → B x Y**.
+
+![Product, external diagram](product_morphisms.svg)
