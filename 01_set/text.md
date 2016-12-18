@@ -10,11 +10,14 @@ Preface: What is an Abstract Theory
 
 Most scientific and mathematical theories have a specific domain, to which they are related, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example Darwin's theory of evolution is created so it explains how different biological species came to be. And quantum mechanics is a description of what particles are at the low scale. Even the work of most mathematicians, although it is not bound to a specific domain, is strongly related to it, as differential equations are liked to the description of events that change over time. 
 
-Set theory is different. It is not created for to provide rigorous explaination of how a particular phenonemum works, but to try to provide a more general framework for explaining all kinds of phenomena. Theories that are like that are called *abstract* theories. All theories *use abstraction*, else they would be pretty useless (without it Darwin would have to speak about specific animal species, or even a individual animals) but few are inherently abstract, so some of their core concepts are left unspecified. Or in other world. That is all theories are applicable outside of their domains, but set theory does not have a domain in the first place. 
+Set theory and category theory are different. They are not created for to provide rigorous explaination of how a particular phenonemum works, but to try to provide a more general framework for explaining all kinds of phenomena. Theories that are like that are called *abstract* theories. All theories *use abstraction*, else they would be pretty useless (without it Darwin would have to speak about specific animal species, or even a individual animals) but few are inherently abstract, so some of their core concepts are left unspecified. Or in other world. That is all theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
+
+People have tried to be precise and at the same time down to Earth for centuries, and only recently discovered that "precise and down to earch" is an oxymoron. Let's take Euclidian geometry as an example. Yes, Euclidian geometry is precise, because it is valid for all sets of objects, called ("point" "line" "angle" and "circle" etc.), which have relationships, as defined by the five famous axioms. And yes, geometry does,in many instances, describe the natural world, because there are many sets of objects which have these relations. However its "precise" part and its "down to Earth" parth have nothing to do with each other. We can, for example say that a point is any stain on the floor of your room, and that a line is a piece of duct tape, put on the same floor, and that will be a completely valid application of the Euclidian laws, albeit not very useful one. Or we can try to use geometry to reason about points on the surface of the Earth, which is a very useful application, of geometry, however not of Euclidian geometry, because Euclidian geometry only describes points on a flat plane, and the Earth is not flat. 
+
+You can argue that these are actually two separate theories there, which just happen to be perceived as one. You have the axioms, or the postulates on one hand, which are not usefull for anything on their own, and you have applications in science and engineering which are somewhat based on them, but not quite. 
 
 Sets
 ===
-
 
 Everything in set theory is defined in therms of sets. A set is a collection of things where, the "things" can be anything you want. Consider, for example these balls: 
 
@@ -24,9 +27,9 @@ For example let's construct a set, call it **G** (as grey), consisting of *all* 
 
 ![The set of all balls](all.svg)
 
-The example may look childish, but in fact this set is just as valid as any other set.
+The example may look childish, but in fact this set is just as valid as any other set. 
 
-The things that are contained in the set are called its *elements*. A set is like a summary of its elements. It is also defined by its elements - two sets that contain of the same elements are also the same.
+The things that are contained in the set are called its *elements*. A set is like a summary of its elements. It has no other structure, for example there is not order, no ball goes before or after another, there are no members which are "special" with respect to their membership in the set. Two sets that contain of the same elements are also the same.
 
 The key insight about what a set it is that it enables you to reason about several things as if they were one.
 
@@ -190,7 +193,9 @@ Some functions in programming (also called methods, subroutines, etc.) kinda res
 
 ![A function from Char to Boolean](char_boolean.svg)
 
-However functions in programming can also be quite different from mathematical functions - they can perform various operations that have nothing to do with returning a value, called side effects. This is because most common programming languages and paradigms were created at a times when the computer resources were much more limited than today, and programming - much more cumberstone, so people had bigger problems than the fact that their functions were not mathematically sound. Then no one bothered to make the transition.
+However functions in programming can also be quite different from mathematical functions - they can perform various operations that have nothing to do with returning a value, called side effects. This is because most common programming languages and paradigms which are in use today were created at a times when the computer resources were much more limited than today, and programming - much more cumberstone, so people had bigger problems than the fact that their functions were not mathematically sound. 
+
+One type of functions used in programming which strongly resemble mathematical ones are those which convert a value from one type to another, for example the function which converts a a floating-point number to an Integer. That is probaly the reason why most functional languages are strongly-typed.
 
 
 Functional Composition 
@@ -263,7 +268,7 @@ Isomorphism and equality
 
 The concept of an isomorphism is strongly related to the concept of equality (that is why it is denoted with **≅**, which is almost the same as **=**). 
 
-For example, we all know that everything is equal to itself. Well, if you look closely you would see that the identity function is reversible (its reverse is itself), so each set is isomorphic to itself.
+For example, we all know that everything is equal to itself. Well, if you look closely you would see that the identity function is reversible (its reverse is itself), so each set is also isomorphic to itself.
 
 ![The identity function](isomorphism_identity.svg)
 
@@ -272,7 +277,6 @@ Note that an isomorphism between two sets does not imply that their *elements* a
 ![The architecture of isomorphism](isomorphism_general.svg)
 
 For example, if you have a function "is the husband of" that goes from the set of all married men to the set of all married women,  and the corresponding function, "is the wife of", that would make the sets of married men and married woman isomorphic (ignoring some exceptions). That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between him/her and the same person or object, and vice versa. 
-
 
 Isomorphisms Between Singleton Sets
 ---

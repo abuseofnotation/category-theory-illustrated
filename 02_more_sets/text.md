@@ -12,7 +12,7 @@ The simplest composite, or a *product*, of the sets **B**, which contains **b**'
 
 ![Product parts](product_parts.svg)
 
-... is just the set of **b**'s and **y**'s.
+... is just the set of *pairs* of **b**'s and **y**'s.
 
 ![Product](product.svg)
 
@@ -43,7 +43,6 @@ Defining products in Terms of Sets
 
 Now we will define the abstract concept of a product of two sets sets in terms of sets themselves. It is not hard: the product of two sets **Y** and **B** is just the set of all possible *ordered pairs*, which contain one element of the set **Y** and one element of the set **B**. Or formally speaking **Y x B = { (y, b) }** where **y ∈ Y, b ∈ B** (**∈** means "is an element of").
 
-
 The real challenge is defining what a pair means in terms of sets. 
 
 ![A pair](pair.svg)
@@ -73,12 +72,49 @@ So let's begin with an external diagram, showing the definition of the product. 
 
 ![Product, external diagram](product_external.svg)
 
-This diagram already contains the first piece of the puzzle - if the product of sets **Y** and **B**, is a set **G**, there has to be one function **G → Y** and one function **G → B** which give back the elements. However, the product of **G** and **B** is not the only set which for which such functions can be defined. For example a set of triples of **Y x B x R** for some random element **R** also does. If there is a function from **G** to **B** then the set **G** itself meets our condition for being the product, because it is connected to **B** and to itself. And depending on our specific case there can be many other other such objects.
+This diagram already contains the first piece of the puzzle - if the product of sets **Y** and **B**, is a set **G**, there has to be one function **G → Y** and one function **G → B** which give back the elements. We can use this as part of our definition.
+
+However, the product of **G** and **B** is not the only set for which such functions can be defined. For example a set of triples of **Y x B x R** for some random element **R** also does. If there is a function from **G** to **B** then the set **G** itself meets our condition for being the product, because it is connected to **B** and to itself. And depending on our specific case there can be many other other such objects.
 
 ![Product, external diagram](product_candidates.svg)
 
-So what do all these "imposter" sets have in common with the "true" product? Simple - they should all be converted to it, using a functions. 
+So how can we set apart these "imposter" products from the "true" product without looking at their contents? Simple, for each of them, there exists a function that converts it to the one true product. Why? In order for a set **I** to serve as an impostor for the product of **B** and **Y** there should be a functions from it, to the two elements of the pair (so **I → B** and **I → Y**). But if we have functions from the impostor to both members of a product, then we should also be able to define a function from it to the product itself. In other words, if we have **I → B** and **I → Y** we should also have **I → B x Y **. This is true because the product is by definition nothing more and nothing less than the sum of its parts.
 
-In order for a set **I** to serve as an impostor for the product of **B** and **Y** and there should be a functions **I → B** and **I → Y**. And because the product of **B** an **Y**  is nothing more than the sum of its pairs, there should also be a function **I → B x Y**.
+And thus we have found our definition: If **B** and **Y** are sets, then their product **B x Y** is a set such that for all sets **I** for which functions **I → Y** and **I → B** exist, there also exists a function **I → B x Y**, such that this diagram commutes.
 
-![Product, external diagram](product_morphisms.svg)
+![Product, external diagram](products_morphisms.svg)
+
+Again, notice that the definition does not make any references to the set's elements.
+
+Task: Convert the definition so it's not about sets, and products, but about types and programming structures.
+
+Sum
+===
+
+We will now study a construct that is pretty similar to the product, but at the same time it is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one, without erasing their structure. Different because the the product encodes an **AND** relation, while the sum encodes an **OR** relation. For example, a parent is either a mother of a father of a child, so the set of parent's is a sum set of the set of mothers and fathers. 
+
+![Sum or coproduct](coproduct.svg)
+
+Notice that the when a given object is an element of both sets, then it appears in the sum twice. This is why this type ofsum of two sets is also called a *disjoint union*.
+
+Defining Sums in Terms of Sets
+---
+
+Simply put, a sum of two sets is a set that contains all elements from the first set and all elements from the second one. but, like with the product, there is a little twist - just like the elements of the product aren't just two-element sets, the elements of the sum are not just copies of the elements of the sets of which it consists of. If that were the case, then part of the information would be lost.
+
+Notice the circles that encompass all elements of the sum set. If an element is a member of both sets that the sum consists of, it should be there two times - once because it is a member of the first set and once because it is a member of the second one. But a set cannot contain two instances of the same element, and that is why all elements in the sum are *wrapped* this way.
+
+
+
+Defining Sums in Terms of Functions
+---
+
+
+Duality
+===
+
+If we have to compare the sum or the product, we can say that:
+
+The *product* of two sets is related to an element of the first one *and* one element of the second one.
+ A *sum* of two sets is related to an element of the first one *or*  one element of the second one.
+
