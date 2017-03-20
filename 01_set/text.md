@@ -241,7 +241,7 @@ The Power of Composition
 
 To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
 
-If we have a function **g: P → Y ** from set **P** to set **Y**, then for every function **f** from the set **Y** to any other set, there is a corresponding function **f ∘ g** from the set **P** to the same set. In other words, every time you create a new function. 
+If we have a function **g: P → Y ** from set **P** to set **Y**, then for every function **f** from the set **Y** to any other set, there is a corresponding function **f ∘ g** from the set **P** to the same set. In other words, every time you define a new function from **Y** to some other set, you gain one function from **P** to that same set for free.
 
 ![Functional composition connect](morphism_general.svg)
 
