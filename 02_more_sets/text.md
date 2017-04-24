@@ -129,7 +129,7 @@ What are we saying with this, if we apply it to the example, is simply that if p
 
 ![Coproduct, external diagram](coproduct_morphisms.svg)
 
-Duality
+Duality 
 ===
 
 If we have to compare the concepts of sum or and product we will find out that they are related:
@@ -142,4 +142,39 @@ Actually, the two concepts are captured by one and the same external diagram, ju
 ![Coproduct and product](coproduct_product_duality.svg)
 
 
-When two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *coproduct* in the context of category theory. This is the best example of how external diagrams (and category theory) allow us to formalize connections between different objects that we previously knew by intuition (the connection between *OR* and *AND* has always been there, we just couldn't express it without CT).
+When two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *coproduct* in the context of category theory. This is the best example of how external diagrams (and category theory) allow us to formalize connections between different objects that we previously knew by intuition. The connection between *OR* and *AND* has always been there - ever since 19 century when Boolean algebra was discovered, its existence has been demonstrated. For example, its not hard to convince ourselves that the expression **NOT (A AND B)** is equivalent to **(NOT A) OR (NOT B)**, or, to put it in everyday language, if you don't like the the combination of ham **AND** cheese, then you should order either something that does not contain ham **OR** something that does not contain cheese. But how does that **AND** magically turn into to **OR** when we remove the brackets? The answer could not be expressed without category theory.
+
+Category Theory - brief definition
+===
+
+Maybe it is time to see what a category theory is all about. Well, a category theory is about objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't see their elements. This and what I said before, about category theoretic notions being captured by the external diagrams and set-theoretic notions being captured by internal diagrams.
+
+
+What other categories, or applications of category theory are there, other than sets? We already discussed one - types in programming languages. Remeber that we said that programming types (classes) are somewhat similar to sets and programming functions are somewhat similar to functions between sets? This is another example of a connection that we can made rigorous using category theory.
+
+
+| Category Theory | Set theory | Programming Languages |
+| ---             | ---        | ---                   |
+| Category        | N/A        | N/A                   |
+| Objects and  Morphisms        | Sets and Functions   | Classes and functions |
+| N/A             | Element    | Object                |
+
+This diagram illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion. We saw how taking the notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
+
+In addition we have the notion of a category. The whole realm of sets, can be thought as one category. A programming language can also be thought as a category. And there are a lot more categories which are interesting and useful.
+
+Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.
+
+
+
+
+
+
+
+
+
+
+
+Some other categories
+===
+
