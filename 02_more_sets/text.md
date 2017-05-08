@@ -165,6 +165,52 @@ In addition we have the notion of a category. The whole realm of sets, can be th
 
 Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.
 
+Limits
+===
+
+Products are Limits
+---
+Products are one example of limits.
+
+A limit is an object that encodes a structure (also called a diagram) of other objects and morphisms in a way that allows us to later retrieve the structure. A limit also has to be unique in the sense that you cannot have two limit objects for the same structure.
+
+ What is the "structure" that a product is encoding? It is a structure that consists of two objects (sets) that are have no connections between them.
+ 
+![External diagram](product_part_external.svg)
+ 
+How do we retrieve the original objects given their product? By following the morphisms (functions) from it to any of them. Why is the product unique when it comes to representing the two objects? Because any other object that represents them is connected to the product. 
+
+We will see that all other limits are defined in roughly the same way.
+
+Pullback
+---
+Imagine a diagram consisting of two objects that are both connected to a third one:
+
+![External diagram](pullback_part_external.svg)
+
+Or: 
+
+![Internal diagram](pullback_part_internal.svg)
+
+This diagram can express two mostly unrelated facts, for example let's take a function from all women are people and all parents are people.
+
+The limit to this diagram is called a pullback:
+
+![External diagram of a pullback](pullback_external.svg)
+
+The pullback summarizes the two functions into one, as the concept of a mother summarizes the ideas of a woman and a parent.
+
+Like with the product, we define the limit to be such, that any object that is connected to the tree objects in the diagram - is also connected to the limit.
+
+![External diagram of a pullback](pullback_external_limit.svg)
+
+In the category of sets, the pullback is called a fiber product and is like the product except that not all combinations are there - just the ones which result to the same element.
+
+Pullback with the Singleton set.
+---
+
+
+
 
 
 
