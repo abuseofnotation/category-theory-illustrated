@@ -182,29 +182,60 @@ How do we retrieve the original objects given their product? By following the mo
 
 We will see that all other limits are defined in roughly the same way.
 
-Pullback
+Pullbacks
 ---
 Imagine a diagram consisting of two objects that are both connected to a third one:
 
 ![External diagram](pullback_part_external.svg)
 
-Or: 
+Or two sets that both have functions to a third one. 
 
 ![Internal diagram](pullback_part_internal.svg)
 
-This diagram can express two mostly unrelated facts, for example let's take a function from all women are people and all parents are people.
+This diagram can expresses two unrelated facts, for example let's take a function from men to people and from parents are people, connecting each person from the set of parents to the same person from the set of all people.
 
-The limit to this diagram is called a pullback:
+![Internal diagram](pullback_part_internal_father.svg)
+
+Because there are so many types of functions, I feel that I have to offer another example. Think of how recruiting (or "tallent aquisition" as they call it) works. There are companies that post job descriptions of the market and people who fit one or several of the job descriptions posted. This process can be summarised in the same type of diagram:
+
+![Internal diagram](pullback_part_internal_recruit.svg)
+
+The limit to this diagram, as we said is an object for which is connected to the three objects in it.
+![External diagram of a pullback](pullback_external_extra_morphism.svg)
+
+The connection to the third object is just the composition of the other two so it will always exist as long as they exist - we might as well remove it.
 
 ![External diagram of a pullback](pullback_external.svg)
 
-The pullback summarizes the two functions into one, as the concept of a mother summarizes the ideas of a woman and a parent.
-
 Like with the product, we define the limit to be such, that any object that is connected to the tree objects in the diagram - is also connected to the limit.
+
+![External diagram of a pullback](pullback_candidates.svg)
+
+In the category of sets, a pullback is called a *fiber product*.
+
+![Internal diagram of the pullback](pullback_internal.svg)
+
+It is like the ordinary product, except that it contains just the pairs which satisfy the condition given by the two functions.
+
+![Internal diagram of the pullback](pullback_product_internal.svg)
+
+The concept might look abstract and detached from reality, but it is exactly the opposite. The pullback summarizes the two ideas into one in a way that is very intuitive. For example the pullback of the sets of men to people and the sets of parents to people, is the set of all fathers.
+
+![Internal diagram of the pullback](pullback_internal_father.svg)
+
+Well, technically it is the set of pairs of objects where both objects are the same object, but let's concentrate on the big picture.
+
+![Internal diagram of the pullback](pullback_external_father.svg)
+
+(Note that we can simplify the label as the two sets are isomorphic).
+
+
+The pullback of the diagram with the job descriptions is the sets of all matches - pairs that contain one person and one description where the person fits the descripton.
 
 ![External diagram of a pullback](pullback_external_limit.svg)
 
-In the category of sets, the pullback is called a fiber product and is like the product except that not all combinations are there - just the ones which result to the same element.
+Task: Draw an internal diagram for the second example. 
+
 
 Pullback with the Singleton set.
 ---
