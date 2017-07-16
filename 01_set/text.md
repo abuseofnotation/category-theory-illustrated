@@ -14,8 +14,6 @@ Set theory and category theory are different. They are not created for to provid
 
 People have tried to be precise and at the same time down to Earth for centuries, and only recently discovered that "precise and down to Earth" is an oxymoron. Let's take Euclidian geometry as an example. Yes, Euclidian geometry is precise, because it is valid for all sets of objects, called ("point" "line" "angle" and "circle" etc.), which have relationships, as defined by the five famous axioms. Yes, geometry does, in many instances, describe the natural world, because there are many sets of objects which have these relations. However, its "precise" part and it's "down to Earth" part have nothing to do with each other. We can, for example, define a point as any stain on the floor of your room and that a line as a piece of duct tape, put on the same floor - that will be a completely valid application of the Euclidian laws, albeit not very useful one. Or we can try to use geometry to reason about points on the surface of the Earth, which is a very useful application, of geometry, however not of Euclidian geometry, because Euclidian geometry only describes points on a flat plane, and the Earth is not flat. You can argue that these are actually two separate theories there, which just happen to be perceived as one. You have the axioms, or the postulates on one hand, which are not useful for anything on their own, and you have applications in science and engineering which are somewhat based on them, but not quite. 
 
-What Category Theory aims, is to formalise some common concepts that we use in our daily (intellectual) lives in the same way that grammar textbooks formalise the language that we use in our daily lives - a language that does not follow any rules on its own.
-
 Sets
 ===
 
@@ -52,7 +50,7 @@ The set of all *red balls* contains just one ball.
 
 ![The singleton set of red balls](singleton.svg)
 
-Like we said above, sets are all about for summarising *several* elements into one. Still, sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore, if I have a function which expects a set of given items, here shouldn't be any issue if the "items" are just one item. Or to take a real-life example, the set of queens of England is a singleton set. The set of books written by the American writer Harper Lee were a singleton - she has written just one novel, until 2015.
+Like we said above, sets are all about for summarising *several* elements into one. Still, sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore, if I have a function which expects a set of given items, here shouldn't be any issue if the "items" are just one item. Or to take a real-life example, the set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set - she has published just one novel.
 
 The Empty set
 ---
@@ -265,7 +263,7 @@ More formally, two sets **R** and **G** are isomorphic, or **R ≅ G** if there 
 Isomorphism and equality
 ---
 
-The concept of an isomorphism is strongly related to the concept of equality (that is why it is denoted with **≅**, which is almost the same as **=**). 
+In category theory, the concept of an isomorphism is strongly related to the concept of equality (that is why it is denoted with **≅**, which is almost the same as **=**). This is also related to programming, where if we have a function that convert our object of type A to an object of type B and the other way around we pretty much regard A and B as two formats of the same object.
 
 For example, we all know that everything is equal to itself. Well, if you look closely you would see that the identity function is reversible (its reverse is itself), so each set is also isomorphic to itself.
 
