@@ -85,7 +85,7 @@ More formally, in order for a set **I** to serve as an impostor for the product 
 
 Notice that this definition does not rule out the sets which are isomorphic to the product - when we represents things using functions, the isomorphism is equality.
 
-Sum
+Sums
 ===
 
 We will now study a construct that is pretty similar to the product, but at the same time it is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one, without erasing their structure. Different because it encodes a different type of relation between them - a product encodes an **AND** relation between two sets, while the sum encodes an **OR** relation. For example, a parent is either a mother of a father of a child, so the set of parent's is a sum set of the sets of mothers and fathers. 
@@ -142,15 +142,15 @@ Actually, the two concepts are captured by one and the same external diagram, ju
 ![Coproduct and product](coproduct_product_duality.svg)
 
 
-When two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *coproduct* in the context of category theory. This is the best example of how external diagrams (and category theory) allow us to formalize connections between different objects that we previously knew by intuition. The connection between *OR* and *AND* has always been there - ever since 19 century when Boolean algebra was discovered, its existence has been demonstrated. For example, its not hard to convince ourselves that the expression **NOT (A AND B)** is equivalent to **(NOT A) OR (NOT B)**, or, to put it in everyday language, if you don't like the the combination of ham **AND** cheese, then you should order either something that does not contain ham **OR** something that does not contain cheese. But how does that **AND** magically turn into to **OR** when we remove the brackets? The answer could not be expressed without category theory.
+When two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *coproduct* in the context of category theory. This is the best example of how external diagrams (and category theory) allow us to formalize connections between different objects that we previously knew by intuition. The connection between *OR* and *AND* has always been there - ever since 19 century when Boolean algebra was discovered, its existence has been demonstrated. For example, its not hard to convince ourselves that De Morgan's law, the expression **NOT (A AND B)** is equivalent to **(NOT A) OR (NOT B)** is true. Or, to put it in everyday language, if you don't like the the combination of ham **AND** cheese, then you should eat something that either does not contain ham **OR** does not contain cheese. But how does that **AND** magically turn into to **OR** when we remove the brackets? The answer could not be expressed until category theory was formulated.
 
 Category Theory - brief definition
 ===
 
-Maybe it is time to see what a category theory is all about. Well, a category theory is about objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't see their elements. This and what I said before, about category theoretic notions being captured by the external diagrams and set-theoretic notions being captured by internal diagrams.
+Maybe it is time to see what a category is. Well, a category is about objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't see their elements. This and what I said before, about category theoretic notions being captured by the external diagrams and strictly set-theoretic notions being captured by internal ones.
 
 
-What other categories, or applications of category theory are there, other than sets? We already discussed one - types in programming languages. Remeber that we said that programming types (classes) are somewhat similar to sets and programming functions are somewhat similar to functions between sets? This is another example of a connection that we can made rigorous using category theory.
+What other categories, or applications of category theory are there, other than sets? We already discussed one - types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets and programming functions are somewhat similar to functions between sets? This is another example of a connection that we can made rigorous using category theory.
 
 
 | Category Theory | Set theory | Programming Languages |
@@ -161,9 +161,9 @@ What other categories, or applications of category theory are there, other than 
 
 This diagram illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion. We saw how taking the notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
 
-In addition we have the notion of a category. The whole realm of sets, can be thought as one category. A programming language can also be thought as a category. And there are a lot more categories which are interesting and useful.
+In addition we have the notion of a category, so the whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyse similarities between the two.
 
-Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.
+NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.
 
 Limits
 ===
@@ -172,9 +172,9 @@ Products are one example of what is known in category theory as *limits*. A limi
 
 A limit also has to be unique in the sense that you cannot have two limit objects for the same structure.
 
-Limits also are defined so that the diagram commutes. 
+The notion of a limit is strongly related with the notion of a commuting diagrams. This is not obvious when we are examining products because the diagram of products does not have several routes reaching to the same point.
 
-Limits can be defined formally, just like everything else that we examine, but we won't bother to do that.
+Limits can be defined formally, just like everything else that we examine, but we won't bother to do that just now.
 
 Products are Limits
 ---
@@ -183,7 +183,7 @@ OK, we said that limits summarize a structure. What is the structure that a prod
  
 ![External diagram](product_part_external.svg)
  
- By following the morphisms (functions) from the limit object, we can retrieve its components.
+ By following the morphisms (functions) from the limit object, we can retrieve the structure.
 
 Why is the product unique when it comes to representing the two objects? Because any other object that also represents them is connected to the product through a morphism (this is known as the *universal property* of limits).
 
@@ -202,7 +202,7 @@ Because there are so many types of functions, I feel that I have to offer anothe
 
 ![Internal diagram](pullback_part_internal_recruit.svg)
 
-The limit to a diagram, as we said, is an object for which is connected to the three objects in it.
+The limit to a diagram, as we said, is an object for which is connected to the three objects in it in a way that forms a commuting diagram.
 
 ![External diagram of a pullback](pullback_external_extra_morphism.svg)
 
@@ -218,11 +218,14 @@ In the category of sets, a the object (set) that fits this description for any o
 
 ![Internal diagram of the pullback](pullback_internal.svg)
 
-It is like the ordinary product of A and B, except that it does not contain all pairs but just the ones which satisfy the condition given by the two functions.
+It is like the ordinary product of A and B, except that it does not contain all pairs but just the ones which satisfy the condition given by the two functions - to make the the diagram commute.
 
 ![Internal diagram of the pullback](pullback_product_internal.svg)
 
-The concept might look abstract and detached from reality, but it is actually exactly the opposite. The pullbacks summarize two ideas into one in a way that is very intuitive. For example the pullback of the sets of men to people and the sets of parents to people, is the set of all fathers.
+Given the pullback of a diagram, we can construct the part of the diagram which commutes.
+
+
+The concept of a pullback might look abstract and detached from reality, but it is actually exactly the opposite. The pullbacks summarize two ideas into one in a way that is very intuitive. For example the pullback of the sets of men to people and the sets of parents to people, is the set of all fathers.
 
 ![Internal diagram of the pullback](pullback_internal_father.svg)
 
@@ -249,21 +252,36 @@ When working with external diagrams, we should not forget that just because two 
 
 You can view the diagram as just two functions with the same type signature.
 
-Like with 
+The limit of this diagram is called an equalizer - a subset of `A` representing the solution of the equation `f(a) = g(a)`.
 
-
-
-
-
-
-
-
-
-
-Equivalence relations
+Terminal object
 ---
 
+We saw the limits of some diagrams which consist of two, three sets. But how about a diagram of zero sets, an empty one.
+
+![Empty diagram](terminal_diagram.svg)
+
+Because there are no objects in the diagram, nothing is required, so every set *can* be a limit of the diagram.
+
+![every set](terminal_candidates.svg)
+
+We know that the real limit is the object to which every other limit candidate (or "impostor limit" as we called them) is connected to.
+
+![every set](terminal_limit_external.svg)
+
+Does such a set exist? Yes it does:
+
+![every set](terminal_limit_internal.svg)
+
+So the *singleton set* is the *terminal object* in the *category of sets*.
+
+Equivalence relations
+===
+
 What is equality? We might have a long theoretical discussion about this question. Or we can define it rigorously using category theory (I hope you prefer the latter).
+
+
+
 
 Some other categories
 ===
