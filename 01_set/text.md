@@ -7,6 +7,7 @@ Preface: What is an Abstract Theory
 ===
 
 > Instead of asking what can be defined and deduced from what is assumed to begin with, we ask instead what more general ideas and principles can be found, in terms of which what was our starting-point can be defined or deduced.
+> Bertrand Russell, from Introduction to Mathematical Philosophy
 
 Most scientific and mathematical theories have a specific domain, to which they are related, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created so it explains how different biological species came to be. And quantum mechanics is a description of what particles are at the low scale. Even the work of most mathematicians, although it is not bound to a specific domain, is strongly related to it, as differential equations are linked to the description of events that change over time. 
 
@@ -70,6 +71,9 @@ Functions
 ===
 
 A function is a relationship between two sets which matches each element of one set, called the *domain* of the function, with exactly one element from another set, called the converse domain, or the *codomain* of the function.
+
+> By function I mean the unity of the act of arranging various representations under one common representation.
+> Immanuel Kant, from Critique of Pure Reason
 
 Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite colour in another set **G** ( in mathematics a function's name is often accompanied by the names of its domain and codomain, like this: **f: R → G**)
 
@@ -162,6 +166,7 @@ I will use the occasion to reiterate some of the more important characteristics 
 Overall everything is OK, as long as you can always provide exactly one result (also known as *The result™*) per value, and in mathematics almost always do. Actually, math is designed in a way so its operations are valid functions:
 
 > Every generalisation of number has ﬁrst presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible.
+> Bertrand Russell, from Introduction to Mathematical Philosophy
 
 Note that most mathematical operations, such as addition, multiplication etc. require two numbers in order to produce a result. This does not mean that they are not functions, it means that they are just a little more fancy ones. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
