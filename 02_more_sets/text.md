@@ -174,7 +174,7 @@ A limit also has to be unique in the sense that you cannot have two limit object
 
 Limits also are defined so that the diagram commutes. 
 
-Limits can be defined formally, just like everything else that we examine, but we won't bother to do that.
+Limits can be defined formally, just like everything else that we examine, but we won't bother to do that here.
 
 Products are Limits
 ---
@@ -183,89 +183,5 @@ OK, we said that limits summarize a structure. What is the structure that a prod
  
 ![External diagram](product_part_external.svg)
  
- By following the morphisms (functions) from the limit object, we can retrieve its components.
-
 Why is the product unique when it comes to representing the two objects? Because any other object that also represents them is connected to the product through a morphism (this is known as the *universal property* of limits).
 
-Pullbacks
----
-
-Imagine a diagram consisting of two objects that are both connected to a third one or of two sets that both have functions to a third one. 
-
-![External diagram](pullback_part_external_internal.svg)
-
-This diagram can expresses two unrelated facts, for example let's take a function from men to people and from parents are people, connecting each person from the set of parents to the same person from the set of all people.
-
-![Internal diagram](pullback_part_internal_father.svg)
-
-Because there are so many types of functions, I feel that I have to offer another example: Think of how recruiting (or "talent aquisition" as it is also called) works. There are companies that post job descriptions of the market and people who fit one or several of the job descriptions posted. This process can be summarised in the same type of diagram:
-
-![Internal diagram](pullback_part_internal_recruit.svg)
-
-The limit to a diagram, as we said, is an object for which is connected to the three objects in it.
-
-![External diagram of a pullback](pullback_external_extra_morphism.svg)
-
-In this case the connection to the third object is just the composition of the other two so it exists by definition (as long as they exist).
-
-![External diagram of a pullback](pullback_external.svg)
-
-Like with the product, we define the limit to be such, that any object that is connected to the three objects in the diagram is also connected to the limit object.
-
-![External diagram of a pullback](pullback_candidates.svg)
-
-In the category of sets, a the object (set) that fits this description for any objects A and B is called their *fiber product*.
-
-![Internal diagram of the pullback](pullback_internal.svg)
-
-It is like the ordinary product of A and B, except that it does not contain all pairs but just the ones which satisfy the condition given by the two functions.
-
-![Internal diagram of the pullback](pullback_product_internal.svg)
-
-The concept might look abstract and detached from reality, but it is actually exactly the opposite. The pullbacks summarize two ideas into one in a way that is very intuitive. For example the pullback of the sets of men to people and the sets of parents to people, is the set of all fathers.
-
-![Internal diagram of the pullback](pullback_internal_father.svg)
-
-Well, technically it is the set of *pairs* of objects where both objects in the set are actually the same object, but let's concentrate on the big picture for now.  And with category theory we can do so without being technically incorrect - a set of pairs where both objects are actually the same object is isomorphic to the set containing just the objects. So we can use the simpler label in our external diagram.
-
-![Internal diagram of the pullback](pullback_external_father.svg)
-
-Task: Definine the two functions that constitute the isomorphism between those two sets.
-
-The pullback of the diagram with the job descriptions is the sets of all matches - pairs that contain one person and one description where the person fits the descripton.
-
-![External diagram of a pullback](pullback_external_limit.svg)
-
-Task: Draw an internal diagram for the second example. 
-
-Task: A pullback is like a product. In fact if a certain sets from the diagram which a pullback summarizes is isomorphic to a certain set which we covered in the first chapter, the pullback becomes equivalent to a product. Find that set.
-
-Equalizers
----
-
-When working with external diagrams, we should not forget that just because two functions come and go from the same sets, that does not mean that they are the same. To remind us that, let's examine the diagram consisting of two objects that are connected with each other in two ways.
-
-![External diagram of a equalizer](equalizer_external.svg)
-
-You can view the diagram as just two functions with the same type signature.
-
-Like with 
-
-
-
-
-
-
-
-
-
-
-Equivalence relations
----
-
-What is equality? We might have a long theoretical discussion about this question. Or we can define it rigorously using category theory (I hope you prefer the latter).
-
-Some other categories
-===
-
-A: Every theory in formal logic, as well as of mathematics can be represented as a directed graph, with `True` and `False` at its center.  and `True` follows *from* everything and everything follows from `False`.
