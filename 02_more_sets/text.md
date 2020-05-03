@@ -69,32 +69,38 @@ So let's begin with an external diagram, showing the definition of the product. 
 
 ![Product, external diagram](product_external.svg)
 
-This diagram already contains the first piece of the puzzle if we have a set **G** which is the product of sets **Y** and **B**, then we should also have functions which give us back the elements of the product, so **G → Y** and **G → B**. 
+This diagram already contains the first piece of the puzzle: if we have a set **G** which is the product of sets **Y** and **B**, then we should also have functions which give us back the elements of the product, so **G → Y** and **G → B**. 
 
-This definition is not complete, however, because the product of **G** and **B** is not the only set for which such functions can be defined. For example a set of triples of **Y x B x R** for some random element **R** also qualifies. And if there is a function from **G** to **B** then the set **G** itself meets our condition for being the product, because it is connected to **B** and to itself. 
+This definition is not complete, however, because the product of **G** and **B** is not the only set for which such functions can be defined. For example: 
+
+- A set of triples of **Y x B x R** for any random element **R** also qualifies.
+
+- If there is a function from **G** to **B** then the set **G** itself meets our condition for being the product, because it is connected to **B** and to itself. 
 
 Depending on our specific case there can be many other other such objects.
 
 ![Product, external diagram](product_candidates.svg)
 
-So how do we set apart all those "imposter" products from the one true product? Simple - they all can be converted to it. This is true, because by definition the pair is nothing more than the sum of its elements, and by definition each impostor can be converted to both elements of the pair.
+So how do we set apart all those "imposter" products from the one true product? Simple - they all can be converted to it. This is true, because: 
+1. By definition, each "impostor" can be converted to both elements of the pair.
+2. The pair is nothing more than the sum of its elements.
 
 More formally, in order for a set **I** to serve as an impostor for the product of **B** and **Y** and there should be two functions, which we will call **b: I → B** and **y: I → Y**. In order to prove that **I** is an impostor we need a function **I → B x Y**. That function is simply (programmers will understand this best) **(a) → b(a) x y(a)** for each **a:I**.
 
 ![Product, external diagram](products_morphisms.svg)
 
-Notice that this definition does not rule out the sets which are isomorphic to the product - when we represents things using functions, the isomorphism is equality.
+Notice that this definition does not rule out the sets which are isomorphic to the product - when we represents things using functions, an isomorphism is the same as equality.
 
 Sums
 ===
 
-We will now study a construct that is pretty similar to the product, but at the same time it is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one, without erasing their structure. Different because it encodes a different type of relation between them - a product encodes an **AND** relation between two sets, while the sum encodes an **OR** relation. For example, a parent is either a mother of a father of a child, so the set of parent's is a sum set of the sets of mothers and fathers. 
+We will now study a construct that is pretty similar to the product but at the same time it is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one without erasing their structure. Different because it encodes a different type of relation between them - a product encodes an **AND** relation between two sets, while the sum encodes an **OR** relation. For example, a parent is either a mother of a father of a child, so the set of parent's is a sum set of the sets of mothers and fathers. 
 
 ![Sum or coproduct](coproduct.svg)
 
 Notice that the when a given object is an element of both sets, then it appears in the sum twice. This is why this type of sum of two sets is also called a *disjoint union*.
 
-Question: Why is this called a sum? 
+**Question:** Why is this called a sum?
 
 Defining Sums in Terms of Sets
 ---
@@ -109,25 +115,34 @@ Like with the product, there is a low-level way to express a sum using sets alon
 
 ![A member of a coproduct, examined](coproduct_member_set.svg)
 
+Again, this distinction is only rellevant only when the two sets have common elements.
+
 
 Defining Sums in Terms of Functions
 ---
 
-You might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. The sum expresses an **OR** relation between two things. A simple property of every **OR** relation is that if something is an **A** that something is also **A OR B**, and the same if it is **B**. For example if I am *a man*, I am also *a man OR a woman*. This is what **OR** means, right?
+You might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. We said that sums express an **OR** relation between two things. A simple property of every **OR** relation is that if something is an **A** that something is also an **A OR B** (and the same is valid if it is **B**). For example if I am *a man*, I am also *a man OR a woman*. This is what **OR** means, right?
 
 This relationship can be expressed as a function. Two functions actually - one for each set that takes part in the relation.
 
 ![Coproduct, external diagram](coproduct_external.svg)
 
-Why can it be expressed as a function? Because it is a *many-to-one* relationship (*one-to-one* if you want to be precise).
+Why can it be expressed as a function? Because it is a *many-to-one* relationship.
 
-You might already notice that this definition is pretty similar to the previous one, and the similarities don't end here - here again we have sets that can be thought as *impostor* sums - ones for which these functions exists, but which aren't real sums, where by "real sum" we mean a set which expresses the *OR* relation and does just that (so no additional structure). 
-
-![Coproduct, external diagram](coproduct_candidates.svg)
 
 What are we saying with this, if we apply it to the example, is simply that if parents are either mothers or fathers, then there surely exist a functions **mothers → parents** and **fathers → parents**.
 
+You might already notice that this definition is pretty similar to the previous one, and the similarities don't end here - here again we have sets that can be thought as *impostor* sums - ones for which these functions exists, but which aren't real sums (where by "real sum" we mean a set which expresses the *OR* relation and contains no additional structure).
+
+![Coproduct, external diagram](coproduct_candidates.svg)
+
+All these sets are, express relationships which are more vague than the simple sum and therefore given any such set there would exist a function from the sum to it. 
+
+For exaple, there exist a trivial function between the set **Y | B **  and the set  **Y | B | R**.
+
 ![Coproduct, external diagram](coproduct_morphisms.svg)
+
+This diagram captures the **OR** relation in the same way as the previous one captures the essence of **AND**.
 
 Duality 
 ===
@@ -137,17 +152,19 @@ If we have to compare the concepts of sum or and product we will find out that t
 - The *product* of two sets is related to an element of the first one *and* one element of the second one.
 - A *sum* of two sets is related to an element of the first one *or* one element of the second one.
 
-Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around:
+Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around.
+
+
+That's normal right? After all, *AND* **is** the opposite of *OR*. The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) <=>(NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
 
 ![Coproduct and product](coproduct_product_duality.svg)
 
-
-When two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *coproduct* in the context of category theory. This is the best example of how external diagrams (and category theory) allow us to formalize connections between different objects that we previously knew by intuition. The connection between *OR* and *AND* has always been there - ever since 19 century when Boolean algebra was discovered, its existence has been demonstrated. For example, its not hard to convince ourselves that De Morgan's law, the expression **NOT (A AND B)** is equivalent to **(NOT A) OR (NOT B)** is true. Or, to put it in everyday language, if you don't like the the combination of ham **AND** cheese, then you should eat something that either does not contain ham **OR** does not contain cheese. But how does that **AND** magically turn into to **OR** when we remove the brackets? The answer could not be expressed until category theory was formulated.
+Otherwise, when two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *converse product*, or *coproduct* in short.
 
 Category Theory - brief definition
 ===
 
-Maybe it is time to see what a category is. Well, a category is about objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't see their elements. This and what I said before, about category theoretic notions being captured by the external diagrams and strictly set-theoretic notions being captured by internal ones.
+Maybe it is time to see what a category is. Well, a category is about objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't *see* their elements. This is why category-theoretic notions being captured by the external diagrams and strictly set-theoretic notions being captured by internal ones.
 
 
 What other categories, or applications of category theory are there, other than sets? We already discussed one - types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets and programming functions are somewhat similar to functions between sets? This is another example of a connection that we can made rigorous using category theory.
@@ -161,27 +178,18 @@ What other categories, or applications of category theory are there, other than 
 
 This diagram illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion. We saw how taking the notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
 
-In addition we have the notion of a category, so the whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyse similarities between the two.
+**NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.**
 
-NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.
+Looking at the table I cannot help but notice the somehow weird, but otherwise completely logical symmetry (or perhaps "reverse symetry") between the the world as viewed through the lense of set theory, and the way it is viewed through the (inverted) lens of cathegory theory:
 
-Limits
-===
+| Category Theory | Set theory | 
+| ---             | ---        |
+| Category        | *N/A*        | 
+| Objects and  Morphisms        | 
+| *N/A*             | Element    | 
 
-Products are one example of what is known in category theory as *limits*. A limit is an object that summarizes a structure (also called a diagram) consisting of other objects and morphisms in a way that allows us to later retrieve some of it.
+It really says it all - by switching to external diagrams, we have lost sight of the particular elements of our sets, but we have gained the ability to see the whole universe that we have been previously trapped in. The whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyse similarities between the two.
 
-A limit also has to be unique in the sense that you cannot have two limit objects for the same structure.
+![Category theory and set theory compared](set_category.svg)
 
-The notion of a limit is strongly related with the notion of a commuting diagrams. This is not obvious when we are examining products because the diagram of products does not have several routes reaching to the same point.
-
-Limits can be defined formally, just like everything else that we examine, but we won't bother to do that here.
-
-Products are Limits
----
-
-OK, we said that limits summarize a structure. What is the structure that a product is summarizing? It is a structure that consists of two objects (sets) that are have no connections between them.
- 
-![External diagram](product_part_external.svg)
- 
-Why is the product unique when it comes to representing the two objects? Because any other object that also represents them is connected to the product through a morphism (this is known as the *universal property* of limits).
-
+Don't let my talking about how better category theory is than set theory get in your head - categories and sets are just two languages, each of which has its own use cases, and arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
