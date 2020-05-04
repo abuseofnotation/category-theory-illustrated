@@ -3,12 +3,12 @@ Some other categories
 
 Every category theory guide (including mine) starts by talking about set theory. However looking back I really don't know why that is the case (most books that center around a specific subject don't start by introducing a different subject). Perhaps the set-first approach is the best way to introduce people to categories, or perhaps that is just one of the things that people just do, simply because everyone else does it. 
 
-One thing is for sure - we don't need to study sets in order to understand categories. So in this chapter I would like to start over and talk about categories as a first concept.
+One thing is for sure - we don't need to study sets in order to understand categories. So in this chapter I would like to start over and talk about categories as a first concept. Pretend like it's a new book:
 
 Starting over with categories
 ===
 
-So, a category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these colourful balls that we saw last time: 
+So, a category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colourful~~ grey balls:
 
 ![Balls](elements.svg)
 
@@ -16,12 +16,53 @@ A category consists of a collection of objects **as well as** some arrows connec
 
 ![A category](category.svg)
 
-Wait a sec so we said that all sets form a category, but at the same time just one set can be seen as a category by itself with, just one which has no morphisms. This is an example of a phenomenon that is very characteristic of category theory - one object can be examined in many different ways.
+We said that all sets form a category, but at the same time any one set can be seen as a category by itself (just one which has no morphisms). This is an example of a phenomenon that is very characteristic of category theory - one structure can be examined in many different ways and play many different roles, often in a recursive fashion.
 
-The analogy of a set as a category with no morphisms is, however, is not very useful, simply because category theory **is all about the morphisms**. If in set theory an arrow is nothing but a pointer from a source to a destination, in category theory an object is nothing but a source and destination for the arrows that are involved in. In category theory objects can be connected by multiple arrows, each of which is unique, this is why objects in this chapter are all grey, while the arrows are in different colours:
+This particular role of a set as a category with no morphisms is, however, not very useful - category theory is **all about the morphisms**. If in set theory, an arrow is nothing but its source and destination, in category theory, an **object** is nothing but a source and destination for the arrows that connect it to other objects. This is why in this chapter the arrows and not the objects are displayed in different colours the category of sets is really the category of set functions.
+
+Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same domain and codomain does not in any way make the equivalent.
 
 ![Two objects connected with multiple arrows](arrows.svg)
 
+That's pretty obvious if we go back to set theory for a second - there are, for example, an infinite number of functions that go from number to boolean and the fact that they have the same signature does in no way make them equivalent to one another.
+
+![Two sets connected with multiple functions](set_arrows.svg)
+
+Composition
+---
+
+One of the few, or maybe even the only, requirement for a structure to be called a category is that two morphisms can make a third, or that morphisms are *composable*. In practice this means that given two successive arrows, we can draw a third one that is equivalent to the consecutive application of the other two.
+
+![Composition of morphisms](composition.svg)
+
+Again, note that this criteria is not met by just *any* morphism with this type signature. There is *exactly one* morphism that fits these criteria.
+
+![Composition of morphisms in the context of additional morphism](composition_arrows.svg)
+
+Commuting diagrams
+---
+
+In the function composition diagrams above, we used colors to illustrate that the third morphism is equivalent to the other two and not just some unrelated morphism. In practice this notation is a little redundant - the only reason to draw diagrams with arrows in the first place is represent paths between objects that are equivalent to each other. 
+
+![Composition of morphisms - a commuting diagram](composition_commuting_diagram.svg)
+
+Diagrams that are like that in which any two paths between two objects are equivalent to one another are called commutative diagrams (or diagrams that commute). All diagrams that we have here (except the wrong ones) commute.
+
+Identity
+---
+
+In order to be able to define more stuff using morphisms, we define what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything to the object.
+
+![The identity morphism (but can also be any other morphism)](identity.svg)
+
+Let's add the very important (and also very boring) reminder that there can be many morphisms from one object to the same object, that actually do stuff, for example mathematics deals with a multitude of functions that have the set of numbers as domain and codomain (e.g. negate, square, add one etc.) and are not at all the identity morphism.
+
+**Question:** What is the identity morphism in the category of sets?
+
+Isomorphisms
+---
+
+The concept of identity morphism, provides us with a category-theoretic definition of an isomoprhism - an isomorphism between two objects (**A** and **B**) consists of two functions - (**A → B**.  and **B → A**) such that their composition is equivalent to the identity function.
 
 
 
