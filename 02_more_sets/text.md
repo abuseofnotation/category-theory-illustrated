@@ -1,7 +1,7 @@
 From Sets to Categories
 ===
 
-In this chapter we will continue with set theory and at the same time we will start exploring categories.
+In this chapter we will continue with set theory and at the same time we will start exploring categories, and talking about why they are important.
 
 Products
 ===
@@ -18,7 +18,7 @@ It is the set of *pairs* of **b**'s and **y**'s.
 
 The product is denoted **B x Y** and it comes equipped with two functions for retrieving the **b** and the **y** from each **(b, y)**.
 
-Question: Why is this called a product? Hint: How many elements does it have?
+**Question**: Why is this called a product? Hint: How many elements does it have?
 
 Products as Objects
 ---
@@ -115,7 +115,7 @@ Like with the product, there is a low-level way to express a sum using sets alon
 
 ![A member of a coproduct, examined](coproduct_member_set.svg)
 
-Again, this distinction is only rellevant only when the two sets have common elements.
+But again, this distinction is only rellevant only when the two sets have common elements.
 
 
 Defining Sums in Terms of Functions
@@ -155,19 +155,18 @@ If we have to compare the concepts of sum or and product we will find out that t
 Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around.
 
 
-That's normal right? After all, *AND* **is** the opposite of *OR*. The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) <=>(NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
+That's normal right? After all, **AND** *is* the opposite of **OR**. The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
 
 ![Coproduct and product](coproduct_product_duality.svg)
 
-Otherwise, when two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. So *product* and *sum* are dual. This is why sum is also known as *converse product*, or *coproduct* in short.
+Otherwise, when in category theory two concepts are captured by the same diagram, only with reversed arrows, we can say that the two concepts are **dual** to each other. That means that the concepts of *product* and *sum* are dual (this is why sum is also known as *converse product*, or *coproduct* in short).
 
 Category Theory - brief definition
 ===
 
-Maybe it is time to see what a category is. Well, a category is about objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't *see* their elements. This is why category-theoretic notions being captured by the external diagrams and strictly set-theoretic notions being captured by internal ones.
+Maybe it is time to see what a category is. Well, a category consists of objects (an example of which are sets) and morphisms which go from one object to another (which can be viewed as functions) and which should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is suffice for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't *see* their elements. This is why category-theoretic notions being captured by the external diagrams and strictly set-theoretic notions being captured by internal ones.
 
-
-What other categories, or applications of category theory are there, other than sets? We already discussed one - types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets and programming functions are somewhat similar to functions between sets? This is another example of a connection that we can made rigorous using category theory.
+What other categories, or applications of category theory are there, other than sets? We already discussed one - types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets and programming functions are somewhat similar to functions between sets? This is another example of a connection between two things that we can be defined using category theory:
 
 
 | Category Theory | Set theory | Programming Languages |
@@ -176,7 +175,7 @@ What other categories, or applications of category theory are there, other than 
 | Objects and  Morphisms        | Sets and Functions   | Classes and functions |
 | N/A             | Element    | Object                |
 
-This diagram illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion. We saw how taking the notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
+This diagram illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion, but we saw how taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
 
 **NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.**
 
@@ -184,12 +183,15 @@ Looking at the table I cannot help but notice the somehow weird, but otherwise c
 
 | Category Theory | Set theory | 
 | ---             | ---        |
-| Category        | *N/A*        | 
-| Objects and  Morphisms        | 
-| *N/A*             | Element    | 
+| Category        | **N/A**        | 
+| Objects and  Morphisms        | Sets and functions |
+| **N/A**             | Element    | 
 
-It really says it all - by switching to external diagrams, we have lost sight of the particular elements of our sets, but we have gained the ability to see the whole universe that we have been previously trapped in. The whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyse similarities between the two.
+By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we have gained the ability to see the whole universe that we have been previously trapped in. The whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyse similarities between these and other structures.
 
 ![Category theory and set theory compared](set_category.svg)
 
-Don't let my talking about how better category theory is than set theory get in your head - categories and sets are just two languages, each of which has its own use cases, and arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
+One remark before we go - the last paragraphs I sound as if I'm *comparing* categories and sets and rooting for categories. I don't want you to get the wrong impression that the two concepts are somehow competing with one another.
+
+Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics in physics. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. Abstract theories, like category theory and set theory, on the other hand, are more like languages for expressing such descriptions. They still can be connected, and are connected in more than one way, but there is no inherent hierarchy between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
+
