@@ -9,3 +9,4 @@ The main reason I am interested in Category Theory is that it allows us to forma
 
 * [01 - Sets. What is an Abstract Theory](/01_set/text.md)
 * [02 - From Sets to Categories](/02_more_sets/text.md)
+* [03 - Some Other Categories](/03_logic/text.md)
