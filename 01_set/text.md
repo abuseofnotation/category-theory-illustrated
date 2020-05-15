@@ -97,7 +97,7 @@ Sets and functions can express relationships between all kinds of objects, and e
 
 The question "How far are we from New York?" is a function with a domain the set of places in the world and a codomain, consisting of the set of all positive numbers 
 
-Question: Some people might say that the codomain of this function is bigger than it should be. How would you refine it?
+**Question:** Some people might say that the codomain of this function is bigger than it should be. How would you refine it?
 
 The question "Who is my father?" is a function whose domain is the set of all people in the world.
 Question: What is the codomain of this function?
@@ -143,12 +143,18 @@ There is a unique function from any set to any singleton set.
 
 ![Function with a singleton set](function_singleton.svg)
 
-Question: Is this really the only way to connect *any* set to a singleton set in a valid way?
+**Question:** Is this really the only way to connect *any* set to a singleton set in a valid way?
 
-Question: Again, what about the other way around?
+**Question:** Again, what about the other way around?
 
-Sets, Functions and Numerical Operation
+Sets and Functions 
 ===
+
+Many things can be expressed as sets and functions, let's examine some of them.
+
+
+Sets and Functions in Numbers
+---
 
 All mathematical operations can be expressed as functions, acting on the set of numbers. Actually there are several such sets, such the set of positive whole numbers, (also called "natural" numbers), **N := {1, 2, 3... ∞}**, the set of both positive and negative whole numbers **Z := {-∞... -3 -2, -1, 0, 1, 2, 3... ∞}**. And the set of "Real" numbers which include all numbers that I know of.
 
@@ -171,9 +177,9 @@ Overall everything is OK, as long as you can always provide exactly one result (
 Note that most mathematical operations, such as addition, multiplication etc. require two numbers in order to produce a result. This does not mean that they are not functions, it means that they are just a little more fancy ones. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
 Sets and Functions in Programming
-===
+---
 
-Sets are used extensively in programming, except that there they are called *types* or also *classes*. All sets of numbers that we discussed earlier also exist in most languages as types, and there are also some non-mathematical types that play a huge role in programming.
+Sets are used extensively in programming, especially in their incarnation as *types* (or also *classes*). All sets of numbers that we discussed earlier also exist in most languages as types, and there are also some non-mathematical types that play a huge role in programming.
 
 The simplest type, `Boolean` is nothing more than a set of two values - `true` and `false`:
 
@@ -187,9 +193,9 @@ Characters are actually used rarely by themselves and mostly as parts of sequenc
 
 Most of the types of programming are composite types - they are a combination of the primitive types that are listed here. Again, we will cover these later.
 
-Question: What is the type equivalent of subsets in programming?
+**Question:** What is the type equivalent of subsets in programming?
 
-Question: Do you recognise some of the basic functions we defined in programming languages you know?
+**Question:** Do you recognise some of the basic functions we defined in programming languages you know?
 
 Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function which that takes an argument of type `Char` and returns a `Boolean`, depending on whether the character is a letter.
 
@@ -199,6 +205,12 @@ However functions in programming can also be quite different from mathematical f
 
 One type of functions used in programming which strongly resembles mathematical ones are those which convert a value from one type to another, for example, the function which converts a floating-point number to an Integer. That is probably the reason why most functional languages are strongly-typed.
 
+Sets VS Types
+---
+
+Types and sets are related concepts, the main difference between the two is that a set are simpler. A set can contain any number of other sets, (even itself), while a type cannot have other types as members. Also, a value has only one type. There exist the concept of are subtypes, just as there are subsets, but again things are stricter. 
+
+Every type can be represented as a set of it's values, but *not the other way around*.
 
 Functional Composition 
 ===

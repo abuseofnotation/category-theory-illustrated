@@ -62,18 +62,19 @@ Functional composition is special not only because you can take any two morphism
 
 This approach for building stuff is often used in programming. To see some examples, you don't need to look further than the way the pipe operator in bash (`|`), that feeds the standard output of a program with the standard input of another program, is (ab)used (if you *want* to look further, note that there is a whole programming paradigm based on functional composition, called "concatenative programming").
 
-But let's get back to the math. If we carefully review the definition above can be reduced to multiple applications of the following formula: given 4 objects and 3 between them morphisms **f** **g** **h**, **(h • g) • f** should bein equal to **h • (g • f)**. 
+But let's get back to the math. If we carefully review the definition above can see that it can be reduced to multiple applications of the following formula: given 4 objects and 3 morphisms between them **f** **g** **h**, combining **h** and **g** and then combining the end result with f** should be the same as combining **h** to the result of **g** and **f** (or simply **(h • g) • f = h • (g • f)**. 
 
 **Task:** show how the definition can be reduced to the formula (the approach resembles mathematical induction).
 
-If this formula is true if and only if this diagram commutes (given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent i.e. they are two ways to express the same thing). 
+This formula is true if and only if this diagram commutes. 
 
 ![Composition of morphisms with many objects](composition_associativity.svg)
 
+Given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent.
 
-This formula (or this diagram) is the definition of a property called **associativity**. that is required for a category to really be called categories. 
+This formula (and the diagram) is the definition of a property called **associativity**. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category), if only because it is required for us to be able to draw diagrams of a category's objects and morphisms, as diagrams can only represent associative structures (if the diagram above does not commute it would be super weird).
 
-It is required for many other structures that we will examine below. If we view functional composition as an algebraic operation, the fact that is associativive means that brackets don't matter when we are using it successively, in the multiplication operation is associative **(1 . 2) . 3 = 1 . (2 . 3)**. While division is not **(1 / 2) / 3 = 1 / (2 / 3)**.
+Associativity is not just about diagrams, for example when we express relations using formulas, associativity just means that brackets don't matter, in our formulas (as evidenced by the definition **(h • g) • f = h • (g • f)**). And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. **(1 . 2) . 3 = 1 . (2 . 3)**. While division is not **(1 / 2) / 3 = 1 / (2 / 3)**.
 
 
 Identity
