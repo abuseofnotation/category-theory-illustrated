@@ -226,7 +226,7 @@ Unlike the set above, most sets that we discussed (like the empty set and single
 
 ![Sets that don't contains themselves](sets_dont_contain_themselves.svg)
 
-In order to understand Russell's paradox we will try to visualise **the set all sets that do not contain themselves**. In the original set notation we can define this set as *Let R = { x | x ∉ x }* (let R be such that it contains all sets *x* such that *x* is not a member of *x*). 
+In order to understand Russell's paradox we will try to visualise **the set all sets that do not contain themselves**. In the original set notation we can define this set as *Let R = { x => x ∉ x }* (let R be such that it contains all sets *x* such that *x* is not a member of *x*). 
 
 ![Russel's paradox - option one](russells_paradox.svg)
 
