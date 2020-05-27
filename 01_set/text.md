@@ -205,12 +205,36 @@ However functions in programming can also be quite different from mathematical f
 
 One type of functions used in programming which strongly resembles mathematical ones are those which convert a value from one type to another, for example, the function which converts a floating-point number to an Integer. That is probably the reason why most functional languages are strongly-typed.
 
-Sets VS Types
+Sets and Types
 ---
 
-Types and sets are related concepts, the main difference between the two is that a set are simpler. A set can contain any number of other sets, (even itself), while a type cannot have other types as members. Also, a value has only one type. There exist the concept of are subtypes, just as there are subsets, but again things are stricter. 
+The concepts of types and sets are related. The concept of sets is simpler - in set theory you have only one kind of object that is (you guessed it) - set and a set can contain anything, including other sets. In type theory, you have two concepts - types and values. Types are like sets, in fact every type can be represented as a set of its values, but *not every set is a type*. Usually, the proper way to think about type is as a collection of values that *share common characteristics*. The definitions tend to vary between different type theories (of which there are a lot), but mostly go along the lines of:
 
-Every type can be represented as a set of it's values, but *not the other way around*.
+- A type cannot contain other types, just values. 
+- value can be a member of only one type (there exist the concept of are subtypes, just as there are subsets, but again things are more strict).
+
+Russell's Paradox
+---
+
+The first type theory was developed by Bertrand Russell in response to a paradox in the original set theory, arising due to the fact that, unlike types (which can only contain *values*), sets can contain other sets. 
+
+In particular, a set can contain itself.
+
+![A set that contains itself](set_contains_itself.svg)
+
+Unlike the set above, most sets that we discussed (like the empty set and singleton sets) do not contain themselves. 
+
+![Sets that don't contains themselves](sets_dont_contain_themselves.svg)
+
+In order to understand Russell's paradox we will try to visualise **the set all sets that do not contain themselves**. In the original set notation we can define this set as *Let R = { x | x ∉ x }* (let R be such that it contains all sets *x* such that *x* is not a member of *x*). 
+
+![Russel's paradox - option one](russells_paradox.svg)
+
+If we look at the definition, we recognise that the set that we just defined - *R* does not contain itself and therefore it belongs there as well.
+
+![Russel's paradox - option one](russells_paradox_2.svg)
+
+Hm, something is not quite right with this diagram as well - Because of the new adjustments that we made *R* **contains itself**. And removing it from the set would just bring us back to the previous situation. This is Russell's paradox. There are, of couse, multiple theories that it does not apply to.
 
 Functional Composition 
 ===
@@ -305,7 +329,7 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-Question: Try to come up with a good example that shows how a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
+*Question:* Try to come up with a good example that shows how a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
 
-Task: Think of two singleton sets, and try to pinpoint the relation that they have.
+*Task:* Think of two singleton sets, and try to pinpoint the relation that they have.
 

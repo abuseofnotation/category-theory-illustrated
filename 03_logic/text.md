@@ -124,7 +124,10 @@ This is it.
 
 Monoids and groups
 ===
-TBD
+
+Since we are done with categories, let's look at some other structures that are also interesting - like categories, monoids/groups are also abstract systems consisting of objects and rules for manipulating these objects. 
+
+A monoid is defined by a collection of objects and an operation that allows us to combine two objects and produce a third one.
 
 Orders
 ===
