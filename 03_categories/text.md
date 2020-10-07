@@ -1,4 +1,4 @@
-Some Other Categories
+Defining Categories
 ===
 
 Every category theory guide (including mine) starts by talking about set theory. However, looking back, I really don't know why that is the case - surely most other books that focus around a specific subject don't start by introducing an entirely different subject. Perhaps the set-first approach is the best way to introduce people to categories. or perhaps using sets to introduce categories is just one of the things that people just do, simply because everyone else does it. But one thing is for sure - we don't need to study sets in order to understand categories. So in this chapter I would like to start over and talk about categories as a first concept. So pretend like it's a new book:
@@ -80,7 +80,7 @@ Associativity is not just about diagrams, for example when we express relations 
 Identity
 ---
 
-Arabic mathematicians invented the number zero that, although useless by itself, allowed them to define many useful numbers. In order to be able to define more stuff using morphisms in category theory, we too would want to define what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
+Ancient mathematicians invented the number zero that, although useless by itself, allowed them to define many useful numbers. In order to be able to define more stuff using morphisms in category theory, we too would want to define what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
 
 ![The identity morphism (but can also be any other morphism)](identity.svg)
 
@@ -122,17 +122,3 @@ A category is a collection of **objects** (we can think of them as points) and *
 
 This is it.
 
-Monoids and groups
-===
-
-Since we are done with categories, let's look at some other structures that are also interesting - like categories, monoids/groups are also abstract systems consisting of objects and rules for manipulating these objects. 
-
-A monoid is defined by a collection of objects and an operation that allows us to combine two objects and produce a third one.
-
-Orders
-===
-TBD
-
-Algebras
-===
-TBD
