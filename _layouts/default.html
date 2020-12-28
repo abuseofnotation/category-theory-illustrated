@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title> {{site.name}} - {{ page.title }}</title>
+      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/style.css">
+      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/custom-style.css">
+    </head>
+
+    <body>
+      <div class="header">
+        <div class="container">
+          <img src="{{site.baseurl}}/logo.svg" class="logo">
+        </div>
+      </div>
+      <div class="container page-{{page.title}}">
+        <!--<h1>{{page.title}}</h1> -->
+        {{ content }}
+        <div class="prev-next">
+        {% if page.previous.url %}
+          <a class="prev" href="{{site.baseurl}}{{page.previous.url}}">&laquo;prev</a>
+        {% endif %}
+        {% if page.next.url %}
+          <a class="next" href="{{site.baseurl}}{{page.next.url}}">next&raquo;</a>
+        {% endif %}
+      </div>
+      </div>
+      <div class="footer">
+        <div class="container">
+          <h1>Contents</h1>
+          {% for chapter in site.chapters %}
+            <p><a href="{{chapter.url  | prepend:site.baseurl}}">{{chapter.title}}</a></p>
+          {% endfor %}
+          <!--
+          <h1>Download</h1>
+          <p><a href="{{site.baseurl}}{{site.baseurl}}.epub">as epub</a></p>
+          <p><a href="{{site.baseurl}}{{site.baseurl}}.txt">as txt</a></p>
+          -->
+        </div>
+      </div>
+    </body>
+
+
+

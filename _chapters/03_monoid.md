@@ -1,5 +1,9 @@
-Monoids etc.
+---
+layout: default
+title: Monoids etc
+---
 
+Monoids etc
 ===
 
 Since we are done with categories, let's look at some other structures that are also interesting - monoids. Like categories, monoids/groups are also abstract systems consisting of objects and rules for manipulating these objects. 
@@ -11,13 +15,13 @@ Monoids are simpler than categories. A monoid is defined by a collection (set) o
 
 Let's take our familiar colourful balls.
 
-[Balls](balls.svg)
+![Balls](balls.svg)
 
 In this case a monoid would be a rule (operation) for "combining" two balls into one. 
 
 An example of such rule would be blending the colors of the balls, as if we are mixing paint.
 
-[A rule for combining balls](balls_rule.svg)
+![A rule for combining balls](balls_rule.svg)
 
 You can probably think of other ways to define such a rule. This will help you realize that there can be many ways to create a monoid from a given set of items. The monoid is not the set itself, it is the set *together with the rule*.
 
@@ -26,18 +30,18 @@ Associativity
 
 The monoid rule should, like functional composition, be "associative" i.e. applying it on the same number of elements in a different order should make no difference.
 
-[Associativity in the color mixing operation](balls_associativity.svg)
+![Associativity in the color mixing operation](balls_associativity.svg)
 
 When a rule is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can add or remove a term that is present at both sides of an equation and retaining the equality of the existing terms:
 
-[Associativity in the color mixing operation](balls_arithmetic.svg)
+![Associativity in the color mixing operation](balls_arithmetic.svg)
 
 The identity element
 ---
 
 Actually, not any (associative) rule for combining elements makes the balls form a monoid (it makes them form a "semigroup", which is also a thing, but that's a separate topic). In order to be a monoid, a set must feature what is called an "identity element" of a given rule (or a *zero* element, if you prefer) - one that, when combined with any other element gives back that same element not the identity but the other one. Or simply **x • i = x and i • x = x for any x**. In the case of our color-mixing monoid the identity element is the color white, represented by the white ball:
 
-[The identity element of the color-mixing monoid](balls_identity.svg) 
+![The identity element of the color-mixing monoid](balls_identity.svg) 
 
 As you probably remember from the last chapter, functional composition is also associative and it also contains an identity element, so you might start suspecting that it forms a monoid in some way. And it is really the case with one little caveat. 
 
@@ -52,13 +56,13 @@ Monoids from numbers
 
 Mathematics is not all about numbers, however numbers do tend to pop up in most of its areas and monoids are no exception. The set of natural numbers *N* form a monoid when combined with the all too familiar operation of addition (or to use the official terminology *N* *form* a monoid *under* addition).
 
-[The monoid of numbers under addition](numbers_addition.svg)
+![The monoid of numbers under addition](numbers_addition.svg)
 
-(if you see a **1 + 1 = 2** in your texbook you know you are working on math foundations(or you are in kindergarden)).
+(if you see a **1 + 1 = 2** in your texbook you know you are working on math foundations (or you are in kindergarden)).
 
 The natural numbers also form a monoid under multiplication as well:
 
-[The monoid of numbers under multiplication](numbers_multiplication.svg)
+![The monoid of numbers under multiplication](numbers_multiplication.svg)
 
 **Task:** Which are the identity elements of those monoids?
 
@@ -72,13 +76,17 @@ Thinking about other operations that we covered (operation being a function whic
 We can prove that **AND** is associative by expanding the formula **(A AND B) AND C = A AND (B AND C)** in all possible ways:
 
 **(TRUE AND FALSE) AND TRUE = TRUE AND (FALSE AND TRUE)**
+
 **(TRUE AND FALSE) AND FALSE = TRUE AND (FALSE AND FALSE)**
+
 **(FALSE AND FALSE) AND TRUE = FALSE AND (FALSE AND TRUE)**
+
 ...
 
 And we can prove that **TRUE** is the identity element by expanding the other formulas that state that for all elements **A** **I AND A = A**
 
 **FALSE AND TRUE = FALSE**
+
 **TRUE AND TRUE = TRUE**
 
 ...and then do the same for **A AND I = A**.
@@ -102,13 +110,13 @@ Commutative monoids
 
 Looking at the monoid laws and the examples we gave so far, we observe that all of them obey one more rule (law) which we didn't specify, namely that the order in which the operations are applied is irrelevant to the end result.
 
-[Commutative monoid operation](monoid_commutative.svg)
+![Commutative monoid operation](monoid_commutative.svg)
 
 Such operations (ones for which combining a given set of objects yields the same result no matter which one is first and which one is second) are called *commutative* operations. Monoids with operations that are commutative are called *commutative monoids*. 
 
 As we said, addition is commutative as well - it does not matter whether if I have given you 1 apple and then 2 more, or if I have given you 2 first and then 1 more i.e. **x + y = y + x**.
 
-[Commutative monoid operation](addition_commutative.svg)
+![Commutative monoid operation](addition_commutative.svg)
 
 All monoids that we examined so far are also *commutative*, and we will see some non-commutative ones later. 
 
@@ -132,37 +140,3 @@ Here are the algebraic structures that we have seen so far and the laws that the
 |Associativity| X | X | X |
 |Identity| | X | X |
 |Invertability | |  | X |
-
-Symmetry groups
-===
-
-An interesting set of groups/monoids of *symmetries* of some object
-
-Group of rotations 
----
-
-Group of reflections
----
-
-Cancellation law
----
-
-
-
-Categories
-===
-
-Some more advanced examples
-===
-
-The trivial monoid
----
-Peano arithmetic
-
-
-Monoids as categories 
-===
-
-The free monoid.
-===
-
