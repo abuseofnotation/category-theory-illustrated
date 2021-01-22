@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Monoids etc
+title: Monoids 
 ---
 
 Monoids etc
@@ -273,27 +273,30 @@ Those two operations and their composite results in a group called **Dih3** that
 Monoids as Categories
 ===
 
-We began by defining a monoid as a set of composable objects, but as we saw, those objects can be also seen as actions e.g. the red ball in our color-blending monoid can be seen as the action of adding the color red to the mix, as the number **2** in the monoid of addition can be seen as the function **+2**. And actions are basically functions, so perhaps there is a way to model monoids using set theory.
-
+We began by defining a monoid as a set of composable objects, but, as we saw, those objects can be also seen as actions e.g. the **red ball** in our color-blending monoid can be seen as the action of **adding the color red** to the mix. By the same token, the number **2** in the monoid of addition can be seen as the function **+2**. Because actions are basically functions from a set to itself, there is a way to model monoids using set theory.
 So let's consider the monoid/group **Z3** again.
 
 ![The group of rotations in a triangle - group notation](symmetry_rotation_actions.svg)
 
-We can see that it is composed of a set of three elements and an equal number of functions between that set and itself, where we have a function to go from any element to any other one.
+We can see that it is composed of a set of three elements and three functions between that set and itself, where we have a function to go from any element to any other one.
 
 ![The group of rotations in a triangle - set notation](symmetry_rotation_functions.svg)
 
-And those functions obviously compose, as all functions do (combining each two functions makes up a third one)
+And those functions obviously compose, as all functions do. Aaand we do have the *identity function* too, so monoids are totally categories. 
 
 ![The group of rotations in a triangle - set notation](symmetry_rotation_set.svg)
 
-And we do have the identity function itself too, so monoids indeed form a category.
+The diagram above is a good representation of the category **Z3** in terms of set theory, having all of it's objects and morphisms (except the identity one, but it goes without saying). 
+
+So let's try to draw an external (categorical) diagram of the same category.
 
 ![The group of rotations in a triangle - categorical notation](symmetry_rotation_external.svg)
 
-But wait, we said that sets in set theory correspond to objects in category theory. So if a monoid is based on just one set, then the corresponding category would have just one object and therefore it is better represented as just one point from which all arrows come and to which they go (this representation would also show (correctly) that all morphisms in the category compose with one another).
+But wait, if *sets* in set theory correspond to *objects* in category theory and if a monoid is just one set, then the corresponding category would have just one object and therefore it is better represented as just one point from which all arrows come and to which they go (this representation would also show (correctly) that all morphisms in the category compose with one another).
 
 ![The group of rotations in a triangle - categorical notation](symmetry_rotation_category.svg)
+
+All monoids' external diagrams would have just one object - the only difference would be the number of morphisms that the object has.
 
 The intuition behind this representation is encompassed by the requirement of **closure** that monoid and group operations have - it is the law that applying the operation on any two elements of the set of elements that form the monoid always results in a element that is also a member of the set e.g. no matter how do you flip a triangle, you'd still get a triangle. 
 
@@ -304,4 +307,4 @@ The intuition behind this representation is encompassed by the requirement of **
 |Invertability  | |  | X |
 |Closure  | | X | X |
 
-When we view a monoid as a category, this law says that all morphisms in the category should be from one object to itself - a monoid, any monoid, can be seen as a category with one object (and a a various amount of morphisms).
+When we view a monoid as a category, this law says that all morphisms in the category should be from one object to itself - a monoid, any monoid, can be seen as a category with one object.

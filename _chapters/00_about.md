@@ -1,9 +1,9 @@
 ---
 layout: default
-title: About this book
+title: About 
 ---
 
-About
+About this book
 ===
 
 This book is a product of my own endeavour of understanding category theory from a more non-mathematical viewpoint - it is just that as I am explaining something, I am understanding it better.

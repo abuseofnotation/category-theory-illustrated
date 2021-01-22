@@ -1,6 +1,6 @@
 ---
 layout: default
-title: From Sets to Categories
+title: Categories
 ---
 
 From Sets to Categories
