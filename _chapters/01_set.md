@@ -68,7 +68,7 @@ Of course if one is a valid answer, so can be zero. If we want a set of all *bla
 
 Note that a set is defined only by the items it contains, which means that there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. In other words, the empty set is *unique* set, which makes it a very special one. Formally, the empty set is marked with the symbol **∅** (so **B = W = ∅**).
 
-The empty set is a special one, for example, it is a subset of every other set (mathematically speaking, **∀ A | A ⊆ ∅**)
+The empty set is a special one, for example, it is a subset of every other set (mathematically speaking, **∀ A \| A ⊆ ∅**)
 
 We will encounter the empty set again.
 
@@ -105,11 +105,12 @@ The question "How far are we from New York?" is a function with a domain the set
 **Question:** Some people might say that the codomain of this function is bigger than it should be. How would you refine it?
 
 The question "Who is my father?" is a function whose domain is the set of all people in the world.
-Question: What is the codomain of this function?
+
+**Question:** What is the codomain of this function?
 
 Note that the question "Who is my child?" is *NOT* a straightforward function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.
 
-Question: Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
+**Question:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
 
 The Identity Function
 ---
@@ -135,11 +136,11 @@ There is a unique function from the empty set to any other set.
 
 ![Function with empty set](function_empty.svg)
 
-Question: Is this really valid? Why? Check the definition.
+**Question:** Is this really valid? Why? Check the definition.
 
 Note that this statement is also a result from the one saying that there is a function between a Subset and a Set, and the one that says that the empty set is a subset of any other set.
 
-Question: What about the other way around. Are there functions with the empty set as a codomain as opposed to a domain?
+**Question:** What about the other way around. Are there functions with the empty set as a codomain as opposed to a domain?
 
 Functions and Singleton Sets
 ---
@@ -336,5 +337,5 @@ Following the logic from the last paragraph, each statement about something that
 
 *Question:* Try to come up with a good example that shows how a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
 
-*Task:* Think of two singleton sets, and try to pinpoint the relation that they have.
+**Task:** Think of two singleton sets, and try to pinpoint the relation that they have.
 

@@ -11,7 +11,7 @@ In this chapter we will continue with set theory and at the same time we will st
 Products
 ===
 
-In the previous chapter, we needed a way to make a set that is a composite of other sets that we already have. For example when we discussed mathematical functions, we couldn't define **+** and **-** functions, because we only knew about functions that take one argument. When we talked about programming, we talked about the primitive types, `Char` and `Number`, and we mentioned that most of the types are composite types. So how do we construct those?
+In the previous chapter, we needed a way to make a set that is a composite of other sets that we already have. For example, when we discussed mathematical functions, we couldn't define **+** and **-** functions, because we only knew about functions that take one argument. When we talked about programming, we talked about the primitive types, `Char` and `Number`, and we mentioned that most of the types are composite types. So how do we construct those?
 
 The simplest composite type, of the sets **B**, which contains **b**'s and the set**Y**, which contains **y**'s is the the *product* or **B** and **Y**.
 
@@ -30,7 +30,7 @@ Products as Objects
 
 We established that in programming sets resemble types and functions resemble functions. Products, in this case, are like stripped-out *classes* (also called *records* or *structs*). The composite sets (the ones which form the product) are just the class's fields (also called *members*). The functions for accessing them are like what programmers call *getter methods*.
 
-For example the famous OOP example of `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers (we still haven't defined strings and lists in terms of set theory but we will get to that). Objects with more than two values can be expressed as products the composites of which are themselves products.
+For example, the famous OOP example of `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers (we still haven't defined strings and lists in terms of set theory but we will get to that). Objects with more than two values can be expressed as products the composites of which are themselves products.
 
 Using Products to Define Numeric Operations
 ---
@@ -110,7 +110,7 @@ Notice that the when a given object is an element of both sets, then it appears 
 Defining Sums in Terms of Sets
 ---
 
-Simply put, a sum of two sets is a set that contains all elements from the first set and all elements from the second one. But, as with the product, it is not so straightforward to represent sums in terms of sets. For example if two sets can have the same element as a member, their sum will have that element twice which is not permitted, because a set cannot contain the same element twice.
+Simply put, a sum of two sets is a set that contains all elements from the first set and all elements from the second one. But, as with the product, it is not so straightforward to represent sums in terms of sets. For example, if two sets can have the same element as a member, their sum will have that element twice which is not permitted, because a set cannot contain the same element twice.
 
 As with the product, the solution is to put some extra structure.
 
@@ -126,7 +126,7 @@ But again, this distinction is only rellevant only when the two sets have common
 Defining Sums in Terms of Functions
 ---
 
-You might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. We said that sums express an **OR** relation between two things. A simple property of every **OR** relation is that if something is an **A** that something is also an **A OR B** (and the same is valid if it is **B**). For example if I am *a man*, I am also *a man OR a woman*. This is what **OR** means, right?
+You might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. We said that sums express an **OR** relation between two things. A simple property of every **OR** relation is that if something is an **A** that something is also an **A OR B** (and the same is valid if it is **B**). For example, if I am *a man*, I am also *a man OR a woman*. This is what **OR** means, right?
 
 This relationship can be expressed as a function. Two functions actually - one for each set that takes part in the relation.
 
@@ -143,7 +143,7 @@ You might already notice that this definition is pretty similar to the previous 
 
 All these sets are, express relationships which are more vague than the simple sum and therefore given any such set there would exist a function from the sum to it. 
 
-For exaple, there exist a trivial function between the set **Y | B **  and the set  **Y | B | R**.
+For example, there exist a trivial function between the set **Y \| B**  and the set  **Y \| B \| R**.
 
 ![Coproduct, external diagram](coproduct_morphisms.svg)
 
@@ -200,13 +200,10 @@ One remark before we go - the last paragraphs I sound as if I'm *comparing* cate
 
 Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics in physics. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. Abstract theories, like category theory and set theory, on the other hand, are more like languages for expressing such descriptions. They still can be connected, and are connected in more than one way, but there is no inherent hierarchy between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
 
-Defining Categories
+Defining Categories (again)
 ===
 
-Every category theory guide (including mine) starts by talking about set theory. However, looking back, I really don't know why that is the case - surely most other books that focus around a specific subject don't start by introducing an entirely different subject. Perhaps the set-first approach is the best way to introduce people to categories. or perhaps using sets to introduce categories is just one of the things that people just do, simply because everyone else does it. But one thing is for sure - we don't need to study sets in order to understand categories. So in this chapter I would like to start over and talk about categories as a first concept. So pretend like it's a new book:
-
-Starting over with categories
-===
+Every category theory guide (including mine) starts by talking about set theory, however looking back I really don't know why that is the case - most books that focus around a given subject don't start by introducing an entirely different subject. Perhaps the set-first approach is the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of the things that people just do because everyone else does it. But one thing is for sure - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like it's a new book.
 
 So, a category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colourful~~ grey balls:
 
@@ -231,7 +228,7 @@ Why is that is pretty obvious if we go back to set theory for a second (OK, mayb
 Composition
 ---
 
-One of the few, or maybe even the only, requirement for a structure to be called a category is that two morphisms can make a third, or in other words that morphisms are *composable* - given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
+One of the few or maybe even the only requirement for a structure to be called a category is that two morphisms can make a third, or in other words that morphisms are *composable* - given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
 
 ![Composition of morphisms](composition.svg)
 
@@ -274,7 +271,7 @@ This formula is true if and only if this diagram commutes.
 
 Given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent.
 
-This formula (and the diagram) is the definition of a property called **associativity**. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category), if only because it is required for us to be able to draw diagrams of a category's objects and morphisms, as diagrams can only represent associative structures (if the diagram above does not commute it would be super weird).
+This formula (and the diagram) is the definition of a property called **associativity**. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above does not commute - it would be super weird).
 
 Associativity is not just about diagrams, for example when we express relations using formulas, associativity just means that brackets don't matter, in our formulas (as evidenced by the definition **(h • g) • f = h • (g • f)**). And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. **(1 . 2) . 3 = 1 . (2 . 3)**. While division is not **(1 / 2) / 3 = 1 / (2 / 3)**.
 
@@ -286,16 +283,15 @@ Ancient mathematicians invented the number zero that, although useless by itself
 
 ![The identity morphism (but can also be any other morphism)](identity.svg)
 
-It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example mathematics deals with a multitude of functions that have the set of numbers as domain and codomain, such as **negate**, **square**, **add one**, and are not at all the identity morphism.
+It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as domain and codomain, such as **negate**, **square**, **add one**, and are not at all the identity morphism.
 
 **Question:** What is the identity morphism in the category of sets?
 
-Why do we need to define a morphism that does nothing? 
 
 Isomorphisms
 ---
 
-Once we have the concept of identity morphism defined we can have a category-theoretic definition of an isomoprhism (which is important, because the concept of an isomorphism is very important for cathegory theory): An isomorphism between two objects (**A** and **B**) consists of two morphisms - (**A → B**.  and **B → A**) such that their compositions are equivalent to the identity functions of the respective objects. 
+Why do we need to define a morphism that does nothing? It's because morphisms are the basic building blocks of our language and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined we can have a category-theoretic definition of an *isomoprhism* (which is important, because the concept of an isomorphism is very important for cathegory theory): An isomorphism between two objects (**A** and **B**) consists of two morphisms - (**A → B**.  and **B → A**) such that their compositions are equivalent to the identity functions of the respective objects. 
 
 Here is how this looks when expressed using a formulas:
 

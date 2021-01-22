@@ -39,12 +39,13 @@
      id="namedview3399"
      showgrid="false"
      inkscape:zoom="2.3349572"
-     inkscape:cx="297.64999"
-     inkscape:cy="115.55631"
+     inkscape:cx="214.13668"
+     inkscape:cy="81.29444"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg3397" />
+     inkscape:current-layer="svg3397"
+     inkscape:document-rotation="0" />
   <circle
      cx="83.400002"
      cy="59.799999"
@@ -128,5 +129,13 @@
      cy="113.1"
      r="24.6"
      id="circle3389"
+     style="stroke-width:6;stroke-miterlimit:10" />
+  <circle
+     fill="#8967ac"
+     stroke="#651c5f"
+     cx="214.13669"
+     cy="81.294441"
+     r="24.6"
+     id="circle3387-4"
      style="stroke-width:6;stroke-miterlimit:10" />
 </svg>

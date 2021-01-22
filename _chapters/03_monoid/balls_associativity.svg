@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -92,7 +92,7 @@
      cy="34.313828"
      r="21.732838"
      id="circle274-5"
-     style="stroke-width:5.30069;stroke-miterlimit:10" />
+     style="stroke-width:5.29889764;stroke-miterlimit:10;stroke-dasharray:none" />
   <circle
      fill="#54b948"
      stroke="#00873a"

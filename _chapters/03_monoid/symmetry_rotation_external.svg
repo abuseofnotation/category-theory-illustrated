@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="595.3"
+   height="200"
+   version="1.1"
+   id="svg2289"
+   sodipodi:docname="symmetry_rotation_external.svg"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+  <metadata
+     id="metadata2295">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2293" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1838"
+     inkscape:window-height="1063"
+     id="namedview2291"
+     showgrid="false"
+     inkscape:zoom="2.3651941"
+     inkscape:cx="297.64999"
+     inkscape:cy="100"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2289" />
+  <g
+     transform="matrix(.47127 0 0 .46783 157.85 -68.789)"
+     id="g2287">
+    <circle
+       r="61.8"
+       cy="233.923"
+       cx="147.154"
+       stroke-miterlimit="10"
+       opacity=".14"
+       stroke="#000"
+       stroke-width="6"
+       id="circle2255" />
+    <circle
+       r="61.3"
+       cy="237.423"
+       cx="398.354"
+       stroke-miterlimit="10"
+       opacity=".14"
+       stroke="#000"
+       stroke-width="6"
+       id="circle2257" />
+    <circle
+       r="58.5"
+       cy="470.123"
+       cx="385.822"
+       stroke-miterlimit="10"
+       opacity=".14"
+       stroke="#000"
+       stroke-width="6"
+       id="circle2259" />
+    <circle
+       r="58.5"
+       cy="466.323"
+       cx="392.754"
+       stroke-miterlimit="10"
+       fill="#e1e1e1"
+       stroke="#808285"
+       stroke-width="10.649"
+       id="circle2261" />
+    <g
+       stroke="#838383"
+       stroke-width="6.389"
+       stroke-miterlimit="10"
+       id="g2281">
+      <g
+         fill="#ddd"
+         id="g2267">
+        <path
+           d="M315.1 101.79c10.682-4.135 21.77-7.738 33.127-11.074-8.518-8.139-17.577-16.01-27.178-23.616-2.04 12.119-3.103 21.663-5.949 34.69z"
+           transform="matrix(.4768 -.02932 .03214 .42867 147.58 197.367)"
+           stroke-width="35.526"
+           id="path2263" />
+        <path
+           d="M197.036 89.49c39.237-9.724 89.303-9.828 120.462-3.317"
+           stroke-width="10.649"
+           paint-order="markers fill stroke"
+           transform="matrix(.89574 0 0 .81736 18.384 154.236)"
+           id="path2265" />
+      </g>
+      <g
+         fill="none"
+         id="g2273">
+        <path
+           d="M315.1 101.79c10.682-4.135 21.77-7.738 33.127-11.074-8.518-8.139-17.577-16.01-27.178-23.616-2.04 12.119-3.103 21.663-5.949 34.69z"
+           transform="matrix(.0404 .47949 -.42465 .04253 420.365 215.987)"
+           stroke-width="35.526"
+           id="path2269" />
+        <path
+           d="M197.036 89.49c39.237-9.724 89.303-9.828 120.462-3.317"
+           stroke-width="10.649"
+           paint-order="markers fill stroke"
+           transform="matrix(.02124 .90209 -.81116 .01938 460.105 84.854)"
+           id="path2271" />
+      </g>
+      <g
+         fill="none"
+         id="g2279">
+        <path
+           d="M315.1 101.79c10.682-4.135 21.77-7.738 33.127-11.074-8.518-8.139-17.577-16.01-27.178-23.616-2.04 12.119-3.103 21.663-5.949 34.69z"
+           transform="matrix(.34233 .33563 .30202 -.30371 174.44 344.507)"
+           stroke-width="35.526"
+           id="path2275" />
+        <path
+           d="M93.695 115.708c61.272-35.141 145.433-49.2 223.803-29.535"
+           stroke-width="10.649"
+           paint-order="markers fill stroke"
+           transform="matrix(.67879 .58877 .52943 -.61939 48.6 292.27)"
+           id="path2277" />
+      </g>
+    </g>
+    <circle
+       r="61.3"
+       cy="233.523"
+       cx="396.597"
+       stroke-miterlimit="10"
+       fill="#dbdbe5"
+       stroke="#808285"
+       stroke-width="10.649"
+       id="circle2283" />
+    <circle
+       r="61.8"
+       cy="230.023"
+       cx="141.054"
+       stroke-miterlimit="10"
+       fill="#ddd"
+       stroke="#808285"
+       stroke-width="10.649"
+       id="circle2285" />
+  </g>
+</svg>
