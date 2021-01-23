@@ -61,13 +61,13 @@
      inkscape:document-rotation="0" />
   <circle
      cx="172.00294"
-     cy="70.42627"
+     cy="152.90643"
      r="21.732838"
      id="circle258-8"
      style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
   <circle
      cx="267.61407"
-     cy="72.600937"
+     cy="155.0811"
      r="21.732838"
      id="circle260-7"
      style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
@@ -75,7 +75,7 @@
      fill="#fce600"
      stroke="#ffdd00"
      cx="167.76237"
-     cy="63.181992"
+     cy="145.66216"
      r="21.732838"
      id="circle272-3"
      style="stroke-width:5.30069;stroke-miterlimit:10" />
@@ -83,7 +83,7 @@
      fill="#39bced"
      stroke="#008dd2"
      cx="263.37354"
-     cy="65.356659"
+     cy="147.83682"
      r="21.732838"
      id="circle274-5"
      style="stroke-width:5.30069;stroke-miterlimit:10" />
@@ -91,12 +91,12 @@
      style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
      id="path357-1"
      cx="217.06706"
-     cy="65.644913"
+     cy="148.12508"
      rx="10.920961"
      ry="10.828999" />
   <circle
      cx="82.795029"
-     cy="71.46376"
+     cy="153.94392"
      r="21.60948"
      id="circle3369-5"
      style="opacity:0.13;stroke:#000000;stroke-width:5.2706;stroke-miterlimit:10" />
@@ -104,7 +104,7 @@
      fill="#d71920"
      stroke="#be1e2d"
      cx="78.578552"
-     cy="64.172745"
+     cy="146.65291"
      r="21.60948"
      id="circle3383-7"
      style="stroke-width:5.2706;stroke-miterlimit:10" />
@@ -112,12 +112,12 @@
      style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
      id="path357-4-0"
      cx="125.14213"
-     cy="64.952225"
+     cy="147.43239"
      rx="10.920961"
      ry="10.828999" />
   <circle
      cx="495.38004"
-     cy="73.153397"
+     cy="155.63356"
      r="21.732838"
      id="circle260-7-6"
      style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
@@ -125,7 +125,7 @@
      fill="#39bced"
      stroke="#008dd2"
      cx="491.1395"
-     cy="65.909134"
+     cy="148.3893"
      r="21.732838"
      id="circle274-5-2"
      style="stroke-width:5.30069;stroke-miterlimit:10" />
@@ -133,12 +133,12 @@
      style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
      id="path357-1-9"
      cx="447.08374"
-     cy="66.326065"
+     cy="148.80623"
      rx="10.920961"
      ry="10.828999" />
   <circle
      cx="404.21857"
-     cy="73.291824"
+     cy="155.77199"
      r="21.484453"
      id="circle3371"
      style="opacity:0.13;stroke:#000000;stroke-width:5.24011;stroke-miterlimit:10" />
@@ -146,7 +146,7 @@
      fill="#f58235"
      stroke="#e76524"
      cx="400.02649"
-     cy="66.043015"
+     cy="148.52318"
      r="21.484453"
      id="circle3385"
      style="stroke-width:5.24011;stroke-miterlimit:10" />
@@ -156,17 +156,17 @@
      width="35.2635"
      height="3.7368894"
      x="313.52997"
-     y="62.009583" />
+     y="144.48975" />
   <rect
      style="fill:#000000;fill-rule:evenodd;stroke-width:0.687923"
      id="rect42-3"
      width="35.2635"
      height="3.7368894"
      x="313.332"
-     y="68.035568" />
+     y="150.51573" />
   <circle
      cx="265.59952"
-     cy="151.93979"
+     cy="75.265228"
      r="21.732838"
      id="circle258-8-6"
      style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
@@ -174,13 +174,13 @@
      fill="#fce600"
      stroke="#ffdd00"
      cx="261.35895"
-     cy="144.69553"
+     cy="68.020966"
      r="21.732838"
      id="circle272-3-5"
      style="stroke-width:5.30069;stroke-miterlimit:10" />
   <circle
      cx="176.3916"
-     cy="152.97728"
+     cy="76.302719"
      r="21.60948"
      id="circle3369-5-6"
      style="opacity:0.13;stroke:#000000;stroke-width:5.2706;stroke-miterlimit:10" />
@@ -188,7 +188,7 @@
      fill="#d71920"
      stroke="#be1e2d"
      cx="172.17513"
-     cy="145.68628"
+     cy="69.011719"
      r="21.60948"
      id="circle3383-7-2"
      style="stroke-width:5.2706;stroke-miterlimit:10" />
@@ -196,12 +196,12 @@
      style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
      id="path357-4-0-9"
      cx="218.73871"
-     cy="146.46576"
+     cy="69.791199"
      rx="10.920961"
      ry="10.828999" />
   <circle
      cx="405.44214"
-     cy="154.0616"
+     cy="77.387039"
      r="21.484453"
      id="circle3371-0"
      style="opacity:0.13;stroke:#000000;stroke-width:5.24011;stroke-miterlimit:10" />
@@ -209,7 +209,7 @@
      fill="#f58235"
      stroke="#e76524"
      cx="401.25006"
-     cy="146.81279"
+     cy="70.138229"
      r="21.484453"
      id="circle3385-9"
      style="stroke-width:5.24011;stroke-miterlimit:10" />
@@ -219,20 +219,12 @@
      width="35.2635"
      height="3.7368894"
      x="314.75354"
-     y="142.77937" />
+     y="66.104813" />
   <rect
      style="fill:#000000;fill-rule:evenodd;stroke-width:0.687923"
      id="rect42-3-0"
      width="35.2635"
      height="3.7368894"
      x="314.55557"
-     y="148.80534" />
-  <path
-     style="fill:none;stroke:#c50000;stroke-width:8.8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 238.96644,41.383294 c 10.37312,6.346392 17.57481,17.165556 26.08372,25.64464 4.56518,4.549186 10.20835,8.136808 14.82287,12.680545 1.24928,1.230121 7.8316,10.243058 8.49715,10.243058"
-     id="path963" />
-  <path
-     style="fill:none;stroke:#c50000;stroke-width:8.8;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 464.23584,40.300487 c 10.37312,6.346392 17.57481,17.165556 26.08372,25.64464 4.56518,4.549186 10.20835,8.136808 14.82287,12.680545 1.24928,1.230121 7.8316,10.243058 8.49715,10.243058"
-     id="path963-6" />
+     y="72.130783" />
 </svg>

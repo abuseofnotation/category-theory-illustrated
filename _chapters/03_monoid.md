@@ -32,14 +32,14 @@ The monoid rule should, like functional composition, be "associative" i.e. apply
 
 ![Associativity in the color mixing operation](balls_associativity.svg)
 
-When a rule is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can add or remove a term that is present at both sides of an equation and retaining the equality of the existing terms:
+When a rule is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed of, or add a term that is present at both sides of an equation and retaining the equality of the existing terms.
 
 ![Associativity in the color mixing operation](balls_arithmetic.svg)
 
 The identity element
 ---
 
-Actually, not any (associative) rule for combining elements makes the balls form a monoid (it makes them form a "semigroup", which is also a thing, but that's a separate topic). In order to be a monoid, a set must feature what is called an "identity element" of a given rule (or a *zero* element, if you prefer) - one that, when combined with any other element gives back that same element not the identity but the other one. Or simply **x • i = x and i • x = x for any x**. In the case of our color-mixing monoid the identity element is the color white, represented by the white ball:
+Actually, not any (associative) rule for combining elements makes the balls form a monoid (it makes them form a "semigroup", which is also a thing, but that's a separate topic). In order to be a monoid, a set must feature what is called an "identity element" of a given rule (or a *zero* element, if you prefer) - one that, when combined with any other element gives back that same element not the identity but the other one. Or simply **x • i = x and i • x = x for any x**. In the case of our color-mixing monoid the identity element is the white  ball (or perhaps a transparent one, if we have one).
 
 ![The identity element of the color-mixing monoid](balls_identity.svg) 
 

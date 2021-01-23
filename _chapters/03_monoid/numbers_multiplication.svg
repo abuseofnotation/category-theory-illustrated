@@ -20,7 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -47,7 +47,7 @@
      inkscape:window-height="1376"
      id="namedview292"
      showgrid="false"
-     inkscape:zoom="2.8284271"
+     inkscape:zoom="5.6568542"
      inkscape:cx="363.75339"
      inkscape:cy="81.929955"
      inkscape:window-x="0"
@@ -55,7 +55,8 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg290"
      showguides="true"
-     inkscape:guide-bbox="true" />
+     inkscape:guide-bbox="true"
+     inkscape:document-rotation="0" />
   <g
      id="g3114"
      transform="translate(6.8951543,-55.231453)"
@@ -92,7 +93,7 @@
          id="tspan3030-5-4"
          x="409.62881"
          y="165.75974"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#b3b3b3;stroke-width:1.57497">2</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#b3b3b3;stroke-width:1.57497">1</tspan></text>
   </g>
   <text
      xml:space="preserve"
@@ -130,14 +131,14 @@
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:62.9988px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.57497"
-     x="413.99356"
-     y="108.37503"
+     x="414.13214"
+     y="108.86767"
      id="text3032-3"><tspan
        sodipodi:role="line"
        id="tspan3030-5"
-       x="413.99356"
-       y="108.37503"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.57497">2</tspan></text>
+       x="414.13214"
+       y="108.86767"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.57497">1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
