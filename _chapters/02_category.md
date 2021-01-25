@@ -82,7 +82,7 @@ This definition is not complete, however, because the product of **G** and **B**
 
 - If there is a function from **G** to **B** then the set **G** itself meets our condition for being the product, because it is connected to **B** and to itself. 
 
-Depending on our specific case there can be many other other such objects.
+Depending on our specific case there can be many other such objects.
 
 ![Product, external diagram](product_candidates.svg)
 
