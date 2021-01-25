@@ -57,7 +57,7 @@ Mathematics is not all about numbers, however numbers do tend to pop up in most 
 
 ![The monoid of numbers under addition](numbers_addition.svg)
 
-(if you see a **1 + 1 = 2** in your texbook you know you are working on math foundations (or you are in kindergarden)).
+(if you see a **1 + 1 = 2** in your textbook you know you are working on math foundations (or you are in kindergarten)).
 
 The natural numbers also form a monoid under multiplication as well:
 
@@ -67,10 +67,10 @@ The natural numbers also form a monoid under multiplication as well:
 
 **Task:** Go through other mathematical operations and figure out why don't they are not monoidal.
 
-Monoids from boolean operations
+Monoids from boolean algebra
 ---
 
-Thinking about other operations that we covered (operation being a function which takes a pair of element of a given type and returns one element of the same type), we may remember the boolean operations **AND** and **OR**. which operate on the set, consisting of just two values **{ True, False }**. Those operations form monoids too. Proving that they do is easy enough by just ennumerating all cases. 
+Thinking about other operations that we covered (operation being a function which takes a pair of element of a given type and returns one element of the same type), we may remember the boolean operations **AND** and **OR**. which operate on the set, consisting of just two values **{ True, False }**. Those operations form monoids too. Proving that they do is easy enough by just enumerating all cases. 
 
 We can prove that **AND** is associative by expanding the formula **(A AND B) AND C = A AND (B AND C)** in all possible ways:
 
@@ -93,7 +93,7 @@ And we can prove that **TRUE** is the identity element by expanding the other fo
 Intuitions
 ---
 
-In order to form the correct intuition about monoids, try to avoid thinking of the elements in the set as objects, but instead think of them as *actions*. For example, when thinking about numbers don't think of them as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of addding one to a given quantity). In other words, don't think of the element by itself, but only think of it together with the operation (in this case addition).
+In order to form the correct intuition about monoids, try to avoid thinking of the elements in the set as objects, but instead think of them as *actions*. For example, when thinking about numbers don't think of them as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of adding one to a given quantity). In other words, don't think of the element by itself, but only think of it together with the operation (in this case addition).
 
 This touches a programming concept which is very popular in category-theory inspired languages - currying - that is based on the idea that a function that accepts two arguments together with one of those arguments already supplied can be viewed as a function which takes one argument. e.g. the function `add(number, number)` together with the element `2` is equivalent to the `addTwo(number)` function.
 
