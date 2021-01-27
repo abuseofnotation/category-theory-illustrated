@@ -65,7 +65,7 @@ The natural numbers also form a monoid under multiplication as well:
 
 **Task:** Which are the identity elements of those monoids?
 
-**Task:** Go through other mathematical operations and figure out why don't they are not monoidal.
+**Task:** Go through other mathematical operations and figure out why they are not monoidal.
 
 Monoids from boolean algebra
 ---
@@ -97,7 +97,7 @@ In order to form the correct intuition about monoids, try to avoid thinking of t
 
 This touches a programming concept which is very popular in category-theory inspired languages - currying - that is based on the idea that a function that accepts two arguments together with one of those arguments already supplied can be viewed as a function which takes one argument. e.g. the function `add(number, number)` together with the element `2` is equivalent to the `addTwo(number)` function.
 
-In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solemnly by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual in the actions (and objects) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
+In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and objects) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
 Other monoid-like objects
 ===
@@ -170,17 +170,17 @@ Ennumerating all the rotations of a more complex geometrical figure looks quite 
 
 ![The group of rotations in a more complex figure](symmetry_rotation_square.svg)
 
-But it's much simpler to grasp if we notice the following: although our group has many actions, and there are more still for figures with more sides (if I am not mistaken, the number of actions is equal to the number of the sides), all of those actions can be reduced to the repetitive application of just the simplest action, (the 120-degree rotation for triangles and the 30-degree rotation for octagons). Let's make up a symbol for this rotation.
+But it's much simpler to grasp if we notice the following: although our group has many actions, and there are more still for figures with more sides (if I am not mistaken, the number of actions is equal to the number of the sides), all of those actions can be reduced to the repetitive application of just the simplest action, (the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
 
 ![The group of rotations in a triangle](symmetry_rotation_cyclic.svg)
 
-Groups and monoids that have this "main" action (called a "generator") which when applied enough times can get you to any state that which is *cyclic groups*. All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the integers under addition. Here we can use **+1** or **-1** as generators.
+Groups and monoids that have this "main" action (called a "generator") that, when applied enough times, can get you to any state are called *cyclic groups*. All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the integers under addition. Here we can use **+1** or **-1** as generators.
 
 ![The group of numbers under addition](numbers_cyclic.svg)
 
 Wait, how can this be a cyclic group when there are no cycles? This is because the integers are an *infinite* cyclic group. 
 
-An example of a finite number-based cycle group are the integers in *modular arithmetic* (sometimes called "clock arithmetic). Modular arithmetic's operation is based on a number called the modulus of an arithmetic (let's take **12** for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
+An example of a finite number-based cycle group are the integers in *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus of an arithmetic (let's take **12** for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
 
 For example: **1 modulo 12 = 1** (because 1/12 = 0 with 1 remainder) **2 modulo 12 = 2** etc. 
 
@@ -194,7 +194,7 @@ Here is a group representation of modular arithmetic with modulus 3.
 
 Here are a couple of interesting facts about cyclic groups.
 
-1 All cyclic groups that the same number of elements (or of the *same order*) are isomorphic to each other i.e. they are the same group. For example, the group of rotations of the triangle is isomorphic to the integers under the addition with modulo 3. This group is called **Z3**.
+1 All cyclic groups that have the same number of elements (or of the *same order*) are isomorphic to each other i.e. they are the same group. For example, the group of rotations of the triangle is isomorphic to the integers under the addition with modulo 3. This group is called **Z3**.
 
 ![The group of numbers under addition](symmetry_modular.svg)
 
@@ -230,7 +230,7 @@ We get set of elements of the new group by making *the cartesian product* of the
 
 ![Two trivial groups](groups_product_four.svg)
 
-The *actions* of the product group are comprised of the actions of the first group, combided with the actions of the second one, where each action is applied only on the element that is a member of it's corresponding group leaving the other element unchanged.
+The *actions* of the product group are comprised of the actions of the first group, combined with the actions of the second one, where each action is applied only on the element that is a member of its corresponding group leaving the other element unchanged.
 
 ![Klein four](klein_four_as_product.svg)
 
@@ -298,7 +298,7 @@ But wait, if *sets* in set theory correspond to *objects* in category theory and
 
 All monoids' external diagrams would have just one object - the only difference would be the number of morphisms that the object has.
 
-The intuition behind this representation is encompassed by the requirement of **closure** that monoid and group operations have - it is the law that applying the operation on any two elements of the set of elements that form the monoid always results in a element that is also a member of the set e.g. no matter how do you flip a triangle, you'd still get a triangle. 
+The intuition behind this representation is encompassed by the requirement of **closure** that monoid and group operations have - it is the law that applying the operation on any two elements of the set of elements that form the monoid always results in an element that is also a member of the set e.g. no matter how do you flip a triangle, you'd still get a triangle. 
 
 | | Categories | Monoids | Groups 
 |---| ---             | ---        |
