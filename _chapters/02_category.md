@@ -50,9 +50,11 @@ Now we will define the abstract concept of a product of two sets sets in terms o
 
 ![A pair](pair.svg)
 
-The real challenge is defining what a pair means in terms of sets. Note that the pair have to be *ordered*, so it cannot be just a set of the elements (formally speaking **A x B ≠ B x A for all A and B **). Some mathematical operations such as addition and multiplication don't care about order, but others, such as subtraction, do. And in programming we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.
+The real challenge is defining what a pair means in terms of sets. Note that the pair have to be *ordered* (formally speaking **A x B ≠ B x A for all A and B **), so it cannot be just a set of the elements - some mathematical operations (such as addition) don't care about order, but others (such as subtraction) do. 
 
-So the pair must be ordered, and sets aren't. Turns out that that hasn't stopped mathematicians from coming up with multiple ingenious ways to represent an ordered pair using sets. Let's see them, just for fun. Here is the first one, which was discovered by Norbert Wiener in 1914. The definition is notable for its smart use of the uniqueness of the empty set. 
+In programming we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.
+
+So the pair must be ordered, and sets aren't, but that that hasn't stopped mathematicians from coming up with multiple ingenious ways to represent an ordered pair using sets. Let's see them, just for fun. Here is the first one, which was discovered by Norbert Wiener in 1914. The definition is notable for its smart use of the uniqueness of the empty set. 
 
 ![A pair, represented by sets](pair_as_set_2.svg)
 
