@@ -148,7 +148,7 @@ Symmetry groups
 
 An interesting kinds of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fit before the action was applied).
 
-We won't use the balls this time, as they have just one position just one action - the identity action (which is it's own reverse by the way). So let's take this triangle (which for our purposes, is the same as any other triangle).
+We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action - the identity action (which is it's own reverse by the way). So let's take this triangle, which  is the same as any other triangle for our purposes, (as we are not interested in the triangle itself, but in its rotations).
 
 ![A triangle](symmetry_group.svg)
 
@@ -161,7 +161,12 @@ Let's first review the group of ways in which we can rotate our triangle i.e. it
 
 Connecting the dots (or the triangles in this case) shows us that there are just two possible actions that get us from any state to any other one - a *120-degree rotation* (i.e. flipping the triangle one time) and a *240-degree rotation* (i.e. flipping it two times (or equivalently, flipping it once, but in the opposite direction)). Adding the identity action of 0-degree rotation makes up for 3 actions in total.
 
+
 ![The group of rotations in a triangle](symmetry_rotation_actions.svg)
+
+The rotations of a triangle form a monoid - the rotations are actions (of which the zero-degree rotation is the identity) and we can combine two actions by performing the first one and then performing the second one.
+
+Note once again that the objects in the group are *rotations*, not of the triangles, it has nothing to to with the triangles themselves, as we shall see later.
 
 Cyclic groups/monoids
 ---
