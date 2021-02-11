@@ -1,6 +1,7 @@
 body {
   line-height: 1.5;
   margin: 0;
+
   font-size: 20px;
 }
 
@@ -14,13 +15,14 @@ body {
 .container {
   max-width: 1000px;
   margin: auto;
-  padding: 50px;
+  padding: 2%;
 }
 
 .footer {
   color:white;
   background-color: gray;
   width: 100%;
+  font-size: 40px;
 }
 .header a {
   color: white;
@@ -29,7 +31,6 @@ body {
 .footer a {
   color: white;
 }
-
 
 pre {
   background-color: gray;
@@ -40,6 +41,21 @@ pre {
   font-family: 'Source Code Pro', monospace;
   white-space: pre-wrap;
 }
+
+blockquote {
+  border-left: 4px dotted #666;
+  padding: 0 10px;
+  color: #666;
+}
+
+
+
+
+
+
+
+
+
 
 
 @font-face {
@@ -77,8 +93,3 @@ a {
   cursor: pointer;
 }
 
-blockquote {
-  border-left: 4px dotted #666;
-  padding: 0 10px;
-  color: #666;
-}
