@@ -1,9 +1,7 @@
-<!--
 ---
 layout: default
 title: Orders
 ---
--->
 
 Orders
 ===
@@ -66,7 +64,7 @@ The third law is called antisymmetry and it states that the function that define
 
 ![antisymmetry](antisymmetry.svg)
 
-Also it means that no ties are permitted - either I am better than my grandmother ot socker or she is better at it than me.
+Also it means that no ties are permitted - either I am better than my grandmother at socker or she is better at it than me.
 
 Connexity
 ---
@@ -92,15 +90,15 @@ Natural numbers form a linear order under the operation **bigger or equal to** (
 
 ![numbers](numbers.svg)
 
-In many ways they are the quintisential order - every finite order of objects is isomorphic to a subset of them - we can map the first element of that order to the number **1**, the second one to the number **2** etc (and we can do the opposite operation as well) and if we think about it, this isomorphism is actually closer to the everyday notion of order, than the one proper definition that we gave (the one defined by the laws) - when most people say that they want to order a given set of objects, they aren't thinking of establishing a *transitive, antisymmetric* and *total* relationship between them, but are rather thinking of criteria of which object comes first, which comes second etc.
+In many ways they are the quintesential order - every finite order of objects is isomorphic to a subset of them - we can map the first element of that order to the number **1**, the second one to the number **2** etc (and we can do the opposite operation as well) and if we think about it, this isomorphism is actually closer to the everyday notion of order, than the one proper definition that we gave (the one defined by the laws) - when most people say that they want to order a given set of objects, they aren't thinking of establishing a *transitive, antisymmetric* and *total* relationship between them, but are rather thinking of criteria of which object comes first, which comes second etc.
 
 ![Linear order isomorphisms](linear_order_isomorphism.svg)
 
 From the fact that any finite order of objects is isomorphic to the natural numbers, it follows that all linear orders of the same magnitude are isomorphic to one another.
 
-**Question:** If all orders are isomorphic with one another, why do we say that numbers are the quintissential order?
+**Question:** If all orders are isomorphic with one another, why do we say that numbers are the quintessential order?
 
-So the linear order is a perfect order (it admints no ambiguities), but it is also, I think that this theorems proove it, the most *boring* order ever, when looked from a category-theoretic viewpoint - all finite linear orders are just isomorphic to the natural numbers (by the way, most infinite orders are isomorphic to the natural numbers as well, with the exception of the ones for which Cantor's diagonal argument applies) and so all their diagrams look the same.
+So the linear order is a perfect order (it admits no ambiguities), but it is also, I think that this theorems prove it, the most *boring* order ever, when looked from a category-theoretic viewpoint - all finite linear orders are just isomorphic to the natural numbers (by the way, most infinite orders are isomorphic to the natural numbers as well, with the exception of the ones for which Cantor's diagonal argument applies) and so all their diagrams look the same.
 
 ![Linear order (general)](general_linear_order.svg)
 
@@ -111,21 +109,86 @@ Partial order
 
 Like linear orders, a partial orders consists of a set plus a relationship, with the only difference is that although the relationship obeys the reflexive, transitive and the anti-symmetric laws, it does not obey the law of totality, that is, not all elements are necessarily ordered. I say "necessarily" because even if all elements are ordered, the partial order is still a partial order (just as a group is still a monoid) - all linear orders are also partial orders, but not the other way around (we can create an *order of orders*, based on which is more general, but we can do it later).
 
+Partial orders
+---
+
 So let's revisit the example of the soccer players ranglist. The first version that includes just **m**yself, my **g**randmother and her **f**riend is a linear order.
 
 ![Linear soccer player order](player_order_linear.svg)
 
-But suppose that I have a friend that I want to include in this hierarchy, then it becomes non-linear.
+However, including this **o**ther person whom none of us played yet, makes the hierarchy non-linear.
 
-![Soccer order - leftover element](player_order_leftover.svg)
+![Soccer player order - leftover element](player_order_leftover.svg)
 
-I can have a whole group of friends that play with each other and are ordered lineary, but as long as we haven't played with them, then the relationship remains non-linear (the different linear orders that make up the partial order are called *chains*, by the way).
+Before we said that all linear orders' can be represented by the same chain-like diagram. We can reverse this statement and say that all diagrams that look something different than the said diagram represent partial orders (or preorders). Let's see some examples.
+
+Chains
+---
+
+A partial order can contain different linearly-ordered subsets, e.g. separate groups of friends who play together and are ranked based on each other, but are not ranked with anyone from other groups.
 
 ![Soccer order - two hierarchies](player_order_two.svg)
 
-The chains don't have to be completely disconnected in order for the order to be partial, as a matter of fact some of the most interesting orders feature elements that we call *meet* / *join*, that are are known to be biggger/smaller than two elements from two separate chains.
+The different linear orders that make up the partial order are called *chains*. There are two chains in this diagram **M ➞ G ➞ F** and **D ➞ O**.
 
-![Soccer order - two hierarchies and meet](player_order_two_meet.svg)
+The chains in an order don't have to be completely disconnected from each other in order for the order to be a partial order, it is just that the connections between them shouldn't be *one-to-one* i.e. when the last element from one chain should not be connected to the first element of the other one (because this would effectively unite them into one chain). But there are other types of connections - *one-to-many* and *many-to-one*.
+
+For example, this set is not linearly ordered. 
+
+![Soccer order - two hierarchies and a join](player_order_two_join.svg)
+
+Although the connection establishes the relationship between **D** and **G** (**D ≤ G**) and although the relationship between **F** and **G** is known as well (**F ≤ G**), the relationship between **D** and **F** is *not* known. Any element can be bigger than the other one.
+
+Maximal and minimal elements
+---
+
+We established that partial orders cannot give us a definite answer of the question who is better at who at soccer, but some people don't care who is better than who, they only care about one thing (and one element) *who is number one* i.e. the champion, the player who is better than anyone else, or the element that is bigger than any other elements. Although, partial sets don't always have a maximal element, some of them do. For example, in our last diagram **M** is the maximal element.
+
+
+Joins
+---
+
+When we have two or more elements have a unique upper bound that is common to all them, without the elements being ordered themselves, we say that the upper element is a **join** of these elements, e.g. the green element is a join of the other two.
+
+![Join diagram](join.svg)
+
+A join is formally defined as 
+
+A couple of clarifications about joins:
+
+- An element counts as a join if the elements are not directly connected to it.
+
+![Join diagram with one more element](join_additional_element.svg)
+
+- An element can have, more than one arrows, 
+
+![Also Join diagram with one more element](join_additional_arrows.svg)
+
+- If two elements have several upper bounds, that are equally big, then none of them is a **join** (a join must be unique).
+
+![A non-join diagram](non_join.svg)
+
+If, however one is established as bigger than another, it immediately qualifies
+
+![A join diagram](non_join_fix.svg)
+
+**Question:** Which concept in category theory reminds you of joins?
+
+Meets
+---
+
+**Question:** What is the relationship of join and meet in terms of category theory?
+
+Interlude: Hasse diagrams
+---
+
+By the way, in this section we use what are called a "Hasse diagrams". They are much like our usual diagrams, however they have an additional rule which we follow - "bigger" elements are always above smaller ones. 
+
+In terms of arrows the rule means that if you add an arrow to a point, you the point *to* which the arrow points must always be above the one *from* which it points.
+
+![A join diagram](hasse.svg)
+
+This allows us to compare any two points by just seeing which one is above the other.
 
 Order as sets
 ---
