@@ -20,7 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -59,24 +59,24 @@
      inkscape:document-rotation="0" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:52.7206px;line-height:1.25;font-family:sans-serif;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1.31801"
-     x="292.65356"
-     y="109.87754"
-     id="text3032-8"><tspan
+     style="font-style:normal;font-weight:normal;font-size:56.178px;line-height:1.25;font-family:sans-serif;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:1.40445"
+     x="289.43765"
+     y="106.6068"
+     id="text3032-3-6-8-8-0"><tspan
        sodipodi:role="line"
-       id="tspan3030-9"
-       x="292.65356"
-       y="109.87754"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#b3b3b3;stroke-width:1.31801">1</tspan></text>
+       id="tspan3030-5-4-6-30-4"
+       x="289.43765"
+       y="106.6068"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#b3b3b3;stroke-width:1.40445">0</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:52.7206px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.31801"
-     x="290.53595"
-     y="108.07561"
-     id="text3032"><tspan
+     style="font-style:normal;font-weight:normal;font-size:56.178px;line-height:1.25;font-family:sans-serif;fill:#445500;fill-opacity:1;stroke:none;stroke-width:1.40445;"
+     x="286.37506"
+     y="104.40883"
+     id="text3032-3-2-1-0"><tspan
        sodipodi:role="line"
-       id="tspan3030"
-       x="290.53595"
-       y="108.07561"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.31801">1</tspan></text>
+       id="tspan3030-5-47-7-8"
+       x="286.37506"
+       y="104.40883"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.40445;fill:#445500;">0</tspan></text>
 </svg>
