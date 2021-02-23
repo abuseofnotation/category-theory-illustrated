@@ -222,6 +222,8 @@ The smallest non-trivial group is the group **Z2** that has two elements.
 
 **Z2** is also known as the *boolean group*, due to the fact that it is isomorphic to the **{ True, False }** set.
 
+Like **Z3**, **Z1** and **Z2** are cyclic.
+
 Group products
 ---
 

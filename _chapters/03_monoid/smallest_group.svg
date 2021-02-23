@@ -20,7 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -103,7 +103,7 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.31801">2</tspan></text>
   <g
      id="g7972-3-3"
-     transform="matrix(0.70111371,0.00752753,-0.00752753,0.70111371,290.316,-50.061996)">
+     transform="matrix(0.70111371,0.00752753,-0.00752753,0.70111371,289.74769,-60.287985)">
     <g
        style="fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
        id="g1482-7-3-4-6"
@@ -136,7 +136,7 @@
   </g>
   <g
      id="g7972-3-3-5"
-     transform="matrix(0.70111371,0.00752753,-0.00752753,0.70111371,295.21245,-33.504912)">
+     transform="matrix(0.70111371,0.00752753,-0.00752753,0.70111371,296.41005,-23.693482)">
     <g
        style="fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
        id="g1482-7-3-4-6-3"
@@ -165,6 +165,6 @@
          id="tspan5014-9-6-3-5-9"
          x="11.883813"
          y="189.13838"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#666666;stroke-width:0.381872">-1</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#666666;stroke-width:0.381872">+1</tspan></text>
   </g>
 </svg>
