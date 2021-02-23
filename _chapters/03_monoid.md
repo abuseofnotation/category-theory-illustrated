@@ -6,7 +6,7 @@ title: Monoids
 Monoids etc
 ===
 
-Since we are done with categories, let's look at some other structures that are also interesting - monoids. Like categories, monoids/groups are also abstract systems consisting of objects and rules for manipulating these objects. 
+Since we are done with categories, let's look at some other structures that are also interesting - monoids. Like categories, monoids/groups are also abstract systems consisting of set of elements and rules for manipulating these elements. 
 
 What are monoids
 ===
@@ -97,12 +97,12 @@ In order to form the correct intuition about monoids, try to avoid thinking of t
 
 This touches a programming concept which is very popular in category-theory inspired languages - currying - that is based on the idea that a function that accepts two arguments together with one of those arguments already supplied can be viewed as a function which takes one argument. e.g. the function `add(number, number)` together with the element `2` is equivalent to the `addTwo(number)` function.
 
-In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and objects) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
+In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
 Other monoid-like objects
 ===
 
-Monoid operations obey two laws - they are associative and there is an identity element. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which actions are combinded results in the definition of other monoid-like structures.
+Monoid operations obey two laws - they are associative and there is an identity element. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which (elements) actions are combinded results in the definition of other monoid-like structures.
 
 Commutative (abelian) monoids
 ---
@@ -111,7 +111,7 @@ Looking at the monoid laws and the examples we gave so far, we observe that all 
 
 ![Commutative monoid operation](monoid_commutative.svg)
 
-Such operations (ones for which combining a given set of objects yields the same result no matter which one is first and which one is second) are called *commutative* operations. Monoids with operations that are commutative are called *commutative monoids*. 
+Such operations (ones for which combining a given set of elements yields the same result no matter which one is first and which one is second) are called *commutative* operations. Monoids with operations that are commutative are called *commutative monoids*. 
 
 As we said, addition is commutative as well - it does not matter whether if I have given you 1 apple and then 2 more, or if I have given you 2 first and then 1 more.
 
@@ -166,7 +166,7 @@ Connecting the dots (or the triangles in this case) shows us that there are just
 
 The rotations of a triangle form a monoid - the rotations are actions (of which the zero-degree rotation is the identity) and we can combine two actions by performing the first one and then performing the second one.
 
-Note once again that the objects in the group are *rotations*, not of the triangles, it has nothing to to with the triangles themselves, as we shall see later.
+Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to to with the triangles themselves, as we shall see later.
 
 Cyclic groups/monoids
 ---
@@ -212,11 +212,11 @@ The smallest groups
 
 Like with sets, the concept of an isomorphism in group theory allows us to identify common groups, like the smallest groups.
 
-The smallest group is just the trivial group **Z1** that has just one object and no morphisms.
+The smallest group is just the trivial group **Z1** that has just one element.
 
 ![The smallest group](trivial_group.svg)
 
-The smallest non-trivial group is the group **Z2** that has two objects and one morphism that goes between them.
+The smallest non-trivial group is the group **Z2** that has two elements.
 
 ![The smallest non-trivial group](smallest_group.svg)
 
@@ -278,16 +278,17 @@ Those two operations and their composite results in a group called **Dih3** that
 Monoids as Categories
 ===
 
-We began by defining a monoid as a set of composable objects, but, as we saw, those objects can be also seen as actions e.g. the **red ball** in our color-blending monoid can be seen as the action of **adding the color red** to the mix. By the same token, the number **2** in the monoid of addition can be seen as the function **+2**. Because actions are basically functions from a set to itself, there is a way to model monoids using set theory.
+We began by defining a monoid as a set of composable elements, but, as we saw, those elements can be also seen as actions e.g. the **red ball** in our color-blending monoid can be seen as the action of **adding the color red** to the mix. By the same token, the number **2** in the monoid of addition can be seen as the function **+2**. Because actions are basically functions from a set of the monoid's elements to itself, there is a way to model monoids using set theory.
+
 So let's consider the monoid/group **Z3** again.
 
 ![The group of rotations in a triangle - group notation](symmetry_rotation_actions.svg)
 
-We can see that it is composed of a set of three elements and three functions between that set and itself, where we have a function to go from any element to any other one.
+We can see **Z3** as composed of **3** functions between that one set and itself, where we should have a function to go from any element of the set to any other one (due to which the set would have **3** elements as well).
 
 ![The group of rotations in a triangle - set notation](symmetry_rotation_functions.svg)
 
-And those functions obviously compose, as all functions do. Aaand we do have the *identity function* too, so monoids are totally categories. 
+Those functions obviously compose, as all functions do, and we do have the *identity function* too, so monoids are totally categories. 
 
 ![The group of rotations in a triangle - set notation](symmetry_rotation_set.svg)
 
