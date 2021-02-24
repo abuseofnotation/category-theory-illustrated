@@ -99,6 +99,11 @@ This touches a programming concept which is very popular in category-theory insp
 
 In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
+<!--
+Free Monoids
+===
+-->
+
 Other monoid-like objects
 ===
 
@@ -274,8 +279,6 @@ Those two operations and their composite results in a group called **Dih3** that
 **Task:** Prove that this group is indeed not abelian.
 
 **Question:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
-
-
 
 Monoids as Categories
 ===

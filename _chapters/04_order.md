@@ -159,9 +159,7 @@ Give two elements, the smallest element that is bigger than both of them (i.e. t
 
 ![Join](join.svg)
 
-In a totally ordered set, the *join* of any subset of elements is just their the *maximum* element.
-
-And, like with the maxumum element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
+Given any two elements in which one is bigger than the other (e.g. **A ≤ B**), the join is the bigger element (in this case **B**). In a totally ordered set, the *join* of any subset of elements is just their the *maximum* element. And, like with the maxumum element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
 
 ![A non-join diagram](non_join.svg)
 
@@ -196,42 +194,78 @@ This allows us to compare any two points by just seeing which one is above the o
 Preorder
 ===
 
-In the last chapter, we saw how removing the law of totality from the laws of *(linear) order* produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. If you recall, the antisymmetry law mandated that you cannot have an object that is at the same time smaller and bigger than another one. (or that **a ≤ b ⟺ b ≰ a**) and removing it leaves us with just one law  - transitivity - **a ≤ b and b ≤ c ➞ a ≤ c** (two, if we count reflexivity).
+In the last chapter, we saw how removing the law of totality from the laws of *(linear) order* produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. If you recall, the antisymmetry law mandated that you cannot have an object that is at the same time smaller and bigger than another one. (or that **a ≤ b ⟺ b ≰ a**).
 
 
-| **Total order**   | reflexive | transitive | antisymmetric | total |
-| **Partial order** | reflexive | transitive | antisymmetric | ~~total~~ |
-| **Preorder** | reflexive | transitive | ~~antisymmetric~~ | ~~total~~ |
+| **Total order**   | reflexive | transitive | antisymmetric | total | Either **a ≤ b** or **b ≤ a**
+| **Partial order** | reflexive | transitive | antisymmetric | ~~total~~ | Either **a ≤ b** or **b ≤ a** or they are unrelated.
+| **Preorder** | reflexive | transitive | ~~antisymmetric~~ | ~~total~~ | Both **a ≤ b** and **b ≤ a** are possible.
 
-This results in something called a preorder which is not exactly an order, as it can have arrows coming from any point to any other. If a partial order can be used to model who is better at who in soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly
+This results in something called a preorder which is not exactly an order, as it can have arrows coming from any point to any other: if a partial order can be used to model who is better at who in soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 
 ![preorder](preorder.svg)
 
-An interesting consequence of the reflexivity property is that all indirect wins (ones that are wins not against the player directly, but against someone who had beat them) are added as a direct result of its application, as seen here (we show indirect wins in lighter tone). 
+Preorders have just one law - transitivity **a ≤ b and b ≤ c ➞ a ≤ c** (two, if we count reflexivity). The part about the indirect wins is a result of this law. Due to it, all indirect wins (ones that are wins not against the player directly, but against someone who had beat them) are added as a direct result of its application, as seen here (we show indirect wins in lighter tone). 
 
 ![preorder in sport](preorder_sports.svg)
 
- Also, notice that all "circle" relationships (e.g. where you have a weaker player beating a stronger one) result in just a bunch of objects that are all connected to one another, due to which, we can convert the preorder into partial order, by grouping all objects that have arrows to one another in sets and then create an order from those sets. 
+And as a result of that, all "circle" relationships (e.g. where you have a weaker player beating a stronger one) result in just a bunch of objects that are all connected to one another, due to which, we can convert the preorder into partial order, by grouping all objects that have arrows to one another in sets and then create an order from those sets (they are called *equivalence classes*, by the way).
 
 ![preorder](preorder_equivalence.svg)
 
-Those sets are called *equivalence classes*.
+All of that structure arizes naturally from the simple law of transitivity.
+
+![Transitivity](transitivity.svg)
+
 
 Orders as categories
 ===
+
+Now let's look at transitivity law again, but from a different perspective. What it tells us that if we have two pairs of relationship **a ≤ b** and **b ≤ c**, then we automatically have a third one **a ≤ c**. In other words, it tells us that the **≤** relationship composes i.e. if we view the "bigger than" relationship as a morphism we would see that it fits the categorical definition of composition. 
+
+![Transitivity as functional composition](transitivity_composition.svg)
+
+(we have to also verify that the relation is associative, but that's easy)
+
+What about that other law that was required in order to be a category - the identity law? We have it too, under the name *reflexivity*.
+
+![Reflexivity](reflexivity.svg)
+
+So it's official - preoders are categories. And since partial orders and total orders are preorders too (as they obey those two laws), they are categories as well.
+
+Starting to compare the categories of preorders, and partial and linear orders to other categories, like the (quintessential) category of sets, immediately sets them apart. In other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*. That is, for two objects **a** **b** we either we have **a ≤ b** or we do not. 
+
+![Orders compared to other categories](arrows_one_arrow.svg)
+
+That is in the contrast with the category of sets where there are potentially inifinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around, and the existence of either of these functions does not imply that one set is "bigger" than the other one.
+
+![Orders compared to other categories](order_category.svg)
+
+Products and sums
+---
+
+While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *sum* of two objects in a category
+
+![Joins as coproduct](coproduct_morphisms.svg)
+
+
+The set inclusion order
+===
+
+Do some sets form some kind of order as established by the functions between them? 
+
 
 Let's revisit our color-mixing monoid and create a color-mixing poset
 
 ![A color mixing poset](color_mixing_poset.svg)
 
-Orders as powersets
-===
-
 Lattices
-===
-
-Order as powersets
 ---
+
+The poset N+ under the divisibility ordering is a lattice!
+Indeed, it turns out that the meet operation corresponds
+to greatest common divisor and the join operation corresponds to least common multiple.
+
 
 Logic
 ===

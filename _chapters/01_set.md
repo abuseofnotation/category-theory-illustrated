@@ -259,7 +259,7 @@ We can define a new function, that is the equivalent to performing the operation
 
 Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves. 
 
-Question: The definition of functional composition (presented in the second paragraph) relies on the fact that functions are many-to-one relationships between sets. How could functional composition work for many-to-many relationships? Can it work at all?
+**Question:** The definition of functional composition (presented in the second paragraph) relies on the fact that functions are many-to-one relationships between sets. How could functional composition work for many-to-many relationships? Can it work at all?
 
 Representing Composition with Commutative Diagrams
 ---
