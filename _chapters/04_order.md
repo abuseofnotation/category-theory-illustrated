@@ -140,9 +140,7 @@ Although the connection establishes the relationship between **D** and **G** (**
 Maximum and minimum 
 ---
 
-So partial orders do not provide us with a definite answer of the question who is better at who at soccer, but in sports (as well as in other domains) people often don't care who is better than, *who is number one* i.e. the champion, the player who is better than anyone else, or more generally, the element that is bigger than any other element, which is called the *maximum element*.
-
-In our last diagram **M** is the maximum element. In this diagram, the green element is the biggest one.
+As we saw, partial orders do not provide us with a definite answer of the question who is better at who at soccer. But in sports (as well as in other domains) people often don't care who is better than, *who is number one* i.e. the champion, the player who is better than anyone else, or more generally, the element that is bigger than any other element, which is called the *maximum element*. And some partial orders do have such element. In our last diagram **M** is the maximum element. In this diagram, the green element is the biggest one.
 
 ![Join diagram with one more element](join_additional_element.svg)
 
@@ -150,14 +148,18 @@ Sometimes we have more than one elements that are bigger than all other elements
 
 ![A diagram with no maximum element](non_maximal_element.svg)
 
-We also may have a minimum (smallest) element, which is defined in the same way.
+A partial order may also have a minimum (smallest) element, which is defined in the same way.
 
 Joins
 ---
 
-Give two elements, the smallest element that is bigger than both of them (i.e. their *least upper bound*) is called the *join* of these elements, e.g. the green element is a join of the other two. Formally the join of **A** and **B** is defined as the smallest element **C** for which **A ≤ C**, and **B ≤ C**.
+Give two elements,  their *least upper bound*) is called the *join* of these elements, e.g. the green element is a join of the other two. 
 
 ![Join](join.svg)
+
+Formally the join of **A** and **B** is defined as the smallest element **C** that is bigger than both **A** and **B** (i.e.for which **A ≤ C**, and **B ≤ C**. There can be multiple elements bigger than **A** and **B** (all elements that are bigger than **C** are also bigger than **A** and **B**), but only one of them is a join.
+
+![Join with other elements](join_other_elements.svg)
 
 Given any two elements in which one is bigger than the other (e.g. **A ≤ B**), the join is the bigger element (in this case **B**). In a totally ordered set, the *join* of any subset of elements is just their the *maximum* element. And, like with the maxumum element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
 
@@ -178,8 +180,6 @@ Given two elements, the biggest element that is smaller than both of them is cal
 
 The same rules as for the joins apply. 
 
-**Question:** What is the relationship of join and meet in terms of category theory?
-
 Interlude: Hasse diagrams
 ---
 
@@ -190,6 +190,29 @@ In terms of arrows, the rule means that if you add an arrow to a point, you the 
 ![A join diagram](hasse.svg)
 
 This allows us to compare any two points by just seeing which one is above the other e.g. to spot the *join* of two elements, you just have to identify the ones they connect to and see which one is lowest.
+
+Examples of partial orders and the inclusion order
+===
+
+We all know many examples of total orders (any form of chart or ranking is a total order), but there are probably not so many obvious examples of partial orders. So let's cook some. 
+
+Color order
+---
+
+Let's revisit our color-mixing monoid and create a color-mixing partial order
+
+![A color mixing poset](color_mixing_poset.svg)
+
+Numbers by division
+---
+
+Inclusion order
+---
+
+Given any sets of elements, we can define what is called the inclusion order, in which 
+
+![A color mixing poset, ordered by inclusion](color_mixing_poset_inclusion.svg)
+
 
 Preorder
 ===
@@ -244,8 +267,9 @@ That is in the contrast with the category of sets where there are potentially in
 Products and sums
 ---
 
-While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *sum* of two objects in a category
+While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *sum* of two objects in a category.
 
+If you recall
 ![Joins as coproduct](coproduct_morphisms.svg)
 
 
@@ -254,10 +278,6 @@ The set inclusion order
 
 Do some sets form some kind of order as established by the functions between them? 
 
-
-Let's revisit our color-mixing monoid and create a color-mixing poset
-
-![A color mixing poset](color_mixing_poset.svg)
 
 Lattices
 ---

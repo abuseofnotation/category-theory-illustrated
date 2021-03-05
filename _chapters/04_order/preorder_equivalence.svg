@@ -20,7 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -101,27 +101,27 @@
       <g
          id="g2760-9-8-7-4"
          transform="matrix(3.7238294,0,0,3.7238294,-609.47687,-296.97043)"
-         style="stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none">
+         style="stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none;fill:#ececec">
         <g
            id="g2749-4-6-7"
-           style="fill:#cccccc;stroke:#666666;stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none"
+           style="fill:#ececec;stroke:#666666;stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none"
            transform="rotate(-37.328029,178.27377,-57.179395)">
           <g
              id="g10519"
-             style="stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none">
+             style="stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none;fill:#ececec">
             <circle
                cx="52.563747"
                cy="85.225021"
                r="17.200493"
                id="circle3369-5-5-8"
-               style="opacity:0.13;fill:#cccccc;stroke:#666666;stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="opacity:0.13;fill:#ececec;stroke:#666666;stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none" />
             <circle
                fill="#d71920"
                stroke="#be1e2d"
                cx="51.337112"
                cy="84.338951"
                id="circle3383-6-6-4"
-               style="fill:#cccccc;stroke:#666666;stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none"
+               style="fill:#ececec;stroke:#666666;stroke-width:1.3735;stroke-miterlimit:4;stroke-dasharray:none"
                r="17.200493" />
           </g>
         </g>
@@ -234,27 +234,27 @@
       <g
          id="g2760-9-8-7-4-3"
          transform="matrix(1.9814726,0,0,1.9814726,-454.45212,-27.94686)"
-         style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none">
+         style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none;fill:#ececec">
         <g
            id="g2749-4-6-7-6"
-           style="fill:#cccccc;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
+           style="fill:#ececec;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
            transform="rotate(-37.328029,178.27377,-57.179395)">
           <g
              id="g10519-1"
-             style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none">
+             style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none;fill:#ececec">
             <circle
                cx="52.563747"
                cy="85.225021"
                r="17.200493"
                id="circle3369-5-5-8-0"
-               style="opacity:0.13;fill:#cccccc;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="opacity:0.13;fill:#ececec;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none" />
             <circle
                fill="#d71920"
                stroke="#be1e2d"
                cx="51.337112"
                cy="84.338951"
                id="circle3383-6-6-4-6"
-               style="fill:#cccccc;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
+               style="fill:#ececec;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
                r="17.200493" />
           </g>
         </g>
@@ -297,27 +297,27 @@
       <g
          id="g2760-9-8-7-4-3-3"
          transform="matrix(1.9814726,0,0,1.9814726,-193.60613,-108.00318)"
-         style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none">
+         style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none;fill:#ececec">
         <g
            id="g2749-4-6-7-6-2"
-           style="fill:#cccccc;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
+           style="fill:#ececec;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
            transform="rotate(-37.328029,178.27377,-57.179395)">
           <g
              id="g10519-1-0"
-             style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none">
+             style="stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none;fill:#ececec">
             <circle
                cx="52.563747"
                cy="85.225021"
                r="17.200493"
                id="circle3369-5-5-8-0-6"
-               style="opacity:0.13;fill:#cccccc;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none" />
+               style="opacity:0.13;fill:#ececec;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none" />
             <circle
                fill="#d71920"
                stroke="#be1e2d"
                cx="51.337112"
                cy="84.338951"
                id="circle3383-6-6-4-6-1"
-               style="fill:#cccccc;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
+               style="fill:#ececec;stroke:#666666;stroke-width:2.60276;stroke-miterlimit:4;stroke-dasharray:none"
                r="17.200493" />
           </g>
         </g>
