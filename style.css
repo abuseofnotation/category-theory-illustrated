@@ -93,3 +93,29 @@ a {
   cursor: pointer;
 }
 
+table {
+  border: 3px solid blue;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  table-layout: fixed
+}
+table td, table th {
+  border: 1px solid blue;
+  padding: 5px 4px;
+}
+table tbody td {
+}
+table thead {
+  background: blue;
+  color: white;
+  border-bottom: 3px solid blue;
+}
+table thead th {
+  font-weight: bold;
+  text-align: left;
+}
+table tfoot {
+  font-weight: bold;
+  border-top: 3px solid blue;
+}
