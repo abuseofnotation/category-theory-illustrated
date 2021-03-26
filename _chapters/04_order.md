@@ -105,7 +105,7 @@ However, this is not the case with partial orders that we will look into next.
 Partial order 
 ===
 
-Like linear orders, a partial orders consists of a set plus a relationship, with the only difference that, although it still obeys the reflexive, transitive and the antisymmetric laws, the relationship does not obey the law of totality -  not all elements are necessarily ordered. I say "necessarily" because even if all elements are ordered, the partial order is still a partial order (just as a group is still a monoid) - all linear orders are also partial orders, but not the other way around (we can create an *order of orders*, based on which is more general, but that is probably too meta).
+Like linear orders, a partial orders consists of a set plus a relationship, with the only difference that, although it still obeys the reflexive, transitive and the antisymmetric laws, the relationship does not obey the law of totality -  not all elements are necessarily ordered. I say "necessarily" because even if all elements are ordered, the partial order is still a partial order (just as a group is still a monoid) - all linear orders are also partial orders, but not the other way around (we can even create an *order of orders*, based on which is more general).
 
 So let's revisit the example of the soccer players ranglist. The first version that includes just **m**yself, my **g**randmother and her **f**riend is a linear order.
 
@@ -115,14 +115,12 @@ However, including this **o**ther person whom none of us played yet, makes the h
 
 ![Soccer player order - leftover element](player_order_leftover.svg)
 
-Before, we said that all linear orders can be represented by the same chain-like diagram, we can reverse this statement and say that all diagrams that look something different than the said diagram represent partial orders (or preorders). 
-
-Let's see some examples.
+In other words, the main difference between partial and linear orders is that partial orders cannot provide us with a definite answer of the question who is better at who. But sometimes this is what we need - in sports, as well as in other domains, there isn't always an appropriate way to rate people lineary. For example, if you are a newbie you are not last, nor second to last, you are just at one level with numerous other newbies where none of you are any better than anyone else. Some other examples follow.
 
 Chains
 ---
 
-A partial order can contain diffranked erent linearly-ordered subsets, e.g. in our soccer example, we can have separate groups of friends who play together and are ranked with each other, but not with anyone from other groups.
+Before, we said that all linear orders can be represented by the same chain-like diagram, we can reverse this statement and say that all diagrams that look something different than the said diagram represent partial orders (or preorders). An example of this is a  partial order that contains a bunch of linearly-ordered subsets, e.g. in our soccer example, we can have separate groups of friends who play together and are ranked with each other, but not with anyone from other groups.
 
 ![Soccer order - two hierarchies](player_order_two.svg)
 
@@ -134,10 +132,11 @@ The chains in an order don't have to be completely disconnected from each other 
 
 This set is not lineary-ordered - although the connection establishes the relationship between **D** and **G** (**D ≤ G**) and although the relationship between **F** and **G** is known as well (**F ≤ G**), the relationship between **D** and **F** is *not* known. Any element can be bigger than the other one.
 
+
 Maximum and minimum 
 ---
 
-As we saw, partial orders cannot provide us with a definite answer of the question who is better at who. But that is sometimes OK, as in sports, as well as in other domains, people often don't care about who is better than who - they only care *who is number one*, who is the champion, the player who is better than anyone else, or more generally the element that is bigger than any other element. 
+Although posets don't give us definitive answer to who is better than who, some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely *who is number one*, who is the champion, the player who is better than anyone else, or more generally the element that is bigger than any other element. 
 
 We call such elements the *maximum element* and some partial orders do have such element - in our last diagram **M** is the maximum element, in this diagram, the green element is the biggest one.
 
@@ -232,7 +231,6 @@ Given a collection of all possible sets containing a combination of a given set 
 
 We can define what is called the *inclusion order* of those sets, in which **A** comes before **B** if **A** *includes* **B**, or (to use the term from) chapter 1, if **B** is a *subset* of **A**.
 
-
 ![A color mixing poset, ordered by inclusion](color_mixing_poset_inclusion.svg)
 
 Note that the *join* operation in an inclusion order is the set union, and the *meet* operation as set intersection.
@@ -257,20 +255,59 @@ So far we saw two partial orders of different elements (one based on color mixin
 1. All elements have *joins* and *meets* (those orders are called *lattices*, by the way) 
 2. Those two operations are *distribute* over one another (we will see what that means shortly) 
 
-I won't go into details about this, I would only mention that the "prime" elements with which we can construct the inclusion order are the ones that are not the join of any other elements.
+(Just to note that his result is only proven for *finite* lattices, so it might not be valid for the numbers all the way to infinity. But it would be valid for any subset of them.)
+
+I won't go into details about this result, I would only mention that the "prime" elements with which we can construct the inclusion order are the ones that are not the *join* of any other elements (for that reason, they are also called *join-irreducible* elements).
 
 By the way, the partial orders that are *NOT* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that do not contain all possible combinations of elements.
+
+Lattices
+===
+
+In the previous section we mentioned what *lattices* are - they are posets, in which every two elements have a *join* and a *meet*. So every lattice is a also partial order, but not every partial order is a lattice (OK, I guess we really need to write that oorder of orders thing down). Most partial orders that are created based on some sort of rule, like the ones from the previous section, are also lattices when they are drawn in full, for example the color-mixing poset.
+
+![A color mixing lattice](color_mixing_lattice.svg)
+
+Notice that when drawing our color-mixing lattice, we added the the black ball at the top and the white one at the bottom. We did that because otherwise the top three elements wouldn't have a *join* element, and the bottom three wouldn't have a *meet*.
+
+Bounded lattices
+---
+
+Our color-mixing lattice, has a *maximum element* (the black ball) and a *minumum element* (the white one). Lattices that have a minimum and maximum elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
+
+**Task:** Prove that all finite lattices are bounded.
+
+Semilattices and trees
+---
+
+Lattices are posets that have both *join* *and* a *meet* for each pair of elements. Posets that just have *join* (and no meet), or just have *meet* and no join are called *semilattices*. More specifically, posets that have a *meet* for every pair of elements are called *meet-semilattices*.
+
+![Semilattice](semilattice.svg)
+
+A structure that is similar to a semilattice (and probably more famous than it) is the *tree*.
+
+![Tree](tree.svg)
+
+The difference between the two is small but crucial:  in a tree, each element can have multiple elements connected *to* it, but can itself only be connected to just one other element. If we represent a tree as an inclusion order, each set would "belong" in only one superset, whereas with semilattices there would be no such restrictions.
+
+![Tree and semilattice compared](semilattice_tree.svg)
+
+A good intuition for the difference between the two is that a semilattice is capable of representing much more general relations, so for example, the mother-child relation forms a tree (a mother can have multiple children, but a child can have *only one* mother), but the "older sibling" relation forms a lattice, as a child can have multiple older siblings, as well as vise versa.
+
+The implications of the tendency to use tree structures to model things are examined in the ground-breaking essay “A City is Not a Tree” by Christopher Alexander.
+
+> In simplicity of structure the tree is comparable to the compulsive desire for neatness and order that insists the candlesticks on a mantelpiece be perfectly straight and perfectly symmetrical about the centre. The semilattice, by comparison, is the structure of a complex fabric; it is the structure of living things, of great paintings and symphonies. 
 
 Preorder
 ===
 
-As interesting partial orders are, I like to leave them aside for a sec just so I can return back to them, like in an old romance novel. 
+As interesting partial orders are, I like to leave them aside for a sec, just so I can return back to them like in an old romance novel. 
 
-First off , I like us to cover one more kind of order (or something like it). In the previous section, we saw how removing the law of totality from the laws of *(linear) order* produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. If you recall, the antisymmetry law mandated that you cannot have an object that is at the same time smaller and bigger than another one. (or that **a ≤ b ⟺ b ≰ a**).
+First off, let's cover one more kind of order (or something like it). In the previous section, we saw how removing the law of totality from the laws of *(linear) order* produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. If you recall, the antisymmetry law mandated that you cannot have an object that is at the same time smaller and bigger than another one. (or that **a ≤ b ⟺ b ≰ a**).
 
 
 | **Total order**   | reflexive | transitive | antisymmetric | total | Either **a ≤ b** or **b ≤ a**
-| **Partial order** | reflexive | transitive | antisymmetric | ~~total~~ | Either **a ≤ b** or **b ≤ a** or they are unrelated.
+| **Partial order/lattice** | reflexive | transitive | antisymmetric | ~~total~~ | Either **a ≤ b** or **b ≤ a** or they are unrelated.
 | **Preorder** | reflexive | transitive | ~~antisymmetric~~ | ~~total~~ | Both **a ≤ b** and **b ≤ a** are possible.
 
 This results in something called a preorder which is not exactly an order, as I hinted at the beginning - it can have arrows coming from any point to any other: if a partial order can be used to model who is better at who in soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
@@ -340,40 +377,5 @@ In the realm of orders, we say that **G** is the *join* of objects **Y** and **B
 
 ![Joins as coproduct](coproduct_join_morphisms.svg)
 
-We can see that the two definitions and the diagrams are the same, so in category theory language, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
+We can see that the two definitions (and the diagrams) are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
 
-Logic
-===
-
-So here we go with this little *leit motif* of mine where I begin talking about something completely different and then it turns out that it is all connected. This time I will not merely transport you to a different branch of mathematics, I will talk about an entirely different discipline, namely *logic*. Or, to be more precise, intuitionistic logic. This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually as close as it can - I don't even have to start another chapter for it (althought it will make this one a bit lenghty).
-
-Logic aims to it study of the *rules* by which knowing one thing leads you to conclude that some other thing is true, and most importantly, to do that in the *formal way* i.e. without considering what these things are. 
-
-Not only that, but logicians try to organize those rules in what are called *systems*, 
-of *formal systems* - containing selections of rules and also of rules for applying those rules (rules of inference) selected so they have the expressive ability to prove everything that you can see by intuition.
-
-What does "prove" mean in this context? Simple, when we are able, using the rules of a given logical system to transform one set of assertions **A** to another one **B** we say that we have proven that **A → B** in that logical system.
-
-
-![Balls](balls.svg)
-
-And 
----
-
-So let's say I know a given fact, does not matter what it is or how exactly I learned it, 
-
-and say that it is an "atomic fact" as Wittgenstein calls it - it is not composed of any "more basic" facts, it is just the simplest thing that you can know.
-
-So let's get our balls again.
-
-
-Or and And relations
----
-
-False
-
-Lattices
----
-
-Lattices and trees
----

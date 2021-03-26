@@ -7,11 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 595.3 177"
+   viewBox="0 0 595.3 177.00001"
    version="1.1"
    id="svg3397"
    sodipodi:docname="color_mixing_poset.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)"
+   width="595.29999"
+   height="177">
   <metadata
      id="metadata3403">
     <rdf:RDF>
@@ -20,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,22 +37,22 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1376"
+     inkscape:window-width="1251"
+     inkscape:window-height="1174"
      id="namedview3399"
      showgrid="false"
      inkscape:zoom="1.6510641"
-     inkscape:cx="335.38333"
-     inkscape:cy="84.808576"
+     inkscape:cx="249.37819"
+     inkscape:cy="201.24055"
      inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="g1482-7-0-2"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3397"
      inkscape:document-rotation="0"
      showguides="false" />
   <g
      id="g5757"
-     transform="translate(72.480001,-49.778019)">
+     transform="translate(65.211961,-46.749669)">
     <circle
        cx="153.12378"
        cy="90.683884"
@@ -68,7 +70,7 @@
   </g>
   <g
      id="g4363"
-     transform="translate(-161.18126,-92.94424)">
+     transform="translate(-168.4493,-89.91589)">
     <circle
        cx="539.70001"
        cy="133.7"
@@ -86,7 +88,7 @@
   </g>
   <g
      id="g5765"
-     transform="translate(-48.187067,-52.453115)">
+     transform="translate(-55.455107,-49.424765)">
     <circle
        cx="351.04132"
        cy="94.997795"
@@ -105,7 +107,7 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
      id="g1482-7-0"
-     transform="matrix(0.01017386,-0.28029238,0.39203238,-0.00559565,126.41851,155.07492)"
+     transform="matrix(0.01017386,-0.28029238,0.39203238,-0.00559565,119.15047,158.10327)"
      inkscape:transform-center-x="-18.81019"
      inkscape:transform-center-y="6.9854567">
     <path
@@ -124,7 +126,7 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
      id="g1482-7-0-7"
-     transform="matrix(-0.00466973,-0.28043808,0.39118727,-0.02632895,208.258,160.93184)"
+     transform="matrix(-0.00466973,-0.28043808,0.39118727,-0.02632895,200.98996,163.96019)"
      inkscape:transform-center-x="-15.248575"
      inkscape:transform-center-y="90.778908">
     <path
@@ -143,7 +145,7 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
      id="g1482-7-0-5"
-     transform="matrix(-0.00391073,-0.2804497,0.3912571,-0.02527013,282.48365,160.90865)">
+     transform="matrix(-0.00391073,-0.2804497,0.3912571,-0.02527013,275.21561,163.937)">
     <path
        style="stroke-width:35.526"
        inkscape:connector-curvature="0"
@@ -160,7 +162,7 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
      id="g1482-7-0-4"
-     transform="matrix(-0.19363093,-0.20291473,0.26960977,-0.28465992,237.78365,193.36473)"
+     transform="matrix(-0.19363093,-0.20291473,0.26960977,-0.28465992,230.51561,196.39308)"
      inkscape:transform-center-x="170.54007"
      inkscape:transform-center-y="-64.392973">
     <path
@@ -180,7 +182,7 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
      id="g1482-7-0-2"
-     transform="matrix(0.239648,-0.1464369,-0.18446056,-0.34031378,233.85635,183.57358)">
+     transform="matrix(0.239648,-0.1464369,-0.18446056,-0.34031378,226.58831,186.60193)">
     <path
        style="stroke-width:16.0981"
        inkscape:connector-curvature="0"
@@ -195,7 +197,7 @@
   </g>
   <g
      id="g5761"
-     transform="translate(50.982964,41.039843)">
+     transform="translate(43.714924,44.068189)">
     <circle
        cx="250.16379"
        cy="90.603348"
@@ -214,7 +216,7 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
      id="g1482-7-0-4-3"
-     transform="matrix(-0.19363093,-0.20291473,0.26960977,-0.28465992,315.05854,190.52542)"
+     transform="matrix(-0.19363093,-0.20291473,0.26960977,-0.28465992,307.7905,193.55377)"
      inkscape:transform-center-x="-22.053495"
      inkscape:transform-center-y="26.089189">
     <path
@@ -233,7 +235,7 @@
   </g>
   <g
      id="g4359"
-     transform="translate(106.62416,60.030356)">
+     transform="translate(99.35612,63.058709)">
     <circle
        cx="271.79999"
        cy="72.099998"
@@ -251,7 +253,7 @@
   </g>
   <g
      id="g5769"
-     transform="translate(167.36669,40.9632)">
+     transform="translate(160.09865,43.991549)">
     <circle
        cx="56.307613"
        cy="92.667412"
@@ -267,4 +269,7 @@
        id="circle3383"
        style="stroke-width:6;stroke-miterlimit:10" />
   </g>
+  <g
+     id="g6417-4"
+     transform="matrix(1,0,0,-1,-6.9652045,163.28807)" />
 </svg>
