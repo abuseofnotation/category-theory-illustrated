@@ -13,7 +13,7 @@ Products
 
 In the previous chapter, we needed a way to make a set that is a composite of other sets that we already have. For example, when we discussed mathematical functions, we couldn't define **+** and **-** functions, because we only knew about functions that take one argument. When we talked about programming, we talked about the primitive types, `Char` and `Number`, and we mentioned that most of the types are composite types. So how do we construct those?
 
-The simplest composite type, of the sets **B**, which contains **b**'s and the set**Y**, which contains **y**'s is the the *product* or **B** and **Y**.
+The simplest composite type, of the sets **B**, which contains **b**'s and the set**Y**, which contains **y**'s is the *product* or **B** and **Y**.
 
 ![Product parts](product_parts.svg)
 
@@ -30,7 +30,7 @@ Products as Objects
 
 We established that in programming sets resemble types and functions resemble functions. Products, in this case, are like stripped-out *classes* (also called *records* or *structs*). The composite sets (the ones which form the product) are just the class's fields (also called *members*). The functions for accessing them are like what programmers call *getter methods*.
 
-For example, the famous OOP example of `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers (we still haven't defined strings and lists in terms of set theory but we will get to that). Objects with more than two values can be expressed as products the composites of which are themselves products.
+The famous example of object-oriented programming of a `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers (we still haven't defined strings and lists in terms of set theory but we will get to that). Objects with more than two values can be expressed as products the composites of which are themselves products.
 
 Using Products to Define Numeric Operations
 ---
@@ -41,12 +41,12 @@ Joking, here it is.
 
 ![The plus function](plus.svg)
 
-Note that there are languages where the *pair* datastructure (also called a *tuple*) is a first-level construct, and multi-argument functions are really implemented in this way. 
+Note that there are languages where the *pair* data structure (also called a *tuple*) is a first-level construct, and multi-argument functions are really implemented in this way. 
 
 Defining products in Terms of Sets 
 ---
 
-Now we will define the abstract concept of a product of two sets sets in terms of sets themselves. It is not hard: the product of two sets **Y** and **B** is just the set of all possible *ordered pairs*, which contain one element of the set **Y** and one element of the set **B**. Or formally speaking **Y x B = { (y, b) }** where **y ∈ Y, b ∈ B** (**∈** means "is an element of").
+Now we will define the abstract concept of a product of two sets in terms of sets themselves. It is not hard: the product of two sets **Y** and **B** is just the set of all possible *ordered pairs*, which contain one element of the set **Y** and one element of the set **B**. Or formally speaking **Y x B = { (y, b) }** where **y ∈ Y, b ∈ B** (**∈** means "is an element of").
 
 ![A pair](pair.svg)
 
@@ -122,7 +122,7 @@ Like with the product, there is a low-level way to express a sum using sets alon
 
 ![A member of a coproduct, examined](coproduct_member_set.svg)
 
-But again, this distinction is only rellevant only when the two sets have common elements.
+But again, this distinction is only relevant only when the two sets have common elements.
 
 
 Defining Sums in Terms of Functions
@@ -162,7 +162,7 @@ If we have to compare the concepts of sum or and product we will find out that t
 Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around.
 
 
-That's normal right? After all, **AND** *is* the opposite of **OR**. The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
+That's normal right? After all, **AND** *is* the opposite of **OR**. The connection between the two has always been there, evidenced, for example, by the DeMorgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
 
 ![Coproduct and product](coproduct_product_duality.svg)
 
@@ -186,7 +186,7 @@ This diagram illustrates how category theory allows us to see the big picture wh
 
 **NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.**
 
-Looking at the table I cannot help but notice the somehow weird, but otherwise completely logical symmetry (or perhaps "reverse symetry") between the the world as viewed through the lense of set theory, and the way it is viewed through the (inverted) lens of cathegory theory:
+Looking at the table I cannot help but notice the somehow weird, but otherwise completely logical symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the (inverted) lens of category theory:
 
 | Category Theory | Set theory | 
 | ---             | ---        |
@@ -194,7 +194,7 @@ Looking at the table I cannot help but notice the somehow weird, but otherwise c
 | Objects and  Morphisms        | Sets and functions |
 | **N/A**             | Element    | 
 
-By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we have gained the ability to see the whole universe that we have been previously trapped in. The whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyse similarities between these and other structures.
+By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we have gained the ability to see the whole universe that we have been previously trapped in. The whole realm of sets, can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyze similarities between these and other structures.
 
 ![Category theory and set theory compared](set_category.svg)
 
@@ -207,7 +207,7 @@ Defining Categories (again)
 
 Every category theory guide (including mine) starts by talking about set theory, however looking back I really don't know why that is the case - most books that focus around a given subject don't start by introducing an entirely different subject. Perhaps the set-first approach is the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of the things that people just do because everyone else does it. But one thing is for sure - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like it's a new book.
 
-So, a category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colourful~~ grey balls:
+So, a category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
 ![Balls](elements.svg)
 
@@ -217,7 +217,7 @@ A category consists of a collection of objects as well as some arrows connecting
 
 Wait a minute - we said that all sets form a category, but at the same time any one set can be seen as a category on its own right (just one which has no morphisms). This is true and an example of a phenomenon that is very characteristic of category theory - one structure can be examined from many different angles and may play many different roles, often in a recursive fashion.
 
-This particular analogy (a set as a category with no morphisms) is, however, not very useful. Not because it's in any way incorrect, but because category theory is *all about the morphisms*. If in set theory arrows are nothing but a connection between a source and a destination, in category theory it's the *objects* that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are coloured: the category of sets should really be called the category of set functions.
+This particular analogy (a set as a category with no morphisms) is, however, not very useful. Not because it's in any way incorrect, but because category theory is *all about the morphisms*. If in set theory arrows are nothing but a connection between a source and a destination, in category theory it's the *objects* that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are colored: the category of sets should really be called the category of set functions.
 
 Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same domain and codomain does not in any way make them equivalent.
 
@@ -293,17 +293,17 @@ It's important to mark this morphism, because there can be (let's add the very i
 Isomorphisms
 ---
 
-Why do we need to define a morphism that does nothing? It's because morphisms are the basic building blocks of our language and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined we can have a category-theoretic definition of an *isomoprhism* (which is important, because the concept of an isomorphism is very important for cathegory theory): An isomorphism between two objects (**A** and **B**) consists of two morphisms - (**A → B**.  and **B → A**) such that their compositions are equivalent to the identity functions of the respective objects. 
+Why do we need to define a morphism that does nothing? It's because morphisms are the basic building blocks of our language and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory): An isomorphism between two objects (**A** and **B**) consists of two morphisms - (**A → B**.  and **B → A**) such that their compositions are equivalent to the identity functions of the respective objects. 
 
 Here is how this looks when expressed using a formulas:
 
 Objects **A** and **B** are isomorphic 
-iff there exist mophisms 
+iff there exist morphisms 
 **f: A → B**
 **g: B → A** 
 such that  
-**f • g = idB** 
-**g • f = idA** 
+**f • g = id B** 
+**g • f = id A** 
 
 And here is the same thing expressed with a commuting diagram.
 
@@ -318,7 +318,7 @@ For future reference, let's repeat what a category is.
 
 A category is a collection of **objects** (we can think of them as points) and **morphisms** (arrows) that go from one object to another, where:
 1. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
-2. Each object has to have the identity mophism.
+2. Each object has to have the identity morphism.
 
 This is it.
 

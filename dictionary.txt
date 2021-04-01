@@ -1,4 +1,7 @@
+Invertible
+invertible
 coproduct
+Coproduct
 morphism
 coproducts
 morphisms
@@ -28,6 +31,7 @@ Monoid
 Monoids
 isomorphism
 isomorphisms
+Isomorphisms
 Hasse
 Antisymmetry
 connexity
@@ -47,3 +51,13 @@ non-abelian
 Dih3
 composable
 forall
+codomain
+Euclidian
+subtypes
+Immanuel 
+iff
+concatenative
+structs
+DeMorgan's
+getter
+OOP

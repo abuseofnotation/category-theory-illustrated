@@ -16,7 +16,7 @@ Preface: What is an Abstract Theory
 
 Most scientific and mathematical theories have a specific domain, to which they are related, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created so it explains how different biological species came to be. And quantum mechanics is a description of what particles are at the low scale. Even the work of most mathematicians, although it is not bound to a specific domain, is strongly related to it, as differential equations are linked to the description of events that change over time. 
 
-Set theory and category theory are different. They are not created for to provide a rigorous explanation of how a particular phenonium works, but to try to provide a more general framework for explaining all kinds of phenomena. Theories that are like that are called *abstract* theories. All theories *use abstraction*, else they would be pretty useless (without it Darwin would have to speak about specific animal species or even individual animals) but few are inherently abstract, so some of their core concepts are left unspecified. Or in other words, all theories are applicable outside of their domains, but set theory and category theory do not have a domain, to begin with.
+Set theory and category theory are different. They are not created to provide a rigorous explanation of how a particular phenomenon works, but to try to provide a more general framework for explaining all kinds of phenomena. Theories that are like that are called *abstract* theories. All theories *use abstraction*, else they would be pretty useless (without it Darwin would have to speak about specific animal species or even individual animals) but few are inherently abstract, so some of their core concepts are left unspecified. Or in other words, all theories are applicable outside of their domains, but set theory and category theory do not have a domain, to begin with.
 
 People have tried to be precise and at the same time down to Earth for centuries, and only recently discovered that "precise and down to Earth" is an oxymoron. Let's take Euclidian geometry as an example. Yes, Euclidian geometry is precise, because it is valid for all sets of objects, called ("point" "line" "angle" and "circle" etc.), which have relationships, as defined by the five famous axioms. Yes, geometry does, in many instances, describe the natural world, because there are many sets of objects which have these relations. However, its "precise" part and it's "down to Earth" part have nothing to do with each other. We can, for example, define a point as any stain on the floor of your room and that a line as a piece of duct tape, put on the same floor - that will be a completely valid application of the Euclidian laws, albeit not very useful one. Or we can try to use geometry to reason about points on the surface of the Earth, which is a very useful application, of geometry, however not of Euclidian geometry, because Euclidian geometry only describes points on a flat plane, and the Earth is not flat. You can argue that these are actually two separate theories there, which just happen to be perceived as one. You have the axioms, or the postulates on one hand, which are not useful for anything on their own, and you have applications in science and engineering which are somewhat based on them, but not quite. 
 
@@ -27,7 +27,7 @@ Everything in set theory is defined in terms of sets. A set is a collection of t
 
 ![Balls](elements.svg)
 
-For example, let's construct a set, call it **G** (as grey), consisting of *all* of them. This is how we can mark it:
+For example, let's construct a set, call it **G** (as gray), consisting of *all* of them. This is how we can mark it:
 
 ![The set of all balls](all.svg)
 
@@ -41,9 +41,9 @@ The key insight about what a set it is that it enables you to reason about sever
 Subsets 
 ---
 
-Let's construct one more set. The set of *all balls that are warm colour*. I will call it **Y**, because in the diagram is coloured in **y**ellow.
+Let's construct one more set. The set of *all balls that are warm color*. I will call it **Y**, because in the diagram is colored in **y**ellow.
 
-![Y - the set of all balls of warm colours](subset.svg)
+![Y - the set of all balls of warm colors](subset.svg)
 
 Notice that **Y** contains just elements that are also present in **G**. That is, every element of the set of **Y** is also an element in the set **G**. When two sets have this relation, we may say that **Y** is a *subset* of **G** (or **Y ⊆ G**).
 
@@ -56,7 +56,7 @@ The set of all *red balls* contains just one ball.
 
 ![The singleton set of red balls](singleton.svg)
 
-Like we said above, sets are all about for summarising *several* elements into one. Still, sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore, if I have a function which expects a set of given items, here shouldn't be any issue if the "items" are just one item. Or to take a real-life example, the set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set - she has published just one novel.
+Like we said above, sets are all about for summarizing *several* elements into one. Still, sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore, if I have a function which expects a set of given items, here shouldn't be any issue if the "items" are just one item. Or to take a real-life example, the set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set - she has published just one novel.
 
 The Empty set
 ---
@@ -80,7 +80,7 @@ A function is a relationship between two sets which matches each element of one 
 > By function I mean the unity of the act of arranging various representations under one common representation.
 > Immanuel Kant, from Critique of Pure Reason
 
-Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite colour in another set **G** ( in mathematics a function's name is often accompanied by the names of its domain and codomain, like this: **f: R → G**)
+Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite color in another set **G** ( in mathematics a function's name is often accompanied by the names of its domain and codomain, like this: **f: R → G**)
 
 ![Opposite colors](function_one_one.svg)
 
@@ -115,11 +115,11 @@ Note that the question "Who is my child?" is *NOT* a straightforward function, b
 The Identity Function
 ---
 
-For every set **G**, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element G to itself. It is called the *the identity function* of **G** or **idG: G → G**.
+For every set **G**, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element G to itself. It is called the *the identity function* of **G** or **id G: G → G**.
 
 ![The identity function](function_identity.svg)
 
-You can think of **idG** as a function which represents the set **G** in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
+You can think of **id G** as a function which represents the set **G** in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
 
 Functions and Subsets
 ---
@@ -177,7 +177,7 @@ I will use the occasion to reiterate some of the more important characteristics 
 
 Overall everything is OK, as long as you can always provide exactly one result (also known as *The result™*) per value, and in mathematics almost always do. Actually, math is designed in a way so its operations are valid functions:
 
-> Every generalisation of number has ﬁrst presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible.
+> Every generalization of number has first presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible.
 > Bertrand Russell, from Introduction to Mathematical Philosophy
 
 Note that most mathematical operations, such as addition, multiplication etc. require two numbers in order to produce a result. This does not mean that they are not functions, it means that they are just a little more fancy ones. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
@@ -201,7 +201,7 @@ Most of the types of programming are composite types - they are a combination of
 
 **Question:** What is the type equivalent of subsets in programming?
 
-**Question:** Do you recognise some of the basic functions we defined in programming languages you know?
+**Question:** Do you recognize some of the basic functions we defined in programming languages you know?
 
 Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function which that takes an argument of type `Char` and returns a `Boolean`, depending on whether the character is a letter.
 
@@ -232,11 +232,11 @@ Unlike the set above, most sets that we discussed (like the empty set and single
 
 ![Sets that don't contains themselves](sets_dont_contain_themselves.svg)
 
-In order to understand Russell's paradox we will try to visualise **the set all sets that do not contain themselves**. In the original set notation we can define this set as *Let R = { x => x ∉ x }* (let R be such that it contains all sets *x* such that *x* is not a member of *x*). 
+In order to understand Russell's paradox we will try to visualize **the set all sets that do not contain themselves**. In the original set notation we can define this set as *Let R = { x => x ∉ x }* (let R be such that it contains all sets *x* such that *x* is not a member of *x*). 
 
 ![Russel's paradox - option one](russells_paradox.svg)
 
-If we look at the definition, we recognise that the set that we just defined - *R* does not contain itself and therefore it belongs there as well.
+If we look at the definition, we recognize that the set that we just defined - *R* does not contain itself and therefore it belongs there as well.
 
 ![Russel's paradox - option one](russells_paradox_2.svg)
 
@@ -303,9 +303,9 @@ Notice that the function is invertible, that is if you flip its arrows you get a
 
 ![Opposite colors](isomorphism_one_one.svg)
 
-Invertible functions are called *isomorphisms*. When there is an invertible function between two sets we can say that the sets are *isomorphic*. For example, the temperature measured in Celcius is isomorphic to the temperature, measured in Fahrenheit.
+Invertible functions are called *isomorphisms*. When there is an invertible function between two sets we can say that the sets are *isomorphic*. For example, the temperature measured in Celsius is isomorphic to the temperature, measured in Fahrenheit.
 
-More formally, two sets **R** and **G** are isomorphic, or **R ≅ G** if there exist functions **f: G → R** and its reverse **g R → G**, such that **f ∘ g = idR** and **g ∘ f = idG** (notice how the identity function comes in handy).
+More formally, two sets **R** and **G** are isomorphic, or **R ≅ G** if there exist functions **f: G → R** and its reverse **g R → G**, such that **f ∘ g = id R** and **g ∘ f = id G** (notice how the identity function comes in handy).
 
 Isomorphism and equality
 ---
@@ -327,7 +327,7 @@ Isomorphisms Between Singleton Sets
 
 Between any two singleton sets, we may define the only possible function.
 
-![The only possible function between sungletons](singleton_function.svg)
+![The only possible function between singletons](singleton_function.svg)
 
 The function is invertible, which means that all singleton sets are isomorphic to one another.
 
