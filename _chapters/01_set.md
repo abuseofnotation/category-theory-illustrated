@@ -68,7 +68,7 @@ Of course if one is a valid answer, so can be zero. If we want a set of all *bla
 
 Note that a set is defined only by the items it contains, which means that there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. In other words, the empty set is *unique* set, which makes it a very special one. Formally, the empty set is marked with the symbol **∅** (so **B = W = ∅**).
 
-The empty set is a special one, for example, it is a subset of every other set (mathematically speaking, **∀ A \| A ⊆ ∅**)
+The empty set is a special one, for example, it is a subset of every other set (mathematically speaking, **∀ A \| ∅ ⊆ A**)
 
 We will encounter the empty set again.
 
@@ -286,7 +286,7 @@ The Power of Composition
 
 To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
 
-If we have a function **g: P → Y ** from set **P** to set **Y**, then for every function **f** from the set **Y** to any other set, there is a corresponding function **f ∘ g** from the set **P** to the same set. In other words, every time you define a new function from **Y** to some other set, you gain one function from **P** to that same set for free.
+If we have a function **g: P → Y** from set **P** to set **Y**, then for every function **f** from the set **Y** to any other set, there is a corresponding function **f ∘ g** from the set **P** to the same set. In other words, every time you define a new function from **Y** to some other set, you gain one function from **P** to that same set for free.
 
 ![Functional composition connect](morphism_general.svg)
 

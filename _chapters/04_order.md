@@ -60,7 +60,7 @@ This is the law that to a large extend defines what an order is: if I am better 
 Antisymmetry
 ---
 
-The third law is called antisymmetry and it states that the function that defines the order should not give contradictory results (**a ≤ b ⟺ b ≰ a**). 
+The third law is called antisymmetry and it states that the function that defines the order should not give contradictory results (or in other words you have **x ≤ y** and **y ≤ x** only if **x = y**). 
 
 ![antisymmetry](antisymmetry.svg)
 
@@ -71,7 +71,7 @@ Totality
 
 The last law is called *totality* (or *connexity*) and it mandates that all elements that belong to the order should be comparable - **a ≤ b or b ≤ a**. That is, for any two elements, one would always be "bigger" than the other. 
 
-By the way, this law makes the reflexivity law redundant, as it is just a special case of reflexivity when **a** and **b** are one and the same object, but I still want to present it for reasons that will become apparent soon.
+By the way, this law makes the reflexivity law redundant, as reflexivity is just a special case of totality when **a** and **b** are one and the same object, but I still want to present it for reasons that will become apparent soon.
 
 ![connexity](connexity.svg)
 
@@ -171,7 +171,7 @@ Like with the maximum element, if two elements have several upper bounds that ar
 
 ![A non-join diagram](non_join.svg)
 
-If, however, one of those elements is established as bigger than another, it immediately qualifies.
+If, however, one of those elements is established as smaller than the rest of them, it immediately qualifies.
 
 ![A join diagram](non_join_fix.svg)
 
