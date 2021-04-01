@@ -13,7 +13,7 @@ What are monoids
 
 Monoids are simpler than categories. A monoid is defined by a collection (set) of elements and an operation that allows us to combine two element and produce a third one of the same kind.
 
-Let's take our familiar colourful balls.
+Let's take our familiar colorful balls.
 
 ![Balls](balls.svg)
 
@@ -45,7 +45,7 @@ Actually, not any (associative) rule for combining elements makes the balls form
 
 As you probably remember from the last chapter, functional composition is also associative and it also contains an identity element, so you might start suspecting that it forms a monoid in some way. And it is really the case with one little caveat. 
 
-To keep the suspense alive, let's see some simpler monoids before we dwelve into that:
+To keep the suspense alive, let's see some simpler monoids before we delve into that:
 
 Basic monoids 
 ===
@@ -107,7 +107,7 @@ Free Monoids
 Other monoid-like objects
 ===
 
-Monoid operations obey two laws - they are associative and there is an identity element. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which (elements) actions are combinded results in the definition of other monoid-like structures.
+Monoid operations obey two laws - they are associative and there is an identity element. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which (elements) actions are combined results in the definition of other monoid-like structures.
 
 Commutative (abelian) monoids
 ---
@@ -129,9 +129,9 @@ Groups
 
  A group is a monoid in which each element has what is called an "inverse" element where the element and its inverse cancel each other out when applied one after the other, in other words , **forall x, there must exist x' such that x • x' = i** ( where **i** is the identity element).
 
-If we view *monoids* as a means of modelling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions are also *reversible*.
+If we view *monoids* as a means of modeling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions are also *reversible*.
 
-An nice example of a group can be found in the realm of numbers (really, numbers are a nice example of almost all laws) - it is the set of integers under addition, where the inverse of each number is its opposite number (positive numbers' inverse are negatives and vice versa). The above formula, then, becomes **x + (-x) = 0**
+A nice example of a group can be found in the realm of numbers (really, numbers are a nice example of almost all laws) - it is the set of integers under addition, where the inverse of each number is its opposite number (positive numbers' inverse are negatives and vice versa). The above formula, then, becomes **x + (-x) = 0**
 
 The study of groups is a field that is much bigger than the theory of monoids (and perhaps bigger than category theory itself). 
 
@@ -171,12 +171,12 @@ Connecting the dots (or the triangles in this case) shows us that there are just
 
 The rotations of a triangle form a monoid - the rotations are actions (of which the zero-degree rotation is the identity) and we can combine two actions by performing the first one and then performing the second one.
 
-Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to to with the triangles themselves, as we shall see later.
+Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with the triangles themselves, as we shall see later.
 
 Cyclic groups/monoids
 ---
 
-Ennumerating all the rotations of a more complex geometrical figure looks quite messy at first.
+Enumerating all the rotations of a more complex geometrical figure looks quite messy at first.
 
 ![The group of rotations in a more complex figure](symmetry_rotation_square.svg)
 
@@ -238,7 +238,7 @@ To demonstrate how, let's take the following two groups (which, having just two 
 
 ![Two trivial groups](groups_product.svg)
 
-We get set of elements of the new group by making *the cartesian product* of the set of the elements of the first group and the set of the element of the second one.
+We get set of elements of the new group by making *the Cartesian product* of the set of the elements of the first group and the set of the element of the second one.
 
 ![Two trivial groups](groups_product_four.svg)
 

@@ -12,16 +12,16 @@ Now let's talk about order. Given a set of objects, there can be numerous criter
 
 However, as mathematicians we are not interested in the *criteria* that we can use to order objects, but in the *nature of the relationship* that defines the order. Of which there can be several types as well. 
 
-Mathematically we can represent order as a *set of things* (e.g. our balls) and *a binary relation* between these things (which we often represent as a bunch of arrows). Not all binary relationships are orders - only ones that fit certain criteria that we are going to examine as we review the different types of order.
+Mathematically we can represent order as a *set of things* (e.g. colorful balls) and *a binary relation* between these things (which we often represent as a bunch of arrows). Not all binary relationships are orders - only ones that fit certain criteria that we are going to examine as we review the different types of order.
 
 Linear order
 ===
 
-The most straightforward type of order that you think about is linear order i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which elements comes before which. For example, ordering the colors by the length of their waves (or by how they appear in the rainbow).
+The most straightforward type of order that you think about is linear order i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which element comes before which. For example, ordering the colors by the length of their waves (or by how they appear in the rainbow).
 
 ![Linear order](linear_order.svg)
 
-In most programming languages, we can order objects linearly by providing a function which, given two objects, tells us which one of them is "bigger" (comes first) than which one is "smaller".
+In most programming languages, we can order objects linearly by providing a function which, given two objects, tells us which one of them is "bigger" (comes first) and which one is "smaller".
 
 ```
 [1, 3, 2].sort((a, b) => { 
@@ -33,7 +33,7 @@ In most programming languages, we can order objects linearly by providing a func
 })
 ```
 
-But in order for such function to really define an order (e.g. give the same output every time, independent of how were the objects shuffled initially), it has to obey several rules. 
+But in order for such a function to really define an order (e.g. give the same output every time, independent of how the objects were shuffled initially), it has to obey several rules. 
 
 Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the relationship between elements in an order i.e. those are the rules that define which element can point to which. Let's review them.
 
@@ -51,11 +51,11 @@ We can formulate it the opposite way too and say that each object should *not* h
 Transitivity
 ---
 
-The second law is maybe the least obvious, (but probably the most essential) - it states that if one object one bigger than object two, it is automatically bigger than all objects that are smaller than object two or **a ≤ b and b ≤ c ➞ a ≤ c**. 
+The second law is maybe the least obvious, (but probably the most essential) - it states that if object **a** is bigger than object **b**, it is automatically bigger than all objects that are smaller than object **b** or **a ≤ b and b ≤ c ➞ a ≤ c**. 
 
 ![Transitivity](transitivity.svg)
 
-This is the law that to a large extend defines what an order is: if I am better at playing soccer than my grandmother, then I would also be better at it than my grandmother's friend, whom she beats, otherwise I wouldn't really be better at her.
+This is the law that to a large extend defines what an order is: if I am better at playing soccer than my grandmother, then I would also be better at it than my grandmother's friend, whom she beats, otherwise I wouldn't really be better than her.
 
 Antisymmetry
 ---
@@ -100,7 +100,7 @@ From the fact that any finite order of objects is isomorphic to the natural numb
 
 **Question:** If all orders are isomorphic with one another, why do we say that numbers are the quintessential order?
 
-So the linear order is a perfect order, but it is also (and I think that these theorems prove it) the most *boring* order ever, especially when looked from a category-theoretic viewpoint - all finite linear orders are just isomorphic to the natural numbers (by the way, most infinite orders are isomorphic to the natural numbers as well, with the exception of the ones for which Cantor's diagonal argument applies) and so all of their diagrams look in the same way.
+So the linear order is a perfect order, but it is also (and I think that these theorems prove it) the most *boring* order ever, especially when looked from a category-theoretic viewpoint - all finite linear orders are just isomorphic to the natural numbers (by the way, most infinite orders are isomorphic to the natural numbers as well, with the exception of the ones for which Cantor's diagonal argument applies) and so all of their diagrams look the same way.
 
 ![Linear order (general)](general_linear_order.svg)
 
@@ -119,7 +119,7 @@ However, including this **o**ther person whom none of us played yet, makes the h
 
 ![Soccer player order - leftover element](player_order_leftover.svg)
 
-This is the main difference between partial and total orders - partial orders cannot provide us with a definite answer of the question who is better at who. But sometimes this is what we need - in sports, as well as in other domains, there isn't always an appropriate way to rate people linearly. 
+This is the main difference between partial and total orders - partial orders cannot provide us with a definite answer of the question who is better than who. But sometimes this is what we need - in sports, as well as in other domains, there isn't always an appropriate way to rate people linearly. 
 
 Chains
 ---
@@ -159,7 +159,7 @@ The *least upper bound* of two elements that are connected as part of an order i
 
 ![Join](join.svg)
 
-There can be multiple elements bigger than **A** and **B** (all elements that are bigger than **C** are also bigger than **A** and **B**), but only one of them is a join. Formally, the join of **A** and **B** is defined as the smallest element **C** that is bigger than both **A** and **B** (i.e.for which **A ≤ C**, and **B ≤ C**. 
+There can be multiple elements bigger than **A** and **B** (all elements that are bigger than **C** are also bigger than **A** and **B**), but only one of them is a join. Formally, the join of **A** and **B** is defined as the smallest element **C** that is bigger than both **A** and **B** (i.e. for which **A ≤ C**, and **B ≤ C**. 
 
 ![Join with other elements](join_other_elements.svg)
 
@@ -216,7 +216,7 @@ If you go through it, you will notice that the join of any two colors is the col
 Numbers by division
 ---
 
-When we order numbers by "bigger or equal to", they form a total order (*the* total order even). But numbers can also form a partial order, for example if we order them by the relationship of which divides which, like if **A** divides **B**, then **A** is before **B** e.g. because **2 * 5 = 10** **2** and **5** come before **10** (but **3**, for example does not).
+When we order numbers by "bigger or equal to", they form a total order (*the* total order even). But numbers can also form a partial order, for example if we order them by the relationship of which divides which, like if **A** divides **B**, then **A** is before **B** e.g. because **2 * 5 = 10**, **2** and **5** come before **10** (but **3**, for example does not).
 
 ![Divides poset](divides_poset.svg)
 
@@ -251,13 +251,13 @@ Let's elaborate a bit about the isomorphism between the number poset and the pri
 
 ![Divides poset](divides_poset_isomorphism.svg)
 
-Birkoff's representation theorem
+Birkhoff's representation theorem
 ---
 
-So far, we saw two different partial orders, one based on color mixing, and one based on number division,  which can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one). Many other partial orders can be defined in this way. Which ones exactly is a question that is answered by an amazing result called *Birkoff's representation theorem*. They are the partial orders that meet the following two criteria: 
+So far, we saw two different partial orders, one based on color mixing, and one based on number division,  which can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one). Many other partial orders can be defined in this way. Which ones exactly is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the partial orders that meet the following two criteria: 
 
 1. All elements have *joins* and *meets* (those partial orders are called *lattices*, by the way) 
-2. Those *meet* and *join* operations are *distribute* over one another, that is **x ∨ (y ∧ z) = (x ∨ y) ∧ (x ∨ z)**.
+2. Those *meet* and *join* operations *distribute* over one another, that is **x ∨ (y ∧ z) = (x ∨ y) ∧ (x ∨ z)**.
 
 (Just to note that this result is only proven for *finite* lattices, so it might not be valid for the numbers all the way to infinity. But it would be valid for any subset of them.)
 
@@ -284,7 +284,7 @@ Our color-mixing lattice, has a *maximum element* (the black ball) and a *minimu
 Semilattices and trees
 ---
 
-Lattices are posets that have both *join* *and* a *meet* for each pair of elements. Posets that just have *join* (and no *meet*), or just have *meet* and no *join* are called *semilattices*. More specifically, posets that have a *meet* for every pair of elements are called *meet-semilattices*.
+Lattices are posets that have both *join* *and* *meet* for each pair of elements. Posets that just have *join* (and no *meet*), or just have *meet* and no *join* are called *semilattices*. More specifically, posets that have *meet* for every pair of elements are called *meet-semilattices*.
 
 ![Semilattice](semilattice.svg)
 
@@ -296,7 +296,9 @@ The difference between the two is small but crucial:  in a tree, each element ca
 
 ![Tree and semilattice compared](semilattice_tree.svg)
 
-A good intuition for the difference between the two is that a semilattice is capable of representing much more general relations, so for example, the mother-child relation forms a tree (a mother can have multiple children, but a child can have *only one* mother), but the "older sibling" relation forms a lattice, as a child can have multiple older siblings, as well as vise versa.
+<!-- TODO add a similar diagram for posets and total orders -->
+
+A good intuition for the difference between the two is that a semilattice is capable of representing much more general relations, so for example, the mother-child relation forms a tree (a mother can have multiple children, but a child can have *only one* mother), but the "older sibling" relation forms a lattice, as a child can have multiple older siblings and vise versa.
 
 The implications of the tendency to use trees to model everything as opposed to lattices are examined in the ground-breaking essay “A City is Not a Tree” by Christopher Alexander.
 
@@ -316,7 +318,7 @@ In the previous section, we saw how removing the law of totality from the laws o
 | **Partial order/lattice** | reflexive | transitive | antisymmetric | ~~total~~ | Either **a ≤ b** or **b ≤ a** or they are unrelated.
 | **Preorder** | reflexive | transitive | ~~antisymmetric~~ | ~~total~~ | Both **a ≤ b** and **b ≤ a** are possible.
 
-This results in something called a preorder which is not exactly an order, as I hinted at the beginning - it can have arrows coming from any point to any other: if a partial order can be used to model who is better at who in soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
+This results in something called a preorder which is not exactly an order, as I hinted at the beginning - it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 
 ![preorder](preorder.svg)
 
@@ -345,11 +347,11 @@ What about that other law that was required in order to be a category - the iden
 
 ![Reflexivity](reflexivity.svg)
 
-So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions using (through the inclusion order) and sets and functions form a category at their own right). 
+So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions using (through the inclusion order) and sets and functions form a category in their own right). 
 
 And since partial orders and total orders are preorders too (as they obey those two laws), they are categories as well.
 
-Starting to compare the categories of preorders, and partial and linear orders to other categories, like the (quintessential) category of sets, immediately sets them apart. In other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*. That is, for two objects **a** **b** we either we have **a ≤ b** or we do not. 
+Starting to compare the categories of preorders, and partial and linear orders to other categories, like the (quintessential) category of sets, immediately sets them apart. In other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*. That is, for two objects **a** **b** we either have **a ≤ b** or we do not. 
 
 ![Orders compared to other categories](arrows_one_arrow.svg)
 
