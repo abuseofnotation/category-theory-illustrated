@@ -184,7 +184,7 @@ What other categories, or applications of category theory are there, other than 
 
 This diagram illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion, but we saw how taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
 
-**NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.**
+**NB: Do note how the word "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.**
 
 Looking at the table I cannot help but notice the somehow weird, but otherwise completely logical symmetry (or perhaps "reverse symetry") between the the world as viewed through the lense of set theory, and the way it is viewed through the (inverted) lens of cathegory theory:
 

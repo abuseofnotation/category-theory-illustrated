@@ -16,7 +16,7 @@
       </div>
       <div class="container page-{{page.title}}">
         <!--<h1>{{page.title}}</h1> -->
-        {{ content }}
+
         <div class="prev-next">
         {% if page.previous.url %}
           <a class="prev" href="{{site.baseurl}}{{page.previous.url}}">&laquo;prev</a>
@@ -24,7 +24,19 @@
         {% if page.next.url %}
           <a class="next" href="{{site.baseurl}}{{page.next.url}}">next&raquo;</a>
         {% endif %}
-      </div>
+        </div>
+
+        {{ content }}
+
+        <div class="prev-next">
+        {% if page.previous.url %}
+          <a class="prev" href="{{site.baseurl}}{{page.previous.url}}">&laquo;prev</a>
+        {% endif %}
+        {% if page.next.url %}
+          <a class="next" href="{{site.baseurl}}{{page.next.url}}">next&raquo;</a>
+        {% endif %}
+        </div>
+        <script type='text/javascript' src='https://ko-fi.com/widgets/CounterWidget.js'></script><script type='text/javascript'>counterwidget.init('K3K539YDO');counterwidget.draw();</script>
       </div>
       <div class="footer">
         <div class="container">
@@ -51,6 +63,8 @@
 
           <h1>Support this project</h1>
           <p><a target="_blank" href="https://ko-fi.com/borismarinov">Ko-fi</a></p>
+
+
       </div>
       </div>
       <div class="footer">

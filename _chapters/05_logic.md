@@ -6,52 +6,189 @@ title: Logic
 Logic
 ===
 
-Here we go with this little *leit motif* of mine where I begin talking about something completely different and then it turns out that it is all connected. This time I will not merely transport you to a different branch of mathematics, but an entirely different discipline, namely *logic*. Or, to be more precise, intuitionistic logic. This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually very close.
+Now let's talk about one more *seemingly* unrelated topic, just so we can surprise ourselves that it is all connected. This time I will not merely transport you to a different branch of mathematics, but an entirely different discipline, namely *logic*. Or, to be more precise, intuitionistic logic. This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually very close.
 
-Logic aims to study the *rules* by which knowing one thing leads you to conclude that some other thing is also true, and (most importantly) to do this in a formal way i.e. without regard of what these things are, or how you learned them. And on top of that it tries to organize those rules in what are called *systems*, or *formal systems* - containing selections of rules that have the expressive ability to prove everything that you can see by intuition.
+What is logic
+===
 
-What does "prove" mean in this context? Simple, when we are able, using the rules of a given logical system, to transform one set of *propositions* (or "things we know") **A** to another set of proposition **B** (things that we *want* to know) we say that we have proven that **A → B** in that logical system. 
+Beyond the world that we inhabit and perceive every day there exist the world of *forms*. Although inaccessible to us, this world is the realization of all our ideas and concepts that we use in our everyday thinking. Beyond all the people, there lies the prototypical person, and we are people only insofar as we resemble that person. Beyond all the things in the world that are strong, lies the ultimate concepts of strength, from which all of them borrow. This is a worldview that is due to the Greek philosopher Plato and which is sometimes called "the theory of forms". The discipline of logic represents an effort to think and structure our thoughts in a way that they apply to this world of forms i.e. in a "formal" way.
 
-Note that the word "prove" is a little misleading here, especially when used with the combination of the world *true* (which is misleading even by itself) - you don't prove anything using logic, you merely verify that it follows from a given set of propositions *AND* a given set of rules of inference for manipulating those propositions. I think that we are only using this word because verifying that something follows from a set of axioms and rules is the closest that we have to an actual proof.
+As such, logic aims to study the *rules* by which knowing one thing leads you to conclude or (*prove*) that some other thing is also true without any regard of what these things are specifically, i.e. by only refering to their form.
 
-What this means is that in order to do anything at all in logic, we should have an initial set of propositions that we accept as true. In the real-world usages, those propositions would be facts about the world, probably scientific facts. When talking about logic itself, these propositions are usually represented by letters (**A**, **B** etc.), here I will use the colorful balls that you are familiar with to represent the "atomic" propositions or the axioms that is the things that you start with.
+On top of that, it (logic) tries to organize those rules in what are called *formal systems*  - these are collections of rules that have give you the maximum expressive ability without adding anything extra.
+
+What does "prove" mean in this context? Simple - when we are able, using the rules of a given logical system, to transform one set of *propositions* (or "things we know") **A** to another set of proposition **B** (things that we *want* to know) we say that we have proven that **A → B** in that logical system. Note that the word "prove" is a little misleading here, especially when used with the combination of the word *true* (which is misleading even by itself) - you don't prove anything using logic, you merely verify that it follows from a given set of propositions *AND* rules for manipulating those propositions. I think that we are only using this word (prove) because verifying that something follows from a set of axioms and rules is the closest that we have to an actual proof (in the same way in which our world is the closest that we have to Plato's world of forms).
+
+Here I will have to quote Bertrand Russell, and the way he explains this concept, using geometry as an example:
+
+> But since the growth of non-Euclidean Geometry, it has appeared that pure mathematics has no concern with the question whether the axioms and propositions of Euclid hold of actual space or not: this is a question for applied mathematics, to be decided, so far as any decision is possible, by experiment and observation. What pure mathematics asserts is merely that the Euclidean propositions follow from the Euclidean axioms--i.e. it asserts an implication: any space which has such and such properties has also such and such other properties. Thus, as dealt with in pure mathematics, the Euclidean and non-Euclidean Geometries are equally true: in each nothing is affirmed except implications. All propositions as to what actually exists, like the space we live in, belong to experimental or empirical science, not to mathematics; when they belong to applied mathematics, they arise from giving to one or more variables in a proposition of pure mathematics some constant value satisfying the hypothesis, and thus enabling us, for that value of the variable, actually to assert both hypothesis and consequent instead of asserting merely the implication.
+> Bertrand Russell, from The Principles of Mathematics (1903)
+
+Try to relate this to Plato's theory of forms.
+
+Logic and mathematics 
+---
+
+All of the concepts that we studied here are formal concepts, so we can say that we have been doing logic throughout this book. And we would be quite correct - every mathematical theory is logic plus some additional definitions added to it. Part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that set theory (in particular the Zermelo–Fraenkel flavour of it) adds just one single primitive to the standard axioms of logic which we will see shortly - the binary relation that indicates *set membership* i.e. it is very very close to logic.
+
+Primary propositions
+---
+
+A consequence of the above is that in order to do anything at all in logic, we should have an initial set of propositions (or "values" as Russell calls them) that we accept as true. These are also called called "premises", "primary propositions" and "atomic propositions" as Wittgenstein dubbed them. 
 
 ![Balls](balls.svg)
 
-But here balls do not represent objects "things", but facts about the world or "propositions", as they are called (you can think of them as functions, which is a very similar concept) and logical proposition can be combined with one another, and relate to one another, unlike the monoid operation, in *multiple ways*. But, like with the monoid operation, the result from combining two propositions would always be another (more complex) proposition, so **A** is a proposition then **A ∧ B** (**A and B** is also a proposition, as is **((A ∧ B) ∨ C)**. 
+In the real-world usages, these propositions would be facts about the world, probably scientific or mathematical facts. When talking about logic itself, these propositions are usually represented by letters (**A**, **B** etc.) or in this case, the colorful balls that you are familiar with. 
+
+Composing propositions
+---
+
+If we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operator, like "and", "or" "follows". The result would be a new proposition, not unlike the way in which monoid objects are combined into a new monoid object using the monoid operation. Moreover, some logical operations, like **AND** and **OR** do actually form monoids. 
+
+[Logical operations that form monoids](logic_monoid.svg)
+
+However logic is not *just* a monoid, as logic involves more than one logical operation so logical propositions can relate to one another in more than one ways (and we are interested in how do they relate).
+
+[The distributivity operation of "and" and "or"](logic_distributivity.svg)
+
+One very important note: when looking at the diagram above, we may be inclined to distinguish propositions that are composed of several premises (united with operators) from primary propositions.
+
+[Composite and atomic propositions](composite_atomic_contrast.svg)
+
+However in order for our logic to work, we should *not* threat those two types any differently from one another, e.g. **A** is a proposition in the same way as **A ∧ B** or **((A ∧ B) ∨ C)** 
+
+In order to represent composite propositions we would have to amend our notation a bit: aside from the single-color balls (which represent the atomic propositions), we would also have some multi-colored ones that represent composite propositions.
+
+[Composite and atomic propositions](composite_atomic_united.svg)
+
+In other words, we can view atomic propositions as composite propositions that have just one value. 
 
 ![Balls as propositions](balls_propositions.svg)
 
-Let's take an example with one of the most famous argument ever - *modus ponens*, which states that if **A** is true and if also **A → B** is true (if **A** implies **B**), then **B** is true as well. So, if being a person it implies being mortal and if Socrates is a person, then Socrates is mortal. On a basic level, it is expressed by two propositions in a "follows" relation in which the proposition that follows **B** atomic, but the proposition from which **B** follows is not - let's call that one **C** and so the proposition becomes **C → B**. But if we go deeper we have to mention that the **C** propositions is itself composed of two propositions in an "and", relationship **A** and let's call it **D** (so **A ∨ D**), where **D** is itself composed of two propositions, this time in a "follows" relationship **A → B**.
+Threating atomic and composite propositions the same allow us to compose logical propositions with multiple levels of nesting (*recursively* as the computer science people say). Let's take an example with one of the most famous propositions ever - *modus ponens*, which states that if **A** is true and if also **A → B** is true (if **A** implies **B**), then **B** is true as well. On a basic level, it is expressed by two propositions in a "follows" relation in which the proposition that follows **B** atomic, but the proposition from which **B** follows is not - let's call that one **C** and so the proposition becomes **C → B**. But if we go deeper we have to mention that the **C** propositions is itself composed of two propositions in an "and", relationship **A** and let's call it **D** (so **A ∨ D**), where **D** is itself composed of two propositions, this time in a "follows" relationship **A → B**.
 
 ![Modus ponens](modus_ponens.svg)
 
-Let's now examine the relations that we saw in depth and see what they mean.
-
-Logical relations
+Tautologies
 ---
 
-Logical relations are just functions that take a number of boolean values and return another boolean value. Most of them (like *and*, *or follows*) take two arguments. They are *binary relations* 
+As the implicit aim of logic is the search for truth, a very interesting type of propositions are those that are *always true*, regardless of the premises (or *in all models of the system*, if we want to be fancy with the terminology). Ludvig Wittgenstein called such propositions *tautologies* as in "something that repeats itself" and that is a pretty appropriate name - most of them state that something follows from something else where the something and the something else are actually the same thing.
 
-Once we have defined the relations, we can combine them into formulas, by applying them successively. This successive application is not exactly functional composition, because each operation accepts two arguments instead of one, but we still can do the same thing as in functional composition, namely to combine several relations into one.
 
-Interlude: Truth tables
+![Identity tautology](tautology_identity.svg)
+
+The the simplest tautology, is one which states that a proposition implies itself (the canonical example of a "All bachelors are unmarried"), but there are some less boring ones, where the connection between the left and the right is not so apparent.
+
+![Tautologies](tautology_list.svg)
+
+Rules of inference and axioms
 ---
 
-When combining different logical operations into formulas we often want to check what the output would be for different values and whether the formulas are *universally valid*, that is whether they are true for all possible inputs.
+Tautologies can be used as *logical *axioms* or (a closely related concept) as *rules of inference*. Let's take an example with one important tautology that we saw earlier, namely *modus ponens*. It is easy to see that it is a tautology the *follows* relation in it will always hold, no matter what the green and blue propositions are, and whether they are true or false. 
 
-Because the arguments that logical relations have just two possible values (**true** and **false**), it is not hard to do that by enumerating all possible combinations of the arguments.
+![Modus ponens](modus_ponens.svg)
 
-For example, here is how we use truth table to prove that **p → q** is the same as **-p ∨ q**.
+As a result for this, we can replace the blue and green propositions with any propositions that we want (primary *or* composite), and get many other true propositions. 
 
-| p |	q | p → q | -p  | q   |  -p ∨ q |
-|---| --- | ---   | --- | --- | --- |
-| True  | True  | **True**  | False | True | **True** |
-| True  | False | **False** | False | False | **False** |
-| False | True  | **True**  | True  | True | **True** |
-| False | False | **True**  | True  | False | **True** |
+![Variation of modus ponens](modus_ponens_variations.svg)
+
+Such propositions are called *axioms* and the "structure" that is used for producing them is an *axiom schema*. 
+
+![Modus ponens](modus_ponens_schema.svg)
+
+All logical axioms can easily be be adapted into a rule that we can use to create new propositions out of existing one (*rule of inference*), in the following very simple way:
+
+1. Find a proposition that has the same structure of the first part of the axiom schema (the one before the "follows".
+2. Generate an axiom that is the same as this proposition.
+3. "Plug" the axiom into the proposition that you have.
+
+This is how we transform axioms to rules of inference, that help you to build (prove) new propositions.
+
+Logical systems
+---
+
+Knowing that we can take a tautology and use it by means of substitution to generate tautologies (as well as other propositions), you might ask whether it is possible to compile a small collection of such tautologies, selected in such a way that if we use them as axiom schemas we can generate all other tautologies. 
+
+[A minimal collection of Hilbert axioms](min_hilbert.svg)
+
+You would be happy (although a little annoyed, I imagine) to learn that there exist not only one, but an infinite number of such collections. Those collections are what we call "logical systems" (also "proof systems", or "proof calculi"). There are two main classes of such logical systems, which we will examine later: the first one are the so-called *Hilbert-style* proof systems (also called *Frege-style*) and the other one are the systems of *natural deduction*, the main difference between the two being whether they rely on *axioms* or on *rules of inference* as a methods for proving propositions.
+
+- *Natural deduction* systems consist only of *rules of inference* (they don't have axiom schemas).
+- *Hilbert-style* systems, on the other hand rely mainly on *axiom schemas* as means of proving propositions. They do, however, contain one rule of inference, just because otherwise there would be no way to combine the generated propositions - usually that rule is the *modus ponens* rule, that we already saw.
+
+But wait, how can we be *sure* that a given system is really capable of deducing all tautologies that exist in the world? We can be sure, because it was proven by a guy called Godel, who is like the greated logician ever, a result known as Godel's completenes theorem. However we won't get into that result right now - in fact let's take a step back and try to formalize the terms that we talked about so far.
 
 
+The classical perspective
+===
+
+The classical formalization of logic is based on a simple observation - each proposition is either true or false i.e. it has just two possible values. 
+
+We can view primary propositions as simple functions that return a boolean value and don't take any arguments.
+
+We can view logical operators as functions that take a bunch of boolean values and return another boolean value (composite propositions are just the results of the invocation of these functions.)
+
+This observation (that propositions can be either true or false) vastly simplifies both the definition of logical operators and the solving of some problems - all you need to do is to ennumerate all possibilities.
+
+Negation
+---
+Let's begin with the the negation operation, because it is the simplest one, as it is an unary operation, which means it takes just one argument. The negation operation can be represented by this function.
+
+![negation](negation.svg)
+
+Which can be expressed in a sligtly less-fancy way by this table (the header of the second column is read "not p".)
+
+| p | ¬p |
+|---| --- | 
+| True  | True  | 
+| False  | False |
+
+Such tables are called *truth tables* and they are ubiquitos in classical logic, not only for defining operators, but for proving results as well.
+
+Proving results by truth tables
+---
+
+Eventhough axioms and rules of inference are important, each proposition in classical logic can be proved by means of truth tables. Moreover, the fact that a proposition is proven by means of axioms and rules means nothing more than the fact that it can be also proven by truth tables. This is so, because axioms are themselves proven by means of truth tables. In fact, having the definition of the negation operator, we can use it to prove our first proposition, called *double negation elimination*, says that a double negative of a given proposition is equivalent to the proposition itself.
+
+![Double negation elimination formula](double_negation_formula.svg)
+
+If we view logical operators as functions, from and to the set of boolean values, than proving axioms involves composing those functions (using in this case just plain *functional composition*) and observing that theit outputs match. The proof of the formula above is the observation that composing the negation function by itself is equivalent to applying the identity function.
+
+![Double negation elimination](double_negation.svg)
+
+The equivalent of this in natural language is the fact that saying that I am *not unable* to do X is the same as saying that I am *able* to do it.
+
+Here is the same thing as a truth-table.
+
+| p | ¬p | ¬¬p |
+|---| --- | --- |
+| True  | False  | True |
+| False  | True | False |
+
+Despite its triviality, this is probably the most controversial result in logic. We will see why later.
+
+The **and** and **or** relations
+---
+
+OK, you know what **and** means and I know what it means, but what about those annoying people that want everything to be formally specified (nudge, nudge). Well we already know how we can satisfy them: we just showing them this truth-table (of course **∧** is the symbol for **and**.)
+
+| p |	q | p ∧ q |
+|---| --- | ---   |
+| True  | True  | True  |
+| True  | False | False |
+| False | True  | False |
+| False | False | False |
+
+We can do the same for **or**.
+
+| p |	q | p ∨ q |
+|---| --- | ---   |
+| True  | True  | True  |
+| True  | False | True  |
+| False | True  | True  |
+| False | False | False |
+
+Some interesting 
 
 Implies relation
 ---
@@ -66,34 +203,29 @@ The "implies" relation, also called ("if-then" relation), binds two propositions
 | False | False | True  |
 
 
-Logic uses truth tables 
-
-And and Or relations 
+Proving results
 ---
 
+When combining different logical operations into formulas we often want to check what the output would be for different values and whether the formulas are *universally valid*, that is whether they are true for all possible inputs.
 
-| p |	q | p ∧ q |
-|---| --- | ---   |
-| True  | True  | True  |
-| True  | False | False |
-| False | True  | False |
-| False | False | False |
+Because the arguments that truth functions take have just two possible values (**true** and **false**), it is not hard to do that by enumerating all possible combinations of the arguments.
 
-Or relation
----
+For example, here is how we use truth table to prove that **p → q** is the same as **-p ∨ q**.
 
-| p |	q | p ∨ q |
-|---| --- | ---   |
-| True  | True  | True  |
-| True  | False | True  |
-| False | True  | True  |
-| False | False | False |
+| p |	q | p → q | -p  | q   |  -p ∨ q |
+|---| --- | ---   | --- | --- | --- |
+| True  | True  | **True**  | False | True | **True** |
+| True  | False | **False** | False | False | **False** |
+| False | True  | **True**  | True  | True | **True** |
+| False | False | **True**  | True  | False | **True** |
 
-False and true
----
 
-Combining relations
----
+The intuinistic perspective
+===
+
+Classical logic
+
+
 
 
 Heyting algebra
@@ -108,5 +240,4 @@ Or and And as joins and meets
 ---
 
 Not object
----
 
