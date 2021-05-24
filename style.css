@@ -1,7 +1,6 @@
 body {
   line-height: 1.5;
   margin: 0;
-
   font-size: 20px;
 }
 
@@ -47,28 +46,6 @@ blockquote {
   padding: 0 10px;
   color: #666;
 }
-
-
-
-
-
-
-
-
-
-
-
-@font-face {
-    font-family: 'mell';
-    src: url('RubikMonoOne.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'mell', cursive;
-}
-
 
 h1 {  
   font-size: 40px;
@@ -118,4 +95,17 @@ table thead th {
 table tfoot {
   font-weight: bold;
   border-top: 3px solid blue;
+}
+
+img {
+  width: 100%;
+}
+.button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.icon {
+  font-size: 26px;
 }

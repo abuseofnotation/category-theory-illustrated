@@ -31,3 +31,11 @@ With respect to orders, it states.
 Here my intuition thinks it should be "so for any other object P such that Y ≤ P and B ≤ P then we should also have G ≤ P"
 
 Take this comments with a grain of salt, since I am no mathematician and these comments are based on intuition rather than logic.
+
+
+
+I think there might be an error in the colors on this page: https://boris-marinov.github.io/category-theory-illustrated/02_category/
+
+https://boris-marinov.github.io/category-theory-illustrated/02_category/product.svg
+
+Shouldn't the orange element from b be red in B x Y?
