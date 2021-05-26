@@ -39,7 +39,9 @@ In the real-world usages, these propositions would be facts about the world, pro
 Composing propositions
 ---
 
-If we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operator, like "and", "or" "follows". The result would be a new proposition, not unlike the way in which monoid objects are combined into a new monoid object using the monoid operation. And, some logical operations do form monoids, like the operation **and** with **true** serving as the identity element.
+If we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operator, like "and", "or" "follows". The result would be a new proposition, not unlike the way in which monoid objects are combined into a new monoid object using the monoid operation. 
+
+Moreover, some logical operations do form monoids, like the operation **and** with **true** serving as the identity element.
 
 ![Logical operations that form monoids](logic_monoid.svg)
 
@@ -49,24 +51,33 @@ However logic is not *just* a monoid, as logic studies not one but many logical 
 
 Important to note that **∧** is the symbol for **and** and **∨** is the symbol for **or** (although the law is actually valid even if **and** and **or** are flipped).
 
-When looking at the diagram above, we may be inclined to distinguish propositions that are composed of several premises (united with operators) from "primary" propositions (single-color balls). However in order for our logic to work, we should *not* threat those two types any differently from one another, e.g. **A** is a proposition in the same way as **A ∧ B** or **((A ∧ B) ∨ C)** - wherever one goes, the others might go as well. 
+The equivalence of primary and composite propositions
+---
+
+When looking at the diagram above, and especially the way the green ball is wrapped, we may be inclined to think that propositions that are composed of several premises (symbolized by grey balls, containing some other balls) are somehow different from "primary" propositions (single-color balls). However, there really is no difference e.g. **A** is a proposition in the same way as **A ∧ B** or **((A ∧ B) ∨ C)** - wherever one goes, the others might go as well. As a result of this is that we can compose propositions with multiple levels of nesting (*recursively* as the computer science people say). 
 
 ![Balls as propositions](balls_propositions.svg)
 
-As a result of this is that we can compose propositions with multiple levels of nesting (*recursively* as the computer science people say). Let's take an example with one of the most famous propositions ever - *modus ponens*, which states that if **A** is true and if also **A → B** is true (if **A** implies **B**), then **B** is true as well. On a basic level, it is expressed by two propositions in a "follows" relation in which the proposition that follows **B** atomic, but the proposition from which **B** follows is not - let's call that one **C** and so the proposition becomes **C → B**. But if we go deeper we have to mention that the **C** propositions is itself composed of two propositions in an "and", relationship **A** and let's call it **D** (so **A ∨ D**), where **D** is itself composed of two propositions, this time in a "follows" relationship **A → B**.
+
+Modus ponens
+---
+
+As an example of a proposition with multiple levels of nesting, consider one of the most famous propositions ever - *modus ponens*, which states that if **A** is true and if also **A → B** is true (if **A** implies **B**), then **B** is true as well. On a basic level, it is expressed by two propositions in a "follows" relation in which the proposition that follows **B** atomic, but the proposition from which **B** follows is not - let's call that one **C** and so the proposition becomes **C → B**. But if we go deeper we have to mention that the **C** propositions is itself composed of two propositions in an "and", relationship **A** and let's call it **D** (so **A ∨ D**), where **D** is itself composed of two propositions, this time in a "follows" relationship **A → B**.
 
 ![Modus ponens](modus_ponens.svg)
 
 Tautologies
 ---
 
-As the implicit aim of logic is the search for truth, a very interesting type of propositions are those that are *always true*, regardless of the premises (or *in all models of the system*, if we want to be fancy with the terminology). Ludvig Wittgenstein called such propositions *tautologies* as in "something that repeats itself" and that is a pretty appropriate name - most of them state that something follows from something else where the something and the something else are actually the same thing.
+As the implicit aim of logic is the search for truth, a very interesting type of propositions are those that are *always true*, regardless of the premises (or *in all models of the system*, if we want to be fancy with the terminology). Ludwig Wittgenstein called such propositions *tautologies* as in "something that repeats itself" and that is a pretty appropriate name - most of them state that something follows from something else where the something and the something else are actually the same thing. The the simplest tautology, is one which states that a proposition implies itself (e.g. "All bachelors are unmarried").
 
 ![Identity tautology](tautology_identity.svg)
 
-The the simplest tautology, is one which states that a proposition implies itself (the canonical example of a "All bachelors are unmarried"), but there are some less boring ones, where the connection between the left and the right is not so apparent.
+But there are some less boring ones, where the connection between the left and the right is not so apparent (the symbol **¬** means "not"/negation.
 
 ![Tautologies](tautology_list.svg)
+
+
 
 Rules of inference and axioms
 ---
@@ -105,11 +116,13 @@ We will see an example of such system, but first let's take a step back and try 
 Classical logic
 ===
 
-Beyond the world that we inhabit and perceive every day there exist the world of *forms*. Although inaccessible to us, this world is the realization of all our ideas and concepts that we use in our everyday thinking. And this world exist outside of us and our ideas e.g. beyond all the people, there lies the prototypical person, and we are people only insofar as we resemble that person. Beyond all the things in the world that are strong, lies the ultimate concepts of strength, from which all of them borrow. This is a worldview that is due to the Greek philosopher Plato and which is sometimes called "the theory of forms". The discipline of classical logic represents an effort to think and structure our thoughts in a way that they apply to this world of forms i.e. in a "formal" way. 
+Beyond the world that we inhabit and perceive every day there exist the world of *forms* that, although inaccessible to us, is the realization of all our ideas and concepts that manifest themselves in the objects that we perceive. e.g. beyond all the people that have ever lived, there lies the prototypical person, and we are people only insofar as we resemble that person, beyond all the things in the world that are strong, lies the ultimate concepts of strength, from which all of them borrow etc. Although, as mere mortals, we live in the world of appearances and cannot perceive the world of forms, we can, through philosophy, "recollect" with it and know some of its features. This is a worldview that is due to the Greek philosopher Plato and is sometimes called the theory of forms. The discipline of classical logic represents an effort to think and structure our thoughts in a way that they apply to this world of forms i.e. in a "formal" way. 
 
-The existence of the world of forms is a comforting thought. It means that even if there are many things that we, people, don't know, the answers to many questions (and are not sure of anything) at least *somewhere out there* there the answer to every question (whether it be affirmitive or negative) exists i.e. that ultimately *each proposition is either true or false*. 
 
-For this reason, propositions in classical logic can be aptly expressed as functions which output boolean values.
+True and false
+---
+
+The existence of the world of forms is a comforting thought. It's existence implies that even if there are many things that we, people, don't know, the answers to many questions (and are not sure of anything) at least *somewhere out there* there the answer to every question (whether it be affirmitive or negative) exists i.e. that ultimately *each proposition is either true or false*. For this reason, propositions in classical logic can be aptly expressed as functions which output boolean values.
 
 - We can view primary propositions as simple functions that return a boolean value and don't take any arguments.
 
@@ -245,21 +258,24 @@ But wait, how can we be *sure* that a given system is really capable of deducing
 Intuinistic logic
 ===
 
+<!--
 > Now this is the story all about how
 > Classical logic got flipped, turned upside down
 > And I'd like to take a minute, just sit right there
 > I'll tell you bout the ideas of a guy called Brouwer
+-->
 
-The foundations of classical logic (which was the topic of the last chapter) remained undisputed from its inception untill the 20th century when people tried to really put them to the test by using it as a basis of all mathematics. It was then when came some results like Godel's *other* famous theorem - his *in*completeness theorem was published, stating that formal systems that in formal systems that are able to represent arithmetics, contain some statements that are undecidable, so they cannot be proven to be true, nor false (note that this does not contradict Godel's completeness theorem, as it speaks about arithmetics in particular, while the completeness theorem is about general logic).
+The foundations of classical logic (which was the topic of the last chapter) remained undisputed from its inception untill the 20th century when people tried to really put them to the test by using it as a basis of all mathematics. It was then when came some disturbing results came out. Resultss like Godel's *other* famous theorem - his *in*completeness theorem was published, stating that formal systems that in formal systems that are able to represent arithmetics, contain some statements that are undecidable, so they cannot be proven to be true, nor false (note that this does not contradict Godel's completeness theorem, as it speaks about arithmetics in particular, while the completeness theorem is about general logic).
 
-In this times, a new philosophical mathematical and logical theory, known as *intuitionism* (also called *constructivism*) was born. If *classical logic* is based on Plato's theory of forms, then intuinism beginned with a philosophical idea originating from Kant and Schopenhauer, that is more or less the exact opposite of what Plato thought - it is the notion that forms are not a thing in itself, but are just subjective ideas that exist only in our minds and the idea that the world as we experience it is largely predetermined of out perceptions of it. Or in the words or L.E.J. Brouwer:
+In this times, a new philosophical mathematical and logical school of thought, known as *intuitionism* (also called *constructivism*) was born. If *classical logic* is based on Plato's theory of forms, then intuinism beginned with a philosophical idea originating from Kant and Schopenhauer, that is more or less the opposite - it is the notion that forms are not a thing in itself, but are just subjective ideas that exist only in our minds and the idea that the world as we experience it is largely predetermined of out perceptions of it. Or in the words of the mathematician who founded this school, L.E.J. Brouwer:
 
 > [...] logic is life in the human brain; it may accompany life outside the brain but it can never guide it by virtue of its own power.
 
-Intuinistic logic
-===
 
-And since mathematics is a free activity and truth is only in our head, we have no basis to claim that each statements is necessarily *either true or false*, which if you remember is the basis of classical logic and truth-tables.
+The BHK Interpretation.
+---
+
+Aside from bening much humbler regarding the validity of its results, the intuinistic school differed from the classical logic over one very important point - they thought that since mathematics is just an activity and truth is only in our heads, then it is necessarily subjective and incomplete, therefore we have no basis to claim that each statements is necessarily *either true or false*, (which if you remember is the basis of classical logic and truth-tables).
 
 The *negation* operation
 ---

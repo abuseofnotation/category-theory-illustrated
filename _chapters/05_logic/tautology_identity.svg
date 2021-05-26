@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 595.3 177"
+   version="1.1"
+   id="svg3397"
+   sodipodi:docname="tautology_identity.svg"
+   inkscape:version="1.1-alpha (17bc9184, 2021-03-28)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata3403">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3401" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1035"
+     id="namedview3399"
+     showgrid="false"
+     inkscape:zoom="1.8797245"
+     inkscape:cx="302.96993"
+     inkscape:cy="92.832753"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3397"
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0" />
+  <g
+     id="g9442"
+     transform="matrix(0.75024244,0,0,0.75024244,93.915747,57.00838)"
+     style="paint-order:fill markers stroke">
+    <g
+       id="g2445-3-1"
+       transform="matrix(2.4458076,0,0,2.2485166,-117.57238,88.039232)"
+       style="fill:#000000;fill-opacity:0.112903;stroke:none;stroke-width:1.32404;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:30.0097px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.750243"
+     x="123.81618"
+     y="18.474348"
+     id="text9288"><tspan
+       sodipodi:role="line"
+       id="tspan9286"
+       x="123.81618"
+       y="18.474348"
+       style="stroke-width:0.750243" /></text>
+  <g
+     style="display:inline;fill:none;stroke:#838383;stroke-width:6.389;stroke-miterlimit:10"
+     id="g1482-7-0-7"
+     transform="matrix(0.30649304,-0.00570877,0.02962,0.42748892,223.86935,-8.267937)">
+    <path
+       style="fill:none;stroke-width:16.0981"
+       inkscape:connector-curvature="0"
+       id="path1478-7-9-4"
+       d="m 300.63709,231.37428 c 5.07924,-1.92282 10.35434,-3.62219 15.75885,-5.21028 -4.09679,-3.38762 -8.45059,-6.65265 -13.06188,-9.79637 -0.92392,5.24208 -1.39222,9.36303 -2.69697,15.00665 z" />
+    <path
+       style="fill:none;stroke-width:10.649;paint-order:markers fill stroke"
+       inkscape:connector-curvature="0"
+       id="path1480-1-3-4"
+       d="M 153.43841,83.202404 C 192.22734,72.827888 281.27803,76.046336 317.498,86.173"
+       sodipodi:nodetypes="cc"
+       transform="matrix(0.89574,0,0,0.81736,18.384,154.236)" />
+  </g>
+  <g
+     id="g8876-5"
+     transform="matrix(1.151878,0,0,1.151878,-115.64358,-203.89879)">
+    <circle
+       cx="414.65698"
+       cy="258.30109"
+       r="18.663952"
+       id="circle3371-8"
+       style="opacity:0.13;stroke:#000000;stroke-width:4.55218;stroke-miterlimit:10" />
+    <circle
+       fill="#f58235"
+       stroke="#e76524"
+       cx="411.01526"
+       cy="252.00392"
+       r="18.663952"
+       id="circle3385-3"
+       style="stroke-width:4.55218;stroke-miterlimit:10" />
+  </g>
+  <g
+     id="g8876-5-7"
+     transform="matrix(1.151878,0,0,1.151878,-217.52032,-203.99776)">
+    <circle
+       cx="414.65698"
+       cy="258.30109"
+       r="18.663952"
+       id="circle3371-8-8"
+       style="opacity:0.13;stroke:#000000;stroke-width:4.55218;stroke-miterlimit:10" />
+    <circle
+       fill="#f58235"
+       stroke="#e76524"
+       cx="411.01526"
+       cy="252.00392"
+       r="18.663952"
+       id="circle3385-3-8"
+       style="stroke-width:4.55218;stroke-miterlimit:10" />
+  </g>
+</svg>
