@@ -1,3 +1,7 @@
+:root {
+  --color: #57a445;
+}
+
 body {
   font-size: 25px;
   font-family: Arial, sans-serif;
