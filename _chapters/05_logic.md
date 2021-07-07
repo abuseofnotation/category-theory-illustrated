@@ -62,7 +62,6 @@ Important to note that **∧** is the symbol for **and** and **∨** is the symb
 The equivalence of primary and composite propositions
 ---
 
-
 Do note that in the leftmost proposition, the green ball is wrapped in a grey ball just to make the diagram prettier - propositions that are composed of several premises (symbolized by grey balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls). 
 
 As a result of this is that we can compose propositions with multiple levels of nesting (*recursively* as the computer science people say). 
@@ -180,28 +179,28 @@ Such tables are called *truth tables* and they are ubiquitos in classical logic,
 Proving results by truth tables
 ---
 
-Eventhough axioms and rules of inference are important, each proposition in classical logic can be proved without them, by means of truth tables. Moreover, the fact that a proposition is proven by means of axioms and rules means nothing more than the fact that it can be also proven by truth tables (this is so, because axioms are themselves proven by means of truth tables). 
+All axioms and rules of inference aside, each proposition in classical logic can be proved by means of truth tables alone. Actually, proving a proposition by means of axioms and rules means nothing other than the fact that it can be also proven by truth tables. This is so, because axioms are themselves are proven by means of truth tables. 
 
-In fact, having the definition of the negation operator, we are in position to prove our first proposition/axiom, called *double negation elimination*. It says that a double negative of a given proposition is equivalent to the proposition itself.
+Having defined the negation operator, as we did above, we are in position to prove the first of the axioms of the logical system we saw, namely the *double negation elimination*. In natural language, this axiom is equivalen to the observation that saying "I am *not unable* to do X" is the same as saying  "I am *able* to do it".
 
 ![Double negation elimination formula](double_negation_formula.svg)
 
-If we view logical operators as functions, from and to the set of boolean values, than proving axioms involves composing those functions (using *functional composition*) and observing that theit outputs match. This would mean that the propositions are *universally valid*, that is they are true for all possible inputs.
-
-More specifically, the proof of the formula above is the observation that composing the negation function by itself is equivalent to applying the identity function.
+If we view logical operators as functions, from and to the set of boolean values, than proving axioms involves composing several of those functions into one function and observing its outputs. More specifically, the proof of the formula above involves just composing the negation function with itself and verifying that it leaves us in the same place from which we started.
 
 ![Double negation elimination](double_negation_proof.svg)
 
-The equivalent of this in natural language is the fact that saying that I am *not unable* to do X is the same as saying that I am *able* to do it.
+If we want to be formal about it, we might say that applying negation two times is equivalent to the identity function.
 
-Here is the same thing as a truth-table.
+![The identity function for boolean values](boolean_identity.svg)
+
+If we are tired of diagrams, we can represent the composition diagram above as table. This kinds of tables are called *truth-tables* and they are the usual more of representation used.
 
 | p | ¬p | ¬¬p |
 |---| --- | --- |
 | True  | False  | True |
 | False  | True | False |
 
-Despite its triviality, this proposition is probably the most controversial result in logic,  we will see why later.
+Despite its triviality, the double negation axiom is probably the most controversial result in logic, we will see why later.
 
 The *implies* operation
 ---
@@ -224,11 +223,8 @@ Now there are some aspects of this which are non obvious so let's go through eve
 1. If *p* is true and *q* is also true, then **p** does imply **q** - obviously.
 2. If *p* is true but *q* is false then **q** does not follow from **p**, cause it would have been true if it did.
 3. If *p* is false but *q* is true, then **p** still does imply **q**. What the hell? Consider two factors:
-
-- By saying that *p* implies *q* we don't say that the two are 100% interdependent e.g. the claim that "drinking causes headache" does not mean that drinking is the only source of headaches, and it won't be refuted the fact that you can get headache without drinking.
-
-- The conclusion that *p* implies *q* is reached only if all four cases are satisfied, so this events means nothing by itself.
-
+    - By saying that *p* implies *q* we don't say that the two are 100% interdependent e.g. the claim that "drinking causes headache" does not mean that drinking is the only source of headaches, and it won't be refuted the fact that you can get headache without drinking.
+    - The conclusion that *p* implies *q* is reached only if all four cases are satisfied, so this events means nothing by itself.
 4. And finally if **p** is false but **q** is false too, then **p** still does imply **q** (just some other day).
 
 It might help you to remember that **p → q** (**p** implies **q**) is true when **-p ∨ q** (either **p** is false or **q** is true.) Because the arguments that truth functions take have just two possible values (**true** and **false**), it is not hard to prove that by enumerating all possible combinations of the arguments.
