@@ -10,7 +10,7 @@
    viewBox="0 0 595.3 189.5"
    version="1.1"
    id="svg15613"
-   sodipodi:docname="logic_category.svg"
+   sodipodi:docname="logic_curry_category.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata15619">
@@ -39,13 +39,13 @@
      inkscape:window-height="1016"
      id="namedview15615"
      showgrid="false"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="231.26831"
-     inkscape:cy="50.728755"
+     inkscape:zoom="2"
+     inkscape:cx="324.03915"
+     inkscape:cy="41.048316"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g42748-5" />
+     inkscape:current-layer="svg15613" />
   <g
      id="g42748"
      transform="matrix(1.518149,0,0,1.518149,-147.54476,-49.770493)" />
@@ -87,7 +87,7 @@
   </g>
   <g
      id="g10229"
-     transform="matrix(0.50804648,0,0,0.50804648,264.83001,41.229797)">
+     transform="matrix(0.50804648,0,0,0.50804648,47.830008,43.229799)">
     <circle
        style="fill:#dedede;fill-opacity:1;stroke:none;stroke-width:2.57022929;stroke-miterlimit:10"
        id="circle15603-3-6"
@@ -292,7 +292,7 @@
        cx="301.04865" />
   </g>
   <g
-     transform="matrix(0.6198535,0,0,0.6198535,8.6371147,27.44817)"
+     transform="matrix(0.6198535,0,0,0.6198535,234.13712,27.44817)"
      id="g10305">
     <g
        id="g15609"

@@ -346,32 +346,38 @@ This law is valid in classical logic and is true when we look at it in terms of 
 Logics as categories
 ===
 
-Leaving the differences between intuinistic and classical logics aside, the BHK interpretation is interesting because it provides a bit of the "higher-order" view of logic, that we need in order to  define it in terms of category theory.
+Leaving the differences between intuinistic and classical logics aside, the BHK interpretation is interesting because it provides a bit of the higher-level view of logic, that we need in order to define it in terms of category theory. And this is just what we will attempt here.
 
 The Curry-Howard correspondence
 ---
 
-Programmers might find the definition of the BHK interpretation very similar to a definition of a programming language, and it indeed is - this similarity is known as the *Curry-Howard correspondence* - propositions are *types*, the **implies** operations are *functions*, **and** operations are composite types (objects) and **or** operations are *sum types* (which are not supported in some programming language). And a proof of a given proposition is represented by a value of the corresponding type. 
+Programmers might find the definition of the BHK interpretation very similar to a definition of a programming language, and it indeed is - this similarity is known as the *Curry-Howard correspondence* - propositions are *types*, the **implies** operations are *functions*, **and** operations are composite types (objects) and **or** operations are *sum types* (which are not supported in most programming languages). Finally a proof of a given proposition is represented by a value of the corresponding type. 
 
 ![Logic as a programming language](logic_curry.svg)
 
 **Task:** The Curry-Howard correspondence is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works (I recommend Mike Nahas's Coq Tutorial).
 
-Logic as a category
+Cartesian closed categories
 ---
 
-When seeing set-theoretic description of the BHK interpretation and the Curry-Howard correspondence, we might start suspecting that *logical propositions form a category* and they indeed do. 
+Having the Curry-Howard correspondence and knowing that programming languages can be described by category theory and this indeed is the case (this is why the Curry-Howard-*Lambek* correspondence attaching the name of the person who discovered the categorical side).
+
+On one hand, it is not hard to see that logical systems, viewed through the set-theoretic lens of the BHK interpretation can be viewed as a categories.
 
 ![Logic as a category](logic_category.svg)
 
-We already mostly know how to define this category, so I won't get into detail.
-
 **Task:** See whether you can prove that logic propositions and entailments forms a category. What is missing?
 
-Cartesian closed category
+Defining logic in a categorical language, however, is a more complex question. 
 
+![Logic as a category](logic_curry_category.svg)
 
-Once you see that logic is a category, you might think you've seen it all. You might think that can already skip the rest of the chapter, or throw the whole book away, while putting on your sunglasses and jumping in your convertible car. But you would be missing out, as there is an even simple structure that captures all of the concepts that we saw, while providing some interesting insights on what logic is.
+In order to answer it, we have to ennumerate the criteria that a given category has to adhere to in order for it to be "logical". These criteria have to guarantee that the category has objects that correspond to all valid logical propositions and no objects that correspond to invalid ones. We won't describe these categories directly (by the way, they are called *Cartesian closed* categories). Instead we would start with a simpler structures that we already examined - orders.
+
+Logics as orders
+---
+
+Once you know that logics form categories, you might think you've seen it all. You might think that can already skip the rest of the chapter, or throw the whole book away, while putting on your sunglasses and jumping in your convertible car. But you would be missing out, as there is an even simple structure that captures all of the concepts that we saw, while providing some interesting insights on what logic is.
 
 If we assume that there is only one way to go from proposition **A**, to proposition **B** (or there are many ways, but they are equivalent), then logic is not only a category, but a *preorder* (a category that has just one morphism between any two objects).
 
@@ -385,15 +391,18 @@ And so it can be represented by a Hasse diagram, yey.
 
 ![Logic as an order](logic_hasse.svg)
 
-This representation of logic is know as *algebraic* representation - it means that 
+By the way, this representation of logic is sometimes called an *algebraic* representation.
 
-Which orders represent logic and what laws does an order have to obey so it is isomorphic to a logic? We will see if we examine 
+Now back to the question we asked before: exactly which orders represent logic and what laws does an order have to obey so it is isomorphic to a logic? We will answer this question as we examine the main logical constructs again, this time in the context of logic. 
 
-### The **and** and **or** operations
-
-If you remember 
-
-### The *implies* operation
+The **and** and **or** operations
+---
 
 
-### The *negation* operation
+
+The *implies* operation
+---
+
+
+The *negation* operation
+---
