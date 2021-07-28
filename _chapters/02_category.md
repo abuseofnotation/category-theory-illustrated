@@ -13,17 +13,17 @@ Products
 
 In the previous chapter, we needed a way to make a set that is a composite of other sets that we already have. For example, when we discussed mathematical functions, we couldn't define **+** and **-** functions, because we only knew about functions that take one argument. When we talked about programming, we talked about the primitive types, `Char` and `Number`, and we mentioned that most of the types are composite types. So how do we construct those?
 
-The simplest composite type, of the sets **B**, which contains **b**'s and the set**Y**, which contains **y**'s is the the *product* or **B** and **Y**.
+The main composite type, of the sets **B** (which contains **b**-s) and the set **Y** (which contains **y**-s) is called the *cartesian product* or **B** and **Y**.
 
 ![Product parts](product_parts.svg)
 
-It is the set of *pairs* of **b**'s and **y**'s.
+The product is the set of *ordered pairs* of **b**'s and **y**'s. It is denoted **B x Y** and it comes equipped with two functions for retrieving the **b** and the **y** from each **(b, y)**.
 
 ![Product](product.svg)
 
-The product is denoted **B x Y** and it comes equipped with two functions for retrieving the **b** and the **y** from each **(b, y)**.
-
 **Question**: Why is this called a product? Hint: How many elements does it have?
+
+The Cartesian product was first defined by the mathematician and philosopher René Descartes as a basis for the Cartesian coordinate system. But as we shall see, it has many other use-cases.
 
 Products as Objects
 ---
@@ -65,7 +65,6 @@ The next one was discovered in the same year by Felix Hausdorff. In order to use
 Discovered in 1921 Kazimierz Kuratowski, this one uses just the component of the pair.
 
 ![A pair, represented by sets](pair_as_set_1.svg)
-
 
 Defining products in Terms of Functions 
 ---
@@ -227,13 +226,14 @@ Why is that is pretty obvious if we go back to set theory for a second (OK, mayb
 
 ![Two sets connected with multiple functions](set_arrows.svg)
 
+There are some types of categories in which only one morphism between two objects is allowed (or one in each direction), but we will talk about them later (they are also called orders).
+
 Composition
 ---
 
 One of the few or maybe even the only requirement for a structure to be called a category is that two morphisms can make a third, or in other words that morphisms are *composable* - given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
 
 ![Composition of morphisms](composition.svg)
-
 
 Formally, this requirement says that there should exist an operation (denoted with the symbol **•**) such that for each two functions **g: A → B** and **f: B → C**, there exists exactly one function **(f • g): A → C**.
 

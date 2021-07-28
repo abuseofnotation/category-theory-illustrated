@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 595.3 199.99999"
+   version="1.1"
+   id="svg14095"
+   sodipodi:docname="proved_unproved.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   width="595.29999"
+   height="200">
+  <metadata
+     id="metadata4843">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14099" />
+  <sodipodi:namedview
+     id="namedview14097"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     objecttolerance="10.0"
+     gridtolerance="10.0"
+     guidetolerance="10.0"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="2.6155706"
+     inkscape:cx="291.00254"
+     inkscape:cy="142.47189"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14095" />
+  <g
+     id="g17432"
+     style="stroke:#cecece;stroke-opacity:1">
+    <circle
+       r="46.345417"
+       cx="184.70956"
+       cy="100.73069"
+       id="circle15601"
+       style="fill:#e6e7e8;stroke:#cecece;stroke-width:3.24851036;stroke-miterlimit:10;stroke-opacity:1" />
+  </g>
+  <circle
+     style="fill:#f58235;stroke:#e76524;stroke-width:2.62008739;stroke-miterlimit:10"
+     id="circle15603"
+     r="18.689957"
+     cy="100.90055"
+     cx="185.77266" />
+  <g
+     transform="translate(221.20169,-1.9712557)"
+     id="g17432-0">
+    <circle
+       r="46.345417"
+       cx="184.70956"
+       cy="100.73069"
+       id="circle15601-2"
+       style="fill:#e6e7e8;stroke:#cecece;stroke-width:3.24851036;stroke-miterlimit:10;stroke-opacity:1" />
+  </g>
+</svg>

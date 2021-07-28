@@ -247,9 +247,18 @@ The poset example with the number dividers is also isomorphic to an inclusion or
 
 ![Divides poset](divides_poset_inclusion.svg)
 
-Let's elaborate a bit about the isomorphism between the number poset and the prime inclusion order. It is comprised of one function from the prime inclusion order, to the number poset (which in this case is just the *multiplication* of all the elements in the set) and one function from the number poset to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting (unsurprisingly) of finding the set of prime numbers that result in that number when multiplied with one another (as we said, this set is unique, and hence these functions really do comprise an isomorphism)).
+Order isomorphisms
+---
+
+This might be a good time to elaborate a bit about what an order isomorphism is. Take the isomorphism between the number poset and the prime inclusion order as an example. Like an isomorphism between any two sets, it is comprised of two functions: 
+
+- One function from the prime inclusion order, to the number poset (which in this case is just the *multiplication* of all the elements in the set) 
+- One function from the number poset to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
+
 
 ![Divides poset](divides_poset_isomorphism.svg)
+
+For sets, an isomorphism means just that the functions are inverse of each other. But as orders, besides being sets, have the arrows that connect them there is an additional requirement for a pair of functions to form an isomorphisme - to be an isomorphism, a function has *to respect those arrows, in other words should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set (**a** and **b**) should result in two elements that have the same corresponding order in the other set (so **a ≤ b** iff **F(a) ≤ F(b)**. 
 
 Birkhoff's representation theorem
 ---
@@ -264,6 +273,8 @@ So far, we saw two different partial orders, one based on color mixing, and one 
 I won't go into details about this result, I would only mention that the "prime" elements with which we can construct the inclusion order are the ones that are not the *join* of any other elements (for that reason, they are also called *join-irreducible* elements).
 
 By the way, the partial orders that are *NOT* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that do not contain all possible combinations of elements.
+
+<!-- TODO in a Power set P(X), the meet of a collection of subsets is their intersection, and the join is their union -->
 
 Lattices
 ===
@@ -347,7 +358,7 @@ What about that other law that was required in order to be a category - the iden
 
 ![Reflexivity](reflexivity.svg)
 
-So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions using (through the inclusion order) and sets and functions form a category in their own right). 
+So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions (the inclusion order) and sets and functions form a category in their own right). 
 
 And since partial orders and total orders are preorders too (as they obey those two laws), they are categories as well.
 
@@ -362,7 +373,7 @@ That is in the contrast with the category of sets where there are potentially in
 Products and sums
 ---
 
-While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *sum* of two objects in a category. 
+While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *coproduct* of two objects in a category. 
 
 ![Joins as coproduct](coproduct_join.svg)
 
