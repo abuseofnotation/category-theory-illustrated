@@ -6,14 +6,14 @@ title: Logic
 Logic
 ===
 
-Now let's talk about one more *seemingly* unrelated topic, just so we can surprise ourselves that it is all connected. This time I will not merely transport you to a different branch of mathematics, but an entirely different discipline, namely *logic*. Or, to be more precise, intuitionistic logic. This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually very close.
+Now let's talk about one more *seemingly* unrelated topic, just so we can surprise ourselves that it is all connected. This time I will not merely transport you to a different branch of mathematics, but an entirely different discipline, namely *logic*. This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually very close.
 
 What is logic
 ===
 
-Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. of that which really exists. For example, if the laws of physics show how particles behave in our universe (or multiverse), we might use logic to deduce how would they behave in any universe that is possible to exist (under a given set of postulates, real or made up). The key is that everything that is actual is also possible, and so all sciences are (or should be) be based on logic. But at the same time (and that's sometimes overlooked) nothing real is purely logical.
+Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. of that which really exists. For example, if the laws of physics show how particles behave in our universe (or multiverse), we might use logic to deduce how would they behave in any universe that is possible to exist (under a given set of postulates, whether real or made up). The key is that everything that is actual is also possible, and so all sciences are (or should be) be based on logic. But at the same time (and that's sometimes overlooked) nothing real is purely logical.
 
-Logical proofs
+Proofs
 ---
 
 OK, let's be more specific. Logic aims to study the *rules* by which knowing one thing leads you to conclude or (*prove*) that some other thing is also true, regardless of the things's domain (e.g. scientific discipline) i.e. by only referring to their form.
@@ -66,7 +66,8 @@ As a result of this is that we can compose propositions with multiple levels of 
 Modus ponens
 ---
 
-As an example of a proposition that contains multiple levels of nesting (and a great introduction of the subject in its own right), consider one of the most famous propositions ever, namely *modus ponens*. 
+As an example of a proposition that contains multiple levels of nesting (and a great introduction of the subject in its own right), consider one of the oldest (it was
+alredy known by Stoics at 3rd century B.C.) and most famous propositions ever, namely *modus ponens*. 
 
 Modus ponens is a proposition that states that if **A** is true and if also **A → B** is true (if **A** implies **B**), then **B** is true as well. For example, if we know that "Socrates is a human" and that "Being human implies being mortal", we also know that "Socrates is mortal". 
 
@@ -254,17 +255,20 @@ It might help you to remember that **p → q** (**p** implies **q**) is true whe
 | False | True  | **True**  | True  | True | **True** |
 | False | False | **True**  | True  | False | **True** |
 
-You can see that truth tables don't scale well for longer problems. 
+Proving results by axioms/rules of inference
+---
 
-p → q
+Here is a way to derive the above result using axioms and rules of inference.
 
-if p is true
+p ∨ -p ( a ∨ -a)
 
-   p ∨ -q
+q ∨ -p (p → q)
 
-if p is false
+(-p ∨ q) ∨ -p  ( a → a ∨ b)
 
-  -p ∨ q
+(-p ∨ q) ∨ (-p ∨ q) ( a → a ∨ b)
+
+-p ∨ q (a ∨ a → a)
 
 
 Intuinistic logic
@@ -287,11 +291,13 @@ So, due to the reasons outlined above, intuinistic logic is not bivalent, we can
 
 But one thing that we still do have propositions that are "true" in the sense that a proof for them is given - the primary propositions. 
 
-So with some caveats (which we will see later) the dichotomy between the existence or non-existence of a proof for a given proposition may be taken as similar to the proposition being true or false - there either is a proof of a given proposition or there isn't.
+So with some caveats (which we will see later) the bivalence of the existence or non-existence of a proof for a given proposition may be taken as similar to the proposition being true or false - there either is a proof of a given proposition or there isn't. 
 
 ![The proved/unproved dichotomy](proved_unproved.svg)
 
-This is known as the as the Brouwer–Heyting–Kolmogorov (BHK) interpretations of intuinistic logic 
+This is known as the as the Brouwer–Heyting–Kolmogorov (BHK) interpretations of intuinistic logic.
+
+The original formulation of the BHK interpretation does not depend on any particular mathematical theory, but here we chose to illustrate it using the language of set theory.
 
 The **and** and **or** operations
 ---
@@ -311,7 +317,7 @@ In this case, saying that **A** implies **B** (**A → B**) would just mean that
 
 And the *modus ponens* rule of inference is just the fact that if we have a proof of **A** we can call this function (**A → B**) to obtain a proof of **B**.
 
-**Task:** In order for this to work, you need to define the function in terms of sets. Like with *and* you can do this by using the concept of a pair, work out the details.
+Note that in order for this to work, we we need to define the function itself in terms of sets i.e. we need to have a set representing **A → B** for each **A** and **B**.  This is possible (using the concept of a *pair*) but we won't do it now.
 
 The *negation* operation
 ---
@@ -346,7 +352,9 @@ This law is valid in classical logic and is true when we look at it in terms of 
 Logics as categories
 ===
 
-Leaving the differences between intuinistic and classical logics aside, the BHK interpretation is interesting because it provides a bit of the higher-level view of logic, that we need in order to define it in terms of category theory. And this is just what we will attempt here.
+Leaving the differences between intuinistic and classical logics aside, the BHK interpretation is interesting because it provides a bit of the higher-level view of logic, that we need in order to represent it in terms of category theory. 
+
+This representation of logic, the one that does nor rely on formulas and propositions, but on objects and operations which obey is sometimes called an *algebraic* representation, *algebraic* being an umbrella term describing all structures that can be represented using category theory, like groups and orders
 
 The Curry-Howard correspondence
 ---
@@ -372,18 +380,18 @@ Defining logic in a categorical language, however, is a more complex question.
 
 ![Logic as a category](logic_curry_category.svg)
 
-In order to answer it, we have to ennumerate the criteria that a given category has to adhere to in order for it to be "logical". These criteria have to guarantee that the category has objects that correspond to all valid logical propositions and no objects that correspond to invalid ones. We won't describe these categories directly (by the way, they are called *Cartesian closed* categories). Instead we would start with a simpler structures that we already examined - orders.
+In order to answer it, we have to enumerate the criteria that a given category has to adhere to in order for it to be "logical". These criteria have to guarantee that the category has objects that correspond to all valid logical propositions and no objects that correspond to invalid ones. We won't describe these categories directly (by the way, they are called *Cartesian closed* categories). Instead we would start with a similar but simpler structures that we already examined - orders.
 
 Logics as orders
 ---
 
-Once you know that logics form categories, you might think you've seen it all. You might think that can already skip the rest of the chapter, or throw the whole book away, while putting on your sunglasses and jumping in your convertible car. But you would be missing out, as there is an even simple structure that captures all of the concepts that we saw, while providing some interesting insights on what logic is.
+Order theory captures all of the concepts that we saw, while providing some interesting insights on what logic is. This is why it is the usual default algebraic representation of simpler logics such as the ones we are introducing here. 
 
-If we assume that there is only one way to go from proposition **A**, to proposition **B** (or there are many ways, but they are equivalent), then logic is not only a category, but a *preorder* (a category that has just one morphism between any two objects).
+If we assume that there is only one way to go from proposition **A**, to proposition **B** (or there are many ways, but they are equivalent), then logic is not only a category, but a *preorder* (which as we said is a category that has just one morphism between any two objects) in which  the relationship "bigger than" is taken to mean "implies".
 
 ![Logic as a preorder](logic_preorder.svg)
 
-Furthermore, if we count propositions that follow from each other (or sets of propositions that have the same truth value and can be proven by the same proof) as equivalent, then logic is a *partial order*.
+Furthermore, if we count propositions that follow from each other (or sets of propositions that have the same truth value and can be proven by the same proof) as equivalent, then logic is a proper *partial order*.
 
 ![Logic as an order](logic_order.svg)
 
@@ -391,18 +399,97 @@ And so it can be represented by a Hasse diagram, yey.
 
 ![Logic as an order](logic_hasse.svg)
 
-By the way, this representation of logic is sometimes called an *algebraic* representation.
-
 Now back to the question we asked before: exactly which orders represent logic and what laws does an order have to obey so it is isomorphic to a logic? We will answer this question as we examine the main logical constructs again, this time in the context of logic. 
 
 The **and** and **or** operations
 ---
 
+By now you probably realized that the **and** and **or** operations are the bread and butter of logic (although it's not clear which is which). In orders, these operations are represented by the **meet** and **join** operations, correspondingly.
 
+In logic you can use the **and** and **or** operations for all propositions and here comes the first criteria for an order to be logical - it has to have **meet** and **join** operations for all elements. Incidentally we already know that such orders are called *lattices*.
+
+One more important law concerning the  **and** and **or** operations  that is not always present in the **meet**-s and **join**-s concerns the connection between the two, i.e. way that the **and** and **or** operations distribute, over one another.
+
+![The distributivity operation of "and" and "or"](logic_distributivity.svg)
+
+Lattices that obey this law are called *distributive lattices*, so logical systems are represented by distributive lattices.
+
+In the previous chapter we said that *distributive lattices* are isomorphic to *inclusion orders* i.e. orders which contain all combinations of sets of a given number of elements and, circling back to the set-theoretic BHK interpretation, we see that the two theorems are really saying the same thing - the elements which participate in the inclusion are our prime propositions and are the the and the inclusions are all combinations of these elements, in an **or** relationship (for simplicity's sake, we are ignoring the **and** operation.)
+
+![A color mixing poset, ordered by inclusion](logic_poset_inclusion.svg)
+
+**NB: The symbols that we are using for *and* and *or* logical operations are flipped when compared tothe arrows of the arrows they don't ∧ is *and* and ∨ is *or*. That is because the logic order is drawn upside-down at some places.**
+
+In categorical logic, the **and** and **or** operations are represented (unsurprisingly) by *products* and *coproducts*. 
+
+The *negation* operation
+---
+
+In order to prove that our color-mixing lattice represents logic completely, we have to identify which objects correspond to the values **True** and **False**. 
+
+A trivial result in logic, called *the principle of explosion*, states that if we have a proof of **False** (or if "**False** is true" if we use the terminology from classical logic), than any and every statement can be proven. And it is also obvious that no true statement implies False. So here is it.
+
+![False, represented as a Hasse diagram](lattice_false.svg)
+
+Circling back to the set-theoretic BHK interpretation, we see that the empty set fits both conditions.
+
+![False, represented as a Hasse diagram](lattice_false_bhk.svg)
+
+Conversely, the proof of **True** (or the statement that "**True** is true") is trivial and doesn't say anything, so *nothing follows from it*, but at the same time it follows from every other statement.
+
+![True, represented as a Hasse diagram](lattice_true.svg)
+
+So **True** and **False** are just the *maximum* and *minimum* objects of our order. 
+
+![The whole logical system, represented as a Hasse diagram](lattice_true_false.svg)
+
+And in categorical logic, the **True** and **False** objects are represented by what we call *terminal* and *initial* objects. This is another example of the categorical concept of duality - **True** and **False** are dual to each other, just like **and** and **or**. 
 
 The *implies* operation
 ---
 
+Finally, if a lattice really is isomorphic to a set of propositions, we it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object **A → B**, for each pair of objects **A** and **B**, such that all axioms of intuinistic logic are followed. 
 
-The *negation* operation
+And we would define the rule using categorical language - by recognizing a structure, that consists of set of relations between objects in which (A → B) plays a part.
+
+![Implies operation](implies.svg)
+
+This structure is actually a categorical reincarnation our rule of inference, called *modus ponens*, stating that **A ∧ (A → B) → B**. This rule is the essence of the **implies** operation and because we already know how the operations that it contains (**and** and **implies**) are represented in our lattice, we can directly "categorize" it and use it as a definition, saying that **(A → B)** is the object which has the following relations to objects **A** and **B**.
+
+![Implies operation with impostors](implies_modus_ponens.svg)
+
+This definition is not complete, however, because  **(A → B)** is *not the only object* that fits in this formula. For example, the set **A → B ∧ C** is also one such object, as is **A → B ∧ C ∧ D**. So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* or the definiton of the *meet* operation in orders (as *meet* is an instance of a categorical product) you would already know where this is going: we define the function object using a *universal property* by saying that all other formulas that can be in **A ∧ X → B** point to **(A → B)**. And are below **(A → B)** in a Hasse diagram.
+
+![Implies operation with universal property](implies_universal_property.svg)
+
+Or, we use the logic terminology, we say that **A → B ∧ C** and **A → B ∧ C ∧ D** etc. are all "stronger" results than **A → B**.
+
+Let's try to test if this definition captures the concept correctly by examining a few special cases.
+
+For example, let's take **A** and **B** to be the same object. In this case we have the formula **A ∧ X → A** (where **X** is **A → A**). But the *meet* of **A** and any other object would always be below **A**. So this formula is always for all **X**. So the biggest object that fits the description is just the biggest object there is i.e. **True**.
+
+![Implies identity](implies_identity.svg)
+
+This corresponds to the identity axiom in logic, that states that everything follows from itself.
+
+And by the similar logic we can see easily that if we take **A** to be any object that is below **B**, then **(A → B)** will also correspond to the True object.
+
+![Implies when A follows from B](implies_b_follows.svg)
+
+So if we have **A → B** then **(A → B)** is true.
+
+Let's take one more example - what if **B** is lower than **A**. In this case the highest object that fits the formula **A ∧ X → B** is... **B** itself. **B** fits the formula (because **A ∧ B → B**) and is definitely the highest object that does so.
+
+![Implies when B follows from A](implies_a_follows.svg)
+
+This translated to logical language, says that if **A → B** and **B → A**, then 
+
+
+Conclusion
 ---
+
+So this is the final condition for an order to be a representation of logic - for each pair **A** and **B**, it has to have a unique object **X** which obey the formula **A ∧ X → B** and the universal property. In category theory this object is called the *exponential object*. 
+
+By the way, distributivity follows from this criteria, so we are left with just these two points: Logic is represented by an order that has with *meet and joins* and a *functional object*. 
+
+Which is the shortest definition of logic there is.

@@ -12,7 +12,7 @@
    version="1.1"
    id="svg8680"
    sodipodi:docname="coproduct_product_duality.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata8686">
     <rdf:RDF>
@@ -21,7 +21,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,15 +36,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1395"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
      id="namedview8682"
      showgrid="false"
      inkscape:zoom="1.71"
      inkscape:cx="297.64999"
-     inkscape:cy="300"
+     inkscape:cy="183.04094"
      inkscape:window-x="0"
-     inkscape:window-y="23"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg8680" />
   <ellipse
@@ -218,35 +218,33 @@
      id="path8666"
      style="stroke-width:0.504506" />
   <text
-     style="line-height:1.25"
-     x="152.8801"
-     y="166.79488"
+     style="font-weight:400;font-size:20.67840004px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#7e7e7e;stroke-width:0.51689899"
+     x="383.28946"
+     y="163.8709"
      font-weight="400"
      font-size="20.6784px"
-     font-family="sans-serif"
      letter-spacing="0"
      word-spacing="0"
-     fill="#7e7e7e"
-     stroke-width="0.516899"
-     id="text8674"><tspan
-       x="152.8801"
-       y="166.79488"
+     id="text8674">
+    <tspan
+       x="383.28946"
+       y="163.8709"
        id="tspan8672"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.516899">AND</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.51689899">AND</tspan>
+  </text>
   <text
-     style="line-height:1.25"
-     x="393.5806"
-     y="168.11798"
+     style="font-weight:400;font-size:21.88019943px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#7e7e7e;stroke-width:0.54709399"
+     x="162.58644"
+     y="164.60921"
      font-weight="400"
      font-size="21.8802px"
-     font-family="sans-serif"
      letter-spacing="0"
      word-spacing="0"
-     fill="#7e7e7e"
-     stroke-width="0.547094"
-     id="text8678"><tspan
-       x="393.5806"
-       y="168.11798"
+     id="text8678">
+    <tspan
+       x="162.58644"
+       y="164.60921"
        id="tspan8676"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.547094">OR</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.54709399">OR</tspan>
+  </text>
 </svg>

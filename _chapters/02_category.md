@@ -87,7 +87,7 @@ Depending on our specific case there can be many other such objects.
 
 ![Product, external diagram](product_candidates.svg)
 
-So how do we set apart all those "imposter" products from the one true product? Simple - they all can be converted to it. This is true, because: 
+So how do we set apart the true product from all those "imposter" products? Simple - by using the observation that *they all can be converted to it*, This observation is true, because: 
 1. By definition, each "impostor" can be converted to both elements of the pair.
 2. The pair is nothing more than the sum of its elements.
 
@@ -95,7 +95,9 @@ More formally, in order for a set **I** to serve as an impostor for the product 
 
 ![Product, external diagram](products_morphisms.svg)
 
-Notice that this definition does not rule out the sets which are isomorphic to the product - when we represents things using functions, an isomorphism is the same as equality.
+In category theory, this type of property that a given object might posess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*.
+
+Notice that this definition does not rule out the sets which are isomorphic to the product - when we represents things using universal properties, an isomorphism is the same as equality.
 
 Sums
 ===
@@ -142,13 +144,14 @@ You might already notice that this definition is pretty similar to the previous 
 
 ![Coproduct, external diagram](coproduct_candidates.svg)
 
-All these sets are, express relationships which are more vague than the simple sum and therefore given any such set there would exist a function from the sum to it. 
+All these sets are, express relationships which are more vague than the simple sum and therefore given any such set there would exist a function from the sum to it.
 
 For example, there exist a trivial function between the set **Y \| B**  and the set  **Y \| B \| R**.
 
 ![Coproduct, external diagram](coproduct_morphisms.svg)
 
 This diagram captures the **OR** relation in the same way as the previous one captures the essence of **AND**.
+
 
 Duality 
 ===
@@ -158,10 +161,9 @@ If we have to compare the concepts of sum or and product we will find out that t
 - The *product* of two sets is related to an element of the first one *and* one element of the second one.
 - A *sum* of two sets is related to an element of the first one *or* one element of the second one.
 
-Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around.
+Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around (that's normal right? After all, **AND** *is* the opposite of **OR**). 
 
-
-That's normal right? After all, **AND** *is* the opposite of **OR**. The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
+The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
 
 ![Coproduct and product](coproduct_product_duality.svg)
 
@@ -263,7 +265,7 @@ Functional composition is special not only because you can take any two morphism
 
 This approach for building stuff is often used in programming. To see some examples, you don't need to look further than the way the pipe operator in bash (`|`), that feeds the standard output of a program with the standard input of another program, is (ab)used (if you *want* to look further, note that there is a whole programming paradigm based on functional composition, called "concatenative programming").
 
-But let's get back to the math. If we carefully review the definition above can see that it can be reduced to multiple applications of the following formula: given 4 objects and 3 morphisms between them **f** **g** **h**, combining **h** and **g** and then combining the end result with f** should be the same as combining **h** to the result of **g** and **f** (or simply **(h • g) • f = h • (g • f)**. 
+But let's get back to the math. If we carefully review the definition above can see that it can be reduced to multiple applications of the following formula: given 4 objects and 3 morphisms between them **f** **g** **h**, combining **h** and **g** and then combining the end result with **f** should be the same as combining **h** to the result of **g** and **f** (or simply **(h • g) • f = h • (g • f)**. 
 
 **Task:** show how the definition can be reduced to the formula (the approach resembles mathematical induction).
 
