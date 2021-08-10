@@ -11,31 +11,35 @@ Source: https://github.com/prathyvsh/category-theory-resources
 Category theory has a variety of applications: 
 
 - It is used in **programming language theory**, for example the usage of monads in functional programming. 
-
-- It may also be used as an axiomatic foundation for mathematics, as an alternative to set theory and other proposed foundations. 
-
 - It is used in other scientific disciplines e.g. quantum mechanics:
 
 > The conference series Quantum Physics and Logic (QPL), founded by Peter Selinger in 2003 under a different name (but with the same abbreviation!), was a particularly important forum for the development of the key results leading up to this book. In fact, the first paper about diagrammatic reasoning for novel quantum features (Coecke, 2003) was presented at the first QPL. The categorical formalisation of this result (Abramsky and Coecke, 2004), now referred to as categorical quantum mechanics, became a hit within the computer science semantics community, and ultimately allowed for several young people to establish research careers in this area. **Top computer science conferences (e.g. LiCS and ICALP) indeed regularly accept papers on categorical quantum mechanics, and more recently leading physics journals (e.g. PRL and NJP) have started to do so too**.
 
 Source: Picturing Quantum Processes by Bob Coecke (Cambridge University Press - 2017)
 
-About this book
----
+- It may also be used as an axiomatic foundation for mathematics, as an alternative to set theory and other proposed foundations. 
+- Last but not least (perhaps even most importantly) category theory has a very good potential as a *teaching tool* allowing for a variety of concepts: 
 
+> This book is at the leading edge of what will *likely become a major pedagogical trend in mathematics: teaching the fundamentals from a categorical perspective*.
+
+David Spivak regarding "Topology. A Categorical Approach" 
+
+About the book
+---
 
 I am writing a primer in category theory and of various related concepts in "higher" mathematics that is *really* accessible to people with no prior exposure to the subject without being dumbed down, by utilizing visual explanations.
 
-My book will serve as chapter 0, going through the material that any other similar introductory book covers and enabling people to later go through any other introductory books effortlessly.
+My book will serve as chapter 0, going through the gist of the material that any other similar introductory book covers.
 
+Reading it would enable my readers to effortlessly go through any academic introduction to category theory, as well as to start tacking resources that use category theory as a tool to threat other subjects.
 
-With the 
-
+About the author
+---
 
 Similar resources
 ===
 
-To my knowledge, Category Theory Illustrated does not have any *direct* competition - although there are some books that are similar to it in terms of *goals*, no book is similar in terms of *execution*.
+To my knowledge, Category Theory Illustrated does not have any *direct* competition - although there are some books that may be similar to it in terms of *goals*, no book is similar in terms of *execution*.
 
 A good list of category theory introductions can be found here:
 
@@ -54,7 +58,7 @@ I chose those two because:
 
 I will continue with examining the points which make my work unique compared to those books.
 
-Here I am attaching excerpts from both of them, as well as one from CTI, that explain the concept of an *order*
+I am attaching excerpts from both of them, as well as one from CTI, that explain the concept of an *order*
 
 Category Theory for Programmers
 ---
@@ -112,7 +116,7 @@ Category Theory Illustrated
     return true 
   } else {
     return false
-  } 
+    } 
 })
 ```
 
@@ -157,6 +161,12 @@ Category Theory Illustrated
 
 > You might say that this law is not as self-evident as the rest of them - if you think about different types of real-life objects that we typically order, you would probably think of some situations in which it does not apply. For example, if we aim to order all people based on soccer skills there are many ways in which we can rank a person compared to their friends their friend's friends etc. but there isn't a way to order groups of people who never played with one another.
 
+
+Features
+===
+
+Some of the features that make CTI unique:
+
 Diagrams
 ---
 
@@ -166,12 +176,43 @@ However, books on category theory typically have as many diagrams as other math 
 
 Besides being more in quantity, the diagrams of CTI are many different kinds combining and combine different prioms from traditional communication design in order, such as the use of color, for example, in order to illuminate the different subjects and abstractions that I am covering.
 
-The diagrams in CTI had received universal praise from many audiences. The university professor Gonzalo Casas used some of them for his lectures on robotic fabrication at ETH Zurich.
+Both books that I am reviewing have less diagrams than CTI. From the resources that I have examined, the only author who stresses on diagrams as much as I do is Tai-Danae Bradley (her blog is https://www.math3ma.com/).
 
-https://github.com/compas-teaching/COMPAS-II-FS2021/tree/main/lecture_06
+The diagrams in CTI had received universal praise from many audiences. The university professor Gonzalo Casas used some of them for his lectures on robotic fabrication at ETH Zurich.
+Lecture slides:
 https://raw.githubusercontent.com/compas-teaching/COMPAS-II-FS2021/main/lecture_06/lecture_06.pdf
 
-Although there are not any category theory introductions that make extensive use of diagrammatic language, there are some books that use it to introduce other subjects: 
+Other lecture resources
+https://github.com/compas-teaching/COMPAS-II-FS2021/tree/main/lecture_06
+
+Verbosity of language
+---
+
+Leaving the diagrams aside, we can see that the descriptions in CTI are much more verbose than equivalent descriptions in other books. This is clearly visible in the excerpts published - although the authors of the books that I am reviewing have quite different styles of presentation, they both move much faster with the exposition. 
+
+That would be OK for readers who have prior experience with math and computer science, but a person who is really in the target audience of these books i.e. is really a newbie in category theory, has to either read each paragraph 20 times or do cross-reference with secondary resources (most likely both). 
+
+In CTI, I try above all to keep a really slow pace and be gentle in my exposition, taking the time to stress out the important parts of the descriptions and the places where misunderstanding might occur, such as the fact that the term "object" has entirely different meanings in computer science and in category theory. I am guided by my motto from my days as a tech writer: "No user ever complained that there is too much documentation."
+
+Chapter on logic
+---
+
+Category theory is deeply bound with mathematical logic. Although the connection is mentioned in many books, it isn't fully examined by any introductory texts on category theory. CTI has a dedicated chapter on logic, which introduces the connection and makes use of it to give context to some categorical phenomena, such as limits.
+
+Target audiences
+===
+
+The types of people who read CTI:
+
+Programmers, who are curious about category theory, because they are into functional programming.
+---
+
+Functional programming is on the rise with both new languages and technologies that are gaining traction (Elixir, Clojure), and mainstream languages, trying to catch up (Java, JavaScript). There are many programmers who are interested in Category theory, but lack the math background to read most introductions.
+
+Students who are studying category-theory-related disciplines
+---
+
+Having a little insight in category theory opens the gate to a growing number of resources that use category theory and diagrammatic language, to introduce other subjects: 
 
 - Picturing Quantum Processes by Bob Coecke and Aleks Kissinger (Cambridge University Press - 2017) that uses it to introduce quantum mechanics
 
@@ -179,40 +220,21 @@ By the way, I showed Bob the first few chapters of CTI and he liked them :)
 
 - Visual Group Theory by Nathan Carter (MATHEMATICAL ASSOCIATION OF AMERICA - 2009) sample: http://www.mathcs.emory.edu/~dzb/teaching/421Fall2014/VGT-Ch-1-2.pdf
 
-- Also, there is the blog https://graphicallinearalgebra.net/ that introduces linear algebra visualy.
+- "Topology. A Categorical Approach" by Tai-Danae Bradley, Tyler Bryson and John Terilla (MIT press - 2020)
 
-Competency of the readers
+As David Spivak puts it in his review of "Topology. A Categorical Approach":
+
+> This book is at the leading edge of what will *likely become a major pedagogical trend in mathematics: teaching the fundamentals from a categorical perspective*.
+
+Any other kind of nerds who want to learn some mathematics just for fun.
 ---
 
-Coverage of secondary topics
----
-
-Logic
----
-
-Target audience
-===
-
-- Programmers, who are curious about category theory, because they are into functional programming.
-- Math undergraduates, who are struggling with reading academic texts.
-- Any other kind of nerds who want to learn some mathematics just for fun.
-- Children.
-
-People with programming background
----
-
-People with academic background
----
-
-People who are generally curious
----
-
-
+Aside from being informative, CTI is easy and fun to read, so many people read it just as a form of recreation.
 
 Feedback
 ===
 
-I have reseived a lot of positive feedback on CTI, and a lot of people shared it on social media. Some comments and links follow:
+I have reseived a lot of positive feedback on CTI, and a lot of people shared it on social media. 
 
 Comments
 ---
@@ -243,7 +265,6 @@ https://news.ycombinator.com/item?id=26660369
 > Thank you for creating Category Theory Illustrated, for me the book makes the concepts easier to understand and build an intuition.
 
 (received by email)
-
 
 Discussions:
 ---

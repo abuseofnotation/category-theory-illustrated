@@ -250,15 +250,14 @@ The poset example with the number dividers is also isomorphic to an inclusion or
 Order isomorphisms
 ---
 
-This might be a good time to elaborate a bit about what an order isomorphism is. Take the isomorphism between the number poset and the prime inclusion order as an example. Like an isomorphism between any two sets, it is comprised of two functions: 
+We mentioned order isomorphisms several times already so this is about time to elaborate a bit about what they are. Take the isomorphism between the number poset and the prime inclusion order as an example. Like an isomorphism between any two sets, it is comprised of two functions: 
 
 - One function from the prime inclusion order, to the number poset (which in this case is just the *multiplication* of all the elements in the set) 
 - One function from the number poset to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
 
-
 ![Divides poset](divides_poset_isomorphism.svg)
 
-For sets, an isomorphism means just that the functions are inverse of each other. But as orders, besides being sets, have the arrows that connect them there is an additional requirement for a pair of functions to form an isomorphisme - to be an isomorphism, a function has *to respect those arrows, in other words should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set (**a** and **b**) should result in two elements that have the same corresponding order in the other set (so **a ≤ b** iff **F(a) ≤ F(b)**. 
+For sets, an isomorphism means just that the functions are inverse of each other. But as orders, besides being sets, have the arrows that connect them there is an additional requirement for a pair of functions to form an isomorphism - to be an isomorphism, a function has *to respect those arrows, in other words should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set (**a** and **b**) should result in two elements that have the same corresponding order in the other set (so **a ≤ b** iff **F(a) ≤ F(b)**. 
 
 Birkhoff's representation theorem
 ---
@@ -369,6 +368,8 @@ Starting to compare the categories of preorders, and partial and linear orders t
 That is in the contrast with the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around, and the existence of either of these functions does not imply that one set is "bigger" than the other one.
 
 ![Orders compared to other categories](order_category.svg)
+
+Note that although two objects in an order might be directly connected by just one arrow, they might still be be indirectly connected by more than one arrow. So when we define an order in categorical way it's crucial to say that these ways are equivalent i.e. that all diagrams that show orders commute.
 
 Products and sums
 ---

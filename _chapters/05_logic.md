@@ -6,7 +6,9 @@ title: Logic
 Logic
 ===
 
-Now let's talk about one more *seemingly* unrelated topic, just so we can surprise ourselves that it is all connected. This time I will not merely transport you to a different branch of mathematics, but an entirely different discipline, namely *logic*. This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually very close.
+Now let's talk about one more *seemingly* unrelated structure, just so we can "surprise" ourselves that it is a category (actually, there will be another surprise at the end of the chapter in addition to logic being a category, so don't fall asleep). Also, this time I will not merely transport you to a different branch of mathematics, but an entirely different discipline, namely *logic*. 
+
+This discipline may seem to you as detached from what we have been talking about as it possibly can, but it is actually very close.
 
 What is logic
 ===
@@ -16,16 +18,18 @@ Logic is the science of the *possible*. As such, it is at the root of all other 
 Proofs
 ---
 
-OK, let's be more specific. Logic aims to study the *rules* by which knowing one thing leads you to conclude or (*prove*) that some other thing is also true, regardless of the things's domain (e.g. scientific discipline) i.e. by only referring to their form.
+Logic aims to study the *rules* by which knowing one thing leads you to conclude or (*prove*) that some other thing is also true, regardless of the things's domain (e.g. scientific discipline) i.e. by only referring to it's form.
 
-On top of that, it (logic) tries to organize those rules in what are called *logical systems* (or formal systems as they are also called) - these are collections of rules for manipulating proposition that have give you the maximum expressive ability without adding anything extra.
+On top of that, it (logic) tries to organize those rules in what are called *logical systems* (or formal systems as they are also called) - these are minimalistic collections of rules for manipulating proposition that have give you the maximum expressive ability.
 
-What does "prove" mean in this context? Simple - when we are able, using the rules of a given logical system, to transform one set of *propositions* (AKA "things we know") **A** to another set of proposition **B** (AKA things that we *want* to know) we say that we have proven that **A → B** in that system that we are using. Note that the word "prove" is a little misleading here, especially when used with the combination of the word *true* (which is misleading even by itself) - you don't prove anything using logic, you merely verify that it follows from a given set of propositions *AND* rules for manipulating those propositions (logical system). We use that word (prove) because verifying that something follows from a set of axioms and rules is the closest that we have to an actual proof.
+What does "prove" mean in this context? Simple - when we are able, using the rules of a given logical system, to transform one set of *propositions* (AKA "things we know") **A** to another set of proposition **B** (AKA things that we *want* to know) we say that we have proven that **A → B** in that system that we are using. 
+
+Note that the word "prove" is a little misleading here, especially when used with the combination of the word *true* (which is misleading even by itself) as you don't prove anything using logic, you merely verify that it follows from a given set of propositions *AND* rules for manipulating those propositions (logical system). We use that word (prove) because verifying that something follows from a set of axioms and rules is the closest that we have to an actual proof.
 
 Logic and mathematics 
 ---
 
-All of the concepts that we studied here are formal concepts, so we can say that we have been doing logic throughout this book. And we would be quite correct - every mathematical theory is logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that set theory (the Zermelo–Fraenkel flavor, for example) adds just one single primitive to the standard axioms of logic which we will see shortly - the binary relation that indicates *set membership*. So set theory is very close to logic. Exactly how they relate is probably outside the scope of that book. Category theory is close to logic too, but in a quite different way (this is not outside our scope, so we will examine the connection later.)
+All of the concepts that we studied here are formal concepts, so we can say that we have been doing logic throughout this book. And we would be quite correct - every mathematical theory is logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that set theory adds just a single primitive to the standard axioms of logic which we will see shortly - the binary relation that indicates *set membership*. So set theory is very close to logic. Exactly how they relate is probably outside the scope of that book. Category theory is close to logic too, but in a quite different way (this is not outside our scope, so we will examine the connection later.)
 
 The elements of logic
 ===
