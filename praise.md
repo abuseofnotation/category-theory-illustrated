@@ -20,18 +20,14 @@ Source: Picturing Quantum Processes by Bob Coecke (Cambridge University Press - 
 - It may also be used as an axiomatic foundation for mathematics, as an alternative to set theory and other proposed foundations. 
 - Last but not least (perhaps even most importantly) category theory has a very good potential as a *teaching tool* allowing for a variety of concepts: 
 
-> This book is at the leading edge of what will *likely become a major pedagogical trend in mathematics: teaching the fundamentals from a categorical perspective*.
-
-David Spivak regarding "Topology. A Categorical Approach" 
-
 About the book
 ---
 
 I am writing a primer in category theory and of various related concepts in "higher" mathematics that is *really* accessible to people with no prior exposure to the subject without being dumbed down, by utilizing visual explanations.
 
-My book will serve as chapter 0, going through the gist of the material that any other similar introductory book covers.
+My book will serve as chapter 0, going through the gist of the material that any other similar introductory book covers, but covering it in a way that would enable non-mathematicians to swift through with ease.
 
-Reading it would enable my readers to effortlessly go through any academic introduction to category theory, as well as to start tacking resources that use category theory as a tool to threat other subjects.
+Reading it would enable my readers to then effortlessly go through any academic introduction to category theory, as well as to start tacking resources that use category theory as a tool to threat other subjects.
 
 About the author
 ---
@@ -39,13 +35,13 @@ About the author
 Similar resources
 ===
 
-To my knowledge, Category Theory Illustrated does not have any *direct* competition - although there are some books that may be similar to it in terms of *goals*, no book is similar in terms of *execution*.
+To my knowledge, Category Theory Illustrated does not have any *direct* competition, as the materials I have seen are usually have a much more high barrier to entry.
 
 A good list of category theory introductions can be found here:
 
 https://github.com/prathyvsh/category-theory-resources
 
-In this document, I will concentrate on the following two books: 
+In this document, I will concentrate on the following two: 
 
 - Category Theory for Programmers by Bartosz Milewski (self-published- 2018) - Full text: https://github.com/hmemcpy/milewski-ctfp-pdf/
 
@@ -55,8 +51,6 @@ I chose those two because:
 
 1. They are the closest to my book that I could find.
 2. Their readers (and authors) represent the two biggest target audiences for my book - programmers (nerds) and scientists (academics).
-
-I will continue with examining the points which make my work unique compared to those books.
 
 I am attaching excerpts from both of them, as well as one from CTI, that explain the concept of an *order*
 
@@ -165,16 +159,16 @@ Category Theory Illustrated
 Features
 ===
 
-Some of the features that make CTI unique:
+I will now continue by with examining the points which make my work unique compared to those and other similar books.
 
 Diagrams
 ---
 
-Category theory is very *visual*. Diagrams are not merely an illustration of it's concept, but are often the very language that is used to define those concepts e.g. defining a more advanced concept such as *natural transformation* without diagrams is practically impossible. So having a lot of diagrams is essential for people who are inexperienced to understand the concepts (it is essential for people who are experienced as well, they just can draw the diagrams themselves). 
+Category theory is very *visual* in its nature. Category-theoretic diagrams are not merely supplemental illustrations for the concepts, but are often the very language that is used to define those concepts e.g. defining a more advanced concept such as *natural transformation* without diagrams is practically impossible. So having a lot of diagrams is essential for people who are inexperienced to understand the concepts. 
 
-However, books on category theory typically have as many diagrams as other math textbooks. I considered that (and still do) a huge missed opportunity for making the subject more approachable, which was the original motivation for the creation of CTI.
+However, books on category theory typically have as many diagrams as other math textbooks. I consider this a huge missed opportunity for making the subject more approachable, which was the original motivation for the creation of CTI.
 
-Besides being more in quantity, the diagrams of CTI are many different kinds combining and combine different prioms from traditional communication design in order, such as the use of color, for example, in order to illuminate the different subjects and abstractions that I am covering.
+Besides being more in quantity, the diagrams of CTI are many different kinds combining and combine different prioms from traditional communication design, such as the use of color for example, in order to illuminate the different subjects and abstractions that I am covering.
 
 Both books that I am reviewing have less diagrams than CTI. From the resources that I have examined, the only author who stresses on diagrams as much as I do is Tai-Danae Bradley (her blog is https://www.math3ma.com/).
 
@@ -188,16 +182,16 @@ https://github.com/compas-teaching/COMPAS-II-FS2021/tree/main/lecture_06
 Verbosity of language
 ---
 
-Leaving the diagrams aside, we can see that the descriptions in CTI are much more verbose than equivalent descriptions in other books. This is clearly visible in the excerpts published - although the authors of the books that I am reviewing have quite different styles of presentation, they both move much faster with the exposition. 
+Leaving the diagrams aside, we can see that the descriptions in CTI are much more verbose than equivalent descriptions in other books. This is clearly visible in the excerpts published - although the authors of the books that I am reviewing have quite different styles of presentation, they both move much faster with the exposition, which would be OK for readers who have prior experience with math and computer science, but would be impossible to follow by a newbie in category theory, without either rereading each part a lot of times or doing cross-reference with secondary resources, most likely both (I know that from my own experience). 
 
-That would be OK for readers who have prior experience with math and computer science, but a person who is really in the target audience of these books i.e. is really a newbie in category theory, has to either read each paragraph 20 times or do cross-reference with secondary resources (most likely both). 
-
-In CTI, I try above all to keep a really slow pace and be gentle in my exposition, taking the time to stress out the important parts of the descriptions and the places where misunderstanding might occur, such as the fact that the term "object" has entirely different meanings in computer science and in category theory. I am guided by my motto from my days as a tech writer: "No user ever complained that there is too much documentation."
+In CTI, I try above all to keep a really slow pace and be gentle in my exposition, taking the time to stress out the important parts of the descriptions and the places where misunderstanding might occur, such as the fact that the term "object" has entirely different meanings in computer science and in category theory. 
 
 Chapter on logic
 ---
 
-Category theory is deeply bound with mathematical logic. Although the connection is mentioned in many books, it isn't fully examined by any introductory texts on category theory. CTI has a dedicated chapter on logic, which introduces the connection and makes use of it to give context to some categorical phenomena, such as limits.
+Category theory is deeply bound with mathematical logic. Although the connection is mentioned in many books, it isn't fully examined by any introductory texts on category theory that I have seen. 
+
+CTI has a dedicated chapter on logic (the longest one in the book), which introduces the connection and makes use of it to give context to some categorical phenomena, such as limits.
 
 Target audiences
 ===
@@ -207,12 +201,12 @@ The types of people who read CTI:
 Programmers, who are curious about category theory, because they are into functional programming.
 ---
 
-Functional programming is on the rise with both new languages and technologies that are gaining traction (Elixir, Clojure), and mainstream languages, trying to catch up (Java, JavaScript). There are many programmers who are interested in Category theory, but lack the math background to read most introductions.
+Functional programming is on the rise with both new languages and technologies that are gaining traction (Elixir, Clojure), and mainstream languages, trying to catch up (Java, JavaScript). There are many programmers who are interested in Category theory, but lack the math background to tackle the existing resources. CTI is a way for those people to understand "what the fuss is about" and then study 
 
 Students who are studying category-theory-related disciplines
 ---
 
-Having a little insight in category theory opens the gate to a growing number of resources that use category theory and diagrammatic language, to introduce other subjects: 
+Having a just a little insight in category theory opens the gate to a growing number of resources that use category theory and diagrammatic language to introduce other subjects: 
 
 - Picturing Quantum Processes by Bob Coecke and Aleks Kissinger (Cambridge University Press - 2017) that uses it to introduce quantum mechanics
 
