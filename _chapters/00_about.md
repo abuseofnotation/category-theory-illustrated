@@ -27,3 +27,8 @@ The main reason I am interested in category theory is that it allows us to forma
 It is in these situations that people often resort to diagrams to explain their thoughts. Diagrams are ubiquitous in science and mathematics because they are an understandable way to communicate a formal concept clearly. Category theory formalises the concept of a diagram and their components - arrows and objects and creates a language for presenting all kinds of ideas.
 
 In this book, we will visit those formalisms and along the way, we would see all other kinds of mathematical objects, viewed under the prism of categories.
+
+Acknowledgements
+===
+
+I like to thank 

@@ -1,21 +1,24 @@
 Functors
 ===
 
-With this chapter, we will change the tactic a bit, (as I am sure you are a bit tired of jumping through different subjects), and we will examine some purely categorical concepts, using the structures that we saw so far as context. And we will also generalize some of the concepts that we saw in these structures so they are valid for all categories.
+With this chapter, we will change the tactic a bit, (as I am sure you are a bit tired of jumping through different subjects). We will examine some purely categorical concepts, using the structures that we saw so far as context and we will also generalize some of the concepts that we saw in these structures so they are valid for all categories.
 
 Connecting categories
 ===
+
 We already saw a lot of different types of categories:
 
 Categories that have just one object (monoids, groups)
 
 Categories that have only one morphism between any two objects (preorders, partial orders)
 
-Categories based on logic (here each collection of assertions forms its own category) and (somewhat related) programming language categories.
+Categories based on logic (here each collection of assertions forms its own category) 
 
-We saw the category of sets as well. And related to it are various categories that are subcategories of the category of sets, for example the set inclusion orders, which only consists of sets of a given number of elements.
+And (somewhat related) programming language categories.
 
-But how can we utilize the insights that we get from the fact that so many different things are actually one and the same thing in disquise? To do so we must specify ways to connect one category to another. This is the topic of this chapter.
+We saw the category of sets and related to it - various categories that are subcategories of the category of sets, as for example the set inclusion orders, which only consists of sets of a given number of elements.
+
+But how can we utilize the insights that we get from the fact that so many different things are actually one and the same thing in disquise? To do so we must specify ways to connect categories to one another. This is the topic of this chapter.
 
 Categorical Isomorphisms
 ===
@@ -43,14 +46,14 @@ Functors
 
 Unlike two-way relations between two categories may be established only in a very limited set of cases, the one-way relations are very common.
 
+Functors in programming
+===
 
-The list functor
----
+Functors as maps
+===
 
 Diagrams
----
-
-
+===
 
 Natural transformations
 ===

@@ -39,8 +39,8 @@
      inkscape:window-height="1016"
      id="namedview15615"
      showgrid="false"
-     inkscape:zoom="3.6489706"
-     inkscape:cx="315.55949"
+     inkscape:zoom="1.8244853"
+     inkscape:cx="261.02356"
      inkscape:cy="100.157"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -49,18 +49,18 @@
   <g
      inkscape:transform-center-y="-7.1122447"
      inkscape:transform-center-x="5.0319336"
-     transform="matrix(0.18443188,-0.00623336,0.02173024,0.2570434,319.9683,-4.6972829)"
+     transform="matrix(0.18443188,-0.00623336,0.02173024,0.2570434,289.82281,-7.4377818)"
      id="g1482-7-0-1-0-3-6"
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.38899994;stroke-miterlimit:10" />
   <g
      inkscape:transform-center-y="-7.1122447"
      inkscape:transform-center-x="5.0319336"
-     transform="matrix(0.18443188,-0.00623336,0.02173024,0.2570434,323.2489,-329.74282)"
+     transform="matrix(0.18443188,-0.00623336,0.02173024,0.2570434,293.10341,-332.48332)"
      id="g1482-7-0-1-0-3-6-7"
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.38899994;stroke-miterlimit:10" />
   <g
      id="g2836-2-5-2-6-2-1-8-8"
-     transform="matrix(1.5387514,-0.89002978,0.89002978,1.5387514,-181.21324,104.72686)"
+     transform="matrix(1.5387514,-0.89002978,0.89002978,1.5387514,-211.35873,101.98636)"
      inkscape:transform-center-x="3.3436919"
      inkscape:transform-center-y="-15.625386">
     <path
@@ -78,7 +78,7 @@
   </g>
   <g
      id="g2840-8-6-3"
-     transform="matrix(0.81169487,0,0,0.81169487,152.83924,-29.261765)">
+     transform="matrix(0.81169487,0,0,0.81169487,122.69375,-32.002264)">
     <circle
        cx="270.0488"
        cy="79.722664"
@@ -94,7 +94,7 @@
   </g>
   <g
      id="g2832-0-7-4"
-     transform="matrix(0.81169487,0,0,0.81169487,112.88815,-59.666946)">
+     transform="matrix(0.81169487,0,0,0.81169487,82.742662,-62.407445)">
     <circle
        cx="219.86087"
        cy="188.36188"
@@ -110,25 +110,26 @@
   </g>
   <g
      id="g2836-2-5-2-6-2-1-8-0-7"
-     transform="matrix(-0.58458964,-1.6787387,1.6787387,-0.58458964,270.01901,645.64371)"
+     transform="matrix(-0.58458964,-1.6787387,1.6787387,-0.58458964,239.87352,642.90321)"
      inkscape:transform-center-x="10.360889"
-     inkscape:transform-center-y="8.2025333">
+     inkscape:transform-center-y="8.2025333"
+     style="stroke:#000000;stroke-opacity:1">
     <path
        d="m 273.21167,117.26782 c -0.57835,-0.53701 -1.18546,-1.05059 -1.82141,-1.54094 0.005,0.90274 -0.23069,1.50591 -0.26419,2.48087 1.09658,-0.45317 1.14943,-0.45438 2.0856,-0.93993 z"
        id="path1478-7-9-0-19-0-0-3-9-8-1-5-7-8-9-6"
        inkscape:connector-curvature="0"
-       style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:2.33961892;stroke-miterlimit:10"
+       style="display:inline;fill:#dddddd;stroke:#000000;stroke-width:2.33961892;stroke-miterlimit:10;stroke-opacity:1"
        sodipodi:nodetypes="cccc" />
     <path
        sodipodi:nodetypes="cc"
        d="m 242.7095,118.61874 c 10.03327,-2.44287 20.74677,-3.27503 28.79188,-1.52922"
        id="path1480-1-3-1-5-7-6-7-2-9-5-4-2-5-6-3"
        inkscape:connector-curvature="0"
-       style="display:inline;fill:none;stroke:#838383;stroke-width:1.32416177;stroke-miterlimit:10;stroke-dasharray:none;paint-order:markers fill stroke" />
+       style="display:inline;fill:none;stroke:#000000;stroke-width:1.32416177;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
   </g>
   <g
      id="g2762-1-3-4"
-     transform="matrix(0.54103121,0,0,0.54103121,146.46565,45.03276)">
+     transform="matrix(0.54103121,0,0,0.54103121,116.32016,42.292261)">
     <circle
        cx="323.01764"
        cy="91.036781"
@@ -170,7 +171,7 @@
   </g>
   <g
      id="g2836-2-5-2-6-2-1-8-0-7-9"
-     transform="matrix(0.17089105,-1.7693798,-1.7693798,-0.17089105,537.00783,567.43521)"
+     transform="matrix(0.17089105,-1.7693798,-1.7693798,-0.17089105,506.86234,564.69471)"
      inkscape:transform-center-x="-12.475369"
      inkscape:transform-center-y="5.6988713">
     <path
@@ -188,7 +189,7 @@
   </g>
   <g
      id="g2852-5-9-1"
-     transform="matrix(0.81169487,0,0,0.81169487,68.573372,6.6106553)">
+     transform="matrix(0.81169487,0,0,0.81169487,38.427884,3.8701564)">
     <circle
        cx="332.86816"
        cy="190.67238"

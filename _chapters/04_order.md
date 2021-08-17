@@ -137,20 +137,20 @@ The chains in an order don't have to be completely disconnected from each other 
 The above set is not linearly-ordered - although the connection establishes the relationship between **D** and **G** (**D ≤ G**) and although the relationship between **F** and **G** is known as well (**F ≤ G**), the relationship between **D** and **F** is *not* known. Any element can be bigger than the other one.
 
 
-Maximum and minimum 
+Greatest and least 
 ---
 
 Although posets don't give us definitive answer to who is better than who, some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely *who is number one*, who is the champion, the player who is better than anyone else, or more generally the element that is bigger than any other element. 
 
-We call such elements the *maximum element* and some (not all) partial orders do have such element - in our last diagram **M** is the maximum element, in this diagram, the green element is the biggest one.
+We call such elements the *greatest element* and some (not all) partial orders do have such element - in our last diagram **M** is the greatest element, in this diagram, the green element is the biggest one.
 
 ![Join diagram with one more element](join_additional_element.svg)
 
-Sometimes we have more than one elements that are bigger than all other elements, in this case none of them are maximum.
+Sometimes we have more than one elements that are bigger than all other elements, in this case none of them is the greatest.
 
-![A diagram with no maximum element](non_maximal_element.svg)
+![A diagram with no greatest element](non_maximal_element.svg)
 
-In addition to the maximum element, a partial order may also have a minimum (smallest) element, which is defined in the same way.
+In addition to the greatest element, a partial order may also have a least (smallest) element, which is defined in the same way.
 
 Joins
 ---
@@ -165,9 +165,9 @@ There can be multiple elements bigger than **A** and **B** (all elements that ar
 
 Given any two elements in which one is bigger than the other (e.g. **A ≤ B**), the join is the bigger element (in this case **B**). 
 
-In a totally ordered set, the *join* of any subset of elements is just their the *maximum* element. 
+In a totally ordered set, the *join* of any subset of elements is just their the *greatest* element. 
 
-Like with the maximum element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
+Like with the greatest element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
 
 ![A non-join diagram](non_join.svg)
 
@@ -287,7 +287,7 @@ Notice that when drawing our color-mixing lattice, we added the black ball at th
 Bounded lattices
 ---
 
-Our color-mixing lattice, has a *maximum element* (the black ball) and a *minimum element* (the white one). Lattices that have a minimum and maximum elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
+Our color-mixing lattice, has a *greatest element* (the black ball) and a *least element* (the white one). Lattices that have a least and greatest elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
 
 **Task:** Prove that all finite lattices are bounded.
 
@@ -344,6 +344,12 @@ All of that structure arises naturally from the simple law of transitivity.
 
 ![Transitivity](transitivity.svg)
 
+<!--
+TODO: add the example of preorders as models for routes from/to a given set of destination.
+
+Also the state machine example.
+-->
+
 Orders as categories
 ===
 
@@ -369,7 +375,7 @@ That is in the contrast with the category of sets where there are potentially in
 
 ![Orders compared to other categories](order_category.svg)
 
-Note that although two objects in an order might be directly connected by just one arrow, they might still be be indirectly connected by more than one arrow. So when we define an order in categorical way it's crucial to say that these ways are equivalent i.e. that all diagrams that show orders commute.
+Note that although two objects in an order might be directly connected by just one arrow, they might still be be indirectly connected by more than one arrow. So when we define an order in categorical way it's crucial to specify that *these ways are equivalent* i.e. that all diagrams that show orders commute.
 
 Products and sums
 ---
@@ -387,17 +393,17 @@ But wait, wasn't there something else that corresponded to set inclusion - oh ye
 In category theory, an object **G** is the coproduct of objects **Y** and **B** if the following two conditions are met:
 
 1. We have a morphism from any of the elements of the coproduct to the coproduct, so **Y → G** and **B → G**.
-2. For any other object **P** that also has those morphisms, so for any **P** such that **P ≤ G** and **P ≤ B**, we would have morphism **G → P**.
+2. For any other object **P** that also has those morphisms (so **Y → P** and **B → P**) we would have morphism **G → P**.
 
 ![Joins as coproduct](coproduct_morphisms.svg)
 
 In the realm of orders, we say that **G** is the *join* of objects **Y** and **B** if:
 
-1. It is bigger than both of these objects, so **Y ≤ G** and **P ≤ G**.
+1. It is bigger than both of these objects, so **Y ≤ G** and **B ≤ G**.
 
 2. It is smaller than any other object that is bigger than them, so for any other object **P** such that **P ≤ G** and **P ≤ B** then we should also have **G ≤ P**.
 
 ![Joins as coproduct](coproduct_join_morphisms.svg)
 
-We can see that the two definitions (and the diagrams) are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
+We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
 
