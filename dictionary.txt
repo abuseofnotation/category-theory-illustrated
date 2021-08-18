@@ -65,3 +65,11 @@ bivalence
 Zermelo
 Fraenkel
 distributivity
+CTI
+monads
+monad
+hom-set
+Curry-Howard-Lambek
+Curry-Howard
+Lambek
+cartesian
