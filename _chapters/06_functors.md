@@ -1,37 +1,42 @@
 Functors
 ===
 
-With this chapter, we will change the tactic a bit, (as I am sure you are a bit tired of jumping through different subjects). We will examine some purely categorical concepts, using the structures that we saw so far as context and we will also generalize some of the concepts that we saw in these structures so they are valid for all categories.
+With this chapter, we will change the tactic a bit, (as I am sure you are a bit tired of jumping through different subjects) and we will examine some purely categorical concepts, using the structures that we saw so far as context. We will also generalize some of the concepts that we saw in these structures so they are valid for all categories.
 
-Connecting categories
+Categories we saw so far
 ===
 
-We already saw a lot of different types of categories:
+We already saw a many different types of categories, like categories that have just one *object* (monoids, groups) and categories that have only one *morphism* between any two objects (preorders, partial orders). 
 
-Categories that have just one object (monoids, groups)
+![Types of categories](category_types.svg)
 
-Categories that have only one morphism between any two objects (preorders, partial orders)
+We also defined a lot of categories, most notably the ones based on logics/programming languages, but also less serious categories, as for example the color-mixing one
 
-Categories based on logic (here each collection of assertions forms its own category) 
+![Types of categories](category_types.svg)
 
-And (somewhat related) programming language categories.
+We saw that we can make a category out of everything, as for example our city's road system, or a soccer ranglist starring me and my grandmother.
 
-We saw the category of sets and related to it - various categories that are subcategories of the category of sets, as for example the set inclusion orders, which only consists of sets of a given number of elements.
+While examining all of this, we also saw the mother of all categories - the category of sets, as well as various *subcategories* to that category, as for example the set inclusion orders. We saw that many other categories are similar to subcategories of the category of sets.
+
+![Set category](category_set.svg)
 
 But how can we utilize the insights that we get from the fact that so many different things are actually one and the same thing in disquise? To do so we must specify ways to connect categories to one another. This is the topic of this chapter.
 
 Categorical Isomorphisms
 ===
 
-In chapter 1 we talked about set isomorphisms, which establish the equivalence between two sets.
+In chapter 1 we talked about set isomorphisms, which establish the equivalence between two sets. If you remember a set isomorphism consisted of two functions between the sets that when composed are equivalent to the identity function. Or more simply put, of one invertible function.
 
 ![Set isomorphism](set_isomorphism.svg)
+
+
+![Set isomorphism](set_isomorphism_invertable.svg)
 
 Then in chapter 4 we mentioned order isomorphisms, which were just set isomorphisms, with the extra condition that not only the objects, but the arrows should be the same, so for any two elements **a** and **b**, *a ≤ b** iff **F(a) ≤ F(b)**. 
 
 ![Order isomorphism](order_isomorphism.svg)
 
-It's a little (but not a lot) more complex to define extend this definition to work for categories as well. Given two categories, an isomorphism between them is an isomorphism between the underlying sets of objects, plus an isomorphism between the morphisms that connect them.
+It's a little (but not a lot) more complex to extend this definition to work for categories as well. Given two categories, an isomorphism between them is an invertible function between the underlying sets of objects, plus an isomorphism between the morphisms that connect them.
 
 ![Category isomorphism](category_isomorphism.svg)
 

@@ -170,7 +170,7 @@ If we view logical operators as functions, from and to the set of boolean values
 
 ![Double negation elimination](double_negation_proof.svg)
 
-If we want to be formal about it, we might say that applying negation two times is equivalent to applying the identity function.
+If we want to be formal about it, we might say that applying negation two times is equivalent to applying the *identity* function.
 
 ![The identity function for boolean values](boolean_identity.svg)
 
@@ -371,22 +371,22 @@ The second part involves converting a category into a logical system - this is m
 
 These criteria have to guarantee that a category has objects that correspond to all valid logical propositions and no objects that correspond to invalid ones. 
 
-Categories that adhere to these criteria are called *cartesian closed categories*. We won't describe them here directly, but instead we would start with a similar but simpler structures that are instance of them and that we already examined - orders.
+Categories that adhere to these criteria are called *cartesian closed categories*, but we won't look into them directly. Instead, we would present logic using a similar but simpler structures that we already examined - orders.
 
 Logics as orders
 ---
 
 We will now do something that is quite characteristic of category theory - examining a concept in a more limited version of the theory, in order to make things simpler for ourselves. 
 
-So we already saw that a logical system, along with the set of primary propositions forms a category.
+So we already saw that a logical system, along with a set of its propositions, forms a category.
 
 ![Logic as a preorder](logic_category.svg)
 
-If we assume that there is only one way to go from proposition **A**, to proposition **B** (or there are many ways, but we are not interested in the difference between them), then logic is not only a category, but a *preorder* in which  the relationship "bigger than" is taken to mean "implies".
+If we assume that there is only one way to go from proposition **A**, to proposition **B** (or that there are many ways, but we are not interested in the difference between them), then logic is not only a category, but a *preorder* in which  the relationship "bigger than" is taken to mean "implies".
 
 ![Logic as a preorder](logic_preorder.svg)
 
-Furthermore, if we count propositions that follow from each other (or sets of propositions that have the same truth value and can be proven by the same proof) as equivalent, then logic is a proper *partial order*.
+Furthermore, if we count propositions that follow from each other (or sets of propositions that are proven by the same proof) as equivalent, then logic is a proper *partial order*.
 
 ![Logic as an order](logic_order.svg)
 
@@ -394,14 +394,16 @@ And so it can be represented by a Hasse diagram, yey.
 
 ![Logic as an order](logic_hasse.svg)
 
-Now let's examine the question that we asked before - exactly which ~~categories~~ orders represent logic and what laws does an order have to obey so it is isomorphic to a logic? We will attempt to answer this question as we examine the elements of logic again, this time in the context of orders.
+Now let's examine the question that we asked before - exactly which ~~categories~~ orders represent logic and what laws does an order have to obey so it is isomorphic to a logical system? We will attempt to answer this question as we examine the elements of logic again, this time in the context of orders.
 
 The **and** and **or** operations
 ---
 
-By now you probably realized that the **and** and **or** operations are the bread and butter of logic (although it's not clear which is which). As we saw, in the BHK interpretation those were represented by set *products* and *sums*. And the equivalent constructs in the realm of order theory are *meets* and *joins* (in category-theoretic terms *products* and *coproducts*.)
+By now you probably realized that the **and** and **or** operations are the bread and butter of logic (although it's not clear which is which). As we saw, in the BHK interpretation those are represented by set *products* and *sums*. The equivalent constructs in the realm of order theory are *meets* and *joins* (in category-theoretic terms *products* and *coproducts*.)
 
-Here comes the first criteria for an order to represent logic accurately - it has to have **meet** and **join** operations for all elements. Having two elements without a meet would mean that you would have a logical system where there are propositions for which you cannot say that one or the other is true. And this not how logic works, so our order has to have meets and joins for all elements. Incidentally we already know how such orders are called - they are called *lattices*.
+![Order meet and joing](lattice_meet_join.svg)
+
+Here comes the first criteria for an order to represent a logical system accurately - *it has to have **meet** and **join** operations for all elements*. Having two elements without a meet would mean that you would have a logical system where there are propositions for which you cannot say that one or the other is true. And this not how logic works, so our order has to have meets and joins for all elements. Incidentally we already know how such orders are called - they are called *lattices*.
 
 One more important law concerning the  **and** and **or** operations  that is not always present in the **meet**-s and **join**-s concerns the connection between the two, i.e. way that the **and** and **or** operations distribute, over one another.
 
@@ -409,26 +411,22 @@ One more important law concerning the  **and** and **or** operations  that is no
 
 Lattices that obey this law are called *distributive lattices*.
 
-Wait, where have we heard about distributive lattices before? In the previous chapter we said that they are isomorphic to *inclusion orders* i.e. orders which contain all combinations of sets of a given number of elements. 
-
-And if you think about the BHK interpretation you'll see why: "logical" orders are isomorphic to inclusion orders. The elements which participate in the inclusion are our prime propositions. And the inclusions are all combinations of these elements, in an **or** relationship (for simplicity's sake, we are ignoring the **and** operation.)
+Wait, where have we heard about distributive lattices before? In the previous chapter we said that they are isomorphic to *inclusion orders* i.e. orders which contain all combinations of sets of a given number of elements. The fact that they popped up again is not coincidental -  "logical" orders are isomorphic to inclusion orders. To understand why, you only need to think about the BHK interpretation - the elements which participate in the inclusion are our prime propositions. And the inclusions are all combinations of these elements, in an **or** relationship (for simplicity's sake, we are ignoring the **and** operation.)
 
 ![A color mixing poset, ordered by inclusion](logic_poset_inclusion.svg)
-
-So in order for our distributive lattice to represent logic accurately, it has to have a minimum and maximum objects.
 
 **NB: For historical reasons, the symbols for *and* and *or* logical operations are flipped when compared to arrows in the diagrams ∧ is *and* and ∨ is *or*.**
 
 The *negation* operation
 ---
 
-In order for a distributive lattice to represent logic, it has to also have objects that correspond to the values **True** and **False**. But in order for us to mandate that these objects exist, we must first find a way to specify what they are in order/category-theoretic terms.
+In order for a distributive lattice to represent a logical system, it has to also have objects that correspond to the values **True** and **False**. But in order to mandate that these objects exist, we must first find a way to specify what they are in order/category-theoretic terms.
 
-A well-known result in logic, called *the principle of explosion*, states that if we have a proof of **False** (or if "**False** is true" if we use the terminology of classical logic), than any and every statement can be proven. And it is also obvious that no true statement implies False. So here is it.
+A well-known result in logic, called *the principle of explosion*, states that if we have a proof of **False** (or if "**False** is true" if we use the terminology of classical logic), then any and every other statement can be proven. And we also know that no true statement implies **False** (in fact in intuinistic logic this is the definition of a true statement). Based on these criteria we know that the **False** object would look like this when compared to other objects:
 
 ![False, represented as a Hasse diagram](lattice_false.svg)
 
-Circling back to the set-theoretic BHK interpretation, we see that the empty set fits both conditions.
+Circling back to the BHK interpretation, we see that the empty set fits both conditions.
 
 ![False, represented as a Hasse diagram](lattice_false_bhk.svg)
 
@@ -436,18 +434,19 @@ Conversely, the proof of **True** (or the statement that "**True** is true") is 
 
 ![True, represented as a Hasse diagram](lattice_true.svg)
 
-So **True** and **False** are just the *greatest* and *least* objects of our order (in category-theoretic terms *terminal* and *initial* object.) This is another example of the categorical concept of duality - **True** and **False** are dual to each other, just like **and** and **or**. 
+So **True** and **False** are just the *greatest* and *least* objects of our order (in category-theoretic terms *terminal* and *initial* object.) 
 
 ![The whole logical system, represented as a Hasse diagram](lattice_true_false.svg)
+
+This is another example of the categorical concept of duality - * **True** and **False** are dual to each other*, (which makes a lot of sense if you think about it).
 
 So in order to represent logic, our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements.
 
 The *implies* operation
 ---
 
-Finally, if a lattice really is isomorphic to a set of propositions, we it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object **A → B** for each pair of objects **A** and **B**, such that all axioms of intuinistic logic are followed. 
-
-How would this object be described? You guessed it, using categorical language i.e. by recognizing a structure that consists of set of relations between objects in which (A → B) plays a part.
+Finally, if a lattice really represents a logical system (that is, it is isomorphic to a set of propositions) it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object **A → B** for each pair of objects **A** and **B**, such that all axioms of logic are followed. 
+How would this object be described? You guessed it, using categorical language i.e. by recognizing a structure that consisting of set of relations between objects, in which (**A → B**) plays a part.
 
 ![Implies operation](implies.svg)
 
@@ -459,7 +458,9 @@ This definition is not complete, however, because  **(A → B)** is *not the onl
 
 ![Implies operation with universal property](implies_universal_property.svg)
 
-Or, using the logic terminology, we say that **A → B ∧ C** and **A → B ∧ C ∧ D** etc. are all "stronger" results than (**A → B**) and so (**A → B**) is the weakest result that fits the criteria (stronger results lay lower in the diagram). 
+Or, using the logic terminology, we say that **A → B ∧ C** and **A → B ∧ C ∧ D** etc. are all "stronger" results than (**A → B**) and so (**A → B**) is the weakest result that fits the formula (stronger results lay lower in the diagram). 
+
+So this is the final condition for an order/lattice to be a representation of logic - for each pair **A** and **B**, it has to have a unique object **X** which obey the formula **A ∧ X → B** and the universal property. In category theory this object is called the *exponential object*.  
 
 Without being too formal, let's try to test if this definition captures the concept correctly by examining a few special cases.
 
@@ -481,6 +482,8 @@ And what if **B** is lower than **A**. In this case the topmost object that fits
 
 Translated to logical language, says that if **B → A**, then the proof of **(A → B)** is just the proof of **B**.
 
-So this is the final condition for an order to be a representation of logic - for each pair **A** and **B**, it has to have a unique object **X** which obey the formula **A ∧ X → B** and the universal property. In category theory this object is called the *exponential object*. 
+Note that this definition does not follow the one from the truth tables exactly. This is because this definition is valid specifically for intuinistic logic. For classical logic, the definition of **(A → B)** is simpler - it is just equivalent to (**-A ∨ B**). 
 
-By the way, distributivity follows from this criteria, so we are left with just the following two points: Logic is represented by an order that has with *meet and joins* and a *functional object*. Which is, I think, the neatest definition of logic there is.
+By the way, the law of distributivity follows from this criteria, so the only criteria that are left for an lattice to follow the laws of intuinistic logic is for it to be *bounded* i.e. to have greatest and least objects (**True** and **False**) and to have a function object as described above. Lattices that follow these criteria are called *Heyting algrebras*.
+
+And for a lattice to follow the laws of classical logic it has to be *bounded* and *distributive* and to be *complemented* which is to say that each proposition **A** should be complemented with a unique proposition **-A** (such that **A ∨ -A = 1** and **A ∧ -A = 0**). These lattices are called *Boolean algebras*.
