@@ -438,9 +438,9 @@ So **True** and **False** are just the *greatest* and *least* objects of our ord
 
 ![The whole logical system, represented as a Hasse diagram](lattice_true_false.svg)
 
-This is another example of the categorical concept of duality - * **True** and **False** are dual to each other*, (which makes a lot of sense if you think about it).
+This is another example of the categorical concept of duality - ***True** and **False** are dual to each other*, (which makes a lot of sense if you think about it).
 
-So in order to represent logic, our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements.
+So in order to represent logic, our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of **True** and **False**).
 
 The *implies* operation
 ---

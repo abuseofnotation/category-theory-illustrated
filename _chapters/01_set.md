@@ -327,7 +327,7 @@ Isomorphisms Between Singleton Sets
 
 Between any two singleton sets, we may define the only possible function.
 
-![The only possible function between sungletons](singleton_function.svg)
+![The only possible function between singletons](singleton_function.svg)
 
 The function is invertible, which means that all singleton sets are isomorphic to one another.
 

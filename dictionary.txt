@@ -29,6 +29,7 @@ Monoid
 Monoids
 isomorphism
 isomorphisms
+Isomorphisms
 Hasse
 Antisymmetry
 connexity
@@ -73,3 +74,9 @@ Curry-Howard-Lambek
 Curry-Howard
 Lambek
 cartesian
+functor
+functors
+Functor
+Functors
+Endofunctors
+invertible
