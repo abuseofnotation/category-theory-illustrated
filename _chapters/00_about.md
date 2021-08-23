@@ -31,4 +31,10 @@ In this book, we will visit those formalisms and along the way, we would see all
 Acknowledgements
 ===
 
-I like to thank 
+Thanks to my wife Dimitrina, who has no issue with taking after our daughter while I sit here and write my book.
+
+Thanks to my high-school arts teacher, Mrs Georgieva who told me that I have some tallent, but I have to work.
+
+Thanks to Prathyush Pramod who encouraged me to finish the book and is also helping me out with it.
+
+And also to everyone else who submitted feedback and helped me fix some of the numerous errors that I made - knowing myself, I know that there are more.
