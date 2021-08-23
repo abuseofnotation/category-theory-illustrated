@@ -50,8 +50,7 @@ composable
 forall
 BHK
 yey
-intuinistic
-Intuinistic
+intuitionistic
 intuinism
 Brouwer
 schemas
