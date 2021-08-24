@@ -26,6 +26,8 @@ It is in these situations that people often resort to diagrams to explain their 
 
 In this book, we will visit those formalisms and along the way, we would see all other kinds of mathematical objects, viewed under the prism of categories.
 
+![Comics](non_illustrated.svg)
+
 Acknowledgements
 ===
 

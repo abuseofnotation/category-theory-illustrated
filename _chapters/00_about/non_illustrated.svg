@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 595.3 189.5"
+   version="1.1"
+   id="svg15613"
+   sodipodi:docname="non_illustrated.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata15619">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15617" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview15615"
+     showgrid="false"
+     inkscape:zoom="2.356102"
+     inkscape:cx="253.32772"
+     inkscape:cy="58.505297"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15613" />
+  <circle
+     style="fill:#e6e7e8;stroke:none;stroke-width:2.26771665;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+     id="circle14075-1-9-2"
+     r="84.033943"
+     cy="98.710869"
+     cx="177.24565"
+     stroke-miterlimit="10"
+     transform="rotate(-0.14964654)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.70264816px;line-height:1.25;font-family:'HVD Comic Serif Pro';-inkscape-font-specification:'HVD Comic Serif Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.24256618"
+     x="6.6814909"
+     y="19.68396"
+     id="text890"><tspan
+       sodipodi:role="line"
+       x="6.6814909"
+       y="19.68396"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.93686199px;line-height:0px;font-family:'HVD Comic Serif Pro';-inkscape-font-specification:'HVD Comic Serif Pro';direction:ltr;stroke-width:0.24256618"
+       id="tspan921">You know what would be cool?</tspan><tspan
+       sodipodi:role="line"
+       x="6.6814909"
+       y="31.812271"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.93686199px;line-height:0px;font-family:'HVD Comic Serif Pro';-inkscape-font-specification:'HVD Comic Serif Pro';direction:ltr;stroke-width:0.24256618"
+       id="tspan925">&quot;Category Theory non-illustrated&quot;</tspan><tspan
+       sodipodi:role="line"
+       x="6.6814909"
+       y="43.940578"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.93686199px;line-height:0px;font-family:'HVD Comic Serif Pro';-inkscape-font-specification:'HVD Comic Serif Pro';direction:ltr;stroke-width:0.24256618"
+       id="tspan927">Like, this book but without the diagrams!</tspan></text>
+  <flowRoot
+     xml:space="preserve"
+     id="flowRoot929"
+     style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:'HVD Comic Serif Pro';font-style:normal;font-weight:normal;font-size:40px;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'HVD Comic Serif Pro';font-stretch:normal;font-variant:normal"><flowRegion
+       id="flowRegion931"><rect
+         id="rect933"
+         width="60.269039"
+         height="63.664474"
+         x="127.75338"
+         y="28.21666" /></flowRegion><flowPara
+       id="flowPara935"></flowPara></flowRoot>  <circle
+     style="fill:#e6e7e8;stroke:none;stroke-width:2.26771665;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+     id="circle14075-1-9-2-4"
+     r="84.033943"
+     cy="106.59325"
+     cx="432.64154"
+     stroke-miterlimit="10"
+     transform="rotate(-0.14964654)" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.57486916px;line-height:1.25;font-family:'HVD Comic Serif Pro';-inkscape-font-specification:'HVD Comic Serif Pro';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26437172"
+     x="353.96198"
+     y="36.113937"
+     id="text890-5"><tspan
+       sodipodi:role="line"
+       x="353.96198"
+       y="36.113937"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.09982395px;line-height:0px;font-family:'HVD Comic Serif Pro';-inkscape-font-specification:'HVD Comic Serif Pro';direction:ltr;stroke-width:0.26437172"
+       id="tspan927-5">That's just the Haskell docs.</tspan></text>
+  <g
+     style="display:inline;fill:#dddddd;stroke:#525252;stroke-width:6.38899994;stroke-miterlimit:10;stroke-opacity:1"
+     id="g1482-7-0-2-0-3"
+     transform="matrix(0.19081777,0.04470537,-0.0586126,0.27393353,146.26391,274.86125)">
+    <path
+       style="stroke:#525252;stroke-width:16.09810066;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       id="path1478-7-9-7-4-0"
+       d="m 561.87563,137.32866 c 5.67304,-0.68218 11.42727,-1.10766 17.25196,-1.39814 -2.29259,-4.1459 -4.88392,-8.23324 -7.77387,-12.26334 -3.29375,4.77629 -5.64002,8.58931 -9.47809,13.66148 z" />
+    <path
+       style="fill:none;stroke:#525252;stroke-width:9.11184978;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:connector-curvature="0"
+       id="path1480-1-3-7-6-4"
+       d="M -830.23132,282.27993 C -477.33831,127.01799 201.8588,45.057954 566.33474,133.95287"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
