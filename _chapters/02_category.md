@@ -319,8 +319,8 @@ A summary
 For future reference, let's repeat what a category is.
 
 A category is a collection of **objects** (we can think of them as points) and **morphisms** (arrows) that go from one object to another, where:
-1. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
-2. Each object has to have the identity mophism.
+1. Each object has to have the identity mophism.
+2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
 
 This is it.
 
