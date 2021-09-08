@@ -19,32 +19,32 @@ Categories that have only one *morphism* between any two objects (preorders, par
 
 ![Types of categories](category_types_order.svg)
 
-We also defined a lot of categories of different things most notably the ones based on logics/programming languages. But also less serious categories, as for example the color-mixing one. We even saw that those two categories have some similarities, like they are both distributive lattices and have greatest and least objects.
+We also defined a lot of categories based on different things most notably the ones based on logics/programming languages, but also less "serious ones", as for example the color-mixing one. Serious or not, we saw that many of these categories share some similarities, as for example both the color-mixing order and categories that represent logic have greatest and least objects.
 
 ![Category of colors](category_color_mixing.svg)
 
-But how exactly can we pinpoint such similarities and understand what they mean. How can we utilize the insights that we got from recognizing all of these structures as categories?  To do that, we must specify formal ways to connect categories to one another.
+To pinpoint such similarities and understand what they mean, we specify formal ways to connect categories to one another.
 
 Categorical Isomorphisms
 ===
 
-In chapter 1 we talked about set isomorphisms, which establish an equivalence between two sets. If you remember a set isomorphism is a two-way function between two sets. Or alternatively, you can think of an isomorphism as consisting of two "twin" functions each of which equals identity when composed with the other. 
+In chapter 1 we talked about set isomorphisms, which establish an equivalence between two sets. If you remember a set isomorphism is a *two-way function* between two sets or, alternatively, two "twin" functions each of which equals identity when composed with the other. 
 
 ![Set isomorphism](set_isomorphism.svg)
 
-Then, in chapter 4 we mentioned order isomorphisms. They were the same thing as set isomorphisms, but with one extra condition - aside from being there, the function that defines the isomorphism has to preserve the order of the elements i.e. all elements have to have the same arrows pointing to and from them. Or more formally put: **a** and **b**, **a ≤ b** iff **F(a) ≤ F(b)**. 
+Then, in chapter 4, we mentioned order isomorphisms and saw that they are the same thing as set isomorphisms, but with one extra condition - aside from being there, the functions that define the isomorphism have to preserve the order of the elements i.e. all elements have to have the same arrows pointing to and from them. Or more formally put: **a** and **b**, **a ≤ b** iff **F(a) ≤ F(b)**. 
 
 ![Order isomorphism](order_isomorphism.svg)
 
-We can extend this definition to work for categories as well. Unlike orders, categories can have more than one morphism between two objects, so the definition would be a little more complex: given two categories, an isomorphism between them is an invertible function between the underlying sets of objects, *and* an invertible function between the morphisms that connect them, which maps each morphism to a morphism with the same signature (if you haven't seen the word, the "signature" of a function is just its domain and codomain, so two functions have the same signature if they have the same domain and codomain.)
+We can extend this definition to work for categories as well. However, unlike orders, categories can have more than one morphism between two objects, so the definition is a little more complex. It is the following: given two categories, an isomorphism between them is an invertible function between the underlying sets of objects, *and* an invertible function between the morphisms that connect them, which maps each morphism to a morphism with the same signature. If you haven't seen the word, the "signature" of a function is just its input and output, so two functions have the same signature if they have the same input and output.
 
 ![Category isomorphism](category_isomorphism.svg)
 
-Although longer, this definition is the same as the one we have for orders - it is just that with categories we can have more than one morphism between two objects and so we need to explicitly specify which one corresponds to which, while in order theory we only need to verify that the corresponding morphism actually exist (which is done by the condition we added.)
+Although longer, this definition is the same as the one we have for orders - it is just that with categories we can have more than one morphism between two objects and so we need to explicitly specify which one corresponds to which, while in order theory we only need to verify that the corresponding morphism actually exist (which is done by the *order-preserving* condition.)
 
 So those are categorical isomorphisms. But isomorphisms are actually very rare. The only one that comes to mind is the Curry-Howard-Lambek isomorphism from the last chapter. 
 
-If two categories are isomorphic, then they basically contain the same data and it would be more accurately to refer to them as different representations of the same category, then as separate categories.
+If two categories are isomorphic they basically contain the same data and it would be more accurate to refer to them as different representations of the same category, then as separate categories.
 
 <!--
 comics:
@@ -56,20 +56,24 @@ Pretty much.
 What are functors
 ===
 
-More useful than isomorphisms, which are two-way connections between categories, are one-way connections between them, which we will examine next. As you might have guessed, those are called functors.
+Much more abundant than isomorphisms, which are two-way connections between categories, are one-way connections between categories, which we will examine next. As you might have guessed, those are called functors.
+
+They are more abundant than isomorphisms because each isomorphism is also a functor (actually two functors).
 
 *Functors* work like this - a functor between two categories (let's call them **A** and **B**) consists of one function that maps the *objects* of **A** to the objects of **B** and one function that maps all *morphisms* of **A** to morphisms of **B** in a way that preserves the structure of the category.
 
 ![Functor](functor.svg)
 
-Let's go through each component of the definition.
+Let's go through each component of this definition.
 
 Object function
 ---
 
-Firstly, we have a function between the categories' objects, or between the categories' *underlying sets*, as you might put it. These are just regular old functions, so the definition from chapter 1 applies.
+Firstly, we have a function between the categories' objects. These are just regular old functions, so the definition from chapter 1 applies here.
 
 > A function is a relationship between two sets which matches each element of one set, called the *domain* of the function, with exactly one element from another set, called the converse domain, or the *codomain* of the function.
+
+Formally, this component of the functor can be defined as a function between the categories' *underlying sets*.
 
 ![Functor for objects](functor_objects.svg)
 
@@ -84,14 +88,12 @@ A more rigorous definition of a morphism function involves the concept of the *h
 
 ![Functor for morphisms](functor_morphisms_formal.svg)
 
-Note how the concept of homomorphism set allowed us to "escape" to set theory when defining categorical concepts.
+Note how the concepts of "homomorphism set" and of "underlying set" allowed us to "escape" to set theory when defining categorical concepts. We will see more of this.
 
 Functor laws
 ---
 
-So these are the two components that form a functor. But aside from defining them we should verify that they preserve the structure of the source category into the target.
-
-As stated in the category definition in chapter 2:
+So these are the two components that form a functor. But aside from defining them we should verify that they preserve the structure of the source category into the target. What is the structure of a category? As stated in the category definition in chapter 2:
 
 > A category is a collection of **objects** (we can think of them as points) and **morphisms** (arrows) that go from one object to another, where:
 > 1. Each object has to have the identity mophism.
@@ -123,16 +125,19 @@ Let's take turns asking ourselves personal questions. I'll start: which are your
 Diagrams
 ---
 
-Let's start with one that is very meta. Consider a diagram, any diagram, from this book. By definition diagrams are, or aim to be, some kind of description of reality, so in order to understand them we have to relate them to some real-world situation i.e. we have to associate each object from the diagram with an object from the external world, and also each morphism from the diagram with some kind of relationship that your objects have. So you are creating a functor in your head.
+Let's start with one that is very meta. Consider a diagram, any diagram from this book. By definition diagrams are, or aim to be, some kind of description of reality, so in order to understand them we have to relate them to some real-world situation i.e. we have to associate each object from the diagram with an object from the external world, and also each morphism from the diagram with some kind of relationship that your objects have. 
 
-The target of a functor may not be reality, it might be some other purely mathematical structure. In this case we have a functor between two diagrams.
+So when you are perceiving a diagram, you are actually creating a functor in your head.
 
-Now let's try to draw some functors between the diagrams that we have here.
+For example, if we consider the preorder representing different cities and the roads in a given region. 
+
+A diagram that represents that order is actually just a map of the region where the cities are located.
+
 
 Monoid functors
 ---
 
-Let's start with monoids. As we said, a monoid is a with just one object, so if we decide not to care about the properties of the different objects we can collapse a category into a monoid.
+As we said, a monoid is a with just one object, so if we decide not to care about the properties of the different objects we can collapse a category into a monoid.
 
 On the other hand, each category that has *products* (so all that we reviewed here) has a corresponding monoid, such that there is a functor between the monoid and the category. For that reason, these categories are known also as *monoidal categories*.
 
@@ -142,17 +147,24 @@ As with monoids, we can write a functor that collapses any category into an preo
 
 Functors in programming
 ---
-The concept of a functor is heavily used in programming to facilitate code reuse 
 
-Given a category of simple types that have numerous functions between them. 
+In programming, defining a functor entails defining a way to lifts all functions defined in the category of *simple types* (like string, number etc) in a way that they work for a category of *parametrized types* (like list map etc), and thus allows you to *reuse these functions* in the other context.
 
-And given some more complex feature-rich version of these same category.
+This is done with a higher-order function usually called `map` that converts a function accepting and returning values of simple type **(a -> b)** to a function that accepts and returns the corresponding parametrized types **(Fa -> Fb)**. 
 
-Defining a functor allows you to reuse the functions defined for the simple value in the more complex realm, by obtaining their equivalents in the more complex category.
+Why is this useful? If we think about the category of simple types, there are numerous functions between them, like even if we take functions between strings and numbers, there are a lot.
 
-In most cases, this is done by defining a higher-order function (usually called `map`) that converts a function accepting and returning simple types **(a -> b)** to a function that accepts and returns the corresponding complex values **(Fa -> Fb)**. 
+But for a category of parametrized types, as for example the category of lists, there aren't that many.
 
-For lists, `map` has the following type **(a -> b) -> ([a] -> [b])**.
+However having `map` (which for lists has the type `(a -> b) -> ([a] -> [b])`) allows you to bring out these functions, defined in the category of simple types, like (`int -> string`) to the one for the more complex ones, like (`[int] -> [string]`).
+
+Aside from facilitating code reuse by bringing in all standard functions of simple types in a more complex context, `map` allows us to work in a simpler context when defining new functions and do so in a way that is predictable, due to the functor laws, which in programming context look like the following:
+
+```
+a.map((a => a) == a
+
+a.map(f).map(g) == a.map((v) => g(f(v)))
+```
 
 Functors as maps
 ---
