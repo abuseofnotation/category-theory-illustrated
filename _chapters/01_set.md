@@ -240,7 +240,7 @@ If we look at the definition, we recognize that the set that we just defined - *
 
 ![Russel's paradox - option one](russells_paradox_2.svg)
 
-Hm, something is not quite right with this diagram as well - Because of the new adjustments that we made *R* **contains itself**. And removing it from the set would just bring us back to the previous situation. This is Russell's paradox. There are, of couse, multiple theories that it does not apply to.
+Hm, something is not quite right with this diagram as well - Because of the new adjustments that we made *R* **contains itself**. And removing it from the set would just bring us back to the previous situation. This is Russell's paradox. There are, of course, multiple theories that it does not apply to.
 
 Functional Composition 
 ===
