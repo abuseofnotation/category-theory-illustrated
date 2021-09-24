@@ -1,1 +1,129 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595.3 206"><switch><g><g stroke-width="6" stroke-miterlimit="10"><circle opacity=".14" stroke="#000" cx="189.3" cy="112.7" r="84.4"/><circle fill="#CAEBFC" stroke="#808285" cx="181" cy="107.3" r="84.4"/><circle opacity=".14" stroke="#000" cx="388.9" cy="118.4" r="55.1"/><circle fill="#F8F7CB" stroke="#808285" cx="383.5" cy="114.9" r="55.1"/><circle fill="#8967AC" stroke="#651C5F" cx="382.8" cy="89.3" r="13.5"/><circle fill="#F58235" stroke="#E76524" cx="389" cy="139.3" r="13.5"/><circle fill="#D71920" stroke="#BE1E2D" cx="227.1" cy="126.3" r="13.5"/><circle fill="#39BCED" stroke="#008DD2" cx="165" cy="57.3" r="13.5"/><circle fill="#54B948" stroke="#00873A" cx="217.5" cy="73" r="13.5"/></g></g></switch></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 595.3 206"
+   version="1.1"
+   id="svg7566"
+   sodipodi:docname="product_parts.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata7572">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7570" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1376"
+     id="namedview7568"
+     showgrid="false"
+     inkscape:zoom="3.317655"
+     inkscape:cx="297.64999"
+     inkscape:cy="103"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g7560" />
+  <switch
+     id="switch7564">
+    <g
+       id="g7562">
+      <g
+         stroke-width="6"
+         stroke-miterlimit="10"
+         id="g7560">
+        <circle
+           opacity=".14"
+           stroke="#000"
+           cx="189.3"
+           cy="112.7"
+           r="84.4"
+           id="circle7542"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           fill="#CAEBFC"
+           stroke="#808285"
+           cx="181"
+           cy="107.3"
+           r="84.4"
+           id="circle7544"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           opacity=".14"
+           stroke="#000"
+           cx="388.9"
+           cy="118.4"
+           r="55.1"
+           id="circle7546"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           fill="#F8F7CB"
+           stroke="#808285"
+           cx="383.5"
+           cy="114.9"
+           r="55.1"
+           id="circle7548"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           fill="#8967AC"
+           stroke="#651C5F"
+           cx="382.8"
+           cy="89.3"
+           r="13.5"
+           id="circle7550"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           fill="#F58235"
+           stroke="#E76524"
+           cx="389"
+           cy="139.3"
+           r="13.5"
+           id="circle7552"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           fill="#39BCED"
+           stroke="#008DD2"
+           cx="165"
+           cy="57.3"
+           r="13.5"
+           id="circle7556"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           fill="#54B948"
+           stroke="#00873A"
+           cx="217.5"
+           cy="73"
+           r="13.5"
+           id="circle7558"
+           style="stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none" />
+        <circle
+           style="fill:#f58235;stroke:#e76524;stroke-width:4;stroke-miterlimit:10;stroke-dasharray:none"
+           cx="227.26897"
+           cy="129.13847"
+           r="13.5"
+           id="circle7552-3" />
+      </g>
+    </g>
+  </switch>
+</svg>

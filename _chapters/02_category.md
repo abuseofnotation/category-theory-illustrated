@@ -17,13 +17,15 @@ The simplest composite type, of the sets **B**, which contains **b**'s and the s
 
 ![Product parts](product_parts.svg)
 
-It is the set of *pairs* of **b**'s and **y**'s.
+The product is the set of *ordered pairs* of **b**'s and **y**'s. It is denoted **B x Y** and it comes equipped with two functions for retrieving the **b** and the **y** from each **(b, y)**.
 
 ![Product](product.svg)
 
 The product is denoted **B x Y**, and it comes equipped with two functions for retrieving the **b** and the **y** from each **(b, y)**.
 
 **Question**: Why is this called a product? Hint: How many elements does it have?
+
+The Cartesian product was first defined by the mathematician and philosopher René Descartes as a basis for the Cartesian coordinate system. But as we shall see, it has many other use-cases.
 
 Products as Objects
 ---
@@ -66,7 +68,6 @@ Discovered in 1921 Kazimierz Kuratowski, this one uses just the component of the
 
 ![A pair, represented by sets](pair_as_set_1.svg)
 
-
 Defining products in Terms of Functions 
 ---
 
@@ -88,7 +89,7 @@ Depending on our specific case there can be many other such objects.
 
 ![Product, external diagram](product_candidates.svg)
 
-So how do we set apart all those "imposter" products from the one true product? Simple - they all can be converted to it. This is true, because: 
+So how do we set apart the true product from all those "imposter" products? Simple - by using the observation that *they all can be converted to it*, This observation is true, because: 
 1. By definition, each "impostor" can be converted to both elements of the pair.
 2. The pair is nothing more than the sum of its elements.
 
@@ -96,7 +97,9 @@ More formally, in order for a set **I** to serve as an impostor for the product 
 
 ![Product, external diagram](products_morphisms.svg)
 
-Notice that this definition does not rule out the sets which are isomorphic to the product - when we represent things using functions, an isomorphism is the same as equality.
+In category theory, this type of property that a given object might posess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*.
+
+Notice that this definition does not rule out the sets which are isomorphic to the product - when we represents things using universal properties, an isomorphism is the same as equality.
 
 Sums
 ===
@@ -151,6 +154,7 @@ For example, there exist a trivial function between the set **Y \| B**  and the 
 
 This diagram captures the **OR** relation in the same way as the previous one captures the essence of **AND**.
 
+
 Duality 
 ===
 
@@ -159,10 +163,9 @@ If we compare the concepts of *sum* and *product*, we will find out that they ar
 - The *product* of two sets is related to an element of the first one *and* one element of the second one.
 - A *sum* of two sets is related to an element of the first one *or* one element of the second one.
 
-Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around.
+Actually, the two concepts are captured by one and the same external diagram, just the arrows are flipped - many-to-one relationships become one-to-many and the other way around (that's normal right? After all, **AND** *is* the opposite of **OR**). 
 
-
-That's normal right? After all, **AND** *is* the opposite of **OR**. The connection between the two has always been there, evidenced, for example, by the DeMorgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)**. (Or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false.)  But only with category theory, this connection can be expressed in such a concise way:
+The connection between the two has always been there, evidenced, for example, by the De Morgan's law, citing that **NOT (A AND B) ↔ (NOT A) OR (NOT B)** (or to put it in everyday language, "If either A or B is false, then (and only then) A *and* B is also false). But only with category theory, this connection can be expressed in such a concise way:
 
 ![Coproduct and product](coproduct_product_duality.svg)
 
@@ -184,7 +187,7 @@ What other categories, or applications of category theory are there, other than 
 
 This table illustrates how category theory allows us to see the big picture when it comes to sets and similar structures - when we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion, but we saw how taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
 
-**NB: Do note how the world "Object" is used in both programming languages and in category theory, but for completely different things. A categorical object is equivalent to a class in programming language.**
+**NB: Do note how the word "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a class in programming language.**
 
 Looking at the table I cannot help but notice the somehow weird, but otherwise completely logical, symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the (inverted) lens of category theory:
 
@@ -227,13 +230,14 @@ Why that is true is pretty obvious if we go back to set theory for a second.  (O
 
 ![Two sets connected with multiple functions](set_arrows.svg)
 
+There are some types of categories in which only one morphism between two objects is allowed (or one in each direction), but we will talk about them later (they are also called orders).
+
 Composition
 ---
 
 One of the few or maybe even the only requirement for a structure to be called a category is that two morphisms can make a third, or in other words that morphisms are *composable* - given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
 
 ![Composition of morphisms](composition.svg)
-
 
 Formally, this requirement says that there should exist an operation (denoted with the symbol **•**) such that for each two functions **g: A → B** and **f: B → C**, there exists exactly one function **(f • g): A → C**.
 

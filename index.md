@@ -2,4 +2,5 @@
 layout: default
 title: index
 ---
-![cover](cover.svg)
+
+[![cover.svg](cover.svg)](00)

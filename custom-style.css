@@ -1,5 +1,5 @@
-img {
-  width: 100%;
+:root {
+  --color: #57a445;
 }
 
 body {
@@ -28,5 +28,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
+  background-color:  #8967acff;
+}
+
+.button {
   background-color:  #8967acff;
 }

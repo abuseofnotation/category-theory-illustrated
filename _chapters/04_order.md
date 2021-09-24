@@ -137,20 +137,20 @@ The chains in an order don't have to be completely disconnected from each other 
 The above set is not linearly-ordered - although the connection establishes the relationship between **D** and **G** (**D ≤ G**) and although the relationship between **F** and **G** is known as well (**F ≤ G**), the relationship between **D** and **F** is *not* known. Any element can be bigger than the other one.
 
 
-Maximum and minimum 
+Greatest and least 
 ---
 
 Although posets don't give us definitive answer to who is better than who, some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely *who is number one*, who is the champion, the player who is better than anyone else, or more generally the element that is bigger than any other element. 
 
-We call such elements the *maximum element* and some (not all) partial orders do have such element - in our last diagram **M** is the maximum element, in this diagram, the green element is the biggest one.
+We call such elements the *greatest element* and some (not all) partial orders do have such element - in our last diagram **M** is the greatest element, in this diagram, the green element is the biggest one.
 
 ![Join diagram with one more element](join_additional_element.svg)
 
-Sometimes we have more than one elements that are bigger than all other elements, in this case none of them are maximum.
+Sometimes we have more than one elements that are bigger than all other elements, in this case none of them is the greatest.
 
-![A diagram with no maximum element](non_maximal_element.svg)
+![A diagram with no greatest element](non_maximal_element.svg)
 
-In addition to the maximum element, a partial order may also have a minimum (smallest) element, which is defined in the same way.
+In addition to the greatest element, a partial order may also have a least (smallest) element, which is defined in the same way.
 
 Joins
 ---
@@ -165,9 +165,9 @@ There can be multiple elements bigger than **A** and **B** (all elements that ar
 
 Given any two elements in which one is bigger than the other (e.g. **A ≤ B**), the join is the bigger element (in this case **B**). 
 
-In a totally ordered set, the *join* of any subset of elements is just their the *maximum* element. 
+In a totally ordered set, the *join* of any subset of elements is just their the *greatest* element. 
 
-Like with the maximum element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
+Like with the greatest element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
 
 ![A non-join diagram](non_join.svg)
 
@@ -247,23 +247,33 @@ The poset example with the number dividers is also isomorphic to an inclusion or
 
 ![Divides poset](divides_poset_inclusion.svg)
 
-Let's elaborate a bit about the isomorphism between the number poset and the prime inclusion order. It is comprised of one function from the prime inclusion order, to the number poset (which in this case is just the *multiplication* of all the elements in the set) and one function from the number poset to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting (unsurprisingly) of finding the set of prime numbers that result in that number when multiplied with one another (as we said, this set is unique, and hence these functions really do comprise an isomorphism)).
+Order isomorphisms
+---
+
+We mentioned order isomorphisms several times already so this is about time to elaborate a bit about what they are. Take the isomorphism between the number poset and the prime inclusion order as an example. Like an isomorphism between any two sets, it is comprised of two functions: 
+
+- One function from the prime inclusion order, to the number poset (which in this case is just the *multiplication* of all the elements in the set) 
+- One function from the number poset to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
 
 ![Divides poset](divides_poset_isomorphism.svg)
+
+For sets, an isomorphism means just that the functions are inverse of each other. But as orders, besides being sets, have the arrows that connect them there is an additional requirement for a pair of functions to form an isomorphism - to be an isomorphism, a function has *to respect those arrows, in other words should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set (**a** and **b**) should result in two elements that have the same corresponding order in the other set (so **a ≤ b** iff **F(a) ≤ F(b)**. 
 
 Birkhoff's representation theorem
 ---
 
-So far, we saw two different partial orders, one based on color mixing, and one based on number division,  which can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one). Many other partial orders can be defined in this way. Which ones exactly is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the partial orders that meet the following two criteria: 
+So far, we saw two different partial orders, one based on color mixing, and one based on number division,  which can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one.) Many other partial orders can be defined in this way. Which ones exactly is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the partial orders that meet the following two criteria: 
 
 1. All elements have *joins* and *meets* (those partial orders are called *lattices*, by the way) 
-2. Those *meet* and *join* operations *distribute* over one another, that is **x ∨ (y ∧ z) = (x ∨ y) ∧ (x ∨ z)**.
+2. Those *meet* and *join* operations *distribute* over one another, that is if we denote joins as meets as  **∨** or **∧**, then **x ∨ (y ∧ z) = (x ∨ y) ∧ (x ∨ z)** (those are called *distributive lattices*.)
 
 (Just to note that this result is only proven for *finite* lattices, so it might not be valid for the numbers all the way to infinity. But it would be valid for any subset of them.)
 
-I won't go into details about this result, I would only mention that the "prime" elements with which we can construct the inclusion order are the ones that are not the *join* of any other elements (for that reason, they are also called *join-irreducible* elements).
+I won't go into details about this result, I would only mention that the "prime" elements with which we can construct the inclusion order are the ones that are not the *join* of any other elements (for that reason, they are also called *join-irreducible* elements.)
 
 By the way, the partial orders that are *NOT* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that do not contain all possible combinations of elements.
+
+<!-- TODO in a Power set P(X), the meet of a collection of subsets is their intersection, and the join is their union -->
 
 Lattices
 ===
@@ -277,7 +287,7 @@ Notice that when drawing our color-mixing lattice, we added the black ball at th
 Bounded lattices
 ---
 
-Our color-mixing lattice, has a *maximum element* (the black ball) and a *minimum element* (the white one). Lattices that have a minimum and maximum elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
+Our color-mixing lattice, has a *greatest element* (the black ball) and a *least element* (the white one). Lattices that have a least and greatest elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
 
 **Task:** Prove that all finite lattices are bounded.
 
@@ -334,6 +344,12 @@ All of that structure arises naturally from the simple law of transitivity.
 
 ![Transitivity](transitivity.svg)
 
+<!--
+TODO: add the example of preorders as models for routes from/to a given set of destination.
+
+Also the state machine example.
+-->
+
 Orders as categories
 ===
 
@@ -347,7 +363,7 @@ What about that other law that was required in order to be a category - the iden
 
 ![Reflexivity](reflexivity.svg)
 
-So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions using (through the inclusion order) and sets and functions form a category in their own right). 
+So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions (the inclusion order) and sets and functions form a category in their own right). 
 
 And since partial orders and total orders are preorders too (as they obey those two laws), they are categories as well.
 
@@ -359,10 +375,12 @@ That is in the contrast with the category of sets where there are potentially in
 
 ![Orders compared to other categories](order_category.svg)
 
+Note that although two objects in an order might be directly connected by just one arrow, they might still be be indirectly connected by more than one arrow. So when we define an order in categorical way it's crucial to specify that *these ways are equivalent* i.e. that all diagrams that show orders commute.
+
 Products and sums
 ---
 
-While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *sum* of two objects in a category. 
+While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *coproduct* of two objects in a category. 
 
 ![Joins as coproduct](coproduct_join.svg)
 
@@ -375,17 +393,17 @@ But wait, wasn't there something else that corresponded to set inclusion - oh ye
 In category theory, an object **G** is the coproduct of objects **Y** and **B** if the following two conditions are met:
 
 1. We have a morphism from any of the elements of the coproduct to the coproduct, so **Y → G** and **B → G**.
-2. For any other object **P** that also has those morphisms, so for any **P** such that **P ≤ G** and **P ≤ B**, we would have morphism **G → P**.
+2. For any other object **P** that also has those morphisms (so **Y → P** and **B → P**) we would have morphism **G → P**.
 
 ![Joins as coproduct](coproduct_morphisms.svg)
 
 In the realm of orders, we say that **G** is the *join* of objects **Y** and **B** if:
 
-1. It is bigger than both of these objects, so **Y ≤ G** and **P ≤ G**.
+1. It is bigger than both of these objects, so **Y ≤ G** and **B ≤ G**.
 
 2. It is smaller than any other object that is bigger than them, so for any other object **P** such that **P ≤ G** and **P ≤ B** then we should also have **G ≤ P**.
 
 ![Joins as coproduct](coproduct_join_morphisms.svg)
 
-We can see that the two definitions (and the diagrams) are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
+We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
 

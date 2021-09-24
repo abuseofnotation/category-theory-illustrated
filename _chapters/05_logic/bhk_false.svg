@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 595.3 177"
+   version="1.1"
+   id="svg3397"
+   sodipodi:docname="bhk_false.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata3403">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3401" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview3399"
+     showgrid="false"
+     inkscape:zoom="1.8797245"
+     inkscape:cx="255.88856"
+     inkscape:cy="118.9004"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3397"
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="0" />
+  <g
+     id="g8880-3-88"
+     transform="matrix(0.75024244,0,0,0.75024244,-28.97607,-69.779696)">
+    <circle
+       cx="423.45349"
+       cy="220.3054"
+       r="73.749413"
+       id="circle3373-8-7"
+       style="opacity:0.12999998;fill:#999999;stroke:#000000;stroke-width:5.27169991;stroke-miterlimit:10" />
+  </g>
+  <g
+     id="g9442"
+     transform="matrix(0.75024244,0,0,0.75024244,336.92128,36.260659)"
+     style="paint-order:fill markers stroke">
+    <g
+       id="g2445-3-1"
+       transform="matrix(2.4458076,0,0,2.2485166,-117.57238,88.039232)"
+       style="fill:#000000;fill-opacity:0.11290301;stroke:none;stroke-width:1.32404006;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:30.00970078px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75024301"
+     x="366.82175"
+     y="-2.2733741"
+     id="text9288"><tspan
+       sodipodi:role="line"
+       id="tspan9286"
+       x="366.82175"
+       y="24.278177"
+       style="stroke-width:0.75024301" /></text>
+</svg>
