@@ -49,7 +49,7 @@ Important to note that **∧** is the symbol for **and** and **∨** is the symb
 The equivalence of primary and composite propositions
 ---
 
-When looking at the last diagram, it is important to stress that, lthough in the leftmost proposition the green ball is wrapped in a gray ball to make the diagram prettier, propositions that are composed of several premises (symbolized by gray balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls) and that they compose in the same way.
+When looking at the last diagram, it is important to stress that, although in the leftmost proposition the green ball is wrapped in a gray ball to make the diagram prettier, propositions that are composed of several premises (symbolized by gray balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls) and that they compose in the same way.
 
 ![Balls as propositions](balls_propositions.svg)
 
