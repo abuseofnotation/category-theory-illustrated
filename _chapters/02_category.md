@@ -267,7 +267,7 @@ Functional composition is special not only because you can take any two morphism
 
 This approach for building stuff is often used in programming. To see some examples, you don't need to look further than the way the pipe operator in bash (`|`), that feeds the standard output of a program with the standard input of another program, is (ab)used. (If you *want* to look further, note that there is a whole programming paradigm based on functional composition, called "concatenative programming".)
 
-But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 4 objects and 3 morphisms between them **f** **g** **h**, combining **h** and **g** and then combining the end result with f** should be the same as combining **h** to the result of **g** and **f** (or simply **(h • g) • f = h • (g • f)**). 
+But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 4 objects and 3 morphisms between them **f** **g** **h**, combining **h** and **g** and then combining the end result with **f** should be the same as combining **h** to the result of **g** and **f** (or simply **(h • g) • f = h • (g • f)**). 
 
 **Task:** show how the definition can be reduced to the formula. (The approach resembles mathematical induction.)
 
