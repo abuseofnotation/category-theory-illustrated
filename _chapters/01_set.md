@@ -305,7 +305,7 @@ Notice that the function is invertible, that is if you flip its arrows you get a
 
 Invertible functions are called *isomorphisms*. When there is an invertible function between two sets we can say that the sets are *isomorphic*. For example, the temperature measured in Celsius is isomorphic to the temperature, measured in Fahrenheit.
 
-More formally, two sets **R** and **G** are isomorphic, or **R ≅ G** if there exist functions **f: G → R** and its reverse **g R → G**, such that **f ∘ g = id R** and **g ∘ f = id G** (notice how the identity function comes in handy).
+More formally, two sets **R** and **G** are isomorphic, or **R ≅ G** if there exist functions **f: G → R** and its reverse **g: R → G**, such that **f ∘ g = id R** and **g ∘ f = id G** (notice how the identity function comes in handy).
 
 Isomorphism and equality
 ---
