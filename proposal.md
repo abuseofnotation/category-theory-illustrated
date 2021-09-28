@@ -34,9 +34,9 @@ Reading it would enable my readers to effortlessly go through any academic intro
 About the author
 ---
 
-I am a nerd who works in web programming with background in design and technical communication. I first discovered category theory through programming, but then started pursuing it in its own right. Finding math more and more fascinating.
+I am a bulgarian nerd who works in web programming with background in design and technical communication. I am into functional programming, from where I first learned about category theory but then started finding math more and more fascinating. 
 
-Currently living in Sofia with my wife and kid.
+Born and living in Sofia with my wife and kid.
 
 Similar resources
 ===
@@ -243,12 +243,21 @@ Comments
 
 > Thank you for creating Category Theory Illustrated, for me the book makes the concepts easier to understand and build an intuition. (received by email)
 
+>  It's pretty cool that you can show the bridge between two different logic systems and it actually is grokkable.  In other words I had no chance of understanding this concept from the Wiki article alone which is where I found it. (received by email)
+
+> What an amazing write-up!
+> I've picked up those things peace by peace form Wikipedia to be able to understand the slang in Haskell land. But it was a long and puzzling process. This great summary offered here will hopefully help other people in the future get a coherent picture more quickly. (I hope the SEO is good so people will find it. I'm at least going to recommend it form now on whenever someone asks related questions).[Source](https://news.ycombinator.com/reply?id=28661220&goto=item%3Fid%3D28660157%2328661220)
+
+
 Discussions
 ---
 
 [Lobste.rs](https://lobste.rs/s/bc11fo/category_theory_illustrated_monoids)
 
 [HackerNews](https://news.ycombinator.com/item?id=26658111)
+
+[HackerNews again](https://news.ycombinator.com/item?id=28660157)
+
 
 [Twitter](https://twitter.com/search?q=category-theory-illustrated&src=typed_query&f=live)
 
