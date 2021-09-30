@@ -34,7 +34,7 @@ Reading it would enable my readers to effortlessly go through any academic intro
 About the author
 ---
 
-I am a bulgarian nerd who works in web programming with background in design and technical communication. I am into functional programming, from where I first learned about category theory but then started finding math more and more fascinating. 
+I am a Bulgarian nerd who works in web programming with background in design and technical communication. I am into functional programming, from where I first learned about category theory but then started finding math more and more fascinating. 
 
 Born and living in Sofia with my wife and kid.
 
