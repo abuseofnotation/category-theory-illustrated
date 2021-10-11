@@ -140,7 +140,7 @@ The above set is not linearly-ordered - although the connection establishes the 
 Greatest and least 
 ---
 
-Although posets don't give us definitive answer to who is better than who, some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely *who is number one*, who is the champion, the player who is better than anyone else, or more generally the element that is bigger than any other element. 
+Although partial orders don't give us definitive answer to who is better than who, some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely *who is number one*, who is the champion, the player who is better than anyone else, or more generally the element that is bigger than any other element. 
 
 We call such elements the *greatest element* and some (not all) partial orders do have such element - in our last diagram **M** is the greatest element, in this diagram, the green element is the biggest one.
 
@@ -239,21 +239,21 @@ We can define what is called the *inclusion order* of those sets, in which **A**
 
 Note that the *join* operation in an inclusion order is the set union, and the *meet* operation as set intersection.
 
-This diagram might remind you of something, because if we take the colors that are in each of its set and mix it into one color, we get the color-blending poset that we saw earlier.
+This diagram might remind you of something, because if we take the colors that are in each of its set and mix it into one color, we get the color-blending partial order that we saw earlier.
 
 ![A color mixing poset, ordered by inclusion](color_mixing_poset_blend.svg)
 
-The poset example with the number dividers is also isomorphic to an inclusion order - the inclusion order of all possible sets of *prime* numbers, including repeating ones (or alternatively the set of all *prime powers*). This is confirmed by the fundamental theory of arithmetic, which states that every number can be written as a product of primes in exactly one way.
+The order example with the number dividers is also isomorphic to an inclusion order - the inclusion order of all possible sets of *prime* numbers, including repeating ones (or alternatively the set of all *prime powers*). This is confirmed by the fundamental theory of arithmetic, which states that every number can be written as a product of primes in exactly one way.
 
 ![Divides poset](divides_poset_inclusion.svg)
 
 Order isomorphisms
 ---
 
-We mentioned order isomorphisms several times already so this is about time to elaborate a bit about what they are. Take the isomorphism between the number poset and the prime inclusion order as an example. Like an isomorphism between any two sets, it is comprised of two functions: 
+We mentioned order isomorphisms several times already so this is about time to elaborate a bit about what they are. Take the isomorphism between the number partial order and the prime inclusion order as an example. Like an isomorphism between any two sets, it is comprised of two functions: 
 
-- One function from the prime inclusion order, to the number poset (which in this case is just the *multiplication* of all the elements in the set) 
-- One function from the number poset to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
+- One function from the prime inclusion order, to the number order (which in this case is just the *multiplication* of all the elements in the set) 
+- One function from the number order to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
 
 ![Divides poset](divides_poset_isomorphism.svg)
 
@@ -278,7 +278,7 @@ By the way, the partial orders that are *NOT* distributive lattices are also iso
 Lattices
 ===
 
-In the previous section we mentioned what *lattices* are - they are posets, in which every two elements have a *join* and a *meet*. So every lattice is also partial order, but not every partial order is a lattice (we will see even more members of this hierarchy). Most partial orders that are created based on some sort of rule, like the ones from the previous section, are also lattices when they are drawn in full, for example the color-mixing poset.
+In the previous section we mentioned what *lattices* are - they are partial orders, in which every two elements have a *join* and a *meet*. So every lattice is also partial order, but not every partial order is a lattice (we will see even more members of this hierarchy). Most partial orders that are created based on some sort of rule, like the ones from the previous section, are also lattices when they are drawn in full, for example the color-mixing order.
 
 ![A color mixing lattice](color_mixing_lattice.svg)
 
@@ -294,7 +294,7 @@ Our color-mixing lattice, has a *greatest element* (the black ball) and a *least
 Semilattices and trees
 ---
 
-Lattices are posets that have both *join* *and* *meet* for each pair of elements. Posets that just have *join* (and no *meet*), or just have *meet* and no *join* are called *semilattices*. More specifically, posets that have *meet* for every pair of elements are called *meet-semilattices*.
+Lattices are partial orders that have both *join* *and* *meet* for each pair of elements. Partial orders that just have *join* (and no *meet*), or just have *meet* and no *join* are called *semilattices*. More specifically, partial orders that have *meet* for every pair of elements are called *meet-semilattices*.
 
 ![Semilattice](semilattice.svg)
 
