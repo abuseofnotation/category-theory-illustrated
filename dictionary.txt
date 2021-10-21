@@ -1,8 +1,10 @@
 coproduct
 morphism
+Morphism
 coproducts
 morphism
 morphisms
+morphism's
 preorders
 Preorders
 antisymmetry
@@ -73,3 +75,16 @@ Curry-Howard-Lambek
 Curry-Howard
 Lambek
 cartesian
+functors
+Functors
+isomorphism
+isomorphisms
+Isomorphisms
+homomorphism
+endofunctors
+const
+Monoidal
+morphisms
+codomain
+iff
+invertible 
