@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="595.3"
+   height="200"
+   version="1.1"
+   id="svg9949"
+   sodipodi:docname="finite_one.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata9955">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9953" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview9951"
+     showgrid="false"
+     inkscape:zoom="0.96547963"
+     inkscape:cx="229.47772"
+     inkscape:cy="76.082918"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9949"
+     inkscape:document-rotation="0" />
+  <g
+     transform="matrix(0.66433938,0.65950542,-0.66433938,0.65950542,322.73408,4.396877)"
+     id="g2760-0-7">
+    <g
+       transform="rotate(-44.545114,52.727379,84.306425)"
+       style="fill:#cccccc;stroke:#666666"
+       id="g2749-6-8">
+      <circle
+         style="opacity:0.12999998;fill:#cccccc;stroke:#666666;stroke-width:6;stroke-miterlimit:10"
+         id="circle3369-33-3-6"
+         r="24.6"
+         cy="90.58149"
+         cx="55.440796" />
+      <circle
+         style="fill:#cccccc;stroke:#666666;stroke-width:6;stroke-miterlimit:10"
+         id="circle3383-85-2-8"
+         r="24.6"
+         cy="84.367409"
+         cx="51.507595" />
+    </g>
+  </g>
+</svg>

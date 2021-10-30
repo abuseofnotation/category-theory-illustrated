@@ -220,7 +220,7 @@ Wait a minute - we said that all sets form a category, but at the same time any 
 
 This particular analogy (a set as a category with no morphisms) is, however, not very useful. Not because it's in any way incorrect, but because category theory is *all about the morphisms*. If in set theory arrows are nothing but a connection between a source and a destination, in category theory it's the *objects* that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are coloured: the category of sets should really be called the category of set functions.
 
-Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same domain and codomain does not in any way make them equivalent.
+Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same input and output sets does not in any way make them equivalent (it does not actually mean that they would produce the same output value).
 
 ![Two objects connected with multiple arrows](arrows.svg)
 
@@ -287,7 +287,7 @@ Ancient mathematicians invented the number zero that, although useless by itself
 
 ![The identity morphism (but can also be any other morphism)](identity.svg)
 
-It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as domain and codomain, such as **negate**, **square**, **add one**, and are not at all the identity morphism.
+It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as input and output, such as **negate**, **square**, **add one**, and are not at all the identity morphism.
 
 **Question:** What is the identity morphism in the category of sets?
 

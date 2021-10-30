@@ -100,6 +100,7 @@ This touches a programming concept which is very popular in category-theory insp
 In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
 <!--
+TODO
 Free Monoids
 ===
 -->
@@ -280,6 +281,11 @@ Those two operations and their composite results in a group called **Dih3** that
 
 **Question:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
 
+<!--
+TODO: FSM as monoids
+https://faculty.uml.edu/klevasseur/ads/s-monoid-of-fsm.html
+-->
+
 Monoids as Categories
 ===
 
@@ -319,3 +325,15 @@ The intuition behind this representation is encompassed by the requirement of **
 |Closure  | | X | X |
 
 When we view a monoid as a category, this law says that all morphisms in the category should be from one object to itself - a monoid, any monoid, can be seen as a category with one object.
+
+<!--
+TODO 
+
+Generators categorically 
+---
+
+Cyclic groups/monoids
+---
+When we view cyclic groups as categories, we would see that they correspond to categories that not only have one object, but have *one morphism as well* - the generator
+-->
+

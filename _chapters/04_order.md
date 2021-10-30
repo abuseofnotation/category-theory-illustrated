@@ -197,13 +197,11 @@ In terms of arrows, the rule means that if you add an arrow to a point, the poin
 
 This arrangement allows us to compare any two points by just seeing which one is above the other e.g. to spot the *join* of two elements, you just have to identify the ones they connect to and see which one is lowest.
 
-Examples of partial orders 
-===
-
-We all know many examples of total orders (any form of chart or ranking is a total order), but there are probably not so many obvious examples of partial orders that we can think of off the top of our head. So let's see some. In addition to providing a little context, this will help us understand joins and see why are they significant.
 
 Color order
 ---
+
+We all know many examples of total orders (any form of chart or ranking is a total order), but there are probably not so many obvious examples of partial orders that we can think of off the top of our head. So let's see some. In addition to providing a little context, this will help us understand joins and see why are they significant.
 
 To stay true to our form, let's revisit our color-mixing monoid and create a color-mixing partial order in which all colors point to colors that contain them.
 
@@ -314,6 +312,11 @@ The implications of the tendency to use trees to model everything as opposed to 
 
 > In simplicity of structure the tree is comparable to the compulsive desire for neatness and order that insists the candlesticks on a mantelpiece be perfectly straight and perfectly symmetrical about the center. The semilattice, by comparison, is the structure of a complex fabric; it is the structure of living things, of great paintings and symphonies. 
 
+<!--
+Formal concept analysis
+---
+-->
+
 Preorder
 ===
 
@@ -342,18 +345,69 @@ And as a result of that, all "circle" relationships (e.g. where you have a weake
 
 All of that structure arises naturally from the simple law of transitivity.
 
-![Transitivity](transitivity.svg)
+Maps as preorders
+---
 
+We use roadmaps all the time, and so most people do not realize that they are actually diagrams. More specifically, some of them are preorders - the objects represent intercections, the relations represent are the roads. 
+
+![A map as a preorder](preorder_map.svg)
+
+Reflexivity reflects reflects the fact that if you have a route allowing you to get from point **A** to point **B** and one that allows you to go from **B** to **C**, then you can go from **A** to **C** as well. Two-way roads may be represented by two arrows that form an isomorphism between objects. Intercections such that you can get from one to the other form equivalence classes (ideally all intercections would be in one equivalence class).
+
+![preorder](preorder_map_equivalence.svg)
+
+However, maps that contain more than one road (and even more than one *route*) connecting two intercections, cannot be represented using preorders. For that we would need categories (don't worry, we are almost there.)
+
+
+State machines as preorders 
+---
+
+Let's now reformat the preorder that we used in the previous two examples, as Hasse diagram that goes from left to right. Now, it (hopefully) doesn't look so much like a hierarchy, nor like map, but like a description of a process (which if you think about it is also a map, just one that is temporal, rather than spatial.) This is actually a very good way to describe a computation model known as *finite state machine*. 
+
+![A state machine as a preorder](preorder_state_machine.svg)
+
+A specification of a finite state machine consists of a set of states that the machine can have, which, as the name suggest must be finite (so they can be mapped to diagrams, like finite categories.) and a bunch of transition functions that specify which state do we transition to (often expressed as tables.)
+
+But as we saw, a finite state machine is similar to a preorder with a greatest and least object, in which the relations between the objects are represented by functions.
+
+Finite state machines are used in organization planning e.g. imagine a process where an item gets manifactured, gets checked by a quality control person, who, if they find some defficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping - this process can be modelled by the above diagram. 
+
+They are used in software too.
 <!--
-TODO: add the example of preorders as models for routes from/to a given set of destination.
 
-Also the state machine example.
+Or alternatively, a finite state machine is just a preorder with a greatest and least object, in which the relations between the objects are represented by functions.
+
+https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/fa.html
+
+Finite state machines are used in organization planning e.g. imagine a process where an item gets manifactured, gets checked by a quality control person, who, if they find some defficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping - this process can be modelled by the above diagram.
+
+|Current State | Input | Next State | 
+|---   | ---   | ---        |
+|| X | X | X |
+|Identity| X | X | X |
+|Invertability  | |  | X |
+|Closure  | | X | X |
+
+Or imagine a computational alghorithm for parsing input which iterates a string of characters and converts them to some other objects until all of the input is parsed.
+
+TODO
+Turing machines
+https://www.i2cell.science/how-a-turing-machine-works/
+---
+State machines are, however not Turing-complete, that is, they cannot encode any alghorithm.
+
+|Current State | Input | Next State | Write | Move |
+|---   | ---   | ---        |
 -->
 
 Orders as categories
 ===
 
-Now let's look at transitivity law again, but from a different perspective. What it tells us that if we have two pairs of relationship **a ≤ b** and **b ≤ c**, then we automatically have a third one **a ≤ c**. In other words, it tells us that the **≤** relationship composes i.e. if we view the "bigger than" relationship as a morphism we would see that it fits the categorical definition of composition. 
+We saw that preorders are a powerful concept, so let's take a deeper look at the law that governs them - the transitivity law. What this law tells us that if we have two pairs of relationship **a ≤ b** and **b ≤ c**, then we automatically have a third one **a ≤ c**. 
+
+![Transitivity](transitivity.svg)
+
+In other words, the transitivity law tells us that the **≤** relationship composes i.e. if we view the "bigger than" relationship as a morphism we would see that it fits the categorical definition of composition. 
 
 ![Transitivity as functional composition](transitivity_composition.svg)
 
@@ -363,11 +417,11 @@ What about that other law that was required in order to be a category - the iden
 
 ![Reflexivity](reflexivity.svg)
 
-So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions (the inclusion order) and sets and functions form a category in their own right). 
+So it's official - preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions using the inclusion order, and sets and functions form a category in their own right.)
 
-And since partial orders and total orders are preorders too (as they obey those two laws), they are categories as well.
+And since partial orders and total orders  obey those two laws, they are preorders too. And also categories as well. 
 
-Starting to compare the categories of preorders, and partial and linear orders to other categories, like the (quintessential) category of sets, immediately sets them apart. In other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*. That is, for two objects **a** **b** we either have **a ≤ b** or we do not. 
+When we compare the categories of orders to other categories, like the quintessential category of sets we see one thing that immediately sets them apart: in other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*. That is, for two objects **a** **b** we either have **a ≤ b** or we do not. 
 
 ![Orders compared to other categories](arrows_one_arrow.svg)
 
@@ -375,12 +429,12 @@ That is in the contrast with the category of sets where there are potentially in
 
 ![Orders compared to other categories](order_category.svg)
 
-Note that although two objects in an order might be directly connected by just one arrow, they might still be be indirectly connected by more than one arrow. So when we define an order in categorical way it's crucial to specify that *these ways are equivalent* i.e. that all diagrams that show orders commute.
+Note that although two objects in an order might be directly connected by just one arrow, they might still be be *indirectly* connected by more than one arrow. So when we define an order in categorical way it's crucial to specify that *these ways are equivalent* i.e. that all diagrams that show orders commute.
 
 Products and sums
 ---
 
-While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *coproduct* of two objects in a category. 
+While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *coproduct* of two objects in a category, from chapter 2. 
 
 ![Joins as coproduct](coproduct_join.svg)
 
@@ -406,4 +460,3 @@ In the realm of orders, we say that **G** is the *join* of objects **Y** and **B
 ![Joins as coproduct](coproduct_join_morphisms.svg)
 
 We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
-
