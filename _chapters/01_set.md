@@ -75,40 +75,40 @@ We will encounter the empty set again.
 Functions
 ===
 
-A function is a relationship between two sets which matches each element of one set, called the *input set* of the function, with exactly one element from another set, called the **output set** of the function. 
+A function is a relationship between two sets which matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the **target set** of the function. 
 
 Some alternative way to call these two sets:  *domain* and *codomain*, *source* and *target*.  In programming) *argument* and *return value*. In logic they correspond to *premises* and *conclusion*, but it is all the same thing.
 
 > By function I mean the unity of the act of arranging various representations under one common representation.
 > Immanuel Kant, from Critique of Pure Reason
 
-Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite colour in another set **G** (in mathematics a function's name is often accompanied by the names of its input and output sets, like this: **f: R → G**)
+Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite colour in another set **G** (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: **f: R → G**)
 
 ![Opposite colors](function_one_one.svg)
 
-This is probably one of the simpler types of functions there exists. That is because it encodes a *one-to-one relationship* between the sets - *one* element from the input is connected to exactly *one* element from the output (and the other way around).
+This is probably one of the simpler types of functions there exists. That is because it encodes a *one-to-one relationship* between the sets - *one* element from the source is connected to exactly *one* element from the target (and the other way around).
 
-But functions can also express relationships of the type *many-to-one*, where *many* elements from the input might be connected to *one* element from the output (but not the other way around).
+But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around).
 
-For example, a function can express a relationship in which several elements from the input set relate to the same element of the output set.
+For example, a function can express a relationship in which several elements from the source set relate to the same element of the target set.
 
 ![Function from a bigger set to a smaller one](function_big_small.svg)
 
-It can also express relationships in which some elements from the output set do not play a part.
+It can also express relationships in which some elements from the target set do not play a part.
 
 ![Function from a smaller set to a bigger one](function_small_big.svg)
 
-One thing that you cannot have is a input element which is not mapped to anything, or which is mapped to more than one output element. That would mean the relationship expressed by the function will be *many-to-many*, and, as we said in the beginning, functions only model many-to-one relationships. There is a reason for that "design decision", and we will arrive at it shortly.
+One thing that you cannot have is a source element which is not mapped to anything, or which is mapped to more than one target element. That would mean the relationship expressed by the function will be *many-to-many*, and, as we said in the beginning, functions only model many-to-one relationships. There is a reason for that "design decision", and we will arrive at it shortly.
 
 Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask can most probably be expressed as a function.
 
-The question "How far are we from New York?" is a function with set of all places in the world as input set and an output set consisting of the set of all positive numbers.
+The question "How far are we from New York?" is a function with set of all places in the world as source set and an target set consisting of the set of all positive numbers.
 
-**Question:** Some people might say that the output of this function is bigger than it should be. How would you refine it?
+**Question:** Some people might say that the target of this function is bigger than it should be. How would you refine it?
 
-The question "Who is my father?" is a function whose input is the set of all people in the world.
+The question "Who is my father?" is a function whose source is the set of all people in the world.
 
-**Question:** What is the output of this function?
+**Question:** What is the target of this function?
 
 Note that the question "Who is my child?" is *NOT* a straightforward function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.
 
@@ -142,7 +142,7 @@ There is a unique function from the empty set to any other set.
 
 Note that this statement is also a result from the one saying that there is a function between a Subset and a Set, and the one that says that the empty set is a subset of any other set.
 
-**Question:** What about the other way around. Are there functions with the empty set as an output as opposed to its input?
+**Question:** What about the other way around. Are there functions with the empty set as an target as opposed to its source?
 
 Functions and Singleton Sets
 ---
@@ -172,9 +172,9 @@ For example, squaring a number is a function from the set of real numbers to the
 
 I will use the occasion to reiterate some of the more important characteristics of functions:
 
-- All numbers from the output have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
+- All numbers from the target have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
 
-- Zero from the input set is connected to itself in the output set - that is permitted.
+- Zero from the source set is connected to itself in the target set - that is permitted.
 - Some numbers aren't the square of any other number - that is also permitted.
 
 Overall everything is permitted, as long as you can always provide exactly one result (also known as *The result™*) per value, and in mathematics almost always do. Actually, math is designed in a way so its operations are valid functions:
@@ -247,7 +247,7 @@ Hm, something is not quite right with this diagram as well - Because of the new 
 Functional Composition 
 ===
 
-Let's assume that we have two functions, **g: Y → P** and **f: P → G** and the output of the first one is the same set as the input set of the second one.
+Let's assume that we have two functions, **g: Y → P** and **f: P → G** and the target of the first one is the same set as the source set of the second one.
 
 ![Matching functions](functions_matching.svg)
 
@@ -292,7 +292,7 @@ If we have a function **g: P → Y** from set **P** to set **Y**, then for every
 
 ![Functional composition connect](morphism_general.svg)
 
-For example, if we again take the relationship between a person and his father as a function, with the set of all people in the world as an input, and the set of all people that have children as its output, then each person whom my father is related to is automatically my relative - my father's father is my grandfather, my father's wife is my mother and so on.  
+For example, if we again take the relationship between a person and his father as a function, with the set of all people in the world as source, and the set of all people that have children as its target, then each person whom my father is related to is automatically my relative - my father's father is my grandfather, my father's wife is my mother and so on.  
 
 Isomorphisms
 ===

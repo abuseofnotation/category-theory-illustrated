@@ -220,11 +220,11 @@ Wait a minute - we said that all sets form a category, but at the same time any 
 
 This particular analogy (a set as a category with no morphisms) is, however, not very useful. Not because it's in any way incorrect, but because category theory is *all about the morphisms*. If in set theory arrows are nothing but a connection between a source and a destination, in category theory it's the *objects* that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are coloured: the category of sets should really be called the category of set functions.
 
-Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same input and output sets does not in any way make them equivalent (it does not actually mean that they would produce the same output value).
+Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same source and target sets does not in any way make them equivalent (it does not actually mean that they would produce the same value).
 
 ![Two objects connected with multiple arrows](arrows.svg)
 
-Why is that is pretty obvious if we go back to set theory for a second (OK, maybe we really *have* to do this from time to time) - there are, for example, an infinite number of functions that go from number to boolean and the fact that they have the same input type and the same output type (or the same *type signature*, as we like to say) does not in any way make them equivalent to one another.
+Why is that is pretty obvious if we go back to set theory for a second (OK, maybe we really *have* to do this from time to time) - there are, for example, an infinite number of functions that go from number to boolean and the fact that they have the same source type and the same target type (or the same *type signature*, as we like to say) does not in any way make them equivalent to one another.
 
 ![Two sets connected with multiple functions](set_arrows.svg)
 
@@ -275,22 +275,22 @@ This formula is true if and only if this diagram commutes.
 
 Given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent.
 
-This formula (and the diagram) is the definition of a property called **associativity**. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above does not commute - it would be super weird).
+This formula (and the diagram also) is the definition of a property called **associativity**. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above does not commute - it would be super weird).
 
-Associativity is not just about diagrams, for example when we express relations using formulas, associativity just means that brackets don't matter, in our formulas (as evidenced by the definition **(h • g) • f = h • (g • f)**). And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. **(1 . 2) . 3 = 1 . (2 . 3)**. While division is not **(1 / 2) / 3 = 1 / (2 / 3)**.
+Associativity is not just about diagrams, for example when we express relations using formulas, associativity law means that *the brackets don't matter*. The formulaic definition of associativity is **(h • g) • f = h • (g • f)**). 
 
+And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. **(1 . 2) . 3 = 1 . (2 . 3)**. While division is not **(1 / 2) / 3 = 1 / (2 / 3)**.
 
 Identity
 ---
 
-Ancient mathematicians invented the number zero that, although useless by itself, allowed them to define many useful numbers. In order to be able to define more stuff using morphisms in category theory, we too would want to define what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
+Ancient mathematicians invented the number zero that, although useless by itself, allowed them to define many useful numbers. In order to be able to define more stuff using morphisms in category theory, we too would want to define zero, or what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
 
 ![The identity morphism (but can also be any other morphism)](identity.svg)
 
-It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as input and output, such as **negate**, **square**, **add one**, and are not at all the identity morphism.
+It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as source and target, such as **negate**, **square**, **add one**, and are not at all the identity morphism.
 
 **Question:** What is the identity morphism in the category of sets?
-
 
 Isomorphisms
 ---
