@@ -75,12 +75,13 @@ We will encounter the empty set again.
 Functions
 ===
 
-A function is a relationship between two sets which matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the **target set** of the function. 
-
-Some alternative way to call these two sets:  *domain* and *codomain*, *source* and *target*.  In programming) *argument* and *return value*. In logic they correspond to *premises* and *conclusion*, but it is all the same thing.
-
 > By function I mean the unity of the act of arranging various representations under one common representation.
 > Immanuel Kant, from Critique of Pure Reason
+
+
+A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the **target set** of the function. 
+
+Some alternative way to call these two sets:  *domain* and *codomain*, *input* and *output*.  In programming we might call them *argument* and *return value*. In logic - *premise* and *conclusion* (we will get there.)
 
 Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite colour in another set **G** (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: **f: R → G**)
 

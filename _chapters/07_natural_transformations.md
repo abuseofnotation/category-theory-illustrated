@@ -12,24 +12,20 @@ Natural transformations are really is the heart of category theory - As a matter
 Objects are overrated
 ===
 
->The world is the collection of facts, not of things.
-Ludwig Wittgenstein
+> The world is the collection of facts, not of things.
+> Ludwig Wittgenstein
 
-Objects are all around us, both in mathematics and in real life - virtually everything that we see or imagine can be viewed as an object. Because of this, we might be inclined to think that the key to understanding the world is to understand what objects are. And this indeed is an idea shared between many people, you might even say that this is what set theory does.
+Objects are all around us, both in mathematics and in real life - virtually everything that we see or imagine can be viewed as an object. Because of this, we might be inclined to think that the key to understanding the world is to understand what objects are. And this indeed is an idea shared between many people, you might even say that this is what set theory does - the main (some say only) concept of set theory is a concept of a set. When mathematicians say that "everything is a set", they are primarily saying that all objects can be represented by sets (although morphisms can be represented by sets as well.)
 
-However there is another way to look at things. Because what is an object, when viewed by itself? Can we study just one object in isolation? And is there anything left to study about it, once it is detached from its environment? When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would be just a piece of junk, and in many ways it won't be an object at all. And this is even more so for mathematical objects which you cannot even recycle when they are no longer useful - functions, or relations are key.
+However there is another way to look at things. Because, what is an object, when viewed by itself? Can we study an object in isolation? And is there anything left to study about it, once it is detached from its environment? When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would be just a piece of junk, and in many ways it won't be an object at all. And this is even more so for mathematical objects which you cannot even repurposed when they are no longer useful - functions, or relations, are key. So instead of thinking about objects which just happen to have some morphisms between them, we might take the opposite view and say that objects are only interesting as sources and targets of morphisms.
 
-So instead of thinking about objects which just happen to have some morphisms between them, we might take the opposite view and say that objects are only interesting as domains and codomains of morphisms.
-
-This view is best expressed by category theory and specifically by the notion of universal properties (limits) - as we said in the previous chapter universal properties define an object *up to a unique isomorphism*. This means that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms to all other objects in the category, then these objects are for all intends and purposes equivalent. 
+This view is best expressed by category theory and specifically by the notion of universal properties (limits) - as we said universal properties define an object *up to a unique isomorphism*. This means that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms to all other objects in the category, then these objects are for all intends and purposes equivalent. 
 
 
 Equivalence of categories
 ===
 
-Are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter -  what does it mean for two categories to be equal. 
-
-This question is even more interesting in the context of the category of categories. We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality. And the paragraph above can serve as a good summary as to why this is the case: in isomorphic categories, isomorphic *objects* aren't considered equal, for example the following two categories are not isomorphic. 
+Are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter -  what does it mean for two categories to be equal. This question is even more interesting in the context of the category of categories. We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality. And the paragraph above can serve as a good summary as to why this is the case: in isomorphic categories, isomorphic *objects* aren't considered equal, for example the following two categories are not isomorphic. 
 
 ![Simple non-isomorphic categories](simple_non_isomorphic_categories.svg)
 
@@ -72,34 +68,51 @@ We already understand when to categories are equivalent, but to have a proper fo
 Natural transformations
 ===
 
-The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors, they are actually not similar i.e. they are not "recursive". This is due to the fact that both normal morphisms and functors are morphisms between objects (or *1-morphisms*), while natural transformations are morphisms between morphisms (known as *2-morphisms*.)
+The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors. They are actually not similar, they are not "recursive", to be more precise: both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are morphisms between morphisms (known as *2-morphisms*.)
 
-But enough talking, let's draw some diagrams. We know that natural transformations are morphisms between functors, so let's draw two functors (I am omitting the arrows between objects for brevity.)
+But enough talking, let's draw some diagrams. 
+
+We know that natural transformations are morphisms between functors, so let's draw two functors (I am omitting the arrows between objects for brevity.)
 
 ![Two functors](natural_functors_objects.svg)
 
 Note that the functors are similar have the same signature - both their input and output categories are the same - this is a necessary (but not sufficient) condition for them to be connected by a natural transformation.
 
-A functor is comprised of two components - object mapping and morphism mapping. So a natural transformatiom, being a morphism between functors should take those two components into account.
+Object mapping mapping
+---
 
-Let's first connect the object mappings of the two functors (we only need to map their targets, because in the source there would always be mapping for all objects.)
+A functor is comprised of two components - object mapping and morphism mapping, so a natural transformatiom, being a morphism between functors, should take those two mappings into account.
+
+Let's first connect the object mappings of the two functors, creating what we called "object mapping mapping", but which is actually much simpler than it sounds - we only need to connect the functors' targets, because the sources would always be the same - both functors would include all object from the source category, and so mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category.
 
 ![Two functors](natural_transformation.svg)
 
-When trying to establish a connection between the morphism mappings of the two functors, we realize that once the two object mappings are connected, *there is only one correct way to do that* - the one where the two projections (generated by the two functors) of every morphism of the source category are also connected in the target category, by the connection that we just made between the objects in the target category.
+Note that the mappings between these objects does not have the character of a function, since not all objects are mapped to other objects.
 
-So instead of adding a morphism structure, we have to check whether the object structure is correct, by makind sure that morphisms from one projection of the source category, correspond to morphisms in the other projection. Note that in this case the diagram would commute. 
+Morphism mapping mapping
+---
+
+Next up, we should connect the morphism mappings of the two functors. Here things are even simpler: as with the "object mapping mapping" we have to only worry the morphisms in the target category, that is, we only need to connect all morphisms that are mapped by one functor to morphisms that are mapped by another, but furthermore when we try to establish such connections, we would realize that *there is only one natural way to do it* once the connections between the object mappings are already established. That way is to take each morphism in the source category and to connect the two images that this morphism has (generated by the two functors), in the target category.
 
 ![Two functors](natural_functors.svg)
 
+In other words, connecting the morphism mappings of the two functors is redundant - if we have the object mapping, we don't need it (or alternatively, if we have it, we don't need the object mapping.) We draw it just to verify that the object mapping that we specified indeed gives rise to a natural transformation. In this case we have just one morphism, so it is easy to see that it does.
 
-Furthermore, following this condition is the only way for such a diagram to commute, so, in a very categorical fashion, natural transformations can be defined using diagrams. Here is the standard definition of natural transformation that you would see in most textbooks.
+Definition
+---
+
+Before we finish up this chapter, let's distill the definition of natural transformations: A natural transformation between two functors **F** and **G**with source category **C** and a target category **D** (both functors have to have the same signature) is a collection of morphisms between objects in **D** that maps all target objects of functor **F** (or the image of **F** in **D** as it is also called) to target objects of functor **G**. 
+
+Furthermore, the mapping must be such that any morphism in **C** with a signature **X -> Y**, the object **F(X)** in **D** should always be mapped to **G(X)** and object **F(Y)** should be mapped to **G(Y)**.
+
+Note that if the condition above (sometimes called the "naturality condition") is met, the below diagram would commute. This works the other way too -  if the diagram commutes, the condition is met, so, in a very categorical fashion, natural transformations can be defined using this diagram. 
 
 ![Two functors](natural_transformation_formula.svg)
 
-If you look just a little bit closely, you will see that the only difference between the two diagrams is that in mine the morphisms are horizontally oriented, and they are shown vertically in the official definition.
+If you look just a little bit closely, you will see that the only difference between this diagram and our example is that here morphisms are displayed vertically, while in the exam they are horizontal.
 
-
+Limits and colimits
+====
 
 Interlude: Naturality explained
 ---
@@ -108,8 +121,6 @@ Isomorphism is not hard to construct - given two sets, containing three objects 
 
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
 
-Limits and colimits
-====
 
 
 Adjunctions

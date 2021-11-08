@@ -85,7 +85,7 @@ In order theory we only need to verify that the corresponding morphism actually 
 
 ![Order isomorphism](category_order_isomorphism_2.svg)
 
-So, as you saw, categorical isomorphisms are not hard to define, however they are *not actually useful*, as they are too rare - the only one that comes to mind is the Curry-Howard-Lambek isomorphism from the last chapter. If two categories are isomorphic, they basically contain the same data and it would be more accurate to refer to them as different *representations* of the same category than as separate categories.
+As you see, categorical isomorphisms are easy to define, however they are very *hard to find* in practice - the only one that comes to mind to me is the Curry-Howard-Lambek isomorphism from the last chapter. And the reason for that is simple - if two categories are isomorphic, they basically contain the same data and it would be more accurate to refer to them as different *representations* of the same category than as separate categories.
 
 <!--
 comics:
@@ -97,9 +97,7 @@ Pretty much.
 What are functors
 ===
 
-Much more abundant than isomorphisms, which are two-way connections between categories, are one-way connections between categories, which we will examine next. Those are called *functors* and they are much more abundand that isomorphisms as every isomorphism is also a functor (actually two functors). 
-
-But unlike an isomorphism, a functor does not have to map all objects and all morphisms in the target category.
+Much more abundant than isomorphisms, which are two-way connections between categories, are the one-way connections which we will examine next. Those are called *functors*. As with normal functions, every categorical isomorphism is also a functor (or two functors), but not the other way around. This is because, unlike an isomorphism, a functor does not have to point all objects and all morphisms in the target category (again, same as with normal functions.)
 
 ![Functor](functor.svg)
 
@@ -108,9 +106,9 @@ And now for the full definition: a functor between two categories (let's call th
 Object mapping
 ---
 
-Let's go through each component of this definition. Firstly, we have a mappings between the categories' objects. These are just regular old functions, so the definition from chapter 1 applies here.
+Let's go through each component of this definition. Firstly, we have a mappings between the categories' objects. These are just regular old functions, so the definition from chapter 1 applies.
 
-> A function is a relationship between two sets which matches each element of one set, called the *domain* of the function, with exactly one element from another set, called the converse domain, or the *codomain* of the function.
+> A function is a relationship between two sets that matches each element of one set, called the *domain* of the function, with exactly one element from another set, called the converse domain, or the *codomain* of the function.
 
 ![Functor for objects](functor_objects.svg)
 
@@ -183,36 +181,45 @@ The law of preserving composition tells us that the route we create on a map cor
 Functors in programming
 ===
 
-Before we think about how functors work in programmers, let's try to answer the million-dollar question: "How are functors *useful*?" (sometimes formulated also as "Why are you wasting my/your time with this?") This is not an easy question, but we just saw that *maps are functors* and we know that *maps are useful*, so let's start from there.
+Before we think about how functors work in programmers, let's try to answer the million-dollar question: "How are functors *useful*?" (sometimes formulated also as "Why are you wasting my/your time with this?") We just saw that *maps are functors* and we know that *maps are useful*, so let's start from there. And why is a map (or any other kind of diagram) useful? Well, obviously, it is because the points and arrows in the map corresponds to the cities and the roads in the place you are in i.e. because of the very fact that it is a functor, but there is a second aspect as well: *diagrams are simpler to work with than actual thing they are representing i.e.* it is much easier to go through all routes between two given places by following a map than to actually drive through all these routes in real life. 
 
-What makes a map or any other kind of diagram useful? Well, obviously, it is because the points and arrows in the map corresponds to the cities and the roads in the place you are in i.e. because of the very fact that it is a functor, but there is a second aspect as well: *diagrams are simpler to work with than actual thing they are representing i.e.* it is much easier to go through all routes between two given places by following a map than to actually drive through all these routes in real life. 
+It the same point is valid also for programming: a functor from the realm of simple types (like `string`, `number`, `boolean` etc) to a more complex realm (like `Array` and `Map`) allows you to work from the context of the simpler type while actually performing operations on the more complex one.
 
-It the same point is valid also for programming: a functor from a simple type (like `string`, `number` etc) to a more complex one (like `Array` and `Map`) allows you to work from the context of the simpler type while actually performing operations on the more complex one.
+If we think about the category of simple types, there are numerous functions between those types, like, as we said before, there are a myriad functions that convert a number to boolean.
+
+![Functions from array to boolean](set_arrows.svg)
+
+For lists, there aren't that many functions. But there also doesn't need to be that many of them, as with map we can use every function that convert strings to numbers to convert string arrays to number arrays.
+
+![A functor in programming](functor_programming.svg)
 
 Because they are simpler, maps don't include *all* roads and *all* traveling options. And the same is true for functors in programming - having a functor doesn't allow you to do define *all* operations using only the simple type, only some of them (some are better than nothing, right?) 
 
-To see how this works, let's revisit the general functor definition in the context of programming (by just changing the terms we used, according to the table in chapter 2.)
+Let's revisit the general functor definition in the context of programming (by just changing the terms we used, according to the table in chapter 2.)
 
 > A functor between two categories (let's call them **A** and **B**) consists of a mapping that maps each *type* in **A** to a type in **B** and a mapping that maps each *function* between types in **A** to a function between types in **B** in a way that preserves the structure of the category.
-
-Note that all programming language types are actually in one category so all the functors used in programming are *endofunctors* (ones in which the source and target category is one and the same), but that doesn't make any difference in terms of this definition (you can also think of them as belonging to different categories if that's easier for you.)
 
 Type mapping
 ---
 
-The first component of a functor is a mapping that converts one type (let's call it **A**) to another type (**B**). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checing in the first place - they go by the name of *generic types* and if you think about it, a generic type is just a function that takes one concrete type as an argument and returns another one , for example the type `Array<A>` maps the type `String` to `Array<String>`, the type `Number` to `Array<Number>` etc. 
+The first component of a functor is a mapping that converts one type (let's call it **A**) to another type (**B**). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checking in the first place - they go by the name of *generic types*. 
 
+![A functor in programming - type mapping](functor_programming_objects.svg)
+
+A generic type is nothing but a function (sometimes called a *type-level function*) that maps one concrete type to another concrete type. For example, the type `Array<A>` maps the type `String` to `Array<String>`, `Number` to `Array<Number>` etc. 
 
 Function mapping
 ---
 
-So the type mapping of a functor can correspond to a generic type in a programming language (we can also have functors between two generic types, but we will review those later.) However the nontrivial part of the functor is the *function mapping* - that is a mapping that convert any function of simple types, like `String ➞ Number` to a function between their more complex counterparts e.g. `Array<String>  ➞ Array<Number>`. 
+So the type mapping of a functor can correspond to a generic type in a programming language (we can also have functors between two generic types, but we will review those later.) However the nontrivial part of the functor is the *function mapping* - that is a mapping that convert any function operating on simple types, like `String ➞ Number` to a function between their more complex counterparts e.g. `Array<String> ➞ Array<Number>`. 
 
-In programming languages, this mapping is represented by a higher-order function called `map` with a signature `(a ➞ b) ➞ (Fa ➞ Fb)` (where `F` represents the composite type.)
+![A functor in programming - function mapping](functor_programming_morphism.svg)
+
+In programming languages, this mapping is represented by a higher-order function called `map` with a signature (using Haskell notation), `(a ➞ b) ➞ (Fa ➞ Fb)`, where `F` represents the composite type. 
 
 Any function with that type signature gives rise to a functor, but not all such functors are useful. In practice, usually, there is only one of them that makes sense for a given generic type. For example, in the case of arrays and similar structures, `map` is a function that applies the original function (the one that converts simple types) to all elements of the structure. 
 
-Because only one `map` function per generic type works (and for simple convenience) you might sometimes see `map` defined directly in the datatype as a method. Here is how it might look in TypeScript, where it is implemented in the way that I described above:
+Because only one `map` function per generic type works (and also for simple convenience) you might sometimes see `map` defined directly in the datatype as a method. Here is how it might look in TypeScript, where it is implemented in the way that I described above:
 
 ```
 class Array<A> {
@@ -226,9 +233,6 @@ class Array<A> {
 }
 ```
 
-Why is `map` useful? If we think about the category of simple types, there are numerous functions between those types, like, as we said before, there are a myriad functions that convert strings to numbers.
-
-For a lists, there aren't that many functions. But there also doesn't need to be that many of them, as with map we can use every function that convert strings to numbers to convert string arrays to number arrays.
 
 Functor laws
 ---
@@ -244,16 +248,51 @@ a.map(f).map(g) == a.map(compose(g, f))
 
 **Task:** Use examples to verify that the laws are followed.
 
+Endofunctors
+===
+
+All programming language types are actually in one category, so all the functors used in programming are *endofunctors* (ones in which the source and target category is one and the same) - this doesn't make any difference when it comes to the above definitions (you can also think of the different type families as belonging to different categories if that's easier for you), but it does make a difference in other situations, for example, you can apply an endofunctor **F** to a given value **a** infinitely many times, adding more and more levels of nesting.
+
+![A functor in programming as endofunctor](endofunctor_programming.svg)
+
+This might look weird, but it does not lead to any type of paradox - there is nothing wrong about a list that contains other lists, and (though rarely useful in practice) you can have a list of lists of lists, or a list of lists of lists of lists etc (and the functor laws would still hold, provided that you called `map` the right number of times.)
+
+Identity functor
+===
+
+There is one particular endofuctor that will probably look familiar to you - it is the *identity functor*, the one that maps each object and morphism to itself.
+
+![Identity  functor](identity_functor.svg)
+
+The reason this functor is defined is the same reason as the identity morphisms are defined - they allow us to talk about value-related stuff without actually involving values. 
+
+Homomorphism functor
+===
+
+Given any category, we can generate the set of the sets of all morphisms that have a specific type signature with respect to a given object from that category. This is called the *Homomorphism set*, denoted **Hom(B,_)**, **B** being the object that you picked (for example, let's take the brown ball.)
+
+![Homomorphism set](hom_set.svg)
+
+This set forms a category where the morphism-sets are the objects (again *morphism-sets are objects*.) and the morphisms are the same as in the original category. And between those two categories (the original and the weird morphism-based one) there is a functor, called the homomorphism functor.
+
+![Homomorphism set](hom_functor.svg)
+
+**Question:** Which object should we pick so that the original and the homomorphism categories are isomorphic? 
+
+Note that with the homomorphism functor we can represent any category in the the category of sets
+
 Functors in monoids
 ===
 
 In group theory, there is this cool thing called *group homomorphism* (or *monoid homomorphism* when we are talking about monoids) - it is a function between the groups's underlying sets which preserves the group operation.
 
-Like, imagine if we have the function which shows you what would be the time after n hours
+Like, imagine if we have the function which shows you what would be the time after **n** hours
 
 ![Group homomorphism as a function](group_homomorphism_function.svg)
 
-Perhaps somewhat surprisingly, this function preserves the operation of addition. That is, if the time after 13 hours it will be 1 o'clock and the time after 14 hours will be 2 o'clock, then the time after (13 + 14) hours will be (1 + 2) o'clock. Or to put it formally, if we call the function that computes the time after some hours **mod11**, then we have **mod11(a + b) = mod11(a) + mod11(b)**. And because of this equation, this function is a group homomorphism between the group of integers under addition and the group of modulo arithmetic with base 11, again under addition. 
+Perhaps somewhat surprisingly, this function preserves the operation of addition. That is, 13 hours from now the time will be 1 o'clock and if 14 hours from now it will be 2 o'clock, then the time after (13 + 14) hours will be (1 + 2) o'clock. 
+
+Or to put it formally, if we call the function that computes the time after some hours **mod11**, then we have **mod11(a + b) = mod11(a) + mod11(b)**.Because of this equation, this function is a group homomorphism between the group of integers under addition and the group of modulo arithmetic with base 11, again under addition. 
 
 ![Group homomorphism](group_homomorphism.svg)
 
@@ -333,6 +372,10 @@ But both morphisms **F(g•f)** and **F(g)•F(f)** have the same signature - **
 In this case the compositions 
 But this means that the composition of these two pairs of morphisms should exist as well, so 
 
+Forgetful Functors
+===
+
+
 
 **F(g•f) = F(g)•F(f)**.
 
@@ -340,44 +383,6 @@ But this means that the composition of these two pairs of morphisms should exist
 Functors in logic
 ===
 -->
-
-Free and Forgetful Functors
----
-
-Some other functors
-===
-
-Before we continue, we will review the functor-related concepts that we saw so far, as well as some that we will see later on.
-
-
-
-Diagram
----
-
-As we saw, a diagram, can be represented as functor from a finite category, called an *index* category (or a *map* as we dubbed it earlier) to some other category.
-
-Homomorphism functor
----
-
-For any category, we can generate the set of all morphisms that have a specific type signature 
-
-![Homomorphism set](homomorphism_set.svg)
-
-Between those two categories, there is a functor, calle the homomorphism functor, between the objects and the morphism sets, where the the morphisms play the role of objects. Again, the morphisms are objects.
-
-This category will have morphisms for object and morphism composition. For example, if we take the color-mixing category, the functor **Hom(B,_)** (the Black ball) would look like this.
-
-![Homomorphism functor](homomorphism_functor.svg)
-
-Endofunctor
----
-
-When programming, we are working in just one category - the category of types in the language that we are working with, so all functors that 
-
-Identity functor
----
-
-There is one particular endofuctor that will probably look familiar to you - it is the identity functor - one which maps each object and morphism to itself.
 
 The category of small categories
 ===
