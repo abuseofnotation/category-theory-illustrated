@@ -111,6 +111,9 @@ Note that if the condition above (sometimes called the "naturality condition") i
 
 If you look just a little bit closely, you will see that the only difference between this diagram and our example is that here morphisms are displayed vertically, while in the exam they are horizontal.
 
+https://www.math3ma.com/blog/what-is-a-natural-transformation
+
+
 Limits and colimits
 ====
 
@@ -121,32 +124,40 @@ Isomorphism is not hard to construct - given two sets, containing three objects 
 
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
 
+Free objects
+===
+https://math.stackexchange.com/questions/131389/what-are-free-objects
 
 
 Adjunctions
 ===
 
-Left adjoints preserve joins and right adjoints preserve meets. 
+https://github.com/adamnemecek/adjoint/
+
+https://chrispenner.ca/posts/adjunction-battleship
+
+-- Left adjoints preserve joins and right adjoints preserve meets. 
+
+-- Free/forgetful adjunctions are ones where the unit is Id.
+
+
 
 Monads
 ===
 
 
 
-TODO
-
-Hom functors
-===
-
 Representable functors
 ===
 
-Representable functors are set-valued functors that are isomorphic to the Hom functor
-
 A Hom-functor can always be converted to any set-valued functor (Yoneda lemma). But not the other way around
-
-So a functor is representable when we can convert its values to values of the Hom functor
 
 Yoneda Lemma
 ===
 
+
+
+https://www.azimuthproject.org/azimuth/show/Applied+Category+Theory+Course#Course
+
+
+https://eed3si9n.com/herding-cats/day1.html

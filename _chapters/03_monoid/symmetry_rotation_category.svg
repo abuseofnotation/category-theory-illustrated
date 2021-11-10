@@ -12,7 +12,7 @@
    version="1.1"
    id="svg9949"
    sodipodi:docname="symmetry_rotation_category.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata9955">
     <rdf:RDF>
@@ -40,8 +40,8 @@
      inkscape:window-height="1376"
      id="namedview9951"
      showgrid="false"
-     inkscape:zoom="2.3651941"
-     inkscape:cx="297.64999"
+     inkscape:zoom="5.492609"
+     inkscape:cx="274.75559"
      inkscape:cy="100"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -61,16 +61,6 @@
        stroke="#000000"
        stroke-width="6.16305"
        id="ellipse9933" />
-    <ellipse
-       cy="378.53741"
-       cx="303.91501"
-       stroke-miterlimit="10"
-       rx="61.663685"
-       ry="58.56144"
-       fill="#e1e1e1"
-       stroke="#808285"
-       stroke-width="10.9383"
-       id="ellipse9941" />
     <g
        id="g11563"
        transform="translate(-7.1481514,-4.9580674)">
@@ -176,5 +166,15 @@
            y="48.468803"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#666666;stroke-width:0.572352">0° </tspan></text>
     </g>
+    <ellipse
+       cy="378.53741"
+       cx="303.91501"
+       stroke-miterlimit="10"
+       rx="61.663685"
+       ry="58.56144"
+       fill="#e1e1e1"
+       stroke="#808285"
+       stroke-width="10.9383"
+       id="ellipse9941" />
   </g>
 </svg>

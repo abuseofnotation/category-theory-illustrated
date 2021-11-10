@@ -257,7 +257,7 @@ All programming language types are actually in one category, so all the functors
 
 This might look weird, but it does not lead to any type of paradox - there is nothing wrong about a list that contains other lists, and (though rarely useful in practice) you can have a list of lists of lists, or a list of lists of lists of lists etc (and the functor laws would still hold, provided that you called `map` the right number of times.)
 
-Identity functor
+Identity functors
 ===
 
 There is one particular endofuctor that will probably look familiar to you - it is the *identity functor*, the one that maps each object and morphism to itself.
@@ -266,7 +266,7 @@ There is one particular endofuctor that will probably look familiar to you - it 
 
 The reason this functor is defined is the same reason as the identity morphisms are defined - they allow us to talk about value-related stuff without actually involving values. 
 
-Homomorphism functor
+Homomorphism functors
 ===
 
 Given any category, we can generate the set of the sets of all morphisms that have a specific type signature with respect to a given object from that category. This is called the *Homomorphism set*, denoted **Hom(B,_)**, **B** being the object that you picked (for example, let's take the brown ball.)
@@ -279,28 +279,28 @@ This set forms a category where the morphism-sets are the objects (again *morphi
 
 **Question:** Which object should we pick so that the original and the homomorphism categories are isomorphic? 
 
-Note that with the homomorphism functor we can represent any category in the the category of sets
+With the homomorphism functors, we can *represent* any category in the category of sets. This is why homomorphism functors and all functors that are isomorphic to them are called *representable* functors.
 
 Functors in monoids
 ===
 
 In group theory, there is this cool thing called *group homomorphism* (or *monoid homomorphism* when we are talking about monoids) - it is a function between the groups's underlying sets which preserves the group operation.
 
-Like, imagine if we have the function which shows you what would be the time after **n** hours
+If the time of the day right now is **00:00** then what would the time be after **n** hours? The answer to this question can be expressed as a function from and to the set of integers.
 
 ![Group homomorphism as a function](group_homomorphism_function.svg)
 
-Perhaps somewhat surprisingly, this function preserves the operation of addition. That is, 13 hours from now the time will be 1 o'clock and if 14 hours from now it will be 2 o'clock, then the time after (13 + 14) hours will be (1 + 2) o'clock. 
+What's interesting about this function is that it function preserves the operation of (modular) addition. That is, 13 hours from now the time will be 1 o'clock and if 14 hours from now it will be 2 o'clock, then the time after (13 + 14) hours will be (1 + 2) o'clock. 
 
-Or to put it formally, if we call the function that computes the time after some hours **mod11**, then we have **mod11(a + b) = mod11(a) + mod11(b)**.Because of this equation, this function is a group homomorphism between the group of integers under addition and the group of modulo arithmetic with base 11, again under addition. 
+Or to put it formally, if we call the function that we just saw **mod11**, then we have the following equation - if **a + b = c**, then **mod11(a) + mod11(b) = mod11(c)**. Because of this equation, this function is a *group homomorphism* between the group of integers under addition and the group of modulo arithmetic with base 11 under modular addition. 
 
 ![Group homomorphism](group_homomorphism.svg)
 
-And the groups don't have to be the same composition operator. Take for example the function that maps any number n to 2 (or any other number) to the n-th **power** so  **n ➞ 2ⁿ**. This function gives a rise to a group homomorphism between the group of integets under addition and the integers under multiplication.
+And the groups don't have to be so similar. Take for example the function that maps any number **n** to 2 (or any other number) to the *power of **n**, * so  **n ➞ 2ⁿ**. This function gives a rise to a group homomorphism between the group of integets under addition and the integers under multiplication.
 
 ![Group homomorphism between different groups](group_homomorphism_addition_multiplication.svg)
 
-Wait, what were we talking about? Oh yes - group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups (to make the diagram simpler I am using the group **mod3** as the target group instead of mod11**.)
+Wait, what were we talking about again? Oh yeah - group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups. Let's use our first example and, to make the diagram simpler, use the group **mod2** instead of **mod11**.
 
 ![Group homomorphism as a functor](group_homomorphism_functor.svg)
 
@@ -317,7 +317,9 @@ Because of the above, the morphism mapping is the only rellevant component of th
 Functor laws
 ---
 
-Not every function between group objects is a homomorphism, but as we said the above example is one due to the equation **mod11(a + b) = mod11(a) + mod11(b)**. But wait, this looks very familiar - it is enough to change some letters and symbols and we will see that it is just a restatement of the functor law for preserving composition - **F(g•f) = F(g)•F(f)**.
+The first functor law trivial, it just says that the one and only identity object of the source group (which corresponds to the identity morphism of its one and only object) should be mapped to the one and only identity object of the target group. And we can see that this is the case - **0**, is mapped to **0** in our first example, and in the second one **0** is mapped to **1** which makes sense as well - remember that **1** is the identity object under multiplication.
+
+For the second law, we need to only look at the definition of group homomorphis. Not every function between group objects is a homomorphism, but as we said the above example is one due to the equation **mod11(a + b) = mod11(a) + mod11(b)**. But wait, this looks very familiar - it is enough to change some letters and symbols and we will see that it is just a restatement of the functor law for preserving composition - **F(g•f) = F(g)•F(f)**.
 
 **Task:** Figure out how the functor law looks for the other group homorphism that we reviewed.
 
@@ -325,7 +327,6 @@ Not every function between group objects is a homomorphism, but as we said the a
 **gᵃ gᵇ= gᵃ⁺ᵇ**
 -->
 
-The other functor law trivial, it just says that the one and only identity object of the source group (which corresponds to the identity morphism of its one and only object) should be mapped to the one and only identity object of the target group.
 
 <!-- TODO show isomorphism theorems --> 
 
@@ -374,7 +375,6 @@ But this means that the composition of these two pairs of morphisms should exist
 
 Forgetful Functors
 ===
-
 
 
 **F(g•f) = F(g)•F(f)**.

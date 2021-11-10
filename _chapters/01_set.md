@@ -81,17 +81,15 @@ Functions
 
 A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the **target set** of the function. 
 
-Some alternative way to call these two sets:  *domain* and *codomain*, *input* and *output*.  In programming we might call them *argument* and *return value*. In logic - *premise* and *conclusion* (we will get there.)
+These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there.) We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other. Or that it *converts* a value from this set to one of the the other one. These different terms show the many different faces of functions.
 
-Here is a function, **f** which maps each ball from the set **R** to the ball with the opposite colour in another set **G** (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: **f: R → G**)
+Here is a function, **f** which converts each ball from the set **R** to the ball with the opposite colour in another set **G** (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: **f: R → G**)
 
 ![Opposite colors](function_one_one.svg)
 
 This is probably one of the simpler types of functions there exists. That is because it encodes a *one-to-one relationship* between the sets - *one* element from the source is connected to exactly *one* element from the target (and the other way around).
 
-But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around).
-
-For example, a function can express a relationship in which several elements from the source set relate to the same element of the target set.
+But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). For example, a function can express a relationship in which several elements from the source set relate to the same element of the target set.
 
 ![Function from a bigger set to a smaller one](function_big_small.svg)
 
@@ -99,7 +97,7 @@ It can also express relationships in which some elements from the target set do 
 
 ![Function from a smaller set to a bigger one](function_small_big.svg)
 
-One thing that you cannot have is a source element which is not mapped to anything, or which is mapped to more than one target element. That would mean the relationship expressed by the function will be *many-to-many*, and, as we said in the beginning, functions only model many-to-one relationships. There is a reason for that "design decision", and we will arrive at it shortly.
+One thing that you cannot have is a source element which is not mapped to anything, or which is mapped to more than one target element. That would mean the relationship expressed by the function will be *many-to-many*, and, as we said in the beginning, functions are many-to-one relationships. There is a reason for that "design decision", and we will arrive at it shortly.
 
 Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask can most probably be expressed as a function.
 
@@ -126,6 +124,7 @@ You can think of **idG** as a function which represents the set **G** in the rea
 
 Functions and Subsets
 ---
+
 For each set and subset, no matter what they represent, we can define the function that maps each element of the subset to itself:
 
 ![Function from a smaller set to a bigger one](function_small_big.svg)
