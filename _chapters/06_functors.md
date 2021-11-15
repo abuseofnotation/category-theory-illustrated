@@ -23,7 +23,7 @@ We began (in chapters 1 and 2) by reviewing the mother of all categories - *the 
 Category types
 ---
 
-We learned that they are special types of categories, like categories that have just one *object* (monoids, groups) and categories that have only one *morphism* between any two objects (preorders, partial orders). 
+We learned that they are special types of categories, like categories thatghave just one *object* (monoids, groups) and categories that have only one *morphism* between any two objects (preorders, partial orders). 
 
 ![Types of categories](category_types.svg)
 
@@ -77,7 +77,6 @@ It is the following: given two categories, an isomorphism between them is an inv
 ![Category isomorphism](category_isomorphism.svg)
 
 Although a little more complex, this definition is the same as the one we have for orders - it is just that when dealing with categories, we have to account for the fact that we can have more than one morphism between two objects and so we need to explicitly specify which one corresponds to which.
-
 
 ![Category isomorphism](category_order_isomorphism.svg)
 
@@ -290,24 +289,27 @@ If the time of the day right now is **00:00** then what would the time be after 
 
 ![Group homomorphism as a function](group_homomorphism_function.svg)
 
-What's interesting about this function is that it function preserves the operation of (modular) addition. That is, 13 hours from now the time will be 1 o'clock and if 14 hours from now it will be 2 o'clock, then the time after (13 + 14) hours will be (1 + 2) o'clock. 
+This function is interesting - it preserves the operation of (modular) addition. That is, 13 hours from now the time will be 1 o'clock and if 14 hours from now it will be 2 o'clock, then the time after (13 + 14) hours will be (1 + 2) o'clock. 
 
-Or to put it formally, if we call the function that we just saw **mod11**, then we have the following equation - if **a + b = c**, then **mod11(a) + mod11(b) = mod11(c)**. Because of this equation, this function is a *group homomorphism* between the group of integers under addition and the group of modulo arithmetic with base 11 under modular addition. 
+Or to put it formally, if we call it (the function) **F**, then we have the following equation - **F(a + b) = F(a) m+ F(b)** (where **m+** means modular addition) Because this equation works, the **F** function is a *group homomorphism* between the group of integers under addition and the group of modulo arithmetic with base 11 under modular addition. 
+
 
 ![Group homomorphism](group_homomorphism.svg)
 
-And the groups don't have to be so similar. Take for example the function that maps any number **n** to 2 (or any other number) to the *power of **n**, * so  **n ➞ 2ⁿ**. This function gives a rise to a group homomorphism between the group of integets under addition and the integers under multiplication.
+
+The groups don't have to be so similar for there to be a homomorphism between them. Take, for example, the function that maps any number **n** to 2 (or any other number) to the *power of **n**,* so  **n ➞ 2ⁿ**. This function gives a rise to a group homomorphism between the group of integets under addition and the integers under multiplication, or **F(a + b) = F(a) * F(b)**
+
 
 ![Group homomorphism between different groups](group_homomorphism_addition_multiplication.svg)
 
-Wait, what were we talking about again? Oh yeah - group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups. Let's use our first example and, to make the diagram simpler, use the group **mod2** instead of **mod11**.
+Wait, what were we talking about again? Oh yeah - group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups. Let's revisit our first example and, to make the diagram simpler, use mod 2 instead of mod 11.
 
 ![Group homomorphism as a functor](group_homomorphism_functor.svg)
 
 Object mapping
 ---
 
-By definition Groups/monoids are categories that have just one object, so there is only one possible object mapping between any couple of groups/monoids - one that maps the object of the source group to the object of the target group.
+Groups/monoids have just one object when viewed as categories, so there is also only one possible object mapping between any couple of groups/monoids - one that maps the (one and only) object of the source group to the object of the target group (not depicted in the diagram).
 
 Morphism mapping
 ---
@@ -317,9 +319,10 @@ Because of the above, the morphism mapping is the only rellevant component of th
 Functor laws
 ---
 
-The first functor law trivial, it just says that the one and only identity object of the source group (which corresponds to the identity morphism of its one and only object) should be mapped to the one and only identity object of the target group. And we can see that this is the case - **0**, is mapped to **0** in our first example, and in the second one **0** is mapped to **1** which makes sense as well - remember that **1** is the identity object under multiplication.
+The first functor law trivial, it just says that the one and only identity object of the source group (which corresponds to the identity morphism of its one and only object) should be mapped to the one and only identity object of the target group. And we can see that this is the case - in our first example, **0**, the identity of the addition operation, is mapped to **0**. And in the second one **0** is mapped to **1** - the identity object of the multiplication operation.
 
-For the second law, we need to only look at the definition of group homomorphis. Not every function between group objects is a homomorphism, but as we said the above example is one due to the equation **mod11(a + b) = mod11(a) + mod11(b)**. But wait, this looks very familiar - it is enough to change some letters and symbols and we will see that it is just a restatement of the functor law for preserving composition - **F(g•f) = F(g)•F(f)**.
+As we said, in order for a function to be a group homomorphism, it must satisfy the equation 
+**F(a + b) = F(a) * F(b)**. And if you remember that, when interpreted categorically, group objects (like **1** and **2** **3** etc.) correspond to morphisms (like **+1**, **+2** **+3** etc.) and the monoid operation of combining two objects corresponds to *functional composition*, you would see that this equation is actually a just a formulation of the second functor law **F(g•f) = F(g)•F(f)**.
 
 **Task:** Figure out how the functor law looks for the other group homorphism that we reviewed.
 
@@ -327,13 +330,14 @@ For the second law, we need to only look at the definition of group homomorphis.
 **gᵃ gᵇ= gᵃ⁺ᵇ**
 -->
 
+**Task:** Although it's trivial, we didn't prove that the first functor law (the one about the preservation of identities always holds. Interestingly enough, for groups/monoids it actually follows from the second law. Try to prove that. Start with the definition of the identity function.
 
 <!-- TODO show isomorphism theorems --> 
 
 Functors in orders
 ===
 
-And now let's talk about one concept that is completely unrelated to functors, nudge-nudge (I know you are tired of this, but hey, bad jokes are better than no jokes at all.) In the theory of orders we have functions between orders which is unsurprising, as orders, like monoids/groups, are based on sets. And one very interesting type of order function which has applications in calculus and analysis is a *monotonic function* (also called *monotone map*). This is a function between two orders that preserves the order of the elements. So a function **F** is monotonic  when for every **a** and **b** in the source order, if **a ≤ b** then **F(a) ≤ F(b)**.
+And now let's talk about one concept that is completely unrelated to functors, nudge-nudge (I know you are probably tired of this but hey, bad jokes are better than no jokes at all.) In the theory of orders, we have functions between orders (which is unsurprising, as orders, like monoids/groups, are based on sets.) And one very interesting type of such function, which has applications in calculus and analysis, is a *monotonic function* (also called *monotone map*). This is a function between two orders that *preserves the order* of the elements. So a function **F** is monotonic  when for every **a** and **b** in the source order, if **a ≤ b** then **F(a) ≤ F(b)**.
 
 For example, the function that maps the current time to the distance travelled by some object is monotonoc because the distance travelled increases (or stays the same) as time increases.
 
@@ -358,26 +362,18 @@ In orders, there can be just one morphism between given two objects, and so morp
 Functor laws
 ---
 
-It is not hard to prove that monotone maps obey the functor laws - monotone maps match all identity morphisms with one another because in orders identities are the only morphisms that go between a given object and itself. And they preserve composition for the same reason. 
+It is not hard to see that monotone maps obey the first functor law - identities are the only morphisms that go between a given object and itself. 
 
-Here is the full proof: One thing we know about monotonic maps is that they preserve the order of the elements, which means (in category-theoretic terms) that if a morphism with a signature **a ➞ b** in the source order exists, then the morphism **F(a) ➞ F(b)** in the target order would exist too. Let's denote these two morphisms **f** and **F(f)**.
-
-Suppose that there exist another morphism **b ➞ c** in the source. Then by the same logic **F(b) ➞ F(c)** would exist as well. Let's denote these morphisms **g** and **F(g)**.
+And the second law also follows from the fact that there is only one morphism with a given signature. Suppose we have a monotone map. Suppose that in the source order we have two morphisms **f :: a ➞ b** and **g :: b ➞ c**. Then, in the target order would contain morphisms that correspond to those two: **F(f): F(a) ➞ F(b)** **F(g): F(b) ➞ F(c)** 
 
 If we compose the two morphisms in the target order, we get a morphism **F(g)•F(f) :: F(a) ➞ F(c)**. 
 
-And if we compose the two morphisms in the source order, we get a morphism **g•f :: a ➞ c**. And from it, we can get the corresponding morphism in the target category - **F(g•f) :: F(a) ➞ F(c)**.
+If we compose the two morphisms in the source order, we get a morphism **g•f :: a ➞ c**. And from it, we can get the corresponding morphism in the target category - **F(g•f) :: F(a) ➞ F(c)**.
 
-But both morphisms **F(g•f)** and **F(g)•F(f)** have the same signature - **F(a) ➞ F(c)** and for orders we know that there can exist only one morphism with a given signature. So **F(g•f) = F(g)•F(f)**.
-
-In this case the compositions 
-But this means that the composition of these two pairs of morphisms should exist as well, so 
+But both morphisms **F(g•f)** and **F(g)•F(f)** have the signature **F(a) ➞ F(c)** and so they must be equal to one another.
 
 Forgetful Functors
 ===
-
-
-**F(g•f) = F(g)•F(f)**.
 
 <!--
 Functors in logic
@@ -410,7 +406,6 @@ Categories all the way down
 The recursive nature of category theory might leave some of you confused: we started by saying that categories are composed of objects and morphisms, but now we are saying that there are morphisms between categories as well. Does that mean that categories are an example of categories? 
 
 Yes. Sounds a bit weird on intuitive level (as for example biscuits don't contain other biscuits and houses don't use houses as building material) but it is perfectly legitimate.
-
 
 
 category theory does *categorize* (see what I did there) everything as categories, so it is categories all the way down, like for example, every monoid is a category with one just object.

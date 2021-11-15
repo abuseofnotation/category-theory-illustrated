@@ -260,7 +260,7 @@ For sets, an isomorphism means just that the functions are inverse of each other
 Birkhoff's representation theorem
 ---
 
-So far, we saw two different partial orders, one based on color mixing, and one based on number division,  which can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one.) Many other partial orders can be defined in this way. Which ones exactly is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the partial orders that meet the following two criteria: 
+So far, we saw two different partial orders, one based on color mixing, and one based on number division,  which can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one.) Many other partial orders can be defined in this way. Which ones exactly, is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the partial orders that meet the following two criteria: 
 
 1. All elements have *joins* and *meets* (those partial orders are called *lattices*, by the way) 
 2. Those *meet* and *join* operations *distribute* over one another, that is if we denote joins as meets as  **∨** or **∧**, then **x ∨ (y ∧ z) = (x ∨ y) ∧ (x ∨ z)** (those are called *distributive lattices*.)
@@ -269,7 +269,7 @@ So far, we saw two different partial orders, one based on color mixing, and one 
 
 I won't go into details about this result, I would only mention that the "prime" elements with which we can construct the inclusion order are the ones that are not the *join* of any other elements (for that reason, they are also called *join-irreducible* elements.)
 
-By the way, the partial orders that are *NOT* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that do not contain all possible combinations of elements.
+By the way, the partial orders that are *not* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that do not contain all possible combinations of elements.
 
 <!-- TODO in a Power set P(X), the meet of a collection of subsets is their intersection, and the join is their union -->
 
@@ -372,7 +372,6 @@ But as we saw, a finite state machine is similar to a preorder with a greatest a
 
 Finite state machines are used in organization planning e.g. imagine a process where an item gets manifactured, gets checked by a quality control person, who, if they find some defficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping - this process can be modelled by the above diagram. 
 
-They are used in software too.
 <!--
 
 Or alternatively, a finite state machine is just a preorder with a greatest and least object, in which the relations between the objects are represented by functions.
@@ -413,7 +412,13 @@ In other words, the transitivity law tells us that the **≤** relationship comp
 
 (we have to also verify that the relation is associative, but that's easy)
 
-What about that other law that was required in order to be a category - the identity law? We have it too, under the name *reflexivity*.
+So let's review the definition of a category again.
+
+> A category is a collection of **objects** (we can think of them as points) and **morphisms** (arrows) that go from one object to another, where:
+> 1. Each object has to have the identity morphism.
+> 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
+
+Looks like we have law number 2 covered. What about that other one - the identity law? We have it too, under the name *reflexivity*.
 
 ![Reflexivity](reflexivity.svg)
 
