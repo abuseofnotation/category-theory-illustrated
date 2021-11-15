@@ -1,4 +1,7 @@
+Invertible
+invertible
 coproduct
+Coproduct
 morphism
 Morphism
 coproducts
@@ -31,6 +34,7 @@ Monoid
 Monoids
 isomorphism
 isomorphisms
+Isomorphisms
 Hasse
 Antisymmetry
 connexity
@@ -50,10 +54,21 @@ non-abelian
 Dih3
 composable
 forall
+<<<<<<< HEAD
+codomain
+Euclidian
+subtypes
+Immanuel 
+iff
+concatenative
+structs
+DeMorgan's
+getter
+OOP
+=======
 BHK
 yey
-intuinistic
-Intuinistic
+intuitionistic
 intuinism
 Brouwer
 schemas
@@ -75,6 +90,9 @@ Curry-Howard-Lambek
 Curry-Howard
 Lambek
 cartesian
+<<<<<<< HEAD
+Functor
+functor
 functors
 Functors
 isomorphism
@@ -87,4 +105,3 @@ Monoidal
 morphisms
 codomain
 iff
-invertible 

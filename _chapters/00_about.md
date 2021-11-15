@@ -15,8 +15,6 @@ title: About
 {: style="text-align: right" }
 Tom Lehrer 
 
-
-
 About this book
 ===
 

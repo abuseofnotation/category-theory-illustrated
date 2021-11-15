@@ -29,14 +29,14 @@ I am writing a primer in category theory and various related concepts in "higher
 
 My book serves as chapter 0 going through the gist of the material covered by other similar introductory books, but doing so in a way that would enable non-mathematicians to swift through with ease.
 
-Reading it would enable my readers to effortlessly go through any academic introduction to category theory, as well as to start tacking resources that use category theory as a tool to threat other subjects.
+Reading it would enable my readers to effortlessly go through any academic introduction to category theory, as well as to start tackling resources that use category theory as a tool to treat other subjects.
 
 About the author
 ---
 
-I am a nerd who works in web programming with background in design and technical communication. I first discovered category theory through programming, but then started pursuing it in its own right. Finding math more and more fascinating.
+I am a Bulgarian nerd who works in web programming with background in design and technical communication. I am into functional programming, from where I first learned about category theory but then started finding math more and more fascinating. 
 
-Currently living in Sofia with my wife and kid.
+Born and living in Sofia with my wife and kid.
 
 Similar resources
 ===
@@ -164,7 +164,7 @@ Category theory is very *visual* in its nature. Category-theoretic diagrams are 
 
 However, books on category theory typically have as many diagrams as other math textbooks. I consider this a huge missed opportunity for making the subject more approachable. This was the original motivation for the creation of CTI.
 
-Besides being more in quantity, the diagrams of CTI use many techniques from traditional communication design (such as the use of color for example) in order to illuminate the different subjects and abstractions that I am covering.
+Besides being more of them, the diagrams of CTI use many techniques from traditional communication design (such as the use of color for example) in order to illuminate the different subjects and abstractions that I am covering.
 
 Both books that I am reviewing have less diagrams than CTI. From the resources that I have examined, the only author who stresses on diagrams as much as I do is Tai-Danae Bradley (her blog is [https://www.math3ma.com/](https://www.math3ma.com/).)
 
@@ -226,6 +226,22 @@ Feedback
 
 My book received a lot of positive feedback and a lot of people shared it on social media. 
 
+Quotes
+---
+
+> "The range of applications for category theory is immense, and visually conveying meaning through illustration is an indispensable skill for organizational and technical work. Unfortunately, the foundations of category theory, despite much of their utility and simplicity being on par with Venn Diagrams, are locked behind resources that assume far too much academic background.
+>
+> As Gilbert Strang offered in his critique of the typical pre-calc courses in ["Too Much Calculus"](http://siags.siam.org/siagla/articles/Strang2001.pdf) in favor of linear algebra, similar arguments can be made for promoting statistics, discrete mathematics, or category theory.
+>
+>Should category theory be considered for this academic purpose or any work wherein clear thinking and explanations are valued, beginner-appropriate resources are essential. There is no book on category theory that makes its abstractions so tangible as "Category Theory Illustrated" does. I recommend it for programmers, managers, organizers, designers, or anyone else who values the structure and clarity of information, processes, and relationships."
+
+[Evan Burchard](https://www.oreilly.com/pub/au/7124), Author of "The Web Game Developer's Cookbook" and "Refactoring JavaScript"
+
+> "The clarity, consistency and elegance of diagrams in 'Category Theory Illustrated' has helped us demystify and explain in simple terms a topic often feared."
+
+[Gonzalo Casas](https://gnz.io/), Software developer, leading courses at digital/robotic fabrication for PHD students at ETH Zurich
+
+
 Comments
 ---
 
@@ -243,12 +259,21 @@ Comments
 
 > Thank you for creating Category Theory Illustrated, for me the book makes the concepts easier to understand and build an intuition. (received by email)
 
+>  It's pretty cool that you can show the bridge between two different logic systems and it actually is grokkable.  In other words I had no chance of understanding this concept from the Wiki article alone which is where I found it. (received by email)
+
+> What an amazing write-up!
+> I've picked up those things peace by peace form Wikipedia to be able to understand the slang in Haskell land. But it was a long and puzzling process. This great summary offered here will hopefully help other people in the future get a coherent picture more quickly. (I hope the SEO is good so people will find it. I'm at least going to recommend it form now on whenever someone asks related questions).[Source](https://news.ycombinator.com/reply?id=28661220&goto=item%3Fid%3D28660157%2328661220)
+
+
 Discussions
 ---
 
 [Lobste.rs](https://lobste.rs/s/bc11fo/category_theory_illustrated_monoids)
 
 [HackerNews](https://news.ycombinator.com/item?id=26658111)
+
+[HackerNews again](https://news.ycombinator.com/item?id=28660157)
+
 
 [Twitter](https://twitter.com/search?q=category-theory-illustrated&src=typed_query&f=live)
 
