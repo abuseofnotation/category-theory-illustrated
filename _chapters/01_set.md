@@ -6,7 +6,9 @@ title: Sets
 Sets
 ===
 
-Let's begin our inquiry by looking at the basic theory of sets. You will understand why shortly. For now, it suffices to say that sets are an example of a category. 
+Let's begin our inquiry by looking at the basic theory of sets. Set theory and category theory share many similarities. We can view category theory is a *generalization* of set theory. That is it is is meant to describe the same thing as set theory (everything?), but to do it in a more absract manner, one that is more versatile and (hopefully) simpler. 
+
+In other words sets are an *example of a category* (the *proto-example*, we might say), and it is useful to have examples. 
 
 What is an Abstract Theory
 ===
@@ -14,63 +16,69 @@ What is an Abstract Theory
 > Instead of asking what can be defined and deduced from what is assumed to begin with, we ask instead what more general ideas and principles can be found, in terms of which what was our starting-point can be defined or deduced.
 > Bertrand Russell, from Introduction to Mathematical Philosophy
 
-Most scientific and mathematical theories have a specific domain, to which they are related, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created so it explains how different biological species came to be. And quantum mechanics is a description of what particles are at the low scale. Even the work of most mathematicians, although it is not bound to a specific domain, is strongly related to it, as differential equations are linked to the description of events that change over time. 
+Most scientific and mathematical theories have a specific *domain*, to which they are tied to, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created in order to explain how different *biological species* came to evolve using natural selection, quantum mechanics is a description of how particles behave at a specific scale etc.
 
-Set theory and category theory are different. They are not created to provide a rigorous explanation of how a particular phenomenon works, but to try to provide a more general framework for explaining all kinds of phenomena. Theories that are like that are called *abstract* theories. All theories *use abstraction*, else they would be pretty useless (without it Darwin would have to speak about specific animal species or even individual animals) but few are inherently abstract, so some of their core concepts are left unspecified. Or in other words, all theories are applicable outside of their domains, but set theory and category theory do not have a domain, to begin with.
+Even most mathematical theories, although not inherently *bound* to a specific domain, like the scientific ones, are often strongly related to one, as differential equations are linked to how events change over time. 
 
+Set theory and category theory are different. They are not created to provide a rigorous explanation of how a particular phenomenon works. Instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Theories that are like that are called *abstract* theories. 
+
+The borders of the two are sometimes blurry, because all theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. But theories have core concept that don't refer to anything in particular, but instead are left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
+
+Concrete theories, like the theory of evolution, are composed of concrete concepts. For example the  concept of a *population*, also called a *gene-pool*, refers to a group of individuals that can interbreed. Abstract theories, like set theory, are composed of abstract concepts, like the concept of a set. The concept for a set by itself does not refer to anything. However, we cannot say that it is empty concept, as there are countless things that can be represented by sets, like for example a gene pools can be (very aptly) represented by sets of individual animals. And species of animals can too be represented by set - a set of all populations that can theoretically interbreed.
+
+You already see how abstract theories may be useful. Because they are so simple, they can be used as building blocks of many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later.) Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
+
+<!-- comic - brain on category theory -->
+
+<!--
 People have tried to be precise and at the same time down to Earth for centuries, and only recently discovered that "precise and down to Earth" is an oxymoron. Let's take Euclidian geometry as an example. Yes, Euclidian geometry is precise, because it is valid for all sets of objects, called ("point" "line" "angle" and "circle" etc.), which have relationships, as defined by the five famous axioms. Yes, geometry does, in many instances, describe the natural world, because there are many sets of objects which have these relations. However, its "precise" part and it's "down to Earth" part have nothing to do with each other. We can, for example, define a point as any stain on the floor of your room and that a line as a piece of duct tape, put on the same floor - that will be a completely valid application of the Euclidian laws, albeit not very useful one. Or we can try to use geometry to reason about points on the surface of the Earth, which is a very useful application, of geometry, however not of Euclidian geometry, because Euclidian geometry only describes points on a flat plane, and the Earth is not flat. You can argue that these are actually two separate theories there, which just happen to be perceived as one. You have the axioms, or the postulates on one hand, which are not useful for anything on their own, and you have applications in science and engineering which are somewhat based on them, but not quite. 
+-->
 
 Sets
 ===
 
-Everything in set theory is defined in terms of sets. A set is a collection of things where the "things" can be anything you want. Consider, for example, these balls: 
+Perhaps unsurprisingly, everything in set theory is defined in terms of sets. A set is an collection of things where the "things" can be anything you want (like individuals, populations, genes etc.) Consider, for example, these balls.
 
 ![Balls](elements.svg)
 
-For example, let's construct a set, call it **G** (as gray), consisting of *all* of them. This is how we can mark it:
+Let's construct a set, call it \\(G\\) (as gray) that contains *all* of them as elements. There can only be one such set: Because a set has no structure (there is not order, no ball goes before or after another, there are no members which are "special" with respect to their membership of the set) two sets that contain the same elements are just two pictures of the same set.
 
 ![The set of all balls](all.svg)
 
-The example may look childish but in fact, this set is just as valid as any other set. 
+This example may look overly-simple but in fact it is just as valid as any other one. 
 
-The things that are contained in the set are called its *elements*. A set is like a summary of its elements. It has no other structure, for example, there is not order, no ball goes before or after another, there are no members which are "special" with respect to their membership in the set. Two sets that contain the same elements are also the same.
-
-The key insight about what a set it is that it enables you to reason about several things as if they were one.
-
+The key insight that makes the concept useful is the fact that it enables you to reason about several things as if they were one.
  
 Subsets 
 ---
 
-Let's construct one more set. The set of *all balls that are warm color*. I will call it **Y**, because in the diagram is colored in **y**ellow.
+Let's construct one more set. The set of *all balls that are warm color*. Let's call it \\(Y\\) (because in the diagram is colored in **y**ellow.)
 
-![Y - the set of all balls of warm colors](subset.svg)
+![The set of all balls of warm colors](subset.svg)
 
-Notice that **Y** contains just elements that are also present in **G**. That is, every element of the set of **Y** is also an element in the set **G**. When two sets have this relation, we may say that **Y** is a *subset* of **G** (or **Y ⊆ G**).
+Notice that \\(Y\\) contains only elements that are also present in \\(G\\). That is, every element of the set of \\(Y\\) is also an element in the set \\(G\\). When two sets have this relation, we may say that \\(Y\\) is a *subset* of \\(G\\) (or \\(Y \subseteq G \\) ). A subset resides completely inside its superset When the two are drawn together.
 
 ![Y and G together](set_subset.svg)
 
 Singleton Sets
 ---
 
-The set of all *red balls* contains just one ball.
+The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid - simply put, there are things that are *one of a kind*. The set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set.
 
 ![The singleton set of red balls](singleton.svg)
 
-Like we said above, sets are all about for summarizing *several* elements into one. Still, sets that contain just one element are perfectly valid. Simply, there are things which are one of a kind. Furthermore, if I have a function which expects a set of given items, here shouldn't be any issue if the "items" are just one item. Or to take a real-life example, the set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set - she has published just one novel.
+What's the point of the singleton set? Well, it is part of the language of set theory e.g. if we have a function which expects a set of given items, but  if there is only one item that meets the criteria, we can just create a singleton set with that item.
 
 The Empty set
 ---
 
-Of course if one is a valid answer, so can be zero. If we want a set of all *black balls*  **B** or all the *white balls*, **W**, the answer to all these questions is the same - the empty set. Or in other words.
+Of course if one is a valid answer, so can be zero. If we want a set of all *black balls*  \\(B\\) or all the *white balls*, \\(W\\), the answer to all these questions is the same - the empty set. Or in other words.
 
 ![The empty set](void.svg)
 
+Note that a set is defined only by the items it contains, which means that there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. In other words, the empty set is *unique* set, which makes it a very special one. Formally, the empty set is marked with the symbol \\(\varnothing\\) (so \\(B = W = \varnothing\\)).
 
-Note that a set is defined only by the items it contains, which means that there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. In other words, the empty set is *unique* set, which makes it a very special one. Formally, the empty set is marked with the symbol **∅** (so **B = W = ∅**).
-
-The empty set is a special one, for example, it is a subset of every other set (mathematically speaking, **∀ A \| ∅ ⊆ A**)
-
-We will encounter the empty set again.
+The empty set is a special one, for example, it is a subset of every other set or mathematically speaking, \\(\forall A  \to \varnothing \subseteq A\\)) (\\(\forall\\) means "for all")
 
 Functions
 ===
@@ -80,9 +88,9 @@ Functions
 
 A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the **target set** of the function. 
 
-These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there.) We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other. Or that it *converts* a value from this set to one of the the other one. These different terms show the many different faces of functions.
+These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there.) We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from of this set to one of the the other one. These different terms demonstrate the multifaceted nature of the concept of function.
 
-Here is a function, **f** which converts each ball from the set **R** to the ball with the opposite colour in another set **G** (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: **f: R → G**)
+Here is a function, \\(f\\) which converts each ball from the set \\(R\\) to the ball with the opposite colour in another set \\(G\\) (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: \\(f: R → G\\))
 
 ![Opposite colors](function_one_one.svg)
 
@@ -220,6 +228,8 @@ The concepts of types and sets are related. The concept of sets is simpler - in 
 - A type cannot contain other types, just values. 
 - value can be a member of only one type (there exist the concept of are subtypes, just as there are subsets, but again things are more strict).
 
+{% if site.distribution == 'print'%}
+
 Russell's Paradox
 ---
 
@@ -242,6 +252,8 @@ If we look at the definition, we recognize that the set that we just defined - *
 ![Russel's paradox - option one](russells_paradox_2.svg)
 
 Hm, something is not quite right with this diagram as well - Because of the new adjustments that we made *R* **contains itself**. And removing it from the set would just bring us back to the previous situation. This is Russell's paradox. There are, of course, multiple theories that it does not apply to.
+
+{%endif%}
 
 Functional Composition 
 ===

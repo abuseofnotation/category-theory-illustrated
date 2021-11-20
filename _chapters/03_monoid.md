@@ -98,12 +98,6 @@ In order to form the correct intuition about monoids, it is sometimes useful to 
 
 In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
-<!--
-TODO
-Free Monoids
-===
--->
-
 Other monoid-like objects
 ===
 
@@ -180,11 +174,11 @@ Enumerating all the rotations of a more complex geometrical figure looks quite m
 
 ![The group of rotations in a more complex figure](symmetry_rotation_square.svg)
 
-But it's much simpler to grasp if we notice the following: although our group has many actions, and there are more still for figures with more sides (if I am not mistaken, the number of actions is equal to the number of the sides), all of those actions can be reduced to the repetitive application of just the simplest action, (the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
+But it's much simpler to grasp if we notice the following: although our group has many actions, and there are more still for figures with more sides (if I am not mistaken, the number of actions is equal to the number of the sides), *all those actions can be reduced to the repetitive application of just the simplest action*, (the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this action.
 
 ![The group of rotations in a triangle](symmetry_rotation_cyclic.svg)
 
-Groups and monoids that have this "main" action (called a *generator*) that, when applied enough times, can get you to any state are called *cyclic groups*. All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the integers under addition. Here we can use **+1** or **-1** as generators.
+Groups and monoids that have this "main" action (called a *generator*) that, when applied enough times, can get you to any state of the group, are called *cyclic groups*. All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the integers under addition. Here we can use **+1** or **-1** as generators.
 
 ![The group of numbers under addition](numbers_cyclic.svg)
 
@@ -267,6 +261,8 @@ We already saw one way to create non-cyclic abelian groups - by creating a produ
 
 We can use this law to gain intuitive understanding of the what abelian groups are, but also to test whether a given group can be broken down to a product of more elementary groups.
 
+{% if site.distribution == 'print' %}
+
 Color-mixing monoid as a product
 ---
 
@@ -287,6 +283,8 @@ Or alternatively, you can view it as having multiple states, representing the di
 ![Color-shading cyclic group](cyclic_shading.svg)
 
 In both cases the monoid would be cyclic.
+
+{%endif%}
 
 Groups/monoid of rotations and reflections
 ---
@@ -374,7 +372,9 @@ Categories have an identity morphism for each object, so for categories with jus
 
 Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object this means that all morphisms should be composable with one another. And the monoid operation does exactly that - given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
 
-Group presentations
+{% if site.distribution == 'print' %}
+
+Group/monoid presentations
 ---
 
 When we view cyclic groups/monoids as categories, we would see that they correspond to categories that (besides having just one object) also have *just one morphism* (which, as we said is called *generator*), along with the morphisms that are created when this morphism is composed with itself. In fact the infinite cyclic monoid (which is isomorphic to the integers), can be completely described by this simple definition.
@@ -385,30 +385,47 @@ This is so, because applying the generator again and again yields all elements o
 
 ![Presentation of an infinite cyclic monoid](infinite_cyclic_presentation_elements.svg)
 
-Finite cyclic groups/monoids are the same, except that their definition contains an additional law, stating that that once you compose the generator with itself **n** number of times you get identity morphism. For the cyclic group **Z3** which can be visualized as the group of triangle rotations, this law states that composing the generator with itself **3** times yields the identity morphism.
+Finite cyclic groups/monoids are the same, except that their definition contains an additional law, stating that that once you compose the generator with itself **n** number of times you get identity morphism. For the cyclic group **Z3** (which can be visualized as the group of triangle rotations) this law states that composing the generator with itself **3** times yields the identity morphism.
 
 ![Presentation of an finite cyclic monoid](finite_cyclic_presentation.svg)
 
-Composing the group generator with itself, according to the laws, yields the three morphisms of Z3.
+Composing the group generator with itself, and then applying the law, yields the three morphisms of **Z3**.
 
 ![Presentation of a finite cyclic monoid](finite_cyclic_presentation_elements.svg)
 
-Representing product groups in this way is just a little more complicated than composing the generators and their laws. Let's take Klein four as an example, Klein four has two generators that it inherits from the groups that form it (we can denote them **f** and **g**) and two laws. **f • f = id** and **g • g = id**. 
+Representing product groups in this way is just a little more complex than composing the generators and their laws. But just a little. Let's take Klein four as an example, Klein four has two generators that it inherits from the groups that form it (which we viewed like vertical and horizontal rotation of a non-square rectangle) and two laws that it inherits from them. 
 
 ![Presentation of Klein four](klein_four_presentation.svg)
 
-To make the representation complete, we add the law that we can combine the two generators: **f • g • f • g = id**
+To make the representation complete, we add the law that we can combine the two generators.
+
+![Presentation of Klein four - third law](klein_four_presentation_third_law.svg)
 
 And then, if we start applying the two generators and follow the laws, we get the four elements.
 
-**id**
-**f**
-**g**
-**f • g**
+![The elements of of Klein four](klein_four_presentation_elements.svg)
 
-The set of generators and laws that defines a given group is called the **presentation of a group**.
+The set of generators and laws that defines a given group is called the **presentation of a group**. Every group has a presentation (and finite groups always have a finite presentation.)
 
-Free groups/monoids
+Free monoids
 ---
 
-We saw how different selections of laws give rise to different types of monoids. But what type of monoid would we get if we have *no laws*.
+We saw how picking a different selection of laws gives rise to different types of monoid. But what monoid would we get if we pick no laws at all? This monoid (or rather, monoids, as we get a different one depending on the set we picked) is called a *free monoid*. Here "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else.)
+
+If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is the monoid of integers.
+
+![The free monoid with one generator](infinite_cyclic_presentation_elements.svg)
+
+We can make a free monoid from the set of colorful balls - the monoid's elements would be all possible combinations of the balls.
+
+![The free monoid with the set of balls as a generators](balls_free.svg)
+
+The free monoid is a special one - each element of the free monoid over a given set, can be converted to a corresponding element in any other other monoid that uses the same set by just applying the monoid's laws. For example, here is how the elements above would look like if we apply the laws of the color-mixing monoid.
+
+![Converting the elements of the free monoid to the elements of the color-mixing monoid](balls_free_color_mixing.svg)
+
+**Task:** Write up the laws of the color-mixing monoid.
+
+If we put out programmers' hat, we will see that the type of the free monoid under the set T (which we can denote as `FreeMonoid<T>`) is isomorphic to the type `List<T>` (or `Array<T>`, if you prefer) and that the intuition behind the special property that we described above is actually very simple: it is the fact that keeping objects in a list allows you to convert them to any other structure i.e. when we want to perform some manipulation on a bunch of objects, but we don't know exactly what this manipulation is, we just keep a list of those objects until it's time to do it.
+
+{% endif %}

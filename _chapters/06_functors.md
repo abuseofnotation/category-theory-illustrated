@@ -341,11 +341,11 @@ And now let's talk about one concept that is completely unrelated to functors, n
 
 For example, the function that maps the current time to the distance travelled by some object is monotonoc because the distance travelled increases (or stays the same) as time increases.
 
-![A monotonic function](monotonic_function.svg)
+![A monotonic function](monotone_map.svg)
 
 If we plot this or any other monotonic function on a line graph, we see that it goes just one direction.
 
-![A monotonic function, represented as a line-graph](monotonic_function_line_graph.svg)
+![A monotonic function, represented as a line-graph](monotone_map_plot.svg)
 
 Now we are about to prove that monotonic functions are functors too, ready?
 
@@ -372,10 +372,11 @@ If we compose the two morphisms in the source order, we get a morphism **g•f :
 
 But both morphisms **F(g•f)** and **F(g)•F(f)** have the signature **F(a) ➞ F(c)** and so they must be equal to one another.
 
+<!--
+
 Forgetful Functors
 ===
 
-<!--
 Functors in logic
 ===
 -->
@@ -383,7 +384,7 @@ Functors in logic
 The category of small categories
 ===
 
-Ha, I got you this time (or at least I hope I did). You probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do. And another surprise is that the new category won't be the category of functors (don't worry, we will introduce that in the next chapter.) Instead, we will examine the category of (small) categories. 
+Ha, I got you this time (or at least I hope I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do. And another surprise is that the new category won't be the category of functors (don't worry, we will introduce that in the next chapter.) Instead, we will examine the category of (small) categories. 
 
 This category has all the categories that we saw so far as objects and functors are its morphisms. 
 
@@ -395,10 +396,14 @@ There isn't much to say about this category, it is just a good exercise to try t
 
 [The category of categories](category_of_categories)
 
+{% if site.distribution == 'print' %}
+
 The ghost of Russell's paradox
 ---
 
 We say *small* because otherwise the category will include itself and it's going to be Russell's paradox all over again.
+
+{% endif %}
 
 Categories all the way down
 ---

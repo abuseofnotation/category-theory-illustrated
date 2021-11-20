@@ -345,6 +345,8 @@ And as a result of that, all "circle" relationships (e.g. where you have a weake
 
 All of that structure arises naturally from the simple law of transitivity.
 
+{% if site.distribution == 'print' %}
+
 Maps as preorders
 ---
 
@@ -371,6 +373,8 @@ A specification of a finite state machine consists of a set of states that the m
 But as we saw, a finite state machine is similar to a preorder with a greatest and least object, in which the relations between the objects are represented by functions.
 
 Finite state machines are used in organization planning e.g. imagine a process where an item gets manifactured, gets checked by a quality control person, who, if they find some defficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping - this process can be modelled by the above diagram. 
+
+{%endif%}
 
 <!--
 

@@ -11,7 +11,7 @@
    version="1.1"
    id="svg290"
    sodipodi:docname="trivial_group.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata296">
     <rdf:RDF>
@@ -47,8 +47,8 @@
      inkscape:window-height="1376"
      id="namedview292"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="272.8576"
+     inkscape:zoom="13.136718"
+     inkscape:cx="253.71279"
      inkscape:cy="103.41711"
      inkscape:window-x="0"
      inkscape:window-y="27"
@@ -70,7 +70,7 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#b3b3b3;stroke-width:1.40445">0</tspan></text>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:56.178px;line-height:1.25;font-family:sans-serif;fill:#445500;fill-opacity:1;stroke:none;stroke-width:1.40445;"
+     style="font-style:normal;font-weight:normal;font-size:56.178px;line-height:1.25;font-family:sans-serif;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.40445;"
      x="286.37506"
      y="104.40883"
      id="text3032-3-2-1-0"><tspan
@@ -78,5 +78,5 @@
        id="tspan3030-5-47-7-8"
        x="286.37506"
        y="104.40883"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.40445;fill:#445500;">0</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:1.40445;fill:#e6e6e6;">0</tspan></text>
 </svg>

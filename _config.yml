@@ -8,6 +8,8 @@ name: Category Theory Illustrated
 # Short bio or description (displayed in the header)
 description: A book about category theory
 
+distribution: print
+
 #
 # Flags below are optional
 #
