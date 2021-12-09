@@ -39,53 +39,49 @@
      inkscape:window-height="1376"
      id="namedview3399"
      showgrid="false"
-     inkscape:zoom="1.9171047"
-     inkscape:cx="224.85299"
-     inkscape:cy="114.46657"
+     inkscape:zoom="1.574029"
+     inkscape:cx="323.53563"
+     inkscape:cy="109.19138"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3397"
      inkscape:document-rotation="0" />
   <circle
-     cx="247.93906"
-     cy="95.597382"
+     cx="237.29469"
+     cy="94.607574"
      r="24.6"
      id="circle3369"
      style="opacity:0.12999998;stroke:#000000;stroke-width:6;stroke-miterlimit:10" />
-  <g
-     style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.38899994;stroke-miterlimit:10"
-     id="g1482-7-0-1"
-     transform="matrix(0.32913359,-0.00613048,0.03180803,0.45906746,196.84567,-16.774972)">
-    <path
-       style="stroke-width:35.52600098"
-       inkscape:connector-curvature="0"
-       id="path1478-7-9-7"
-       transform="matrix(0.4768,-0.02932,0.03214,0.42867,147.58,197.367)"
-       d="m 315.1,101.79 c 10.682,-4.135 21.77,-7.738 33.127,-11.074 -8.518,-8.139 -17.577,-16.01 -27.178,-23.616 -2.04,12.119 -3.103,21.663 -5.949,34.69 z" />
-    <path
-       style="stroke-width:10.64900017;paint-order:markers fill stroke"
-       inkscape:connector-curvature="0"
-       id="path1480-1-3-1"
-       transform="matrix(0.89574,0,0,0.81736,18.384,154.236)"
-       d="m 197.036,89.49 c 39.237,-9.724 89.303,-9.828 120.462,-3.317" />
-  </g>
   <circle
-     cx="243.13904"
-     cy="87.297379"
+     cx="232.49467"
+     cy="86.307571"
      r="24.6"
      id="circle3383"
      style="fill:#d71920;stroke:#be1e2d;stroke-width:6;stroke-miterlimit:10" />
+  <g
+     id="g25573">
+    <path
+       inkscape:connector-curvature="0"
+       id="path25536"
+       d="m 271.75484,79.082492 h 51.93678"
+       style="fill:none;stroke:#666666;stroke-width:2.73304653;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path25536-7"
+       d="m 271.19895,96.315335 h 51.93678"
+       style="fill:none;stroke:#666666;stroke-width:2.73304653;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
   <circle
-     cx="345.3692"
-     cy="96.125961"
+     cx="364.68683"
+     cy="96.494637"
      r="24.6"
-     id="circle3369-3"
+     id="circle3369-5"
      style="opacity:0.12999998;stroke:#000000;stroke-width:6;stroke-miterlimit:10" />
   <circle
-     cx="340.56918"
-     cy="87.825958"
+     cx="359.88684"
+     cy="88.194641"
      r="24.6"
-     id="circle3383-6"
+     id="circle3383-3"
      style="fill:#d71920;stroke:#be1e2d;stroke-width:6;stroke-miterlimit:10" />
 </svg>

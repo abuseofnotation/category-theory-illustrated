@@ -469,3 +469,7 @@ In the realm of orders, we say that **G** is the *join* of objects **Y** and **B
 ![Joins as coproduct](coproduct_join_morphisms.svg)
 
 We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation.
+
+<!--
+TODO: Formal concept analysis
+-->
