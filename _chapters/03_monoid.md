@@ -6,38 +6,38 @@ title: Monoids
 Monoids etc
 ===
 
-Since we are done with categories, let's look at some other structures that are also interesting - monoids. Like categories, monoids/groups are also abstract systems consisting of set of elements and rules for manipulating these elements, however the rules look different than the rules for categories. Let's see them.
+Since we are done with categories, let's look at some other structures that are also interesting - monoids. Like categories, monoids/groups are also abstract systems consisting of set of elements and operations for manipulating these elements, however the operations look different than the operations we have for categories. Let's see them.
 
 What are monoids
 ===
 
-Monoids are simpler than categories. A monoid is defined by a collection/set of elements, together with a *monoid operation* - a rule that allows us to combine two element and produce a third one of the same kind.
+Monoids are simpler than categories. A monoid is defined by a collection/set of elements, together with an *monoid operation* - a rule for combining two elements that and produces a third element one of the same kind.
 
 Let's take our familiar colorful balls.
 
 ![Balls](balls.svg)
 
-A monoid can be defined using this set and a operation for "combining" two balls into one. An example of such rule would be blending the colors of the balls, as if we are mixing paint.
+We can define a monoid based on this set by defining a operation for "combining" two balls into one. An example of such operation would be blending the colors of the balls, as if we are mixing paint.
 
-![A rule for combining balls](balls_rule.svg)
+![A operation for combining balls](balls_operation.svg)
 
-You can probably think of other ways to define such a rule. This will help you realize that there can be many ways to create a monoid from a given set of set elements i.e. the monoid is not the set itself, it is the set *together with the rule*.
+You can probably think of other ways to define such an operation. This will help you realize that there can be many ways to create a monoid from a given set of set elements i.e. the monoid is not the set itself, it is the set *together with the operation*.
 
 Associativity
 ---
 
-The monoid rule should, like functional composition, be *associative* i.e. applying it on the same number of elements in a different order should make no difference.
+The monoid operation should, like functional composition, be *associative* i.e. applying it on the same number of elements in a different order should make no difference.
 
 ![Associativity in the color mixing operation](balls_associativity.svg)
 
-When a rule is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed of, or add a term that is present at both sides of an equation and retaining the equality of the existing terms.
+When a operation is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed of, or add a term that is present at both sides of an equation and retaining the equality of the existing terms.
 
 ![Associativity in the color mixing operation](balls_arithmetic.svg)
 
 The identity element
 ---
 
-Actually, not any (associative) rule for combining elements makes the balls form a monoid (it makes them form a *semigroup*, which is also a thing, but that's a separate topic). To be a monoid, a set must feature what is called an *identity element* of a given rule, the concept of which you are already familiar - it is an element that when combined with any other element gives back that same element (not the identity but the other one). Or simply $x • i = x$ and $i • x = x$ for any $x$. 
+Actually, not any (associative) operation for combining elements makes the balls form a monoid (it makes them form a *semigroup*, which is also a thing, but that's a separate topic). To be a monoid, a set must feature what is called an *identity element* of a given operation, the concept of which you are already familiar from both sets and categories - it is an element that when combined with any other element gives back that same element (not the identity but the other one). Or simply $x • i = x$ and $i • x = x$ for any $x$. 
 
 In the case of our color-mixing monoid the identity element is the white ball (or perhaps a transparent one, if we have one).
 
@@ -48,7 +48,7 @@ As you probably remember from the last chapter, functional composition is also a
 Basic monoids 
 ===
 
-To keep the suspense, instead of discussing the relationship between monoids and categories, we are going through see some simple examples of monoids first. 
+To keep the suspense, before we discuss the relationship between monoids and categories, we are going through see some simple examples of monoids. 
 
 Monoids from numbers
 ---
@@ -67,45 +67,58 @@ Anyways, the natural numbers also form a monoid under multiplication as well.
 
 **Task:** Go through other mathematical operations and verify that they are monoidal.
 
-Monoid/group operations as functions
----
-
-We never defined the monoid rule/operation formally. However, we said that $$+$$ is such an operation. And we know that plus is just an a function that accepts a product of two numbers and returns a number (formally $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$).
-
-Every operator is like that - is just a function that takes a pair of monoid elements and returns one element of the same type.
-
-So this is one way to define the monoid operation. There is another way, which we will see later.
-
 Monoids from boolean algebra
 ---
 
-Thinking about other operations that we covered , we may remember the boolean operations *AND* and *OR*. which operate on the set, consisting of just two values ${ True, False }$. Those operations form monoids too. Proving that they do is easy enough by just enumerating all cases. 
+Thinking about operations that we covered, we may remember the boolean operations *AND* and *OR*. Both of them form monoids, which operate on the set, consisting of just two values $\{ True, False \}$. 
 
-We can prove that $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ in all possible ways:
+**Task:** Prove that $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all  all possible values. Do the same for *OR*.
 
-$(TRUE AND FALSE) AND TRUE = TRUE AND (FALSE AND TRUE)$
+**Question:** Which are the identity elements of the *AND* and *OR* operations?
 
-$(TRUE AND FALSE) AND FALSE = TRUE AND (FALSE AND FALSE)$
+Monoid operations
+===
 
-$(FALSE AND FALSE) AND TRUE = FALSE AND (FALSE AND TRUE)$
-
-...
-
-And we can prove that $TRUE$ is the identity element by expanding the other formulas that state that for all elements $A$ $I AND A = A$.
-
-$False \land True = False$
-
-$True \land True = True$
-
-...and then do the same for $A \land I = A$.
-
-
-Monoid objects as actions
+Monoid operations as functions
 ---
 
-In order to form the correct intuition about monoids, it is sometimes useful to avoid thinking of the elements in the set as objects, but instead think of them as *actions*, for example, in the addition monoid, numbers should not be seen as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of adding one to a given quantity). In other words, when we think of an element, think of it together with the operation (in this case addition).
+We never defined the monoid rule/operation formally. However, we said that $$+$$ is such an operation. And we know that plus is just an a function that accepts a product of two numbers and returns a number (formally $+: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$).
 
-In general, we use monoids and related structures as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. We can do that, provided that the object's state is determined solely by the actions that are performed on it, this allows us to leave the object out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
+![The plus operation as a function](plus_operation.svg)
+
+Every other monoid operation can also be represented as a function that takes a pair of monoid elements and returns one element of the same type.
+
+![The color-mixing operation as a function](color_mixing_operation.svg)
+
+So this is *one way* to define the monoid operation. But there is another way, which we will see next.
+
+Currying
+---
+
+Using pairs is one way to represent multi-argument function. But there is another way, which makes use of a concept (which is also very prominent in programming) called *currying*. Currying is the notion that a function that accepts two arguments and returns a value, is isomorphic to a function that accepts one argument and returns another function which accepts the other argument. Formally $A\times B\to C\cong A\to B \to C$.
+
+This means that we are always able to transforms a function that takes a pair of objects to a function that takes just one object and returns a function that takes another one.
+
+Monoid elements as functions
+---
+
+Using currying, we can represent monoid elements as functions by uniting them to the monoid operation. For example, the operation of the addition monoid, that we saw above has the following type signature. 
+
+$+: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$
+
+By the formula above, this is equivalent to.
+
+$+: \mathbb{Z} \to (\mathbb{Z} \to \mathbb{Z})$
+
+When we pair that function with an element from the monoid, (say $2$), it becomes the function $+2$ that adds 2 to a given number. 
+
+$+2: \mathbb{Z} \to \mathbb{Z}$
+
+And because the monoid operation is always a given in the context of a given monoid, we can view the element $2$ and the function $+2$ as equivalent. 
+
+In other words, instead of representing the monoid elements in the set as *objects* that are combined using a function, we can represent them as *functions* themselves. For example, in the addition monoid, numbers can be seen both as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of adding two to a given quantity). 
+
+This viewpoint is useful when we use monoids as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
 Other monoid-like objects
 ===
@@ -125,7 +138,7 @@ As we said, addition is commutative as well - it does not matter whether if I ha
 
 ![Commutative monoid operation](addition_commutative.svg)
 
-All monoids that we examined so far are also *commutative*, but we will see some non-commutative ones later. 
+All monoids that we examined so far are also *commutative*. We will see some non-commutative ones later. 
 
 Groups
 ---
@@ -323,9 +336,7 @@ We began by defining a monoid as a set of composable *elements*. But then we sai
 Cayley's theorem
 ---
 
-But if we try to formalize the concept of actions, we will see that they are actually *functions*. Equating monoid elements with functions by unifying them with the monoid operation makes use of a concept (which is also very prominent in programming) called *currying*. It is the the notion that a function that accepts two arguments, together with one of those arguments already supplied, can be viewed as a function which takes just one argument. e.g. the monoid operation of the monoid of addition $+$ with signature $(number, number) ➞ number$ when paired with an element of this monoid (say $2$) is equivalent to the function which a function we can call $+2$ (with a signature$ (number) ➞ number$) that adds 2 to a given number. And because the monoid operation is a given in the context of a given monoid, we can view the element $2$ and the function $+2$ as equivalent. 
-
-Let's review another example of how that happens using the group/monoid $Z3$.
+Let's begin with the group/monoid $Z3$.
 
 ![The group of rotations in a triangle - group notation](symmetry_rotation_actions.svg)
 
