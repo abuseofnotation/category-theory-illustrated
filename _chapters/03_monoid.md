@@ -122,18 +122,20 @@ If we view *monoids* as a means of modeling the effect of applying a set of (ass
 
 A nice example of a monoid that we covered that is also a group is the set of integers under addition. The inverse of each number is its opposite number (positive numbers' inverse are negatives and vice versa). The above formula, then, becomes $x + (-x) = 0$
 
-The study of groups is a field that is much bigger than the theory of monoids (and perhaps bigger than category theory itself). And it all started with the what are now called the "symmetry groups" which we will look into in more detail.
+The study of groups is a field that is much bigger than the theory of monoids (and perhaps bigger than category theory itself). And one of its the biggest branches is the study of the "symmetry groups" which we will look into next.
 
 Summary
 ---
 
-The algebraic structures that we saw can be summarized based on the laws that define them in this table.
+But before that, just a quick note - the algebraic structures that we saw can be summarized based on the laws that define them in this table.
 
 | | Semigroups | Monoids | Groups |
 |---| ---             | ---        |
 |Associativity| X | X | X |
 |Identity| | X | X |
 |Invertability | |  | X |
+
+And now for the symmetry groups.
 
 Symmetry groups and group classifications
 ===
@@ -170,14 +172,15 @@ But it gets  much simpler to grasp if we notice the following: although our grou
 
 ![The group of rotations in a triangle](symmetry_rotation_cyclic.svg)
 
-Symmetry groups that have such "main" rotation, and in general, groups and monoids that have an object that is capable of generating any other object by it's repeated application, are called *cyclic groups*. And any such rotation (there may be several options to chose from) is called the group's *generator*.
+Symmetry groups that have such "main" rotation, and, in general, groups and monoids that have an object that is capable of generating all other objects by it's repeated application, are called *cyclic groups*. And such rotation are called the group's *generator*.
 
 All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the natural numbers under addition. Here we can use $+1$ or $-1$ as generators.
 
 ![The group of numbers under addition](numbers_cyclic.svg)
 
 Wait, how can this be a cyclic group when there are no cycles? This is because the integers are an *infinite* cyclic group. 
-An number-based example of a finite cyclic group is the group of natural numbers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
+
+A number-based example of a finite cyclic group is the group of natural numbers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
 
 For example: $1 \pmod{12} = 1$ (because $1/12 = 0$ with $1$ remainder) $2 \pmod{12} = 2$ etc. 
 
@@ -193,30 +196,37 @@ All cyclic groups that have the same number of elements (or that are of the *sam
 
 ![The group of numbers under addition](symmetry_modular.svg)
 
-As in category theory, in group theory isomorphic groups they considered instances of one and the same group. For example the one above is called $Z3$.
+All cyclic groups are *commutative* (or "abelian" as they are also called). 
 
-Also, all cyclic groups are *commutative* (or "abelian" as they are also called). 
-
-**Task:** Show that there are no other groups with 3 objects, other than $Z3$.
+**Task:** Show that there are no other groups with 3 objects, other than $Z_3$.
 
 There are abelian groups that are not cyclic, but, as we shall see below, the concepts of cyclic groups and of abelian groups are deeply related.
+
+Group isomorphisms
+---
+
+We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now - an isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \bullet b) = f(a) \bullet f(b)$. Visually, the diagrams of isomorphic groups have the same structure.
+
+![Group isomorphism between different representations of S3](group_isomorphism.svg)
+
+As in category theory, in group theory isomorphic groups they considered instances of one and the same group. For example the one above is called $Z_3$.
 
 Finite groups
 ---
 
 Like with sets, the concept of an isomorphism in group theory allows us to identify common finite groups.
 
-The smallest group is just the trivial group $Z1$ that has just one element.
+The smallest group is just the trivial group $Z_1$ that has just one element.
 
 ![The smallest group](trivial_group.svg)
 
-The smallest non-trivial group is the group $Z2$ that has two elements.
+The smallest non-trivial group is the group $Z_2$ that has two elements.
 
 ![The smallest non-trivial group](smallest_group.svg)
 
-$Z2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set.
+$Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set.
 
-Like $Z3$, $Z1$ and $Z2$ are cyclic.
+Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 
 Group/monoid products
 ---
@@ -247,7 +257,9 @@ Another way to present the Klein-four group is the *group of symmetries of a non
 
 Like all product groups, the Klein-four group is *non-cyclic* (because there are not one, but two generators) - vertical and horizontal spin. It is, however, still *abelian*, because the ordering of the actions still does not matter for the end results. Actually, the Klein-four group is the *smallest non-cyclic group*.
 
-In fact all products groups (except the ones that feature the trivial group) are always *non-cyclic*, because even if the two groups that comprise the product it are cyclic, and have just 1 generator each, their product would have 2 generators. And  product groups are they are still abelian, provided that the groups which they unite are abelian - we can see that this is true, by noticing that, although the generators are more than one, each of them acts only on it's own part of the group, so they don't interfere with each other in any way.
+In fact, products groups (except the ones that feature the trivial group) are always *non-cyclic*, because even if the two groups that comprise the product it are cyclic, and have just 1 generator each, their product would have 2 generators. 
+
+Product groups are still abelian, provided that the groups that form them are abelian - we can see that this is true by noticing that, although the generators are more than one, each of them acts only on it's own part of the group, so they don't interfere with each other in any way.
 
 Fundamental theorem of Finite Abelian groups
 ---
@@ -339,14 +351,14 @@ This is one part of the isomorphism, the other part is the equivalent function f
 
 **Task:** Write the other part of the isomorphism.
 
-Monoid elements as functions
+Monoid elements as functions/permutations
 ---
 
-Let's take a step back and examine the groups/monoids that we covered so far in the light of what we learned. We started off by representing group operation as a function from pairs. For example, the operation of a symmetric group,(let's take $Z3$ as an example) are actions that converts two rotations to another another rotation. 
+Let's take a step back and examine the groups/monoids that we covered so far in the light of what we learned. We started off by representing group operation as a function from pairs. For example, the operation of a symmetric group,(let's take $Z_3$ as an example) are actions that converts two rotations to another another rotation. 
 
 ![The group of rotations in a triangle - group notation](symmetry_rotation_actions.svg)
 
-Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself - as functional composition. For example, the 3 elements of $Z3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way.)
+Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself - as functional composition. For example, the 3 elements of $Z_3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way.)
 
 ![The group of rotations in a triangle - set notation](symmetry_rotation_functions.svg)
 
@@ -356,11 +368,11 @@ Formally, the operation of the addition monoid, that we saw above has the follow
 
 $+: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$
 
-Because of the curry isomorphism, this operation is equivalent to the following function.
+Because of the isomorphism we presented above, this function is equivalent to the following function.
 
 $+: \mathbb{Z} \to (\mathbb{Z} \to \mathbb{Z})$
 
-When we apply an element of the monoid to to that function (say $2$), the result is the function $+2$ that adds 2 to a given number.
+When we apply an element of the monoid to that function (say $2$), the result is the function $+2$ that adds 2 to a given number.
 
 $+2: \mathbb{Z} \to \mathbb{Z}$
 
@@ -381,49 +393,79 @@ And the same is valid for the addition monoid - number functions can be combined
 
 $+2 \bullet +3 \cong +5$
 
-So, basically the functions that represent the elements of a monoid also form a monoid, under the operation of functional composition (and the functions that represent the elements that form a group also form a group). All we have to do to prove that is true is to see which is the identity objects are and to find the inverses.
+So, basically the functions that represent the elements of a monoid also form a monoid, under the operation of functional composition (and the functions that represent the elements that form a group also form a group). 
 
-**Question:** Indeed, which is the identity element of function groups?
+**Question:** Which are the identity elements of function groups?
 
 **Task:** Show that the functions representing inverse group elements are also inverse.
-
-Group isomorphisms
----
-
-We already mentioned group isomorphisms once, but we didn't define them. Let's do that now - an isomorphism between two groups is an isomorphism between their respective sets of elements and an isomorphism of between the results of the application of group operation. Or, visually, if we take the diagrams, of two isomorphic group, there must be one isomorphism between the group objects, and one between the functions.
-
-![The group of rotations in a triangle - set notation and normal notation](symmetry_rotation_comparison.svg)
-
-
-And furthermore, yielding the same results as the ones we get if we would sum the same numbers as objects.
 
 Cayley's theorem
 ---
 
-So, the representation of the monoid's elements as functions actually yields a representation of the monoid itself (sometimes called it's standard representation.)
+We saw how using currying we can represent the elements of any group as permutions that, also form a monoid. Cayley's theorem tells us that those two groups are isomorphic:
 
-For example, the identity element of the addition monoid $0$ (zero) is isomorphic to the function $+0$, which of course is isomorphic to the identity function and the identity law holds.
+> Any group is isomorphic to a permutation group. 
 
-$+2 \bullet +0 \cong +2$
+Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A$ for any $A$.
 
-This viewpoint is useful when we use monoids as a way to model how a set of (associative) actions that are performed on a given object (or objects) alter it's state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
+![The group of rotations in a triangle - set notation and normal notation](symmetry_rotation_comparison.svg)
+
+Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called it's standard representation.) 
+
+Cayley's theorem may not seem very impressibe, but that only shows how influental it has been as a result.
+
+{% if site.distribution == 'print' %}
+
+Interlude: Symmetric groups
+---
+
+The most important thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times2\times3...\times n$ or $n!$ (n-factorial.) 
+
+So, for example the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
+
+![The S1 symmetric group](s1.svg)
+
+The group $\mathrm{S}_2$, has $1\times2=2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$.)
+
+![The S2 symmetric group](s2.svg)
+
+And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function - it has $1\times2\times3=6$ elements.
+
+![The S3 symmetric group](s3.svg)
+
+Each symmetric group $\mathrm{S}_n$ contains all groups of order $n$ - this is so, because (as we saw in the prev section) every group with $n$ elements is isomorphic to a set of permutations on the set of $n$ elements and the group $\mathrm{S}_n$ contains all such permutations. In particular, $\mathrm{S}_1$ is isomorphic to $Z_1$ (the *trivial group*), $\mathrm{S}_2$ is isomorphic to $Z_2$ (the *boolean group*). And the top three permutations of $\mathrm{S}_3$ are isomorphic to the group $Z_3$. 
+
+![The S3 symmetric group](s3_z3.svg)
+
+Based on this insight, can state Cayley's theorem in terms of symmetric groups in the following way: 
+
+> All groups are isomorphic to subgroups of symmetric groups.
+
+**Task:** Show how the two are equivalent.
+
+Fun fact: the study of group theory actually started by examining symmetric groups, so this theorem was actually a prerequisite for the emergence of the normal definition of groups that we all know and love (OK, at least *I* love it) - it provided a proof that the notion described by this definition is equivalent to the already existing notion of symmetric groups.
+
+{% endif %}
 
 Monoids as categories
 ---
 
-Converting the monoid's elements to actions/functions yields an accurate representation of the monoid in terms of set theory. 
+We saw that converting the monoid's elements to actions/functions yields an accurate representation of the monoid in terms of sets and functions. 
 
 ![The group of rotations in a triangle - set notation and normal notation](symmetry_rotation_set.svg)
 
-However, it seems that some of the structure in this representation is kinda redundant - you have the same things, encoded as both objects and functions - so, it would do it good if we can simplify it. And we can do that by depicting it as an external (categorical) diagram.
+However, it seems that the set part of the structure in this representation is kinda redundant - you have the same set everywhere - so, it would do it good if we can simplify it. And we can do that by depicting it as an external (categorical) diagram.
 
 ![The group of rotations in a triangle - categorical notation](symmetry_rotation_external.svg)
 
-But wait, if *sets* in set theory correspond to *objects* in category theory and if all monoid actions have just one set as source and target, then the corresponding category would have just one object. So the correct representation would involve just one point from which all arrows come and to which they go. The only difference would be the number of morphisms that the object has and the relationship between them.
+But wait, if the monoids' underlying *sets* correspond to *objects* in category theory, then the corresponding category would have just one object. And so the correct representation would involve just one point from which all arrows come and to which they go. 
+
 
 ![The group of rotations in a triangle - categorical notation](symmetry_rotation_category.svg)
 
-The intuition behind this representation is encompassed by the requirement of $closure$ that monoid and group operations have - it is the law that applying the operation on any two elements of the set of elements that form the monoid always results in an element that is also a member of the set e.g. no matter how do you flip a triangle, you'd still get a triangle. 
+The only difference between differend kind of monoids would be the number of morphisms that they have and the relationship between them.
+
+The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of $closure$ that monoid and group operations have and that categories lack - it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how do you flip a triangle, you'd still get a triangle. 
 
 | | Categories | Monoids | Groups 
 |---| ---             | ---        |
@@ -436,42 +478,44 @@ When we view a monoid as a category, this law says that all morphisms in the cat
 
 Let's elaborate on this thought by reviewing the definition of a category from chapter 2.
 
-> A category is a collection of $objects$ (we can think of them as points) and $morphisms$ (arrows) that go from one object to another, where:
+> A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have the identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
 
-Aside from the little-confusing fact that *monoid objects* are *morphisms when viewed categorically*, this describes exactly what monoids are. 
+Aside from the little-confusing fact that *monoid objects are morphisms* when viewed categorically, this describes exactly what monoids are. 
 
 Categories have an identity morphism for each object, so for categories with just one object, there should also be exactly one identity morphism. And monoids do have an identity object, which when viewed categorically corresponds to that identity morphism.
 
-Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object this means that all morphisms should be composable with one another. And the monoid operation does exactly that - given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
+Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object this means that *all morphisms should be composable* with one another. And the monoid operation does exactly that - given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
+
+Philosophically, defining a monoid as a one-object category means corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter it's state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
 {% if site.distribution == 'print' %}
 
 Group/monoid presentations
 ---
 
-When we view cyclic groups/monoids as categories, we would see that they correspond to categories that (besides having just one object) also have *just one morphism* (which, as we said is called *generator*), along with the morphisms that are created when this morphism is composed with itself. In fact the infinite cyclic monoid (which is isomorphic to the integers), can be completely described by this simple definition.
+When we view cyclic groups/monoids as categories, we would see that they correspond to categories that (besides having just one object) also have *just one morphism* (which, as we said, is called a *generator*) along with the morphisms that are created when this morphism is composed with itself. In fact the infinite cyclic monoid (which is isomorphic to the natural numbers), can be completely described by this simple definition.
 
 ![Presentation of an infinite cyclic monoid](infinite_cyclic_presentation.svg)
 
-This is so, because applying the generator again and again yields all elements of the infinite cyclic group. Specifically, if we view the generator as the action $+1$ then we get the integers.
+This is so, because applying the generator again and again yields all elements of the infinite cyclic group. Specifically, if we view the generator as the action $+1$ then we get the natural numbers.
 
 ![Presentation of an infinite cyclic monoid](infinite_cyclic_presentation_elements.svg)
 
-Finite cyclic groups/monoids are the same, except that their definition contains an additional law, stating that that once you compose the generator with itself $n$ number of times you get identity morphism. For the cyclic group $Z3$ (which can be visualized as the group of triangle rotations) this law states that composing the generator with itself $3$ times yields the identity morphism.
+Finite cyclic groups/monoids are the same, except that their definition contains an additional law, stating that that once you compose the generator with itself $n$ number of times, you get identity morphism. For the cyclic group $Z_3$ (which can be visualized as the group of triangle rotations) this law states that composing the generator with itself $3$ times yields the identity morphism.
 
 ![Presentation of an finite cyclic monoid](finite_cyclic_presentation.svg)
 
-Composing the group generator with itself, and then applying the law, yields the three morphisms of $Z3$.
+Composing the group generator with itself, and then applying the law, yields the three morphisms of $Z_3$.
 
 ![Presentation of a finite cyclic monoid](finite_cyclic_presentation_elements.svg)
 
-Representing product groups in this way is just a little more complex than composing the generators and their laws. But just a little. Let's take Klein four as an example, Klein four has two generators that it inherits from the groups that form it (which we viewed like vertical and horizontal rotation of a non-square rectangle) and two laws that it inherits from them. 
+We can represent product groups this way too. Let's take Klein four-group as an example, The Klein four-group has two generators that it inherits from the groups that form it (which we viewed like vertical and horizontal rotation of a non-square rectangle) each of which comes with one law.
 
 ![Presentation of Klein four](klein_four_presentation.svg)
 
-To make the representation complete, we add the law that we can combine the two generators.
+To make the representation complete, we add the law for combining the two generators.
 
 ![Presentation of Klein four - third law](klein_four_presentation_third_law.svg)
 
@@ -479,14 +523,14 @@ And then, if we start applying the two generators and follow the laws, we get th
 
 ![The elements of of Klein four](klein_four_presentation_elements.svg)
 
-The set of generators and laws that defines a given group is called the $presentation of a group$. Every group has a presentation (and finite groups always have a finite presentation.)
+The set of generators and laws that defines a given group is called the *presentation of a group*. Every group has a presentation.
 
 Free monoids
 ---
 
-We saw how picking a different selection of laws gives rise to different types of monoid. But what monoid would we get if we pick no laws at all? This monoid (or rather, monoids, as we get a different one depending on the set we picked) is called a *free monoid*. Here "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else.)
+We saw how picking a different selection of laws gives rise to different types of monoid. But what monoids would we get if we pick no laws at all? These monoids (we get a different one depending on the set we picked) are called a *free monoids* (the word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else.)
 
-If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is the monoid of integers.
+If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is isomorphic to the monoid of integers.
 
 ![The free monoid with one generator](infinite_cyclic_presentation_elements.svg)
 
@@ -500,6 +544,6 @@ The free monoid is a special one - each element of the free monoid over a given 
 
 **Task:** Write up the laws of the color-mixing monoid.
 
-If we put out programmers' hat, we will see that the type of the free monoid under the set T (which we can denote as `FreeMonoid<T>`) is isomorphic to the type `List<T>` (or `Array<T>`, if you prefer) and that the intuition behind the special property that we described above is actually very simple: it is the fact that keeping objects in a list allows you to convert them to any other structure i.e. when we want to perform some manipulation on a bunch of objects, but we don't know exactly what this manipulation is, we just keep a list of those objects until it's time to do it.
+If we put out programmers' hat, we will see that the type of the free monoid under the set T (which we can denote as `FreeMonoid<T>`) is isomorphic to the type `List<T>` (or `Array<T>`, if you prefer) and that the intuition behind the special property that we described above is actually very simple: keeping objects in a list allows you to convert them to any other structure i.e. when we want to perform some manipulation on a bunch of objects, but we don't know exactly what this manipulation is, we just keep a list of those objects until it's time to do it.
 
 {% endif %}
