@@ -127,13 +127,13 @@ In category theory, this type of property that a given object might possess (par
 Sums
 ===
 
-We will now study a construct that is pretty similar to the product but at the same time is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one, without erasing their structure. But different as it encodes a quite different type of relation - a product encodes an **AND** relation between two sets, while the sum encodes an **OR** relation. 
+We will now study a construct that is pretty similar to the product but at the same time is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one, without erasing their structure. But different as it encodes a quite different type of relation - a product encodes an *and*  relation between two sets, while the sum encodes an *or* relation. 
 
 A sum of two sets $B$ and $Y$, denoted $B + Y$ is a set that contains *all elements from the first set combined with all elements from the second one*. 
 
 ![Sum or coproduct](coproduct.svg)
 
-We can immediately see the connection with the **OR** logical structure: For example, because a parent is either a mother or a father of a child, the set of all parents is the sum of the set of mothers and the set of fathers, or $P = M + F$.
+We can immediately see the connection with the *or* logical structure: For example, because a parent is either a mother or a father of a child, the set of all parents is the sum of the set of mothers and the set of fathers, or $P = M + F$.
 
 
 Defining Sums in Terms of Sets
@@ -152,9 +152,9 @@ But again, this distinction is only relevant only when the two sets have common 
 Defining sums in terms of functions
 ---
 
-As you might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. We said that sums express an **OR** relation between two things. 
+As you might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. We said that sums express an *or* relation between two things. 
 
-A property of every **OR** relation is that if something is an $A$ that something is also an $A \vee B$ , and same for $B$ (The $\vee$ symbol means **OR**, by the way). For example, if my hair is *brown*, then my hair is also *either blond or brown*. This is what **OR** means, right? This property can be expressed as a function, two functions actually - one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$.)
+A property of every *or* relation is that if something is an $A$ that something is also an $A \vee B$ , and same for $B$ (The $\vee$ symbol means *or* by the way). For example, if my hair is *brown*, then my hair is also *either blond or brown*. This is what *or* means, right? This property can be expressed as a function, two functions actually - one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$.)
 
 ![Coproduct, external diagram](coproduct_external.svg)
 
@@ -191,16 +191,16 @@ Interlude - De Morgan duality
 
 Now let's look at how the concepts of product and sum from the viewpoint of *logic*. We mentioned that:
 
-- The *product* of two sets contains an element of the first one **AND** one element of the second one.
-- A *sum* of two sets contains an element of the first one **OR** one element of the second one.
+- The *product* of two sets contains an element of the first one *and* one element of the second one.
+- A *sum* of two sets contains an element of the first one *or* one element of the second one.
 
-When we view those sets as propositions, we discover the concept of the *product* ($\times$) corresponds exactly to the **AND** relation in logic (denoted $\land$.) From this viewpoint, the function $Y \times B \to Y$  can be viewed as instance of a logical rule of inference called *conjunction elimination* (also called *simplification*) stating that, $Y  \land B \to Y$, for example, if your hair is partly blond and partly brown, then it is partly blond.
+When we view those sets as propositions, we discover the concept of the *product* ($\times$) corresponds exactly to the *and* relation in logic (denoted $\land$.) From this viewpoint, the function $Y \times B \to Y$  can be viewed as instance of a logical rule of inference called *conjunction elimination* (also called *simplification*) stating that, $Y  \land B \to Y$, for example, if your hair is partly blond and partly brown, then it is partly blond.
 
-By the same token, the concept of a *sum* ($+$) corresponds the **OR** relation in logic (denoted $\lor$.) From this viewpoint, the function $Y  \to Y + B$  can be viewed as instance of a logical rule of inference called *disjunction introduction*, stating that, $Y  \to Y \lor B$ for example, if your hair is blond, it is either blond or brown.
+By the same token, the concept of a *sum* ($+$) corresponds the *or* relation in logic (denoted $\lor$.) From this viewpoint, the function $Y  \to Y + B$  can be viewed as instance of a logical rule of inference called *disjunction introduction*, stating that, $Y  \to Y \lor B$ for example, if your hair is blond, it is either blond or brown.
 
-This means, among other things, that the concepts of **AND** and **OR** are also dual - an idea which was put forward in the 19th century by the mathematician Augustus De Morgan and is henceforth known as *De Morgan duality*, and which is a predecessor to the modern idea of duality in category theory, that we examined before. 
+This means, among other things, that the concepts of *and* and *or* are also dual - an idea which was put forward in the 19th century by the mathematician Augustus De Morgan and is henceforth known as *De Morgan duality*, and which is a predecessor to the modern idea of duality in category theory, that we examined before. 
 
-This duality is subtly encoded in the logical symbols for **AND** and **OR** ($\land$ and $\lor$) - they are nothing but stylized-versions of the diagrams of products and coproducts.
+This duality is subtly encoded in the logical symbols for *and* and *or* ($\land$ and $\lor$) - they are nothing but stylized-versions of the diagrams of products and coproducts.
 
 ![Coproduct and product](demorgan_duality.svg)
 
@@ -212,7 +212,7 @@ $\neg(A \vee B) = \neg{A} \wedge \neg{B}$
 
 You can read the second formula as, for example, if my hair is not blond *or* brown, this means that my hair is not blond *and* my hair is not brown, and vice versa (the connection work both ways)
 
-Now we will go through the formulas and we would try to show that they are actually a simple corollary of the duality between **AND** and **OR**. 
+Now we will go through the formulas and we would try to show that they are actually a simple corollary of the duality between *and* and *or* 
 
 Let's say we want to find the statement that is opposite of "blond *or* brown".
 
@@ -224,7 +224,7 @@ $\neg{A} \vee \neg{B}$
 
 However, this statement is clearly not the opposite of "blond *or* brown"(saying that my hair is not blond *or* not brown does in fact allow it to be blond and also allows for it to be brown, it just doesn't allow it to be both of these things.)
 
-So what have we missed? Simple - although we replaced the propositions that constitute our proposition with their opposites, we didn't replace the operator that connects them - it is still **OR** for both propositions. So we must replace it with **OR**'s converse. As we said earlier, and as you can see by analyzing this example, this operator is **AND**. So the formula becomes "not blond *and* not brown".
+So what have we missed? Simple - although we replaced the propositions that constitute our proposition with their opposites, we didn't replace the operator that connects them - it is still *or* for both propositions. So we must replace it with *or* converse. As we said earlier, and as you can see by analyzing this example, this operator is *and* So the formula becomes "not blond *and* not brown".
 
 $\neg{A} \wedge \neg{B}$ 
 
@@ -361,7 +361,7 @@ It's important to mark this morphism, because there can be (let's add the very i
 Isomorphism
 ---
 
-Why do we need to define a morphism that does nothing? It's because morphisms are the basic building blocks of our language, and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined, we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory). Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms - ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \bullet g = id B$ and $g \bullet f = id A$. 
+Why do we need to define a morphism that does nothing? It's because morphisms are the basic building blocks of our language, and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined, we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory). Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms - ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \bullet g = id_{B}$ and $g \bullet f = id_{A}$. 
 
 And here is the same thing expressed with a commuting diagram.
 

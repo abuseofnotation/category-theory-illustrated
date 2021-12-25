@@ -11,15 +11,15 @@ Since we are done with categories, let's look at some other structures that are 
 What are monoids
 ===
 
-Monoids are simpler than categories. A monoid is defined by a collection/set of elements, together with an *monoid operation* - a rule for combining two elements that and produces a third element one of the same kind.
+Monoids are simpler than categories. A monoid is defined by a collection/set of elements (called the monoid's *underlying set*, together with an *monoid operation* - a rule for combining two elements that produces a third element one of the same kind.
 
 Let's take our familiar colorful balls.
 
 ![Balls](balls.svg)
 
-We can define a monoid based on this set by defining a operation for "combining" two balls into one. An example of such operation would be blending the colors of the balls, as if we are mixing paint.
+We can define a monoid based on this set by defining an operation for "combining" two balls into one. An example of such operation would be blending the colors of the balls, as if we are mixing paint.
 
-![A operation for combining balls](balls_operation.svg)
+![An operation for combining balls](balls_operation.svg)
 
 You can probably think of other ways to define such an operation. This will help you realize that there can be many ways to create a monoid from a given set of set elements i.e. the monoid is not the set itself, it is the set *together with the operation*.
 
@@ -30,7 +30,7 @@ The monoid operation should, like functional composition, be *associative* i.e. 
 
 ![Associativity in the color mixing operation](balls_associativity.svg)
 
-When a operation is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed of, or add a term that is present at both sides of an equation and retaining the equality of the existing terms.
+When an operation is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed of, or add a term that is present at both sides of an equation and retaining the equality of the existing terms.
 
 ![Associativity in the color mixing operation](balls_arithmetic.svg)
 
@@ -70,11 +70,11 @@ Anyways, the natural numbers also form a monoid under multiplication as well.
 Monoids from boolean algebra
 ---
 
-Thinking about operations that we covered, we may remember the boolean operations *AND* and *OR*. Both of them form monoids, which operate on the set, consisting of just two values $\{ True, False \}$. 
+Thinking about operations that we covered, we may remember the boolean operations *and* and *or*. Both of them form monoids, which operate on the set, consisting of just two values $\{ True, False \}$. 
 
-**Task:** Prove that $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all  all possible values. Do the same for *OR*.
+**Task:** Prove that $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all possible values. Do the same for *or*.
 
-**Question:** Which are the identity elements of the *AND* and *OR* operations?
+**Question:** Which are the identity elements of the *and* and *or* operations?
 
 Monoid operations in terms of set theory
 ===
@@ -116,7 +116,7 @@ All monoids that we examined so far are also *commutative*. We will see some non
 Groups
 ---
 
-A group is a monoid such that for each of it's elements, there is another element which is the so called "inverse" of the first one  where the element and its inverse cancel each other out when applied one after the other. Plain-english definitions like this make you appreciate mathematical formulas more - formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ ( where $i$ is the identity element).
+A group is a monoid such that for each of it's elements, there is another element which is the so called "inverse" of the first one  where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more - formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ ( where $i$ is the identity element).
 
 If we view *monoids* as a means of modeling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions are also *reversible*.
 
@@ -264,7 +264,7 @@ Product groups are still abelian, provided that the groups that form them are ab
 Fundamental theorem of Finite Abelian groups
 ---
 
-Products provide one way to to create non-cyclic abelian groups - by creating a product of two or more cyclic groups. The fundamental theory of finite abelian groups is a result that tells us that *this is the only way* to produce non-cyclic abelian groups i.e. 
+Products provide one way to create non-cyclic abelian groups - by creating a product of two or more cyclic groups. The fundamental theory of finite abelian groups is a result that tells us that *this is the only way* to produce non-cyclic abelian groups i.e. 
 
 > All abelian groups are either cyclic or products of cyclic groups.
 
@@ -325,9 +325,9 @@ We began by defining a monoid as a set of composable *elements*. Then we saw tha
 Currying
 ---
 
-When we defined monoids, we saw that their operations are two-argument functions. And we introduced a way for representing such functions using set theory - by uniting the two arguments into one using products. i.e. we showed that a function that accepts two arguments (say $A$ and $B$) and maps them into some result ($C$), can be thought as a mapping from the product of the sets of two arguments to the resutlt. So $A\times B\to C$.
+When we defined monoids, we saw that their operations are two-argument functions. And we introduced a way for representing such functions using set theory - by uniting the two arguments into one using products. i.e. we showed that a function that accepts two arguments (say $A$ and $B$) and maps them into some result ($C$), can be thought as a mapping from the product of the sets of two arguments to the result. So $A\times B\to C$.
 
-However, this is not the only way to represent multi-argument function set-theoretically - there is another, equally interesting way, that doesn't rely on any datastructures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$.) So $A\to B \to C$. 
+However, this is not the only way to represent multi-argument function set-theoretically - there is another, equally interesting way, that doesn't rely on any data structures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$.) So $A\to B \to C$. 
 
 The practice of transforming a function that takes a pair of objects to a function that takes just one object and returns a function that takes another one is called *currying*. It is achieved by a higher-order function. Here is how such a function might be implemented.
 
@@ -340,7 +340,7 @@ And equally important is the opposite function, which maps a curried function to
 const uncurry = <A, B, C> (f:(a:A) => (b:B) => C) => (a:A, b:B ) => f(a)(b)
 ```
 
-There is a lot to say about these two functions, starting from the fact that its existence gives rise to an interesting relationship between the concept of a *product* and the concept of a *morphism* in category theory, called the *adjunction*. But we will cover this later. For now we are interested in the fact the the two function representations are isomorphic, formally $A\times B\to C\cong A\to B \to C$. 
+There is a lot to say about these two functions, starting from the fact that its existence gives rise to an interesting relationship between the concept of a *product* and the concept of a *morphism* in category theory, called the *adjunction*. But we will cover this later. For now we are interested in the fact the two function representations are isomorphic, formally $A\times B\to C\cong A\to B \to C$. 
 
 By the way, this isomorphism can be represented in terms of programming as well. It is equivalent to the statement that the following function always returns `true` for any arguments, 
 
@@ -354,7 +354,7 @@ This is one part of the isomorphism, the other part is the equivalent function f
 Monoid elements as functions/permutations
 ---
 
-Let's take a step back and examine the groups/monoids that we covered so far in the light of what we learned. We started off by representing group operation as a function from pairs. For example, the operation of a symmetric group,(let's take $Z_3$ as an example) are actions that converts two rotations to another another rotation. 
+Let's take a step back and examine the groups/monoids that we covered so far in the light of what we learned. We started off by representing group operation as a function from pairs. For example, the operation of a symmetric group,(let's take $Z_3$ as an example) are actions that converts two rotations to another rotation. 
 
 ![The group of rotations in a triangle - group notation](symmetry_rotation_actions.svg)
 
@@ -402,7 +402,7 @@ So, basically the functions that represent the elements of a monoid also form a 
 Cayley's theorem
 ---
 
-We saw how using currying we can represent the elements of any group as permutions that, also form a monoid. Cayley's theorem tells us that those two groups are isomorphic:
+We saw how using currying we can represent the elements of any group as permutations that, also form a monoid. Cayley's theorem tells us that those two groups are isomorphic:
 
 > Any group is isomorphic to a permutation group. 
 
@@ -412,24 +412,24 @@ Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A
 
 Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called it's standard representation.) 
 
-Cayley's theorem may not seem very impressibe, but that only shows how influental it has been as a result.
+Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
 
 {% if site.distribution == 'print' %}
 
 Interlude: Symmetric groups
 ---
 
-The most important thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times2\times3...\times n$ or $n!$ (n-factorial.) 
+The most important thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times 2\times 3...\times n$ or $n!$ (n-factorial.) 
 
 So, for example the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
 
 ![The S1 symmetric group](s1.svg)
 
-The group $\mathrm{S}_2$, has $1\times2=2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$.)
+The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$.)
 
 ![The S2 symmetric group](s2.svg)
 
-And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function - it has $1\times2\times3=6$ elements.
+And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function - it has $1\times 2\times 3=6$ elements.
 
 ![The S3 symmetric group](s3.svg)
 
@@ -463,7 +463,7 @@ But wait, if the monoids' underlying *sets* correspond to *objects* in category 
 
 ![The group of rotations in a triangle - categorical notation](symmetry_rotation_category.svg)
 
-The only difference between differend kind of monoids would be the number of morphisms that they have and the relationship between them.
+The only difference between different monoids would be the number of morphisms that they have and the relationship between them.
 
 The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of $closure$ that monoid and group operations have and that categories lack - it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how do you flip a triangle, you'd still get a triangle. 
 
@@ -490,8 +490,6 @@ Categories provide a way to compose two morphisms with an appropriate type signa
 
 Philosophically, defining a monoid as a one-object category means corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter it's state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
-{% if site.distribution == 'print' %}
-
 Group/monoid presentations
 ---
 
@@ -505,7 +503,7 @@ This is so, because applying the generator again and again yields all elements o
 
 Finite cyclic groups/monoids are the same, except that their definition contains an additional law, stating that that once you compose the generator with itself $n$ number of times, you get identity morphism. For the cyclic group $Z_3$ (which can be visualized as the group of triangle rotations) this law states that composing the generator with itself $3$ times yields the identity morphism.
 
-![Presentation of an finite cyclic monoid](finite_cyclic_presentation.svg)
+![Presentation of a finite cyclic monoid](finite_cyclic_presentation.svg)
 
 Composing the group generator with itself, and then applying the law, yields the three morphisms of $Z_3$.
 
@@ -521,7 +519,7 @@ To make the representation complete, we add the law for combining the two genera
 
 And then, if we start applying the two generators and follow the laws, we get the four elements.
 
-![The elements of of Klein four](klein_four_presentation_elements.svg)
+![The elements of Klein four](klein_four_presentation_elements.svg)
 
 The set of generators and laws that defines a given group is called the *presentation of a group*. Every group has a presentation.
 
@@ -534,16 +532,22 @@ If you revisit the previous section you will notice that we already saw one such
 
 ![The free monoid with one generator](infinite_cyclic_presentation_elements.svg)
 
-We can make a free monoid from the set of colorful balls - the monoid's elements would be all possible combinations of the balls.
+We can make a free monoid from the set of colorful balls - the monoid's elements would be sequences of all possible combinations of the balls.
 
 ![The free monoid with the set of balls as a generators](balls_free.svg)
 
-The free monoid is a special one - each element of the free monoid over a given set, can be converted to a corresponding element in any other other monoid that uses the same set by just applying the monoid's laws. For example, here is how the elements above would look like if we apply the laws of the color-mixing monoid.
+The free monoid is a special one - each element of the free monoid over a given set, can be converted to a corresponding element in any any other monoid that uses the same set of generators by just applying the monoid's laws. For example, here is how the elements above would look like if we apply the laws of the color-mixing monoid.
 
 ![Converting the elements of the free monoid to the elements of the color-mixing monoid](balls_free_color_mixing.svg)
 
 **Task:** Write up the laws of the color-mixing monoid.
 
-If we put out programmers' hat, we will see that the type of the free monoid under the set T (which we can denote as `FreeMonoid<T>`) is isomorphic to the type `List<T>` (or `Array<T>`, if you prefer) and that the intuition behind the special property that we described above is actually very simple: keeping objects in a list allows you to convert them to any other structure i.e. when we want to perform some manipulation on a bunch of objects, but we don't know exactly what this manipulation is, we just keep a list of those objects until it's time to do it.
+If we put out programmers' hat, we will see that the type of the free monoid under the set of generators T (which we can denote as `FreeMonoid<T>`) is isomorphic to the type `List<T>` (or `Array<T>`, if you prefer) and that the intuition behind the special property that we described above is actually very simple: keeping objects in a list allows you to convert them to any other structure i.e. when we want to perform some manipulation on a bunch of objects, but we don't know exactly what this manipulation is, we just keep a list of those objects until it's time to do it.
 
-{% endif %}
+While the intuition behind free monoids seems simple enough, the formal definition is not our cup of tea... yet, simply because we have to cover more stuff.
+
+We understand that, being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exist a function from it to all of them. But what kind of function would that be?
+
+Plus, what about other monoids that also can have this property (that they are connected to any other monoids) Simple - they are the free monoid with some extra structure, so we can filter them out by using an universal property. 
+
+But, what would this property be, (and what the hell are universal properties anyways?), tune in after a few chapters to find out.

@@ -366,7 +366,7 @@ If we have a one-one-function that connects sets that are of the same size (as i
 
 ![Opposite colors](isomorphism_one_one.svg)
 
-Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit* and vise versa, we can say that the temperatures measured in Celsius and Fahrenheit are isomorphic.
+Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets we say that the sets are *isomorphic*. For example, because we have an invertable function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit* and vise versa, we can say that the temperatures measured in Celsius and Fahrenheit are isomorphic.
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets.)
 
@@ -498,7 +498,7 @@ To understand how, let's think about how do you teach a person what a number is 
 
 ![Two balls](number_two.svg)
 
-When you do that, it would be important to highlight that you are not referring to only the left object, or only about the right one, but that we should consider both things as at once (i.e. both things as one), so if the person whom you are explaining happens to know what a set is, this piece of knowledge might come in handy. And also, being good teachers we might provide them with some more examples of sets of 2 things.
+When you do that, it would be important to highlight that you are not refering to only the left object, or only about the right one, but that we should consider both things as at once (i.e. both things as one), so if the person whom you are explaining happens to know what a set is, this piece of knowledge might come in handy. And also, being good teachers we might provide them with some more examples of sets of 2 things.
 
 ![A set of two balls](number_two_sets.svg)
 

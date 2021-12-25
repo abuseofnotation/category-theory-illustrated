@@ -18,6 +18,7 @@ semilattice
 Semilattice
 semilattices
 Semilattices
+semigroup
 meet-semilattice
 meet-semilattices
 poset
@@ -86,6 +87,9 @@ monad
 hom-set
 Curry-Howard-Lambek
 Curry-Howard
+curry
+uncurry
+adjunction
 Lambek
 cartesian
 Functor
@@ -118,10 +122,12 @@ Kuratowski
 De
 Ockham
 Ockham's
+Cayley's
 supersets
 Unix
 Latinized
 disjunction
+prev
 
 subseteq
 varnothing
@@ -130,3 +136,13 @@ infty
 endif
 vee
 lor
+pmod
+cong
+mathrm
+S1
+S2
+S3
+Lehrer
+Pythagoreans
+Dimitrina
+Georgieva

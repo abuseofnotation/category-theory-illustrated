@@ -1,11 +1,7 @@
----
-layout: default
-title: Natural Transformations
----
 Natural transformations and advanced concepts
 ===
 
-In this chapter, we will introduce the central concept of category theory. It is the concept of a morphism between functors or of *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
+In this chapter, we will introduce the central concept of category theory. It is the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
 
 Natural transformations are really is the heart of category theory - As a matter of fact, category theory was invented with the purpose of studying natural transformations. The importance of natural transformations is not obvious at first, and so before introducing them I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle.)
 
@@ -124,27 +120,15 @@ Isomorphism is not hard to construct - given two sets, containing three objects 
 
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
 
+
+
+
 Free objects
 ===
 https://math.stackexchange.com/questions/131389/what-are-free-objects
 
-
-Adjunctions
-===
-
-https://github.com/adamnemecek/adjoint/
-
-https://chrispenner.ca/posts/adjunction-battleship
-
--- Left adjoints preserve joins and right adjoints preserve meets. 
-
--- Free/forgetful adjunctions are ones where the unit is Id.
-
-
-
 Monads
 ===
-
 
 
 Representable functors
@@ -154,7 +138,6 @@ A Hom-functor can always be converted to any set-valued functor (Yoneda lemma). 
 
 Yoneda Lemma
 ===
-
 
 
 https://www.azimuthproject.org/azimuth/show/Applied+Category+Theory+Course#Course
