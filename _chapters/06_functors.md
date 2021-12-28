@@ -16,7 +16,7 @@ So far, we saw many different categories and category types. Let's review them b
 The category of sets
 ---
 
-We began by reviewing the mother of all categories - *the category of sets* which is not only the archetype of a category, but it contains many other categories, such as the category of types in a programming languages.
+We began by reviewing the mother of all categories - *the category of sets* which is not only the archetype of a category, but it contains within itself many other categories, such as the category of types in a programming languages.
 
 ![The category of sets](category_sets.svg)
 
@@ -395,27 +395,20 @@ But both morphisms $F(g•f)$ and $F(g)•F(f)$ have the signature $F(a) ➞ F(c
 The category of small categories
 ===
 
-Ha, I got you this time (or at least I hope I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do. And another surprise is that the new category won't be the category of functors (don't worry, we will introduce that in the next chapter.) Instead, we will examine the category of (small) categories. 
+Ha, I got you this time (or at least I hope I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do. And another surprise is that the new category won't be the category of functors (don't worry, we will introduce that in the next chapter.) Instead, we will examine the category of (small) categories, that has all the categories that we saw so far as objects and functors as its morphisms, like $Set$ - the category of sets, $Mon,$ the category of monoids, $Ord,$ the category of orders etc.
 
-This category has all the categories that we saw so far as objects and functors are its morphisms. 
+![The category of categories](category_of_categories.svg)
 
 **Task:** Go through the functor definition and see how you can make functors compose. 
 
 **Question:** What are the initial and terminal object of the category of small categories.
 
-There isn't much to say about this category, it is just a good exercise to try to visualize it.
-
-[The category of categories](category_of_categories)
-
-
 Categories all the way down
 ---
 
-The recursive nature of category theory might leave some of you confused: we started by saying that categories are *composed of objects and morphisms*, but now we are saying that there are morphisms between categories (functors) and a category where *the objects are categories themselves*. Does that mean that categories are an example of categories? 
+The recursive nature of category theory might leave some of you confused: we started by saying that categories are *composed of objects and morphisms*, but now we are saying that there are morphisms between categories (functors) and a category where *the objects are categories themselves*. Does that mean that categories are an example of... categories? Yes. Sounds a bit weird on intuitive level (as for example biscuits don't contain other biscuits and houses don't use houses as building material) but it is perfectly legitimate.
 
-Yes. Sounds a bit weird on intuitive level (as for example biscuits don't contain other biscuits and houses don't use houses as building material) but it is perfectly legitimate.
-
-Category theory does *categorize* (see what I did there) everything, so all of maths is categories all the way down and whether you would threat a given category as a universe, or as a point depends solemly on your viewpoint.
+Category theory does *categorize* (see what I did there) everything, so from a category-theoretic standpoint all of maths is categories all the way down and whether you would threat a given category as a universe, or as a point depends solemly on your viewpoint.
 
 Like for example, every monoid is a category with one just object. But at the same time, monoids can be seen as belonging to one category - the category of monoids - with monoid homomorphisms acting as objects.
 
@@ -425,70 +418,110 @@ There may be many more levels of categories from categories. However that does n
 
 We can use the same tactict with our little journey in category theory - stick on the level that make sense for us and not be obsessed with forming picture of the whole thing Because there is no *whole thing* - category theory is an *abstract* theory. That is, it does not seek to represent an actual state of affairs, but to provide a language that you can use to express many different ideas, actual or purely imaginary. So view the category of categories not as a structure, but as a space, where all these concepts live.
 
-{% if site.distribution == 'print' %}
-
-The ghost of Russell's paradox
----
-
-We say *small* because otherwise the category will include itself and it's going to be Russell's paradox all over again.
-
-{% endif %}
-
 Free and forgetful functors
 ===
 
-In the first few chapters, we reviewed a lot of types of categories that are based on each other i.e. ones where one category is the same as the other plus some additional law - groups are monoids with added inversion, partial orders are antisymmetric preorders. And virtually all categories can be viewed as are sets with added morphisms. 
+A lot of categories that are in $Cat$ are based on each other i.e. ones where one category is the same as the other plus some additional law - groups are monoids with added inversion, partial orders are antisymmetric preorders. And virtually all categories can be viewed as are sets with added morphisms. Between any two such categories there are two functors called the *forgetful* functor that goes from the richer category to the more plain one and the *free* functor, which goes the other way around.
 
-![Comparison of different types of categories](categories_comparison.svg)
+![Free and forgetful functors](free_forgetful_functors.svg)
 
-Between any two such categories there are two functors called the free and forgetful functor.
 
 Forgetful functors
 ===
 
 Forgetful functors map the objects from the more richer and featureful category to their corresponding objects in the simpler and more unstructured one. 
 
+![Forgetful functors](forgetful_functors.svg)
+
 They strip (forget) all the structure of the more complex category which is not present in the simpler one. i.e. 
 
 Object mapping
 ---
 
-If you do away with the monoid operation of a given monoid, what is left is its underlying set. This observation defines the object mapping of a forgetful functor that goes from the category of monoids to the category of sets (where each monoid is mapped to it's underlying set.)
+The object mapping of the forgetful functor consists of picking the object in the simpler category that corresponds to the one from the richer one. It works by just removing the extra structure or properties of each object in the richer category which is not present in the simpler one.
+
+Let's take the forgetful functor between the category of sets $Set$ and the category of monoids ($Mon$) as an example. A monoid is a set, combined with *a monoid operation*. The monoid operation is the extra structure. And if you do away with it, what is left from a monoid is its underlying set. This observation defines the object mapping of a forgetful functor that goes from the category of monoids to the category of sets - each monoid is mapped to it's underlying set.
 
 ![Forgetful functor - object mapping](forgetful_functor_objects.svg)
+
+This same type of functor exists for any two categories that are based on each other. Or equally correct two categories are based on each other only if such a functor exist.
 
 Morphism mapping
 ---
 
-In order for the forgetful functor to really be a functor it also must map morphisms between the two categories i.e. to map every *monoid homomorphism* between two monoids to a function between their underlying sets. This won't be hard - we said that monoid homomorphisms are function between the monoids' underlying sets which preserves the group operation. Which means that... they are functions. So we need only to forget the extra conditions.
+In order for the forgetful functor to really be a functor it also must map morphisms between the two categories i.e. to map every *monoid homomorphism* between two monoids to a function between their underlying sets. 
 
-![Forgetful functor](forgetful_functor.svg)
+This is not hard - we said that monoid homomorphisms are function between the monoids' underlying sets which preserves the group operation. Which means that they are functions already functions between the monoids' underlying sets. So all we need to do is to forget about the extra conditions.
 
 Functor laws
 ---
 
-In this case the functor laws are obviously followed - we basically copied the structure of the monoid category into the set category.
+In this case the functor laws are obviously followed - we basically copied the structure of one category into the other one.
 
 Free functors
 ===
 
-Now let's review the functor that has certain relationship with the free functor, but goes the other way around - from sets to monoids. This section would be a little longer, as while going from a more complex category to a simpler one is trivial enough, going the other way around is not that easy.
+Now let's review the functor that has certain relation to the forgetful functor, but goes the other way around - from richer to simpler categories.
 
-As a matter of fact, literary going the other way around is impossible, as the forgetful functor maps all monoids that are based on a given set to that set, so if we try to reverse the mapping we would get something that is not a functor.
+![Free functors](free_functors.svg)
 
-In other words, the connection between more simple to more complex versions of a category is not an isomorphism - we cannot connect each underlying set to *all of the monoids that are based on it*. However, we can connect them to one special monoid that is connected to all of them. 
+Saying "going the other way around" is actually not entirely accurate, as we cannot literary reverse the mapping from the forgetful functor. This is so, simply due to the fact that given one simple structure (such as a set) there can be more than one richer structures that correspond to it (e.g. the set of natural numbers is the underlying set of both the monoid of natural numbers under addition and the monoid of natural numbers under mutliplication.)
 
-And that object is the *free monoid* that we saw in chapter 3. And that is the free functor.
+But, although we cannot create a functor that is the reverse of the forgetful functor, there is one functor that still has some interesting connection to it - this functor is called the *free functor* for a given category. It works by connecting each object from the simpler category to the *free object* corresponding to it. In our case the case of monoids it is the free monoid generated by a given set.
 
 Object mapping
 ---
 
-So the free functor maps every set to the free monoid of that set. When we reviewed free monoids we said that the free monoid of a set $A$ it is the monoid of lists of A's which we will dub $[A]$. The object mapping is just a function that maps each object $a:A$ to the singleton list, so $a \to [a]$.
+The object mapping of the free functor is the procedure for generating free objects. For any given object $o$ from the simpler category the free object of $o$, $F(o)$ is an object of the more complex category that adds the minimum structure needed for the $o$ to become an object of the more complex category.
+
+When we reviewed free monoids we said that the free monoid of a given set of is just the monoid that "does nothing" i.e. the one that has no laws. What does that mean?
+
+As we said in chapter 3 each monoid can be represented by a set of basic elements, called generators, (such as the 60 degree rotation of a right triangle)
+
+![Generator of the monoid of rotations](generator_rotations.svg)
+
+And a bunch of rules or equations describing how sequences of these generators collapse to a single eleement (e.g. the fact that rotating the triangle three times gets you to its initial position.)
+
+![Rule of the monoid of rotations](rule_rotations.svg)
+
+Here the rules for a given set of generators can be arbitrary, so the free monoid is the monoid that has no such rules. As a result, the free monoid of a given set is the monoid of all possible (endless) sequences of elements of a that set (which is taken as the monoid's set of generators.
+
+If you think about this definition we would realize that the free monoid is actually just the *list datatype* that we are familiar from programming. And the free functor converting sets to monoids is actually the list functor that we saw in one of the previous sections.
+
+![Free functors](free_functor_objects.svg)
+
+Formally the free monoid over a set $A$ is just the type $[A]$ and the free functor is the function $a \to [a]$ for all $a:A$.
 
 Morphism mapping
 ---
 
-The free monoid for set A is the monoid containing lists of elements of type a, so the morphism mapping of the free functor maps each function between sets to a function between lists of sets. 
+Once we established that the free functor for set $A$ is just the list functor we already know how the the morphism mapping that converts function between sets to functions between lists of sets, and the way to construct this mapping is to apply the function to every element of that list.
 
-And the way to construct this mapping that establishes a connection between the free and forgetful functor is to apply the function to every element of that lists.
+Adjoint functors
+===
+
+If the concept of a free object and the corresponding free functor seemed somewhat arbitrary to you, don't worry, it will seem clearer once we pinpoint the relationship it has with the (arguably more straightforward) concept of forgetful functor. 
+
+Given a free object *in the richer category* (i.e. free monoid) from a given set of generators, there exists a monoid homomorphism from it, to any other monoid with the same set of generators.
+
+![Adjunction](adjunction_1.svg)
+
+The homomorphism consists of just applying the monoid laws and by doing that collapsing the infinite lists of elements of the free monoid into (possibly finite) elements in the other one.
+
+Then, given a set in the more basic category, there exist a morphism from it to the underlying set of any monoid that is generated by the elements of that set as generators.
+
+![Adjunction](adjunction_2.svg)
+
+Finally, any two such functions are actually the same function.
+
+![Adjunction](adjunction_3.svg)
+
+This relationship, called an *adjunction* defines what the free functor is in terms of the forgetful one.
+
+Let's take another example. The free monoid with just one generator can be mapped to all cyclic monoids like $Z_{1}$, $Z_{2}$, $Z_{3}$ etc. as well as to the monoid of natural numbers under addition. And because of that in the category of sets, the singleton set can be mapped to the underlying sets of all these monoids.
+
+![Adjunction](adjunction_numbers.svg)
+
+There definitely is more to be said about free and forgetful functors, as well as for adjunctions (which are not only of free/forgetful type), but as always, I will leave things at the most interesting moment in order to revisit them from a different perspective later.
+
 
