@@ -352,6 +352,7 @@ $gᵃ gᵇ= gᵃ⁺ᵇ$
 
 $Task:$ Although it's trivial, we didn't prove that the first functor law (the one about the preservation of identities always holds. Interestingly enough, for groups/monoids it actually follows from the second law. Try to prove that. Start with the definition of the identity function.
 
+
 <!-- TODO show isomorphism theorems --> 
 
 Functors in orders
@@ -417,6 +418,8 @@ At the same time we have the category of groups, for example, which contains the
 There may be many more levels of categories from categories. However that does not mean that we have to cover all of them and think about them at all. It is like the concept of a derivative in calculus - the first derivative of a position of the object gives its *speed*, which is useful, the derivative of speed is also useful - it is *velocity*, but the derivative of velocity and those after it leave us indifferent. 
 
 We can use the same tactict with our little journey in category theory - stick on the level that make sense for us and not be obsessed with forming picture of the whole thing Because there is no *whole thing* - category theory is an *abstract* theory. That is, it does not seek to represent an actual state of affairs, but to provide a language that you can use to express many different ideas, actual or purely imaginary. So view the category of categories not as a structure, but as a space, where all these concepts live.
+
+{% if site.distribution == 'print' %}
 
 Free and forgetful functors
 ===
@@ -524,4 +527,5 @@ Let's take another example. The free monoid with just one generator can be mappe
 
 There definitely is more to be said about free and forgetful functors, as well as for adjunctions (which are not only of free/forgetful type), but as always, I will leave things at the most interesting moment in order to revisit them from a different perspective later.
 
+{%endif%}
 

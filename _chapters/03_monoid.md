@@ -312,6 +312,8 @@ Those two operations and their composite results in a group called $Dih3$ that i
 
 **Question:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
 
+Groups that represent the set of rotations and reflections of any 2D shape are called *dihedral groups*
+
 <!--
 TODO: FSM as monoids
 https://faculty.uml.edu/klevasseur/ads/s-monoid-of-fsm.html
@@ -433,9 +435,15 @@ And with $\mathrm{S}_3$ we are already feeling the power of exponential (and eve
 
 ![The S3 symmetric group](s3.svg)
 
-Each symmetric group $\mathrm{S}_n$ contains all groups of order $n$ - this is so, because (as we saw in the prev section) every group with $n$ elements is isomorphic to a set of permutations on the set of $n$ elements and the group $\mathrm{S}_n$ contains all such permutations. In particular, $\mathrm{S}_1$ is isomorphic to $Z_1$ (the *trivial group*), $\mathrm{S}_2$ is isomorphic to $Z_2$ (the *boolean group*). And the top three permutations of $\mathrm{S}_3$ are isomorphic to the group $Z_3$. 
+Each symmetric group $\mathrm{S}_n$ contains all groups of order $n$ - this is so, because (as we saw in the prev section) every group with $n$ elements is isomorphic to a set of permutations on the set of $n$ elements and the group $\mathrm{S}_n$ contains *all such* permutations that exist. 
+
+Here are some examples: 
+- $\mathrm{S}_1$ is isomorphic to $Z_1$, the *trivial group*, and $\mathrm{S}_2$ is isomorphic to $Z_2$ , the *boolean group*, (but no other symmetric grops are isomorphic to cycle groups)
+- The top three permutations of $\mathrm{S}_3$ are isomorphic to the group $Z_3$. 
 
 ![The S3 symmetric group](s3_z3.svg)
+
+- $\mathrm{S}_3$ is also isomorphic to $Dih3$ (but no other symmetric group is isomorphic to a dihedral group)
 
 Based on this insight, can state Cayley's theorem in terms of symmetric groups in the following way: 
 
@@ -523,7 +531,9 @@ And then, if we start applying the two generators and follow the laws, we get th
 
 The set of generators and laws that defines a given group is called the *presentation of a group*. Every group has a presentation.
 
-Free monoids
+{% if site.distribution == 'print' %}
+
+Interlude: Free monoids
 ---
 
 We saw how picking a different selection of laws gives rise to different types of monoid. But what monoids would we get if we pick no laws at all? These monoids (we get a different one depending on the set we picked) are called a *free monoids* (the word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else.)
@@ -551,3 +561,5 @@ We understand that, being the most general of all monoids for a given set of gen
 Plus, what about other monoids that also can have this property (that they are connected to any other monoids) Simple - they are the free monoid with some extra structure, so we can filter them out by using an universal property. 
 
 But, what would this property be, (and what the hell are universal properties anyways?), tune in after a few chapters to find out.
+
+{%endif%}
