@@ -333,7 +333,7 @@ Functional composition is special not only because you can take any two morphism
 
 ![Composition of morphisms with many objects](composition_n_objects.svg)
 
-But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 4 objects and 3 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$). 
+But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$). 
 
 This formula can be expressed using the following diagram, which would only commute if the formula is true (given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent.)
 
@@ -350,24 +350,15 @@ This approach (composing indefinitely many things) for building stuff is often u
 Identity
 ---
 
-Before the standard Arabic numerals that we use today, there were Roman numbers. They were no good, for the simple reason that they lacked the concept of *zero* - a number that indicated the absence of number. Any number system that lacks this simple concept is extremely limited. It is the same in programming, where we have multiple values that indicate the absence of a value and it is the same in category theory - in order to be able to define more stuff using morphisms in category theory, we too would want to define zero, or what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
+Before the standard Arabic numerals that we use today, there were Roman numbers. Roman numerals weren't any good, because they lacked the concept of *zero* - a number that indicated the absence of quantity and any number system that lacks this simple concept is bound to remain extremely limited. It is the same in programming, where we have multiple values that indicate the absence of a value. 
+
+In order to be able to define more stuff using morphisms in category theory, we too would want to define zero, or what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
 
 ![The identity morphism (but can also be any other morphism)](identity.svg)
 
 It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
 
 **Question:** What is the identity morphism in the category of sets?
-
-Isomorphism
----
-
-Why do we need to define a morphism that does nothing? It's because morphisms are the basic building blocks of our language, and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined, we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory). Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms - ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \bullet g = id_{B}$ and $g \bullet f = id_{A}$. 
-
-And here is the same thing expressed with a commuting diagram.
-
-![Isomorphism](isomorphism.svg)
-
-Like the example with the law of associativity, the diagram expresses the same (simple) fact as the formula, namely that going from the one of objects ($A$ and $B$) to the other one and then back again is the same as applying the identity morphism i.e. doing nothing. 
 
 A summary
 ---
@@ -379,3 +370,63 @@ A category is a collection of *objects* (we can think of them as *points*) and *
 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is *associative*.
 
 This is it.
+
+
+Addendum: Why are categories like that?
+===
+
+All texts on category theory explain *what* categories are, but few make an attempt to explain *why* are they like that. From one standpoint, the answer to that seems obvious - we study categories because they *work*, I mean, look at how many applications are there. But if we take a deeper view, it (the answer) is far from obvious: category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that is similar to category theory you add one more law and you get a yet another one. So if these specific laws and this specific theory i.e. this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
+
+Identity and isomorphisms
+===
+
+The reason the identity law is required is by far the more obvious one. We need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined, we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory). Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms - ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \bullet g = id_{B}$ and $g \bullet f = id_{A}$. 
+
+And here is the same thing expressed with a commuting diagram.
+
+![Isomorphism](isomorphism.svg)
+
+Like the previous one, the diagram expresses the same (simple) fact as the formula, namely that going from the one of objects ($A$ and $B$) to the other one and then back again is the same as applying the identity morphism i.e. doing nothing. 
+
+Associativity and reductionism
+===
+
+Associativity - what it means and why is it there? In order to tackle this question, we must first talk about another concept - the concept of *reductionism*: 
+
+Reductionism is a name for the idea that the behaviour of some more complex phenomenon can be explained in terms of a number of simpler and more fundamental phenomena. Whether the reductionist view is *universally valid*, i.e. whether it is possible to expain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws), is a question that we can argue about until the that universe's inevitable collapse. But what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics - each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it.)
+
+Commutativity
+---
+
+One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts*. Let's try to formalize that: the *things* that we are thinking about would be colorful balls and let's dub the *sum* with a circle operator. Then, it would mean that a set of objects when combined in whichever way, will always result in the same object. 
+
+![Commutativity](commutativity_long.svg)
+
+And because of the wonders of maths we can get all these equalities if we specify the law for just two objects.
+
+![Commutativity](commutativity.svg)
+
+Incidentally this is the definition of a mathematicall law called *commutativity*.
+
+**Task:** if our objects are sets, which set operation is our sum?
+
+Associativity
+---
+
+Commutativity is the law abided in contexts in which any object can be represented as the sum of its parts *when combined in whichever order*. But there are also many cases in which an object is to be represented by the sum of it's parts, but when *combined in one specific way*.
+
+In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all.)
+
+But a weaker version of the law of reductionism would hold, namely that if we take a bunch of objects, combined in a certain order, it would be true that *any pair of those objects could, at any time, be replaced by the object we get by combining them*, i.e. if we have.
+
+(A, B) = D
+
+(B, C) = X
+
+(A, B, C) = D C = A X
+
+or simply 
+
+(A B) C = A (B C) 
+
+The essence of associativity (and of reductionism) is this ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.

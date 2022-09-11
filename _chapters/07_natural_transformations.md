@@ -1,3 +1,8 @@
+---
+layout: default
+title: Natural transformations
+---
+
 Natural transformations and advanced concepts
 ===
 
@@ -16,6 +21,7 @@ Objects are all around us, both in mathematics and in real life - virtually ever
 However there is another way to look at things. Because, what is an object, when viewed by itself? Can we study an object in isolation? And is there anything left to study about it, once it is detached from its environment? When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would be just a piece of junk, and in many ways it won't be an object at all. And this is even more so for mathematical objects which you cannot even repurposed when they are no longer useful - functions, or relations, are key. So instead of thinking about objects which just happen to have some morphisms between them, we might take the opposite view and say that objects are only interesting as sources and targets of morphisms.
 
 This view is best expressed by category theory and specifically by the notion of universal properties (limits) - as we said universal properties define an object *up to a unique isomorphism*. This means that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms to all other objects in the category, then these objects are for all intends and purposes equivalent. 
+
 
 
 Equivalence of categories
@@ -107,6 +113,12 @@ Note that if the condition above (sometimes called the "naturality condition") i
 
 If you look just a little bit closely, you will see that the only difference between this diagram and our example is that here morphisms are displayed vertically, while in the exam they are horizontal.
 
+
+natural transformations from surjective functors are just regular morphisms.
+
+
+/*
+
 https://www.math3ma.com/blog/what-is-a-natural-transformation
 
 
@@ -119,6 +131,7 @@ Interlude: Naturality explained
 Isomorphism is not hard to construct - given two sets, containing three objects each, there are three isomorphisms that connect them, and that number grows exponentially. 
 
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
+
 
 
 
