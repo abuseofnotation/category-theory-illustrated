@@ -277,6 +277,8 @@ One remark before we go: in the last paragraphs I sound as if I'm *comparing* ca
 Defining Categories (again)
 ===
 
+> "...deal with all elements of a set by ignoring them and working with the set's definition." - Dijkstra
+
 All category theory books (including this one) starts by talking about set theory. However looking back I really don't know why that is the case - most books that focus around a given subject don't usually start off by introducing an *entirely different subject* before even starting to talk about the main one, even if the two subjects are so related. 
 
 Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like it's a new book (I wonder if I can dedicate this to a different person.)
