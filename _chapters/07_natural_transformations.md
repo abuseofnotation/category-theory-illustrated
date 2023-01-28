@@ -205,4 +205,11 @@ https://www.math3ma.com/blog/what-is-a-natural-transformation
 
 https://graphicallinearalgebra.net/2015/04/23/makelele-and-linear-algebra/
 
+https://www.math.toronto.edu/gscott/WhatVS.pdf
+
+https://www.youtube.com/playlist?list=PLk-BCMYCWSzW-nPNnw19Y6oQJnvaAcp1I
+
+https://brilliant.org/courses/linear-algebra/linear-equations-5/
+ https://www.math3ma.com/blog/what-is-category-theory-anyway
+
 */
