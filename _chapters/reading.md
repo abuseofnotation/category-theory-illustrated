@@ -15,3 +15,5 @@ Reading list
 
 
 [The functions of functors](https://www.lifeoflevi.com/)
+
+[Pierce - What is a sign](https://www.marxists.org/reference/subject/philosophy/works/us/peirce1.htm)

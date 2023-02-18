@@ -239,7 +239,7 @@ Quotes
 
 > "The clarity, consistency and elegance of diagrams in 'Category Theory Illustrated' has helped us demystify and explain in simple terms a topic often feared."
 
-[Gonzalo Casas](https://gnz.io/), Software developer, leading courses at digital/robotic fabrication for PHD students at ETH Zurich
+[Gonzalo Casas](https://gnz.io/), Software developer and lecturer for Introduction to Computational Methods for Digital Fabrication in Architecture at ETH Zurich
 
 
 Comments

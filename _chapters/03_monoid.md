@@ -43,7 +43,7 @@ In the case of our color-mixing monoid the identity element is the white ball (o
 
 ![The identity element of the color-mixing monoid](balls_identity.svg) 
 
-As you probably remember from the last chapter, functional composition is also associative and it also contains an identity element, so you might start suspecting that it forms a monoid in some way. This is indeed the case, but with one caveat. 
+As you probably remember from the last chapter, functional composition is also associative and it also contains an identity element, so you might start suspecting that it forms a monoid in some way. This is indeed the case, but with one caveat, for which we will talk about later.
 
 Basic monoids 
 ===
@@ -404,7 +404,7 @@ So, basically the functions that represent the elements of a monoid also form a 
 Cayley's theorem
 ---
 
-We saw how using currying we can represent the elements of any group as permutations that, also form a monoid. Cayley's theorem tells us that those two groups are isomorphic:
+Once we learn how to represent the elements of any monoid as permutations that also form a monoid, using currying, it isn't too surprising to learn that this constructed permutation monoid is isomorphic to the original one (the one from which it is constructed - this is a result known as the Cayley's theorem:
 
 > Any group is isomorphic to a permutation group. 
 
@@ -412,7 +412,7 @@ Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A
 
 ![The group of rotations in a triangle - set notation and normal notation](symmetry_rotation_comparison.svg)
 
-Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called it's standard representation.) 
+Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called it's *standard representation*.) 
 
 Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
 
@@ -421,7 +421,7 @@ Cayley's theorem may not seem very impressive, but that only shows how influenti
 Interlude: Symmetric groups
 ---
 
-The most important thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times 2\times 3...\times n$ or $n!$ (n-factorial.) 
+The first thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times 2\times 3...\times n$ or $n!$ (n-factorial.) 
 
 So, for example the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
 

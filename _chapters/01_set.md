@@ -502,7 +502,7 @@ When you do that, it would be important to highlight that you are not refering t
 
 ![A set of two balls](number_two_sets.svg)
 
-This is a good starting point, but the person may still be staring at the objects instead of the structure - they might ask if this or that set is $2$ as well. At this point you might give up, or, if the person whom you are explaining happens to know about isomorphisms as well (they might have lived in a cave with just this book with them), you can easily formulate your final definition, saying that the number $2$ is represented by those sets and all other sets that are isomorphic to them.
+This is a good starting point, but the person may still be staring at the objects instead of the structure - they might ask if this or that set is $2$ as well. At this point you might give up, or, if the person whom you are explaining happens to know about isomorphisms as well (let's say they lived in a cave with nothing but this book with them), you can easily formulate your final definition, saying that the number $2$ is represented by those sets and all other sets that are isomorphic to them, or by the *equivalence class* of sets that have two elements, as the formal definition goes (don't worry, we will learn all about equivalence classes later.)
 
 ![A set of two balls](number_two_isomorphism.svg)
 

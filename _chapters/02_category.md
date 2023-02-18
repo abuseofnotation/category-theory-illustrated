@@ -83,7 +83,7 @@ Note that there are languages, such as the ones from the ML family, where the *p
 Defining products in terms of sets 
 ---
 
-When we said that the product is a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). But we didn't define how ordered pairs formally. Note that the criteria for order prevents us from symbolizing the pair with just a set containing the two elements, as while some mathematical operations (such as addition) indeed don't care about order, others (such as subtraction) do. And in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.
+When we said that the product is a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). But we didn't define how ordered pairs formally. Note that the criteria for order prevents us from encoding the pair as just a set containing the two elements, as while some mathematical operations (such as addition) indeed don't care about order, others (such as subtraction) do. And in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.
 
 ![A pair](pair.svg)
 
@@ -104,32 +104,34 @@ Defining products in terms of functions
 
 In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of. I call this the *low-level* approach. This time we will try to do the opposite - be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, and try to define the product in terms of functions and functional composition. Effectively we will be working at a *higher level* of abstraction.
 
-How can we define products in terms of functions? Let's begin with an external diagram, showing the definition of the product.
+How can we define products in terms of functions? To do that, we must first think about *what functions* are there for a given product, and we have two of those - the functions for retrieving the the two elements of the pair (the "getters", so to say) - formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. 
 
 ![Product, external diagram](product_external.svg)
 
-This diagram already contains the first piece of the puzzle: if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. 
-
-This definition is not complete, however, because the product of $G$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any random element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other such objects.
+This diagram already provides a definition, but not a complete definithon, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other such objects.
 
 ![Product, external diagram](product_candidates.svg)
 
-So how do we set apart the true product from all those "impostor" products? Simple - by using the observation that *they all can be converted to it*, This observation is true, because. The pair is nothing more than the sum of its elements. And you can always have a function that converts a more complex structure, to a simpler one (we saw an example of this when we covered the functions that convert subsets to their supersets). 
+However, all such objects would be *more complex* than the pair objects. And for this reason, *they all can be converted to it by a function*, as you can always have a function that converts a more complex structure, to a simpler one (we saw an example of this when we covered the functions that convert subsets to their supersets). 
+
+This observation is true, because the pair is nothing more than the sum of its elements, and so all other objects that encode the pair also contain something else.
 
 More formally, if we suppose that there is a set $I$ that can serve as an impostor product of sets $B$ and $Y$ i.e. that $I$ is such that there exist two functions, which we will call $b: I → B$ and $y: I → Y$ that allow us to derive elements $B$ and $Y$ from it, then there must also exist a function with the type signature $I → B \times Y$ that converts the impostor from the true product. We can be sure that this function exists because $I$ (being an impostor) would contain some extra information other than the information contained in the true pair. So given we have functions $b: I → B$ and $y: I → Y$ that function would be $(i) → b(i) \times y(i)$ for each element $i:I$.
 
-Therefore, we can define the product of $B$ and $Y$ as a set that has functions for deriving $B$ and $Y$, but, more importantly, all other sets that have such functions can be converted to it. The second requirement would mean that 
+Therefore, we can define the product of $B$ and $Y$ as a set that has functions for deriving $B$ and $Y$, but, more importantly, all other sets that have such functions can be converted to it. 
 
 ![Product, external diagram](products_morphisms.svg)
 
-In category theory, this type of property that a given object might possess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*. I don't want to go into more detail, as it is a bit early for that now (after all we haven't even defined what category theory is). One thing that I like to point out is that this definition (as, by the way, all the previous ones) does not rule out the sets which are isomorphic to the product - when we represents things using universal properties, an isomorphism is the same as equality.
+In category theory, this type of property that a given object might possess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*. I don't want to go into more detail, as it is a bit early for that now (after all we haven't even defined what category theory is). 
+
+One thing that I like to point out is that this definition (as, by the way, all the previous ones) does not rule out the sets which are isomorphic to the product - when we represents things using universal properties, an isomorphism is the same as equality.
 
 Sums
 ===
 
 We will now study a construct that is pretty similar to the product but at the same time is very different. Similar because, like the product, it is a relation between two sets which allows you to unite them into one, without erasing their structure. But different as it encodes a quite different type of relation - a product encodes an *and*  relation between two sets, while the sum encodes an *or* relation. 
 
-A sum of two sets $B$ and $Y$, denoted $B + Y$ is a set that contains *all elements from the first set combined with all elements from the second one*. 
+The sum of two sets $B$ and $Y$, denoted $B + Y$ is a set that contains *all elements from the first set combined with all elements from the second one*. 
 
 ![Sum or coproduct](coproduct.svg)
 
@@ -312,21 +314,28 @@ One of the few or maybe even the only requirement for a structure to be called a
 
 ![Composition of morphisms](composition.svg)
 
-Formally, this requirement says that there should exist an operation (denoted with the symbol $•$) such that for each two functions $g: A → B$ and $f: B → C$, there exists exactly one function $(f • g): A → C$. Again, note that this criteria is not met by just *any* morphism with this type signature. There is *exactly one* morphism that fits these criteria, and there may be some which don't.
+Formally, this requirement says that there should exist an operation (denoted with the symbol $•$) such that for each two functions $g: A → B$ and $f: B → C$, there exists a function $(f • g): A → C$ (again, note that there can be many other morphisms with with the same type signature, but there must be *exactly one* morphism that fits these criteria).
 
 ![Composition of morphisms in the context of additional morphism](composition_arrows.svg)
 
 **NB:** Note (if you haven't already) that functional composition is written from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$.)
 
-
-Commuting diagrams
+The law of identity
 ---
 
-The diagram above, uses colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant - the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other - all other paths just belong in different diagrams. 
+Before the standard Arabic numerals that we use today, there were Roman numbers. Roman numerals weren't any good, because they lacked the concept of *zero* - a number that indicated the absence of quantity and any number system that lacks this simple concept is bound to remain extremely limited. It is the same in programming, where we have multiple values that indicate the absence of a value. 
 
-![Composition of morphisms - a commuting diagram](composition_commuting_diagram.svg)
+The zero of category theory is what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
 
-Diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
+![The identity morphism (but can also be any other morphism)](identity.svg)
+
+
+It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
+
+A structure must have an identity morphism for each object in order for it to be called a category - this is known as the law of identity.
+
+**Question:** What is the identity morphism in the category of sets?
+
 
 The law of associativity
 ---
@@ -349,18 +358,17 @@ And it is not only about categories either, it is a property of many other opera
 
 This approach (composing indefinitely many things) for building stuff is often used in programming. To see some examples, you don't need to look further than the way the pipe operator in Unix (`|`), which feeds the standard output of a program with the standard input of another program, is (ab)used. If you *want* to look further, note that there is a whole programming paradigm based on functional composition, called "concatenative programming".
 
-Identity
+
+Commuting diagrams
 ---
 
-Before the standard Arabic numerals that we use today, there were Roman numbers. Roman numerals weren't any good, because they lacked the concept of *zero* - a number that indicated the absence of quantity and any number system that lacks this simple concept is bound to remain extremely limited. It is the same in programming, where we have multiple values that indicate the absence of a value. 
+The diagrams above, use colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant - the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other - all other paths just belong in different diagrams. 
 
-In order to be able to define more stuff using morphisms in category theory, we too would want to define zero, or what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
+![Composition of morphisms - a commuting diagram](composition_commuting_diagram.svg)
 
-![The identity morphism (but can also be any other morphism)](identity.svg)
+Diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
 
-It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
 
-**Question:** What is the identity morphism in the category of sets?
 
 A summary
 ---
@@ -373,22 +381,27 @@ A category is a collection of *objects* (we can think of them as *points*) and *
 
 This is it.
 
+{% if site.distribution == 'print'%}
 
 Addendum: Why are categories like that?
 ===
 
-All texts on category theory explain *what* categories are, but few make an attempt to explain *why* are they like that. From one standpoint, the answer to that seems obvious - we study categories because they *work*, I mean, look at how many applications are there. But if we take a deeper view, it (the answer) is far from obvious: category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that is similar to category theory you add one more law and you get a yet another one. So if these specific laws and this specific theory i.e. this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
+*Why* are categories defined by those two laws and not some other two (or one, three, four etc.) laws? From one standpoint, the answer to that seems obvious - we study categories because they *work*, I mean, look at how many applications are there. 
+But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice.) Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
 
 Identity and isomorphisms
 ===
 
-The reason the identity law is required is by far the more obvious one. We need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, and we need this one to be able to speak properly. For example, once we have the concept of identity morphism defined, we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory). Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms - ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \bullet g = id_{B}$ and $g \bullet f = id_{A}$. 
+The reason the identity law is required is by far the more obvious one. We need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, we need the identity morphism to be able to speak properly. For example, once we have the concept of identity morphism defined, we can have a category-theoretic definition of an *isomorphism* (which is important, because the concept of an isomorphism is very important for category theory): 
+
+Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms - ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \bullet g = id_{B}$ and $g \bullet f = id_{A}$. 
 
 And here is the same thing expressed with a commuting diagram.
 
 ![Isomorphism](isomorphism.svg)
 
 Like the previous one, the diagram expresses the same (simple) fact as the formula, namely that going from the one of objects ($A$ and $B$) to the other one and then back again is the same as applying the identity morphism i.e. doing nothing. 
+
 
 Associativity and reductionism
 ===
@@ -432,3 +445,5 @@ or simply
 (A B) C = A (B C) 
 
 The essence of associativity (and of reductionism) is this ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
+
+{%endif%}

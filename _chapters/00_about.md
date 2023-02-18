@@ -27,22 +27,33 @@ Some 5 years ago I found myself jobless for a few months and decided to publish 
 
 A few years after that some people found my notes and encouraged me write more. They were so nice that I forgot my imposter syndrome and got to work on the next several chapters.
 
-Who is this book for AKA The value of category theory
+On math
 ===
 
-Ever since Newton's Principia, the discipline of mathematics was viewed in the somewhat demeaning position of "science and engineering's workhorse". According to this view, mathematics is only "useful" as a means for making it easier for scientists and engineers for making technological and and scientific advancements i.e. it is viewed as just a tool for solving "practical" problems. Which puts mathematicians in a weird and I'd say unique position of always having to defend what they do with respect to it's value for *other disciplines*. I again stress that this is something that would be considered absurd when it comes to any other discipline. Imagine for example, what would it look like if people were bashing *philosophical theories* for being too impractical in the way they are bashing mathematics, like, for example someone attacking Wittgenstein's picture theory of language by, saying:
+Ever since Newton's Principia, the discipline of mathematics is viewed in the somewhat demeaning position of "science and engineering's workhorse" - only "useful" as a means for helping scientists and engineers to make technological and and scientific advancements i.e. it is viewed as just a tool for solving "practical" problems. 
 
-"All too well, but what can you do with that theory?" 
+Because of this, mathematics is in a weird and, I'd say, unique position of always having to defend what they do with respect to it's value for *other disciplines*. I again stress that this is something that would be considered absurd when it comes to any other discipline. 
 
-And at the other end of the line, some philosopher sweating: 
+People don't expect any return on investment from physical theories - noone bashed string theory for failing to make useful predictions. 
+And bashing philosophical theories for being impractical would be even more absurd, like bashing Wittgenstein:
 
-"Well, I am told it does have its applications is programming language theory..."
+> "All too well, but what can you do with the picture theory of language?" 
+> "Well, I am told it does have its applications is programming language theory..."
 
-Or someone bashing David Hume's extreme scepticism:
+Or someone being sceptical to David Hume's scepticism:
 
-"That's all fine and dandy, but your theory leaves us at square one in terms of our knowledge. What the hell are we expected to do from there?"
+> "That's all fine and dandy, but your theory leaves us at square one in terms of our knowledge. What the hell are we expected to do from there?"
 
-So, who is this book for? If we rephrase this question  as "Who *should* read this book", then the answer is nobody. Indeed, if you think in terms of "should" mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as solution to many problems.
+Although many people don't necessarily subscribe to this view of mathematics as a workhorse, we can see it encoded inside the structure of most mathematics textbooks - each chapter starts with an explanation of a concept, followed by some examples and then ends with a list of problems that this concept solves. 
+
+There is nothing wrong with this approach, but mathematics is so much more than solving problems. It was a the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was (and still is) a language, which can allow for people with different cultural backgrounds understand each other. And it is also art and a means of entertainment.
+
+Category theory embodies all these aspects of mathematics, so I think a very good grounds to writing a book where all of them shine - a book that is based not on solving of problems, but on exploration of concepts and on seeking connections between them. A book, that is, overall, pretty.
+
+Who is this book for 
+====
+
+So, who is this book for? If we rephrase this question  as "Who *should* read this book", then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as solution to many problems.
 
 Let's take an example - many people claim that, Einstein's theories of relativity are essential for GPS to work properly because due to relativistic effects the clocks on GPS satellites should tick faster than identical clocks on the ground.
 
@@ -66,18 +77,9 @@ Although I am not an expert in special relativity, I suspect that the way this c
 >
 > Engineer 2: Just adjust it by X and see if it works. Oh, and tell that to some physicist, they might find it interesting.
 
-With that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math texbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
+In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the agyptians were able to build the pyramids without even knowing Euclidian geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math texbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
 
 And so "Who is this book for" is not to be read as who should, but who *can* read it. Then the answer is "anyone with some time and dedication to learn category theory". 
-
-About this book
-===
-
-Although many people don't subscribe to this view of mathematics specifically, we can see it encoded inside the structure of most mathematics textbooks - each chapter starts with an explanation of a concept, followed by some examples and then ends with a list of problems that this concept solves. 
-
-There is nothing wrong with this approach, but mathematics is so much more than solving problems. It was a the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was (and still is) a language, which can allow for people with different cultural backgrounds understand each other. And it is also art and a means of entertainment.
-
-Category theory embodies all these aspects of mathematics, so I think a very good grounds to writing a book where all of them shine - a book that is based not on solving of problems, but on exploration of concepts and on seeking connections between them. A book, that is, overall, pretty.
 
 About category theory
 ===
@@ -112,7 +114,7 @@ In chapter 7 we review another more interesting and more advanced categorical co
 Acknowledgments
 ===
 
-Thanks to my wife Dimitrina, who is taking after our daughter while I sit here and write my book.
+Thanks to my wife Dimitrina, for all her support.
 
 My daughter Daria, my "anti-author" who stayed seated on my knees when I was writing the second and third chapters and mercilessly deleted many sentences, most of them bad.
 
