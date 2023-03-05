@@ -101,6 +101,7 @@ isomorphisms
 Isomorphisms
 homomorphism
 endofunctors
+endofunctor
 const
 Monoidal
 morphisms
@@ -149,8 +150,11 @@ Georgieva
 functorial
 monospaced
 endofunctor
-Endofunctor
+endofunctor
+Endofunctors
+Endofunctors
 Homomorphism
+homomorphisms
 Hom
 representable
 Ord
@@ -162,3 +166,7 @@ homorphism
 homorphisms
 morphisms.
 Adjoint
+Peirce
+Umberto
+signifier
+TODO

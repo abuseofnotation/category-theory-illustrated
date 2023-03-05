@@ -4,14 +4,11 @@ title: index
 ---
 
 
-Category Theory Illustrated is a primer in category theory and various related concepts in "higher" mathematics that is *really* accessible to people with no prior exposure to the subject without being dumbed down, by utilizing visual explanations.
+Category Theory Illustrated is a primer in category theory and other mathematical theories that is made to be *really* accessible to people with no prior exposure to the subject, without being dumbed down, by utilizing visual explanations.
 
 The book serves as chapter 0 going through the gist of the material covered by other similar introductory books, but doing so in a way that would enable non-mathematicians to swift through with ease.
 
-Reading it would enable you to go through any academic introduction to category theory, as well as to start tackling resources that use category theory as a tool to treat other subjects.
-
 [![cover.svg](cover.svg)](00_about)
-
 
 Praise
 ===
@@ -25,9 +22,19 @@ Praise
 
 > "The clarity, consistency and elegance of diagrams in 'Category Theory Illustrated' has helped us demystify and explain in simple terms a topic often feared."
 
-[Gonzalo Casas](https://gnz.io/), Software developer and lecturer for Introduction to Computational Methods for Digital Fabrication in Architecture at ETH Zurich
+[Gonzalo Casas](https://gnz.io/), Software developer and lecturer at ETH Zurich
 
-Support the project
+Let's talk: publishers, co-authors, contributors
 ===
 
+I want to make this book into the best introductory text, not only to category theory, but to mathematics as a whole. It seems that I would need some help, though: 
 
+- I am looking for a *publisher* who is willing to release this book on paper. I have some more content that I can provide for the printed version. I am very flexible for the most part.
+
+- I am also looking for co-authors and/or a technical reviewers with some good experience in category theory who is willing to help me out with polishing and enriching the text.
+
+- Regular contributors are also welcome - anything from correcting some spelling mistakes to giving suggestions for new sections and chapters.
+
+- Even if this is the first book on math you read, you can still help me - let me know what parts are hard for you to understand and let's figure out why.
+
+You can contact me via [email](mailto:marinovboris@protonmail.com). For other means of contact, see the footer.

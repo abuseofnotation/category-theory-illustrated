@@ -129,7 +129,7 @@ Classical logic. The truth-functional interpretation
 
 The above is a summary of a worldview that is due to the Greek philosopher Plato and is sometimes called Plato's *theory of forms*. Originally, the discipline of logic represents an effort to think and structure our thoughts in a way that they apply to this world of forms i.e. in a "formal" way. Today, this original paradigm of logic is known as "classical logic". Although it all started with Plato, most of it is due to the 20th century mathematician David Hilbert.
 
-The existence of the world of forms implies that even if there are many things that we people don't know, at least *somewhere out there* there exists an answer to every question. In logic, this translates to *the principle of bivalence* that states that *each proposition is either true or false*. Due to this principle, propositions in classical logic can be aptly represented using set theory by boolean set, which contains those two values.
+The existence of the world of forms implies that, even if there are many things that we, people, don't know and would not ever know, at least *somewhere out there* there exists an answer to every question. In logic, this translates to *the principle of bivalence* that states that *each proposition is either true or false*. And, due to this principle, propositions in classical logic can be aptly represented in set theory by the boolean set, which contains those two values.
 
 ![The set of boolean values](boolean_set.svg)
 
@@ -179,7 +179,7 @@ If we are tired of diagrams, we can represent the composition diagram above as t
 
 Each proposition in classical logic can be proved with such diagrams/tables.
 
-The and and or operations
+The *and* and *or* operations
 ---
 
 OK, *you* know what *and* means and *I* know what it means, but what about those annoying people that want everything to be formally specified (nudge, nudge). Well we already know how we can satisfy them - we just have to construct the boolean function that represents *and*. 
@@ -216,7 +216,7 @@ Using those tables, we can also prove some axiom schemas we can use later:
 The *implies* operation
 ---
 
-Let's now look into something less trivial: the *implies* operation, (also known as *entailment*). This operation binds two propositions in a way that the truth of the first one implies the truth of the second one. You can read $p → q$ as "if $p$ is true, then $q$ must also be true. 
+Let's now look into something less trivial: the *implies* operation, (also known as *entailment*). This operation binds two propositions in a way that the truth of the first one implies the truth of the second one (or that the first proposition is a *necessary condition* for the second.) You can read $p → q$ as "if $p$ is true, then $q$ must also be true. 
 
 Entailment is also a binary function - it is represented by a function from an ordered pair of boolean values, to a boolean value.
 
@@ -235,6 +235,30 @@ Now there are some aspects of this which are non-obvious so let's go through eve
 4. And finally if $p$ is false but $q$ is false too, then $p$ still does imply $q$ (just some other day).
 
 It might help you to remember that in classical logic $p → q$ ($p$ implies $q$) is true when $\neg p ∨ q$ (either $p$ is false or $q$ is true.) 
+
+
+The *in and only if* operation
+---
+
+Now, let's review the operation that indicates that two propositions are equivalent (or, when one proposition is *a necessary and sufficient condition* for the other (which implies that the reverse is also true.)) This operation yields true when the propositions have the same value.
+
+| p |	q | p ↔ q |
+|---| --- | ---   |
+| True  | True  | True  |
+| True  | False | False |
+| False | True  | False |
+| False | False | True  |
+
+But what's more interesting about this operation is that it can be constructed using the *implies* operation - it is equivalent to each of the propositions implying the other one (so $p \leftrightarrow q$ is the same as $p \to q \land q \to p$) - something which we can easily prove by comparing some truth tables.
+
+| p |	q | p → q | q → p | p → q ∧ q → p|  
+|---| --- | ---   | --- | --- | --- |
+| True  | True  | True  | True | True | 
+| True  | False | False | True | False | 
+| False | True  | True  | False  | False | 
+| False | False | True  | True | True | 
+
+Because of this,  the equivalence operation is called "if and only if", or "iff" for short.
 
 Proving results by axioms/rules of inference
 ---
@@ -283,10 +307,10 @@ This bivalence is at the heart of what is called the Brouwer–Heyting–Kolmogo
 
 The original formulation of the BHK interpretation is not based on any particular mathematical theory. Here, we will first illustrate it using the language of set theory (just so we can abandon it a little later).
 
-The and and or operations
+The *and* and *or* operations
 ---
 
-As the existence of a proof of a proposition is taken to mean that the proposition is true, the definitions of *and* is rather simple - the proof of $A ∧ B$ is just *a pair* containing a proof of $A$, and a proof of $B$ i.e. *a set-theoretic product* of the two (see chapter 2). The principle for determining whether the proposition is true or false is similar to that of primary propositions - if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A ∧ B$ can be constructed (and so $A ∧ B$ is "true").
+As the existence of a proof of a proposition is taken to mean that the proposition is true, the definitions of *and* is rather simple - the proof of $A ∧ B$ is just *a pair* containing a proof of $A$, and a proof of $B$ i.e. *a set-theoretic product* of the two (see chapter 2). The principle for determining whether the proposition is true or false is similar to that of primary propositions - if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A \land B$ can be constructed (and so $A \land B$ is "true").
 
 ![And in the BHK interpretation](bhk_and.svg)
 
@@ -295,13 +319,21 @@ As the existence of a proof of a proposition is taken to mean that the propositi
 The *implies* operation
 ---
 
-Saying that $A$ implies $B$ ($A → B$) would just mean that there exist a function which can convert a proof of $A$ to a proof of $B$. 
+Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist a function which can convert a proof of $A$ to a proof of $B$. 
 
 ![Implies in the BHK interpretation](bhk_implies.svg)
 
-And the *modus ponens* rule of inference is expressed by the fact that if we have a proof of $A$ we can call this function ($A → B$) to obtain a proof of $B$.
+And the *modus ponens* rule of inference is nothing more than *functional application*. i.e. if we have a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
 
-(Note that in order for this to work, we also need to define the functions in terms of sets i.e. we need to have a set representing $A → B$ for each $A$ and $B$. We will come back to this later.)
+(In order to define this formally, we also need to define functions in terms of sets i.e. we need to have a set representing $A \to B$ for each $A$ and $B$. We will come back to this later.)
+
+The *if and only if* operation
+---
+
+In the section on classical logic, we proved that two propositions $A$ and $B$ are equivalent if $A$ implies $B$ and $B$ implies $A$. But if the *implies* operation is just a function, then proposition are equivalent precisely when the exist two functions, converting each of them to the other i.e. when the propositions are *isomorphic*.
+
+![Implies in the BHK interpretation](bhk_iff.svg)
+
 
 The *negation* operation
 ---
@@ -309,7 +341,7 @@ The *negation* operation
 So according to BHK interpretation saying that $A$ is true, means that that we possess a proof of $A$ - simple enough. But it's a bit harder to express the fact that $A$ is false: it is not enough to say that we *don't have a proof* of $A$ (the fact that don't have it, doesn't mean it doesn't exist). Instead, we must show that claiming that $A$ is true leads to a *contradiction*.
 
 
-To express this, intuitionistic logic defines the constant $⊥$ which plays the role of *False* (and is also known as "absurdity" or "bottom value"). $⊥$ is defined as the proof of a formula that does not have any proofs. And the equivalent of false propositions are the ones that imply that the bottom value is provable (which is a contradiction). So $¬A$ is $A → ⊥$. 
+To express this, intuitionistic logic defines the constant $⊥$ which plays the role of *False* (and is also known as "absurdity" or "bottom value"). $⊥$ is defined as the proof of a formula that does not have any proofs. And the equivalent of false propositions are the ones that imply that the bottom value is provable (which is a contradiction). So $¬A$ is $A \to ⊥$. 
 
 In set theory, the $⊥$ constant is expressed by the empty set.
 

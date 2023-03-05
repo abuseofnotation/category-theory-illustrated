@@ -17,30 +17,6 @@ And now we will relax the condition even more and will review a relationship tha
 As you can see, I am not very good at explaining, so I got some examples alligned. But before we proceed with them, we will go through something else.
 
 
-The category of small categories
-===
-
-Ha, I got you this time (or at least I hope I did) - you probably thought that I won't introduce another category in this chapter. But this is exactly what I am going to do. And (surprise again) the new category won't be the category of functors (don't worry, we will introduce that in the next chapter.) Instead, we will examine the category of (small) categories, that has all the categories that we saw so far as objects and functors as its morphisms, like $Set$ - the category of sets, $Mon,$ the category of monoids, $Ord,$ the category of orders etc.
-
-![The category of categories](category_of_categories.svg)
-
-**Task:** Go through the functor definition and see how you can make functors compose. 
-
-**Question:** What are the initial and terminal object of the category of small categories.
-
-Categories all the way down
----
-
-The recursive nature of category theory might leave some of you confused: we started by saying that categories are *composed of objects and morphisms*, but now we are saying that there are *morphisms between categories* (functors). And on top of that, there is a category where *the objects are categories themselves*. Does that mean that categories are an example of... categories? Sounds a bit weird on intuitive level (as for example biscuits don't contain other biscuits and houses don't use houses as building material) but it is actually the case.
-
-Category theory does *categorize* everything, so from a category-theoretic standpoint all of maths is categories all the way down and whether you would threat a given category as a universe, or as a point depends solemnly on your viewpoint.
-
-Like, for example, every monoid is a category with one just object, but at the same time, monoids can be seen as belonging to one category - the category of monoids - with monoid homomorphisms acting as objects.
-
-At the same time we have the category of groups, for example, which contains the category of monoids as a subcategory, as all monoids are groups.
-
-There may be many more levels of categories from categories. However that does not mean that we have to cover all of them and think about them at all - it is like the concept of a derivative in calculus - the first derivative of a position of the object gives its *speed*, which is useful, the derivative of speed is also useful - it is *velocity*, but the derivative of velocity and those after it leave us indifferent. We can use the same tactic with our little journey in category theory - stick on the level that make sense for us and not be obsessed with forming picture of the whole thing, because there is no *whole thing* - category theory is an *abstract* theory. That is, it does not seek to represent an actual state of affairs, but to provide a language that you can use to express many different ideas, actual or purely imaginary. So view the category of categories not as a structure, but as a space, where all these concepts live.
-
 {% if site.distribution == 'print' %}
 
 Free and forgetful functors
