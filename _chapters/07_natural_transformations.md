@@ -1,4 +1,3 @@
----
 layout: default
 title: Natural transformations
 ---
@@ -175,8 +174,16 @@ Isomorphism is not hard to construct - given two sets, containing three objects 
 
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
 
+
+Natural transformations and associativity
+===
+
+The definition of natural transformation just states that (ab)c = a(bc)
+
+
 Free objects
 ===
+
 https://math.stackexchange.com/questions/131389/what-are-free-objects
 
 Monads

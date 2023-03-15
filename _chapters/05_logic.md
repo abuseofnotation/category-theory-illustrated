@@ -237,7 +237,7 @@ Now there are some aspects of this which are non-obvious so let's go through eve
 It might help you to remember that in classical logic $p → q$ ($p$ implies $q$) is true when $\neg p ∨ q$ (either $p$ is false or $q$ is true.) 
 
 
-The *in and only if* operation
+The *if and only if* operation
 ---
 
 Now, let's review the operation that indicates that two propositions are equivalent (or, when one proposition is *a necessary and sufficient condition* for the other (which implies that the reverse is also true.)) This operation yields true when the propositions have the same value.
@@ -258,7 +258,7 @@ But what's more interesting about this operation is that it can be constructed u
 | False | True  | True  | False  | False | 
 | False | False | True  | True | True | 
 
-Because of this,  the equivalence operation is called "if and only if", or "iff" for short.
+Because of this, the equivalence operation is called "if and only if", or "iff" for short.
 
 Proving results by axioms/rules of inference
 ---
@@ -287,7 +287,7 @@ Note that to really prove that the two formulas are equivalen we have to also do
 Intuitionistic logic. The BHK interpretation 
 ===
 
-Although the classical truth-functional interpretation of logic works and is correct in its own right, it doesn't fit well the categorical framework that we are using here: It is too "low-level", it relies on manipulating the values of the propositions. According to it, the operations *and* *or* and *implies* are just 3 of the 16 possible binary logical operations and they are not really connected to each other.
+Although the classical truth-functional interpretation of logic works and is correct in its own right, it doesn't fit well the categorical framework that we are using here: It is too "low-level", it relies on manipulating the values of the propositions. According to it, the operations *and* and *or* are just 2 of the 16 possible binary logical operations and they are not really connected to each other (but we know that they actually are.)
 
 For these and other reasons (mostly other, probably), in the 20th century a whole new school of logic was founded, called *intuitionistic logic*. If we view classical logic as based on *set theory*, then intuitionistic logic would be based on *category theory* and its related theories. If *classical logic* is based on Plato's theory of forms, then intuinism began with a philosophical idea originating from Kant and Schopenhauer: the idea that the world as we experience it is largely predetermined of out perceptions of it. As the mathematician L.E.J. Brouwer puts it.
 
@@ -330,10 +330,11 @@ And the *modus ponens* rule of inference is nothing more than *functional applic
 The *if and only if* operation
 ---
 
-In the section on classical logic, we proved that two propositions $A$ and $B$ are equivalent if $A$ implies $B$ and $B$ implies $A$. But if the *implies* operation is just a function, then proposition are equivalent precisely when the exist two functions, converting each of them to the other i.e. when the propositions are *isomorphic*.
+In the section on classical logic, we proved that two propositions $A$ and $B$ are equivalent if $A$ implies $B$ and $B$ implies $A$. But if the *implies* operation is just a function, then proposition are equivalent precisely when there are two functions, converting each of them to the other i.e. when the sets containing the propositions are *isomorphic*.
 
 ![Implies in the BHK interpretation](bhk_iff.svg)
 
+(Perhaps we should note that *not all functions are proofs*, a designated set of them. We say this, because in set theory you can construct functions and isomorphisms between any pair of singleton sets, but that won't mean that all proofs are equivalent.)
 
 The *negation* operation
 ---

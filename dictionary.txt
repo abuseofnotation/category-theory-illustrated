@@ -3,6 +3,7 @@ invertible
 coproduct
 Coproduct
 morphism
+morphism.
 Morphism
 coproducts
 morphism
@@ -95,6 +96,7 @@ cartesian
 Functor
 functor
 functors
+functors.
 Functors
 isomorphism
 isomorphisms
@@ -170,3 +172,5 @@ Peirce
 Umberto
 signifier
 TODO
+operandi
+mathy

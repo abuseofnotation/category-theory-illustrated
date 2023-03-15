@@ -267,14 +267,16 @@ Category theory allows us to see the big picture when it comes to sets and simil
 | Objects and  Morphisms        | Sets and functions |
 | **N/A**             | Element    | 
 
-By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we have gained the ability to see the whole universe that we have been previously trapped in. Just as the whole realm of sets can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyze similarities between these and other structures.
+By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we gain the ability to see the whole universe where we were previously trapped in. In the same way as the whole realm of sets can be thought as one category, a programming language can also be thought as a category. The concept of a category allows us to find and analyze similarities between these and other structures.
 
 **NB:** The word "Object" is used in both programming languages and in category theory, but for completely different things. The equivalent a categorical object is equivalent to a *type* or a *class* in programming language theory.
 
 Sets VS Categories
 ---
 
-One remark before we go: in the last paragraphs I sound as if I'm *comparing* categories and sets (and rooting for categories, in order to get more copies of my book sold) and I don't want you to get the wrong impression that the two concepts are somehow competing with one another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics in physics. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. Abstract theories, like category theory and set theory, on the other hand, are more like languages for expressing such descriptions - they still can be connected, and are connected in more than one way, but there is no inherent hierarchy between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
+One remark before we go: in the last paragraphs I sound as if I'm *comparing* categories and sets (and rooting for categories, in order to get more copies of my book sold) and I don't want you to get the wrong impression that the two concepts are somehow competing with one another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. 
+
+Abstract theories, like category theory and set theory, on the other hand, are more like *languages* for expressing such descriptions - they still can be connected, and *are* connected in more than one way, but there is no inherent hierarchy between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
 
 Defining Categories (again)
 ===
@@ -387,7 +389,7 @@ Addendum: Why are categories like that?
 ===
 
 *Why* are categories defined by those two laws and not some other two (or one, three, four etc.) laws? From one standpoint, the answer to that seems obvious - we study categories because they *work*, I mean, look at how many applications are there. 
-But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice.) Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
+But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice (due to a phenomenon called "emergence").) Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
 
 Identity and isomorphisms
 ===
