@@ -107,7 +107,7 @@ In the next two chapters, 3 and 4 we would jump to two different branches of mat
 
 Chapter 5 also follows the main formula of the previous two chapters, and it gets to the heart of the matter of why category theory is a universal language, by showing it's connection with the ancient discipline of *logic*. As in chapters 3 and 4 we start with a crash course of logic itself.
 
-The connecting between all these different disciplines is examined in chapter 6, using one of the moist interesting category-theoretical concepts - the concept of a functor.
+The connecting between all these different disciplines is examined in chapter 6, using one of the most interesting category-theoretical concepts - the concept of a functor.
 
 In chapter 7 we review another more interesting and more advanced categorical concept the concept of a *natural transformation*.
 
