@@ -265,7 +265,7 @@ My thesis is that to perceive the world around us, we are going through a bunch 
 
 ![Perception is functorial](chain.svg)
 
-You can view this as a progression from simpler to more abstract rom categories with less morphisms to categories with more morphisms - we start with the category of pieces of sensory data that have no connections between one another, and proceed to another category where some of these pieces of data are connected. Then, we transfer this structure in another category with even more connections.
+You can view this as a progression from simpler to more abstract from categories with less morphisms to categories with more morphisms - we start with the category of pieces of sensory data that have no connections between one another, and proceed to another category where some of these pieces of data are connected. Then, we transfer this structure in another category with even more connections.
 
 ![Perception is functorial](logic_thought.svg)
 
