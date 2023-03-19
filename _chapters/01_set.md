@@ -235,7 +235,7 @@ They might be right, mathematical functions have one big advantage over non-math
 Purely-functional programming languages
 ---
 
-We said that, while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. There are some languages, that don't permit non-mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages 
+We said that, while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. There are some languages, that don't permit non-mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
 
 A peculiarity in such languages is that they don't directly allow for writing functions that perform operations other than returning values, like rendering stuff on screen, I/O etc.
 
