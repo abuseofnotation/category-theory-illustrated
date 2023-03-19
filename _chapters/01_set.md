@@ -64,7 +64,7 @@ Notice that $Y$ contains only elements that are also present in $G$. That is, ev
 Singleton Sets
 ---
 
-The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid - simply put, there are things that are *one of a kind*. The set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set.
+The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid - simply put, there are things that are *one of a kind*. The set of kings/queens that a given kingdom has is a singleton set. 
 
 ![The singleton set of red balls](../01_set/singleton.svg)
 

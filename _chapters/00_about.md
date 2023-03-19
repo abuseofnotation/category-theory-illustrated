@@ -34,8 +34,9 @@ Ever since Newton's Principia, the discipline of mathematics is viewed in the so
 
 Because of this, mathematics is in a weird and, I'd say, unique position of always having to defend what they do with respect to it's value for *other disciplines*. I again stress that this is something that would be considered absurd when it comes to any other discipline. 
 
-People don't expect any return on investment from physical theories - noone bashed string theory for failing to make useful predictions. 
-And bashing philosophical theories for being impractical would be even more absurd, like bashing Wittgenstein:
+People don't expect any return on investment from *physical theories* e.g. noone bashes a physical theory for having no utilitarian value.
+
+And bashing philosophical theories for being impractical would be even more absurd, imagine bashing Wittgenstein:
 
 > "All too well, but what can you do with the picture theory of language?" 
 > "Well, I am told it does have its applications is programming language theory..."
@@ -77,7 +78,7 @@ Although I am not an expert in special relativity, I suspect that the way this c
 >
 > Engineer 2: Just adjust it by X and see if it works. Oh, and tell that to some physicist, they might find it interesting.
 
-In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the agyptians were able to build the pyramids without even knowing Euclidian geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math texbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
+In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the Egyptians were able to build the pyramids without even knowing Euclidian geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math texbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
 
 And so "Who is this book for" is not to be read as who should, but who *can* read it. Then the answer is "anyone with some time and dedication to learn category theory". 
 
@@ -88,7 +89,7 @@ Like we said, the fundaments of mathematics are the fundaments of thought. Categ
 
 The way we think and talk is based on intuition that develops naturally and is very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us, to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I mean, although it isn't obvious at all (how are they equal, at what context etc). 
 
-It is in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics their 
+It is in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
 Category theory formalizes the concept of a diagram and their components - arrows and objects and creates a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to bring various modes of thinking in common terms. 
 
