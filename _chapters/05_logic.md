@@ -29,7 +29,7 @@ Primary propositions
 
 A consequence of logic being the science of the possible is that in order to do anything at all in it, we should have an initial set of propositions that we accept as true or false. These are also called "premises", "primary propositions" or "atomic propositions" as Wittgenstein dubbed them. 
 
-![Balls](balls.svg)
+![Balls](../05_logic/balls.svg)
 
 In the context of logic itself, these propositions are abstracted away (i.e. we are not concerned about them directly) and so they can be represented with the colorful balls that you are familiar with. 
 
@@ -38,11 +38,11 @@ Composing propositions
 
 At the heart of logic, as in category theory, is the concept of *composition* - if we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operators, like "and", "or" "follows" etc. The result would be a new proposition, not unlike the way in which two monoid objects are combined into one using the monoid operation. And actually some logical operations do form monoids, like for example the operation *and*, with the proposition $true$ serving as the identity element.
 
-![Logical operations that form monoids](logic_monoid.svg)
+![Logical operations that form monoids](../05_logic/logic_monoid.svg)
 
 However, unlike monoids/groups, logics have not one but *many* logical operations and logic studies *the ways in which they relate to one another*, for example, in logic we might be interested in the law of distributivity of *and* and $or$ operations and what it entails.
 
-![The distributivity operation of "and" and "or"](logic_distributivity.svg)
+![The distributivity operation of "and" and "or"](../05_logic/logic_distributivity.svg)
 
 Important to note that $∧$ is the symbol for *and* and $∨$ is the symbol for $or$ (although the law above is actually valid even if *and* and $or$ are flipped).
 
@@ -51,7 +51,7 @@ The equivalence of primary and composite propositions
 
 When looking at the last diagram, it is important to stress that, although in the leftmost proposition the green ball is wrapped in a gray ball to make the diagram prettier, propositions that are composed of several premises (symbolized by gray balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls) and that they compose in the same way.
 
-![Balls as propositions](balls_propositions.svg)
+![Balls as propositions](../05_logic/balls_propositions.svg)
 
 Modus ponens
 ---
@@ -60,7 +60,7 @@ As an example of a proposition that contains multiple levels of nesting (and als
 
 Modus ponens is a proposition that states that if proposition $A$ is true and also if proposition $(A → B)$ is true (that is if $A$ implies $B$), then $B$ is true as well. For example, if we know that "Socrates is a human" and that "humans are mortal" (or "being human implies being mortal"), we also know that "Socrates is mortal."
 
-![Modus ponens](modus_ponens.svg)
+![Modus ponens](../05_logic/modus_ponens.svg)
 
 Let's dive into it. The proposition is composed of two other propositions in a $follows$ relation, where the proposition that follows ($B$) is primary, but the proposition from which $B$ follows is not primary (let's call that one $C$ - so the whole proposition becomes $C → B$.)
 
@@ -73,17 +73,17 @@ We often cannot tell whether a given composite proposition is true or false with
 
 For example, our previous example will not stop being true if we substitute "Socrates" with any other name, nor if we substitute "mortal" for any other quality that humans possess.
 
-![Variation of modus ponens](modus_ponens_variations.svg)
+![Variation of modus ponens](../05_logic/modus_ponens_variations.svg)
 
 Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. You can turn each tautology into contradiction or the other way around by adding a "not". 
 
 The simplest tautology is the statement that each proposition implies itself (e.g. "All bachelors are unmarried"). It may remind you of something.
 
-![Identity tautology](tautology_identity.svg)
+![Identity tautology](../05_logic/tautology_identity.svg)
 
 Here are some more complex (less boring) tautologies (the symbol $¬$ means "not"/negation.
 
-![Tautologies](tautology_list.svg)
+![Tautologies](../05_logic/tautology_list.svg)
 
 We will learn how to determine which propositions are a tautologies shortly, but first let's see why is this important at all i.e. what are tautologies good for: tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* or *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution. 
 
@@ -92,13 +92,13 @@ Axiom schemas/Rules of inference
 
 Realizing that the colors of the balls in modus ponens are superficial, we may want to represent the general structure of modus ponens that all of its variations share.
 
-![Modus ponens](modus_ponens_schema.svg)
+![Modus ponens](../05_logic/modus_ponens_schema.svg)
 
 This structure (the one that looks like a coloring book in our example) is called *axiom schema*. And the propositions that are produced by it are *axioms*. 
 
 Note that the propositions that we plug into the schema don't have to be primary. For example, having the proposition $a$ (that is symbolized below by the orange ball) and the proposition stating that $a$ implies $a \lor b$ (which is one of the tautologies that we saw above), we can plug those propositions into the *modus ponens* and prove that $a \lor b$ is true. 
 
-![Using modus ponens for rule of inference](modus_ponens_composite.svg)
+![Using modus ponens for rule of inference](../05_logic/modus_ponens_composite.svg)
 
 *Axiom schemas* and *rules of inference* are almost the same thing except they allow us to actually distill the conclusion from the premises. For example in the case above, we can use modus ponens as a rule of inference to proves that $a \lor b$ is true.
 
@@ -111,7 +111,7 @@ Knowing that we can use axiom schemas/rules of inference to generate new proposi
 
 Here is one such collection which consists of the following five axiom schemes *in addition to the inference rule modus ponens* (These are axiom schemes, even though we use colors).
 
-![A minimal collection of Hilbert axioms](min_hilbert.svg)
+![A minimal collection of Hilbert axioms](../05_logic/min_hilbert.svg)
 
 Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his hame right.)
 
@@ -131,7 +131,7 @@ The above is a summary of a worldview that is due to the Greek philosopher Plato
 
 The existence of the world of forms implies that, even if there are many things that we, people, don't know and would not ever know, at least *somewhere out there* there exists an answer to every question. In logic, this translates to *the principle of bivalence* that states that *each proposition is either true or false*. And, due to this principle, propositions in classical logic can be aptly represented in set theory by the boolean set, which contains those two values.
 
-![The set of boolean values](boolean_set.svg)
+![The set of boolean values](../05_logic/boolean_set.svg)
 
 According to the classical interpretation, you can think of *primary propositions* as just a bunch of boolean values, *logical operators* are functions that take a one or several boolean values and return another boolean value (and *composite propositions* are, just the results of the application of these functions).
 
@@ -142,7 +142,7 @@ The *negation* operation
 
 Let's begin with the negation operation. Negation is a unary operation, which means that it is a function that takes just *one* argument and (like all other logical operators) returns one value, where both the arguments and the return type are boolean values.
 
-![negation](negation.svg)
+![negation](../05_logic/negation.svg)
 
 The same function can also be expressed in a slightly less-fancy way by this table.
 
@@ -158,17 +158,17 @@ Interlude: Proving results by truth tables
 
 Having defined the negation operator, we are in position to prove the first of the axioms of the logical system we saw, namely the *double negation elimination*. In natural language, this axiom is equivalent to the observation that saying "I am *not unable* to do X" is the same as saying  "I am *able* to do it". 
 
-![Double negation elimination formula](double_negation_formula.svg)
+![Double negation elimination formula](../05_logic/double_negation_formula.svg)
 
 (despite its triviality, the double negation axiom is probably the most controversial result in logic, we will see why later.)
 
 If we view logical operators as functions from and to the set of boolean values, than proving axioms involves composing several of those functions into one function and observing its output. More specifically, the proof of the formula above involves just composing the negation function with itself and verifying that it leaves us in the same place from which we started.
 
-![Double negation elimination](double_negation_proof.svg)
+![Double negation elimination](../05_logic/double_negation_proof.svg)
 
 If we want to be formal about it, we might say that applying negation two times is equivalent to applying the *identity* function.
 
-![The identity function for boolean values](boolean_identity.svg)
+![The identity function for boolean values](../05_logic/boolean_identity.svg)
 
 If we are tired of diagrams, we can represent the composition diagram above as table as well. 
 
@@ -186,7 +186,7 @@ OK, *you* know what *and* means and *I* know what it means, but what about those
 
 Because *and* is a *binary* operator, instead of a single value the function would accept a *pair* of boolean values.
 
-![And](and.svg)
+![And](../05_logic/and.svg)
 
 Here is the equivalent truth-table (in which $∧$ is the symbol for *and*.)
 
@@ -265,7 +265,7 @@ Proving results by axioms/rules of inference
 
 Let's examine the above formula, stating that $p → q$ is the same as $¬p ∨ q$. 
 
-![Hilbert formula](hilbert_formula.svg)
+![Hilbert formula](../05_logic/hilbert_formula.svg)
 
 We can easily prove this by using truth tables.
 
@@ -280,7 +280,7 @@ But it would be much more intuitive if we do it using axioms and rules of infere
 
 Here is one way to do it. The formulas that are used at each step are specified at the right-hand side, the rule of inference is modus ponens.
 
-![Hilbert proof](hilbert_proof.svg)
+![Hilbert proof](../05_logic/hilbert_proof.svg)
 
 Note that to really prove that the two formulas are equivalen we have to also do it the other way around (start with ($¬p ∨ q$) and ($p → q$)).
 
@@ -297,11 +297,11 @@ Classical and intuitionistic logic diverge from one another right from the start
 
 So, intuitionistic logic is not bivalent, i.e. we cannot have all propositions reduced to true and false. 
 
-![The True/False dichotomy](true_false.svg)
+![The True/False dichotomy](../05_logic/true_false.svg)
 
 One thing that we still do have there are propositions that are "true" in the sense that a proof for them is given - the primary propositions. So with some caveats (which we will see later) the bivalence between true and false proposition might be thought out as similar to the bivalence between the existence or absense of a proof for a given proposition - there either is a proof of it or there isn't.
 
-![The proved/unproved dichotomy](proved_unproved.svg)
+![The proved/unproved dichotomy](../05_logic/proved_unproved.svg)
 
 This bivalence is at the heart of what is called the Brouwer–Heyting–Kolmogorov (BHK) interpretation of logic, something that we will look into next.
 
@@ -312,7 +312,7 @@ The *and* and *or* operations
 
 As the existence of a proof of a proposition is taken to mean that the proposition is true, the definitions of *and* is rather simple - the proof of $A ∧ B$ is just *a pair* containing a proof of $A$, and a proof of $B$ i.e. *a set-theoretic product* of the two (see chapter 2). The principle for determining whether the proposition is true or false is similar to that of primary propositions - if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A \land B$ can be constructed (and so $A \land B$ is "true").
 
-![And in the BHK interpretation](bhk_and.svg)
+![And in the BHK interpretation](../05_logic/bhk_and.svg)
 
 **Question:** what would be the **or** operation in this case?
 
@@ -321,7 +321,7 @@ The *implies* operation
 
 Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist a function which can convert a proof of $A$ to a proof of $B$. 
 
-![Implies in the BHK interpretation](bhk_implies.svg)
+![Implies in the BHK interpretation](../05_logic/bhk_implies.svg)
 
 And the *modus ponens* rule of inference is nothing more than *functional application*. i.e. if we have a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
 
@@ -332,7 +332,7 @@ The *if and only if* operation
 
 In the section on classical logic, we proved that two propositions $A$ and $B$ are equivalent if $A$ implies $B$ and $B$ implies $A$. But if the *implies* operation is just a function, then proposition are equivalent precisely when there are two functions, converting each of them to the other i.e. when the sets containing the propositions are *isomorphic*.
 
-![Implies in the BHK interpretation](bhk_iff.svg)
+![Implies in the BHK interpretation](../05_logic/bhk_iff.svg)
 
 (Perhaps we should note that *not all functions are proofs*, a designated set of them. We say this, because in set theory you can construct functions and isomorphisms between any pair of singleton sets, but that won't mean that all proofs are equivalent.)
 
@@ -346,15 +346,15 @@ To express this, intuitionistic logic defines the constant $⊥$ which plays the
 
 In set theory, the $⊥$ constant is expressed by the empty set.
 
-![False in the BHK interpretation](bhk_false.svg)
+![False in the BHK interpretation](../05_logic/bhk_false.svg)
 
 And the observation that propositions that are connected to the bottom value are false is expressed by the fact that if a proposition is true, i.e. there exists a proof of it, then there can be no function from it to the empty set.
 
-![False in the BHK interpretation](bhk_false_function.svg)
+![False in the BHK interpretation](../05_logic/bhk_false_function.svg)
 
 The only way for there to be such function is if the set of proofs of the proposition is empty as well.
 
-![False in the BHK interpretation](bhk_false_function_2.svg)
+![False in the BHK interpretation](../05_logic/bhk_false_function_2.svg)
 
 **Task:** Look up the definition of function and verify that there cannot exist a function from any set *to the empty set* 
 
@@ -365,7 +365,7 @@ Classical VS intuitionistic logic
 
 Although from first glance intuitionistic logic seems to differ a lot from classical logic, it actually doesn't - if we try to deduce the axiom schemas/rules of inference that correspond to the definitions of the structures outlined above, we would see that they are virtually the same as the ones that define classical logic. With one exception concerning the *double negation elimination axiom* that we saw earlier, a version of which is known as *the law of excluded middle*.
 
-![The formula of the principle of the excluded middle](excluded_middle_formula.svg)
+![The formula of the principle of the excluded middle](../05_logic/excluded_middle_formula.svg)
 
 This law is valid in classical logic and is true when we look at it in terms of truth tables, but there is no justification for it in the BHK interpretation - a fact that spawned a heated debate between the inventor of classical logic David Hilbert and the inventor of intuitionistic logic L.E.J. Brouwer, known as *the Brouwer–Hilbert controversy*.
 
@@ -381,7 +381,7 @@ The Curry-Howard isomorphism
 
 Programmers might find the definition of the BHK interpretation interesting for other reason - it is very similar to a definition of a programming language: propositions are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types* (which are currently not supported in most programming languages, but that's a separate topic.) Finally a proof of a given proposition is represented by a value of the corresponding type. 
 
-![Logic as a programming language](logic_curry.svg)
+![Logic as a programming language](../05_logic/logic_curry.svg)
 
 This similarity is known as the *Curry-Howard isomorphism*.
 
@@ -394,13 +394,13 @@ Knowing about the Curry-Howard isomorphism and knowing also that programming lan
 
 Let's examine this isomorphism (without being too formal about it). As all other isomorphisms, it comes in two parts. The first part is finding a way to convert a logical system into a category - this would not be hard for us, as sets form a category and the flavor of the BHK interpretation that we saw is based on sets.
 
-![Logic as a category](category_curry_logic.svg)
+![Logic as a category](../05_logic/category_curry_logic.svg)
 
 **Task:** See whether you can prove that logic propositions and entailments forms a category. What is missing?
 
 The second part involves converting a category into a logical system - this is much harder. To do it, we have to enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has objects that correspond to all valid logical propositions and no objects that correspond to invalid ones. 
 
-![Logic as a category](logic_curry_category.svg)
+![Logic as a category](../05_logic/logic_curry_category.svg)
 
 Categories that adhere to these criteria are called *cartesian closed categories*. We won't describe them here directly, but instead we would start with a similar but simpler structures that are instance of them and that we already examined - orders.
 
@@ -411,19 +411,19 @@ We will now do something that is quite characteristic of category theory - exami
 
 So we already saw that a logical system along with a set of primary propositions forms a category.
 
-![Logic as a preorder](logic_category.svg)
+![Logic as a preorder](../05_logic/logic_category.svg)
 
 If we assume that there is only one way to go from proposition $A$, to proposition $B$ (or there are many ways, but we are not interested in the difference between them), then logic is not only a category, but a *preorder* in which the relationship "bigger than" is taken to mean "implies".
 
-![Logic as a preorder](logic_preorder.svg)
+![Logic as a preorder](../05_logic/logic_preorder.svg)
 
 Furthermore, if we count propositions that follow from each other (or sets of propositions that are proven by the same proof) as equivalent, then logic is a proper *partial order*.
 
-![Logic as an order](logic_order.svg)
+![Logic as an order](../05_logic/logic_order.svg)
 
 And so it can be represented by a Hasse diagram, yey. 
 
-![Logic as an order](logic_hasse.svg)
+![Logic as an order](../05_logic/logic_hasse.svg)
 
 Now let's examine the question that we asked before - exactly which ~~categories~~ orders represent logic and what laws does an order have to obey so it is isomorphic to a logical system? We will attempt to answer this question as we examine the elements of logic again, this time in the context of orders.
 
@@ -432,19 +432,19 @@ The and and or operations
 
 By now you probably realized that the *and* and *or* operations are the bread and butter of logic (although it's not clear which is which). As we saw, in the BHK interpretation those are represented by set *products* and *sums*. The equivalent constructs in the realm of order theory are *meets* and *joins* (in category-theoretic terms *products* and *coproducts*.)
 
-![Order meet and joing](lattice_meet_join.svg)
+![Order meet and joing](../05_logic/lattice_meet_join.svg)
 
 Here comes the first criteria for an order to represent a logical system accurately - *it has to have $meet$ and $join$ operations for all elements*. Having two elements without a meet would mean that you would have a logical system where there are propositions for which you cannot say that one or the other is true. And this not how logic works, so our order has to have meets and joins for all elements. Incidentally we already know how such orders are called - they are called *lattices*.
 
 One important law of the  *and* and *or* operations, that is not always present in the *meet*-s and *join*-s concerns the connection between the two, i.e. way that they distribute, over one another.
 
-![The distributivity operation of "and" and "or"](logic_distributivity.svg)
+![The distributivity operation of "and" and "or"](../05_logic/logic_distributivity.svg)
 
 Lattices that obey this law are called *distributive lattices*.
 
 Wait, where have we heard about distributive lattices before? In the previous chapter we said that they are isomorphic to *inclusion orders* i.e. orders which contain all combinations of sets of a given number of elements. The fact that they popped up again is not coincidental -  "logical" orders are isomorphic to inclusion orders. To understand why, you only need to think about the BHK interpretation - the elements which participate in the inclusion are our prime propositions. And the inclusions are all combinations of these elements, in an $or$ relationship (for simplicity's sake, we are ignoring the *and* operation.)
 
-![A color mixing poset, ordered by inclusion](logic_poset_inclusion.svg)
+![A color mixing poset, ordered by inclusion](../05_logic/logic_poset_inclusion.svg)
 
 $NB: For historical reasons, the symbols for *and* and *or* logical operations are flipped when compared to arrows in the diagrams ∧ is *and* and ∨ is *or*.$
 
@@ -455,19 +455,19 @@ In order for a distributive lattice to represent a logical system, it has to als
 
 A well-known result in logic, called *the principle of explosion*, states that if we have a proof of $False$ (or if "$False$ is true" if we use the terminology of classical logic), then any and every other statement can be proven. And we also know that no true statement implies $False$ (in fact in intuinistic logic this is the definition of a true statement). Based on these criteria we know that the $False$ object would look like this when compared to other objects:
 
-![False, represented as a Hasse diagram](lattice_false.svg)
+![False, represented as a Hasse diagram](../05_logic/lattice_false.svg)
 
 Circling back to the BHK interpretation, we see that the empty set fits both conditions.
 
-![False, represented as a Hasse diagram](lattice_false_bhk.svg)
+![False, represented as a Hasse diagram](../05_logic/lattice_false_bhk.svg)
 
 Conversely, the proof of $True$ (or the statement that "$True$ is true") is trivial and doesn't say anything, so *nothing follows from it*, but at the same time it follows from every other statement.
 
-![True, represented as a Hasse diagram](lattice_true.svg)
+![True, represented as a Hasse diagram](../05_logic/lattice_true.svg)
 
 So $True$ and $False$ are just the *greatest* and *least* objects of our order (in category-theoretic terms *terminal* and *initial* object.) 
 
-![The whole logical system, represented as a Hasse diagram](lattice_true_false.svg)
+![The whole logical system, represented as a Hasse diagram](../05_logic/lattice_true_false.svg)
 
 This is another example of the categorical concept of duality - $True$ and $False$ are dual to each other (which makes a lot of sense if you think about it.)
 
@@ -480,15 +480,15 @@ Finally, if a lattice really represents a logical system (that is, it is isomorp
 
 How would this object be described? You guessed it, using categorical language i.e. by recognizing a structure that consists of set of relations between objects in which ($A → B$) plays a part.
 
-![Implies operation](implies.svg)
+![Implies operation](../05_logic/implies.svg)
 
 This structure is actually a categorical reincarnation our favorite rule of inference, the *modus ponens* ($A ∧ (A → B) → B$). This rule is the essence of the *implies* operation and, because we already know how the operations that it contains (*and* and *implies*) are represented in our lattice, we can directly "categorize" it and use it as a definition, saying that $(A → B)$ is the object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
 
-![Implies operation with impostors](implies_modus_ponens.svg)
+![Implies operation with impostors](../05_logic/implies_modus_ponens.svg)
 
 This definition is not complete, however, because  $(A → B)$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$. So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* (or of it's equivalent for orders, the *meet* operation) you would already know where this is going: we define the function object using a *universal property*, by recognizing that all other formulas that can be in the place of $X$ in $A ∧ X → B$ point to $(A → B)$ i.e. they are below $(A → B)$ in a Hasse diagram.
 
-![Implies operation with universal property](implies_universal_property.svg)
+![Implies operation with universal property](../05_logic/implies_universal_property.svg)
 
 Or, using the logic terminology, we say that $A → B ∧ C$ and $A → B ∧ C ∧ D$ etc. are all "stronger" results than ($A → B$) and so ($A → B$) is the weakest result that fits the formula (stronger results lay lower in the diagram). 
 
@@ -498,19 +498,19 @@ Without being too formal, let's try to test if this definition captures the conc
 
 For example, let's take $A$ and $B$ to be the same object. In this case, ($A → B$) (or  ($A → A$) if you want to be pedantic) would be the topmost object $X$ for which the criteria given by the formula $A ∧ X → A$ is satisfied. But in this case the formula is *always satisfied* as the *meet* of $A$ and any other object would always be below $A$. So this formula is always for all $X$. The topmost object that fits it is, then, the topmost object out there i.e. $True$.
 
-![Implies identity](implies_identity.svg)
+![Implies identity](../05_logic/implies_identity.svg)
 
 This corresponds to the identity axiom in logic, that states that everything follows from itself.
 
 And by the similar logic we can see easily that if we take $A$ to be any object that is below $B$, then $(A → B)$ will also correspond to the $True$ object.
 
-![Implies when A follows from B](implies_b_follows.svg)
+![Implies when A follows from B](../05_logic/implies_b_follows.svg)
 
 So if we have $A → B$ if $A$ implies $B$, then $(A → B)$ is always true.
 
 And what if $B$ is lower than $A$. In this case the topmost object that fits the formula $A ∧ X → B$ is $B$ itself: $B$ fits the formula because the meet of two objects is always below those same objects, so $A ∧ B → B$ for all $A$ and $B$. And $B$ is definitely the topmost object that can possibly fit it, as it literary sets its upper bound.
 
-![Implies when B follows from A](implies_a_follows.svg)
+![Implies when B follows from A](../05_logic/implies_a_follows.svg)
 
 Translated to logical language, says that if $B → A$, then the proof of $(A → B)$ is just the proof of $B$.
 

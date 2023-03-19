@@ -17,11 +17,11 @@ In the previous chapter there were several places where needed a way to construc
 
 The simplest composite type, of the sets $B$, that contains $b$'s and the set $Y$, that contains $y$'s is the *Cartesian product* of $B$ and $Y$, that is the set of *ordered pairs* that contain one element of the set $Y$ and one element of the set $B$. Or formally speaking: $Y \times B = \{ (y, b) \}$ where $y ∈ Y, b ∈ B$ ($∈$ means "is an element of").
 
-![Product parts](product_parts.svg)
+![Product parts](../02_category/product_parts.svg)
 
 It is denoted $B \times Y$ and it comes equipped with two functions for retrieving the $b$ and the $y$ from each $(b, y)$.
 
-![Product](product.svg)
+![Product](../02_category/product.svg)
 
 **Question**: Why is this called a product? Hint: How many elements does it have?
 
@@ -36,19 +36,19 @@ You probably know how the Cartesian coordinate system works, but an equally inte
 
 An Cartesian coordinate system consists of two perpendicular lines, situated on an *Euclidian plane* and some kind of mapping that resembles a function, connecting any point in these two lines to a number, representing the distance between the point that is being mapped and the lines' point of overlap (which is mapped to the number $0$).
 
-![Cartesian coordinates](coordinates_x_y.svg)
+![Cartesian coordinates](../02_category/coordinates_x_y.svg)
 
 Using this construct (as well as the concept of a Cartesian product), we can describe not only the points on the lines, but any point on the Euclidian plane. We do that by measuring the distance between the point and those two lines.
 
-![Cartesian coordinates](coordinates.svg)
+![Cartesian coordinates](../02_category/coordinates.svg)
 
 And since the point is the main primitive of Euclidian geometry, the coordinate system allows us to also describe all kinds of geometric figures such as this triangle (which is described using products of products.)
 
-![Cartesian coordinates](coordinates_triangle.svg)
+![Cartesian coordinates](../02_category/coordinates_triangle.svg)
 
 So we can say that the Cartesian coordinate system is some kind of function-like mapping between all kinds of sets of (products of) *products of numbers* and *geometric figures* that correspond to these numbers, using which we can derive some properties of the figures using the numbers (for example, using the products in the example below, we can compute that the triangle that they represent has base of $6$ units and height of $5$ units. 
 
-![Cartesian coordinates](coordinates_isomorphism.svg)
+![Cartesian coordinates](../02_category/coordinates_isomorphism.svg)
 
 What's even more interesting is that this mapping is one-to-one, which makes the two realms *isomorphic* (traditionally we say that the point is *completely* described by the coordinates, which is the same thing.)
 
@@ -74,7 +74,7 @@ Products can also be used for expressing functions that take more than one argum
 
 Actually, here it is.
 
-![The plus function](plus.svg)
+![The plus function](../02_category/plus.svg)
 
 Note that there are languages, such as the ones from the ML family, where the *pair* data structure (also called a *tuple*) is a first-level construct, and multi-argument functions are really implemented in this way. 
 
@@ -85,19 +85,19 @@ Defining products in terms of sets
 
 When we said that the product is a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). But we didn't define how ordered pairs formally. Note that the criteria for order prevents us from encoding the pair as just a set containing the two elements, as while some mathematical operations (such as addition) indeed don't care about order, others (such as subtraction) do. And in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.
 
-![A pair](pair.svg)
+![A pair](../02_category/pair.svg)
 
 So does that mean that we have to define ordered pair as a "primitive" type, like we defined sets in order to use them? That's possible, but there is another approach if we can define a construct that is *isomorphic* to the ordered pair, using only sets, we can use that construct instead of them. And mathematicians had come up with multiple ingenious ways to do that. Here is the first one, which was discovered by Norbert Wiener in 1914. Note the smart use of the fact that the empty set is unique. 
 
-![A pair, represented by sets](pair_as_set_2.svg)
+![A pair, represented by sets](../02_category/pair_as_set_2.svg)
 
 The next one was discovered in the same year by Felix Hausdorff. In order to use that one, we just have to define $1$, and $2$ first.
 
-![A pair, represented by sets](pair_as_set_3.svg)
+![A pair, represented by sets](../02_category/pair_as_set_3.svg)
 
 Discovered in 1921 Kazimierz Kuratowski, this one uses just the component of the pair.
 
-![A pair, represented by sets](pair_as_set_1.svg)
+![A pair, represented by sets](../02_category/pair_as_set_1.svg)
 
 Defining products in terms of functions 
 ---
@@ -106,11 +106,11 @@ In the product definitions presented in the previous section worked by *zooming 
 
 How can we define products in terms of functions? To do that, we must first think about *what functions* are there for a given product, and we have two of those - the functions for retrieving the the two elements of the pair (the "getters", so to say) - formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. 
 
-![Product, external diagram](product_external.svg)
+![Product, external diagram](../02_category/product_external.svg)
 
 This diagram already provides a definition, but not a complete definithon, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other such objects.
 
-![Product, external diagram](product_candidates.svg)
+![Product, external diagram](../02_category/product_candidates.svg)
 
 However, all such objects would be *more complex* than the pair objects. And for this reason, *they all can be converted to it by a function*, as you can always have a function that converts a more complex structure, to a simpler one (we saw an example of this when we covered the functions that convert subsets to their supersets). 
 
@@ -120,7 +120,7 @@ More formally, if we suppose that there is a set $I$ that can serve as an impost
 
 Therefore, we can define the product of $B$ and $Y$ as a set that has functions for deriving $B$ and $Y$, but, more importantly, all other sets that have such functions can be converted to it. 
 
-![Product, external diagram](products_morphisms.svg)
+![Product, external diagram](../02_category/products_morphisms.svg)
 
 In category theory, this type of property that a given object might possess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*. I don't want to go into more detail, as it is a bit early for that now (after all we haven't even defined what category theory is). 
 
@@ -133,7 +133,7 @@ We will now study a construct that is pretty similar to the product but at the s
 
 The sum of two sets $B$ and $Y$, denoted $B + Y$ is a set that contains *all elements from the first set combined with all elements from the second one*. 
 
-![Sum or coproduct](coproduct.svg)
+![Sum or coproduct](../02_category/coproduct.svg)
 
 We can immediately see the connection with the *or* logical structure: For example, because a parent is either a mother or a father of a child, the set of all parents is the sum of the set of mothers and the set of fathers, or $P = M + F$.
 
@@ -143,11 +143,11 @@ Defining Sums in Terms of Sets
 
 As with the product, representing sums in terms of sets is not so straightforward. This time the complication comes from the fact that when a given object is an element of both sets, then it appears in the sum twice. This is why this type of sum of two sets is also called a *disjoint union*. Because of this, if two sets can have the same element as a member, then their sum will have that element twice which is not permitted, because a set cannot contain the same element twice. As with the product, the solution is to put some extra structure.
 
-![A member of a coproduct](coproduct_member.svg)
+![A member of a coproduct](../02_category/coproduct_member.svg)
 
 And as with the product, there is a low-level way to express a sum using sets alone. Incidentally, we can use pairs.
 
-![A member of a coproduct, examined](coproduct_member_set.svg)
+![A member of a coproduct, examined](../02_category/coproduct_member_set.svg)
 
 But again, this distinction is only relevant only when the two sets have common elements. If they don't then just uniting the two sets is sufficient to represent their sum.
 
@@ -158,15 +158,15 @@ As you might already suspect, the interesting part is expressing the sum of two 
 
 A property of every *or* relation is that if something is an $A$ that something is also an $A \vee B$ , and same for $B$ (The $\vee$ symbol means *or* by the way). For example, if my hair is *brown*, then my hair is also *either blond or brown*. This is what *or* means, right? This property can be expressed as a function, two functions actually - one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$.)
 
-![Coproduct, external diagram](coproduct_external.svg)
+![Coproduct, external diagram](../02_category/coproduct_external.svg)
 
 As you might have already noticed, this definition is pretty similar to the definition of the product from the previous section. And the similarities don't end here. As with products, we have sets that can be thought of as *impostor* sums - ones for which these functions exist, but which also contain additional information.
 
-![Coproduct, external diagram](coproduct_candidates.svg)
+![Coproduct, external diagram](../02_category/coproduct_candidates.svg)
 
 All these sets express relationships which are more vague than the simple sum, and therefore given such a set (an "impostor" set as we called it earlier), there would exist a function that would distinguish it from the true sum. The only difference is that, unlike with the products, this time this function goes *from the sum* to the impostor.
 
-![Coproduct, external diagram](coproduct_morphisms.svg)
+![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
 
 
 Categorical Duality 
@@ -176,7 +176,7 @@ The concepts of product and sum might already look similar in a way when we view
 
 I use "diagrams" in plural, but actually the two concepts are captured *by one and the same diagram*, the only difference between the two being that their arrows are flipped - many-to-one relationships become one-to-many and the other way around.
 
-![Coproduct and product](coproduct_product_duality.svg)
+![Coproduct and product](../02_category/coproduct_product_duality.svg)
 
 The universal properties that define the two construct are the same as well - if we have a sum $Y + B$, for each impostor sum, such as $Y + B + R$, there exist a trivial function $Y + B  \to Y + B + R$.
 
@@ -204,7 +204,7 @@ This means, among other things, that the concepts of *and* and *or* are also dua
 
 This duality is subtly encoded in the logical symbols for *and* and *or* ($\land$ and $\lor$) - they are nothing but stylized-versions of the diagrams of products and coproducts.
 
-![Coproduct and product](demorgan_duality.svg)
+![Coproduct and product](../02_category/demorgan_duality.svg)
 
 To understand, the connection, consider the two formulas which are most often associated with De Morgan which are known as De Morgan laws, although De Morgan didn't actually discover those (they were previously formulated, by William of Ockham (of "Ockham's razor" fame) among other people.
 
@@ -247,7 +247,7 @@ Category Theory - brief definition
 
 Maybe it is about time to see what a category is. We will start with a short definition - a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which can be viewed as functions) and that should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't *see* their elements. Or to put it another way, category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
-![Category theory and set theory compared](set_category.svg)
+![Category theory and set theory compared](../02_category/set_category.svg)
 
 When we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion, but we saw how taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
 
@@ -289,11 +289,11 @@ Perhaps the set-first approach *is* the best way to introduce people to categori
 
 So. A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
-![Balls](elements.svg)
+![Balls](../02_category/elements.svg)
 
 A category consists of a collection of objects as well as some arrows connecting some of them to one another. We call the arrows, *morphisms*.
 
-![A category](category.svg)
+![A category](../02_category/category.svg)
 
 Wait a minute - we said that all sets form a category, but at the same time any one set can be seen as a category on its own right (just one which has no morphisms). This is true and an example of a phenomenon that is very characteristic of category theory - one structure can be examined from many different angles and may play many different roles, often in a recursive fashion.
 
@@ -301,11 +301,11 @@ This particular analogy (a set as a category with no morphisms) is, however, not
 
 Speaking of which, note that objects in a category can be connected by multiple arrows and that arrows having the same source and target sets does not in any way make them equivalent (it does not actually mean that they would produce the same value).
 
-![Two objects connected with multiple arrows](arrows.svg)
+![Two objects connected with multiple arrows](../02_category/arrows.svg)
 
 Why that is true is pretty obvious if we go back to set theory for a second.  (OK, maybe we really *have* to do it from time to time.) There are, for example, an infinite number of functions that go from number to boolean, and the fact that they have the same input type and the same output type (or the same *type signature*, as we like to say) does not in any way make them equivalent to one another.
 
-![Two sets connected with multiple functions](set_arrows.svg)
+![Two sets connected with multiple functions](../02_category/set_arrows.svg)
 
 There are some types of categories in which only one morphism between two objects is allowed (or one in each direction), but we will talk about them later.
 
@@ -314,11 +314,11 @@ Composition
 
 One of the few or maybe even the only requirement for a structure to be called a category is that *two morphisms can make a third*, or in other words, that morphisms are *composable* - given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
 
-![Composition of morphisms](composition.svg)
+![Composition of morphisms](../02_category/composition.svg)
 
 Formally, this requirement says that there should exist an operation (denoted with the symbol $•$) such that for each two functions $g: A → B$ and $f: B → C$, there exists a function $(f • g): A → C$ (again, note that there can be many other morphisms with with the same type signature, but there must be *exactly one* morphism that fits these criteria).
 
-![Composition of morphisms in the context of additional morphism](composition_arrows.svg)
+![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
 **NB:** Note (if you haven't already) that functional composition is written from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$.)
 
@@ -329,7 +329,7 @@ Before the standard Arabic numerals that we use today, there were Roman numbers.
 
 The zero of category theory is what we call the "identity morphism" for each object. In short, this is a morphism, that doesn't do anything.
 
-![The identity morphism (but can also be any other morphism)](identity.svg)
+![The identity morphism (but can also be any other morphism)](../02_category/identity.svg)
 
 
 It's important to mark this morphism, because there can be (let's add the very important (and also very boring) reminder) many morphisms that go from one object to the same object, many of which actually do stuff. For example, mathematics deals with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
@@ -344,13 +344,13 @@ The law of associativity
 
 Functional composition is special not only because you can take any two morphisms with appropriate signatures and make a third, but because you can do so indefinitely, i.e. given $n$ successive arrows, each of which starts from the object that the other one finishes, we can draw one (exactly one) arrow that is equivalent to the consecutive application of all $n$ arrows.
 
-![Composition of morphisms with many objects](composition_n_objects.svg)
+![Composition of morphisms with many objects](../02_category/composition_n_objects.svg)
 
 But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$). 
 
 This formula can be expressed using the following diagram, which would only commute if the formula is true (given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent.)
 
-![Composition of morphisms with many objects](composition_associativity.svg)
+![Composition of morphisms with many objects](../02_category/composition_associativity.svg)
 
 This formula (and the diagram) is the definition of a property called $associativity$. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above does not commute - it would be super weird.)
 
@@ -366,7 +366,7 @@ Commuting diagrams
 
 The diagrams above, use colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant - the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other - all other paths just belong in different diagrams. 
 
-![Composition of morphisms - a commuting diagram](composition_commuting_diagram.svg)
+![Composition of morphisms - a commuting diagram](../02_category/composition_commuting_diagram.svg)
 
 Diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
 
@@ -400,7 +400,7 @@ Like we said in the previous chapter, an isomorphism between two objects ($A$ an
 
 And here is the same thing expressed with a commuting diagram.
 
-![Isomorphism](isomorphism.svg)
+![Isomorphism](../02_category/isomorphism.svg)
 
 Like the previous one, the diagram expresses the same (simple) fact as the formula, namely that going from the one of objects ($A$ and $B$) to the other one and then back again is the same as applying the identity morphism i.e. doing nothing. 
 
@@ -417,11 +417,11 @@ Commutativity
 
 One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts*. Let's try to formalize that: the *things* that we are thinking about would be colorful balls and let's dub the *sum* with a circle operator. Then, it would mean that a set of objects when combined in whichever way, will always result in the same object. 
 
-![Commutativity](commutativity_long.svg)
+![Commutativity](../02_category/commutativity_long.svg)
 
 And because of the wonders of maths we can get all these equalities if we specify the law for just two objects.
 
-![Commutativity](commutativity.svg)
+![Commutativity](../02_category/commutativity.svg)
 
 Incidentally this is the definition of a mathematicall law called *commutativity*.
 

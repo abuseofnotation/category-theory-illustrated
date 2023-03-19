@@ -39,11 +39,12 @@ Sets
 
 Perhaps unsurprisingly, everything in set theory is defined in terms of sets. A set is a collection of things where the "things" can be anything you want (like individuals, populations, genes etc.) Consider, for example, these balls.
 
-![Balls](elements.svg)
+![Balls](../01_set/elements.svg)
+
 
 Let's construct a set, call it $G$ (as gray) that contains *all* of them as elements. There can only be one such set: Because a set has no structure (there is not order, no ball goes before or after another, there are no members which are "special" with respect to their membership of the set) two sets that contain the same elements are just two pictures of the same set.
 
-![The set of all balls](all.svg)
+![The set of all balls](../01_set/all.svg)
 
 This example may look overly-simple but in fact it is just as valid as any other one. 
 
@@ -54,18 +55,18 @@ Subsets
 
 Let's construct one more set. The set of *all balls that are warm color*. Let's call it $Y$ (because in the diagram is colored in **y**ellow.)
 
-![The set of all balls of warm colors](subset.svg)
+![The set of all balls of warm colors](../01_set/subset.svg)
 
 Notice that $Y$ contains only elements that are also present in $G$. That is, every element of the set of $Y$ is also an element in the set $G$. When two sets have this relation, we may say that $Y$ is a *subset* of $G$ (or $Y \subseteq G$). A subset resides completely inside its superset When the two are drawn together.
 
-![Y and G together](set_subset.svg)
+![Y and G together](../01_set/set_subset.svg)
 
 Singleton Sets
 ---
 
 The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid - simply put, there are things that are *one of a kind*. The set of queens of England is a singleton set. The set of books written by the American writer Harper Lee and published during her lifetime is a singleton set.
 
-![The singleton set of red balls](singleton.svg)
+![The singleton set of red balls](../01_set/singleton.svg)
 
 What's the point of the singleton set? Well, it is part of the language of set theory e.g. if we have a function which expects a set of given items, but  if there is only one item that meets the criteria, we can just create a singleton set with that item.
 
@@ -74,7 +75,7 @@ The Empty set
 
 Of course if one is a valid answer, so can be zero. If we want a set of all *black balls*  $B$ or all the *white balls*, $W$, the answer to all these questions is the same - the empty set.
 
-![The empty set](void.svg)
+![The empty set](../01_set/void.svg)
 
 Because the a set is defined only by the items it contains, the empty set is *unique*- there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. Formally, the empty set is marked with the symbol $\varnothing$ (so $B = W = \varnothing$).
 
@@ -92,19 +93,19 @@ These two sets are also called the *domain* and *codomain* of the function, or i
 
 Here is a function, $f$ which converts each ball from the set $R$ to the ball with the opposite color in another set $G$ (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: $f: R → G$)
 
-![Opposite colors](function_one_one.svg)
+![Opposite colors](../01_set/function_one_one.svg)
 
 This is probably one of the simplest type of functions that exist - one which encodes a *one-to-one relationship* between the sets - *one* element from the source is connected to exactly *one* element from the target (and the other way around).
 
 But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). For example, a function can express a relationship in which several elements from the source set relate to the same element of the target set.
 
-![Function from a bigger set to a smaller one](function_big_small.svg)
+![Function from a bigger set to a smaller one](../01_set/function_big_small.svg)
 
 Such functions might represent operations such as *categorizing* a given collection of objects by some criteria, or partitioning them, based on some property that they might have.
 
 A function can also express relationships in which some elements from the target set do not play a part.
 
-![Function from a smaller set to a bigger one](function_small_big.svg)
+![Function from a smaller set to a bigger one](../01_set/function_small_big.svg)
 
 An example might be the relationship between some kind of pattern or structure and the emergence of this pattern in some more complicated context.
 
@@ -130,7 +131,7 @@ The Identity Function
 
 For every set $G$, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element of $G$ to itself. It is called the *the identity function* of $G$ or $idG: G → G$.
 
-![The identity function](function_identity.svg)
+![The identity function](../01_set/function_identity.svg)
 
 You can think of $idG$ as a function which represents the set $G$ in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
 
@@ -139,7 +140,7 @@ Functions and Subsets
 
 For each set and subset, no matter what they represent, we can define the function that maps each element of the subset to itself:
 
-![Function from a smaller set to a bigger one](function_small_big.svg)
+![Function from a smaller set to a bigger one](../01_set/function_small_big.svg)
 
 Every set is a subset of itself, in which case this function is the same as the identity.
 
@@ -148,7 +149,7 @@ Functions and the Empty Set
 
 There is a unique function from the empty set to any other set.
 
-![Function with empty set](function_empty.svg)
+![Function with empty set](../01_set/function_empty.svg)
 
 **Question:** Is this really valid? Why? Check the definition.
 
@@ -161,7 +162,7 @@ Functions and Singleton Sets
 
 There is a unique function from any set to any singleton set.
 
-![Function with a singleton set](function_singleton.svg)
+![Function with a singleton set](../01_set/function_singleton.svg)
 
 **Question:** Is this really the only way to connect *any* set to a singleton set in a valid way?
 
@@ -182,7 +183,7 @@ Number functions
 
 Each numerical operation is a function between two of these sets. For example, squaring a number is a function from the set of real numbers to the set of real positive numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
 
-![The square function](square.svg)
+![The square function](../01_set/square.svg)
 
 I will use the occasion to reiterate some of the more important characteristics of functions:
 
@@ -208,11 +209,11 @@ Sets and types
 
 Sets are not exactly the same thing as types, but all types are (or can be seen as) sets, for example, we can view the `Boolean` type as a set containing two elements - `true` and `false`.
 
-![Set of boolean values](boolean.svg)
+![Set of boolean values](../01_set/boolean.svg)
 
 Another very basic set in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
 
-![Set of characters](char.svg)
+![Set of characters](../01_set/char.svg)
 
 Most of the types of programming are composite types - they are a combination of the primitive ones that are listed here. Again, we will cover these later.
 
@@ -223,7 +224,7 @@ Functions and methods/subroutines
 
 Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function which that takes an argument of type `Char` and returns a `Boolean`, depending on whether the character is a letter.
 
-![A function from Char to Boolean](char_boolean.svg)
+![A function from Char to Boolean](../01_set/char_boolean.svg)
 
 However functions in most programming languages can also be quite different from mathematical functions - they can perform various operations that have nothing to do with returning a value, which are sometimes called side effects. 
 
@@ -254,19 +255,19 @@ In order to understand type theory better, it's useful to see why it was created
 
 In particular, a set can contain itself.
 
-![A set that contains itself](set_contains_itself.svg)
+![A set that contains itself](../01_set/set_contains_itself.svg)
 
 Unlike the set above, most sets that we discussed (like the empty set and singleton sets) do not contain themselves. 
 
-![Sets that don't contains themselves](sets_dont_contain_themselves.svg)
+![Sets that don't contains themselves](../01_set/sets_dont_contain_themselves.svg)
 
 In order to understand Russell's paradox we will try to visualize *the set all sets that do not contain themselves*. In the original set notation we can define this set to be such that it contains all sets $x$ such that $x$ is not a member of $x$), or $\{x \mid x ∉ x \}$
 
-![Russel's paradox - option one](russells_paradox.svg)
+![Russel's paradox - option one](../01_set/russells_paradox.svg)
 
 If we look at the definition, we recognize that the set that we just defined does not contain itself and therefore it belongs there as well.
 
-![Russel's paradox - option one](russells_paradox_2.svg)
+![Russel's paradox - option one](../01_set/russells_paradox_2.svg)
 
 Hmm, something is not quite right with this diagram as well - because of the new adjustments that we made, our set now *contains itself*. And removing it from the set would just bring us back to the previous situation. So this is Russell's paradox. 
 
@@ -303,15 +304,15 @@ Functional Composition
 
 Now, we were just about to reach the heart of the matter regarding the topic of functions. And that is functional composition. Assume that we have two functions, $g: Y → P$ and $f: P → G$ and the target of the first one is the same set as the source of the second one.
 
-![Matching functions](functions_matching.svg)
+![Matching functions](../01_set/functions_matching.svg)
 
 If we apply the first function $g$ to some element from set $Y$, we will get an element of the set $P$. Then, if we apply the second function $f$ to *that* element, we will get an element from type $G$.
 
-![Applying one function after another](functions_one_after_another.svg)
+![Applying one function after another](../01_set/functions_one_after_another.svg)
 
 We can define a function that is the equivalent to performing the operation described above. Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \bullet g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
-![Functional composition](functions_compose.svg)
+![Functional composition](../01_set/functions_compose.svg)
 
 Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves.  
 
@@ -324,7 +325,7 @@ To understand how powerful composition is, consider the following: one set being
 
 If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \bullet g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
 
-![Functional composition connect](morphism_general.svg)
+![Functional composition connect](../01_set/morphism_general.svg)
 
 For example, if we again take the relationship between a person and his mother as a function, with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
 
@@ -335,11 +336,11 @@ Representing Composition with Commutative Diagrams
 
 In the last diagram, the equivalence between $f \bullet g$ and the new function $h$ is expressed by the fact that if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$. Diagrams that express such equivalence between sequences of function applications are called *commutative diagrams*.
 
-![Functional composition](functions_compose.svg)
+![Functional composition](../01_set/functions_compose.svg)
 
 If we "zoom-out" the view of the last diagram so it does not show the individual set elements, we get a more general view of functional composition.
 
-![Functional composition for sets](functions_compose_sets.svg)
+![Functional composition for sets](../01_set/functions_compose_sets.svg)
 
 In fact, because this diagram commutes (that is, all arrows, starting from a given set element ultimately lead to the same corresponding element from the resulting set), this view is a more appropriate representation of the concept (as enumerating the elements is redundant). 
 
@@ -347,7 +348,7 @@ Having this insight allows us to redefine functional composition in a more visua
 
 > The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that this diagram commutes.
 
-![Functional composition - general definition](functions_compose_general.svg)
+![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
 Diagrams that show functions without showing the elements of the sets are called *external diagrams*, as opposed to the and the ones that we saw before, which are *internal*.
 
@@ -360,11 +361,11 @@ Let's check another concept which is very important in category theory (although
 
 To do that, we go back to the examples of the types of relationships that functions can represent, and to the first and most elementary of them all - the *one-to-one* type of relationship. We know that all functions have exactly one element from the source set, pointing to one element from the target set. But for one-to-one functions *the reverse is also true* - exactly one element from the target set points to one element from the source. 
 
-![Opposite colors](function_one_one.svg)
+![Opposite colors](../01_set/function_one_one.svg)
 
 If we have a one-one-function that connects sets that are of the same size (as is the case here), then this function has the following property: all elements from the target set have exactly one arrow pointing at them. In this case, the function is *invertible*, that is, if you flip the arrows of the function and it's source and target, you get another valid function.
 
-![Opposite colors](isomorphism_one_one.svg)
+![Opposite colors](../01_set/isomorphism_one_one.svg)
 
 Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets we say that the sets are *isomorphic*. For example, because we have an invertable function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit* and vise versa, we can say that the temperatures measured in Celsius and Fahrenheit are isomorphic.
 
@@ -377,7 +378,7 @@ Isomorphism and identity
 
 If you look closely you would see that the identity function is invertible too (its reverse is itself), so each set is isomorphic to itself in that way.
 
-![The identity function](isomorphism_identity.svg)
+![The identity function](../01_set/isomorphism_identity.svg)
 
 Therefore, the concept of an isomorphism contains the concept of equality - all equal things are also isomorphic.
 
@@ -386,7 +387,7 @@ Isomorphism and composition
 
 An interesting fact about isomorphisms is that if we have functions that convert a member of set $A$ to a member of set $B$ and the other way around . Then, because of functional composition, we know that any function from/to $A$ has a corresponding function from/to $B$.
 
-![The architecture of isomorphism](isomorphism_general.svg)
+![The architecture of isomorphism](../01_set/isomorphism_general.svg)
 
 For example, if you have a function "is the partner of" that goes from the set of all married people to the same set, than that function is invertible. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between them and this person/object, and vice versa. 
 
@@ -397,7 +398,7 @@ Another interesting fact about isomorphisms is that if we have two isomorphisms 
 
 Composing two isomorphisms into another isomorphism is possible by composing the two pairs of functions that make up the isomorphism in the two directions. 
 
-![Composing isomorphisms](isomorphisms_compose.svg)
+![Composing isomorphisms](../01_set/isomorphisms_compose.svg)
 
 Informally, we can see that the two morphisms are indeed reverse to each other and hence form an isomorphism. If we want to prove that fact formally, we will do something like the following: 
 
@@ -422,11 +423,11 @@ Isomorphisms Between Singleton Sets
 
 Between any two singleton sets, we may define the only possible function.
 
-![The only possible function between singletons](singleton_function.svg)
+![The only possible function between singletons](../01_set/singleton_function.svg)
 
 The function is invertible, which means that all singleton sets are isomorphic to one another, and furthermore (which is important) they are isomorphic *in one unique way*.
 
-![Isomorphic singletons](singleton_isomorphism.svg)
+![Isomorphic singletons](../01_set/singleton_isomorphism.svg)
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
@@ -451,7 +452,7 @@ Reflexivity
 
 The first idea that defines equivalence, is that *everything is equivalent with itself*. 
 
-![Reflexivity](reflexivity.svg)
+![Reflexivity](../01_set/reflexivity.svg)
 
 This simple principle translates to the equally simple law of *reflexivity*: for all sets $A$, $A=A$.
 
@@ -460,7 +461,7 @@ Transitivity
 
 The second idea that defines the concept of equivalence is the idea that things that are equal to another thing must also equal between themselves. 
 
-![Transitivity](transitivity.svg)
+![Transitivity](../01_set/transitivity.svg)
 
 Mathematically, for all sets $A$ $B$ and $C$, if $A=B$ and $B=C$ then $A=C$. 
 
@@ -470,7 +471,7 @@ Symmetry
 ---
 If one thing is equal to another, the reverse is also true (i.e the other thing is also equal to the first one. This idea is called *symmetry*. Symmetry is probably the most characteristic property of the equivalence relation, which is not true for almost any other relation. 
 
-![symmetry](symmetry.svg)
+![symmetry](../01_set/symmetry.svg)
 
 In mathematical terms: if $A=B$ then $B=A$.
 
@@ -481,7 +482,7 @@ Isomorphisms *are* indeed equivalence relations. And "incidentally", we already 
 
 We said that most characteristic property of the equivalence relation is its *symmetry*. And this property is satisfied by isomorphisms, due to the isomorphisms' most characteristic property, namely the fact that they are *invertible*.
 
-![Symmetry of isomorphisms](isomorphism_symmetry.svg)
+![Symmetry of isomorphisms](../01_set/isomorphism_symmetry.svg)
 
 **Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
@@ -496,15 +497,15 @@ Many people would say that the concept of a number is the most basic concept in 
 
 To understand how, let's think about how do you teach a person what a number is (in particular, here we will concentrate on the *natural*, or counting numbers.) You may start your lesson by showing them a bunch of objects that are of a given quantity, like for example if you want to demonstrate the number $2$, you might bring them like two pencils, two apples or two of something else. 
 
-![Two balls](number_two.svg)
+![Two balls](../01_set/number_two.svg)
 
 When you do that, it would be important to highlight that you are not refering to only the left object, or only about the right one, but that we should consider both things as at once (i.e. both things as one), so if the person whom you are explaining happens to know what a set is, this piece of knowledge might come in handy. And also, being good teachers we might provide them with some more examples of sets of 2 things.
 
-![A set of two balls](number_two_sets.svg)
+![A set of two balls](../01_set/number_two_sets.svg)
 
 This is a good starting point, but the person may still be staring at the objects instead of the structure - they might ask if this or that set is $2$ as well. At this point you might give up, or, if the person whom you are explaining happens to know about isomorphisms as well (let's say they lived in a cave with nothing but this book with them), you can easily formulate your final definition, saying that the number $2$ is represented by those sets and all other sets that are isomorphic to them, or by the *equivalence class* of sets that have two elements, as the formal definition goes (don't worry, we will learn all about equivalence classes later.)
 
-![A set of two balls](number_two_isomorphism.svg)
+![A set of two balls](../01_set/number_two_isomorphism.svg)
 
 At this point there is no more examples that we can add. In fact, because we consider all other sets as well, we might say that this is not just a bunch of examples, but a proper *definition* of the number $2$. And we can extend that to include all other numbers. In fact, he first definition of a natural number (presented by Gottlob Frege in 1884) is roughly based on this very idea.
 

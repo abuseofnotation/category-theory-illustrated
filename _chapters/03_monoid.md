@@ -15,11 +15,11 @@ Monoids are simpler than categories. A monoid is defined by a collection/set of 
 
 Let's take our familiar colorful balls.
 
-![Balls](balls.svg)
+![Balls](../03_monoid/balls.svg)
 
 We can define a monoid based on this set by defining an operation for "combining" two balls into one. An example of such operation would be blending the colors of the balls, as if we are mixing paint.
 
-![An operation for combining balls](balls_operation.svg)
+![An operation for combining balls](../03_monoid/balls_operation.svg)
 
 You can probably think of other ways to define such an operation. This will help you realize that there can be many ways to create a monoid from a given set of set elements i.e. the monoid is not the set itself, it is the set *together with the operation*.
 
@@ -28,11 +28,11 @@ Associativity
 
 The monoid operation should, like functional composition, be *associative* i.e. applying it on the same number of elements in a different order should make no difference.
 
-![Associativity in the color mixing operation](balls_associativity.svg)
+![Associativity in the color mixing operation](../03_monoid/balls_associativity.svg)
 
 When an operation is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed of, or add a term that is present at both sides of an equation and retaining the equality of the existing terms.
 
-![Associativity in the color mixing operation](balls_arithmetic.svg)
+![Associativity in the color mixing operation](../03_monoid/balls_arithmetic.svg)
 
 The identity element
 ---
@@ -41,7 +41,7 @@ Actually, not any (associative) operation for combining elements makes the balls
 
 In the case of our color-mixing monoid the identity element is the white ball (or perhaps a transparent one, if we have one).
 
-![The identity element of the color-mixing monoid](balls_identity.svg) 
+![The identity element of the color-mixing monoid](../03_monoid/balls_identity.svg) 
 
 As you probably remember from the last chapter, functional composition is also associative and it also contains an identity element, so you might start suspecting that it forms a monoid in some way. This is indeed the case, but with one caveat, for which we will talk about later.
 
@@ -55,13 +55,13 @@ Monoids from numbers
 
 Mathematics is not only about numbers, however numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said.) This group is denoted $\left< \mathbb{N},+ \right>$ (in general, all groups are denoted by specifying the set and the operation, enclosed in angle brackets.)
 
-![The monoid of numbers under addition](numbers_addition.svg)
+![The monoid of numbers under addition](../03_monoid/numbers_addition.svg)
 
 If you see a $1 + 1 = 2$ in your textbook you know you are either reading something very advanced, or very simple, although I am not really sure which of the two applies in the present case.
 
 Anyways, the natural numbers also form a monoid under multiplication as well.
 
-![The monoid of numbers under multiplication](numbers_multiplication.svg)
+![The monoid of numbers under multiplication](../03_monoid/numbers_multiplication.svg)
 
 **Question:** Which are the identity elements of those monoids?
 
@@ -85,11 +85,11 @@ We said that a monoid consists of two things a set (let's call it $A$) and a mon
 
 Defining the operation is not hard at all. Actually, we have already done it for the operation $+$ - in chapter 2, we said that *addition* can be represented in set theory as a function that accepts a product of two numbers and returns a number (formally $+: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$).
 
-![The plus operation as a function](plus_operation.svg)
+![The plus operation as a function](../03_monoid/plus_operation.svg)
 
 Every other monoid operation can also be represented in the same way - as a function that takes a pair of elements from the monoid's set and returns one other monoid element.
 
-![The color-mixing operation as a function](color_mixing_operation.svg)
+![The color-mixing operation as a function](../03_monoid/color_mixing_operation.svg)
 
 Formally, we can define a monoid from any set $A$, by defining an (associative) function with type signature $A \times A \to A$. That's it. Or to be precise, that is *one way* to define the monoid operation. And there is another way, which we will see next. Before that, let's examine some more categories.
 
@@ -103,13 +103,13 @@ Commutative (abelian) monoids
 
 Looking at the monoid laws and the examples we gave so far, we observe that all of them obey one more rule (law) which we didn't specify - the order in which the operations are applied is irrelevant to the end result.
 
-![Commutative monoid operation](monoid_commutative.svg)
+![Commutative monoid operation](../03_monoid/monoid_commutative.svg)
 
 Such operations (ones for which combining a given set of elements yields the same result no matter which one is first and which one is second) are called *commutative* operations. Monoids with operations that are commutative are called *commutative monoids*. 
 
 As we said, addition is commutative as well - it does not matter whether if I have given you 1 apple and then 2 more, or if I have given you 2 first and then 1 more.
 
-![Commutative monoid operation](addition_commutative.svg)
+![Commutative monoid operation](../03_monoid/addition_commutative.svg)
 
 All monoids that we examined so far are also *commutative*. We will see some non-commutative ones later. 
 
@@ -144,18 +144,18 @@ An interesting kinds of groups/monoids are the groups of *symmetries* of geometr
 
 We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action - the identity action (which is it's own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
 
-![A triangle](symmetry_group.svg)
+![A triangle](../03_monoid/symmetry_group.svg)
 
 Groups of rotations
 ---
 
 Let's first review the group of ways in which we can rotate our triangle i.e. its *rotation group*. A geometric figure can be rotated without displacement in positions equal to the number of its sides, so for our triangle there are 3 positions.
 
-![The group of rotations in a triangle](symmetry_rotation.svg)
+![The group of rotations in a triangle](../03_monoid/symmetry_rotation.svg)
 
 Connecting the dots (or the triangles in this case) shows us that there are just two possible rotations that get us from any state of the triangle to any other one - a *120-degree rotation* (i.e. flipping the triangle one time) and a *240-degree rotation* (i.e. flipping it two times (or equivalently, flipping it once, but in the opposite direction)). Adding the identity action of 0-degree rotation makes up for 3 rotations (objects) in total.
 
-![The group of rotations in a triangle](symmetry_rotation_actions.svg)
+![The group of rotations in a triangle](../03_monoid/symmetry_rotation_actions.svg)
 
 The rotations of a triangle form a monoid - the *rotations are objects* (of which the zero-degree rotation is the identity) and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
 
@@ -166,17 +166,17 @@ Cyclic groups/monoids
 
 The diagram that enumerates all the rotations of a more complex geometrical figure looks quite messy at first.
 
-![The group of rotations in a more complex figure](symmetry_rotation_square.svg)
+![The group of rotations in a more complex figure](../03_monoid/symmetry_rotation_square.svg)
 
 But it gets  much simpler to grasp if we notice the following: although our group has many rotations, and there are more still for figures with more sides (if I am not mistaken, the number of rotations is equal to the number of the sides), *all those rotations can be reduced to the repetitive application of just one rotation*, (for example, the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
 
-![The group of rotations in a triangle](symmetry_rotation_cyclic.svg)
+![The group of rotations in a triangle](../03_monoid/symmetry_rotation_cyclic.svg)
 
 Symmetry groups that have such "main" rotation, and, in general, groups and monoids that have an object that is capable of generating all other objects by it's repeated application, are called *cyclic groups*. And such rotation are called the group's *generator*.
 
 All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the natural numbers under addition. Here we can use $+1$ or $-1$ as generators.
 
-![The group of numbers under addition](numbers_cyclic.svg)
+![The group of numbers under addition](../03_monoid/numbers_cyclic.svg)
 
 Wait, how can this be a cyclic group when there are no cycles? This is because the integers are an *infinite* cyclic group. 
 
@@ -188,13 +188,13 @@ But $13 \pmod{12} = 1$ (as $13/12 = 1$ with $1$ remainder) $14 \pmod{12} = 2$, $
 
 In effect numbers "wrap around", forming a group with as many elements as it the modulus number. Like for example a group representation of modular arithmetic with modulus $3$ has 3 elements.
 
-![The group of numbers under addition](numbers_modular.svg)
+![The group of numbers under addition](../03_monoid/numbers_modular.svg)
 
 All cyclic groups that have the same number of elements (or that are of the *same order*) are isomorphic to each other (careful readers might notice that we haven't yet defined what a group isomorphisms are. Even more careful readers might already have an idea about what it is.)
 
  For example, the group of rotations of the triangle is isomorphic to the natural numbers under the addition with modulo $3$. 
 
-![The group of numbers under addition](symmetry_modular.svg)
+![The group of numbers under addition](../03_monoid/symmetry_modular.svg)
 
 All cyclic groups are *commutative* (or "abelian" as they are also called). 
 
@@ -207,7 +207,7 @@ Group isomorphisms
 
 We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now - an isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \bullet b) = f(a) \bullet f(b)$. Visually, the diagrams of isomorphic groups have the same structure.
 
-![Group isomorphism between different representations of S3](group_isomorphism.svg)
+![Group isomorphism between different representations of S3](../03_monoid/group_isomorphism.svg)
 
 As in category theory, in group theory isomorphic groups they considered instances of one and the same group. For example the one above is called $Z_3$.
 
@@ -218,11 +218,11 @@ Like with sets, the concept of an isomorphism in group theory allows us to ident
 
 The smallest group is just the trivial group $Z_1$ that has just one element.
 
-![The smallest group](trivial_group.svg)
+![The smallest group](../03_monoid/trivial_group.svg)
 
 The smallest non-trivial group is the group $Z_2$ that has two elements.
 
-![The smallest non-trivial group](smallest_group.svg)
+![The smallest non-trivial group](../03_monoid/smallest_group.svg)
 
 $Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set.
 
@@ -237,21 +237,21 @@ Given any two groups, we can combine them to create a third group, comprised of 
 
 Let's see how the product looks like take the following two groups (which, having just two elements and one operation, are both isomorphic to $Z2$). To make it easier to imagine them, we can think of the first one as based on the vertical reflection of a figure and the second, just the horizontal reflection.
 
-![Two trivial groups](groups_product.svg)
+![Two trivial groups](../03_monoid/groups_product.svg)
 
 We get set of elements of the new group by taking *the Cartesian product* of the set of the elements of the first group and the set of the element of the second one.
 
-![Two trivial groups](groups_product_four.svg)
+![Two trivial groups](../03_monoid/groups_product_four.svg)
 
 And the *actions* of a product group are comprised of the actions of the first group, combined with the actions of the second one, where each action is applied only on the element that is a member of its corresponding group, leaving the other element unchanged.
 
-![Klein four](klein_four_as_product.svg)
+![Klein four](../03_monoid/klein_four_as_product.svg)
 
 The product of the two groups we presented is called the *Klein four-group* and it is the simplest *abelian non-cyclic* group. 
 
 Another way to present the Klein-four group is the *group of symmetries of a non-square rectangle*.
 
-![Klein four](klein_four.svg)
+![Klein four](../03_monoid/klein_four.svg)
 
 **Task:** Show that the two representations are isomorphic.
 
@@ -277,21 +277,21 @@ Color-mixing monoid as a product
 
 To see how can we use this theorem, let's revisit our color mixing monoid that we saw earlier. 
 
-![color-mixing group](balls_rule.svg)
+![color-mixing group](../03_monoid/balls_rule.svg)
 
 As there doesn't exist a color that, when mixed with itself, can produce all other colors, the color-mixing monoid is *not cyclic*. However, the color mixing monoid *is abelian*. So according to the theorem of finite abelian groups (which is valid for monoids as well), the color-mixing monoid must be (isomorphic to) a product. 
 
 And it is not hard to find the monoids that form it - although there isn't one color that can produce all other colors, there are three colors that can do that - the prime colors. This observation leads us to the conclusion that the color-mixing monoid, can be represented as the product of three monoids, corresponding to the three primary colors.
 
-![color-mixing group as a product](color_mixing_product.svg)
+![color-mixing group as a product](../03_monoid/color_mixing_product.svg)
 
 You can think of each color monoid as a boolean monoid, having just two states (colored and not-colored).
 
-![Cyclic groups, forming the color-mixing group](color_mixing_cyclic.svg)
+![Cyclic groups, forming the color-mixing group](../03_monoid/color_mixing_cyclic.svg)
 
 Or alternatively, you can view it as having multiple states, representing the different levels of shading.
 
-![Color-shading cyclic group](cyclic_shading.svg)
+![Color-shading cyclic group](../03_monoid/cyclic_shading.svg)
 
 In both cases the monoid would be cyclic.
 
@@ -302,11 +302,11 @@ Groups/monoid of rotations and reflections
 
 Now, let's finally examine a non-commutative group - the group of rotations *and reflections* of a given geometrical figure. It is the same as the last one, but here besides the rotation action that we already saw (and its composite actions), we have the action of flipping the figure vertically, an operation which results in its mirror image:
 
-![Reflection of a triangle](reflection.svg)
+![Reflection of a triangle](../03_monoid/reflection.svg)
 
 Those two operations and their composite results in a group called $Dih3$ that is not abelian (and is furthermore the *smallest* non-abelian group).
 
-![The group of rotations and reflections in a triangle](symmetry_reflection.svg)
+![The group of rotations and reflections in a triangle](../03_monoid/symmetry_reflection.svg)
 
 **Task:** Prove that this group is indeed not abelian.
 
@@ -358,11 +358,11 @@ Monoid elements as functions/permutations
 
 Let's take a step back and examine the groups/monoids that we covered so far in the light of what we learned. We started off by representing group operation as a function from pairs. For example, the operation of a symmetric group,(let's take $Z_3$ as an example) are actions that converts two rotations to another rotation. 
 
-![The group of rotations in a triangle - group notation](symmetry_rotation_actions.svg)
+![The group of rotations in a triangle - group notation](../03_monoid/symmetry_rotation_actions.svg)
 
 Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself - as functional composition. For example, the 3 elements of $Z_3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way.)
 
-![The group of rotations in a triangle - set notation](symmetry_rotation_functions.svg)
+![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_functions.svg)
 
 We can do the same for the addition monoid - numbers can be seen not as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of adding two to a given quantity). 
 
@@ -389,7 +389,7 @@ Monoid operations as functional composition
 
 The functions that represent the monoid elements have the same set as source and target, or same signature, as we say (formally, they are of the type $A \to A$ for some $A$). Because of that, they all can be composed with one another, using *functional composition*, resulting in functions that *also has the same signature*.
 
-![The group of rotations in a triangle - set notation](symmetry_rotation_cayley.svg)
+![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_cayley.svg)
 
 And the same is valid for the addition monoid - number functions can be combined using functional composition.
 
@@ -410,7 +410,7 @@ Once we learn how to represent the elements of any monoid as permutations that a
 
 Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A$ for any $A$.
 
-![The group of rotations in a triangle - set notation and normal notation](symmetry_rotation_comparison.svg)
+![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
 
 Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called it's *standard representation*.) 
 
@@ -425,15 +425,15 @@ The first thing that you have to know about the symmetric groups is that they ar
 
 So, for example the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
 
-![The S1 symmetric group](s1.svg)
+![The S1 symmetric group](../03_monoid/s1.svg)
 
 The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$.)
 
-![The S2 symmetric group](s2.svg)
+![The S2 symmetric group](../03_monoid/s2.svg)
 
 And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function - it has $1\times 2\times 3=6$ elements.
 
-![The S3 symmetric group](s3.svg)
+![The S3 symmetric group](../03_monoid/s3.svg)
 
 Each symmetric group $\mathrm{S}_n$ contains all groups of order $n$ - this is so, because (as we saw in the prev section) every group with $n$ elements is isomorphic to a set of permutations on the set of $n$ elements and the group $\mathrm{S}_n$ contains *all such* permutations that exist. 
 
@@ -441,7 +441,7 @@ Here are some examples:
 - $\mathrm{S}_1$ is isomorphic to $Z_1$, the *trivial group*, and $\mathrm{S}_2$ is isomorphic to $Z_2$ , the *boolean group*, (but no other symmetric grops are isomorphic to cycle groups)
 - The top three permutations of $\mathrm{S}_3$ are isomorphic to the group $Z_3$. 
 
-![The S3 symmetric group](s3_z3.svg)
+![The S3 symmetric group](../03_monoid/s3_z3.svg)
 
 - $\mathrm{S}_3$ is also isomorphic to $Dih3$ (but no other symmetric group is isomorphic to a dihedral group)
 
@@ -460,16 +460,16 @@ Monoids as categories
 
 We saw that converting the monoid's elements to actions/functions yields an accurate representation of the monoid in terms of sets and functions. 
 
-![The group of rotations in a triangle - set notation and normal notation](symmetry_rotation_set.svg)
+![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_set.svg)
 
 However, it seems that the set part of the structure in this representation is kinda redundant - you have the same set everywhere - so, it would do it good if we can simplify it. And we can do that by depicting it as an external (categorical) diagram.
 
-![The group of rotations in a triangle - categorical notation](symmetry_rotation_external.svg)
+![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_external.svg)
 
 But wait, if the monoids' underlying *sets* correspond to *objects* in category theory, then the corresponding category would have just one object. And so the correct representation would involve just one point from which all arrows come and to which they go. 
 
 
-![The group of rotations in a triangle - categorical notation](symmetry_rotation_category.svg)
+![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_category.svg)
 
 The only difference between different monoids would be the number of morphisms that they have and the relationship between them.
 
@@ -503,31 +503,31 @@ Group/monoid presentations
 
 When we view cyclic groups/monoids as categories, we would see that they correspond to categories that (besides having just one object) also have *just one morphism* (which, as we said, is called a *generator*) along with the morphisms that are created when this morphism is composed with itself. In fact the infinite cyclic monoid (which is isomorphic to the natural numbers), can be completely described by this simple definition.
 
-![Presentation of an infinite cyclic monoid](infinite_cyclic_presentation.svg)
+![Presentation of an infinite cyclic monoid](../03_monoid/infinite_cyclic_presentation.svg)
 
 This is so, because applying the generator again and again yields all elements of the infinite cyclic group. Specifically, if we view the generator as the action $+1$ then we get the natural numbers.
 
-![Presentation of an infinite cyclic monoid](infinite_cyclic_presentation_elements.svg)
+![Presentation of an infinite cyclic monoid](../03_monoid/infinite_cyclic_presentation_elements.svg)
 
 Finite cyclic groups/monoids are the same, except that their definition contains an additional law, stating that that once you compose the generator with itself $n$ number of times, you get identity morphism. For the cyclic group $Z_3$ (which can be visualized as the group of triangle rotations) this law states that composing the generator with itself $3$ times yields the identity morphism.
 
-![Presentation of a finite cyclic monoid](finite_cyclic_presentation.svg)
+![Presentation of a finite cyclic monoid](../03_monoid/finite_cyclic_presentation.svg)
 
 Composing the group generator with itself, and then applying the law, yields the three morphisms of $Z_3$.
 
-![Presentation of a finite cyclic monoid](finite_cyclic_presentation_elements.svg)
+![Presentation of a finite cyclic monoid](../03_monoid/finite_cyclic_presentation_elements.svg)
 
 We can represent product groups this way too. Let's take Klein four-group as an example, The Klein four-group has two generators that it inherits from the groups that form it (which we viewed like vertical and horizontal rotation of a non-square rectangle) each of which comes with one law.
 
-![Presentation of Klein four](klein_four_presentation.svg)
+![Presentation of Klein four](../03_monoid/klein_four_presentation.svg)
 
 To make the representation complete, we add the law for combining the two generators.
 
-![Presentation of Klein four - third law](klein_four_presentation_third_law.svg)
+![Presentation of Klein four - third law](../03_monoid/klein_four_presentation_third_law.svg)
 
 And then, if we start applying the two generators and follow the laws, we get the four elements.
 
-![The elements of Klein four](klein_four_presentation_elements.svg)
+![The elements of Klein four](../03_monoid/klein_four_presentation_elements.svg)
 
 The set of generators and laws that defines a given group is called the *presentation of a group*. Every group has a presentation.
 
@@ -540,15 +540,15 @@ We saw how picking a different selection of laws gives rise to different types o
 
 If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is isomorphic to the monoid of integers.
 
-![The free monoid with one generator](infinite_cyclic_presentation_elements.svg)
+![The free monoid with one generator](../03_monoid/infinite_cyclic_presentation_elements.svg)
 
 We can make a free monoid from the set of colorful balls - the monoid's elements would be sequences of all possible combinations of the balls.
 
-![The free monoid with the set of balls as a generators](balls_free.svg)
+![The free monoid with the set of balls as a generators](../03_monoid/balls_free.svg)
 
 The free monoid is a special one - each element of the free monoid over a given set, can be converted to a corresponding element in any any other monoid that uses the same set of generators by just applying the monoid's laws. For example, here is how the elements above would look like if we apply the laws of the color-mixing monoid.
 
-![Converting the elements of the free monoid to the elements of the color-mixing monoid](balls_free_color_mixing.svg)
+![Converting the elements of the free monoid to the elements of the color-mixing monoid](../03_monoid/balls_free_color_mixing.svg)
 
 **Task:** Write up the laws of the color-mixing monoid.
 
