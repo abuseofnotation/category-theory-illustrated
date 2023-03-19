@@ -211,7 +211,7 @@ We can do the same for $or$, here is the table.
 Using those tables, we can also prove some axiom schemas we can use later:
 
 - For *and* $p ∧ q → p$ and $p ∧ q → q$ "If I am tired and hungry, this means that I am hungry".
-- For *or*:  $p → p ∨ q$ and $p → p ∨ q$ "If I have a pen this means that I am either have a pen or a ruler".
+- For *or*:  $p → p ∨ q$ and $q → p ∨ q$ "If I have a pen this means that I am either have a pen or a ruler".
 
 The *implies* operation
 ---
