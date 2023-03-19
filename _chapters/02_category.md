@@ -230,7 +230,7 @@ So what have we missed? Simple - although we replaced the propositions that cons
 
 $\neg{A} \wedge \neg{B}$ 
 
-Saying that this formula is the opposite or "blond and brown" - is the same thing as saying that it is equivalent to it's negation, which is precisely what the second De Morgan formula says.
+Saying that this formula is the opposite or "blond and brown" - is the same thing as saying that it is equivalent to its negation, which is precisely what the second De Morgan formula says.
 
 $\neg(A \vee B) = \neg{A} \wedge \neg{B}$
 
@@ -285,7 +285,7 @@ Defining Categories (again)
 
 All category theory books (including this one) starts by talking about set theory. However looking back I really don't know why that is the case - most books that focus around a given subject don't usually start off by introducing an *entirely different subject* before even starting to talk about the main one, even if the two subjects are so related. 
 
-Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like it's a new book (I wonder if I can dedicate this to a different person.)
+Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person.)
 
 So. A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
@@ -430,7 +430,7 @@ Incidentally this is the definition of a mathematicall law called *commutativity
 Associativity
 ---
 
-Commutativity is the law abided in contexts in which any object can be represented as the sum of its parts *when combined in whichever order*. But there are also many cases in which an object is to be represented by the sum of it's parts, but when *combined in one specific way*.
+Commutativity is the law abided in contexts in which any object can be represented as the sum of its parts *when combined in whichever order*. But there are also many cases in which an object is to be represented by the sum of its parts, but when *combined in one specific way*.
 
 In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all.)
 

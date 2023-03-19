@@ -40,7 +40,7 @@ Object mapping
 
 The object mapping of the forgetful functor consists of picking the object in the simpler category that corresponds to the one from the richer one. It works by just removing the extra structure or properties of each object in the richer category which is not present in the simpler one.
 
-Let's take the forgetful functor between the category of sets $Set$ and the category of monoids ($Mon$) as an example. A monoid is a set, combined with *a monoid operation*. The monoid operation is the extra structure. And if you do away with it, what is left from a monoid is its underlying set. This observation defines the object mapping of a forgetful functor that goes from the category of monoids to the category of sets - each monoid is mapped to it's underlying set.
+Let's take the forgetful functor between the category of sets $Set$ and the category of monoids ($Mon$) as an example. A monoid is a set, combined with *a monoid operation*. The monoid operation is the extra structure. And if you do away with it, what is left from a monoid is its underlying set. This observation defines the object mapping of a forgetful functor that goes from the category of monoids to the category of sets - each monoid is mapped to its underlying set.
 
 ![Forgetful functor - object mapping](forgetful_functor_objects.svg)
 

@@ -486,7 +486,7 @@ This structure is actually a categorical reincarnation our favorite rule of infe
 
 ![Implies operation with impostors](../05_logic/implies_modus_ponens.svg)
 
-This definition is not complete, however, because  $(A → B)$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$. So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* (or of it's equivalent for orders, the *meet* operation) you would already know where this is going: we define the function object using a *universal property*, by recognizing that all other formulas that can be in the place of $X$ in $A ∧ X → B$ point to $(A → B)$ i.e. they are below $(A → B)$ in a Hasse diagram.
+This definition is not complete, however, because  $(A → B)$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$. So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* (or of its equivalent for orders, the *meet* operation) you would already know where this is going: we define the function object using a *universal property*, by recognizing that all other formulas that can be in the place of $X$ in $A ∧ X → B$ point to $(A → B)$ i.e. they are below $(A → B)$ in a Hasse diagram.
 
 ![Implies operation with universal property](../05_logic/implies_universal_property.svg)
 

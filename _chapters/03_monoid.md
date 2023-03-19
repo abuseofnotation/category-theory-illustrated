@@ -116,7 +116,7 @@ All monoids that we examined so far are also *commutative*. We will see some non
 Groups
 ---
 
-A group is a monoid such that for each of it's elements, there is another element which is the so called "inverse" of the first one  where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more - formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ ( where $i$ is the identity element).
+A group is a monoid such that for each of its elements, there is another element which is the so called "inverse" of the first one  where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more - formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ ( where $i$ is the identity element).
 
 If we view *monoids* as a means of modeling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions are also *reversible*.
 
@@ -142,7 +142,7 @@ Symmetry groups and group classifications
 
 An interesting kinds of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fit before the action was applied).
 
-We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action - the identity action (which is it's own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
+We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action - the identity action (which is its own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
 
 ![A triangle](../03_monoid/symmetry_group.svg)
 
@@ -172,7 +172,7 @@ But it gets  much simpler to grasp if we notice the following: although our grou
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_cyclic.svg)
 
-Symmetry groups that have such "main" rotation, and, in general, groups and monoids that have an object that is capable of generating all other objects by it's repeated application, are called *cyclic groups*. And such rotation are called the group's *generator*.
+Symmetry groups that have such "main" rotation, and, in general, groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. And such rotation are called the group's *generator*.
 
 All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the natural numbers under addition. Here we can use $+1$ or $-1$ as generators.
 
@@ -259,7 +259,7 @@ Like all product groups, the Klein-four group is *non-cyclic* (because there are
 
 In fact, products groups (except the ones that feature the trivial group) are always *non-cyclic*, because even if the two groups that comprise the product it are cyclic, and have just 1 generator each, their product would have 2 generators. 
 
-Product groups are still abelian, provided that the groups that form them are abelian - we can see that this is true by noticing that, although the generators are more than one, each of them acts only on it's own part of the group, so they don't interfere with each other in any way.
+Product groups are still abelian, provided that the groups that form them are abelian - we can see that this is true by noticing that, although the generators are more than one, each of them acts only on its own part of the group, so they don't interfere with each other in any way.
 
 Fundamental theorem of Finite Abelian groups
 ---
@@ -412,7 +412,7 @@ Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A
 
 ![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
 
-Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called it's *standard representation*.) 
+Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*.) 
 
 Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
 
@@ -496,7 +496,7 @@ Categories have an identity morphism for each object, so for categories with jus
 
 Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object this means that *all morphisms should be composable* with one another. And the monoid operation does exactly that - given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
 
-Philosophically, defining a monoid as a one-object category means corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter it's state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
+Philosophically, defining a monoid as a one-object category means corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter its state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
 Group/monoid presentations
 ---
