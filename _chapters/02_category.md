@@ -30,7 +30,7 @@ It is denoted $B \times Y$ and it comes equipped with two functions for retrievi
 Interlude - coordinate systems
 ---
 
-The concept of the Cartesian product was first defined by the mathematician and philosopher René Descartes as a basis for the *Cartesian coordinate system*. Although it does not look like it, both concepts are named after him (or after the Latinized version of his name.)
+The concept of the Cartesian product was first defined by the mathematician and philosopher René Descartes as a basis for the *Cartesian coordinate system*. Although it does not look like it, both concepts are named after him (or after the Latinized version of his name).
 
 You probably know how the Cartesian coordinate system works, but an equally interesting question, of which you probably haven't thought about, is how we can define it using sets and functions. 
 
@@ -42,7 +42,7 @@ Using this construct (as well as the concept of a Cartesian product), we can des
 
 ![Cartesian coordinates](../02_category/coordinates.svg)
 
-And since the point is the main primitive of Euclidian geometry, the coordinate system allows us to also describe all kinds of geometric figures such as this triangle (which is described using products of products.)
+And since the point is the main primitive of Euclidian geometry, the coordinate system allows us to also describe all kinds of geometric figures such as this triangle (which is described using products of products).
 
 ![Cartesian coordinates](../02_category/coordinates_triangle.svg)
 
@@ -50,11 +50,11 @@ So we can say that the Cartesian coordinate system is some kind of function-like
 
 ![Cartesian coordinates](../02_category/coordinates_isomorphism.svg)
 
-What's even more interesting is that this mapping is one-to-one, which makes the two realms *isomorphic* (traditionally we say that the point is *completely* described by the coordinates, which is the same thing.)
+What's even more interesting is that this mapping is one-to-one, which makes the two realms *isomorphic* (traditionally we say that the point is *completely* described by the coordinates, which is the same thing).
 
-Our effort to represent Cartesian coordinates with sets is satisfactory, but incomplete, as we still don't know what these function-like things that connect points to numbers are - they make intuitive sense as functions, and that they exhibit all relevant properties (many-to-one mapping, or one-to-one in this case), however, we have only covered functions as mappings between sets and in this case, even if we can think of the coordinate system as a set (of points and figures), geometrical figures are definitely not a set, as it has a lot of additional things going on (or additional *structure*, as a category theorist would say.)
+Our effort to represent Cartesian coordinates with sets is satisfactory, but incomplete, as we still don't know what these function-like things that connect points to numbers are - they make intuitive sense as functions, and that they exhibit all relevant properties (many-to-one mapping, or one-to-one in this case), however, we have only covered functions as mappings between sets and in this case, even if we can think of the coordinate system as a set (of points and figures), geometrical figures are definitely not a set, as it has a lot of additional things going on (or additional *structure*, as a category theorist would say).
 
-So defining this mapping formally, would require us to also formalize both geometry and algebra, and moreover to do so in a way in which they are compatible with one another. This is some of the ambitions of category theory and this is what we will attempt to do later in this book (even if not for this exact example.) 
+So defining this mapping formally, would require us to also formalize both geometry and algebra, and moreover to do so in a way in which they are compatible with one another. This is some of the ambitions of category theory and this is what we will attempt to do later in this book (even if not for this exact example).
 
 But before we continue with that, let's see some other neat uses of products.
 
@@ -156,7 +156,7 @@ Defining sums in terms of functions
 
 As you might already suspect, the interesting part is expressing the sum of two sets using functions. To do that we have to go back to the conceptual part of the definition. We said that sums express an *or* relation between two things. 
 
-A property of every *or* relation is that if something is an $A$ that something is also an $A \vee B$ , and same for $B$ (The $\vee$ symbol means *or* by the way). For example, if my hair is *brown*, then my hair is also *either blond or brown*. This is what *or* means, right? This property can be expressed as a function, two functions actually - one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$.)
+A property of every *or* relation is that if something is an $A$ that something is also an $A \vee B$ , and same for $B$ (The $\vee$ symbol means *or* by the way). For example, if my hair is *brown*, then my hair is also *either blond or brown*. This is what *or* means, right? This property can be expressed as a function, two functions actually - one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$).
 
 ![Coproduct, external diagram](../02_category/coproduct_external.svg)
 
@@ -196,9 +196,9 @@ Now let's look at how the concepts of product and sum from the viewpoint of *log
 - The *product* of two sets contains an element of the first one *and* one element of the second one.
 - A *sum* of two sets contains an element of the first one *or* one element of the second one.
 
-When we view those sets as propositions, we discover the concept of the *product* ($\times$) corresponds exactly to the *and* relation in logic (denoted $\land$.) From this viewpoint, the function $Y \times B \to Y$  can be viewed as instance of a logical rule of inference called *conjunction elimination* (also called *simplification*) stating that, $Y  \land B \to Y$, for example, if your hair is partly blond and partly brown, then it is partly blond.
+When we view those sets as propositions, we discover the concept of the *product* ($\times$) corresponds exactly to the *and* relation in logic (denoted $\land$). From this viewpoint, the function $Y \times B \to Y$  can be viewed as instance of a logical rule of inference called *conjunction elimination* (also called *simplification*) stating that, $Y  \land B \to Y$, for example, if your hair is partly blond and partly brown, then it is partly blond.
 
-By the same token, the concept of a *sum* ($+$) corresponds the *or* relation in logic (denoted $\lor$.) From this viewpoint, the function $Y  \to Y + B$  can be viewed as instance of a logical rule of inference called *disjunction introduction*, stating that, $Y  \to Y \lor B$ for example, if your hair is blond, it is either blond or brown.
+By the same token, the concept of a *sum* ($+$) corresponds the *or* relation in logic (denoted $\lor$). From this viewpoint, the function $Y  \to Y + B$  can be viewed as instance of a logical rule of inference called *disjunction introduction*, stating that, $Y  \to Y \lor B$ for example, if your hair is blond, it is either blond or brown.
 
 This means, among other things, that the concepts of *and* and *or* are also dual - an idea which was put forward in the 19th century by the mathematician Augustus De Morgan and is henceforth known as *De Morgan duality*, and which is a predecessor to the modern idea of duality in category theory, that we examined before. 
 
@@ -224,7 +224,7 @@ The first thing we want to do is, to replace the statements that constitute it w
 
 $\neg{A} \vee \neg{B}$ 
 
-However, this statement is clearly not the opposite of "blond *or* brown"(saying that my hair is not blond *or* not brown does in fact allow it to be blond and also allows for it to be brown, it just doesn't allow it to be both of these things.)
+However, this statement is clearly not the opposite of "blond *or* brown"(saying that my hair is not blond *or* not brown does in fact allow it to be blond and also allows for it to be brown, it just doesn't allow it to be both of these things).
 
 So what have we missed? Simple - although we replaced the propositions that constitute our proposition with their opposites, we didn't replace the operator that connects them - it is still *or* for both propositions. So we must replace it with *or* converse. As we said earlier, and as you can see by analyzing this example, this operator is *and* So the formula becomes "not blond *and* not brown".
 
@@ -285,7 +285,7 @@ Defining Categories (again)
 
 All category theory books (including this one) starts by talking about set theory. However looking back I really don't know why that is the case - most books that focus around a given subject don't usually start off by introducing an *entirely different subject* before even starting to talk about the main one, even if the two subjects are so related. 
 
-Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person.)
+Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain - we don't need to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person).
 
 So. A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
@@ -348,11 +348,11 @@ Functional composition is special not only because you can take any two morphism
 
 But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$). 
 
-This formula can be expressed using the following diagram, which would only commute if the formula is true (given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent.)
+This formula can be expressed using the following diagram, which would only commute if the formula is true (given that all our category-theoretic diagrams commute, we can say, in such cases, that the formula and the diagram are equivalent).
 
 ![Composition of morphisms with many objects](../02_category/composition_associativity.svg)
 
-This formula (and the diagram) is the definition of a property called $associativity$. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above does not commute - it would be super weird.)
+This formula (and the diagram) is the definition of a property called $associativity$. Being associative is required for functional composition to really be called functional composition (and for a category to really be called category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above does not commute - it would be super weird).
 
 Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h • g) • f = h • (g • f)$). 
 
@@ -410,7 +410,7 @@ Associativity and reductionism
 
 Associativity - what it means and why is it there? In order to tackle this question, we must first talk about another concept - the concept of *reductionism*: 
 
-Reductionism is a name for the idea that the behaviour of some more complex phenomenon can be explained in terms of a number of simpler and more fundamental phenomena. Whether the reductionist view is *universally valid*, i.e. whether it is possible to expain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws), is a question that we can argue about until the that universe's inevitable collapse. But what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics - each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it.)
+Reductionism is a name for the idea that the behaviour of some more complex phenomenon can be explained in terms of a number of simpler and more fundamental phenomena. Whether the reductionist view is *universally valid*, i.e. whether it is possible to expain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws), is a question that we can argue about until the that universe's inevitable collapse. But what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics - each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it).
 
 Commutativity
 ---
@@ -432,7 +432,7 @@ Associativity
 
 Commutativity is the law abided in contexts in which any object can be represented as the sum of its parts *when combined in whichever order*. But there are also many cases in which an object is to be represented by the sum of its parts, but when *combined in one specific way*.
 
-In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all.)
+In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all).
 
 But a weaker version of the law of reductionism would hold, namely that if we take a bunch of objects, combined in a certain order, it would be true that *any pair of those objects could, at any time, be replaced by the object we get by combining them*, i.e. if we have.
 
