@@ -224,7 +224,7 @@ The smallest non-trivial group is the group $Z_2$ that has two elements.
 
 ![The smallest non-trivial group](../03_monoid/smallest_group.svg)
 
-$Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set.
+$Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set under the operation that negates a given value.
 
 Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 
@@ -247,7 +247,7 @@ And the *actions* of a product group are comprised of the actions of the first g
 
 ![Klein four](../03_monoid/klein_four_as_product.svg)
 
-The product of the two groups we presented is called the *Klein four-group* and it is the simplest *abelian non-cyclic* group. 
+The product of the two groups we presented is called the *Klein four-group* and it is the simplest *non-cyclic abelian* group. 
 
 Another way to present the Klein-four group is the *group of symmetries of a non-square rectangle*.
 
@@ -260,16 +260,20 @@ The Klein-four group is *non-cyclic* (because there are not one, but two generat
 Cyclic product groups
 ---
 
-Products groups are *non-cyclic*, provided that the number of elements of the groups that comprise them (or their *orders* as they are called) aren't *relatively prime*. If two groups don't have relatively prime orders, even if they are cyclic and have just 1 generator each, their product would have 2 generators. 
+Product groups are *non-cyclic*, provided that the number of elements of the groups that comprise them (or their *orders*) aren't *relatively prime* (have some GCD other than 1).
 
-And groups of relatively prime orders are isomorphic to cyclic groups (this is know as the Chinese Remainder theorem), as for example the product of $Z_3$ and $Z_2$ is isomorphic to the group $Z_6$ ($Z_3 \times Z_2$ = Z_6$)
+If two groups have orders that aren't relatively prime, (like for example $2$ and $2$, (which are both divided by 2) as the groups that comprise Klein-four), then even if the two groups are cyclic and have just 1 generator each, their product would have 2 generators. 
 
-![Klein four](../03_monoid/chinese_remainder_theorem.svg)
+And if you combine two groups with orders that are relatively prime, (like $2$ and $3$) the resulting group would be isomorphic to a cyclic group of the same order, as the product of $Z_3$ and $Z_2$ is isomorphic to the group $Z_6$ ($Z_3 \times Z_2 \cong Z_6$)
+
+![Chinese reminder theorem](../03_monoid/chinese_remainder_theorem.svg)
+
+This is a consequence of an ancient result, known as the *Chinese Remainder theorem*.
 
 Abelian product groups
 ---
 
-Product groups are abelian, provided that the groups that form them are abelian. We can see that this is true by noticing that, although the generators are more than one, each of them acts only on its own part of the group, so they don't interfere with each other in any way.
+Product groups are *abelian*, provided that the *groups that form them* are abelian. We can see that this is true by noticing that, although the generators are more than one, each of them acts only on its own part of the group, so they don't interfere with each other in any way.
 
 Fundamental theorem of Finite Abelian groups
 ---
