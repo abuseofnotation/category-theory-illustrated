@@ -104,7 +104,7 @@ Defining products in terms of functions
 
 In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of. I call this the *low-level* approach. This time we will try to do the opposite - be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, and try to define the product in terms of functions and functional composition. Effectively we will be working at a *higher level* of abstraction.
 
-How can we define products in terms of functions? To do that, we must first think about *what functions* are there for a given product, and we have two of those - the functions for retrieving the the two elements of the pair (the "getters", so to say) - formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. 
+How can we define products in terms of functions? To do that, we must first think about *what functions* are there for a given product, and we have two of those - the functions for retrieving the two elements of the pair (the "getters", so to say) - formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. 
 
 ![Product, external diagram](../02_category/product_external.svg)
 

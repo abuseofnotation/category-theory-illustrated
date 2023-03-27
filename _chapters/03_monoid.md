@@ -229,7 +229,7 @@ $Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphi
 Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 
 Group/monoid products
----
+===
 
 We already saw a lot of abelian groups that are also cyclic, but we didn't see any abelian groups that are not cyclic. So let's examine what those look like. This time, instead of looking into individual examples, we will present a general way for producing abelian non-cyclic groups from cyclic ones - it is by uniting them by using *group product*.
 
@@ -255,11 +255,21 @@ Another way to present the Klein-four group is the *group of symmetries of a non
 
 **Task:** Show that the two representations are isomorphic.
 
-Like all product groups, the Klein-four group is *non-cyclic* (because there are not one, but two generators) - vertical and horizontal spin. It is, however, still *abelian*, because the ordering of the actions still does not matter for the end results. Actually, the Klein-four group is the *smallest non-cyclic group*.
+The Klein-four group is *non-cyclic* (because there are not one, but two generators) - vertical and horizontal spin. It is, however, still *abelian*, because the ordering of the actions still does not matter for the end results. Actually, the Klein-four group is the *smallest non-cyclic group*.
 
-In fact, products groups (except the ones that feature the trivial group) are always *non-cyclic*, because even if the two groups that comprise the product it are cyclic, and have just 1 generator each, their product would have 2 generators. 
+Cyclic product groups
+---
 
-Product groups are still abelian, provided that the groups that form them are abelian - we can see that this is true by noticing that, although the generators are more than one, each of them acts only on its own part of the group, so they don't interfere with each other in any way.
+Products groups are *non-cyclic*, provided that the number of elements of the groups that comprise them (or their *orders* as they are called) aren't *relatively prime*. If two groups don't have relatively prime orders, even if they are cyclic and have just 1 generator each, their product would have 2 generators. 
+
+And groups of relatively prime orders are isomorphic to cyclic groups (this is know as the Chinese Remainder theorem), as for example the product of $Z_3$ and $Z_2$ is isomorphic to the group $Z_6$ ($Z_3 \times Z_2$ = Z_6$)
+
+![Klein four](../03_monoid/chinese_remainder_theorem.svg)
+
+Abelian product groups
+---
+
+Product groups are abelian, provided that the groups that form them are abelian. We can see that this is true by noticing that, although the generators are more than one, each of them acts only on its own part of the group, so they don't interfere with each other in any way.
 
 Fundamental theorem of Finite Abelian groups
 ---
@@ -297,8 +307,8 @@ In both cases the monoid would be cyclic.
 
 {%endif%}
 
-Groups/monoid of rotations and reflections
----
+Dihateral groups
+===
 
 Now, let's finally examine a non-commutative group - the group of rotations *and reflections* of a given geometrical figure. It is the same as the last one, but here besides the rotation action that we already saw (and its composite actions), we have the action of flipping the figure vertically, an operation which results in its mirror image:
 

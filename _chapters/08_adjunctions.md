@@ -95,7 +95,7 @@ Formally the free monoid over a set $A$ is just the type $[A]$ and the free func
 Morphism mapping
 ---
 
-Once we established that the free functor for set $A$ is just the list functor we already know how the the morphism mapping that converts function between sets to functions between lists of sets, and the way to construct this mapping is to apply the function to every element of that list.
+Once we established that the free functor for set $A$ is just the list functor we already know how the morphism mapping that converts function between sets to functions between lists of sets, and the way to construct this mapping is to apply the function to every element of that list.
 
 Adjoint functors
 ===

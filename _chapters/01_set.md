@@ -222,7 +222,7 @@ Most of the types of programming are composite types - they are a combination of
 Functions and methods/subroutines
 ---
 
-Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function which that takes an argument of type `Char` and returns a `Boolean`, depending on whether the character is a letter.
+Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
 
 ![A function from Char to Boolean](../01_set/char_boolean.svg)
 
@@ -389,7 +389,7 @@ An interesting fact about isomorphisms is that if we have functions that convert
 
 ![The architecture of isomorphism](../01_set/isomorphism_general.svg)
 
-For example, if you have a function "is the partner of" that goes from the set of all married people to the same set, than that function is invertible. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between them and this person/object, and vice versa. 
+For example, if you have a function "is the partner of" that goes from the set of all married people to the same set, then that function is invertible. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between them and this person/object, and vice versa. 
 
 Composing isomorphisms
 ---
