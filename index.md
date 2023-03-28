@@ -10,6 +10,12 @@ The book serves as chapter 0 going through the gist of the material covered by o
 
 [![cover.svg](cover.svg)](00_about)
 
+[Read online](00_about)
+--
+
+[Get pdf](print)
+--
+
 Praise
 ===
 
