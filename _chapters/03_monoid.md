@@ -53,7 +53,7 @@ To keep the suspense, before we discuss the relationship between monoids and cat
 Monoids from numbers
 ---
 
-Mathematics is not only about numbers, however numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said.) This group is denoted $\left< \mathbb{N},+ \right>$ (in general, all groups are denoted by specifying the set and the operation, enclosed in angle brackets.)
+Mathematics is not only about numbers, however numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said). This group is denoted $\left< \mathbb{N},+ \right>$ (in general, all groups are denoted by specifying the set and the operation, enclosed in angle brackets).
 
 ![The monoid of numbers under addition](../03_monoid/numbers_addition.svg)
 
@@ -190,7 +190,7 @@ In effect numbers "wrap around", forming a group with as many elements as it the
 
 ![The group of numbers under addition](../03_monoid/numbers_modular.svg)
 
-All cyclic groups that have the same number of elements (or that are of the *same order*) are isomorphic to each other (careful readers might notice that we haven't yet defined what a group isomorphisms are. Even more careful readers might already have an idea about what it is.)
+All cyclic groups that have the same number of elements (or that are of the *same order*) are isomorphic to each other (careful readers might notice that we haven't yet defined what a group isomorphisms are, even more careful readers might already have an idea about what it is).
 
  For example, the group of rotations of the triangle is isomorphic to the natural numbers under the addition with modulo $3$. 
 
@@ -343,7 +343,7 @@ Currying
 
 When we defined monoids, we saw that their operations are two-argument functions. And we introduced a way for representing such functions using set theory - by uniting the two arguments into one using products. i.e. we showed that a function that accepts two arguments (say $A$ and $B$) and maps them into some result ($C$), can be thought as a mapping from the product of the sets of two arguments to the result. So $A\times B\to C$.
 
-However, this is not the only way to represent multi-argument function set-theoretically - there is another, equally interesting way, that doesn't rely on any data structures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$.) So $A\to B \to C$. 
+However, this is not the only way to represent multi-argument function set-theoretically - there is another, equally interesting way, that doesn't rely on any data structures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to B \to C$. 
 
 The practice of transforming a function that takes a pair of objects to a function that takes just one object and returns a function that takes another one is called *currying*. It is achieved by a higher-order function. Here is how such a function might be implemented.
 
@@ -374,7 +374,7 @@ Let's take a step back and examine the groups/monoids that we covered so far in 
 
 ![The group of rotations in a triangle - group notation](../03_monoid/symmetry_rotation_actions.svg)
 
-Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself - as functional composition. For example, the 3 elements of $Z_3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way.)
+Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself - as functional composition. For example, the 3 elements of $Z_3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way).
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_functions.svg)
 
@@ -426,7 +426,7 @@ Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A
 
 ![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
 
-Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*.) 
+Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*). 
 
 Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
 
@@ -435,13 +435,13 @@ Cayley's theorem may not seem very impressive, but that only shows how influenti
 Interlude: Symmetric groups
 ---
 
-The first thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times 2\times 3...\times n$ or $n!$ (n-factorial.) 
+The first thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to are $1\times 2\times 3...\times n$ or $n!$ (n-factorial). 
 
 So, for example the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
 
 ![The S1 symmetric group](../03_monoid/s1.svg)
 
-The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$.)
+The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$).
 
 ![The S2 symmetric group](../03_monoid/s2.svg)
 
@@ -550,7 +550,7 @@ The set of generators and laws that defines a given group is called the *present
 Interlude: Free monoids
 ---
 
-We saw how picking a different selection of laws gives rise to different types of monoid. But what monoids would we get if we pick no laws at all? These monoids (we get a different one depending on the set we picked) are called a *free monoids* (the word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else.)
+We saw how picking a different selection of laws gives rise to different types of monoid. But what monoids would we get if we pick no laws at all? These monoids (we get a different one depending on the set we picked) are called a *free monoids* (the word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else).
 
 If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is isomorphic to the monoid of integers.
 

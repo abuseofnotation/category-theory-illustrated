@@ -19,7 +19,7 @@ Tom Lehrer
 The story behind this book
 ===
 
-I was interested at math as a kid, but I was always messing up the calculations so I decided it was not my thing and and started pursuing other interests (among which writing and visual art.)
+I was interested at math as a kid, but I was always messing up the calculations so I decided it was not my thing and and started pursuing other interests, like writing and visual art.
 
 A little later I got into programming and I found that this was similar to the part of mathematics that I enjoyed. I started using functional programming in an effort to explore the similarity and to improve myself as a developer. I discovered category theory a little later.
 

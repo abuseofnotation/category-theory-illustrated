@@ -7,7 +7,7 @@ When thinking about some mathematical objects such as a groups, orders or catego
 Homomorphism functors
 ---
 
-Given any category, we can generate the set of the sets of all morphisms that have a specific type signature with respect to a given object from that category. This is called the *Homomorphism set*, denoted $Hom(B, - )$, $B$ being the object that you picked (for example, let's pick the brown ball.)
+Given any category, we can generate the set of the sets of all morphisms that have a specific type signature with respect to a given object from that category. This is called the *Homomorphism set*, denoted $Hom(B, - )$, $B$ being the object that you picked (for example, let's pick the brown ball).
 
 ![Homomorphism set](hom_set.svg)
 

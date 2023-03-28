@@ -7,7 +7,7 @@ Natural transformations
 
 In this chapter, we will introduce the central concept of category theory. It is the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
 
-Natural transformations are really is the heart of category theory - As a matter of fact, category theory was invented with the purpose of studying natural transformations. The importance of natural transformations is not obvious at first, and so before introducing them I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle.)
+Natural transformations are really is the heart of category theory - As a matter of fact, category theory was invented with the purpose of studying natural transformations. The importance of natural transformations is not obvious at first, and so before introducing them I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle).
 
 Objects are overrated
 ===
@@ -15,7 +15,7 @@ Objects are overrated
 > The world is the collection of facts, not of things.
 > Ludwig Wittgenstein
 
-Objects are all around us, both in mathematics and in real life - virtually everything that we see or imagine can be viewed as an object. Because of this, we might be inclined to think that the key to understanding the world is to understand what objects are. And this indeed is a popular idea, you might even say that this is what set theory does - the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are primarily saying that all objects can be represented by sets (and morphisms can be represented by sets as well.)
+Objects are all around us, both in mathematics and in real life - virtually everything that we see or imagine can be viewed as an object. Because of this, we might be inclined to think that the key to understanding the world is to understand what objects are. And this indeed is a popular idea, you might even say that this is what set theory does - the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are primarily saying that all objects can be represented by sets (and morphisms can be represented by sets as well).
 
 However, there is another way to look at things. What is an object, when viewed by itself? Can we study an object in isolation and will there anything left to study about it, once it is detached from its environment? When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would be just a piece of junk, and in many ways it won't be an object at all. And this is even more so for mathematical objects which you cannot even represent in isolation - functions, are key. 
 
@@ -35,7 +35,7 @@ So, being isomorphic means that two structures are completely the same. A map is
 
 ![Isomorphic categories](isomorphic_categories.svg)
 
-But, like we said, in category theory, we specify most concepts by treating isomorphis objects as equal - this is valid for all definitions that are based on universal properties. Or to extend the map example, suppose, that there are two intersections that are positioned in such a way that for every road that goes to and from one of them, there is an identical road to the other one (maybe the one of these intercection was meant to replace the other one but it wasn't closed.) Then suppose that you have a map which displays these two intercections as one and the same intercection. 
+But, like we said, in category theory, we specify most concepts by treating isomorphis objects as equal - this is valid for all definitions that are based on universal properties. Or to extend the map example, suppose, that there are two intersections that are positioned in such a way that for every road that goes to and from one of them, there is an identical road to the other one (maybe the one of these intercection was meant to replace the other one but it wasn't closed). Then suppose that you have a map which displays these two intercections as one and the same intercection. 
 
 ![Non-isomorphic categories](non_isomorphic_categories.svg)
 
@@ -70,11 +70,11 @@ We already understand when to categories are equivalent, but to have a proper fo
 Natural transformations
 ===
 
-The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors. They are actually not similar, they are not "recursive", to be more precise: both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are morphisms between morphisms (known as *2-morphisms*.)
+The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors. They are actually not similar, they are not "recursive", to be more precise: both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are morphisms between morphisms (known as *2-morphisms*).
 
 But enough talking, let's draw some diagrams. 
 
-We know that natural transformations are morphisms between functors, so let's draw two functors (I am omitting the arrows between the morphisms for brevity.)
+We know that natural transformations are morphisms between functors, so let's draw two functors (I am omitting the arrows between the morphisms for brevity).
 
 ![Two functors](natural_functors_objects.svg)
 
@@ -155,7 +155,7 @@ Let's state formally what we saw in these diagrams. As you remember we call our 
 
 Also, we call the category with two connected objects $2$ and the morphisms in it are $0$ and $1$.
 
-In this case, our natural transformation $\alpha : F \Rightarrow G$ is just a functor from the product category of $2$ to $C$ so $2 \times C \to G$, such that if we take the subcategory of $C$ comprised of just those objects that have the $0$ object, and the morphisms between them, then that functor is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$.) Et voilà!
+In this case, our natural transformation $\alpha : F \Rightarrow G$ is just a functor from the product category of $2$ to $C$ so $2 \times C \to G$, such that if we take the subcategory of $C$ comprised of just those objects that have the $0$ object, and the morphisms between them, then that functor is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
 
 **Task:** See how the two definitions are equivalent.
 

@@ -70,7 +70,7 @@ The famous example of object-oriented programming of a `Person` class with `name
 Using Products to Define Numeric Operations
 ---
 
-Products can also be used for expressing functions that take more than one argument. For example, "plus" and "minus", are functions from the set of products of two numbers to the set of numbers. (So, $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$.) Of course, we cannot draw the function itself, even partly, because it has too much arrows and would look messy.
+Products can also be used for expressing functions that take more than one argument. For example, "plus" and "minus", are functions from the set of products of two numbers to the set of numbers, (so, $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$). Of course, we cannot draw the function itself, even partly, because it has too much arrows and would look messy.
 
 Actually, here it is.
 
@@ -303,7 +303,7 @@ Speaking of which, note that objects in a category can be connected by multiple 
 
 ![Two objects connected with multiple arrows](../02_category/arrows.svg)
 
-Why that is true is pretty obvious if we go back to set theory for a second.  (OK, maybe we really *have* to do it from time to time.) There are, for example, an infinite number of functions that go from number to boolean, and the fact that they have the same input type and the same output type (or the same *type signature*, as we like to say) does not in any way make them equivalent to one another.
+Why that is true is pretty obvious if we go back to set theory for a second (OK, maybe we really *have* to do it from time to time). There are, for example, an infinite number of functions that go from number to boolean, and the fact that they have the same input type and the same output type (or the same *type signature*, as we like to say) does not in any way make them equivalent to one another.
 
 ![Two sets connected with multiple functions](../02_category/set_arrows.svg)
 
@@ -320,7 +320,7 @@ Formally, this requirement says that there should exist an operation (denoted wi
 
 ![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
-**NB:** Note (if you haven't already) that functional composition is written from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$.)
+**NB:** Note (if you haven't already) that functional composition is written from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$).
 
 The law of identity
 ---
@@ -388,8 +388,8 @@ This is it.
 Addendum: Why are categories like that?
 ===
 
-*Why* are categories defined by those two laws and not some other two (or one, three, four etc.) laws? From one standpoint, the answer to that seems obvious - we study categories because they *work*, I mean, look at how many applications are there. 
-But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice (due to a phenomenon called "emergence").) Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
+*Why* are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious - we study categories because they *work*, I mean, look at how many applications are there. 
+But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law - and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice (due to a phenomenon called "emergence")). Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
 
 Identity and isomorphisms
 ===

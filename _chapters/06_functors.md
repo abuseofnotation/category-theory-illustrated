@@ -27,7 +27,7 @@ We also saw that it contains within itself many other categories, such as the ca
 Special types of categories 
 ---
 
-We also learned about other algebraic objects that turned out to be just *special types of categories*, like categories that have just one *object* (monoids, groups) and categories that have only one *morphism* between any two objects (preorders, partial orders.)
+We also learned about other algebraic objects that turned out to be just *special types of categories*, like categories that have just one *object* (monoids, groups) and categories that have only one *morphism* between any two objects (preorders, partial orders).
 
 ![Types of categories](../06_functors/category_types.svg)
 
@@ -52,7 +52,7 @@ Examining some finite categories
 
 For future reference, let's see some important finite categories. 
 
-The simplest category is $0$ (enjoy the minimalism of this diagram.)
+The simplest category is $0$ (enjoy the minimalism of this diagram).
 
 ![The finite category 0](../06_functors/finite_zero.svg)
 
@@ -66,7 +66,7 @@ If we increment the number of objects to two, we see a couple of more interestin
 
 **Task:** There are just two more categories that have 2 objects and at most one morphism between two objects, draw them.
 
-And finally the category $3$ has 3 objects and also 3 morphisms (one of which is the composition of the other two.)
+And finally the category $3$ has 3 objects and also 3 morphisms (one of which is the composition of the other two).
 
 ![the finite category 3](../06_functors/finite_three.svg)
 
@@ -92,7 +92,7 @@ Then, in chapter 4, we encountered *order isomorphisms* and we saw that they are
 
 ![Order isomorphism](../06_functors/order_isomorphism.svg)
 
-Or more formally put, for any $a$ and $b$ if we have $a ≤ b$ we should also have $F(a) ≤ F(b)$ (and vise versa.)
+Or more formally put, for any $a$ and $b$ if we have $a ≤ b$ we should also have $F(a) ≤ F(b)$ (and vise versa).
 
 Categorical isomorphisms
 ---
@@ -140,7 +140,7 @@ What are functors
 
 The logician Rudolf Carnap coined the term "functor" as part of his project to formalize the syntax for the natural languages such as English in order to create a precise way for us to talk about science. Originally, a functor meant a word or phrase whose meaning can be customized by combining it with numerical value, such as the phrase "the temperature at $x$ o'clock", which has a different meaning depending on the value of $x$.
 
-In other words, a functor is a phrase that *acts as a function*, only not a function between sets, but one between *linguistic concepts* (such as times and temperature.)
+In other words, a functor is a phrase that *acts as a function*, only not a function between sets, but one between *linguistic concepts* (such as times and temperature).
 
 ![Functor, as envisioned by Rudolf Carnap.](../06_functors/functor_carnap.svg)
 
@@ -223,7 +223,7 @@ So how can we do that? One key observation is that diagrams look as finite categ
 
 ![the finite category 3](../06_functors/finite_three.svg)
 
-However, this is only part of the story as finite categories are just structures, whereas diagrams are *signs*. They are "something by knowing which we know something more.", as Peirce famously put it (or "...which can be used in order to tell a lie", in the words of Umberto Eco.) 
+However, this is only part of the story as finite categories are just structures, whereas diagrams are *signs*. They are "something by knowing which we know something more.", as Peirce famously put it (or "...which can be used in order to tell a lie", in the words of Umberto Eco). 
 
 For this reason, aside from a finite category that encodes the diagram's structure, the definition of a diagram must also include a way for "interpreting" this category in some other context i.e. they must include *functors*.
 
@@ -237,10 +237,10 @@ If you know about semiotics, you may view the source and target categories of th
 
 And so, you can already see that the concept of a functor plays a very important role in category theory. Because of it, diagrams in category theory can be *specified formally* i.e. they are categorical objects *per se*. 
 
-You might even say that they are categorical objects *par excellance* (TODO: remove that last joke.)
+You might even say that they are categorical objects *par excellance* (TODO: remove that last joke).
 
 <!--
-(TODO: By the way, the fact that a diagram commutes means just that the morphism in the finite category are sometimes composites of one another.)
+(TODO: By the way, the fact that a diagram commutes means just that the morphism in the finite category are sometimes composites of one another).
 -->
 
 Maps are functors
@@ -256,14 +256,14 @@ In maps, morphisms that are a result of composition are often not displayed, but
 
 ![A map and a preorder of city pathways](../06_functors/preorder_map_functor_route.svg)
 
-Notice that in order to be a functor, a map does not have to list *all* roads that exist in real life, and *all* traveling options ("the map is not the territory"), the only requirement is that *the roads that it lists should be actual* - this is a characteristic shared by all many-to-one relationships (i.e. functions.)
+Notice that in order to be a functor, a map does not have to list *all* roads that exist in real life, and *all* traveling options ("the map is not the territory"), the only requirement is that *the roads that it lists should be actual* - this is a characteristic shared by all many-to-one relationships (i.e. functions).
 
 Human perception is functorial 
 ---
 
 We saw that, aside from being a category-theoretic concept, functors are connected to disciplines that study the human mind, like logic, linguistics, semiotics and the like. Why is it so? Recently, I wrote a [blog post about using logic to model real-life thinking](/logic-thought)) where I tackle the "unreasonable effectiveness" of functors (and "maps" in general), where I argue that is because human perception, human thinking, is functorial, that perception is just a series of functors.
 
-My thesis is that to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. For example, our brain creates a functor between the category of raw sensory data that we receive from our senses, to a category containing some basic model of how the world works (one that tells us where are we in space, how many objects are we seeing etc.) Then we are connecting this model to another, more abstract model, which provides us with a higher-level view of the situation that we are in, and so on.
+My thesis is that to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. For example, our brain creates a functor between the category of raw sensory data that we receive from our senses, to a category containing some basic model of how the world works (one that tells us where are we in space, how many objects are we seeing etc.). Then we are connecting this model to another, more abstract model, which provides us with a higher-level view of the situation that we are in, and so on.
 
 ![Perception is functorial](../06_functors/chain.svg)
 
@@ -288,14 +288,14 @@ This function is interesting - it preserves the operation of (modular) addition:
 
 ![Group homomorphism](../06_functors/group_homomorphism.svg)
 
-Or to put it formally, if we call it (the function) $F$, then we have the following equation - $F(a + b) = F(a) + F(b)$ (where $+$ in the right-hand side of the equation means modular addition.) Because this equation holds, the $F$ function is a *group homomorphism* between the group of integers under addition and the group of modulo arithmetic with base 11 under modular addition (where you can replace 11 with any other number.)
+Or to put it formally, if we call it (the function) $F$, then we have the following equation - $F(a + b) = F(a) + F(b)$ (where $+$ in the right-hand side of the equation means modular addition). Because this equation holds, the $F$ function is a *group homomorphism* between the group of integers under addition and the group of modulo arithmetic with base 11 under modular addition (where you can replace 11 with any other number).
 
 
-The groups don't have to be so similar for there to be a homomorphism between them. Take, for example, the function that maps any number $n$ to 2 to the *power of $n$,* so  $n \to 2ⁿ$ (here, again, you can replace 2 with any other number.) This function gives a rise to a group homomorphism between the group of integers under addition and the integers under multiplication, or $F(a + b) = F(a) \times F(b)$.
+The groups don't have to be so similar for there to be a homomorphism between them. Take, for example, the function that maps any number $n$ to 2 to the *power of $n$,* so  $n \to 2ⁿ$ (here, again, you can replace 2 with any other number). This function gives a rise to a group homomorphism between the group of integers under addition and the integers under multiplication, or $F(a + b) = F(a) \times F(b)$.
 
 ![Group homomorphism between different groups](../06_functors/group_homomorphism_addition_multiplication.svg)
 
-Wait, what were we talking about, again? Oh yeah - group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups and revisit our first example and (to make the diagram simpler, we use $mod2$ instead of $mod11$.)
+Wait, what were we talking about, again? Oh yeah - group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups and revisit our first example and (to make the diagram simpler, we use $mod2$ instead of $mod11$).
 
 ![Group homomorphism as a functor](../06_functors/group_homomorphism_functor.svg)
 
@@ -332,7 +332,7 @@ For example, the function that maps the current time to the distance traveled by
 
 ![A monotonic function](../06_functors/monotone_map.svg)
 
-If we plot this or any other monotonic function on a line graph, we see that it goes just one direction (i.e. just up or just down.)
+If we plot this or any other monotonic function on a line graph, we see that it goes just one direction (i.e. just up or just down).
 
 ![A monotonic function, represented as a line-graph](../06_functors/monotone_map_plot.svg)
 
@@ -364,7 +364,7 @@ Suppose that in the source order we have two morphisms with the following type s
 
 $f :: a \to b$ and $g :: b \to c$. 
 
-Then, if we compose those two morphisms in the target order ($F(g)•F(f)$), we get a morphism from object $F(a)$ to object $F(c)$ ($F(g)•F(f) :: F(a) \to F(c)$.)
+Then, if we compose those two morphisms in the target order ($F(g)•F(f)$), we get a morphism from object $F(a)$ to object $F(c)$ ($F(g)•F(f) :: F(a) \to F(c)$).
 
 If we compose the two morphisms in the source order, and we use the functor to get the corresponding morphism in the target order ($F(g•f)$) we get another morphism from object $F(a)$ to object $F(c)$ ($F(g•f) :: F(a) \to F(c)$)
 
@@ -439,21 +439,21 @@ But let's start with the basics - defining the concept of a functor in programmi
 
 > A functor between two categories (let's call them `A` and `B`) consists of a mapping that maps each ~~object~~ *type* in `A` to a type in `B` and a mapping that maps each ~~morphism~~ *function* between types in `A` to a function between types in `B`, in a way that preserves the structure of the category.
 
-Comparing these definitions makes us realize that mathematicians and programmers are two very different communities, that are united by the fact that they both use functors (and by their appreciation of peculiar typefaces.)
+Comparing these definitions makes us realize that mathematicians and programmers are two very different communities, that are united by the fact that they both use functors (and by their appreciation of peculiar typefaces).
 
 Type mapping
 ---
 
-The first component of a functor is a mapping that converts one type (let's call it `A`) to another type (`B`). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checking in the first place - they go by the name of *generic types*. A generic type is nothing but a function that maps one (concrete) type to another (this is why generic types are sometimes called *type-level functions*.) 
+The first component of a functor is a mapping that converts one type (let's call it `A`) to another type (`B`). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checking in the first place - they go by the name of *generic types*. A generic type is nothing but a function that maps one (concrete) type to another (this is why generic types are sometimes called *type-level functions*). 
 
 ![A functor in programming - type mapping](../06_functors/functor_programming_objects.svg)
 
-Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function. A value-level function from `String`, to `List<String>` (or in mathy Haskell/ML-inspired notation $string \to List\ string$ is) converts a *value* of type `String` (such as `"foo"`) and to a value of type `List<String>`. You even have (as we will see later) a value-level functions with signature $a \to List\ a$ that can convert any value to a list of elements containing that value, but this is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.)
+Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function. A value-level function from `String`, to `List<String>` (or in mathy Haskell/ML-inspired notation $string \to List\ string$ is) converts a *value* of type `String` (such as `"foo"`) and to a value of type `List<String>`. You even have (as we will see later) a value-level functions with signature $a \to List\ a$ that can convert any value to a list of elements containing that value, but this is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.).
 
 Function mapping
 ---
 
-So the type mapping of a functor is simply a generic type in a programming language (we can also have functors between two generic types, but we will review those later.) So what is the *function mapping* - that is a mapping that convert any function operating on simple types, like $string \to number$ to a function between their more complex counterparts e.g. $List\ string \to List\ number$.
+So the type mapping of a functor is simply a generic type in a programming language (we can also have functors between two generic types, but we will review those later). So what is the *function mapping* - that is a mapping that convert any function operating on simple types, like $string \to number$ to a function between their more complex counterparts e.g. $List\ string \to List\ number$.
 
 ![A functor in programming - function mapping](../06_functors/functor_programming_morphisms.svg)
 
@@ -500,7 +500,7 @@ Well, we saw that *maps are functors* and we know that *maps are useful*, so let
 
 So, why is a map useful? Well, it obviously has to do with the fact that the points and arrows of the map corresponds to the cities and the roads in the place you are visiting in i.e. due to the very fact that it is a functor, but there is a second aspect as well - maps (or at least those of them that are useful) are *simpler to work with* than the actual things they represent. For example, road maps are useful, because they are *smaller* than the territory they represent, so it is much easier to go look up the routes between two given places by following a map, than to actually travel through all them in real life. 
 
-And functors in programming are used for similar reason - functions that involve simple types like `string`, `number`, `boolean` etc are ... simple, and least when compared with functions that work with lists and other generic types. Using the `map` function allows us to operate on such types without having to think about them and to derive functions that transform them, from functions that transform simple values. In other words, functors are means of *abstraction*.
+And functors in programming are used for similar reason - functions that involve simple types like `string`, `number`, `boolean` etc. are ... simple, and least when compared with functions that work with lists and other generic types. Using the `map` function allows us to operate on such types without having to think about them and to derive functions that transform them, from functions that transform simple values. In other words, functors are means of *abstraction*.
 
 Of course, not all routes on the map and no functions that between generic datatypes can be derived just by functions between the types they contain. This is generally true for many "useful" functors: because their source categories are "simpler" than the target, some of the morphisms in the target have no equivalents in the source i.e. making the model simpler inevitably results in losing some of its capabilities. This is a consequence of "the map is not the territory" principle (or in programming context, "every abstraction is a leaky abstraction", as Joel Spolsky put it): 
 
@@ -534,17 +534,17 @@ And it might be familiar, because an identity functor is similar to an identity 
 Pointed functors
 ---
 
-Finally, the identity functor, together with all other functors to which the identity functor can be *naturally transformed* are called *pointed functors* (i.e. a functor is pointed if there exist a morphism from the identity functor to it.) As we will see shortly, the list functor is a pointed functor.
+Finally, the identity functor, together with all other functors to which the identity functor can be *naturally transformed* are called *pointed functors* (i.e. a functor is pointed if there exist a morphism from the identity functor to it). As we will see shortly, the list functor is a pointed functor.
 
 ![Pointed functor](../06_functors/pointed_functor.svg)
 
-We still haven't discussed what does it mean for one functor to be naturally transformed to another one (although the commuting diagram above can give you some idea.) This is a complex concept and we have a whole chapter about it (the next one). 
+We still haven't discussed what does it mean for one functor to be naturally transformed to another one (although the commuting diagram above can give you some idea). This is a complex concept and we have a whole chapter about it (the next one). 
 
 However if we concentrate solely on the category of types in programming languages, then *a natural transformation is just a function* that translates each value of what we called the "simple types" to a value of the functor's generic type i.e. $a \to F\ a$), in a way that this diagram commutes.
 
 ![Pointed functor in Set](../06_functors/pointed_functor_set.svg)
 
-What does it take for this diagram to commute? It means that the you have two equivalent routes for reaching from the top-left diagonal to the bottom-right diagonal i.e. that applying any function between any two types ($a \to b$), followed by the lifting function ($b \to F\ b$), is equivalent to applying the lifting function first ($a \to F\ a$), and then the mapped version of the original function second ($F\ a \to F\ b$.)
+What does it take for this diagram to commute? It means that the you have two equivalent routes for reaching from the top-left diagonal to the bottom-right diagonal i.e. that applying any function between any two types ($a \to b$), followed by the lifting function ($b \to F\ b$), is equivalent to applying the lifting function first ($a \to F\ a$), and then the mapped version of the original function second ($F\ a \to F\ b$).
 
 The list functor is pointed, because such a function exist for the list functor - it is the function $a \to [\ a\ ]$ that puts every value in a "singleton" list. So, for every function between simple types, such as the function $length:\ string \to number$ we have a square like this one.
 
@@ -560,7 +560,7 @@ By the way, it may not look like it right now, but this commuting square might b
 The category of small categories
 ===
 
-Ha, I got you this time (or at least I *hope* I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do now. And (surprise again) the new category won't be the category of functors (don't worry, we will introduce that in the next chapter.) Instead, we will examine the category of (small) categories, that has all the categories that we saw so far as objects and functors as its morphisms, like $Set$ - the category of sets, $Mon$, the category of monoids, $Ord$, the category of orders etc.
+Ha, I got you this time (or at least I *hope* I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do now. And (surprise again) the new category won't be the category of functors (don't worry, we will introduce that in the next chapter). Instead, we will examine the category of (small) categories, that has all the categories that we saw so far as objects and functors as its morphisms, like $Set$ - the category of sets, $Mon$, the category of monoids, $Ord$, the category of orders etc.
 
 ![The category of categories](../06_functors/category_of_categories.svg)
 

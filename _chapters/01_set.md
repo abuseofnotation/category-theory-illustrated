@@ -26,7 +26,7 @@ The borders of the two are sometimes blurry, because all theories *use abstracti
 
 Concrete theories, like the theory of evolution, are composed of concrete concepts. For example the  concept of a *population*, also called a *gene-pool*, refers to a group of individuals that can interbreed. Abstract theories, like set theory, are composed of abstract concepts, like the concept of a set. The concept for a set by itself does not refer to anything. However, we cannot say that it is empty concept, as there are countless things that can be represented by sets, like for example a gene pools can be (very aptly) represented by sets of individual animals. And species of animals can too be represented by set - a set of all populations that can theoretically interbreed.
 
-You already see how abstract theories may be useful. Because they are so simple, they can be used as building blocks of many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later.) Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
+You already see how abstract theories may be useful. Because they are so simple, they can be used as building blocks of many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later). Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
 
 <!-- comic - brain on category theory -->
 
@@ -37,7 +37,7 @@ People have tried to be precise and at the same time down to Earth for centuries
 Sets
 ===
 
-Perhaps unsurprisingly, everything in set theory is defined in terms of sets. A set is a collection of things where the "things" can be anything you want (like individuals, populations, genes etc.) Consider, for example, these balls.
+Perhaps unsurprisingly, everything in set theory is defined in terms of sets. A set is a collection of things where the "things" can be anything you want (like individuals, populations, genes etc.). Consider, for example, these balls.
 
 ![Balls](../01_set/elements.svg)
 
@@ -53,7 +53,7 @@ The key insight that makes the concept useful is the fact that it enables you to
 Subsets 
 ---
 
-Let's construct one more set. The set of *all balls that are warm color*. Let's call it $Y$ (because in the diagram is colored in **y**ellow.)
+Let's construct one more set. The set of *all balls that are warm color*. Let's call it $Y$ (because in the diagram is colored in **y**ellow).
 
 ![The set of all balls of warm colors](../01_set/subset.svg)
 
@@ -89,7 +89,7 @@ Functions
 
 A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
 
-These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there.) We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from of this set to a value from the other one. These different terms demonstrate the multifaceted nature of the concept of function.
+These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there). We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from of this set to a value from the other one. These different terms demonstrate the multifaceted nature of the concept of function.
 
 Here is a function, $f$ which converts each ball from the set $R$ to the ball with the opposite color in another set $G$ (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: $f: R → G$)
 
@@ -222,7 +222,7 @@ Most of the types of programming are composite types - they are a combination of
 Functions and methods/subroutines
 ---
 
-Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
+Some functions in programming (also called methods, subroutines, etc.). kinda resemble mathematical functions - they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
 
 ![A function from Char to Boolean](../01_set/char_boolean.svg)
 
@@ -281,7 +281,7 @@ The theory of types defines two primitive concepts - *types and values* which co
 Types 
 ---
 
-Types contain values, so they are like sets in this respect (although this is not true for all formulations of type theory). In fact, every type can be seen as a set of its values. However, unlike sets, which can contain other sets, *a type cannot contain other types*. And so, *not every set is a type* (although the reverse is true.) The proper way to think about type is as a collection of values that *share some common characteristics*.
+Types contain values, so they are like sets in this respect (although this is not true for all formulations of type theory). In fact, every type can be seen as a set of its values. However, unlike sets, which can contain other sets, *a type cannot contain other types*. And so, *not every set is a type* (although the reverse is true). The proper way to think about type is as a collection of values that *share some common characteristics*.
 
 Values 
 ---
@@ -293,7 +293,7 @@ This may seem weird at first, e.g. when we create a subtype for example, as in t
 Conclusion
 ---
 
-I won't get into more details, as there are many versions of type theories which are very different from one another, so examining them wouldn't be easy (e.g. if we look into programming languages, each language uses a different type system and different ways to construct subtypes.) Instead, we will return to using set theory, which in contrast has just a few formulations that are very similar to one another.
+I won't get into more details, as there are many versions of type theories which are very different from one another, so examining them wouldn't be easy (e.g. if we look into programming languages, each language uses a different type system and different ways to construct subtypes). Instead, we will return to using set theory, which in contrast has just a few formulations that are very similar to one another.
 
 But the choice of formal system is not important - all concepts that we are examining here are so essential that they have their counterparts in all set and type theories.
 
@@ -369,9 +369,9 @@ If we have a one-one-function that connects sets that are of the same size (as i
 
 Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets we say that the sets are *isomorphic*. For example, because we have an invertable function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit* and vise versa, we can say that the temperatures measured in Celsius and Fahrenheit are isomorphic.
 
-Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets.)
+Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
-More formally, two sets $R$ and $G$ are isomorphic (or $R ≅ G$) if there exist functions $f: G → R$ and its reverse $g: R → G$, such that $f \bullet g = idR$ and $g \bullet f = idG$ (notice how the identity function comes in handy.)
+More formally, two sets $R$ and $G$ are isomorphic (or $R ≅ G$) if there exist functions $f: G → R$ and its reverse $g: R → G$, such that $f \bullet g = idR$ and $g \bullet f = idG$ (notice how the identity function comes in handy).
 
 Isomorphism and identity
 ---
@@ -436,7 +436,7 @@ Following the logic from the last paragraph, each statement about something that
 Equivalence relations and isomorphisms
 ===
 
-We said, that isomorphic sets aren't necessarily the same set (although the reverse is true.) However, it is hard to get away from the notion that being isomorphic means that they are *equal* or *equivalent* in some respect. For example, all people who are connected by the *isomorphic* mother/child relationship share some of the same genes. 
+We said, that isomorphic sets aren't necessarily the same set (although the reverse is true). However, it is hard to get away from the notion that being isomorphic means that they are *equal* or *equivalent* in some respect. For example, all people who are connected by the *isomorphic* mother/child relationship share some of the same genes. 
 
 And in computer science, if we have functions that convert an object of type $A$ to an object of type $B$ and the other way around (as for example the functions between a data structure and its id, we also can pretty much regard $A$ and $B$ as two formats of the same thing, as having one means that we can easily obtain the other.
 
@@ -445,7 +445,7 @@ Equivalence relations
 
 What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it i.e. there is a mathematical concept that captures the concept of equality in a rather elegant way - the concept of an *equivalence relation*. 
 
-So what is an equivalence relation? We already know what a relation is - it is a connection between two sets (an example of which is function.) But when is a relation an equivalence relation? Well, according the definition it is when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
+So what is an equivalence relation? We already know what a relation is - it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition it is when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
 
 Reflexivity
 ---
@@ -478,7 +478,7 @@ In mathematical terms: if $A=B$ then $B=A$.
 Isomorphisms as equivalence relations
 ---
 
-Isomorphisms *are* indeed equivalence relations. And "incidentally", we already have all the information needed to prove it (in the same way in which James Bond seems to always incidentally have exactly the gadgets that are needed to complete his mission.) 
+Isomorphisms *are* indeed equivalence relations. And "incidentally", we already have all the information needed to prove it (in the same way in which James Bond seems to always incidentally have exactly the gadgets that are needed to complete his mission). 
 
 We said that most characteristic property of the equivalence relation is its *symmetry*. And this property is satisfied by isomorphisms, due to the isomorphisms' most characteristic property, namely the fact that they are *invertible*.
 
@@ -486,7 +486,7 @@ We said that most characteristic property of the equivalence relation is its *sy
 
 **Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
-The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other.)
+The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
 
 {% if site.distribution == 'print'%}
 
@@ -495,7 +495,7 @@ Interlude - numbers as isomorphisms
 
 Many people would say that the concept of a number is the most basic concept in mathematics. But actually they are wrong - *sets and isomorphisms are more basic*! Or at least, numbers can be defined using sets and isomorphisms. 
 
-To understand how, let's think about how do you teach a person what a number is (in particular, here we will concentrate on the *natural*, or counting numbers.) You may start your lesson by showing them a bunch of objects that are of a given quantity, like for example if you want to demonstrate the number $2$, you might bring them like two pencils, two apples or two of something else. 
+To understand how, let's think about how do you teach a person what a number is (in particular, here we will concentrate on the *natural*, or counting numbers). You may start your lesson by showing them a bunch of objects that are of a given quantity, like for example if you want to demonstrate the number $2$, you might bring them like two pencils, two apples or two of something else. 
 
 ![Two balls](../01_set/number_two.svg)
 
@@ -503,7 +503,7 @@ When you do that, it would be important to highlight that you are not refering t
 
 ![A set of two balls](../01_set/number_two_sets.svg)
 
-This is a good starting point, but the person may still be staring at the objects instead of the structure - they might ask if this or that set is $2$ as well. At this point you might give up, or, if the person whom you are explaining happens to know about isomorphisms as well (let's say they lived in a cave with nothing but this book with them), you can easily formulate your final definition, saying that the number $2$ is represented by those sets and all other sets that are isomorphic to them, or by the *equivalence class* of sets that have two elements, as the formal definition goes (don't worry, we will learn all about equivalence classes later.)
+This is a good starting point, but the person may still be staring at the objects instead of the structure - they might ask if this or that set is $2$ as well. At this point you might give up, or, if the person whom you are explaining happens to know about isomorphisms as well (let's say they lived in a cave with nothing but this book with them), you can easily formulate your final definition, saying that the number $2$ is represented by those sets and all other sets that are isomorphic to them, or by the *equivalence class* of sets that have two elements, as the formal definition goes (don't worry, we will learn all about equivalence classes later).
 
 ![A set of two balls](../01_set/number_two_isomorphism.svg)
 
