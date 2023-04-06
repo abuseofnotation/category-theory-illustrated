@@ -6,7 +6,7 @@ title: index
 
 Category Theory Illustrated is a primer in category theory and other mathematical theories that is made to be *really* accessible to people with no prior exposure to the subject, without being dumbed down, by utilizing visual explanations.
 
-The book serves as chapter 0 going through the gist of the material covered by other similar introductory books, but doing so in a way that would enable non-mathematicians to swift through with ease.
+The book serves as chapter 0 going through the gist of the material covered by other similar introductory books, but doing so in a way that would enable non-mathematicians to easily comprehend.
 
 [![cover.svg](cover.svg)](00_about)
 
@@ -37,10 +37,10 @@ I want to make this book into the best introductory text, not only to category t
 
 - I am looking for a *publisher* who is willing to release this book on paper. I have some more content that I can provide for the printed version. I am very flexible for the most part.
 
-- I am also looking for co-authors and/or a technical reviewers with some good experience in category theory who is willing to help me out with polishing and enriching the text.
+- I am also looking for co-authors and/or technical reviewers with good experience in category theory, who are willing to help with polishing and enriching the text.
 
-- Regular contributors are also welcome - anything from correcting some spelling mistakes to giving suggestions for new sections and chapters.
+- Regular contributors are also welcome &mdash; anything from correcting some spelling mistakes to giving suggestions for new sections and chapters.
 
-- Even if this is the first book on math you read, you can still help me - let me know what parts are hard for you to understand and let's figure out why.
+- Even if this is the first book on math you read, you can still help me &mdash; let me know what parts are hard for you to understand and let's figure out why.
 
 You can contact me via [email](mailto:marinovboris@protonmail.com). For other means of contact, see the footer.
