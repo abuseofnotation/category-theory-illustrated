@@ -2,32 +2,37 @@ layout: default
 title: Natural transformations
 ---
 
+
 Natural transformations 
 ===
 
-In this chapter, we will introduce the central concept of category theory. It is the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
+> I didn’t invent categories to study functors; I invented them to study natural transformations. - Saunders Mac Lane
 
-Natural transformations are really is the heart of category theory - As a matter of fact, category theory was invented with the purpose of studying natural transformations. The importance of natural transformations is not obvious at first, and so before introducing them I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle).
+In this chapter, we will introduce the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
+
+Natural transformations really are at the heart of category theory - As a matter of fact, category theory was invented with the purpose of studying natural transformations. However, the importance of natural transformations is not obvious at first, and so, before introducing them, I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle).
 
 Objects are overrated
 ===
 
-> The world is the collection of facts, not of things.
-> Ludwig Wittgenstein
+> The world is the collection of facts, not of things. - Ludwig Wittgenstein
 
-Objects are all around us, both in mathematics and in real life - virtually everything that we see or imagine can be viewed as an object. Because of this, we might be inclined to think that the key to understanding the world is to understand what objects are. And this indeed is a popular idea, you might even say that this is what set theory does - the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are primarily saying that all objects can be represented by sets (and morphisms can be represented by sets as well).
+Objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics), can be viewed as an object. Because of this, we might be inclined to think, as many other people do, that the key to understanding the world is understanding *what objects are*. This is what set theory does, from one standpoint - the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are saying that *all objects can be represented by sets* (and morphisms can be represented by sets as well).
 
-However, there is another way to look at things. What is an object, when viewed by itself? Can we study an object in isolation and will there anything left to study about it, once it is detached from its environment? When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would be just a piece of junk, and in many ways it won't be an object at all. And this is even more so for mathematical objects which you cannot even represent in isolation - functions, are key. 
+However, there is another way to look at things. What is an object, when viewed by itself? Can we study an object in isolation and will there anything left to study about it, once it is detached from its environment? Asking such questions might lead us to suspect that, although what we *see* when we look at the world are the objects, it's *functions* that are the real key to understanding it. 
 
-So instead of thinking about objects which just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.*
+When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would not be itself. Is a lamp that doesn't glow still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which , Without the functions that go between them, are not objects at all.
 
-This view is best expressed by category theory and specifically by the notion of *universal properties (limits)* - as we said universal properties define an object *up to a unique isomorphism*. This means that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms to all other objects in the category, then these objects are for all intends and purposes equivalent. 
+So instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
 
+This view is deeply engrained in category theory. For example, when we say that a given property defines an object *up to a unique isomorphism* what we mean is exactly this - that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms from/to all other objects in the category, then these objects are, for all intends and purposes, equivalent. And the key to understanding how this works are natural transformations.
 
 Equivalence of categories
 ===
 
-Are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter -  what does it mean for two categories to be equal. This question is even more interesting in the context of the category of categories. We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality, as (though it may seem contradictory) in isomorphic categories, *isomorphic objects aren't considered equal*, and so this concept goes against the idea that functions (and not objects) are the primary concept. For example the following two categories are *not* isomorphic. 
+So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter -  what does it mean for two categories to be equal. 
+
+We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality. This is because (though it may seem contradictory) in isomorphic categories, *isomorphic objects aren't considered equal*, and so this concept goes against the idea that functions (and not objects) are the primary concept. For example the following two categories are *not* isomorphic. 
 
 ![Simple non-isomorphic categories](simple_non_isomorphic_categories.svg)
 
@@ -57,7 +62,7 @@ And then if we compose them in one direction we get the same object that we star
 
 ![Equivalent categories, functor G F](equivalent_categories_g_f.svg)
 
-And if we compose it in the other direction, we don't get the same object (which means that the categories are not isomorphic) but we do get an object that that is isomorphic to the one we started with. This makes the categories equivalent.
+And if we compose it in the other direction, we don't get the same object (which means that the categories are not isomorphic) but we do get an object that is isomorphic to the one we started with. This makes the categories equivalent.
 
 ![Equivalent categories, functor G F](equivalent_categories_g_f.svg)
 
