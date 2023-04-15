@@ -242,7 +242,7 @@ In purely functional programming languages, such operations are outsourced to th
 
 {% if site.distribution == 'print'%}
 
-Interlude - type theory
+Interlude --- type theory
 ===
 
 Type theory and set theory are related in that type theory can be seen as a more restrictive version of set theory. In set theory you have only one kind of object that is (you guessed it) &mdash; set, and a set can contain anything, including other sets. In type theory, you generally have two concepts &mdash; types and values. 
@@ -268,7 +268,7 @@ If we look at the definition, we recognize that the set that we just defined doe
 
 ![Russel's paradox - option one](../01_set/russells_paradox_2.svg)
 
-Hmm, something is not quite right with this diagram as well - because of the new adjustments that we made, our set now *contains itself*. And removing it from the set would just bring us back to the previous situation. So this is Russell's paradox. 
+Hmm, something is not quite right with this diagram as well --- because of the new adjustments that we made, our set now *contains itself*. And removing it from the set would just bring us back to the previous situation. So this is Russell's paradox. 
 
 From set theory to type theory
 ---
@@ -489,10 +489,10 @@ The practice of using isomorphisms to define an equivalence relation is very pro
 
 {% if site.distribution == 'print'%}
 
-Interlude - numbers as isomorphisms
+Interlude --- numbers as isomorphisms
 ===
 
-Many people would say that the concept of a number is the most basic concept in mathematics. But actually they are wrong - *sets and isomorphisms are more basic*! Or at least, numbers can be defined using sets and isomorphisms. 
+Many people would say that the concept of a number is the most basic concept in mathematics. But actually they are wrong --- *sets and isomorphisms are more basic*! Or at least, numbers can be defined using sets and isomorphisms. 
 
 To understand how, let's think about how you teach a person what a number is (in particular, here we will concentrate on the *natural*, or counting numbers). You may start your lesson by showing them a bunch of objects that are of a given quantity, like for example if you want to demonstrate the number $2$, you might bring them like two pencils, two apples or two of something else. 
 

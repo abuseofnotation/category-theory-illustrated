@@ -6,12 +6,12 @@ title: Monoids
 Monoids etc
 ===
 
-Since we are done with categories, let's look at some other structures that are also interesting - monoids. Like categories, monoids/groups are also abstract systems consisting of set of elements and operations for manipulating these elements, however the operations look different than the operations we have for categories. Let's see them.
+Since we are done with categories, let's look at some other structures that are also interesting --- monoids. Like categories, monoids/groups are also abstract systems consisting of set of elements and operations for manipulating these elements, however the operations look different than the operations we have for categories. Let's see them.
 
 What are monoids
 ===
 
-Monoids are simpler than categories. A monoid is defined by a collection/set of elements (called the monoid's *underlying set*, together with an *monoid operation* - a rule for combining two elements that produces a third element one of the same kind.
+Monoids are simpler than categories. A monoid is defined by a collection/set of elements (called the monoid's *underlying set*, together with an *monoid operation* --- a rule for combining two elements that produces a third element one of the same kind.
 
 Let's take our familiar colorful balls.
 
@@ -37,7 +37,7 @@ When an operation is associative, this means we can use all kinds of algebraic o
 The identity element
 ---
 
-Actually, not any (associative) operation for combining elements makes the balls form a monoid (it makes them form a *semigroup*, which is also a thing, but that's a separate topic). To be a monoid, a set must feature what is called an *identity element* of a given operation, the concept of which you are already familiar from both sets and categories - it is an element that when combined with any other element gives back that same element (not the identity but the other one). Or simply $x • i = x$ and $i • x = x$ for any $x$. 
+Actually, not any (associative) operation for combining elements makes the balls form a monoid (it makes them form a *semigroup*, which is also a thing, but that's a separate topic). To be a monoid, a set must feature what is called an *identity element* of a given operation, the concept of which you are already familiar from both sets and categories --- it is an element that when combined with any other element gives back that same element (not the identity but the other one). Or simply $x • i = x$ and $i • x = x$ for any $x$. 
 
 In the case of our color-mixing monoid the identity element is the white ball (or perhaps a transparent one, if we have one).
 
@@ -79,15 +79,15 @@ Thinking about operations that we covered, we may remember the boolean operation
 Monoid operations in terms of set theory
 ===
 
-We now know what the monoid operation is, and we even saw some simple examples. However, we never defined the monoid rule/operation formally i.e. using the language of set theory with which we defined everything else. Can we do that? Of course we can - everything can be defined in terms of sets. 
+We now know what the monoid operation is, and we even saw some simple examples. However, we never defined the monoid rule/operation formally i.e. using the language of set theory with which we defined everything else. Can we do that? Of course we can --- everything can be defined in terms of sets. 
 
 We said that a monoid consists of two things a set (let's call it $A$) and a monoid operation that acts on that set. Since $A$ is already defined in set theory (because it is just a set), all we have to do is define the monoid operation.
 
-Defining the operation is not hard at all. Actually, we have already done it for the operation $+$ - in chapter 2, we said that *addition* can be represented in set theory as a function that accepts a product of two numbers and returns a number (formally $+: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$).
+Defining the operation is not hard at all. Actually, we have already done it for the operation $+$ --- in chapter 2, we said that *addition* can be represented in set theory as a function that accepts a product of two numbers and returns a number (formally $+: \mathbb{Z} \times \mathbb{Z} \to \mathbb{Z}$).
 
 ![The plus operation as a function](../03_monoid/plus_operation.svg)
 
-Every other monoid operation can also be represented in the same way - as a function that takes a pair of elements from the monoid's set and returns one other monoid element.
+Every other monoid operation can also be represented in the same way --- as a function that takes a pair of elements from the monoid's set and returns one other monoid element.
 
 ![The color-mixing operation as a function](../03_monoid/color_mixing_operation.svg)
 
@@ -96,18 +96,18 @@ Formally, we can define a monoid from any set $A$, by defining an (associative) 
 Other monoid-like objects
 ===
 
-Monoid operations obey two laws - they are *associative* and there is an *identity element*. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which (elements) objects are combined results in the definition of other monoid-like structures.
+Monoid operations obey two laws --- they are *associative* and there is an *identity element*. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which (elements) objects are combined results in the definition of other monoid-like structures.
 
 Commutative (abelian) monoids
 ---
 
-Looking at the monoid laws and the examples we gave so far, we observe that all of them obey one more rule (law) which we didn't specify - the order in which the operations are applied is irrelevant to the end result.
+Looking at the monoid laws and the examples we gave so far, we observe that all of them obey one more rule (law) which we didn't specify --- the order in which the operations are applied is irrelevant to the end result.
 
 ![Commutative monoid operation](../03_monoid/monoid_commutative.svg)
 
 Such operations (ones for which combining a given set of elements yields the same result no matter which one is first and which one is second) are called *commutative* operations. Monoids with operations that are commutative are called *commutative monoids*. 
 
-As we said, addition is commutative as well - it does not matter whether if I have given you 1 apple and then 2 more, or if I have given you 2 first and then 1 more.
+As we said, addition is commutative as well --- it does not matter whether if I have given you 1 apple and then 2 more, or if I have given you 2 first and then 1 more.
 
 ![Commutative monoid operation](../03_monoid/addition_commutative.svg)
 
@@ -116,7 +116,7 @@ All monoids that we examined so far are also *commutative*. We will see some non
 Groups
 ---
 
-A group is a monoid such that for each of its elements, there is another element which is the so called "inverse" of the first one  where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more - formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ ( where $i$ is the identity element).
+A group is a monoid such that for each of its elements, there is another element which is the so called "inverse" of the first one  where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more --- formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ ( where $i$ is the identity element).
 
 If we view *monoids* as a means of modeling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions are also *reversible*.
 
@@ -127,7 +127,7 @@ The study of groups is a field that is much bigger than the theory of monoids (a
 Summary
 ---
 
-But before that, just a quick note - the algebraic structures that we saw can be summarized based on the laws that define them in this table.
+But before that, just a quick note --- the algebraic structures that we saw can be summarized based on the laws that define them in this table.
 
 | | Semigroups | Monoids | Groups |
 |---| ---             | ---        |
@@ -142,7 +142,7 @@ Symmetry groups and group classifications
 
 An interesting kinds of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fit before the action was applied).
 
-We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action - the identity action (which is its own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
+We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action --- the identity action (which is its own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
 
 ![A triangle](../03_monoid/symmetry_group.svg)
 
@@ -153,11 +153,11 @@ Let's first review the group of ways in which we can rotate our triangle i.e. it
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation.svg)
 
-Connecting the dots (or the triangles in this case) shows us that there are just two possible rotations that get us from any state of the triangle to any other one - a *120-degree rotation* (i.e. flipping the triangle one time) and a *240-degree rotation* (i.e. flipping it two times (or equivalently, flipping it once, but in the opposite direction)). Adding the identity action of 0-degree rotation makes up for 3 rotations (objects) in total.
+Connecting the dots (or the triangles in this case) shows us that there are just two possible rotations that get us from any state of the triangle to any other one --- a *120-degree rotation* (i.e. flipping the triangle one time) and a *240-degree rotation* (i.e. flipping it two times (or equivalently, flipping it once, but in the opposite direction)). Adding the identity action of 0-degree rotation makes up for 3 rotations (objects) in total.
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_actions.svg)
 
-The rotations of a triangle form a monoid - the *rotations are objects* (of which the zero-degree rotation is the identity) and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
+The rotations of a triangle form a monoid --- the *rotations are objects* (of which the zero-degree rotation is the identity) and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
 
 **NB:** Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with triangles, as we shall see later.
 
@@ -205,7 +205,7 @@ There are abelian groups that are not cyclic, but, as we shall see below, the co
 Group isomorphisms
 ---
 
-We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now - an isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \bullet b) = f(a) \bullet f(b)$. Visually, the diagrams of isomorphic groups have the same structure.
+We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now --- an isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \bullet b) = f(a) \bullet f(b)$. Visually, the diagrams of isomorphic groups have the same structure.
 
 ![Group isomorphism between different representations of S3](../03_monoid/group_isomorphism.svg)
 
@@ -231,7 +231,7 @@ Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 Group/monoid products
 ===
 
-We already saw a lot of abelian groups that are also cyclic, but we didn't see any abelian groups that are not cyclic. So let's examine what those look like. This time, instead of looking into individual examples, we will present a general way for producing abelian non-cyclic groups from cyclic ones - it is by uniting them by using *group product*.
+We already saw a lot of abelian groups that are also cyclic, but we didn't see any abelian groups that are not cyclic. So let's examine what those look like. This time, instead of looking into individual examples, we will present a general way for producing abelian non-cyclic groups from cyclic ones --- it is by uniting them by using *group product*.
 
 Given any two groups, we can combine them to create a third group, comprised of all possible pairs of elements from the two groups and of the sum of all their actions. 
 
@@ -255,7 +255,7 @@ Another way to present the Klein-four group is the *group of symmetries of a non
 
 **Task:** Show that the two representations are isomorphic.
 
-The Klein-four group is *non-cyclic* (because there are not one, but two generators) - vertical and horizontal spin. It is, however, still *abelian*, because the ordering of the actions still does not matter for the end results. Actually, the Klein-four group is the *smallest non-cyclic group*.
+The Klein-four group is *non-cyclic* (because there are not one, but two generators) --- vertical and horizontal spin. It is, however, still *abelian*, because the ordering of the actions still does not matter for the end results. Actually, the Klein-four group is the *smallest non-cyclic group*.
 
 Cyclic product groups
 ---
@@ -278,7 +278,7 @@ Product groups are *abelian*, provided that the *groups that form them* are abel
 Fundamental theorem of Finite Abelian groups
 ---
 
-Products provide one way to create non-cyclic abelian groups - by creating a product of two or more cyclic groups. The fundamental theory of finite abelian groups is a result that tells us that *this is the only way* to produce non-cyclic abelian groups i.e. 
+Products provide one way to create non-cyclic abelian groups --- by creating a product of two or more cyclic groups. The fundamental theory of finite abelian groups is a result that tells us that *this is the only way* to produce non-cyclic abelian groups i.e. 
 
 > All abelian groups are either cyclic or products of cyclic groups.
 
@@ -295,7 +295,7 @@ To see how can we use this theorem, let's revisit our color mixing monoid that w
 
 As there doesn't exist a color that, when mixed with itself, can produce all other colors, the color-mixing monoid is *not cyclic*. However, the color mixing monoid *is abelian*. So according to the theorem of finite abelian groups (which is valid for monoids as well), the color-mixing monoid must be (isomorphic to) a product. 
 
-And it is not hard to find the monoids that form it - although there isn't one color that can produce all other colors, there are three colors that can do that - the prime colors. This observation leads us to the conclusion that the color-mixing monoid, can be represented as the product of three monoids, corresponding to the three primary colors.
+And it is not hard to find the monoids that form it --- although there isn't one color that can produce all other colors, there are three colors that can do that --- the prime colors. This observation leads us to the conclusion that the color-mixing monoid, can be represented as the product of three monoids, corresponding to the three primary colors.
 
 ![color-mixing group as a product](../03_monoid/color_mixing_product.svg)
 
@@ -314,7 +314,7 @@ In both cases the monoid would be cyclic.
 Dihateral groups
 ===
 
-Now, let's finally examine a non-commutative group - the group of rotations *and reflections* of a given geometrical figure. It is the same as the last one, but here besides the rotation action that we already saw (and its composite actions), we have the action of flipping the figure vertically, an operation which results in its mirror image:
+Now, let's finally examine a non-commutative group --- the group of rotations *and reflections* of a given geometrical figure. It is the same as the last one, but here besides the rotation action that we already saw (and its composite actions), we have the action of flipping the figure vertically, an operation which results in its mirror image:
 
 ![Reflection of a triangle](../03_monoid/reflection.svg)
 
@@ -341,9 +341,9 @@ We began by defining a monoid as a set of composable *elements*. Then we saw tha
 Currying
 ---
 
-When we defined monoids, we saw that their operations are two-argument functions. And we introduced a way for representing such functions using set theory - by uniting the two arguments into one using products. i.e. we showed that a function that accepts two arguments (say $A$ and $B$) and maps them into some result ($C$), can be thought as a mapping from the product of the sets of two arguments to the result. So $A\times B\to C$.
+When we defined monoids, we saw that their operations are two-argument functions. And we introduced a way for representing such functions using set theory --- by uniting the two arguments into one using products. i.e. we showed that a function that accepts two arguments (say $A$ and $B$) and maps them into some result ($C$), can be thought as a mapping from the product of the sets of two arguments to the result. So $A\times B\to C$.
 
-However, this is not the only way to represent multi-argument function set-theoretically - there is another, equally interesting way, that doesn't rely on any data structures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to B \to C$. 
+However, this is not the only way to represent multi-argument function set-theoretically --- there is another, equally interesting way, that doesn't rely on any data structures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to B \to C$. 
 
 The practice of transforming a function that takes a pair of objects to a function that takes just one object and returns a function that takes another one is called *currying*. It is achieved by a higher-order function. Here is how such a function might be implemented.
 
@@ -374,11 +374,11 @@ Let's take a step back and examine the groups/monoids that we covered so far in 
 
 ![The group of rotations in a triangle - group notation](../03_monoid/symmetry_rotation_actions.svg)
 
-Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself - as functional composition. For example, the 3 elements of $Z_3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way).
+Using currying, we can represent the elements of a given group/monoid as functions by uniting them to the group operation, and the group operation itself --- as functional composition. For example, the 3 elements of $Z_3$ can be seen as 3 bijective (invertable) functions from a set of 3 elements to itself (in group-theoretic context, these kinds of functions are called *permutations*, by the way).
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_functions.svg)
 
-We can do the same for the addition monoid - numbers can be seen not as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of adding two to a given quantity). 
+We can do the same for the addition monoid --- numbers can be seen not as *quantities* (as in two apples, two oranges etc.), but as *operations*, (e.g. as the action of adding two to a given quantity). 
 
 Formally, the operation of the addition monoid, that we saw above has the following type signature. 
 
@@ -405,7 +405,7 @@ The functions that represent the monoid elements have the same set as source and
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_cayley.svg)
 
-And the same is valid for the addition monoid - number functions can be combined using functional composition.
+And the same is valid for the addition monoid --- number functions can be combined using functional composition.
 
 $+2 \bullet +3 \cong +5$
 
@@ -418,13 +418,13 @@ So, basically the functions that represent the elements of a monoid also form a 
 Cayley's theorem
 ---
 
-Once we learn how to represent the elements of any monoid as permutations that also form a monoid, using currying, it isn't too surprising to learn that this constructed permutation monoid is isomorphic to the original one (the one from which it is constructed - this is a result known as the Cayley's theorem:
+Once we learn how to represent the elements of any monoid as permutations that also form a monoid, using currying, it isn't too surprising to learn that this constructed permutation monoid is isomorphic to the original one (the one from which it is constructed --- this is a result known as the Cayley's theorem:
 
 > Any group is isomorphic to a permutation group. 
 
 Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A$ for any $A$.
 
-![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
+![The group of rotations in a triangle --- set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
 
 Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*). 
 
@@ -445,11 +445,11 @@ The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements (by the way, the colors 
 
 ![The S2 symmetric group](../03_monoid/s2.svg)
 
-And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function - it has $1\times 2\times 3=6$ elements.
+And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function --- it has $1\times 2\times 3=6$ elements.
 
 ![The S3 symmetric group](../03_monoid/s3.svg)
 
-Each symmetric group $\mathrm{S}_n$ contains all groups of order $n$ - this is so, because (as we saw in the prev section) every group with $n$ elements is isomorphic to a set of permutations on the set of $n$ elements and the group $\mathrm{S}_n$ contains *all such* permutations that exist. 
+Each symmetric group $\mathrm{S}_n$ contains all groups of order $n$ --- this is so, because (as we saw in the prev section) every group with $n$ elements is isomorphic to a set of permutations on the set of $n$ elements and the group $\mathrm{S}_n$ contains *all such* permutations that exist. 
 
 Here are some examples: 
 - $\mathrm{S}_1$ is isomorphic to $Z_1$, the *trivial group*, and $\mathrm{S}_2$ is isomorphic to $Z_2$ , the *boolean group*, (but no other symmetric grops are isomorphic to cycle groups)
@@ -465,7 +465,7 @@ Based on this insight, can state Cayley's theorem in terms of symmetric groups i
 
 **Task:** Show how the two are equivalent.
 
-Fun fact: the study of group theory actually started by examining symmetric groups, so this theorem was actually a prerequisite for the emergence of the normal definition of groups that we all know and love (OK, at least *I* love it) - it provided a proof that the notion described by this definition is equivalent to the already existing notion of symmetric groups.
+Fun fact: the study of group theory actually started by examining symmetric groups, so this theorem was actually a prerequisite for the emergence of the normal definition of groups that we all know and love (OK, at least *I* love it) --- it provided a proof that the notion described by this definition is equivalent to the already existing notion of symmetric groups.
 
 {% endif %}
 
@@ -476,7 +476,7 @@ We saw that converting the monoid's elements to actions/functions yields an accu
 
 ![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_set.svg)
 
-However, it seems that the set part of the structure in this representation is kinda redundant - you have the same set everywhere - so, it would do it good if we can simplify it. And we can do that by depicting it as an external (categorical) diagram.
+However, it seems that the set part of the structure in this representation is kinda redundant --- you have the same set everywhere --- so, it would do it good if we can simplify it. And we can do that by depicting it as an external (categorical) diagram.
 
 ![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_external.svg)
 
@@ -487,7 +487,7 @@ But wait, if the monoids' underlying *sets* correspond to *objects* in category 
 
 The only difference between different monoids would be the number of morphisms that they have and the relationship between them.
 
-The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of $closure$ that monoid and group operations have and that categories lack - it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how do you flip a triangle, you'd still get a triangle. 
+The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of $closure$ that monoid and group operations have and that categories lack --- it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how do you flip a triangle, you'd still get a triangle. 
 
 | | Categories | Monoids | Groups 
 |---| ---             | ---        |
@@ -508,7 +508,7 @@ Aside from the little-confusing fact that *monoid objects are morphisms* when vi
 
 Categories have an identity morphism for each object, so for categories with just one object, there should also be exactly one identity morphism. And monoids do have an identity object, which when viewed categorically corresponds to that identity morphism.
 
-Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object this means that *all morphisms should be composable* with one another. And the monoid operation does exactly that - given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
+Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object this means that *all morphisms should be composable* with one another. And the monoid operation does exactly that --- given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
 
 Philosophically, defining a monoid as a one-object category means corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter its state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors in paint, or adding a quantities to a given set of things etc.
 
@@ -556,11 +556,11 @@ If you revisit the previous section you will notice that we already saw one such
 
 ![The free monoid with one generator](../03_monoid/infinite_cyclic_presentation_elements.svg)
 
-We can make a free monoid from the set of colorful balls - the monoid's elements would be sequences of all possible combinations of the balls.
+We can make a free monoid from the set of colorful balls --- the monoid's elements would be sequences of all possible combinations of the balls.
 
 ![The free monoid with the set of balls as a generators](../03_monoid/balls_free.svg)
 
-The free monoid is a special one - each element of the free monoid over a given set, can be converted to a corresponding element in any any other monoid that uses the same set of generators by just applying the monoid's laws. For example, here is how the elements above would look like if we apply the laws of the color-mixing monoid.
+The free monoid is a special one --- each element of the free monoid over a given set, can be converted to a corresponding element in any any other monoid that uses the same set of generators by just applying the monoid's laws. For example, here is how the elements above would look like if we apply the laws of the color-mixing monoid.
 
 ![Converting the elements of the free monoid to the elements of the color-mixing monoid](../03_monoid/balls_free_color_mixing.svg)
 
@@ -572,7 +572,7 @@ While the intuition behind free monoids seems simple enough, the formal definiti
 
 We understand that, being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exist a function from it to all of them. But what kind of function would that be?
 
-Plus, what about other monoids that also can have this property (that they are connected to any other monoids) Simple - they are the free monoid with some extra structure, so we can filter them out by using an universal property. 
+Plus, what about other monoids that also can have this property (that they are connected to any other monoids) Simple --- they are the free monoid with some extra structure, so we can filter them out by using an universal property. 
 
 But, what would this property be, (and what the hell are universal properties anyways?), tune in after a few chapters to find out.
 

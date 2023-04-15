@@ -30,13 +30,13 @@ A few years after that some people found my notes and encouraged me write more. 
 On math
 ===
 
-Ever since Newton's Principia, the discipline of mathematics is viewed in the somewhat demeaning position of "science and engineering's workhorse" &mdash; only "useful" as a means for helping scientists and engineers to make technological and scientific advancements, i.e., it is viewed as just a tool for solving "practical" problems. 
+Ever since Newton's Principia, the discipline of mathematics is viewed in the somewhat demeaning position of "science and engineering's workhorse" --- only "useful" as a means for helping scientists and engineers to make technological and scientific advancements, i.e., it is viewed as just a tool for solving "practical" problems. 
 
 Because of this, mathematicians are in a weird and, I'd say, unique position of always having to defend what they do with respect to its value for *other disciplines*. I again stress that this is something that would be considered absurd when it comes to any other discipline. 
 
 People don't expect any return on investment from *physical theories*, e.g., no one bashes a physical theory for having no utilitarian value.
 
-And bashing philosophical theories for being impractical would be even more absurd. imagine bashing Wittgenstein:
+And bashing philosophical theories for being impractical would be even more absurd --- imagine bashing Wittgenstein, for example:
 
 > "All too well, but what can you do with the picture theory of language?" 
 > "Well, I am told it does have its applications is programming language theory..."
@@ -45,18 +45,18 @@ Or someone being sceptical to David Hume's scepticism:
 
 > "That's all fine and dandy, but your theory leaves us at square one in terms of our knowledge. What the hell are we expected to do from there?"
 
-Although many people don't necessarily subscribe to this view of mathematics as a workhorse, we can see it encoded inside the structure of most mathematics textbooks &mdash; each chapter starts with an explanation of a concept, followed by some examples, and then ends with a list of problems that this concept solves. 
+Although many people don't necessarily subscribe to this view of mathematics as a workhorse, we can see it encoded inside the structure of most mathematics textbooks --- each chapter starts with an explanation of a concept, followed by some examples, and then ends with a list of problems that this concept solves. 
 
 There is nothing wrong with this approach, but mathematics is so much more than solving problems. It was the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was, and still is, a language which can allow for people with different cultural backgrounds to understand each other. And it is also art and a means of entertainment.
 
-Category theory embodies all these aspects of mathematics, so I think a very good grounds to writing a book where all of them shine &mdash; a book that is based not on solving of problems, but on exploration of concepts and on seeking connections between them. A book that is, overall, pretty.
+Category theory embodies all these aspects of mathematics, so I think a very good grounds to writing a book where all of them shine --- a book that is based not on solving of problems, but on exploration of concepts and on seeking connections between them. A book that is, overall, pretty.
 
 Who is this book for 
 ====
 
 So, who is this book for? If we rephrase this question as "Who *should* read this book", then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems.
 
-Let's take an example &mdash; many people claim that Einstein's theories of relativity are essential for GPS to work properly. Due to relativistic effects the clocks on GPS satellites tick faster than identical clocks on the ground.
+Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPS to work properly, as, due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
 
 They seem to think that if the theory didn't exist the engineers that developed the GPS would have faced this phenomenon in the following way:
 
@@ -91,7 +91,7 @@ The way we think and talk is based on intuition that develops naturally and is a
 
 It is in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
-Category theory formalizes the concept of diagrams and their components &mdash; arrows and objects &mdash; and creates a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
+Category theory formalizes the concept of diagrams and their components --- arrows and objects --- and creates a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
 
 As a consequence of that, category theory and diagrams are also a very understandable way to communicate a formal concept clearly, something I hope to demonstrate in the following pages.
 
@@ -108,7 +108,7 @@ In the next two chapters, 3 and 4, we jump to two different branches of mathemat
 
 Chapter 5 also follows the main formula of the previous two chapters, and gets to the heart of the matter of why category theory is a universal language, by showing its connection with the ancient discipline of *logic*. As in chapters 3 and 4 we start with a crash course in logic itself.
 
-The connection between all these different disciplines is examined in chapter 6, using one of the most interesting category-theoretical concepts &mdash; the concept of a functor.
+The connection between all these different disciplines is examined in chapter 6, using one of the most interesting category-theoretical concepts --- the concept of a functor.
 
 In chapter 7 we review another more interesting and more advanced categorical concept, the concept of a *natural transformation*.
 
@@ -123,4 +123,4 @@ Thanks to my high-school arts teacher, Mrs Georgieva who told me that I have som
 
 Thanks to Prathyush Pramod who encouraged me to finish the book and is also helping me out with it.
 
-And also to everyone else who submitted feedback and helped me fix some of the numerous errors that I made &mdash; knowing myself, I know that there are more.
+And also to everyone else who submitted feedback and helped me fix some of the numerous errors that I made --- knowing myself, I know that there are more.
