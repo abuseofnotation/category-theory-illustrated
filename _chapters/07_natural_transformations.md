@@ -32,7 +32,7 @@ Equivalence of categories
 
 So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter ---  what does it mean for two categories to be equal. 
 
-We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality. This is because (though it may seem contradictory) in isomorphic categories, *isomorphic objects aren't considered equal*, and so this concept goes against the idea that functions (and not objects) are the primary concept. For example the following two categories are *not* isomorphic. 
+We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality. This is because (though it may seem contradictory) *in isomorphic categories, isomorphic objects aren't considered equal*. And so this concept goes against the idea that functions (and not objects) are the primary concept. For example the following two categories are *not* isomorphic. 
 
 ![Simple non-isomorphic categories](simple_non_isomorphic_categories.svg)
 

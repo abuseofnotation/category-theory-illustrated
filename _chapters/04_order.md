@@ -270,7 +270,7 @@ We mentioned order isomorphisms several times already so this is about time to e
 
 ![Divides poset](../04_order/divides_poset_isomorphism.svg)
 
-When we talk about sets, an isomorphism means just a reversible function. But as orders, besides having their underlying sets, have the arrows that connect them, there is an additional requirement for a pair of functions to form an isomorphism --- to be an isomorphism, a function has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if $F(a) ≤ F(b)$. 
+When we talk about sets, an isomorphism means just a reversible function. But as orders, besides having their underlying sets, have the arrows that connect them, there is an additional requirement for a pair of functions to form an isomorphism --- to be an isomorphism, a function has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ only if $F(a) ≤ F(b)$). 
 
 Birkhoff's representation theorem
 ---
@@ -285,7 +285,7 @@ The partial orders that meet the first criteria are called *lattices*. The ones 
 
 And the "prime" elements which we use to construct the inclusion order are the elements that are not the *join* of any other elements. They are also called *join-irreducible* elements.
 
-By the way, the partial orders that are *not* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that do not contain all possible combinations of elements.
+By the way, the partial orders that are *not* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that *do not contain all possible combinations* of elements.
 
 Lattices
 ===
@@ -318,7 +318,7 @@ A structure that is similar to a semilattice (and probably more famous than it) 
 
 ![Tree](../04_order/tree.svg)
 
-The difference between the two is small but crucial:  in a tree, each element can have multiple elements connected *to* it, but can itself only be connected to just one other element. If we represent a tree as an inclusion order, each set would "belong" in only one superset, whereas with semilattices there would be no such restrictions.
+The difference between the two is small but crucial:  in a tree, each element can only be connected to just one other element (although it can have multiple elements connected *to* it). If we represent a tree as an inclusion order, each set would "belong" in only one superset, whereas with semilattices there would be no such restrictions.
 
 ![Tree and semilattice compared](../04_order/semilattice_tree.svg)
 
@@ -326,17 +326,50 @@ The difference between the two is small but crucial:  in a tree, each element ca
 
 A good intuition for the difference between the two is that a semilattice is capable of representing much more general relations, so for example, the mother-child relation forms a tree (a mother can have multiple children, but a child can have *only one* mother), but the "older sibling" relation forms a lattice, as a child can have multiple older siblings and vise versa.
 
-The implications of the tendency to use trees to model everything as opposed to lattices are examined in the ground-breaking essay “A City is Not a Tree” by Christopher Alexander.
+Why am I speaking about trees? It's because people tend to use them for modelling all kinds of phenomena and to imagine everything a a tree. The tree is the structure that all of us undestand, that comes at us naturally, without even realizing that we are using a structure --- most human-made hierarchies are modelled as trees. A typical organization of people are modelled as trees - you have one person at the top, a couple of people who report to them, then even more people that report to this couple of people.
+
+![Tree](../04_order/tree-organization.svg)
+
+(Contrast this with informal social groups, in which more or less everyone is connected to everyone else.)
+ 
+And, cities (ones that are designed rather than left to evolve naturally) are also modelled as trees: you have several neighbourhoods each of which has a school, a department store etc., connected with to each other and (in bigger cities) organized into bigger living units.
+
+The implications of the tendency to use trees, as opposed to lattices, to model are examined in the ground-breaking essay “A City is Not a Tree” by Christopher Alexander.
 
 > In simplicity of structure the tree is comparable to the compulsive desire for neatness and order that insists the candlesticks on a mantelpiece be perfectly straight and perfectly symmetrical about the center. The semilattice, by comparison, is the structure of a complex fabric; it is the structure of living things, of great paintings and symphonies. 
 
+In general, it seems that hierachies that are specifically designed by *people*, such as cities tend to come up as trees, whereas hierarchies that are natural, such as the hierarchy of colors, tend to come be lattices.
+
 {%endif%}
 
+Interlude: Formal concept analysis
+===
 
-<!--
-Formal concept analysis
----
--->
+In the previous section we (along with Christopher Alexander) argued that lattice-based hierarchies are "natural", that is, they arize in nature. Now we will see a way to uncover such hierarchies given a set of objects that share some attributes. This is an overview of a mathematical method, called *formal context analysis*.
+
+The datastructure that we will be analysing, called *formal context* consists of 3 sets. Firstly, the set containing all *objects* that we will be analysing (denoted as $G$).
+
+![Formal concept analysis - function](../04_order/concept-objects.svg)
+
+Secondly, a set of some *attributes* that these objects might have (denoted as $M$). Here we will be using the the 3 base colors.
+
+![Formal concept analysis - function](../04_order/concept-attributes.svg)
+
+And finally a set of relation (called *incidence*) that expresses which objects have which attributes, expressed by a set of pairs $G × M$. So, having a pair containing the color yellow, for example, indicate that the color of the ball contains the color yellow.
+
+![Formal concept analysis - function](../04_order/concept-incidense.svg)
+
+Now let's use these sets to build a lattice. First step: because functions are relations, the set of pairs is isomorphic to a function, connecting each attributes with the set of objects that share this attribute.
+
+![Formal concept analysis - function](../04_order/concept-function.svg)
+
+Now, if we look at the target of this function, we see some sets that might share some common elements. Is there some way to order those sets? Of course - we can order them by inclusion, and, if we add top and bottom values, we get a lattice.
+
+![Formal concept analysis - function](../04_order/concept-lattice.svg)
+
+Ordering the concept as a lattice might help us see connections between the concepts, in the context e.g. we see that *all balls that contain the color yellow also contain the color red.*
+
+**Task:** Take a set of object and one containing attributes and create your own concept lattice. Example: the objects can be lifeforms: fish, frog, dog, water weed, corn etc. and attributes can be their characteristics: "lives in water", "lives in land", "can move", "is a plant", "is an animal" etc. 
 
 Preorder
 ===
@@ -507,7 +540,3 @@ In the realm of orders, we say that $G$ is the *join* of objects $Y$ and $B$ if:
 We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation. Which of course means that *products* correspond to *meets*.
 
 Overall, orders are sometimes called "thin categories" as they have equivalents for most categorical concepts, and are often used for modelling structures that are simpler than the ones that require full-fledged categories. We will see an example of that in the next chapter.
-
-<!--
-TODO: Formal concept analysis
--->

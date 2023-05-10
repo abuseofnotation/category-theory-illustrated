@@ -183,11 +183,17 @@ The tensor-hom adjunction is actually a codename for the curry-uncurry function 
 Adjunctions
 ===
 
+https://hackmd.io/@alexhkurz/HyMzQZLJu
+
+https://hackmd.io/@alexhkurz/H1OxumxRP
+
 https://github.com/adamnemecek/adjoint/
 
 https://chrispenner.ca/posts/adjunction-battleship
 
--- Left adjoints preserve joins and right adjoints preserve meets. 
+https://graphicallinearalgebra.net/2015/05/19/paths-and-matrices-part-1/
 
--- Free/forgetful adjunctions are ones where the unit is Id.
 
+<!--
+TODO: Formal concept analysis
+-->
