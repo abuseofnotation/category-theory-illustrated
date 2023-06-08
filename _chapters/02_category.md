@@ -312,7 +312,7 @@ There are some types of categories in which only one morphism between two object
 Composition
 ---
 
-One of the few or maybe even the only requirement for a structure to be called a category is that *two morphisms can make a third*, or in other words, that morphisms are *composable* --- given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
+The most important requirement for a structure to be called a category is that *two morphisms can make a third*, or in other words, that morphisms are *composable* --- given two successive arrows with appropriate type signature, we can draw a third one that is equivalent to the consecutive application of the other two.
 
 ![Composition of morphisms](../02_category/composition.svg)
 
@@ -337,7 +337,6 @@ It's important to mark this morphism, because there can be (let's add the very i
 A structure must have an identity morphism for each object in order for it to be called a category --- this is known as the law of identity.
 
 **Question:** What is the identity morphism in the category of sets?
-
 
 The law of associativity
 ---
@@ -389,7 +388,8 @@ Addendum: Why are categories like that?
 ===
 
 *Why* are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they *work*, I mean, look at how many applications are there. 
-But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice (due to a phenomenon called "emergence")). Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my attempt* to provide such an explanation, regarding the laws of *identity* and *associativity*.
+
+But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice (due to a phenomenon called "emergence")). Or you add one more law and you get a yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my* attempt to provide such an explanation, regarding the laws of *identity* and *associativity*.
 
 Identity and isomorphisms
 ===

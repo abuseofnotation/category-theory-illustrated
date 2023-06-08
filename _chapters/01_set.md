@@ -229,7 +229,7 @@ However functions in most programming languages can also be quite different from
 
 Why are functions in programming different? Well, at the time when most programming paradigms that are in use today were created, computer resources were much more limited than today, and programming much more cumbersome, so people had bigger problems than the fact that their functions were not mathematically sound. Nowadays, many people feel that mathematical functions are too limiting and hard to use.
 
-They might be right. Mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you everything that the function does. This is probably the reason why most functional languages are strongly-typed.
+And they might be right. But mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you everything that the function does. This is probably the reason why most functional languages are strongly-typed.
 
 Purely-functional programming languages
 ---
@@ -238,7 +238,7 @@ We said that while all mathematical functions are also programming functions, th
 
 A peculiarity in such languages is that they don't directly allow for writing functions (like rendering stuff on screen, I/O, etc.) that perform operations other than returning values.
 
-In purely functional programming languages, such operations are outsourced to the language's runtime, using a style of programming called *continuation passing style*.
+In purely functional programming languages, such operations are *outsourced* to the language's runtime, using a style of programming called *continuation passing style*.
 
 {% if site.distribution == 'print'%}
 
@@ -317,7 +317,7 @@ Composition is the essence of all things categorical. The key insight is that th
 
 **Question:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
-The Power of Composition
+Composition of relationships
 ---
 
 To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
@@ -330,10 +330,23 @@ For example, if we again take the relationship between a person and his mother a
 
 Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's partner is our father, etc.
 
-Representing Composition with Commutative Diagrams
+Composition in engineering
 ---
 
-In the last diagram, the equivalence between $f \bullet g$ and the new function $h$ is expressed by the fact that if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$. Diagrams that express such equivalence between sequences of function applications are called *commutative diagrams*.
+Besides being useful for *analyzing* relationships that already exist, the principle of composition can help you in the practice of *building* objects that exhibit such relationships i.e. engineering. 
+
+One of the main ways in which modern engineering differs from ancient craftsmanship is the concept of a *part/module/component* - a product that performs a given function that is not made to be used directly, but is instead optimized to be combined with other such products in order to form a "end-user" product. For example, an *espresso machine* is just a combination of the components, such as , *pump, heater, grinder group* etc, when composed in an appropriate way.
+
+![A espresso machine ](../01_set/machine.svg)
+
+**Task:** Think about what would be those functions' sources and targets.
+
+The diagram 
+
+Representing composition with commutative diagrams
+---
+
+In functional composition diagrams, the equivalence between the successive application of the two composed functions ($f \bullet g$) and the new function ($h$) is expressed by the fact that if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$. Diagrams that express such equivalence between sequences of function applications are called *commutative diagrams*.
 
 ![Functional composition](../01_set/functions_compose.svg)
 
@@ -351,14 +364,16 @@ Having this insight allows us to redefine functional composition in a more visua
 
 Diagrams that show functions without showing the elements of the sets are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*.
 
-At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I really tend to do that, but not now &mdash; the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. We will see why shortly, but we have to review a few more things first.
+At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I really tend to do that, but not now &mdash; the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
+
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*) --- ones that have source and target, and that can be composed with one another in an associative way.
+
+And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing till the end of this chapter.
 
 Isomorphism
 ===
 
-Let's check another concept which is very important in category theory (although it is not exclusive to it) &mdash; the concept of an *isomorphism*. 
-
-To do that, we go back to the examples of the types of relationships that functions can represent, and to the first and most elementary of them all &mdash; the *one-to-one* type of relationship. We know that all functions have exactly one element from the source set, pointing to one element from the target set. But for one-to-one functions *the reverse is also true* &mdash; exactly one element from the target set points to one element from the source. 
+To explain what isomorphism is, we go back to the examples of the types of relationships that functions can represent, and to the first and most elementary of them all &mdash; the *one-to-one* type of relationship. We know that all functions have exactly one element from the source set, pointing to one element from the target set. But for one-to-one functions *the reverse is also true* &mdash; exactly one element from the target set points to one element from the source. 
 
 ![Opposite colors](../01_set/function_one_one.svg)
 
@@ -511,3 +526,16 @@ At this point there are no more examples that we can add. In fact, because we co
 Before we close this chapter, there is one meta-note that we should definitely make: according to the definition of a number that we presented, a number is not an *object*, but a whole *system of interconnected objects*, containing in this case an infinite number of objects. This may seem weird to you, but it's actually pretty characteristic of the categorical way of modeling things.
 
 {%endif%}
+
+Addendum: The case of composition in software development
+===
+
+> An unstructured monolithic design is not a good idea, except maybe for a tiny operating system in, say, a toaster, but even there it is arguable.--- Andrew S. Tanenbaum
+
+Software development is a peculiar discipline --- in theory, it should be just some sort of *engineering*, however the way it is executed in practice is sometimes closer to *craftsmanship*, with the principle of composition not being utilized to the fullest. 
+
+To see why, imagine a person (e.g. me), tinkering with some sort of engineering problem e.g. trying to fix a machine or modify it to serve a new purpose. If the machine in question is mechanical or electrical, this person will be forced to pretty much make due with the components that already exist, simply because they can rarely afford to manufacture new components themselves (or at least they would avoid it if possible). This limitation, forces component manufacturers to create components that are versatile and that work well together, in the same way in which pure functions work well together. And this in turn makes it easy for engineers to create better machines without doing all the work themselves. 
+
+But things are different if the machine in question is software-based --- due to the ease with which new software components can be rolled out, our design can blur the line that separates some of the components or even do away with the concept of component altogether and make the whole program one giant component (*monolithic design*). Worse, when no ready-made components are available, this approach is actually easier than the component-based approach that we described in the previous paragraph, and so many people use it. 
+
+This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For this reasons, I think that currently, programmers are losing out by not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
