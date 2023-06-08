@@ -309,7 +309,10 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
-We can define a function that is the equivalent to performing the operation described above. Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \bullet g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
+We can define a function that is the equivalent to performing the operation described above. 
+That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$.
+
+Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \bullet g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
 ![Functional composition](../01_set/functions_compose.svg)
 
@@ -341,32 +344,32 @@ One of the main ways in which modern engineering differs from ancient craftsmans
 
 **Task:** Think about what would be those functions' sources and targets.
 
-The diagram 
+By the way, diagrams that are "zoomed out" that show functions without showing set elements are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*. 
 
-Representing composition with commutative diagrams
+Composition and external diagrams 
 ---
 
-In functional composition diagrams, the equivalence between the successive application of the two composed functions ($f \bullet g$) and the new function ($h$) is expressed by the fact that if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$. Diagrams that express such equivalence between sequences of function applications are called *commutative diagrams*.
+Let's look at the diagram that demonstrates functional composition in which we showed that successive application of the two composed functions ($f \bullet g$) and the new function ($h$) are equivalent.
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-If we "zoom-out" the view of the last diagram so it does not show the individual set elements, we get a more general view of functional composition.
+We showed this equivalence by drawing an *internal* diagram, and explicitly drawing the elements of the functions' sources and targets in such a way that the two paths are equivalent.
+
+Alternatively, we can just *say* that the arrow paths are all equivalent (all arrows starting from a given set element ultimately lead to the same corresponding element from the resulting set) and draw the equivalence as an external diagram.
 
 ![Functional composition for sets](../01_set/functions_compose_sets.svg)
 
-In fact, because this diagram commutes (that is, all arrows starting from a given set element ultimately lead to the same corresponding element from the resulting set), this view is a more appropriate representation of the concept (as enumerating the elements is redundant). 
+The external diagram is a more appropriate representation of the concept of composition, as it is more general. In fact, it is *so* general that it can actually serve as a *definition of functional composition*.
 
-Having this insight allows us to redefine functional composition in a more visual way.
-
-> The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that this diagram commutes.
+> The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that all the paths in this diagram are equivalent.
 
 ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
-Diagrams that show functions without showing the elements of the sets are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*.
+If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way)
 
-At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I really tend to do that, but not now &mdash; the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
+At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now - the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*) --- ones that have source and target, and that can be composed with one another in an associative way.
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*) --- ones that have source and target, that can be composed with one another in an associative way, that can be represented by external diagrams etc.
 
 And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing till the end of this chapter.
 

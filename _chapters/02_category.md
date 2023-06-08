@@ -370,7 +370,6 @@ The diagrams above, use colors to illustrate the fact that the green morphism is
 Diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
 
 
-
 A summary
 ---
 
