@@ -108,7 +108,7 @@ How can we define products in terms of functions? To do that, we must first thin
 
 ![Product, external diagram](../02_category/product_external.svg)
 
-This diagram already provides a definition, but not a complete definithon, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other such objects.
+This diagram already provides a definition, but not a complete definition, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other such objects.
 
 ![Product, external diagram](../02_category/product_candidates.svg)
 
