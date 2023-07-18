@@ -1,7 +1,11 @@
 Reading list
 ===
 
-[Mathematical toolkit](https://www.youtube.com/watch?v=8j9AF2cfmFo&list=PLk-BCMYCWSzW-nPNnw19Y6oQJnvaAcp1I)
+[Russell - The Principles of Mathematics](https://people.umass.edu/klement/pom/)
+
+[Lawvere - An elementary theory of the category of sets](http://www.tac.mta.ca/tac/reprints/articles/11/tr11.pdf)
+
+[What does 'unique up to isomorphism' really mean?](https://statusfailed.com/blog/2019/04/25/what-does-unique-up-to-isomorphism-really-mean.html)
 
 [Number theory from first principles](https://explained-from-first-principles.com/number-theory/)
 
@@ -13,9 +17,11 @@ Reading list
 
 [Graphical linear algebra with string diagrams](https://graphicallinearalgebra.net/2015/04/26/adding-part-1-and-mr-fibonacci/)
 
-
 [The functions of functors](https://www.lifeoflevi.com/)
 
 [Pierce - What is a sign](https://www.marxists.org/reference/subject/philosophy/works/us/peirce1.htm)
 
 [ The Riemann Curvature of the Sphere ](https://math.ucr.edu/home/baez/gr/oz1.html)
+
+[Mathematical toolkit](https://www.youtube.com/watch?v=8j9AF2cfmFo&list=PLk-BCMYCWSzW-nPNnw19Y6oQJnvaAcp1I)
+

@@ -426,11 +426,11 @@ We use maps to get around all the time, often without thinking about the fact th
 
 ![A map as a preorder](../04_order/preorder_map.svg)
 
-Reflexivity reflects the fact that if you have a route allowing you to get from point $a$ to point $b$ and one that allows you to go from $b$ to $c$, then you can go from $a$ to $c$ as well. Two-way roads may be represented by two arrows that form an isomorphism between objects. Objects that are such that you can always get from one object to the other form equivalence classes (ideally all intercections would be in one equivalence class).
+Reflexivity reflects the fact that if you have a route allowing you to get from point $a$ to point $b$ and one that allows you to go from $b$ to $c$, then you can go from $a$ to $c$ as well. Two-way roads may be represented by two arrows that form an isomorphism between objects. Objects that are such that you can always get from one object to the other form equivalence classes (ideally all intercections would be in one equivalence class, else you would have places from which you would not be able to go back from).
 
 ![preorder](../04_order/preorder_map_equivalence.svg)
 
-However, maps that contain more than one road (and even more than one *route*) connecting two intercections, cannot be represented using preorders. For that we would need categories (don't worry, we are almost there.)
+However, maps that contain more than one road (and even more than one *route*) connecting two intercections, cannot be represented using preorders. For that we would need categories (don't worry, we will get there).
 
 State machines as preorders 
 ---
