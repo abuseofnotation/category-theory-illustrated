@@ -24,14 +24,14 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="2.1023899"
-     inkscape:cx="331.05181"
-     inkscape:cy="165.05026"
+     inkscape:cx="993.63111"
+     inkscape:cy="169.80675"
      inkscape:window-width="1080"
      inkscape:window-height="1864"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="switch6442" />
+     inkscape:current-layer="svg6444" />
   <switch
      id="switch6442">
     <g
@@ -232,5 +232,76 @@
        r="9.541522"
        id="circle7619"
        style="fill:#f8f7cb;stroke:#808285;stroke-width:3.71748;stroke-miterlimit:10" />
+    <circle
+       fill="#caebfc"
+       stroke="#808285"
+       stroke-width="3.32237"
+       stroke-miterlimit="10"
+       cx="269.84625"
+       cy="-94.076721"
+       r="10.02922"
+       id="circle6400-6-5"
+       transform="scale(1,-1)"
+       style="stroke-width:2.78431;stroke-dasharray:none" />
+    <circle
+       fill="#f8f7cb"
+       stroke="#808285"
+       stroke-width="3.32237"
+       stroke-miterlimit="10"
+       cx="290.80231"
+       cy="-93.60466"
+       r="10.252803"
+       id="circle6404-7-3"
+       transform="scale(1,-1)"
+       style="stroke-width:2.78431;stroke-dasharray:none" />
+    <circle
+       fill="#caebfc"
+       stroke="#808285"
+       stroke-width="3.32237"
+       stroke-miterlimit="10"
+       cx="270.25146"
+       cy="-92.258316"
+       r="9.1970272"
+       id="circle6400-6-5-5"
+       transform="scale(1,-1)"
+       style="stroke-width:2.55328;stroke-dasharray:none" />
+    <circle
+       fill="#f8f7cb"
+       stroke="#808285"
+       stroke-width="3.32237"
+       stroke-miterlimit="10"
+       cx="289.46863"
+       cy="-91.825424"
+       r="9.4020586"
+       id="circle6404-7-3-6"
+       transform="scale(1,-1)"
+       style="stroke-width:2.55328;stroke-dasharray:none" />
+    <g
+       id="g4828"
+       transform="translate(-9.7520872,-59.956753)">
+      <path
+         style="fill:#caebfc;fill-opacity:1;stroke:#808285;stroke-width:2.454;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 289.34575,162.73335 c -5.90355,0 -10.21983,-4.46432 -10.21983,-10.8797 0,-5.85789 4.74056,-9.87531 10.27218,-9.87531 0,3.51529 -0.0523,20.75501 -0.0523,20.75501 z"
+         id="path3058"
+         sodipodi:nodetypes="cscc" />
+      <path
+         d="m 290.30591,162.73973 c 5.90356,0 10.21984,-4.46431 10.21984,-10.87971 0,-5.85789 -4.74056,-9.8753 -10.27218,-9.8753 0,3.51528 0.0523,20.75501 0.0523,20.75501 z"
+         style="fill:#f8f7cb;fill-opacity:1;stroke:#808285;stroke-width:2.454;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         id="path3958" />
+    </g>
   </switch>
+  <circle
+     stroke-miterlimit="10"
+     cx="270.54214"
+     cy="93.743698"
+     r="9.2936897"
+     id="circle7617-3"
+     style="fill:#caebfc;stroke:#808285;stroke-width:3.71748;stroke-miterlimit:10" />
+  <circle
+     stroke-miterlimit="10"
+     cx="289.4393"
+     cy="93.348801"
+     r="9.541522"
+     id="circle7619-6"
+     style="fill:#f8f7cb;stroke:#808285;stroke-width:3.71748;stroke-miterlimit:10" />
 </svg>

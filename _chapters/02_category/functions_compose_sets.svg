@@ -41,13 +41,13 @@
      id="namedview36287"
      showgrid="false"
      showguides="false"
-     inkscape:zoom="0.55225513"
-     inkscape:cx="278.85662"
-     inkscape:cy="202.80481"
+     inkscape:zoom="3.1240268"
+     inkscape:cx="289.69022"
+     inkscape:cy="205.504"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g36281"
+     inkscape:current-layer="switch36283"
      inkscape:showpageshadow="2"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1" />
@@ -80,7 +80,7 @@
       <g
          style="display:inline;fill:#dddddd;stroke:#848484;stroke-width:6.389;stroke-miterlimit:10;stroke-opacity:1"
          id="g1482-7-0-2"
-         transform="matrix(0.21246955,-0.06974344,0.10554472,0.30171176,194.82551,38.133125)">
+         transform="matrix(0.28871109,-0.12564361,0.18753954,0.40912294,138.62602,52.472549)">
         <path
            style="stroke:#848484;stroke-width:16.0981;stroke-opacity:1"
            inkscape:connector-curvature="0"
@@ -93,17 +93,10 @@
            d="m 327.16882,85.247297 c 61.03479,-6.323091 179.55362,16.098563 239.16592,48.705573"
            sodipodi:nodetypes="cc" />
       </g>
-      <circle
-         stroke-miterlimit="10"
-         cx="250.19389"
-         cy="41.285641"
-         r="28.203127"
-         id="circle36269"
-         style="fill:#f8f6c1;stroke:#808285;stroke-width:2.73816;stroke-miterlimit:10" />
       <g
          style="display:inline;fill:#dddddd;stroke:#848484;stroke-width:6.389;stroke-miterlimit:10;stroke-opacity:1"
          id="g1482-7-0-2-3"
-         transform="matrix(0.06974344,0.21246955,-0.30171176,0.10554472,367.08776,-14.404154)">
+         transform="matrix(0.12419326,0.28933794,-0.41005887,0.18548419,350.89976,-70.116903)">
         <path
            style="stroke:#848484;stroke-width:16.0981;stroke-opacity:1"
            inkscape:connector-curvature="0"
@@ -133,7 +126,7 @@
       <g
          style="display:inline;fill:#dddddd;stroke:#363636;stroke-width:6.389;stroke-miterlimit:10;stroke-opacity:1"
          id="g1482-7-0-2-3-9"
-         transform="matrix(0.11289418,0.19303461,0.27898693,-0.1559999,234.3014,46.860811)">
+         transform="matrix(0.13046246,0.2865658,0.41313801,-0.17852074,203.92685,-3.7197574)">
         <path
            style="stroke:#363636;stroke-width:16.0981;stroke-opacity:1"
            inkscape:connector-curvature="0"
@@ -146,6 +139,13 @@
            d="M 145.69299,52.838186 C 251.84173,46.607849 460.71734,79.183022 566.33474,133.95287"
            sodipodi:nodetypes="cc" />
       </g>
+      <circle
+         stroke-miterlimit="10"
+         cx="250.19389"
+         cy="41.285641"
+         r="28.203127"
+         id="circle36269"
+         style="fill:#f8f6c1;stroke:#808285;stroke-width:2.73816;stroke-miterlimit:10" />
     </g>
   </switch>
 </svg>

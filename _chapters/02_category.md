@@ -6,8 +6,6 @@ title: Categories
 From Sets to Categories
 ===
 
-> "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra (from "On the cruelty of really teaching computing science")
-
 In this chapter we will see some more set-theoretic constructs, but we will also introduce their category-theoretic counterparts in an effort to gently introduce the concept of a category itself.
 
 When we are finished with that, we will try, (and almost succeed) to define categories from scratch, without actually relying on set theory.
@@ -120,7 +118,7 @@ However, the set of triples  $Y \times B \times R$ is connected to $Y$ and $B$ o
 
 (Intuitively, all such objects would be *more complex* than the pair objects and you can always have a function that converts a more complex structure, to a simpler one (we saw an example of this when we covered the functions that convert subsets to their supersets).)
 
-More formally, if we suppose that there is a set $I$ that can serve as an impostor product of sets $B$ and $Y$ i.e. that $I$ is such that there exist two functions, which we will call $ib: I → B$ and $iy: I → Y$ that allow us to derive elements $B$ and $Y$ from it, then there must also exist a function with the type signature $I → B \times Y$ that converts the impostor from the true product, and $ib$ and $iy$ are just results of composing that function with the usual "getter" functions that go from the pair to the elements (i.e. whichever object we pick for $I$, this digram would commute).
+More formally, if we suppose that there is a set $I$ that can serve as an impostor product of sets $B$ and $Y$ i.e. that $I$ is such that there exist two functions, which we will call $ib: I → B$ and $iy: I → Y$ that allow us to derive elements $B$ and $Y$ from it, then there must also exist a unique function with the type signature $I → B \times Y$ that converts the impostor from the true product, and $ib$ and $iy$ are just results of composing that function with the usual "getter" functions that go from the pair to the elements (i.e. whichever object we pick for $I$, this digram would commute).
 
 ![Product, universal property](../02_category/product_universal_property.svg)
 
@@ -167,7 +165,7 @@ As you might have already noticed, this definition is pretty similar to the defi
 
 ![Coproduct, external diagram](../02_category/coproduct_candidates.svg)
 
-All these sets express relationships which are more vague than the simple sum, and therefore given such a set (an "impostor" set as we called it earlier), there would exist a function that would distinguish it from the true sum. The only difference is that, unlike with the products, this time this function goes *from the sum* to the impostor.
+All these sets express relationships which are more vague than the simple sum, and therefore given such a set (an "impostor" set as we called it earlier), there would exist a unique function that would distinguish it from the true sum. The only difference is that, unlike with the products, this time this function goes *from the sum* to the impostor.
 
 ![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
 
@@ -248,46 +246,111 @@ This probably provokes a lot of questions and we have a whole chapter about logi
 Defining the rest of set theory using functions
 ===
 
-Notice the tendency where we define some set theory constructs without looking at the set elements and by only using functions and external diagrams.
+So far, we saw some amazing ways of defining set-theoretic constructs without looking at the set elements and by only using functions and external diagrams.
 
 In the first chapter we defined functions and functional composition with this digram.
 
 ![Functional composition](../02_category/functions_compose_sets.svg)
 
-And now, we also defined products and sums in this way
+And now, we also defined products and sums.
 
 ![Coproduct and product](../02_category/coproduct_product_duality.svg)
 
-What's even more amazing (a fact, suggested by the category theory pioneer Francis William Lawvere) is that these definitions are actually *as strong as the usual definitions* in set theory, that rely on ennumerating the set elements i.e. that, using external diagrams, we can define all set-theoretic concepts  in a way that results in a new formulation of set theory that does not have the concept of an element.
+What's even more amazing, is that we can define *all of set-theory* using just functions, as suggested by the category theory pioneer Francis William Lawvere. 
 
-
-
-Empty set
+Defining set elements using functions
 ---
 
-We said that there exist a unique function that goes *from* the empty set *to* any other set. But the reverse is also true, if a set 
+Traditionally, everything in set theory is defined in terms of two things: *sets* and *elements*, so, if we want to define it using *sets* and *functions*, we must define the concept of a *set element* in terms of functions.
 
+To do so, we will use the singleton set.
 
-Singleton set
+![The singleton set](../02_category/elements_singleton.svg)
+
+OK, let's start by taking a random set which we want to describe.
+
+![A set of three elements](../02_category/elements_set.svg)
+
+And let's examine the functions from the singleton set, to that random set.
+
+![Functions from the singleton set](../02_category/elements_singleton_functions.svg)
+
+It's easy to see that there would be exactly one function for each element of the set i.e. that each element of any set $X$ is isomorphic to a function $$1 \to X$$.
+
+So, we can say that what we call "elements" of a set are the functions from the singleton set to it.
+
+Defining the singleton set using functions
 ---
 
+Now, as we came up with some definition of set *element*, using just functions, we can try to draw the elements of our set as an external diagram.
 
+![Functions from the singleton set](../02_category/elements_singleton_functions_partly_external.svg)
 
-Subsets
+However, our diagram is not yet fully external, as it depends on the idea of the singleton set, i.e. the set with one *element*. Furthermore, this makes the whole definition circular, as we have to already have the concept of an element in order to define the concept of an one-element set. 
+
+To avoid these dificulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, there is exactly one function from any other set to the singleton set i.e. if $1$ is the singleton set, then we have $\forall  X  \exists!  X \to 1$.
+
+![Terminal object](../02_category/terminal_object_internal.svg)
+
+It turns out that this property defines the singleton set uniquely i.e. there is no other set that has it, other than the sets that are isomorphic to the singleton set. This is simply because, if there are two sets that have it, those two sets would also have unique morphisms between *themselves* i.e. they would be isomorphic to one another. More formally, if we have two sets $X$ and $Y$, such that $\exists!X \to 1 \land \exists!Y \to 1$ then we also have $X \cong Y$.
+
+![Terminal object](../02_category/terminal_object_internal_isomorphisms.svg)
+
+And because there is no other set, other than the singleton set that has this property, we can use it as a definition of the singleton set and say that if we have $\forall  X  \exists!  X \to 1$, then $1$ is the singleton set.
+
+![Terminal object](../02_category/terminal_object.svg)
+
+With this, we aquire a fully-external definition (up to an isomorphism) of the singleton set, and thus a definition of a set element - the elements of set are just the functions from the singleton set to that set.
+
+![Functions from the singleton set](../02_category/elements_external.svg)
+
+Note that from this property it follows that the singleton set has exactly one element.
+
+![Functions from the singleton set](../02_category/singleton_elements_external.svg)
+
+**Question:** Why exactly (check the definition)? 
+
+Defining the empty set using functions
 ---
 
-Inverse image of a set
+The empty set is the set that has no elements, but how would we say this without refering to elements?  
+
+We said that there exist a unique function that goes *from* the empty set *to* any other set. But the reverse is also true: the empty set is the only set such that there is exist a function from it to any other set. 
+
+![Initial object](../02_category/initial_object.svg)
+
+Observant readers will notice the similarities between the diagrams of initial and terminal object (yes the two concepts are, of course, dual).
+
+![Initial terminal duality](../02_category/initial_terminal_duality.svg)
+
+
+And some *even more* observant readers may also notice the similarities between the product/coproduct diagrams and the initial/terminal object diagrams.
+
+![Coproduct and product](../02_category/coproduct_product_duality.svg)
+
+(Folks keep it down please, you are *too observant* --- we have, like, 4 chapters till we get to this.)
+
+Functional application
 ---
 
-Natural numbers
+Now, as amazed as we are, after seeing the functional definition of a set element, we might be inclined to ask the following: If elements are represented by functions, then how do you *apply* a given function to an element of one set, to get an element of another set?
+
+The answer is surprisingly simple --- in order to apply a function to a set, you must first select an element of the set and *selecting* an element from a set is the same as constructing a function from the singleton set to this element. 
+
+![Functional application - internal diagram](../02_category/application_internal.svg)
+
+And then *applying* a function to an element is the same as composing this function, with the function we want to apply. 
+
+![Functional application - external diagram](../02_category/application_external.svg)
+
+The result is the function that stands for the result of the application.
+
+Conclusion
 ---
 
-Every surgection has a right inverse
----
+In the future, we may cover the entirety of Lawvere's Elementary theory of the category of sets (or ETCS for short), and list all concepts and axioms that are needed to define a rigorous set theory using functions, but this is enough for you to get the main idea: these these axioms constitute an definition of set theory, which is based entirely on functions. This is big, but there is an even bigger thing there: because it is more general than the traditional definition, this new definition also applies to objects that are not exactly sets, but are *like* sets in some respects. 
 
-As we said, these axioms constitute another definition of set theory, which is huge, but there is an even bigger thing there: because it is more general than the traditional set-theoretic definition, this new definition also applies to objects that are not exactly sets, but are *like* sets in some respects. 
-
-They apply to a whole array of *categories of objects*.
+You may say that they apply to a whole different *categories of objects*.
 
 Category Theory --- brief definition
 ===
@@ -296,9 +359,9 @@ Maybe it is about time to see what a category is. We will start with a short def
 
 ![Category theory and set theory compared](../02_category/set_category.svg)
 
-When we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion, but we saw how taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
+When we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion. However taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. Plus we always have a way to "go back" to set theory, using the tricks from the last section.
 
-Still why would we want to restrict ourselves from looking at the individual elements? It is because, in this way we can relate this viewpoint to objects other than sets. We already discussed one such object --- types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets, and programming methods are somewhat similar to functions between sets, but they are not exactly identical? A formal connection between the two can be made via category theory. 
+But why would we want to have this more general definition? It is because, in this way we can use our theory to describe objects other than sets. We already discussed one such object --- types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets, and programming methods are somewhat similar to functions between sets, but they are not exactly identical? Category theory allows us to generalize the similarities of these... ahem, categories.
 
 | Category Theory | Set theory | Programming Languages |
 | ---             | ---        | ---                   |
@@ -306,7 +369,7 @@ Still why would we want to restrict ourselves from looking at the individual ele
 | Objects and  Morphisms        | Sets and Functions   | Classes and methods |
 | N/A             | Element    | Object                |
 
-Category theory allows us to see the big picture when it comes to sets and similar structures --- looking at the table, we cannot help but notice the somehow weird, (but actually completely logical) symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the lens of category theory:
+Notice the somehow weird, (but actually completely logical) symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the lens of category theory:
 
 | Category Theory | Set theory | 
 | ---             | ---        |
@@ -321,18 +384,18 @@ By switching to external diagrams, we lose sight of the particular (the elements
 Sets VS Categories
 ---
 
-One remark before we go: in the last paragraphs I sound as if I'm *comparing* categories and sets (and rooting for categories, in order to get more copies of my book sold) and I don't want you to get the wrong impression that the two concepts are somehow competing with one another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. 
+One remark before we go: in the last paragraphs I sound as if category theory and set theory are somehow competing with one another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. 
 
 Abstract theories, like category theory and set theory, on the other hand, are more like *languages* for expressing such descriptions --- they still can be connected, and *are* connected in more than one way, but there is no inherent hierarchy between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
 
 Defining Categories (again)
 ===
 
-> "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra
+> "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra (from "On the cruelty of really teaching computing science")
 
 All category theory books (including this one) starts by talking about set theory. However looking back I really don't know why that is the case --- most books that focus around a given subject don't usually start off by introducing an *entirely different subject* before even starting to talk about the main one, even if the two subjects are so related. 
 
-Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain --- we don't *need* to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person).
+Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do, just because everyone else does it. But, one thing is for certain --- we don't *need* to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person).
 
 So. A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
@@ -410,11 +473,15 @@ This approach (composing indefinitely many things) for building stuff is often u
 Commuting diagrams
 ---
 
-The diagrams above, use colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant --- the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other. All other paths just belong in different diagrams. 
+The diagrams above, use colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant --- the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other. All other paths would just belong in different diagrams. 
 
 ![Composition of morphisms - a commuting diagram](../02_category/composition_commuting_diagram.svg)
 
 As we mentioned briefly in the last chapter, all diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
+
+More formally, a commuting diagram is a diagram in which given two objects $a$ and $b$ and two sequences of morphisms between those two objects, we can say that those sequences are equivalent. 
+
+The diagram above is one of the simplest commuting diagrams.
 
 A summary
 ---
