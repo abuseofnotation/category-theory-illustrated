@@ -1,8 +1,6 @@
-
 layout: default
 title: Natural transformations
 ---
-
 
 Natural transformations 
 ===
@@ -13,70 +11,66 @@ In this chapter, we will introduce the concept of a morphism between functors or
 
 Natural transformations really are at the heart of category theory --- As a matter of fact, category theory was invented with the purpose of studying natural transformations. However, the importance of natural transformations is not obvious at first, and so, before introducing them, I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle).
 
-Objects are overrated
+The categorical way AKA Objects are overrated
 ===
 
 > The world is the collection of facts, not of things. --- Ludwig Wittgenstein
 
-Objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics), can be viewed as an object. Because of this, we might be inclined to think, as many other people do, that the key to understanding the world is understanding *what objects are*. This is what set theory does, from one standpoint --- the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are saying that *all objects can be represented by sets* (and morphisms can be represented by sets as well).
+Some 2500 years ago, the philosopher Parmenides postulated that everything in the universe exists as part of an unchanging nature, and what we see as transformations are merely illusory appearances and so the nature of the universe is permanence. Although far from obviously true, his view is easy to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics), can be viewed as an object. And so we might be inclined to think, that the key to understanding the world is understanding *what objects are*. This is what set theory does, from one standpoint (as well as classical logic) --- the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are saying that *all objects can be represented by sets*.
 
 However, there is another way to look at things. What is an object, when viewed by itself? Can we study an object in isolation and will there anything left to study about it, once it is detached from its environment? And, as Theseus once asked, if a given object undergoes a process to get all of it's part replaced, is it still the same object?
 
-Asking such questions might lead us to suspect that, although what we *see* when we look at the world are the objects, it's *functions* that are the real key to understanding it. 
+Asking such questions might lead us to suspect that, although what we *see* when we look at the world are the objects, it's processes or *functions* that are the real key to understanding it. For example, when we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would not be itself. Is a lamp that doesn't glow still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all. In logic, for example, we specify objects using existential quantifiers i.e. we say there exist an object such that so and so. So instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
 
-When we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would not be itself. Is a lamp that doesn't glow still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all. In logic, for example, we specify objects using existential quantifiers i.e. we say there exist an object such that so and so. So instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
-
-Although old, (dating back to Heraclitus) this view has been largely unexplored, both in the realm of philosophy, and that of mathematics. But it is deeply engrained in category theory. For example, when we say that a given property defines an object *up to a unique isomorphism* what we mean is exactly this --- that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms from/to all other objects in the category (have the same *functions* in the category), then these objects are, for all intends and purposes, equivalent. And the key to understanding how this works are natural transformations.
-
-Equivalence of categories
-===
+Although old, (dating back to Parmenides' rival  Heraclitus) this view has been largely unexplored, both in the realm of philosophy, and that of mathematics. But it is deeply engrained in category theory. For example, when we say that a given property defines an object *up to a unique isomorphism* what we mean is exactly this --- that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms from/to all other objects in the category (have the same *functions* in the category), then these objects are, for all intends and purposes, equivalent. And the key to understanding how this works are natural transformations.
 
 So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter ---  what does it mean for two categories to be equal. 
 
-We said that categorical isomorphism is somewhat too rigid to accurately capture the concept of equality. This is because (though it may seem contradictory) *in isomorphic categories, isomorphic objects aren't considered equal*. And so this concept goes against the idea that functions (and not objects) are the primary concept. For example the following two categories are *not* isomorphic. 
+Equivalence 
+===
 
-![Simple non-isomorphic categories](simple_non_isomorphic_categories.svg)
-
-So, being isomorphic means that two structures are completely the same. A map is isomorphic to an area only it represents the area completely, like if there is a arrow for each route and a point for each intersection.
+In the prev chapter, we talked a lot about how great isomorphisms are and how important they are for category theory, but at the same time we said that *categorical isomorphisms* do not capture the concept of equality.
 
 ![Isomorphic categories](isomorphic_categories.svg)
 
-But, like we said, in category theory, we specify most concepts by treating isomorphis objects as equal --- this is valid for all definitions that are based on universal properties. Or to extend the map example, suppose, that there are two intersections that are positioned in such a way that for every road that goes to and from one of them, there is an identical road to the other one (maybe the one of these intercection was meant to replace the other one but it wasn't closed). Then suppose that you have a map which displays these two intercections as one and the same intercection. 
+This is simply because (though it may seem contradictory) *isomorphic objects aren't considered equal* according to categorical isomorphisms i.e. a categories that only differ by having some additional isomorphic objects aren't isomorphic themselves 
 
-![Non-isomorphic categories](non_isomorphic_categories.svg)
+![Isomorphic categories](equal_categories.svg)
 
-Would say that the map is complete? The answer comes down to what would you want to use the map for: if you want the map to accurately represents all the *places* that exist in the area, then it is not accurate. But if you want the map for practical purposes, if you only need it to represents the *routes* in the area, then there is no reason to show two roads that are the same in terms of their input and output. So in other words, when we focus on objects, we would define two categories as equal if there exists an isomorphism between them. But when we focus on morphisms, then it is more apt to define equality with a concept that would only require for the objects to be equal *up to a unique isomorphism*. This concept is called **natural equivalence**.
+However, they are equivalent.
 
-Consider these two non-isomorphic, but equivalent categories.
+**Parmenides:** This category surely cannot be equal to the other one --- it has two objects!
 
-![Equivalent categories](equivalent_categories.svg)
+**Heraclitus:** Who cares bro, they are isomorphic.
 
-There exist only one functor that connects the left one to the right one.
+Equivalence of orders
+---
 
-![Equivalent categories, functor F](equivalent_categories_f.svg)
+To understand what I mean, let's go back to the functor between a given map and the area it represents. In order for this functor to be invertible (i.e. in order for the two categories to be isomorphic) the the map should represent the area completely, like there should be arrow for each road and a point for each little place.
 
-There are two functors that connect the right one to the left one, which are equivalent, let's choose one of them.
+![Isomorphic categories](isomorphic_map.svg)
 
-![Equivalent categories, functor G](equivalent_categories_g.svg)
+But, like we said, in category theory, we are not interested in places, but in the *routes* that connect them.
 
-And then if we compose them in one direction we get the same object that we started with, same as if the categories were isomorphic. 
+![Isomorphic categories](isomorphic_map.svg)
 
-![Equivalent categories, functor G F](equivalent_categories_g_f.svg)
+So in other words, when we focus on objects, we would define two categories as equal if there exists an isomorphism between them. But when we focus on morphisms, then it is more apt to define equality with a concept that would only require for the objects to be equal *up to a unique isomorphism*. This concept is called **natural equivalence**.
 
-And if we compose it in the other direction, we don't get the same object (which means that the categories are not isomorphic) but we do get an object that is isomorphic to the one we started with. This makes the categories equivalent.
+One way to understand natural equivalence relies on the concept of *equivalence classes* that we covered on the chapter about orders.
 
-![Equivalent categories, functor G F](equivalent_categories_g_f.svg)
+So suppose, that there are two intersections that are positioned in such a way that for every road that goes to and from one of them, there is an identical road to the other one (maybe the one of these intercection was meant to replace the other one but it wasn't closed). Then suppose that you have a map which displays these two intercections as one and the same intercection. 
 
-The definition betwen the two concepts is small but crucial: categories are isomorphic if there exist an *invertable* functor between them. They are equivalent if they are connected by two *isomorphic functors.*
+Equivalence of categories
+---
 
-**Task:** Verify that the categories in the previous example are also equivalent.
 
-We already understand when to categories are equivalent, but to have a proper formal definition of the concept we have to know about functor natural isomorphism, which is a kind of a natural transformation.
+
+
 
 Natural transformations
 ===
 
-The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors. They are actually not similar, they are not "recursive", to be more precise: both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are morphisms between morphisms (known as *2-morphisms*).
+The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors, but they are actually not completely similar, they are not "recursive", to be more precise --- both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are morphisms between morphisms (known as *2-morphisms*).
 
 But enough talking, let's draw some diagrams. 
 

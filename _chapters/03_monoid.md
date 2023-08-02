@@ -336,7 +336,7 @@ https://faculty.uml.edu/klevasseur/ads/s-monoid-of-fsm.html
 Groups/monoids categorically
 ===
 
-We began by defining a monoid as a set of composable *elements*. Then we saw that for some groups, like the groups of symmetries and rotations, those elements can be viewed as *actions*. And this is actually true for all other groups as well, e.g. the $red ball$ in our color-blending monoid can be seen as the action of $adding the color red$ to the mix, the number $2$ in the monoid of addition can be seen as the operation $+2$ etc. This observation leads to a categorical view of the theory of groups and monoids.
+We began by defining a monoid as a set of composable *elements*. Then we saw that for some groups, like the groups of symmetries and rotations, those elements can be viewed as *actions*. And this is actually true for all other groups as well, e.g. the *red ball* in our color-blending monoid can be seen as the action of *adding the color red$ to the mix, the number $2$ in the monoid of addition can be seen as the operation $+2$ etc. This observation leads to a categorical view of the theory of groups and monoids.
 
 Currying
 ---
@@ -487,7 +487,7 @@ But wait, if the monoids' underlying *sets* correspond to *objects* in category 
 
 The only difference between different monoids would be the number of morphisms that they have and the relationship between them.
 
-The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of $closure$ that monoid and group operations have and that categories lack --- it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how do you flip a triangle, you'd still get a triangle. 
+The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of *closure* that monoid and group operations have and that categories lack --- it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how do you flip a triangle, you'd still get a triangle. 
 
 | | Categories | Monoids | Groups 
 |---| ---             | ---        |
@@ -570,10 +570,6 @@ If we put out programmers' hat, we will see that the type of the free monoid und
 
 While the intuition behind free monoids seems simple enough, the formal definition is not our cup of tea... yet, simply because we have to cover more stuff.
 
-We understand that, being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exist a function from it to all of them. But what kind of function would that be?
-
-Plus, what about other monoids that also can have this property (that they are connected to any other monoids) Simple --- they are the free monoid with some extra structure, so we can filter them out by using an universal property. 
-
-But, what would this property be, (and what the hell are universal properties anyways?), tune in after a few chapters to find out.
+We understand that, being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exist a function from it to all of them. But what kind of function would that be? Tune in after a few chapters to find out.
 
 {%endif%}

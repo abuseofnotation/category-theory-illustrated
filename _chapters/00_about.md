@@ -3,6 +3,19 @@ layout: default
 title: About 
 ---
 
+{: style="text-align: center"}
+In memory of 
+
+{: style="text-align: center"}
+Francis William Lawvere 
+
+{: style="text-align: center"}
+1937 --- 2023
+
+<div style="page-break-after: always; opacity: 0 ; height: 400px"> 
+\pagebreak 
+</div>
+
 {: style="text-align: right"}
 *"Try as you may,*
 
@@ -15,6 +28,9 @@ title: About
 {: style="text-align: right" }
 Tom Lehrer 
 
+<div style="page-break-after: always; opacity: 0 ; height: 400px"> 
+\pagebreak 
+</div>
 
 The story behind this book
 ===

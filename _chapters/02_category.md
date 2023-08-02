@@ -30,11 +30,11 @@ It is denoted $B \times Y$ and it comes equipped with two functions for retrievi
 Interlude --- coordinate systems
 ---
 
-The concept of the Cartesian product was first defined by the mathematician and philosopher René Descartes as a basis for the *Cartesian coordinate system*. Although it does not look like it, both concepts are named after him (or after the Latinized version of his name).
+The concept of *Cartesian product* was first defined by the mathematician and philosopher René Descartes as a basis for the *Cartesian coordinate system*, which is why both concepts are named after him (although it does not look like it, as they use the latinized version of his name). 
 
-You probably know how the Cartesian coordinate system works, but an equally interesting question, of which you probably haven't thought about, is how we can define it using sets and functions. 
+Most people know how Cartesian coordinate systems works, but an equally interesting question, on which few people think about, is how we can define it using sets and functions. 
 
-An Cartesian coordinate system consists of two perpendicular lines, situated on an *Euclidian plane* and some kind of mapping that resembles a function, connecting any point in these two lines to a number, representing the distance between the point that is being mapped and the lines' point of overlap (which is mapped to the number $0$).
+A Cartesian coordinate system consists of two perpendicular lines, situated on an *Euclidian plane* and some kind of mapping that resembles a function, connecting any point in these two lines to a number, representing the distance between the point that is being mapped and the lines' point of overlap (which is mapped to the number $0$).
 
 ![Cartesian coordinates](../02_category/coordinates_x_y.svg)
 
@@ -52,9 +52,7 @@ So we can say that the Cartesian coordinate system is some kind of function-like
 
 What's even more interesting is that this mapping is one-to-one, which makes the two realms *isomorphic* (traditionally we say that the point is *completely* described by the coordinates, which is the same thing).
 
-Our effort to represent Cartesian coordinates with sets is satisfactory, but incomplete, as we still don't know what these function-like things that connect points to numbers are --- they make intuitive sense as functions, and that they exhibit all relevant properties (many-to-one mapping, or one-to-one in this case), however, we have only covered functions as mappings between sets and in this case, even if we can think of the coordinate system as a set (of points and figures), geometrical figures are definitely not a set, as it has a lot of additional things going on (or additional *structure*, as a category theorist would say).
-
-So defining this mapping formally, would require us to also formalize both geometry and algebra, and moreover to do so in a way in which they are compatible with one another. This is some of the ambitions of category theory and this is what we will attempt to do later in this book (even if not for this exact example).
+With that, our effort to represent Cartesian coordinates with sets is complete, except we haven't described what these function-like things that connect points to numbers are --- they make intuitive sense as functions, and that they exhibit all relevant properties (many-to-one mapping (or one-to-one in this case)), however, we have only covered functions as mappings between *sets* and in this case, even if we can think of the coordinate system as a set (of points and figures), geometrical figures are definitely not a set, as it has a lot of additional things going on (or additional *structure*, as a category theorist would say). So defining this mapping formally, would require us to also formalize both geometry and algebra, and moreover to do so in a way in which they are compatible with one another. This is some of the ambitions of category theory and this is what we will attempt to do later in this book.
 
 But before we continue with that, let's see some other neat uses of products.
 
@@ -63,68 +61,71 @@ But before we continue with that, let's see some other neat uses of products.
 Products as Objects
 ---
 
-In the previous chapter we established the correspondence of various concepts in programming languages and set theory sets resemble types, functions resemble methods/subroutines. This picture is made complete with products, that are like stripped-down *classes* (also called *records* or *structs*) --- the sets that form the product correspond to the class's *properties*  (also called *members*) and the functions for accessing them are like what programmers call *getter methods*.
-
-The famous example of object-oriented programming of a `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers. Objects with more than two values can be expressed as products the composites of which are themselves products.
+In the previous chapter, we established the correspondence of various concepts in programming languages and set theory --- sets resemble types, functions resemble methods/subroutines. This picture is made complete with products, that are like stripped-down *classes* (also called *records* or *structs*) --- the sets that form the product correspond to the class's *properties*  (also called *members*) and the functions for accessing them are like what programmers call *getter methods* e.g. the famous example of object-oriented programming of a `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers. And objects with more than two values can be expressed as products the composites of which are themselves products.
 
 Using Products to Define Numeric Operations
 ---
 
-Products can also be used for expressing functions that take more than one argument. For example, "plus" and "minus", are functions from the set of products of two numbers to the set of numbers, (so, $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$). Of course, we cannot draw the function itself, even partly, because it has too much arrows and would look messy.
-
-Actually, here it is.
+Products can also be used for expressing functions that take more than one argument (and this is indeed how multi-param functions are implemented in languages who actually have tuples, like the ones from the ML family ). For example, "plus" is a function from the set of products of two numbers to the set of numbers, so, $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$. 
 
 ![The plus function](../02_category/plus.svg)
 
-Note that there are languages, such as the ones from the ML family, where the *pair* data structure (also called a *tuple*) is a first-level construct, and multi-argument functions are really implemented in this way. 
-
-<!--TODO: there are also languages (Haskell) where multi argument functions are implemented using currying -->
+In other words, products are extremely important concept, that is vital if you want to represent any kind of structure.
 
 Defining products in terms of sets 
 ---
 
-When we said that the product is a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). But we didn't define how ordered pairs formally. Note that the criteria for order prevents us from encoding the pair as just a set containing the two elements, as while some mathematical operations (such as addition) indeed don't care about order, others (such as subtraction) do. And in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.
+A product, as we said, a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). So, to define a product we must define the concept of an ordered pair. So how can we do that? Note that an ordered pair of elements is not just set containing the two elements ---  that would just be a *pair*, but not an *ordered pair*). 
+
+Rather, an ordered pair is a structure that contains two objects as well as information about which of those objects is the first and which one is second (and in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.)
+
+The ordered part is important as, while some mathematical operations (such as addition) don't care about order, others (such as subtraction) do (and in programming, when we manipulate an object we obviously want to access a specific property, not just any random property).
 
 ![A pair](../02_category/pair.svg)
 
-So does that mean that we have to define ordered pair as a "primitive" type, like we defined sets in order to use them? That's possible, but there is another approach if we can define a construct that is *isomorphic* to the ordered pair, using only sets, we can use that construct instead of them. And mathematicians had come up with multiple ingenious ways to do that. Here is the first one, which was discovered by Norbert Wiener in 1914. Note the smart use of the fact that the empty set is unique. 
+So does that mean that we have to define ordered pair as a "primitive" type, like we defined sets in order to use them? That's possible, but there is another approach if we can define a construct that is *isomorphic* to the ordered pair, using only sets, we can use that construct instead of them. And mathematicians had come up with multiple ingenious ways to do that. Here is the first one, which was suggested by Norbert Wiener in 1914. Note the smart use of the fact that the empty set is unique. 
 
 ![A pair, represented by sets](../02_category/pair_as_set_2.svg)
 
-The next one was discovered in the same year by Felix Hausdorff. In order to use that one, we just have to define $1$, and $2$ first.
+The next one was suggested in the same year by Felix Hausdorff. In order to use that one, we just have to define $1$, and $2$ first.
 
 ![A pair, represented by sets](../02_category/pair_as_set_3.svg)
 
-Discovered in 1921 Kazimierz Kuratowski, this one uses just the component of the pair.
+Suggested in 1921 Kazimierz Kuratowski, this one uses just the component of the pair.
 
 ![A pair, represented by sets](../02_category/pair_as_set_1.svg)
 
 Defining products in terms of functions 
 ---
 
-In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of. I call this the *low-level* approach. This time we will try to do the opposite --- be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, and try to define the product in terms of functions and functional composition. Effectively we will be working at a *higher level* of abstraction.
+In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of We may think of this as a *low-level* approach to the definition. This time we will try to do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, we will attempt to fly over the difficulties that we met in the previous section and provide a definition of a product in terms of functions and *external* diagrams.
 
-How can we define products in terms of functions? To do that, we must first think about *what functions* are there for a given product, and we have two of those --- the functions for retrieving the two elements of the pair (the "getters", so to say). Formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. 
+How can we define products in terms of external diagrams i.e. given two sets how can we pinpoint the set that is their product? To do that, we must first think about *what functions* are there for a given product, and we have two of those --- the functions for retrieving the two elements of the pair (the "getters", so to say). 
+
+![Product](../02_category/product.svg)
+
+Formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. Now let's switch to the external view.
 
 ![Product, external diagram](../02_category/product_external.svg)
 
-This diagram already provides a definition, but not a complete definition, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other such objects.
+This diagram already provides a definition, but not a complete definition, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other objects that qualify as well.
 
 ![Product, external diagram](../02_category/product_candidates.svg)
 
-However, all such objects would be *more complex* than the pair objects. And for this reason, *they all can be converted to it by a function*, as you can always have a function that converts a more complex structure, to a simpler one (we saw an example of this when we covered the functions that convert subsets to their supersets). 
-
-This observation is true, because the pair is nothing more than the sum of its elements, and so all other objects that encode the pair also contain something else.
-
-More formally, if we suppose that there is a set $I$ that can serve as an impostor product of sets $B$ and $Y$ i.e. that $I$ is such that there exist two functions, which we will call $b: I → B$ and $y: I → Y$ that allow us to derive elements $B$ and $Y$ from it, then there must also exist a function with the type signature $I → B \times Y$ that converts the impostor from the true product. We can be sure that this function exists because $I$ (being an impostor) would contain some extra information other than the information contained in the true pair. So given we have functions $b: I → B$ and $y: I → Y$ that function would be $(i) → b(i) \times y(i)$ for each element $i:I$.
-
-Therefore, we can define the product of $B$ and $Y$ as a set that has functions for deriving $B$ and $Y$, but, more importantly, all other sets that have such functions can be converted to it. 
+However, the set of triples  $Y \times B \times R$ is connected to $Y$ and $B$ only because it can be converted to $Y \times B$: the arrow $Y \times B \times R \to B$ is just the composition of the arrow $Y \times B \times R \to Y \times B$ and the arrow  $Y \times B \to B$. The same reasoning applies to all other objects.
 
 ![Product, external diagram](../02_category/products_morphisms.svg)
 
-In category theory, this type of property that a given object might possess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*. I don't want to go into more detail, as it is a bit early for that now (after all we haven't even defined what category theory is). 
+(Intuitively, all such objects would be *more complex* than the pair objects and you can always have a function that converts a more complex structure, to a simpler one (we saw an example of this when we covered the functions that convert subsets to their supersets).)
 
-One thing that I like to point out is that this definition (as, by the way, all the previous ones) does not rule out the sets which are isomorphic to the product --- when we represents things using universal properties, an isomorphism is the same as equality.
+More formally, if we suppose that there is a set $I$ that can serve as an impostor product of sets $B$ and $Y$ i.e. that $I$ is such that there exist two functions, which we will call $ib: I → B$ and $iy: I → Y$ that allow us to derive elements $B$ and $Y$ from it, then there must also exist a unique function with the type signature $I → B \times Y$ that converts the impostor from the true product, and $ib$ and $iy$ are just results of composing that function with the usual "getter" functions that go from the pair to the elements (i.e. whichever object we pick for $I$, this digram would commute).
+
+![Product, universal property](../02_category/product_universal_property.svg)
+
+
+In category theory, this type of property that a given object might possess (participating in a structure such that all similar objects can be converted to/from it) is called a *universal property*. We won't go into more detail about this, as it is a bit early for that now (after all we haven't even yet said what category theory is). 
+
+One thing that we need to point out is that this definition (as, by the way, all the previous ones) does not rule out the sets which are isomorphic to the product --- when we represents things using universal properties, an isomorphism is the same as equality. This is the same viewpoint that we must adopt in programming, especially when we work on the higher level --- there might be many different implementations of pair (e.g. ones provided by different libraries), but as long as they work in the same way (i.e. we can convert one to the other and vice versa) they are all the same for us).
 
 Sums
 ===
@@ -141,15 +142,15 @@ We can immediately see the connection with the *or* logical structure: For examp
 Defining Sums in Terms of Sets
 ---
 
-As with the product, representing sums in terms of sets is not so straightforward. This time the complication comes from the fact that when a given object is an element of both sets, then it appears in the sum twice. This is why this type of sum of two sets is also called a *disjoint union*. Because of this, if two sets can have the same element as a member, then their sum will have that element twice which is not permitted, because a set cannot contain the same element twice. As with the product, the solution is to put some extra structure.
+As with the product, representing sums in terms of sets is not so straightforward e.g. when a given object is an element of both sets, then it appears in the sum twice which is not permitted, because a set cannot contain the same element twice. 
+
+As with the product, the solution is to put some extra structure.
 
 ![A member of a coproduct](../02_category/coproduct_member.svg)
 
-And as with the product, there is a low-level way to express a sum using sets alone. Incidentally, we can use pairs.
+And, as with the product, there is a low-level way to express a sum using sets alone. Incidentally, we can use pairs.
 
 ![A member of a coproduct, examined](../02_category/coproduct_member_set.svg)
-
-But again, this distinction is only relevant only when the two sets have common elements. If they don't then just uniting the two sets is sufficient to represent their sum.
 
 Defining sums in terms of functions
 ---
@@ -164,12 +165,12 @@ As you might have already noticed, this definition is pretty similar to the defi
 
 ![Coproduct, external diagram](../02_category/coproduct_candidates.svg)
 
-All these sets express relationships which are more vague than the simple sum, and therefore given such a set (an "impostor" set as we called it earlier), there would exist a function that would distinguish it from the true sum. The only difference is that, unlike with the products, this time this function goes *from the sum* to the impostor.
+All these sets express relationships which are more vague than the simple sum, and therefore given such a set (an "impostor" set as we called it earlier), there would exist a unique function that would distinguish it from the true sum. The only difference is that, unlike with the products, this time this function goes *from the sum* to the impostor.
 
 ![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
 
 
-Categorical Duality 
+Interlude: Categorical Duality 
 ===
 
 The concepts of product and sum might already look similar in a way when we view them through their internal diagrams, but once we zoom out to the external view, and we draw the two concepts external diagrams, this similarity is quickly made precise.
@@ -188,8 +189,8 @@ In category theory, concepts that have such a relationship are said to be *dual*
 
 {% if site.distribution == 'print'%}
 
-Interlude --- De Morgan duality
-===
+De Morgan duality
+---
 
 Now let's look at how the concepts of product and sum from the viewpoint of *logic*. We mentioned that:
 
@@ -202,11 +203,11 @@ By the same token, the concept of a *sum* ($+$) corresponds the *or* relation in
 
 This means, among other things, that the concepts of *and* and *or* are also dual --- an idea which was put forward in the 19th century by the mathematician Augustus De Morgan and is henceforth known as *De Morgan duality*, and which is a predecessor to the modern idea of duality in category theory, that we examined before. 
 
-This duality is subtly encoded in the logical symbols for *and* and *or* ($\land$ and $\lor$) --- they are nothing but stylized-versions of the diagrams of products and coproducts.
+This duality is subtly encoded in the logical symbols for *and* and *or* ($\land$ and $\lor$) --- they are nothing but stylized-versions of the diagrams of products and coproducts (yes, I know they are reversed, but still)...
 
 ![Coproduct and product](../02_category/demorgan_duality.svg)
 
-To understand, the connection, consider the two formulas which are most often associated with De Morgan which are known as De Morgan laws, although De Morgan didn't actually discover those (they were previously formulated, by William of Ockham (of "Ockham's razor" fame) among other people.
+The duality of $\land$ and $\lor$ can be seen in the two formulas that are most often associated with De Morgan which are known as De Morgan laws (although De Morgan didn't actually discover those (they were previously formulated, by William of Ockham (of "Ockham's razor" fame, among other people)).
 
 $\neg(A \wedge B) = \neg{A} \vee \neg{B}$
 
@@ -226,21 +227,130 @@ $\neg{A} \vee \neg{B}$
 
 However, this statement is clearly not the opposite of "blond *or* brown"(saying that my hair is not blond *or* not brown does in fact allow it to be blond and also allows for it to be brown, it just doesn't allow it to be both of these things).
 
-So what have we missed? Simple:  although we replaced the propositions that constitute our proposition with their opposites, we didn't replace the operator that connects them --- it is still *or* for both propositions. So we must replace it with *or* converse. As we said earlier, and as you can see by analyzing this example, this operator is *and* So the formula becomes "not blond *and* not brown".
+So what have we missed? Simple:  we replaced the propositions with their opposites, but we didn't replace the *operator* that connects them --- it is still *or* for both propositions. So we must replace it with *or* converse. As we said earlier, and as you can see by analyzing this example, this operator is *and* So the formula becomes "not blond *and* not brown".
 
 $\neg{A} \wedge \neg{B}$ 
 
-Saying that this formula is the opposite or "blond and brown" --- is the same thing as saying that it is equivalent to its negation, which is precisely what the second De Morgan formula says.
+Saying that this formula is the opposite or "blond and brown" --- is the same thing as saying that it is equivalent to its negation, which is precisely what the second De Morgan law says.
 
 $\neg(A \vee B) = \neg{A} \wedge \neg{B}$
 
-And if we "flip" this whole formula (we can do that without changing the signs of the individual propositions, as it is valid for all propositions) we get the first formula.
+And if we "flip" this whole formula (we can do that without changing the signs of the individual propositions, as it is valid for all propositions) we get the first law.
 
 $\neg(A \wedge B) = \neg{A} \vee \neg{B}$
 
-This probably provokes a lot of questions, but I won't get into more detail here, as we have a whole chapter on logic. But before we get to it, we have to see what categories are.
+This probably provokes a lot of questions and we have a whole chapter about logic to address those. But before we get to it, we have to see what categories (and sets) are.
 
 {% endif %}
+
+Defining the rest of set theory using functions
+===
+
+So far, we saw some amazing ways of defining set-theoretic constructs without looking at the set elements and by only using functions and external diagrams.
+
+In the first chapter we defined functions and functional composition with this digram.
+
+![Functional composition](../02_category/functions_compose_sets.svg)
+
+And now, we also defined products and sums.
+
+![Coproduct and product](../02_category/coproduct_product_duality.svg)
+
+What's even more amazing, is that we can define *all of set-theory* using just functions, as suggested by the category theory pioneer Francis William Lawvere. 
+
+Defining set elements using functions
+---
+
+Traditionally, everything in set theory is defined in terms of two things: *sets* and *elements*, so, if we want to define it using *sets* and *functions*, we must define the concept of a *set element* in terms of functions.
+
+To do so, we will use the singleton set.
+
+![The singleton set](../02_category/elements_singleton.svg)
+
+OK, let's start by taking a random set which we want to describe.
+
+![A set of three elements](../02_category/elements_set.svg)
+
+And let's examine the functions from the singleton set, to that random set.
+
+![Functions from the singleton set](../02_category/elements_singleton_functions.svg)
+
+It's easy to see that there would be exactly one function for each element of the set i.e. that each element of any set $X$ is isomorphic to a function $$1 \to X$$.
+
+So, we can say that what we call "elements" of a set are the functions from the singleton set to it.
+
+Defining the singleton set using functions
+---
+
+Now, as we came up with some definition of set *element*, using just functions, we can try to draw the elements of our set as an external diagram.
+
+![Functions from the singleton set](../02_category/elements_singleton_functions_partly_external.svg)
+
+However, our diagram is not yet fully external, as it depends on the idea of the singleton set, i.e. the set with one *element*. Furthermore, this makes the whole definition circular, as we have to already have the concept of an element in order to define the concept of an one-element set. 
+
+To avoid these dificulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, there is exactly one function from any other set to the singleton set i.e. if $1$ is the singleton set, then we have $\forall  X  \exists!  X \to 1$.
+
+![Terminal object](../02_category/terminal_object_internal.svg)
+
+It turns out that this property defines the singleton set uniquely i.e. there is no other set that has it, other than the sets that are isomorphic to the singleton set. This is simply because, if there are two sets that have it, those two sets would also have unique morphisms between *themselves* i.e. they would be isomorphic to one another. More formally, if we have two sets $X$ and $Y$, such that $\exists!X \to 1 \land \exists!Y \to 1$ then we also have $X \cong Y$.
+
+![Terminal object](../02_category/terminal_object_internal_isomorphisms.svg)
+
+And because there is no other set, other than the singleton set that has this property, we can use it as a definition of the singleton set and say that if we have $\forall  X  \exists!  X \to 1$, then $1$ is the singleton set.
+
+![Terminal object](../02_category/terminal_object.svg)
+
+With this, we aquire a fully-external definition (up to an isomorphism) of the singleton set, and thus a definition of a set element - the elements of set are just the functions from the singleton set to that set.
+
+![Functions from the singleton set](../02_category/elements_external.svg)
+
+Note that from this property it follows that the singleton set has exactly one element.
+
+![Functions from the singleton set](../02_category/singleton_elements_external.svg)
+
+**Question:** Why exactly (check the definition)? 
+
+Defining the empty set using functions
+---
+
+The empty set is the set that has no elements, but how would we say this without refering to elements?  
+
+We said that there exist a unique function that goes *from* the empty set *to* any other set. But the reverse is also true: the empty set is the only set such that there is exist a function from it to any other set. 
+
+![Initial object](../02_category/initial_object.svg)
+
+Observant readers will notice the similarities between the diagrams of initial and terminal object (yes the two concepts are, of course, dual).
+
+![Initial terminal duality](../02_category/initial_terminal_duality.svg)
+
+
+And some *even more* observant readers may also notice the similarities between the product/coproduct diagrams and the initial/terminal object diagrams.
+
+![Coproduct and product](../02_category/coproduct_product_duality.svg)
+
+(Folks keep it down please, you are *too observant* --- we have, like, 4 chapters till we get to this.)
+
+Functional application
+---
+
+Now, as amazed as we are, after seeing the functional definition of a set element, we might be inclined to ask the following: If elements are represented by functions, then how do you *apply* a given function to an element of one set, to get an element of another set?
+
+The answer is surprisingly simple --- in order to apply a function to a set, you must first select an element of the set and *selecting* an element from a set is the same as constructing a function from the singleton set to this element. 
+
+![Functional application - internal diagram](../02_category/application_internal.svg)
+
+And then *applying* a function to an element is the same as composing this function, with the function we want to apply. 
+
+![Functional application - external diagram](../02_category/application_external.svg)
+
+The result is the function that stands for the result of the application.
+
+Conclusion
+---
+
+In the future, we may cover the entirety of Lawvere's Elementary theory of the category of sets (or ETCS for short), and list all concepts and axioms that are needed to define a rigorous set theory using functions, but this is enough for you to get the main idea: these these axioms constitute an definition of set theory, which is based entirely on functions. This is big, but there is an even bigger thing there: because it is more general than the traditional definition, this new definition also applies to objects that are not exactly sets, but are *like* sets in some respects. 
+
+You may say that they apply to a whole different *categories of objects*.
 
 Category Theory --- brief definition
 ===
@@ -249,9 +359,9 @@ Maybe it is about time to see what a category is. We will start with a short def
 
 ![Category theory and set theory compared](../02_category/set_category.svg)
 
-When we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion, but we saw how taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. 
+When we are at the realm of sets we can view the set as a collection of individual elements. In category theory we don't have such notion. However taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. Plus we always have a way to "go back" to set theory, using the tricks from the last section.
 
-Still why would we want to restrict ourselves from looking at the individual elements? It is because, in this way we can relate this viewpoint to objects other than sets. We already discussed one such object --- types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets, and programming methods are somewhat similar to functions between sets, but they are not exactly identical? A formal connection between the two can be made via category theory. 
+But why would we want to have this more general definition? It is because, in this way we can use our theory to describe objects other than sets. We already discussed one such object --- types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets, and programming methods are somewhat similar to functions between sets, but they are not exactly identical? Category theory allows us to generalize the similarities of these... ahem, categories.
 
 | Category Theory | Set theory | Programming Languages |
 | ---             | ---        | ---                   |
@@ -259,7 +369,7 @@ Still why would we want to restrict ourselves from looking at the individual ele
 | Objects and  Morphisms        | Sets and Functions   | Classes and methods |
 | N/A             | Element    | Object                |
 
-Category theory allows us to see the big picture when it comes to sets and similar structures --- looking at the table, we cannot help but notice the somehow weird, (but actually completely logical) symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the lens of category theory:
+Notice the somehow weird, (but actually completely logical) symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the lens of category theory:
 
 | Category Theory | Set theory | 
 | ---             | ---        |
@@ -274,18 +384,18 @@ By switching to external diagrams, we lose sight of the particular (the elements
 Sets VS Categories
 ---
 
-One remark before we go: in the last paragraphs I sound as if I'm *comparing* categories and sets (and rooting for categories, in order to get more copies of my book sold) and I don't want you to get the wrong impression that the two concepts are somehow competing with one another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. 
+One remark before we go: in the last paragraphs I sound as if category theory and set theory are somehow competing with one another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected to one another in some sort of hierarchy. 
 
 Abstract theories, like category theory and set theory, on the other hand, are more like *languages* for expressing such descriptions --- they still can be connected, and *are* connected in more than one way, but there is no inherent hierarchy between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you would see in the next chapter.
 
 Defining Categories (again)
 ===
 
-> "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra
+> "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra (from "On the cruelty of really teaching computing science")
 
 All category theory books (including this one) starts by talking about set theory. However looking back I really don't know why that is the case --- most books that focus around a given subject don't usually start off by introducing an *entirely different subject* before even starting to talk about the main one, even if the two subjects are so related. 
 
-Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do because everyone else does it. But one thing is for certain --- we don't *need* to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person).
+Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is just one of those things that people do, just because everyone else does it. But, one thing is for certain --- we don't *need* to study sets in order to understand categories. So now I would like to start over and talk about categories as a first concept. So pretend like this is a new book (I wonder if I can dedicate this to a different person).
 
 So. A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
@@ -363,12 +473,15 @@ This approach (composing indefinitely many things) for building stuff is often u
 Commuting diagrams
 ---
 
-The diagrams above, use colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant --- the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other. All other paths just belong in different diagrams. 
+The diagrams above, use colors to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant --- the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other. All other paths would just belong in different diagrams. 
 
 ![Composition of morphisms - a commuting diagram](../02_category/composition_commuting_diagram.svg)
 
-Diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
+As we mentioned briefly in the last chapter, all diagrams that are like that (ones in which any two paths between two objects are equivalent to one another) are called *commutative diagrams* (or diagrams that *commute*). All diagrams in this book (except the wrong ones) commute.
 
+More formally, a commuting diagram is a diagram in which given two objects $a$ and $b$ and two sequences of morphisms between those two objects, we can say that those sequences are equivalent. 
+
+The diagram above is one of the simplest commuting diagrams.
 
 A summary
 ---
@@ -385,6 +498,7 @@ This is it.
 
 Addendum: Why are categories like that?
 ===
+
 
 *Why* are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they *work*, I mean, look at how many applications are there. 
 
@@ -407,9 +521,12 @@ Like the previous one, the diagram expresses the same (simple) fact as the formu
 Associativity and reductionism
 ===
 
+> If, in some cataclysm, all of scientific knowledge were to be destroyed, and only one sentence passed on to the next generations of creatures, what statement would contain the most information in the fewest words? I believe it is the atomic hypothesis (or the atomic fact, or whatever you wish to call it) that all things are made of atoms—little particles that move around in perpetual motion, attracting each other when they are a little distance apart, but repelling upon being squeezed into one another. In that one sentence, you will see, there is an enormous amount of information about the world, if just a little imagination and thinking are applied. --- Richard Feynman
+
+
 Associativity --- what does it mean and why is it there? In order to tackle this question, we must first talk about another concept --- the concept of *reductionism*: 
 
-Reductionism is the idea that the behaviour of some more complex phenomenon can be understood in terms of a number of *simpler* and more fundamental phenomena, or in other words, the idea that things keep getting simpler and simpler as they get "smaller" (or when they are viewed at a lower level). Whether the reductionist view is *universally valid*, i.e. whether it is possible to expain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws), is a question that we can argue about until the that universe's inevitable collapse. But what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics --- each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it).
+Reductionism is the idea that the behaviour of some more complex phenomenon can be understood in terms of a number of *simpler* and more fundamental phenomena, or in other words, the idea that things keep getting simpler and simpler as they get "smaller" (or when they are viewed at a lower level), like for example, the behavior of matter can be understood through the understanding the behaviours of its costituents i.e. atoms. Whether the reductionist view is *universally valid*, i.e. whether it is possible to expain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws) is a question that we can argue about until that universe's inevitable collapse. But, what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics --- each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it). So, if this principle is so important, it would be benefitial to be able to formalize it, and this is what we will try to do now.
 
 Commutativity
 ---
@@ -433,7 +550,7 @@ Commutativity is the law abided in contexts in which any object can be represent
 
 In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all).
 
-But a weaker version of the law of reductionism would hold, namely that if we take a bunch of objects, combined in a certain order, it would be true that *any pair of those objects could, at any time, be replaced by the object we get by combining them*, i.e. if we have.
+But a weaker version of the law of reductionism would still hold in this case, namely that if we take a bunch of objects, combined in a certain order, it would be true that *any pair of those objects could, at any time, be replaced by the object we get by combining them*, i.e. if we have.
 
 (A, B) = D
 
@@ -445,6 +562,6 @@ or simply
 
 (A B) C = A (B C) 
 
-The essence of associativity (and of reductionism) is this ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
+And this, I think, is the essence of associativity (and of reductionism) --- ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
 
 {%endif%}
