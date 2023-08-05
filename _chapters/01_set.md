@@ -131,11 +131,11 @@ Note that the question "Who is my child?" is *NOT* a straightforward function, b
 The Identity Function
 ---
 
-For every set $G$, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element of $G$ to itself. It is called *the identity function* of $G$ or $idG: G → G$.
+For every set $G$, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element of $G$ to itself. It is called *the identity function* of $G$ or $ID_{G}: G → G$.
 
 ![The identity function](../01_set/function_identity.svg)
 
-You can think of $idG$ as a function which represents the set $G$ in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
+You can think of $ID_{G}$ as a function which represents the set $G$ in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
 
 Functions and Subsets
 ---
@@ -314,7 +314,7 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 We can define a function that is the equivalent to performing the operation described above. 
 That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$.
 
-Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \bullet g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
+Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
 ![Functional composition](../01_set/functions_compose.svg)
 
@@ -327,7 +327,7 @@ Composition of relationships
 
 To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
 
-If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \bullet g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
+If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \circ g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
 
 ![Functional composition connect](../01_set/morphism_general.svg)
 
@@ -351,7 +351,7 @@ By the way, diagrams that are "zoomed out" that show functions without showing s
 Composition and external diagrams 
 ---
 
-Let's look at the diagram that demonstrates functional composition in which we showed that successive application of the two composed functions ($f \bullet g$) and the new function ($h$) are equivalent.
+Let's look at the diagram that demonstrates functional composition in which we showed that successive application of the two composed functions ($f \circ g$) and the new function ($h$) are equivalent.
 
 ![Functional composition](../01_set/functions_compose.svg)
 
@@ -390,7 +390,7 @@ Invertible functions are called *isomorphisms*. When there exists an invertible 
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
-More formally, two sets $R$ and $G$ are isomorphic (or $R ≅ G$) if there exist functions $f: G → R$ and its reverse $g: R → G$, such that $f \bullet g = idR$ and $g \bullet f = idG$ (notice how the identity function comes in handy).
+More formally, two sets $R$ and $G$ are isomorphic (or $R ≅ G$) if there exist functions $f: G → R$ and its reverse $g: R → G$, such that $f \circ g = ID_{R}$ and $g \circ f = ID_{G}$ (notice how the identity function comes in handy).
 
 Isomorphism and identity
 ---
@@ -421,17 +421,17 @@ Composing two isomorphisms into another isomorphism is possible by composing the
 
 Informally, we can see that the two morphisms are indeed reverse to each other and hence form an isomorphism. If we want to prove that fact formally, we will do something like the following: 
 
-Given that if two functions are isomorphic, then their composition is equal to an identity function, proving that functions $g \bullet f$ and $f' \bullet g'$, are isomorphic is equivalent to proving that their composition is equal to identity.
+Given that if two functions are isomorphic, then their composition is equal to an identity function, proving that functions $g \circ f$ and $f' \circ g'$, are isomorphic is equivalent to proving that their composition is equal to identity.
 
-$g \bullet f \bullet f' \bullet g' = id$
+$g \circ f \circ f' \circ g' = id$
 
-But we know already that $f$ and $f'$ are isomorphic and hence $f\bullet f' = id$, so the above formula is equivalent to (you can reference the diagram to see what that means):
+But we know already that $f$ and $f'$ are isomorphic and hence $f\circ f' = id$, so the above formula is equivalent to (you can reference the diagram to see what that means):
 
-$g \bullet id \bullet g' = id$
+$g \circ id \circ g' = id$
 
 And we know that anything composed with $id$ is equal to itself, so it is equivalent to:
 
-$g \bullet g' = id$
+$g \circ g' = id$
 
 which is true, because $g$ and $g'$ are isomorphic and isomorphic functions composed are equal to identity.
 

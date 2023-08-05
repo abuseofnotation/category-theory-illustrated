@@ -205,7 +205,7 @@ There are abelian groups that are not cyclic, but, as we shall see below, the co
 Group isomorphisms
 ---
 
-We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now --- an isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \bullet b) = f(a) \bullet f(b)$. Visually, the diagrams of isomorphic groups have the same structure.
+We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now --- an isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \circ b) = f(a) \circ f(b)$. Visually, the diagrams of isomorphic groups have the same structure.
 
 ![Group isomorphism between different representations of S3](../03_monoid/group_isomorphism.svg)
 
@@ -407,7 +407,7 @@ The functions that represent the monoid elements have the same set as source and
 
 And the same is valid for the addition monoid --- number functions can be combined using functional composition.
 
-$+2 \bullet +3 \cong +5$
+$+2 \circ +3 \cong +5$
 
 So, basically the functions that represent the elements of a monoid also form a monoid, under the operation of functional composition (and the functions that represent the elements that form a group also form a group). 
 

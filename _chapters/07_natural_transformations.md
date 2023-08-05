@@ -37,34 +37,50 @@ This is simply because (though it may seem contradictory) *isomorphic objects ar
 
 ![Isomorphic categories](equal_categories.svg)
 
-However, they are equivalent.
+However, these categories they are equivalent.
 
-**Parmenides:** This category surely cannot be equal to the other one --- it has two objects!
+**Parmenides:** This category surely cannot be equal to the other one --- it has a different amount of objects!
 
 **Heraclitus:** Who cares bro, they are isomorphic.
+
+To understand it better, let's go back to the functor between a given map and the area it represents. In order for this functor to be invertible (and the categories --- isomorphic) the the map should represent the area completely: there should be arrow for each road and a point for each little place.
+
+![Isomorphic categories](isomorphic_map.svg)
+
+Such a map is necessary if your goal is to know about all *places*, however, like we said, when working with category theory, we are interested not in *places*, but in the *routes* that connect them i.e. we focus not on *objects* but on *morphisms*
+
+Suppose, that there are two intersections that are positioned in such a way that there are routes from one and to the other and vice-versa
+
+![Equivalent categories](equivalent_map.svg)
+
+Or suppose, (a better example, since, in reality, all intercections are linked) that you are graphing a process, in which there are two steps that are always preceded by the same steps and are also always succeeded by the same set of steps. Are they really different steps, or just versions of the same step. 
+
+![Equivalent categories](equivalent_process.svg)
+
+and so it is more apt to define equality with a concept that would only require for the objects to be equal *up to a unique isomorphism*. This concept is called **equivalence**. 
 
 Equivalence of orders
 ---
 
-To understand what I mean, let's go back to the functor between a given map and the area it represents. In order for this functor to be invertible (i.e. in order for the two categories to be isomorphic) the the map should represent the area completely, like there should be arrow for each road and a point for each little place.
+Now, we will present the definition of order equivalence. But let's start with order isomorphisms first. In the chapter about orders we presented a definition of order isomorphisms that is based on *set* isomorphisms, but, since we know about functors, we will present a new definition, based on functors: 
 
-![Isomorphic categories](isomorphic_map.svg)
+Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$. Furthermore, those two functors should be such that composing them leads us back where we started. More formally, when for all objects $a$ of $A$ and $b$ of $B$ we have $b = F(G(b))$ and $a = G(F(a))$ or alternatively (if we are using the identity morphisms), such that $ ID_{B} = F \circ G$ and $ ID_{A} = G \circ F$.
 
-But, like we said, in category theory, we are not interested in places, but in the *routes* that connect them.
+![isomorphic orders](isomorphic_orders.svg)
 
-![Isomorphic categories](isomorphic_map.svg)
+The equivalence of orders is the same, except you replace equality with isomorphism:
 
-So in other words, when we focus on objects, we would define two categories as equal if there exists an isomorphism between them. But when we focus on morphisms, then it is more apt to define equality with a concept that would only require for the objects to be equal *up to a unique isomorphism*. This concept is called **natural equivalence**.
+...such that $ ID_{B} \boldsymbol{\cong} F \circ G$ and $ ID_{A} \boldsymbol{\cong} G \circ F$.
 
-One way to understand natural equivalence relies on the concept of *equivalence classes* that we covered on the chapter about orders.
+![Equivalent orders](equivalent_orders.svg)
 
-So suppose, that there are two intersections that are positioned in such a way that for every road that goes to and from one of them, there is an identical road to the other one (maybe the one of these intercection was meant to replace the other one but it wasn't closed). Then suppose that you have a map which displays these two intercections as one and the same intercection. 
+By the way, remember the concept of equivalence classes that we covered in the orders chapter? Turns our that two orders are equivalent precisely when their equivalence classes orders are isomorphic.
+
+![Orders with isomorphic equivalence classes](equivalent_order_classes.svg)
 
 Equivalence of categories
 ---
-
-
-
+Now that we warmed our minds up with order equivalences, we are ready to tackle the little more-complex *categorical equivalences.*
 
 
 Natural transformations
