@@ -532,37 +532,53 @@ Reductionism is the idea that the behaviour of some more complex phenomenon can 
 Commutativity
 ---
 
-One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts*. Let's try to formalize that: the *things* that we are thinking about would be colorful balls and let's dub the *sum* with a circle operator. Then, it would mean that a set of objects when combined in whichever way, will always result in the same object. 
+One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts*. Let's try to formalize that. It would mean that a set of objects when combined in whichever way, will always result in the same object. 
 
-![Commutativity](../02_category/commutativity_long.svg)
+So, if we have
 
-And because of the wonders of maths we can get all these equalities if we specify the law for just two objects.
+$A \circ B \circ C = D$
 
-![Commutativity](../02_category/commutativity.svg)
+We also have 
+
+$B \circ A \circ C = X$
+
+$C \circ A \circ B = X$
+
+etc
+
+Or simply
+
+$A \circ B = B \circ  A$
 
 Incidentally this is the definition of a mathematicall law called *commutativity*.
 
-**Task:** if our objects are sets, which set operation is our sum?
+**Task:** if our objects are sets, which set operation can represents the sum?
 
 Associativity
 ---
 
-Commutativity is the law abided in contexts in which any object can be represented as the sum of its parts *when combined in whichever order*. But there are also many cases in which an object is to be represented by the sum of its parts, but when *combined in one specific way*.
+Commutativity law is abided only in contexts where the order is irrelevant i.e. in which an object can be represented as the sum of its parts *when combined in whichever way*. But there are many cases in which an object is to be represented by the sum of its parts, but only when *combined in one specific way*.
 
 In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all).
 
 But a weaker version of the law of reductionism would still hold in this case, namely that if we take a bunch of objects, combined in a certain order, it would be true that *any pair of those objects could, at any time, be replaced by the object we get by combining them*, i.e. if we have.
 
-(A, B) = D
+$A \circ  B = D$
 
-(B, C) = X
+and 
 
-(A, B, C) = D C = A X
+$B \circ  C = X$
+
+we would also have
+
+$(A \circ B \circ C) = D C = A X$
 
 or simply 
 
-(A B) C = A (B C) 
+$(A\circ  B)\circ  C = A \circ (B \circ C)$
 
-And this, I think, is the essence of associativity (and of reductionism) --- ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
+And this, I think, is the essence of associativity --- the ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
+
+Note that associativity only allows for combining things in one dimension. Later we will learn about extensions of category theory that allow for working in 2 dimensions.
 
 {%endif%}

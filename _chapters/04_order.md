@@ -270,7 +270,7 @@ We mentioned order isomorphisms several times already so this is about time to e
 
 ![Divides poset](../04_order/divides_poset_isomorphism.svg)
 
-When we talk about sets, an isomorphism means just a reversible function. But as orders, besides having their underlying sets, have the arrows that connect them, there is an additional requirement for a pair of functions to form an isomorphism --- to be an isomorphism, a function has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying the function (let's call it F) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ only if $F(a) ≤ F(b)$). 
+An order isomorphism is a isomorphism between the orders' underlying sets. However, as orders also have the arrows that connect them, there is one more condition: in order for a pair of functions to form an order isomorphism they have to *respect those arrows*, in other words they should be *order preserving*. More specifically, applying any of those functions (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ only if $F(a) ≤ F(b)$). 
 
 Birkhoff's representation theorem
 ---
@@ -384,7 +384,7 @@ In the previous section, we saw how removing the law of *totality* from the laws
 |Antisymmetry | X | X  |  |
 |Totality | X | | |
 
-The result is a structure called a *preorder* which is not exactly an order --- it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
+The result is a structure called a *preorder* which is not exactly an order in the everyday sense --- it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 
 ![preorder](../04_order/preorder.svg)
 

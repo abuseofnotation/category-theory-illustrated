@@ -1,6 +1,6 @@
+---
 layout: default
 title: Natural transformations
----
 
 Natural transformations 
 ===
@@ -47,34 +47,42 @@ To understand it better, let's go back to the functor between a given map and th
 
 ![Isomorphic categories](isomorphic_map.svg)
 
-Such a map is necessary if your goal is to know about all *places*, however, like we said, when working with category theory, we are interested not in *places*, but in the *routes* that connect them i.e. we focus not on *objects* but on *morphisms*
+Such a map is necessary if your goal is to know about all *places*, however, like we said, when working with category theory, we are not so interested in *places*, but in the *routes* that connect them i.e. we focus not on *objects* but on *morphisms*.
 
-Suppose, that there are two intersections that are positioned in such a way that there are routes from one and to the other and vice-versa
+For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may may collapse them into one intercection and still show all routes that exist. 
 
 ![Equivalent categories](equivalent_map.svg)
 
-Or suppose, (a better example, since, in reality, all intercections are linked) that you are graphing a process, in which there are two steps that are always preceded by the same steps and are also always succeeded by the same set of steps. Are they really different steps, or just versions of the same step. 
+We see that although these two categories are *not isomorphic* going from one of them to the other and back again always leads you, if not to the same, at least to *isomophic objects and morphisms*.
 
-![Equivalent categories](equivalent_process.svg)
+![Equivalent categories](equivalent_map_equivalence.svg)
 
-and so it is more apt to define equality with a concept that would only require for the objects to be equal *up to a unique isomorphism*. This concept is called **equivalence**. 
+In this case we say that these categories are *equivalent*.
 
 Equivalence of orders
 ---
 
-Now, we will present the definition of order equivalence. But let's start with order isomorphisms first. In the chapter about orders we presented a definition of order isomorphisms that is based on *set* isomorphisms, but, since we know about functors, we will present a new definition, based on functors: 
+Before we present a formal definition of order isomorphisms, we need to revise the definition of order isomorphisms.
 
-Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$. Furthermore, those two functors should be such that composing them leads us back where we started. More formally, when for all objects $a$ of $A$ and $b$ of $B$ we have $b = F(G(b))$ and $a = G(F(a))$ or alternatively (if we are using the identity morphisms), such that $ ID_{B} = F \circ G$ and $ ID_{A} = G \circ F$.
+In the chapter about orders we presented a definition of order isomorphism that is based on *set* isomorphisms.
+
+> An order isomorphism is a isomorphism between the orders' underlying sets. However, as orders also have the arrows that connect them, there is one more condition: in order for a pair of functions to form an order isomorphism they have to *respect those arrows*, in other words they should be *order preserving*. More specifically, applying any of those functions (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ only if $F(a) ≤ F(b)$). 
+
+But, since we know about functors, we will present a new definition, based on functors: 
+
+> Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$. Furthermore, those two functors should be such that composing them leads us back where we started. More formally, when for all objects $a$ of $A$ and $b$ of $B$ we have $b = F(G(b))$ and $a = G(F(a))$ or alternatively (if we are using the identity morphisms), such that $ ID_{B} = F \circ G$ and $ ID_{A} = G \circ F$.
 
 ![isomorphic orders](isomorphic_orders.svg)
 
+**Task:** Show that the two definitions are equivalent.
+
 The equivalence of orders is the same, except you replace equality with isomorphism:
 
-...such that $ ID_{B} \boldsymbol{\cong} F \circ G$ and $ ID_{A} \boldsymbol{\cong} G \circ F$.
+> Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$. Furthermore, those two functors should be such that composing them leads us back where we started. More formally, when for all objects $a$ of $A$ and $b$ of $B$ we have $b = F(G(b))$ and $a = G(F(a))$ or alternatively (if we are using the identity morphisms), such that $ ID_{B} \boldsymbol{\cong} F \circ G$ and $ ID_{A} \boldsymbol{\cong} G \circ F$.
 
 ![Equivalent orders](equivalent_orders.svg)
 
-By the way, remember the concept of equivalence classes that we covered in the orders chapter? Turns our that two orders are equivalent precisely when their equivalence classes orders are isomorphic.
+By the way, remember the concept of equivalence classes that we covered in the orders chapter? Turns our that two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
 ![Orders with isomorphic equivalence classes](equivalent_order_classes.svg)
 
