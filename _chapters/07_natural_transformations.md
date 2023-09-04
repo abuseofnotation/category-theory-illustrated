@@ -1,6 +1,6 @@
----
 layout: default
 title: Natural transformations
+---
 
 Natural transformations 
 ===
@@ -16,7 +16,7 @@ The categorical way AKA Objects are overrated
 
 > The world is the collection of facts, not of things. --- Ludwig Wittgenstein
 
-Some 2500 years ago, the philosopher Parmenides postulated that everything in the universe exists as part of an unchanging nature, and what we see as transformations are merely illusory appearances and so the nature of the universe is permanence. Although far from obviously true, his view is easy to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics), can be viewed as an object. And so we might be inclined to think, that the key to understanding the world is understanding *what objects are*. This is what set theory does, from one standpoint (as well as classical logic) --- the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are saying that *all objects can be represented by sets*.
+Some 2500 years ago, the philosopher Parmenides postulated that the nature of universe is permanence, and what we see as transformations are merely illusory appearances. Although far from obviously true, his view is easy to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics), can be viewed as an object. And so we might be inclined to think, that the key to understanding the world is understanding *what objects are*. This is what set theory does, from one standpoint (as well as classical logic) --- the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are saying that *all objects can be represented by sets*.
 
 However, there is another way to look at things. What is an object, when viewed by itself? Can we study an object in isolation and will there anything left to study about it, once it is detached from its environment? And, as Theseus once asked, if a given object undergoes a process to get all of it's part replaced, is it still the same object?
 
@@ -26,14 +26,14 @@ Although old, (dating back to Parmenides' rival  Heraclitus) this view has been 
 
 So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter ---  what does it mean for two categories to be equal. 
 
-Equivalence 
+Isomorphisms and equivalence 
 ===
 
-In the prev chapter, we talked a lot about how great isomorphisms are and how important they are for category theory, but at the same time we said that *categorical isomorphisms* do not capture the concept of equality.
+In the prev chapter, we talked a lot about how great isomorphisms are and how important they are for defining the concept of equality in category theory, but at the same time we said that *categorical isomorphisms* do not capture the concept of equality of categories.
 
 ![Isomorphic categories](isomorphic_categories.svg)
 
-This is simply because (though it may seem contradictory) *isomorphic objects aren't considered equal* according to categorical isomorphisms i.e. a categories that only differ by having some additional isomorphic objects aren't isomorphic themselves 
+This is simply because (though it may seem contradictory) *isomorphic objects and morphisms aren't considered equal* according to categorical isomorphisms i.e. categories that only differ by having some additional isomorphic objects aren't isomorphic themselves 
 
 ![Isomorphic categories](equal_categories.svg)
 
@@ -43,7 +43,7 @@ However, these categories they are equivalent.
 
 **Heraclitus:** Who cares bro, they are isomorphic.
 
-To understand it better, let's go back to the functor between a given map and the area it represents. In order for this functor to be invertible (and the categories --- isomorphic) the the map should represent the area completely: there should be arrow for each road and a point for each little place.
+To understand equivalent categories better, let's go back to the functor between a given map and the area it represents. In order for this functor to be invertible (and the categories --- isomorphic) the the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
 
 ![Isomorphic categories](isomorphic_map.svg)
 
@@ -53,43 +53,61 @@ For example, if there are intersections that are positioned in such a way that t
 
 ![Equivalent categories](equivalent_map.svg)
 
-We see that although these two categories are *not isomorphic* going from one of them to the other and back again always leads you, if not to the same, at least to *isomophic objects and morphisms*.
+We see that, although these two categories are *not isomorphic*, going from one of them to the other and back again always leads you, if not to the same, at least to *isomophic objects and morphisms*.
 
 ![Equivalent categories](equivalent_map_equivalence.svg)
 
 In this case we say that these categories are *equivalent*.
 
 Equivalence of orders
----
+===
 
-Before we present a formal definition of order isomorphisms, we need to revise the definition of order isomorphisms.
+Before we present a formal definition of order equivalence, we need to revise the definition of order isomorphisms.
 
 In the chapter about orders we presented a definition of order isomorphism that is based on *set* isomorphisms.
 
-> An order isomorphism is a isomorphism between the orders' underlying sets. However, as orders also have the arrows that connect them, there is one more condition: in order for a pair of functions to form an order isomorphism they have to *respect those arrows*, in other words they should be *order preserving*. More specifically, applying any of those functions (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ only if $F(a) ≤ F(b)$). 
-
+> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertable function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertable function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 But, since we know about functors, we will present a new definition, based on functors: 
 
-> Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$. Furthermore, those two functors should be such that composing them leads us back where we started. More formally, when for all objects $a$ of $A$ and $b$ of $B$ we have $b = F(G(b))$ and $a = G(F(a))$ or alternatively (if we are using the identity morphisms), such that $ ID_{B} = F \circ G$ and $ ID_{A} = G \circ F$.
+> Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$, such that composing one with the other leads us back to the same object. 
+
+> More formally, for all objects $a$ of $A$ and $b$ of $B$ we should have have $b = F(G(b))$ and $a = G(F(a))$ (or alternatively $ ID_{B} = F \circ G$ and $ ID_{A} = G \circ F$).
 
 ![isomorphic orders](isomorphic_orders.svg)
 
 **Task:** Show that the two definitions are equivalent.
 
-The equivalence of orders is the same, except you replace equality with isomorphism:
+The equivalence of orders is the same, except you replace equality with isomorphism (and $=$ with $\cong$): 
 
-> Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$. Furthermore, those two functors should be such that composing them leads us back where we started. More formally, when for all objects $a$ of $A$ and $b$ of $B$ we have $b = F(G(b))$ and $a = G(F(a))$ or alternatively (if we are using the identity morphisms), such that $ ID_{B} \boldsymbol{\cong} F \circ G$ and $ ID_{A} \boldsymbol{\cong} G \circ F$.
+Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$, such that composing one with the other leads us to the same *or to an isomorphic* object. 
+
+More formally, for all objects $a$ of $A$ and $b$ of $B$ we should have have $b \boldsymbol{\cong} F(G(b))$ and $a \boldsymbol{\cong} G(F(a))$ (or alternatively $ ID_{B}  \boldsymbol{\cong} F \circ G$ and $ ID_{A} \boldsymbol{\cong} G \circ F$).
 
 ![Equivalent orders](equivalent_orders.svg)
 
-By the way, remember the concept of equivalence classes that we covered in the orders chapter? Turns our that two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
+Order equivalence and equivalence classes
+---
+
+By the way, remember the concept of *equivalence classes* that we covered in the chapter about orders? Turns out that this concept is related. To see how, we visualize the equivalence classes of the two equivalent orders that we saw above.
 
 ![Orders with isomorphic equivalence classes](equivalent_order_classes.svg)
 
-Equivalence of categories
----
-Now that we warmed our minds up with order equivalences, we are ready to tackle the little more-complex *categorical equivalences.*
+It turns our that two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
+**Task**: Prove this.
+
+Equivalence of categories
+===
+
+Now that we warmed our minds up with order equivalences, we are ready to tackle the little more-complex *categorical equivalences.* This is going to be similar to that time we moved from order functors (monotone maps) to categorical functors, and, as with functors, the definition would *look* a lot more complicated, but will actually be just an upgrade of the definition that we have for orders.
+
+Why do we need to upgrade the definition? In categories we can have more than one morphism between any two objects, and so even when the objects we get when we apply the two functors one after the other are isomorphic, the functions may not be, for example the following two categories are *not* equivalent (the category on the left has just one morphism, but the category on the right has two).
+
+![Non-equivalent categories](unequal_categories.svg)
+
+This might seem at odds with the idea that a map is equal to its territory when it covers all routes that exist, as in this case both categories we have a route between the two objects, however a route is not just about going from point A to point B, just like a function that converts a number to a boolean value is not just its type signature. This is easy to ignore in the context of orders where we have, by definition, just one route between two objects, but still necessary to consider when we talk about categories.
+
+So how do we make the definition of equivalence more general, so it applies to all categories? 
 
 Natural transformations
 ===

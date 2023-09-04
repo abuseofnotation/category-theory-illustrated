@@ -270,8 +270,7 @@ We mentioned order isomorphisms several times already so this is about time to e
 
 ![Divides poset](../04_order/divides_poset_isomorphism.svg)
 
-An order isomorphism is a isomorphism between the orders' underlying sets. However, as orders also have the arrows that connect them, there is one more condition: in order for a pair of functions to form an order isomorphism they have to *respect those arrows*, in other words they should be *order preserving*. More specifically, applying any of those functions (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ only if $F(a) ≤ F(b)$). 
-
+> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertable function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertable function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 Birkhoff's representation theorem
 ---
 
