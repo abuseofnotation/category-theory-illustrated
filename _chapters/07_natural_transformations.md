@@ -9,7 +9,7 @@ Natural transformations
 
 In this chapter, we will introduce the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
 
-Natural transformations really are at the heart of category theory --- As a matter of fact, category theory was invented with the purpose of studying natural transformations. However, the importance of natural transformations is not obvious at first, and so, before introducing them, I like to talk about the body of knowledge that this heart maintains (I am good with methaphors... in principle).
+Natural transformations really are at the heart of category theory --- As a matter of fact, category theory was invented with the purpose of studying natural transformations. However, the importance of natural transformations is not obvious at first, and so, before introducing them, I like to talk about the body of knowledge that this heart maintains (I am good with metaphors... in principle).
 
 The categorical way AKA Objects are overrated
 ===
@@ -24,7 +24,7 @@ Asking such questions might lead us to suspect that, although what we *see* when
 
 Although old, (dating back to Parmenides' rival  Heraclitus) this view has been largely unexplored, both in the realm of philosophy, and that of mathematics. But it is deeply engrained in category theory. For example, when we say that a given property defines an object *up to a unique isomorphism* what we mean is exactly this --- that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms from/to all other objects in the category (have the same *functions* in the category), then these objects are, for all intends and purposes, equivalent. And the key to understanding how this works are natural transformations.
 
-So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were poundering at the beginning of the previous chapter ---  what does it mean for two categories to be equal. 
+So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were pondering at the beginning of the previous chapter ---  what does it mean for two categories to be equal. 
 
 Isomorphisms and equivalence 
 ===
@@ -49,7 +49,7 @@ To understand equivalent categories better, let's go back to the functor between
 
 Such a map is necessary if your goal is to know about all *places*, however, like we said, when working with category theory, we are not so interested in *places*, but in the *routes* that connect them i.e. we focus not on *objects* but on *morphisms*.
 
-For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may may collapse them into one intercection and still show all routes that exist. 
+For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may may collapse them into one intersection and still show all routes that exist. 
 
 ![Equivalent categories](equivalent_map.svg)
 
@@ -66,7 +66,7 @@ Before we present a formal definition of order equivalence, we need to revise th
 
 In the chapter about orders we presented a definition of order isomorphism that is based on *set* isomorphisms.
 
-> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertable function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertable function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
+> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 But, since we know about functors, we will present a new definition, based on functors: 
 
 > Given two orders $A$ and $B$, an *order isomorphism* consists of two functors $F: A \to B$ and $G: B \to A$, such that composing one with the other leads us back to the same object. 
@@ -125,7 +125,7 @@ Note that the functors are similar have the same signature --- both their input 
 Building the object mapping mapping
 ---
 
-A functor is comprised of two components --- object mapping and morphism mapping, so a natural transformatiom, being a morphism between functors, should take those two mappings into account.
+A functor is comprised of two components --- object mapping and morphism mapping, so a natural transformation, being a morphism between functors, should take those two mappings into account.
 
 Let's first connect the object mappings of the two functors, creating what we called "object mapping mapping". It is simpler than it sounds when we realize that we only need to connect the object in functors' *target category*. The objects in the source category would just always be the same as both functors would include *all* object from the source category, (because that is what functions do, right?)
 
@@ -157,7 +157,7 @@ If you look just a little bit closely, you will see that the only difference bet
 Natural transformations again
 ===
 
-Now that we saw the definition of natural transformations, it is time to see the definition of natural transformations (and if you feel that the quality of the humour in this book is deteoriating, that's only because *things are getting serious*).
+Now that we saw the definition of natural transformations, it is time to see the definition of natural transformations (and if you feel that the quality of the humour in this book is deteriorating, that's only because *things are getting serious*).
 
 I am sure that once you saw one definition of a natural transformation, you just cannot get enough of them. So let's work out one more. Let's start with our two functors.
 
@@ -195,7 +195,7 @@ That is because the category with two objects and one morphism (which, if you re
 
 Formal definition
 ---
-Let's state formally what we saw in these diagrams. As you remember we call our two functors $F$ and $G$ and the our categoris $C$ and $D$ (so $F : C \to D$ and $G : C \to D$). 
+Let's state formally what we saw in these diagrams. As you remember we call our two functors $F$ and $G$ and the our categories $C$ and $D$ (so $F : C \to D$ and $G : C \to D$). 
 
 Also, we call the category with two connected objects $2$ and the morphisms in it are $0$ and $1$.
 

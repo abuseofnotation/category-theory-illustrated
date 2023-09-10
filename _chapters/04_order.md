@@ -56,7 +56,7 @@ Let's get the most boring law out of the way --- each object has to be bigger or
 
 ![Reflexivity](../04_order/reflexivity.svg)
 
-Thre is no special reason for this law to exist, except that the "base case" should be covered somehow. 
+There is no special reason for this law to exist, except that the "base case" should be covered somehow. 
 
 We can formulate it the opposite way too and say that each object should *not* have the relationship to itself, in which case we would have a relation than resembles *bigger than*, as opposed to *bigger or equal to* and a slightly different type of order, sometimes called a *strict* order.
 
@@ -270,7 +270,7 @@ We mentioned order isomorphisms several times already so this is about time to e
 
 ![Divides poset](../04_order/divides_poset_isomorphism.svg)
 
-> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertable function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertable function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
+> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 Birkhoff's representation theorem
 ---
 
@@ -325,7 +325,7 @@ The difference between the two is small but crucial:  in a tree, each element ca
 
 A good intuition for the difference between the two is that a semilattice is capable of representing much more general relations, so for example, the mother-child relation forms a tree (a mother can have multiple children, but a child can have *only one* mother), but the "older sibling" relation forms a lattice, as a child can have multiple older siblings and vise versa.
 
-Why am I speaking about trees? It's because people tend to use them for modelling all kinds of phenomena and to imagine everything a a tree. The tree is the structure that all of us undestand, that comes at us naturally, without even realizing that we are using a structure --- most human-made hierarchies are modelled as trees. A typical organization of people are modelled as trees - you have one person at the top, a couple of people who report to them, then even more people that report to this couple of people.
+Why am I speaking about trees? It's because people tend to use them for modelling all kinds of phenomena and to imagine everything a a tree. The tree is the structure that all of us understand, that comes at us naturally, without even realizing that we are using a structure --- most human-made hierarchies are modelled as trees. A typical organization of people are modelled as trees - you have one person at the top, a couple of people who report to them, then even more people that report to this couple of people.
 
 ![Tree](../04_order/tree-organization.svg)
 
@@ -337,14 +337,14 @@ The implications of the tendency to use trees, as opposed to lattices, to model 
 
 > In simplicity of structure the tree is comparable to the compulsive desire for neatness and order that insists the candlesticks on a mantelpiece be perfectly straight and perfectly symmetrical about the center. The semilattice, by comparison, is the structure of a complex fabric; it is the structure of living things, of great paintings and symphonies. 
 
-In general, it seems that hierachies that are specifically designed by *people*, such as cities tend to come up as trees, whereas hierarchies that are natural, such as the hierarchy of colors, tend to come be lattices.
+In general, it seems that hierarchies that are specifically designed by *people*, such as cities tend to come up as trees, whereas hierarchies that are natural, such as the hierarchy of colors, tend to come be lattices.
 
 {%endif%}
 
 Interlude: Formal concept analysis
 ===
 
-In the previous section we (along with Christopher Alexander) argued that lattice-based hierarchies are "natural", that is, they arize in nature. Now we will see a way to uncover such hierarchies given a set of objects that share some attributes. This is an overview of a mathematical method, called *formal context analysis*.
+In the previous section we (along with Christopher Alexander) argued that lattice-based hierarchies are "natural", that is, they arise in nature. Now we will see a way to uncover such hierarchies given a set of objects that share some attributes. This is an overview of a mathematical method, called *formal context analysis*.
 
 The datastructure that we will be analysing, called *formal context* consists of 3 sets. Firstly, the set containing all *objects* that we will be analysing (denoted as $G$).
 
@@ -421,15 +421,15 @@ In short, for every preorder, we can define the *partial order of the equivalenc
 Maps as preorders
 ---
 
-We use maps to get around all the time, often without thinking about the fact that that they are actually diagrams. More specifically, some of them are preorders --- the objects represent cities or intercections, and the relations represent the roads. 
+We use maps to get around all the time, often without thinking about the fact that that they are actually diagrams. More specifically, some of them are preorders --- the objects represent cities or intersections, and the relations represent the roads. 
 
 ![A map as a preorder](../04_order/preorder_map.svg)
 
-Reflexivity reflects the fact that if you have a route allowing you to get from point $a$ to point $b$ and one that allows you to go from $b$ to $c$, then you can go from $a$ to $c$ as well. Two-way roads may be represented by two arrows that form an isomorphism between objects. Objects that are such that you can always get from one object to the other form equivalence classes (ideally all intercections would be in one equivalence class, else you would have places from which you would not be able to go back from).
+Reflexivity reflects the fact that if you have a route allowing you to get from point $a$ to point $b$ and one that allows you to go from $b$ to $c$, then you can go from $a$ to $c$ as well. Two-way roads may be represented by two arrows that form an isomorphism between objects. Objects that are such that you can always get from one object to the other form equivalence classes (ideally all intersections would be in one equivalence class, else you would have places from which you would not be able to go back from).
 
 ![preorder](../04_order/preorder_map_equivalence.svg)
 
-However, maps that contain more than one road (and even more than one *route*) connecting two intercections, cannot be represented using preorders. For that we would need categories (don't worry, we will get there).
+However, maps that contain more than one road (and even more than one *route*) connecting two intersections, cannot be represented using preorders. For that we would need categories (don't worry, we will get there).
 
 State machines as preorders 
 ---
@@ -442,7 +442,7 @@ A specification of a finite state machine consists of a set of states that the m
 
 But as we saw, a finite state machine is similar to a preorder with a greatest and least object, in which the relations between the objects are represented by functions.
 
-Finite state machines are used in organization planning e.g. imagine a process where a given item gets manifactured, gets checked by a quality control person, who, if they find some defficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping. This process can be modelled by the above diagram. 
+Finite state machines are used in organization planning e.g. imagine a process where a given item gets manufactured, gets checked by a quality control person, who, if they find some deficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping. This process can be modelled by the above diagram. 
 
 {%endif%}
 
@@ -456,16 +456,16 @@ https://www.cs.rochester.edu/u/nelson/courses/csc_173/fa/fa.html
 |---   | ---   | ---        |
 || X | X | X |
 |Identity| X | X | X |
-|Invertability  | |  | X |
+|Invertibility  | |  | X |
 |Closure  | | X | X |
 
-Or imagine a computational alghorithm for parsing input which iterates a string of characters and converts them to some other objects until all of the input is parsed.
+Or imagine a computational algorithm for parsing input which iterates a string of characters and converts them to some other objects until all of the input is parsed.
 
 TODO
 Turing machines
 https://www.i2cell.science/how-a-turing-machine-works/
 ---
-State machines are, however not Turing-complete, that is, they cannot encode any alghorithm.
+State machines are, however not Turing-complete, that is, they cannot encode any algorithm.
 
 |Current State | Input | Next State | Write | Move |
 |---   | ---   | ---        |
