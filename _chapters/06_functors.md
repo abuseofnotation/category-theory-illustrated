@@ -237,7 +237,7 @@ If you know about semiotics, you may view the source and target categories of th
 
 And so, you can already see that the concept of a functor plays a very important role in category theory. Because of it, diagrams in category theory can be *specified formally* i.e. they are categorical objects *per se*. 
 
-You might even say that they are categorical objects *par excellance* (TODO: remove that last joke).
+You might even say that they are categorical objects *par excellence* (TODO: remove that last joke).
 
 <!--
 (TODO: By the way, the fact that a diagram commutes means just that the morphism in the finite category are sometimes composites of one another).
@@ -494,7 +494,7 @@ a.map(f).map(g) == a.map((a) => g(f(a)))
 What are functors for
 ===
 
-Now, that we have seen so many examples of functors, we finally can attempt to answer the million-dollar question, namely what are functors for and why are they useful? (often formulated also as "Why are you wasting your/my time with this (abstact) nonsense?") 
+Now, that we have seen so many examples of functors, we finally can attempt to answer the million-dollar question, namely what are functors for and why are they useful? (often formulated also as "Why are you wasting your/my time with this (abstract) nonsense?") 
 
 Well, we saw that *maps are functors* and we know that *maps are useful*, so let's start from there. 
 
