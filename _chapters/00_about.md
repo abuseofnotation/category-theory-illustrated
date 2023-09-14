@@ -94,7 +94,7 @@ Although I am not an expert in special relativity, I suspect that the way this c
 >
 > Engineer 2: Just adjust it by X and see if it works. Oh, and tell that to some physicist. They might find it interesting.
 
-In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the Egyptians were able to build the pyramids without even knowing Euclidian geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math textbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
+In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the Egyptians were able to build the pyramids without even knowing Euclidean geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math textbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
 
 And so "Who is this book for" is not to be read as who should, but who *can* read it. Then the answer is "anyone with some time and dedication to learn category theory". 
 

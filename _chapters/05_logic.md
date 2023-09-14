@@ -282,14 +282,14 @@ Here is one way to do it. The formulas that are used at each step are specified 
 
 ![Hilbert proof](../05_logic/hilbert_proof.svg)
 
-Note that to really prove that the two formulas are equivalen we have to also do it the other way around (start with ($¬p ∨ q$) and ($p → q$)).
+Note that to really prove that the two formulas are equivalent we have to also do it the other way around (start with ($¬p ∨ q$) and ($p → q$)).
 
 Intuitionistic logic. The BHK interpretation 
 ===
 
 Although the classical truth-functional interpretation of logic works and is correct in its own right, it doesn't fit well the categorical framework that we are using here: It is too "low-level", it relies on manipulating the values of the propositions. According to it, the operations *and* and *or* are just 2 of the 16 possible binary logical operations and they are not really connected to each other (but we know that they actually are.)
 
-For these and other reasons (mostly other, probably), in the 20th century a whole new school of logic was founded, called *intuitionistic logic*. If we view classical logic as based on *set theory*, then intuitionistic logic would be based on *category theory* and its related theories. If *classical logic* is based on Plato's theory of forms, then intuinism began with a philosophical idea originating from Kant and Schopenhauer: the idea that the world as we experience it is largely predetermined of out perceptions of it. As the mathematician L.E.J. Brouwer puts it.
+For these and other reasons (mostly other, probably), in the 20th century a whole new school of logic was founded, called *intuitionistic logic*. If we view classical logic as based on *set theory*, then intuitionistic logic would be based on *category theory* and its related theories. If *classical logic* is based on Plato's theory of forms, then intuitionism began with a philosophical idea originating from Kant and Schopenhauer: the idea that the world as we experience it is largely predetermined of out perceptions of it. As the mathematician L.E.J. Brouwer puts it.
 
 > [...] logic is life in the human brain; it may accompany life outside the brain but it can never guide it by virtue of its own power.
 
@@ -453,7 +453,7 @@ The *negation* operation
 
 In order for a distributive lattice to represent a logical system, it has to also have objects that correspond to the values $True$ and $False$. But to mandate that these objects exist, we must first find a way to specify what they are in order/category-theoretic terms.
 
-A well-known result in logic, called *the principle of explosion*, states that if we have a proof of $False$ (or if "$False$ is true" if we use the terminology of classical logic), then any and every other statement can be proven. And we also know that no true statement implies $False$ (in fact in intuinistic logic this is the definition of a true statement). Based on these criteria we know that the $False$ object would look like this when compared to other objects:
+A well-known result in logic, called *the principle of explosion*, states that if we have a proof of $False$ (or if "$False$ is true" if we use the terminology of classical logic), then any and every other statement can be proven. And we also know that no true statement implies $False$ (in fact in intuitionistic logic this is the definition of a true statement). Based on these criteria we know that the $False$ object would look like this when compared to other objects:
 
 ![False, represented as a Hasse diagram](../05_logic/lattice_false.svg)
 
@@ -516,7 +516,7 @@ Translated to logical language, says that if $B → A$, then the proof of $(A �
 
 Note that this definition does not follow the one from the truth tables exactly. This is because this definition is valid specifically for intuinistic logic. For classical logic, the definition of $(A → B)$ is simpler - it is just equivalent to ($-A ∨ B$). 
 
-By the way, the law of distributivity follows from this criteria, so the only criteria that are left for an lattice to follow the laws of intuinistic logic is for it to be *bounded* i.e. to have greatest and least objects ($True$ and $False$) and to have a function object as described above. Lattices that follow these criteria are called *Heyting algrebras*.
+By the way, the law of distributivity follows from this criteria, so the only criteria that are left for an lattice to follow the laws of intuinistic logic is for it to be *bounded* i.e. to have greatest and least objects ($True$ and $False$) and to have a function object as described above. Lattices that follow these criteria are called *Heyting algebras*.
 
 And for a lattice to follow the laws of classical logic it has to be *bounded* and *distributive* and to be *complemented* which is to say that each proposition $A$ should be complemented with a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
 

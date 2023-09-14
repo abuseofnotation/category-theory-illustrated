@@ -311,7 +311,7 @@ In both cases the monoid would be cyclic.
 
 {%endif%}
 
-Dihateral groups
+Dihedral groups
 ===
 
 Now, let's finally examine a non-commutative group --- the group of rotations *and reflections* of a given geometrical figure. It is the same as the last one, but here besides the rotation action that we already saw (and its composite actions), we have the action of flipping the figure vertically, an operation which results in its mirror image:
@@ -493,7 +493,7 @@ The intuition behind this representation from a category-theoretic standpoint is
 |---| ---             | ---        |
 |Associativity| X | X | X |
 |Identity| X | X | X |
-|Invertability  | |  | X |
+|Invertibility  | |  | X |
 |Closure  | | X | X |
 
 When we view a monoid as a category, this law says that all morphisms in the category should be from one object to itself - a monoid, any monoid, can be seen as a *category with one object*.

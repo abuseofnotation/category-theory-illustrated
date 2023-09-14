@@ -34,15 +34,15 @@ The concept of *Cartesian product* was first defined by the mathematician and ph
 
 Most people know how Cartesian coordinate systems works, but an equally interesting question, on which few people think about, is how we can define it using sets and functions. 
 
-A Cartesian coordinate system consists of two perpendicular lines, situated on an *Euclidian plane* and some kind of mapping that resembles a function, connecting any point in these two lines to a number, representing the distance between the point that is being mapped and the lines' point of overlap (which is mapped to the number $0$).
+A Cartesian coordinate system consists of two perpendicular lines, situated on an *Euclidean plane* and some kind of mapping that resembles a function, connecting any point in these two lines to a number, representing the distance between the point that is being mapped and the lines' point of overlap (which is mapped to the number $0$).
 
 ![Cartesian coordinates](../02_category/coordinates_x_y.svg)
 
-Using this construct (as well as the concept of a Cartesian product), we can describe not only the points on the lines, but any point on the Euclidian plane. We do that by measuring the distance between the point and those two lines.
+Using this construct (as well as the concept of a Cartesian product), we can describe not only the points on the lines, but any point on the Euclidean plane. We do that by measuring the distance between the point and those two lines.
 
 ![Cartesian coordinates](../02_category/coordinates.svg)
 
-And since the point is the main primitive of Euclidian geometry, the coordinate system allows us to also describe all kinds of geometric figures such as this triangle (which is described using products of products).
+And since the point is the main primitive of Euclidean geometry, the coordinate system allows us to also describe all kinds of geometric figures such as this triangle (which is described using products of products).
 
 ![Cartesian coordinates](../02_category/coordinates_triangle.svg)
 
@@ -289,7 +289,7 @@ Now, as we came up with some definition of set *element*, using just functions, 
 
 However, our diagram is not yet fully external, as it depends on the idea of the singleton set, i.e. the set with one *element*. Furthermore, this makes the whole definition circular, as we have to already have the concept of an element in order to define the concept of an one-element set. 
 
-To avoid these dificulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, there is exactly one function from any other set to the singleton set i.e. if $1$ is the singleton set, then we have $\forall  X  \exists!  X \to 1$.
+To avoid these difficulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, there is exactly one function from any other set to the singleton set i.e. if $1$ is the singleton set, then we have $\forall  X  \exists!  X \to 1$.
 
 ![Terminal object](../02_category/terminal_object_internal.svg)
 
@@ -301,7 +301,7 @@ And because there is no other set, other than the singleton set that has this pr
 
 ![Terminal object](../02_category/terminal_object.svg)
 
-With this, we aquire a fully-external definition (up to an isomorphism) of the singleton set, and thus a definition of a set element - the elements of set are just the functions from the singleton set to that set.
+With this, we acquire a fully-external definition (up to an isomorphism) of the singleton set, and thus a definition of a set element - the elements of set are just the functions from the singleton set to that set.
 
 ![Functions from the singleton set](../02_category/elements_external.svg)
 
@@ -314,7 +314,7 @@ Note that from this property it follows that the singleton set has exactly one e
 Defining the empty set using functions
 ---
 
-The empty set is the set that has no elements, but how would we say this without refering to elements?  
+The empty set is the set that has no elements, but how would we say this without referring to elements?  
 
 We said that there exist a unique function that goes *from* the empty set *to* any other set. But the reverse is also true: the empty set is the only set such that there is exist a function from it to any other set. 
 
@@ -527,7 +527,7 @@ Associativity and reductionism
 
 Associativity --- what does it mean and why is it there? In order to tackle this question, we must first talk about another concept --- the concept of *reductionism*: 
 
-Reductionism is the idea that the behaviour of some more complex phenomenon can be understood in terms of a number of *simpler* and more fundamental phenomena, or in other words, the idea that things keep getting simpler and simpler as they get "smaller" (or when they are viewed at a lower level), like for example, the behavior of matter can be understood through the understanding the behaviours of its costituents i.e. atoms. Whether the reductionist view is *universally valid*, i.e. whether it is possible to expain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws) is a question that we can argue about until that universe's inevitable collapse. But, what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics --- each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it). So, if this principle is so important, it would be benefitial to be able to formalize it, and this is what we will try to do now.
+Reductionism is the idea that the behaviour of some more complex phenomenon can be understood in terms of a number of *simpler* and more fundamental phenomena, or in other words, the idea that things keep getting simpler and simpler as they get "smaller" (or when they are viewed at a lower level), like for example, the behavior of matter can be understood through the understanding the behaviours of its constituents i.e. atoms. Whether the reductionist view is *universally valid*, i.e. whether it is possible to explain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws) is a question that we can argue about until that universe's inevitable collapse. But, what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics --- each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of a the chemical elements that they are composed of etc. A behaviour that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of this discipline (and so a new discipline has to be created to tackle it). So, if this principle is so important, it would be beneficial to be able to formalize it, and this is what we will try to do now.
 
 Commutativity
 ---
@@ -550,7 +550,7 @@ Or simply
 
 $A \circ B = B \circ  A$
 
-Incidentally this is the definition of a mathematicall law called *commutativity*.
+Incidentally this is the definition of a mathematical law called *commutativity*.
 
 **Task:** if our objects are sets, which set operation can represents the sum?
 
