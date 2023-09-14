@@ -183,7 +183,7 @@ Because not all functions work on all numbers, we separate the set of numbers to
 Number functions
 ---
 
-Each numerical operation is a function between two of these sets. For example, squaring a number is a function from the set of real numbers to the set of real positive numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
+Each numerical operation is a function between two of these sets. For example, squaring a number is a function from the set of real numbers to the set of real non-negative numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
 
 ![The square function](../01_set/square.svg)
 
