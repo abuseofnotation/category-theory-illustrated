@@ -6,8 +6,6 @@ title: index
 
 Category Theory Illustrated is a primer in category theory and other mathematical theories that is made to be *really* accessible to people with no prior exposure to the subject, without being dumbed down, by utilizing visual explanations.
 
-The book serves as chapter 0 going through the gist of the material covered by other similar introductory books, but doing so in a way that would enable non-mathematicians to easily comprehend.
-
 [![cover.svg](cover.svg)](00_about)
 
 [Read online](00_about)
@@ -37,9 +35,9 @@ Praise
 Let's talk: publishers, co-authors, contributors
 ===
 
-I want to make this book into the best introductory text, not only to category theory, but to mathematics as a whole. It seems that I would need some help, though: 
+I want to make this book into the best introductory text, not only to category theory, but to mathematics as a whole. It seems that I would need some help, though.
 
-- I am looking for a *publisher* who is willing to release this book on paper. I have some more content that I can provide for the printed version. I am very flexible for the most part.
+- I am looking for a *publisher* who is willing to work release this book. I have some more content that I can provide for the printed version. I am very flexible for the most part, aside from the fact that some of its content would remain open souce.
 
 - I am also looking for co-authors and/or technical reviewers with good experience in category theory, who are willing to help with polishing and enriching the text.
 
@@ -47,4 +45,4 @@ I want to make this book into the best introductory text, not only to category t
 
 - Even if this is the first book on math you read, you can still help me &mdash; let me know what parts are hard for you to understand and let's figure out why.
 
-You can contact me via [email](mailto:marinovboris@protonmail.com). For other means of contact, see the footer.
+You can contact me via [email](mailto:marinovboris@protonmail.com) or post an issue or PR on [Github](https://github.com/abuseofnotation/category-theory-illustrated). For other means of contact, see the footer.
