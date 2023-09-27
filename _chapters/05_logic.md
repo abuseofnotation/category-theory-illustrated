@@ -295,7 +295,7 @@ For these and other reasons (mostly other, probably), in the 20th century a whol
 
 Classical and intuitionistic logic diverge from one another right from the start: because according to intuitionistic logic we are *constructing* proofs rather than *discovering* them or *unveiling* a universal truth, we are *off with the principle of bivalence*, that is, we have no basis to claim that each statements is necessarily *true or false*. For example, there might be a statements that might not be provable not because they are false, but simply because they fall outside of the domain of a given logical system (the twin-prime conjecture is often given as an example for this.) 
 
-So, intuitionistic logic is not bivalent, i.e. we cannot have all propositions reduced to true and false. 
+Anyway, intuitionistic logic is not bivalent, i.e. we cannot have all propositions reduced to true and false. 
 
 ![The True/False dichotomy](../05_logic/true_false.svg)
 
@@ -367,7 +367,9 @@ Although from first glance intuitionistic logic seems to differ a lot from class
 
 ![The formula of the principle of the excluded middle](../05_logic/excluded_middle_formula.svg)
 
-This law is valid in classical logic and is true when we look at it in terms of truth tables, but there is no justification for it in the BHK interpretation - a fact that spawned a heated debate between the inventor of classical logic David Hilbert and the inventor of intuitionistic logic L.E.J. Brouwer, known as *the Brouwer–Hilbert controversy*.
+This law is valid in classical logic and is true when we look at it in terms of truth tables, but there is no justification for it terms of the BHK interpretation - it will be true if we have a method/function/alghorithm that can prove or disprove any random proposition, which is not something that exist, or is expected to arrive any time soon. 
+
+The question of whether you can use the law of excluded middle spawned a heated debate between the inventor of classical logic David Hilbert and the inventor of intuitionistic logic L.E.J. Brouwer, known as *the Brouwer–Hilbert controversy*.
 
 Logics as categories
 ===
