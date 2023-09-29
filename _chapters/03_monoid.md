@@ -21,7 +21,7 @@ We can define a monoid based on this set by defining an operation for "combining
 
 ![An operation for combining balls](../03_monoid/balls_operation.svg)
 
-You can probably think of other ways to define such an operation. This will help you realize that there can be many ways to create a monoid from a given set of set elements i.e. the monoid is not the set itself, it is the set *together with the operation*.
+You can probably think of other ways to define a similar operation. This will help you realize that there can be many ways to create a monoid from a given set of set elements i.e. the monoid is not the set itself, it is the set *together with the operation*.
 
 Associativity
 ---
