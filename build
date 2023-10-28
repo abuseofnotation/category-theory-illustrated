@@ -1,1 +1,14 @@
-sudo apt-get install com.github.babluboy.bookworm
+pandoc --from markdown --to epub3  \
+ epub/title.txt \
+ _chapters/00_about.md \
+ _chapters/01_set.md \
+ _chapters/02_category.md \
+ _chapters/03_monoid.md \
+ _chapters/04_order.md \
+ _chapters/05_logic.md \
+ _chapters/10_functors.md \
+ --output book.epub \
+ --toc \
+ --epub-cover-image=cover_print.png \
+ --resource-path=_chapters/02_category \
+ --css=epub/epub-style.css

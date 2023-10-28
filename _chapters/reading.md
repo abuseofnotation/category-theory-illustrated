@@ -12,12 +12,6 @@ Sets
 
 [On the cruelty of really teaching computer science](https://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html)
 
-Numbers
----
-
-[Number theory from first principles](https://explained-from-first-principles.com/number-theory/)
-[The natural numbers game](https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/)
-
 Orders
 ---
 
@@ -27,6 +21,16 @@ Logic
 ---
 
 [The HOTT game](https://homotopytypetheory.org/2021/12/01/the-hott-game/)
+
+Types
+---
+[Sets types categories](../references/sets_types_categories.pdf)
+
+
+[Number theory from first principles](https://explained-from-first-principles.com/number-theory/)
+
+[The natural numbers game](https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/)
+
 
 Functors
 ---
@@ -45,7 +49,6 @@ Functors
 
 etc
 ---
-
 
 [The Principles of Mathematics](https://people.umass.edu/klement/pom/)
 

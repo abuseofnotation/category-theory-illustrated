@@ -287,11 +287,11 @@ Note that to really prove that the two formulas are equivalent we have to also d
 Intuitionistic logic. The BHK interpretation 
 ===
 
+> [...] logic is life in the human brain; it may accompany life outside the brain but it can never guide it by virtue of its own power. --- L.E.J. Brouwer
+
 Although the classical truth-functional interpretation of logic works and is correct in its own right, it doesn't fit well the categorical framework that we are using here: It is too "low-level", it relies on manipulating the values of the propositions. According to it, the operations *and* and *or* are just 2 of the 16 possible binary logical operations and they are not really connected to each other (but we know that they actually are.)
 
-For these and other reasons (mostly other, probably), in the 20th century a whole new school of logic was founded, called *intuitionistic logic*. If we view classical logic as based on *set theory*, then intuitionistic logic would be based on *category theory* and its related theories. If *classical logic* is based on Plato's theory of forms, then intuitionism began with a philosophical idea originating from Kant and Schopenhauer: the idea that the world as we experience it is largely predetermined of out perceptions of it. As the mathematician L.E.J. Brouwer puts it.
-
-> [...] logic is life in the human brain; it may accompany life outside the brain but it can never guide it by virtue of its own power.
+For these and other reasons (mostly other, probably), in the 20th century a whole new school of logic was founded, called *intuitionistic logic*. If we view classical logic as based on *set theory*, then intuitionistic logic would be based on *category theory* and its related theories. If *classical logic* is based on Plato's theory of forms, then intuitionism began with a philosophical idea originating from Kant and Schopenhauer: the idea that the world as we experience it is largely predetermined of out perceptions of it. Thus without absolute standards for truth, a proof of a proposition becomes something that you *construct*, rather than something you discover.
 
 Classical and intuitionistic logic diverge from one another right from the start: because according to intuitionistic logic we are *constructing* proofs rather than *discovering* them or *unveiling* a universal truth, we are *off with the principle of bivalence*, that is, we have no basis to claim that each statements is necessarily *true or false*. For example, there might be a statements that might not be provable not because they are false, but simply because they fall outside of the domain of a given logical system (the twin-prime conjecture is often given as an example for this.) 
 
@@ -382,7 +382,6 @@ The Curry-Howard isomorphism
 ---
 
 Programmers might find the definition of the BHK interpretation interesting for other reason - it is very similar to a definition of a programming language: propositions are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types* (which are currently not supported in most programming languages, but that's a separate topic.) Finally a proof of a given proposition is represented by a value of the corresponding type. 
-
 ![Logic as a programming language](../05_logic/logic_curry.svg)
 
 This similarity is known as the *Curry-Howard isomorphism*.
@@ -392,9 +391,9 @@ This similarity is known as the *Curry-Howard isomorphism*.
 Cartesian closed categories
 ---
 
-Knowing about the Curry-Howard isomorphism and knowing also that programming languages can be described by category theory may lead us to think that *category theory is part of this isomorphism as well*. And we would be quite correct, this is why it is sometimes known as the Curry-Howard-*Lambek* isomorphism, Lambek being the person who discovered the categorical side. 
+Knowing about the Curry-Howard isomorphism and knowing also that programming languages can be described by category theory may lead us to think that *category theory is part of this isomorphism as well*. And we would be quite correct --- this is why it is sometimes known as the Curry-Howard-*Lambek* isomorphism, Lambek being the person who discovered the categorical side. So let's examine this isomorphism. As all other isomorphisms, it comes in two parts: 
 
-Let's examine this isomorphism (without being too formal about it). As all other isomorphisms, it comes in two parts. The first part is finding a way to convert a logical system into a category - this would not be hard for us, as sets form a category and the flavor of the BHK interpretation that we saw is based on sets.
+The first part is finding a way to convert a *logical system* into a category - this would not be hard for us, as sets form a category and the flavor of the BHK interpretation that we saw is based on sets.
 
 ![Logic as a category](../05_logic/category_curry_logic.svg)
 
@@ -404,7 +403,7 @@ The second part involves converting a category into a logical system - this is m
 
 ![Logic as a category](../05_logic/logic_curry_category.svg)
 
-Categories that adhere to these criteria are called *cartesian closed categories*. We won't describe them here directly, but instead we would start with a similar but simpler structures that are instance of them and that we already examined - orders.
+Categories that adhere to these criteria are called *cartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined - orders.
 
 Logics as orders
 ---
