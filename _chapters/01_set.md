@@ -44,7 +44,7 @@ Perhaps unsurprisingly, everything in set theory is defined in terms of sets. A 
 ![Balls](../01_set/elements.svg)
 
 
-Let's construct a set, call it $G$ (as gray) that contains *all* of them as elements. There can only be one such set: because a set has no structure (there is no order, no ball goes before or after another, there are no members which are "special" with respect to their membership of the set) two sets that contain the same elements are just two pictures of the same set.
+Let's construct a set, call it $G$ (as gray) that contains *all* of them as elements. There can only be one such set: because a set has no structure (there is no order, no ball goes before or after another, there are no members which are "special" with respect to their membership of the set.) Two sets that contain the same elements are just two pictures of the same set.
 
 ![The set of all balls](../01_set/all.svg)
 
