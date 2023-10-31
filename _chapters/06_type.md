@@ -11,16 +11,12 @@ However, types are not just about programming languages --- they are an alternat
 Sets and types
 ===
 
-Most books about category theory (and mathematics in general) begin with sets, simply because *sets are simple to understand*, at least when we are operating on the conceptual level that is customary for introductory materials --- when we draw a circle around a few things, everyone knows what we are talking about. So, it is tempting to think that we can use sets to represent everything we want. But, as we will see shortly, this view is somewhat *naive*.
-
-
-Type theory and set theory are related conceptually. 
-
+Most books about category theory (and mathematics in general) begin with sets. The reason for this is simply because *sets are simple to understand*, at least when we are operating on the conceptual level that is customary for introductory materials --- when we draw a circle around a few things, everyone knows what we are talking about. 
 
 Russell's paradox
 ---
 
-Type theory and set theory are also related historically, the first version of type theory was developed by Bertrand Russell in response to a paradox that he found in the first version of set theory (usually called *naive* set theory). This paradox is called "Russel's paradox.
+Type theory and set theory are also related historically, the first version of type theory was developed by Bertrand Russell in response to a paradox that he found in the first version of set theory (usually called *naive* set theory). This paradox is called *Russel's paradox*.
 
 Russel's paradox arises due to the very same characteristics of set theory that makes it so simple - the idea that everything is a set that contains other sets. The core of the paradox, is that (unlike a type), a set can contain itself.
 
@@ -45,46 +41,30 @@ Resolving the paradox --- ZFC
 
 Russel's paradox completely changed the game of set theory, as averting it requires that we impose certain restrictions to the ways in which you can define sets. i.e. we can no longer allow sets to be generated freely.
 
-
 And, while doing so is possible, (the new paradox-free “version” of set theory by Zermelo and Fraenkel is still in use today) the result is not simple.
-
-
-
-Russell himself took a different route and he developed an entirely new mathematical theory that is like set theory, but which is much more strict and rigid. But I will stop here, as we have a special chapter dedicated to types.
 
 Resolving the paradox --- Types
 ---
 
-Type theory and set theory are related in that type theory can be seen as a more restrictive version of set theory. In set theory you have only one kind of object that is (you guessed it) &mdash; set, and a set can contain anything, including other sets. In type theory, you generally have two concepts &mdash; **types** and **values** (which in a mathematical context we call **terms**). 
+While Zermelo was rushing amend the theory of sets to avert Russell's paradox, Russell himself took a different route and decided to developed an entirely new mathematical theory that is like set theory, but which is much more strict and rigid.
 
-From set theory to type theory
----
+Like set theory, type theory is based on the concept of an objects that are categorized as "belonging" to some other entities. In *set theory*, these entities are *sets* and the concept --- *membership* (*denoted $a \in A$) --- the object $a$ is an element of the set $A$ and in *type theory*, these entitities are, *types*  and the concept is **, denoted $a : A$ --- the object $a$ is an $A$.
 
-To avert this and related paradoxes, we have to impose certain restrictions to the ways in which you can define sets. And while doing so is possible without any significant changes to the set theory's core (the new paradox-free "version" of set theory by *Zermelo and Fraenkel* is still in use today), Russell himself took a different route and he developed an entirely new mathematical theory that is *like set theory*, but which is much more strict and rigid.
+|Theory |Set theory| Type Theory|
+|------ | ---------| --------|
+|An | Element     | Term       |
+|Belongs to a | Set     | Type       |
+|Notation | $a \in A$ |  $a : A$  | 
 
-The theory of types defines two primitive concepts &mdash; *types and values*, which correspond to *sets and set elements*, but at the same time differ in many respects.
+The big difference is that in type theory *a term can only belong to one type*. i.e. the type of each term is an intruistic property of the term.
 
-Types 
----
-
-Types contain values, so they are like sets in this respect (although this is not true for all formulations of type theory). In fact, every type can be seen as a set of its values. However, unlike sets, which can contain other sets, *a type cannot contain other types*. And so, *not every set is a type* (although the reverse is true). The proper way to think about a type is as a collection of values that *share some common characteristics*.
-
-Values 
----
-
-Values are like set elements, in that they constitute the contents of a type. However, while a given object can be an element of many sets, a given value *belongs to only one type* (we can also say that it *is* a given type), i.e., the type of each value is an intrinsic property of the value.
+In this respect, type theory can be seen as a more restrictive version of set theory --- all types are sets, but not all sets are types.
 
 This may seem weird at first, e.g., when we create a subtype for example, as in the type-theoretic example of our constructing the set of all balls with warm colors, we end up with two instances of all objects that are members of both types, but it actually makes sense after we get used to it. After all, we can always convert the more general version of the value to the more specific one, using the function that exist between each set and its subset.
-
-Conclusion
----
-
-I won't get into more details, as there are many versions of type theories which are very different from one another, so examining them wouldn't be easy (e.g., if we look into programming languages, each language uses a different type system and different ways to construct subtypes.) Instead, we will return to using set theory, which in contrast has just a few formulations that are very similar to one another.
 
 
 Types as mathematical foundation
 ====
-
 
 Types and computation
 ===

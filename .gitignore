@@ -2,3 +2,4 @@ errors.md
 *.swp
 *.un~
 _site
+book.*
