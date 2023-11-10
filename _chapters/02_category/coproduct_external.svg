@@ -13,8 +13,7 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:ns="&amp;#38;#38;#38;ns_ai;">
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata2853">
     <rdf:RDF>
@@ -52,7 +51,6 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1" />
   <g
-     ns:extraneous="self"
      id="g2845"
      transform="matrix(0.80243696,0,0,0.80243696,57.182648,9.227506)">
     <circle
