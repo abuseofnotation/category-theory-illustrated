@@ -336,7 +336,7 @@ https://faculty.uml.edu/klevasseur/ads/s-monoid-of-fsm.html
 Groups/monoids categorically
 ===
 
-We began by defining a monoid as a set of composable *elements*. Then we saw that for some groups, like the groups of symmetries and rotations, those elements can be viewed as *actions*. And this is actually true for all other groups as well, e.g. the *red ball* in our color-blending monoid can be seen as the action of *adding the color red$ to the mix, the number $2$ in the monoid of addition can be seen as the operation $+2$ etc. This observation leads to a categorical view of the theory of groups and monoids.
+We began by defining a monoid as a set of composable *elements*. Then we saw that for some groups, like the groups of symmetries and rotations, those elements can be viewed as *actions*. And this is actually true for all other groups as well, e.g. the *red ball* in our color-blending monoid can be seen as the action of *adding the color red* to the mix, the number $2$ in the monoid of addition can be seen as the operation $+2$ etc. This observation leads to a categorical view of the theory of groups and monoids.
 
 Currying
 ---
