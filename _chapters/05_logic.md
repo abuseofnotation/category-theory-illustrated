@@ -497,7 +497,7 @@ So this is the final condition for an order/lattice to be a representation of lo
 
 Without being too formal, let's try to test if this definition captures the concept correctly by examining a few special cases.
 
-For example, let's take $A$ and $B$ to be the same object. In this case, ($A → B$) (or  ($A → A$) if you want to be pedantic) would be the topmost object $X$ for which the criteria given by the formula $A ∧ X → A$ is satisfied. But in this case the formula is *always satisfied* as the *meet* of $A$ and any other object would always be below $A$. So this formula is always for all $X$. The topmost object that fits it is, then, the topmost object out there i.e. $True$.
+For example, let's take $A$ and $B$ to be the same object. In this case, ($A → B$) (or  ($A → A$) if you want to be pedantic) would be the topmost object $X$ for which the criteria given by the formula $A ∧ X → A$ is satisfied. But in this case the formula is *always satisfied* as the *meet* of $A$ and any other object would always be below $A$. So this formula is always satisfied for all $X$. The topmost object that fits it is, then, the topmost object out there i.e. $True$.
 
 ![Implies identity](../05_logic/implies_identity.svg)
 
