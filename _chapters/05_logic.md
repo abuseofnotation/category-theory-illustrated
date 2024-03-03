@@ -435,7 +435,7 @@ By now you probably realized that the *and* and *or* operations are the bread an
 
 ![Order meet and joing](../05_logic/lattice_meet_join.svg)
 
-Here comes the first criteria for an order to represent a logical system accurately - *it has to have $meet$ and $join$ operations for all elements*. Having two elements without a meet would mean that you would have a logical system where there are propositions for which you cannot say that one or the other is true. And this not how logic works, so our order has to have meets and joins for all elements. Incidentally we already know how such orders are called - they are called *lattices*.
+Here comes the first criteria for an order to represent a logical system accurately - *it has to have $meet$ and $join$ operations for all elements*. Having two elements without a meet would mean that you would have a logical system where there are propositions for which you cannot say that one or the other is true. And this is not how logic works, so our order has to have meets and joins for all elements. Incidentally we already know how such orders are called - they are called *lattices*.
 
 One important law of the  *and* and *or* operations, that is not always present in the *meet*-s and *join*-s concerns the connection between the two, i.e. way that they distribute, over one another.
 
