@@ -122,7 +122,7 @@ By the way, what we just did (taking a concept that is defined for a more narrow
 The problem with categorical isomorphisms
 ---
 
-By examining them more closely, we realize that categorical isomorphisms are not so hard to define. However there is another issue with them, namely that they *don't capture the essence of what categorical equality should be*. I have devised a very good and intuitive explanation why is it the case, that this ~~margin~~ section is to narrow to contain.
+By examining them more closely, we realize that categorical isomorphisms are not so hard to define. However there is another issue with them, namely that they *don't capture the essence of what categorical equality should be*. I have devised a very good and intuitive explanation why is it the case, that this ~~margin~~ section is too narrow to contain.
 
 In the next chapter we will devise a more apt way to define a *two-way connection* between categories. But for this, we need to first examine *one-way connections* between them, i.e. *functors*.
 
