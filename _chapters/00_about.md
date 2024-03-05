@@ -107,7 +107,7 @@ Like we said, the fundaments of mathematics are the fundaments of thought. Categ
 
 The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I meant, although it isn't obvious at all (how are they equal?, in what context?, etc.) 
 
-It is in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
+It's in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
 Category theory formalizes the concept of diagrams and their components --- arrows and objects --- and creates a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
 
