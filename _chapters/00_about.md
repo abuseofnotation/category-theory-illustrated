@@ -116,13 +116,13 @@ As a consequence of that, category theory and diagrams are also a very understan
 Summary
 ===
 
-In this book we will visit various such modes of knowledge and along the way, we would see all other kinds of mathematical objects, viewed through the lens of categories.
+In this book we will visit various such modes of knowledge and along the way, see all kinds of mathematical objects, viewed through the lens of categories.
 
-We will start with *set theory* in chapter 1, which is the original way to formalize different mathematical concepts.
+We start with *set theory* in chapter 1, which is the original way to formalize different mathematical concepts.
 
 Chapter 2 we will make a (hopefully) gentle transition from sets to *categories* while showing how the two compare and (finally) introducing the definition of category theory.
 
-In the next two chapters, 3 and 4, we jump to two different branches of mathematics and will introduce their main means of abstraction, *groups and orders*, and we will see how they connect to the core category-theoretic concepts that we introduced earlier.
+In the next two chapters, 3 and 4, we jump into two different branches of mathematics and introduce their main means of abstraction, *groups and orders*, observing how they connect to the core category-theoretic concepts that we introduced earlier.
 
 Chapter 5 also follows the main formula of the previous two chapters, and gets to the heart of the matter of why category theory is a universal language, by showing its connection with the ancient discipline of *logic*. As in chapters 3 and 4 we start with a crash course in logic itself.
 
