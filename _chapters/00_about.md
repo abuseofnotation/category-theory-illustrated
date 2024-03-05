@@ -105,7 +105,7 @@ About category theory
 
 Like we said, the fundaments of mathematics are the fundaments of thought. Category theory allows us to formalize those fundaments that we use in our daily (intellectual) lives.
 
-The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I mean, although it isn't obvious at all (how are they equal, in what context, etc.) 
+The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I meant, although it isn't obvious at all (how are they equal?, in what context?, etc.) 
 
 It is in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
