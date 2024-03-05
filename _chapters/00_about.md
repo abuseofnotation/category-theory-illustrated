@@ -109,7 +109,7 @@ The way we think and talk is based on intuition that develops naturally and is a
 
 It's in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
-Category theory formalizes the concept of diagrams and their components --- arrows and objects --- and creates a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
+Category theory formalizes the concept of diagrams and their components --- arrows and objects --- to create a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
 
 As a consequence of that, category theory and diagrams are also a very understandable way to communicate a formal concept clearly, something I hope to demonstrate in the following pages.
 
