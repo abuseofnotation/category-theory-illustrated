@@ -124,7 +124,7 @@ Chapter 2 we will make a (hopefully) gentle transition from sets to *categories*
 
 In the next two chapters, 3 and 4, we jump into two different branches of mathematics and introduce their main means of abstraction, *groups and orders*, observing how they connect to the core category-theoretic concepts that we introduced earlier.
 
-Chapter 5 also follows the main formula of the previous two chapters, and gets to the heart of the matter of why category theory is a universal language, by showing its connection with the ancient discipline of *logic*. As in chapters 3 and 4 we start with a crash course in logic itself.
+Chapter 5 also follows the main formula of the previous two chapters, getting to the heart of the matter of why category theory is a universal language, by showing its connection with the ancient discipline of *logic*. As in chapters 3 and 4, we start with a crash course in logic itself.
 
 The connection between all these different disciplines is examined in chapter 6, using one of the most interesting category-theoretical concepts --- the concept of a functor.
 
