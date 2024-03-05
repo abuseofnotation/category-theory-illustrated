@@ -65,16 +65,16 @@ Although many people don't necessarily subscribe to this view of mathematics as 
 
 There is nothing wrong with this approach, but mathematics is so much more than solving problems. It was the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was, and still is, a language which can allow for people with different cultural backgrounds to understand each other. And it is also art and a means of entertainment.
 
-Category theory embodies all these aspects of mathematics, so I think a very good grounds to writing a book where all of them shine --- a book that is based not on solving of problems, but on exploration of concepts and on seeking connections between them. A book that is, overall, pretty.
+Category theory embodies all these aspects of mathematics, so I think it's very good grounds to writing a book where all of them shine --- a book that isn't based on solving of problems, but exploring concepts and seeking connections between them. A book that is, overall, pretty.
 
 Who is this book for 
 ====
 
 So, who is this book for? Some people would phrase the question as "Who *should* read this book", but if you ask it this way, then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems (it is, in fact, something much more).
 
-Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPS to work properly, as, due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
+Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPSes to work properly. Due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
 
-They seem to think that if the theory didn't exist the engineers that developed the GPS would have faced this phenomenon in the following way:
+They seem to think that if the theory didn't exist, the engineers that developed the GPSes would have faced this phenomenon in the following way:
 
 > Engineer 1: Whoa, the clocks on the satellites are off by X nanoseconds! 
 >
