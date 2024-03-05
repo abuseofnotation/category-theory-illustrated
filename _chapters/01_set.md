@@ -48,7 +48,7 @@ Let's construct a set, call it $G$ (as gray) that contains *all* of them as elem
 
 ![The set of all balls](../01_set/all.svg)
 
-This example may look overly-simple but in fact it is just as valid as any other one. 
+This example may look overly-simple, but in fact, it's just as valid as any other.
 
 The key insight that makes the concept useful is the fact that it enables you to reason about several things as if they were one.
  
