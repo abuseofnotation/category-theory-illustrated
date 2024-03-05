@@ -6,7 +6,7 @@ title: Sets
 Sets
 ===
 
-Let's begin our inquiry by looking at the basic theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it is meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
+Let's begin our inquiry by looking at the basic theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it's meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
 
 In other words, sets are an *example of a category* (the *proto-example*, we might say), and it is useful to have examples. 
 
