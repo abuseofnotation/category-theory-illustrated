@@ -10,7 +10,7 @@ Given a set of objects, there can be numerous criteria, based on which to order 
 
 However, currently we are not interested in the *criteria* that we can use to order objects, but in the *nature of the relationships* that define order. Of which there can be several types as well. 
 
-Mathematically, the order as a construct is represented (much like a monoid) by two two components. 
+Mathematically, the order as a construct is represented (much like a monoid) by two components. 
 
 One is a *set of things* (e.g. colorful balls) which we sometimes call the order's *underlying set*.
 
