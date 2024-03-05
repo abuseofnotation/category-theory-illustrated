@@ -71,7 +71,7 @@ Tautologies
 
 We often cannot tell whether a given composite proposition is true or false without knowing the values of the propositions that compose it. However, with propositions such as *modus ponens* we can: modus ponens is *always true*, regardless of whether the propositions that form it are true or false. If we want to be fancy, we can also say that it is *true in all models of the logical system*, a model being a set of real-world premises are taken to be signified by our propositions.
 
-For example, our previous example will not stop being true if we substitute "Socrates" with any other name, nor if we substitute "mortal" for any other quality that humans possess.
+For example, our previous example will not stop being true if we *substitute* "Socrates" with any other name, nor if we substitute "mortal" for any other quality that humans possess.
 
 ![Variation of modus ponens](../05_logic/modus_ponens_variations.svg)
 
@@ -85,10 +85,12 @@ Here are some more complex (less boring) tautologies (the symbol $¬$ means "not
 
 ![Tautologies](../05_logic/tautology_list.svg)
 
-We will learn how to determine which propositions are a tautologies shortly, but first let's see why is this important at all i.e. what are tautologies good for: tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* or *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution. 
+We will learn how to determine which propositions are a tautologies shortly, but first let's see why is this important at all i.e. what are tautologies good for. 
 
 Axiom schemas/Rules of inference
 ---
+
+Tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* or *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution.
 
 Realizing that the colors of the balls in modus ponens are superficial, we may want to represent the general structure of modus ponens that all of its variations share.
 
@@ -100,7 +102,7 @@ Note that the propositions that we plug into the schema don't have to be primary
 
 ![Using modus ponens for rule of inference](../05_logic/modus_ponens_composite.svg)
 
-*Axiom schemas* and *rules of inference* are almost the same thing except they allow us to actually distill the conclusion from the premises. For example in the case above, we can use modus ponens as a rule of inference to proves that $a \lor b$ is true.
+*Axiom schemas* and *rules of inference* are almost the same thing except that rules of inference allow us to actually distill the conclusion from the premises. For example in the case above, we can use modus ponens as a rule of inference to proves that $a \lor b$ is true.
 
 All axiom schemas can be easily applied as rules of inference and the other way around. 
 

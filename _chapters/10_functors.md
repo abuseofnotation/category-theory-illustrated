@@ -3,8 +3,6 @@ layout: default
 title: Functors
 ---
 
-
-
 Functors 
 ===
 
@@ -155,7 +153,7 @@ Now let's unpack this definition by going through each of its components.
 Object mapping
 ---
 
-In the definition above we use the word "mapping" to avoid misusing the word "function" for something that isn't exactly a function. But in this particular case, calling the mapping a function would barely be a misuse --- if we forget about morphisms and treat the source and target categories as sets, the object mapping is nothing but a regular old function.
+In the definition above, we use the word "mapping" to avoid misusing the word "function" for something that isn't exactly a function. But in this particular case, calling the mapping a function would barely be a misuse --- if we forget about morphisms and treat the source and target categories as sets, the object mapping is nothing but a regular old function.
 
 ![Functor for objects](../10_functors/functor_objects.svg)
 
@@ -174,7 +172,7 @@ A more formal definition of a morphism mapping involves the concept of the *homo
 
 ![Functor for morphisms](../10_functors/functor_morphisms_formal.svg)
 
-Note how the concepts of *homomorphism set* and of *underlying set* allowed us to "escape" to set theory when defining categorical concepts and define everything using functions.
+(Notice how the concepts of *homomorphism set* and of *underlying set* allowed us to "escape" to set theory when defining categorical concepts and define everything using functions.)
 
 Functor laws
 ---
@@ -197,6 +195,17 @@ So this definition translates to the following two *functor laws*
 And these laws conclude the definition of functors --- a simple but, as we will see shortly, very powerful concept. 
 
 To see *why* is it so powerful, let's check some examples. 
+
+Functors in everyday language
+---
+
+There is a common figure of speech, that goes like this: 
+
+> If $a$ is like $F a$, then $b$ is like $F b$.
+
+Or "$a$ is related to $F a$, in the same way as $b$ is related to $F b$," e.g. "If schools are like corporations, then teachers are like bosses". 
+
+This figure of speech is a way to introduce a functor: what are you saying is that there is a certain connection (or category-theory therms a "morphism") between schools and teachers, that is similar to the connection between corporations and bosses i.e. that there is some kind of structure preserving map that connects the category of school-related things, to the category of work-related things in which schools (a) are mapped to corporations (F a) and teacher (b) are mapped to bosses (F b). and the connections between schools and teachers (a -> b) are mapped to the connections between corporations and bosses (F a -> F b).
 
 Diagrams are functors
 ---

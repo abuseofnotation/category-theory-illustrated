@@ -24,12 +24,18 @@ Logic
 
 Types
 ---
+[Naive set theory](https://proofwiki.org/wiki/Definition:Frege_Set_Theory)
 [Sets types categories](../references/sets_types_categories.pdf)
+
+[Russell - Principles of Mathematics](https://people.umass.edu/klement/pom/pom.html#sec497)
+
 
 
 [Number theory from first principles](https://explained-from-first-principles.com/number-theory/)
 
 [The natural numbers game](https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/)
+
+[Martin Lof lecture notes](https://ncatlab.org/nlab/files/MartinLofIntuitionisticTypeTheory.pdf)
 
 Functors
 ---
@@ -59,3 +65,9 @@ etc
 
 
 [Graphical linear algebra with string diagrams](https://graphicallinearalgebra.net/2015/04/26/adding-part-1-and-mr-fibonacci/)
+
+
+[First-order categorical logic](https://diagonalargument.com/2019/06/02/first-order-categorical-logic-1/)
+[Zansi's blog](https://zanzix.github.io/)
+
+[Baez homotopy](https://math.ucr.edu/home/baez/calgary/homotopy.html)

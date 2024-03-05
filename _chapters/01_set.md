@@ -142,7 +142,7 @@ You can think of $ID_{G}$ as a function which represents the set $G$ in the real
 Functions and Subsets
 ---
 
-For each set and subset, no matter what they represent, we can define the function that maps each element of the subset to itself:
+For each set and subset, no matter what they represent, we can define a function (called the *image* of the subset) that maps each element of the subset to itself:
 
 ![Function from a smaller set to a bigger one](../01_set/function_small_big.svg)
 
@@ -409,9 +409,9 @@ And in computer science, if we have functions that convert an object of type $A$
 Equivalence relations
 ---
 
-What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash; the concept of an *equivalence relation*. 
+What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash: the concept of an *equivalence relation*. 
 
-So what is an equivalence relation? We already know what a relation is &mdash; it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition it is when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
+So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition it is when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
 
 Reflexivity
 ---
@@ -425,7 +425,7 @@ This simple principle translates to the equally simple law of *reflexivity*: for
 Transitivity
 ---
 
-The second idea that defines the concept of equivalence is the idea that things that are equal to another thing must also equal between themselves. 
+According to the Christian theology of the Holly Trinity, the Jesus' Father is God, Jesus is God, and the Holy Spirit is also God, however, the Father is not the same person as Jesus (neither is Jesus the Holly Spirit). If this seems weird to you, that's because it breaks the second law of equivalence relations, transitivity. Transitivity is the idea that things that are both equal to a third thing must also equal between themselves. 
 
 ![Transitivity](../01_set/transitivity.svg)
 
@@ -435,6 +435,7 @@ Note that we don't need to define what happens in similar situations that involv
 
 Symmetry
 ---
+
 If one thing is equal to another, the reverse is also true, i.e, the other thing is also equal to the first one. This idea is called *symmetry*. Symmetry is probably the most characteristic property of the equivalence relation, which is not true for almost any other relation. 
 
 ![symmetry](../01_set/symmetry.svg)

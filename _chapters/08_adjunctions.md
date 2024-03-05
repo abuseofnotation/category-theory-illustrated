@@ -146,12 +146,6 @@ There definitely is more to be said about free and forgetful functors, as well a
 
 
 
-
-
-
-
-
-
 Like equivalence, adjunction is a relationship between two categories. Like equivalence, it is composed of two functors.
 
 However, unlike equivalence, an adjunction is not symmetric i.e. although the two functors are two way and we 
@@ -192,8 +186,3 @@ https://github.com/adamnemecek/adjoint/
 https://chrispenner.ca/posts/adjunction-battleship
 
 https://graphicallinearalgebra.net/2015/05/19/paths-and-matrices-part-1/
-
-
-<!--
-TODO: Formal concept analysis
--->

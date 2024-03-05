@@ -70,7 +70,7 @@ Category theory embodies all these aspects of mathematics, so I think a very goo
 Who is this book for 
 ====
 
-So, who is this book for? If we rephrase this question as "Who *should* read this book", then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems.
+So, who is this book for? Some people would phrase the question as "Who *should* read this book", but if you ask it this way, then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems (it is, in fact, something much more).
 
 Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPS to work properly, as, due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
 
@@ -96,7 +96,9 @@ Although I am not an expert in special relativity, I suspect that the way this c
 
 In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the Egyptians were able to build the pyramids without even knowing Euclidean geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math textbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
 
-And so "Who is this book for" is not to be read as who should, but who *can* read it. Then the answer is "anyone with some time and dedication to learn category theory". 
+Some people say that we don’t use maths in our daily life. But, if true, that is only because other people have solved all hard problems for us and the solutions are encoded on the tools that we use, however not knowing math means that you will be forever a consumer, bound to use those existing tools and solutions and thinking patterns, not being able to do many things on your own.
+
+And so "Who is this book for" is not to be read as who should, but who *can* read it. Then the answer is "everyone".
 
 About category theory
 ===
