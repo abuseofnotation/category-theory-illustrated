@@ -329,11 +329,11 @@ To explain what isomorphism is, we go back to the examples of the types of relat
 
 ![Opposite colors](../01_set/function_one_one.svg)
 
-If we have a one-one-function that connects sets that are of the same size (as is the case here), then this function has the following property: all elements from the target set have exactly one arrow pointing at them. In this case, the function is *invertible*. That is, if you flip the arrows of the function and its source and target, you get another valid function.
+If we have a one-to-one-function that connects sets that are of the same size (as is the case here), then this function has the following property: all elements from the target set have exactly one arrow pointing at them. In this case, the function is *invertible*. That is, if you flip the arrows of the function and its source and target, you get another valid function.
 
 ![Opposite colors](../01_set/isomorphism_one_one.svg)
 
-Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit*, and vise versa, we can say that temperatures measured in Celsius and Fahrenheit are isomorphic.
+Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets, we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit*, and vise versa, we can say that temperatures measured in Celsius and Fahrenheit are isomorphic.
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
