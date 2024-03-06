@@ -314,11 +314,11 @@ The external diagram is a more appropriate representation of the concept of comp
 
 ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
-If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way)
+If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now - the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*) --- ones that have source and target, that can be composed with one another in an associative way, that can be represented by external diagrams etc.
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, compose with one another in an associative way, and can be represented by external diagrams.
 
 And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing till the end of this chapter.
 
