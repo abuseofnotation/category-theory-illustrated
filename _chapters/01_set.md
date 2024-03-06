@@ -238,11 +238,11 @@ Nowadays, many people feel that mathematical functions are too limiting and hard
 Purely-functional programming languages
 ---
 
-We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. There are some languages that don't permit non-mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
+We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
 
 A peculiarity in such languages is that they don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
 
-In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly permform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
+In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly perform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
 
 We then link all those functions into a whole program, often by using a thing called *continuation passing style*.
 
