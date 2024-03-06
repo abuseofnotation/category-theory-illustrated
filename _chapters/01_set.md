@@ -55,7 +55,7 @@ The key insight that makes the concept useful is the fact that it enables you to
 Subsets 
 ---
 
-Let's construct one more set. The set of *all balls that are warm color*. Let's call it $Y$ (because in the diagram is colored in **y**ellow).
+Let's construct one more set. The set of *all balls that are warm in color*. Let's call it $Y$ (because in the diagram, it's colored in **y**ellow).
 
 ![The set of all balls of warm colors](../01_set/subset.svg)
 
