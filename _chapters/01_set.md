@@ -81,7 +81,7 @@ Of course if one is a valid answer, zero can be also. If we want a set of all *b
 
 Because a set is defined only by the items it contains, the empty set is *unique* &mdash; there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. Formally, the empty set is marked with the symbol $\varnothing$ (so $B = W = \varnothing$).
 
-The empty set is a special one, for example, it is a subset of every other set or mathematically speaking, $\forall A  \to \varnothing \subseteq A$ ($\forall$ means "for all")
+The empty set has some special properties, for example, it is a subset of every other set. Mathematically speaking, $\forall A  \to \varnothing \subseteq A$ ($\forall$ means "for all")
 
 Functions
 ===
