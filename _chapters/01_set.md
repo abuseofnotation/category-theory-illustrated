@@ -259,7 +259,7 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
 We can define a function that is the equivalent to performing the operation described above. 
-That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$.
+That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows.
 
 Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
