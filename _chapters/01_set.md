@@ -409,9 +409,9 @@ And in computer science, if we have functions that convert an object of type $A$
 Equivalence relations
 ---
 
-What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash: the concept of an *equivalence relation*. 
+What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash; the concept of an *equivalence relation*. 
 
-So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition it is when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
+So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition, it's when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
 
 Reflexivity
 ---
