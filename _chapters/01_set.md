@@ -6,7 +6,7 @@ title: Sets
 Sets
 ===
 
-Let's begin our inquiry by looking at the basic theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it is meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
+Let's begin our inquiry by looking at the basic theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it's meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
 
 In other words, sets are an *example of a category* (the *proto-example*, we might say), and it is useful to have examples. 
 
@@ -18,15 +18,15 @@ What is an Abstract Theory
 
 Most scientific and mathematical theories have a specific *domain*, which they are tied to, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created in order to explain how different *biological species* came to evolve using natural selection, quantum mechanics is a description of how particles behave at a specific scale, etc.
 
-Even most mathematical theories, although not inherently *bound* to a specific domain, like the scientific ones, are often strongly related to one, as differential equations are linked to how events change over time. 
+Even most mathematical theories, although not inherently *bound* to a specific domain like the scientific ones, are often strongly related to one, as differential equations are linked to how events change over time. 
 
-Set theory and category theory are different. They are not created to provide a rigorous explanation of how a particular phenomenon works. Instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Theories that are like that are called *abstract* theories. 
+Set theory and category theory are different, they are not created to provide a rigorous explanation of how a particular phenomenon works, instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Theories that are like that are called *abstract* theories. 
 
-The borders of the two are sometimes blurry, because all theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. But theories have core concept that don't refer to anything in particular, but instead are left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
+The borders of the two are sometimes blurry, because all theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. But theories have core concepts that don't refer to anything in particular, but are instead left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
 
-Concrete theories, like the theory of evolution, are composed of concrete concepts. For example, the concept of a *population*, also called a *gene-pool*, refers to a group of individuals that can interbreed. Abstract theories, like set theory, are composed of abstract concepts, like the concept of a set. The concept of a set by itself does not refer to anything. However, we cannot say that it is an empty concept, as there are countless things that can be represented by sets, like, for example, gene pools can be (very aptly) represented by sets of individual animals. And species of animals can too be represented by set &mdash; a set of all populations that can theoretically interbreed.
+Concrete theories, like the theory of evolution, are composed of concrete concepts. For example, the concept of a *population*, also called a *gene-pool*, refers to a group of individuals that can interbreed. Abstract theories, like set theory, are composed of abstract concepts, like the concept of a set. The concept of a set by itself does not refer to anything. However, we cannot say that it is an empty concept, as there are countless things that can be represented by sets, for example, gene pools can be (very aptly) represented by sets of individual animals. Animal species can also be represented by sets &mdash; a set of all populations that can theoretically interbreed.
 
-You already see how abstract theories may be useful. Because they are so simple, they can be used as building blocks of many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later). Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
+You've already seen how abstract theories may be useful. Because they are so simple, they can be used as building blocks to many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later). Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
 
 <!-- comic - brain on category theory -->
 
@@ -48,14 +48,14 @@ Let's construct a set, call it $G$ (as gray) that contains *all* of them as elem
 
 ![The set of all balls](../01_set/all.svg)
 
-This example may look overly-simple but in fact it is just as valid as any other one. 
+This example may look overly-simple, but in fact, it's just as valid as any other.
 
 The key insight that makes the concept useful is the fact that it enables you to reason about several things as if they were one.
  
 Subsets 
 ---
 
-Let's construct one more set. The set of *all balls that are warm color*. Let's call it $Y$ (because in the diagram is colored in **y**ellow).
+Let's construct one more set. The set of *all balls that are warm in color*. Let's call it $Y$ (because in the diagram, it's colored in **y**ellow).
 
 ![The set of all balls of warm colors](../01_set/subset.svg)
 
@@ -81,7 +81,7 @@ Of course if one is a valid answer, zero can be also. If we want a set of all *b
 
 Because a set is defined only by the items it contains, the empty set is *unique* &mdash; there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. Formally, the empty set is marked with the symbol $\varnothing$ (so $B = W = \varnothing$).
 
-The empty set is a special one, for example, it is a subset of every other set or mathematically speaking, $\forall A  \to \varnothing \subseteq A$ ($\forall$ means "for all")
+The empty set has some special properties, for example, it is a subset of every other set. Mathematically speaking, $\forall A  \to \varnothing \subseteq A$ ($\forall$ means "for all")
 
 Functions
 ===
@@ -99,9 +99,9 @@ Here is a function $f$, which converts each ball from the set $R$ to the ball wi
 
 ![Opposite colors](../01_set/function_one_one.svg)
 
-This is probably one of the simplest type of functions that exist &mdash; one which encodes a *one-to-one relationship* between the sets &mdash; *one* element from the source is connected to exactly *one* element from the target (and the other way around).
+This is probably one of the simplest type of function that exists &mdash; it encodes a *one-to-one relationship* between the sets. That is to say, *one* element from the source is connected to exactly *one* element from the target (and the other way around).
 
-But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). For example, a function can express a relationship in which several elements from the source set relate to the same element of the target set.
+But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). Below is one such function.
 
 ![Function from a bigger set to a smaller one](../01_set/function_big_small.svg)
 
@@ -175,7 +175,7 @@ There is a unique function from any set to any singleton set.
 Sets and Functions with numbers
 ===
 
-All numerical operations can be expressed as functions, acting on the set of (different types of) numbers. 
+All numerical operations can be expressed as functions acting on the set of (different types of) numbers. 
 
 Number sets
 ---
@@ -200,7 +200,7 @@ Overall everything is permitted, as long as you can always provide exactly one r
 > Every generalization of number has first presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible.  
 > Bertrand Russell, from Introduction to Mathematical Philosophy
 
-Note that most mathematical operations, such as addition, multiplication, etc. require two numbers in order to produce a result. This does not mean that they are not functions. It means that they are just a little more fancy ones. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
+Note that most mathematical operations, such as addition, multiplication, etc. require two numbers in order to produce a result. This does not mean that they are not functions, it just means they're a little fancier. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
 Sets and Functions in Programming
 ===
@@ -238,11 +238,11 @@ Nowadays, many people feel that mathematical functions are too limiting and hard
 Purely-functional programming languages
 ---
 
-We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. There are some languages that don't permit non-mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
+We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
 
 A peculiarity in such languages is that they don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
 
-In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly permform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
+In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly perform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
 
 We then link all those functions into a whole program, often by using a thing called *continuation passing style*.
 
@@ -259,7 +259,7 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
 We can define a function that is the equivalent to performing the operation described above. 
-That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ and then follow $f$.
+That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows.
 
 Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
@@ -278,7 +278,7 @@ If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every funct
 
 ![Functional composition connect](../01_set/morphism_general.svg)
 
-For example, if we again take the relationship between a person and his mother as a function, with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
+For example, if we again take the relationship between a person and his mother as a function with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
 
 Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's partner is our father, etc.
 
@@ -314,11 +314,11 @@ The external diagram is a more appropriate representation of the concept of comp
 
 ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
-If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way)
+If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now - the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*) --- ones that have source and target, that can be composed with one another in an associative way, that can be represented by external diagrams etc.
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, compose with one another in an associative way, and can be represented by external diagrams.
 
 And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing till the end of this chapter.
 
@@ -329,11 +329,11 @@ To explain what isomorphism is, we go back to the examples of the types of relat
 
 ![Opposite colors](../01_set/function_one_one.svg)
 
-If we have a one-one-function that connects sets that are of the same size (as is the case here), then this function has the following property: all elements from the target set have exactly one arrow pointing at them. In this case, the function is *invertible*. That is, if you flip the arrows of the function and its source and target, you get another valid function.
+If we have a one-to-one-function that connects sets that are of the same size (as is the case here), then this function has the following property: all elements from the target set have exactly one arrow pointing at them. In this case, the function is *invertible*. That is, if you flip the arrows of the function and its source and target, you get another valid function.
 
 ![Opposite colors](../01_set/isomorphism_one_one.svg)
 
-Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit*, and vise versa, we can say that temperatures measured in Celsius and Fahrenheit are isomorphic.
+Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets, we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit*, and vise versa, we can say that temperatures measured in Celsius and Fahrenheit are isomorphic.
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
@@ -409,9 +409,9 @@ And in computer science, if we have functions that convert an object of type $A$
 Equivalence relations
 ---
 
-What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash: the concept of an *equivalence relation*. 
+What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash; the concept of an *equivalence relation*. 
 
-So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition it is when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
+So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition, it's when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
 
 Reflexivity
 ---
@@ -491,4 +491,4 @@ To see why, imagine a person (e.g. me), tinkering with some sort of engineering 
 
 But things are different if the machine in question is software-based --- due to the ease with which new software components can be rolled out, our design can blur the line that separates some of the components or even do away with the concept of component altogether and make the whole program one giant component (*monolithic design*). Worse, when no ready-made components are available, this approach is actually easier than the component-based approach that we described in the previous paragraph, and so many people use it. 
 
-This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For this reasons, I think that currently, programmers are losing out by not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
+This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that currently, programmers are losing out by not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
