@@ -101,7 +101,7 @@ Here is a function $f$, which converts each ball from the set $R$ to the ball wi
 
 This is probably one of the simplest type of function that exists &mdash; it encodes a *one-to-one relationship* between the sets. That is to say, *one* element from the source is connected to exactly *one* element from the target (and the other way around).
 
-But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). For example, a function can express a relationship in which several elements from the source set relate to the same element of the target set.
+But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). Below is one such function.
 
 ![Function from a bigger set to a smaller one](../01_set/function_big_small.svg)
 
