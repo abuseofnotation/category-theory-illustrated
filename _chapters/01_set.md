@@ -278,7 +278,7 @@ If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every funct
 
 ![Functional composition connect](../01_set/morphism_general.svg)
 
-For example, if we again take the relationship between a person and his mother as a function, with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
+For example, if we again take the relationship between a person and his mother as a function with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
 
 Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's partner is our father, etc.
 
