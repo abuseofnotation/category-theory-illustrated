@@ -65,16 +65,16 @@ Although many people don't necessarily subscribe to this view of mathematics as 
 
 There is nothing wrong with this approach, but mathematics is so much more than solving problems. It was the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was, and still is, a language which can allow for people with different cultural backgrounds to understand each other. And it is also art and a means of entertainment.
 
-Category theory embodies all these aspects of mathematics, so I think a very good grounds to writing a book where all of them shine --- a book that is based not on solving of problems, but on exploration of concepts and on seeking connections between them. A book that is, overall, pretty.
+Category theory embodies all these aspects of mathematics, so I think it's very good grounds to writing a book where all of them shine --- a book that isn't based on solving of problems, but exploring concepts and seeking connections between them. A book that is, overall, pretty.
 
 Who is this book for 
 ====
 
 So, who is this book for? Some people would phrase the question as "Who *should* read this book", but if you ask it this way, then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems (it is, in fact, something much more).
 
-Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPS to work properly, as, due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
+Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPSes to work properly. Due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
 
-They seem to think that if the theory didn't exist the engineers that developed the GPS would have faced this phenomenon in the following way:
+They seem to think that if the theory didn't exist, the engineers that developed the GPSes would have faced this phenomenon in the following way:
 
 > Engineer 1: Whoa, the clocks on the satellites are off by X nanoseconds! 
 >
@@ -105,26 +105,26 @@ About category theory
 
 Like we said, the fundaments of mathematics are the fundaments of thought. Category theory allows us to formalize those fundaments that we use in our daily (intellectual) lives.
 
-The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I mean, although it isn't obvious at all (how are they equal, in what context, etc.) 
+The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I meant, although it isn't obvious at all (how are they equal?, in what context?, etc.) 
 
-It is in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
+It's in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
-Category theory formalizes the concept of diagrams and their components --- arrows and objects --- and creates a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
+Category theory formalizes the concept of diagrams and their components --- arrows and objects --- to create a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
 
 As a consequence of that, category theory and diagrams are also a very understandable way to communicate a formal concept clearly, something I hope to demonstrate in the following pages.
 
 Summary
 ===
 
-In this book we will visit various such modes of knowledge and along the way, we would see all other kinds of mathematical objects, viewed through the lens of categories.
+In this book we will visit various such modes of knowledge and along the way, see all kinds of mathematical objects, viewed through the lens of categories.
 
-We will start with *set theory* in chapter 1, which is the original way to formalize different mathematical concepts.
+We start with *set theory* in chapter 1, which is the original way to formalize different mathematical concepts.
 
 Chapter 2 we will make a (hopefully) gentle transition from sets to *categories* while showing how the two compare and (finally) introducing the definition of category theory.
 
-In the next two chapters, 3 and 4, we jump to two different branches of mathematics and will introduce their main means of abstraction, *groups and orders*, and we will see how they connect to the core category-theoretic concepts that we introduced earlier.
+In the next two chapters, 3 and 4, we jump into two different branches of mathematics and introduce their main means of abstraction, *groups and orders*, observing how they connect to the core category-theoretic concepts that we introduced earlier.
 
-Chapter 5 also follows the main formula of the previous two chapters, and gets to the heart of the matter of why category theory is a universal language, by showing its connection with the ancient discipline of *logic*. As in chapters 3 and 4 we start with a crash course in logic itself.
+Chapter 5 also follows the main formula of the previous two chapters, getting to the heart of the matter of why category theory is a universal language, by showing its connection with the ancient discipline of *logic*. As in chapters 3 and 4, we start with a crash course in logic itself.
 
 The connection between all these different disciplines is examined in chapter 6, using one of the most interesting category-theoretical concepts --- the concept of a functor.
 
