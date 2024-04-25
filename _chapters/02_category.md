@@ -75,7 +75,7 @@ In other words, products are extremely important concept, that is vital if you w
 Defining products in terms of sets 
 ---
 
-A product, as we said, a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). So, to define a product we must define the concept of an ordered pair. So how can we do that? Note that an ordered pair of elements is not just set containing the two elements ---  that would just be a *pair*, but not an *ordered pair*). 
+A product is, as we said, a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). So, to define a product we must define the concept of an ordered pair. So how can we do that? Note that an ordered pair of elements is not just a set containing the two elements ---  that would just be a *pair*, but not an *ordered pair*).
 
 Rather, an ordered pair is a structure that contains two objects as well as information about which of those objects is the first and which one is second (and in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.)
 
