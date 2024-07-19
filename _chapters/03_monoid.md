@@ -356,13 +356,14 @@ And equally important is the opposite function, which maps a curried function to
 const uncurry = <A, B, C> (f:(a:A) => (b:B) => C) => (a:A, b:B ) => f(a)(b)
 ```
 
-There is a lot to say about these two functions, starting from the fact that its existence gives rise to an interesting relationship between the concept of a *product* and the concept of a *morphism* in category theory, called the *adjunction*. But we will cover this later. For now we are interested in the fact the two function representations are isomorphic, formally $A\times B\to C\cong A\to B \to C$. 
+There is a lot to say about these two functions, starting from the fact that its existence gives rise to an interesting relationship between the concept of a *product* and the concept of a *morphism* in category theory, called an *adjunction*. But we will cover this later. For now, we are interested in the fact the two function representations are isomorphic, formally $A\times B\to C\cong A\to B \to C$. 
 
 By the way, this isomorphism can be represented in terms of programming as well. It is equivalent to the statement that the following function always returns `true` for any arguments, 
 
 ```
 (...args) => uncurry(curry(f(...args)) === f(...args)
 ```
+
 This is one part of the isomorphism, the other part is the equivalent function for curried functions.
 
 **Task:** Write the other part of the isomorphism.
@@ -482,7 +483,6 @@ However, it seems that the set part of the structure in this representation is k
 
 But wait, if the monoids' underlying *sets* correspond to *objects* in category theory, then the corresponding category would have just one object. And so the correct representation would involve just one point from which all arrows come and to which they go. 
 
-
 ![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_category.svg)
 
 The only difference between different monoids would be the number of morphisms that they have and the relationship between them.
@@ -496,7 +496,7 @@ The intuition behind this representation from a category-theoretic standpoint is
 |Invertibility  | |  | X |
 |Closure  | | X | X |
 
-When we view a monoid as a category, this law says that all morphisms in the category should be from one object to itself - a monoid, any monoid, can be seen as a *category with one object*.
+When we view a monoid as a category, this law says that all morphisms in the category should be from one object to itself - a monoid, any monoid, can be seen as a *category with one object*. The converse is also true: any category with one object can be seen as a monoid.
 
 Let's elaborate on this thought by reviewing the definition of a category from chapter 2.
 

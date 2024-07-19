@@ -25,7 +25,7 @@ Not all binary relationships are orders --- only ones that fit certain criteria 
 Linear order
 ===
 
-Let's start with an example --- the most straightforward type of order that you think og is *linear order* i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which element comes before which. For example, order of colors, sorted by the length of their light-waves (or by how they appear in the rainbow).
+Let's start with an example --- the most straightforward type of order that you think of is *linear order* i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which element comes before which. For example, order of colors, sorted by the length of their light-waves (or by how they appear in the rainbow).
 
 ![Linear order](../04_order/linear_order.svg)
 
@@ -325,13 +325,13 @@ The difference between the two is small but crucial:  in a tree, each element ca
 
 A good intuition for the difference between the two is that a semilattice is capable of representing much more general relations, so for example, the mother-child relation forms a tree (a mother can have multiple children, but a child can have *only one* mother), but the "older sibling" relation forms a lattice, as a child can have multiple older siblings and vise versa.
 
-Why am I speaking about trees? It's because people tend to use them for modelling all kinds of phenomena and to imagine everything a a tree. The tree is the structure that all of us understand, that comes at us naturally, without even realizing that we are using a structure --- most human-made hierarchies are modelled as trees. A typical organization of people are modelled as trees - you have one person at the top, a couple of people who report to them, then even more people that report to this couple of people.
+Why am I speaking about trees? It's because people tend to use them for modeling all kinds of phenomena and to imagine everything as trees. The tree is the structure that all of us understand, that comes at us naturally, without even realizing that we are using a structure --- most human-made hierarchies are modeled as trees. A typical organization of people are modeled as trees - you have one person at the top, a couple of people who report to them, then even more people that report to this couple of people.
 
 ![Tree](../04_order/tree-organization.svg)
 
 (Contrast this with informal social groups, in which more or less everyone is connected to everyone else.)
  
-And, cities (ones that are designed rather than left to evolve naturally) are also modelled as trees: you have several neighbourhoods each of which has a school, a department store etc., connected with to each other and (in bigger cities) organized into bigger living units.
+And, cities (ones that are designed rather than left to evolve naturally) are also modeled as trees: you have several neighborhoods each of which has a school, a department store etc., connected with to each other and (in bigger cities) organized into bigger living units.
 
 The implications of the tendency to use trees, as opposed to lattices, to model are examined in the ground-breaking essay “A City is Not a Tree” by Christopher Alexander.
 
@@ -344,29 +344,33 @@ In general, it seems that hierarchies that are specifically designed by *people*
 Interlude: Formal concept analysis
 ===
 
-In the previous section we (along with Christopher Alexander) argued that lattice-based hierarchies are "natural", that is, they arise in nature. Now we will see a way to uncover such hierarchies given a set of objects that share some attributes. This is an overview of a mathematical method, called *formal context analysis*.
+In the previous section we (along with Christopher Alexander) argued that lattice-based hierarchies are "natural", that is, they arise in nature. Now, we will see an interesting way to uncover such hierarchies, given a set of objects that share some attributes. This is an overview of a mathematical method, called *formal context analysis*.
 
-The datastructure that we will be analysing, called *formal context* consists of 3 sets. Firstly, the set containing all *objects* that we will be analysing (denoted as $G$).
+The data structure that we will be analyzing, called *formal context* consists of 3 sets. Firstly, the set containing all *objects* that we will be analyzing (denoted as $G$).
 
 ![Formal concept analysis - function](../04_order/concept-objects.svg)
 
-Secondly, a set of some *attributes* that these objects might have (denoted as $M$). Here we will be using the the 3 base colors.
+Secondly, a set of some *attributes* that these objects might have (denoted as $M$). Here we will be using the 3 base colors.
 
 ![Formal concept analysis - function](../04_order/concept-attributes.svg)
 
-And finally a set of relation (called *incidence*) that expresses which objects have which attributes, expressed by a set of pairs $G × M$. So, having a pair containing the color yellow, for example, indicate that the color of the ball contains the color yellow.
+And finally a set of relation (called *incidence*) that expresses which objects have which attributes, expressed by a set of pairs $G × M$. So, having a pair containing a ball and a base color (yellow for example) would indicates that the color of the ball contains (i.e. is composed of) the color yellow (among other colors).
 
 ![Formal concept analysis - function](../04_order/concept-incidense.svg)
 
-Now let's use these sets to build a lattice. First step: because functions are relations, the set of pairs is isomorphic to a function, connecting each attributes with the set of objects that share this attribute.
+Now, let's use these sets to build a lattice. 
+
+First step: From the set of pairs, we build a function, connecting each attributes with the set of objects that share this attribute (we can do this because functions are relations and relations are expressed by pairs).
 
 ![Formal concept analysis - function](../04_order/concept-function.svg)
 
-Now, if we look at the target of this function, we see some sets that might share some common elements. Is there some way to order those sets? Of course - we can order them by inclusion, and, if we add top and bottom values, we get a lattice.
+Take a look at the target of this function, which is a set of sets. Is there some way to order those sets in order to visialize them better? Of course, we can order them by inclusion. In this way, each attribute would be connected to an attribute that is shared by a similar set of objects.
+
+Add top and bottom values, and we get a lattice.
 
 ![Formal concept analysis - function](../04_order/concept-lattice.svg)
 
-Ordering the concept as a lattice might help us see connections between the concepts, in the context e.g. we see that *all balls that contain the color yellow also contain the color red.*
+Ordering the concept as a lattice might help us see connections between the concepts, in the context e.g. we see that *all balls in our set that contain the color yellow also contain the color red.*
 
 **Task:** Take a set of object and one containing attributes and create your own concept lattice. Example: the objects can be lifeforms: fish, frog, dog, water weed, corn etc. and attributes can be their characteristics: "lives in water", "lives in land", "can move", "is a plant", "is an animal" etc. 
 
@@ -398,7 +402,7 @@ All of that structure arises naturally from the simple law of transitivity.
 Preorders and equivalence relations
 ---
 
-Preorders may be viewed as a middle-ground between *partial orders* and *equivalence relations*. As the missing exactly the property on which those two structures differ --- (anti)symmetry. Because of that, if we have a bunch of objects in a preorder that follow the law of *symmetry*, those objects form an equivalence relation. And if they follow the reverse law of *antisymmetry*, they form an partial order.
+Preorders may be viewed as a middle-ground between *partial orders* and *equivalence relations*. As the missing exactly the property on which those two structures differ --- (anti)symmetry. Because of that, if we have a bunch of objects in a preorder that follow the law of *symmetry*, those objects form an equivalence relation. And if they follow the reverse law of *antisymmetry*, they form a partial order.
 
 | Equivalence relation | Preorder | Partial order |
 | ---          | --- | --- |
@@ -410,7 +414,7 @@ In particular, any subset of objects that are connected with one another both wa
 
 ![preorder](../04_order/preorder_equivalence.svg)
 
-And, even more interestingly, if we transfer the preorder connections between the elements of thesese sets to connections between the sets themselves, these connections would follow the *antisymmetry* requirement, which means that they would form a *partial order.*
+And, even more interestingly, if we transfer the preorder connections between the elements of these sets to connections between the sets themselves, these connections would follow the *antisymmetry* requirement, which means that they would form a *partial order.*
 
 ![preorder](../04_order/preorder_partial_order.svg)
 
@@ -434,7 +438,7 @@ However, maps that contain more than one road (and even more than one *route*) c
 State machines as preorders 
 ---
 
-Let's now reformat the preorder that we used in the previous two examples, as Hasse diagram that goes from left to right. Now, it (hopefully) doesn't look so much like a hierarchy, nor like map, but like a description of a process (which, if you think about it, is also a map just one that is temporal rather than spatial.) This is actually a very good way to describe a computation model known as *finite state machine*. 
+Let's now reformat the preorder that we used in the previous two examples as a Hasse diagram that goes from left to right. Now, it (hopefully) doesn't look so much like a hierarchy, nor like map, but like a description of a process (which, if you think about it, is also a map just one that is temporal rather than spatial.) This is actually a very good way to describe a computation model known as *finite state machine*. 
 
 ![A state machine as a preorder](../04_order/preorder_state_machine.svg)
 
@@ -442,7 +446,7 @@ A specification of a finite state machine consists of a set of states that the m
 
 But as we saw, a finite state machine is similar to a preorder with a greatest and least object, in which the relations between the objects are represented by functions.
 
-Finite state machines are used in organization planning e.g. imagine a process where a given item gets manufactured, gets checked by a quality control person, who, if they find some deficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping. This process can be modelled by the above diagram. 
+Finite state machines are used in organization planning e.g. imagine a process where a given item gets manufactured, gets checked by a quality control person, who, if they find some deficiencies, pass it to the necessary repairing departments and then they check it again and send it for shipping. This process can be modeled by the above diagram. 
 
 {%endif%}
 
@@ -498,7 +502,7 @@ So it's official --- preorders are categories (sounds kinda obvious, especially 
 
 And since partial orders and total orders are preorders too, they are categories as well. 
 
-When we compare the categories of orders to other categories, like the quintessential category of sets, we see one thing that immediately sets them apart: in other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
+When we compare the categories of orders to other categories, (like the quintessential category of sets), we see one thing that immediately sets them apart: in other categories there can be *many different morphisms (arrows)* between two objects and in orders can have *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
 
 ![Orders compared to other categories](../04_order/arrows_one_arrow.svg)
 
@@ -506,20 +510,23 @@ In the contrast, in the category of sets where there are potentially infinite am
 
 ![Orders compared to other categories](../04_order/order_category.svg)
 
-Note that although two objects in an order might be directly connected by just one arrow, they might still be be *indirectly* connected by more than one arrow. So when we define an order in categorical way it's crucial to specify that *these ways are equivalent* i.e. that all diagrams that show orders commute.
+So, an order is a category that has at most one morphism between two objects. But the converse is also true ---  *every category* that has at most one morphism between objects is an order (or a *thin* category as it is called in category-theoretic terms).
 
-Products and sums
+An interesting fact that follows trivially from the fact that the they have at most one morphism between given two objects is that in thin categories *all diagrams commute*.
+
+**Task:** Prove this. 
+
+Products and coproducts
 ---
 
 While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *coproduct* of two objects in a category, from chapter 2. 
-
 ![Joins as coproduct](../04_order/coproduct_join.svg)
 
 If you recall, this is an operation that corresponds to *set inclusion* in the category of sets.
 
 ![Joins as coproduct](../04_order/coproduct_inclusion.svg)
 
-But wait, wasn't there something else that corresponded to set inclusion --- oh yes, the *join* operation in orders. And not merely that, but orders are defined in the exact same way as the categorical coproducts.
+But wait, wasn't there some other operation that that corresponded to set inclusion? Oh yes, the *join* operation in orders. And not merely that, but joins in orders are defined in the exact same way as the categorical coproducts.
 
 In category theory, an object $G$ is the coproduct of objects $Y$ and $B$ if the following two conditions are met:
 
@@ -538,4 +545,6 @@ In the realm of orders, we say that $G$ is the *join* of objects $Y$ and $B$ if:
 
 We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation. Which of course means that *products* correspond to *meets*.
 
-Overall, orders are sometimes called "thin categories" as they have equivalents for most categorical concepts, and are often used for modelling structures that are simpler than the ones that require full-fledged categories. We will see an example of that in the next chapter.
+Overall, orders (thin categories) are often used for exploring categorical concepts in a context that is easier to understand e.g. understand the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts).
+
+Orders are also helpful when they are used as thin categories i.e. as an alternative to "full-fledged" categories, in contexts when we aren't particularily interested in the difference between the morphisms that go from one object to another. We will see an example of that in the next chapter.

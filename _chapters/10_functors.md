@@ -101,7 +101,9 @@ Now, we will generalize the definition of an order isomorphism, so it also appli
 
 ![Category isomorphism](../10_functors/category_isomorphism.svg)
 
-After examining this definition closely, we realize that, although it *sounds* a bit more complex (and *looks* a bit messier) than the one we have for orders *it is actually the same thing*. It is just that the so-called "morphism mapping" between categories that have just one morphism for any two objects are trivial, and so we can omit them.
+After examining this definition closely, we realize that, although it *sounds* a bit more complex (and *looks* a bit messier) than the one we have for orders *it is actually the same thing*. 
+
+It is just that the so-called "morphism mapping" between categories that have just one morphism for any two objects are trivial, and so we can omit them.
 
 ![Order isomorphism](../10_functors/category_order_isomorphism_2.svg)
 
@@ -120,9 +122,9 @@ By the way, what we just did (taking a concept that is defined for a more narrow
 The problem with categorical isomorphisms
 ---
 
-By examining them more closely, we realize that categorical isomorphisms are not so hard to define. However there is another issue with them, namely that they *don't capture the essence of what categorical equality should be*. I have devised a very good and intuitive explanation why is it the case, that this ~~margin~~ section is too narrow to contain.
+By examining them more closely, we realize that categorical isomorphisms are not so hard to define. However there is another issue with them, namely that they *don't capture the essence of what categorical equality should be*. I have devised a very good and intuitive explanation why is it the case, that this ~~margin~~ section is too narrow to contain. So we will leave it for the next chapter, where we will also devise a more apt way to define a *two-way connection* between categories. 
 
-In the next chapter we will devise a more apt way to define a *two-way connection* between categories. But for this, we need to first examine *one-way connections* between them, i.e. *functors*.
+But first, we need to examine *one-way connections* between them, i.e. *functors*.
 
 PS: Categorical isomorphisms are also *very rare in practice* --- the only one that comes to mind me is the Curry-Howard-Lambek isomorphism from the previous chapter. That's because if two categories are isomorphic then there is no reason at all to treat them as different categories --- they are one and the same. 
 
@@ -199,13 +201,13 @@ To see *why* is it so powerful, let's check some examples.
 Functors in everyday language
 ---
 
-There is a common figure of speech, that goes like this: 
+There is a common figure of speech (which is used  all the time in this book) which goes like this: 
 
 > If $a$ is like $F a$, then $b$ is like $F b$.
 
 Or "$a$ is related to $F a$, in the same way as $b$ is related to $F b$," e.g. "If schools are like corporations, then teachers are like bosses". 
 
-This figure of speech is a way to introduce a functor: what are you saying is that there is a certain connection (or category-theory therms a "morphism") between schools and teachers, that is similar to the connection between corporations and bosses i.e. that there is some kind of structure preserving map that connects the category of school-related things, to the category of work-related things in which schools (a) are mapped to corporations (F a) and teacher (b) are mapped to bosses (F b). and the connections between schools and teachers (a -> b) are mapped to the connections between corporations and bosses (F a -> F b).
+This figure of speech is nothing but a way to describe a functor in our day-to-day language: what we mean by it is that there is a certain connection (or category-theory therms a "morphism") between schools and teachers, that is similar to the connection between corporations and bosses i.e. that there is some kind of structure-preserving map that connects the category of school-related things, to the category of work-related things which maps schools ($a$) to corporations ($F a$) and teacher ($b$) to bosses ($F b$), and which is such that the connections between schools and teachers ($a \to b$) are mapped to the connections between corporations and bosses ($F a \to F b$).
 
 Diagrams are functors
 ---
@@ -267,12 +269,27 @@ In maps, morphisms that are a result of composition are often not displayed, but
 
 Notice that in order to be a functor, a map does not have to list *all* roads that exist in real life, and *all* traveling options ("the map is not the territory"), the only requirement is that *the roads that it lists should be actual* --- this is a characteristic shared by all many-to-one relationships (i.e. functions).
 
+<!--
+Functors can also go from complex to simple
+---
+
+So far, we saw functors that go from a simple category, into a more complex one, which aim to *select* some objects from the target category*.
+
+But functors can go the other way too --- from complex to simple --- those are the functors which *sort* the object of the source category into the categories that constitute the target.
+
+
+Even more interestingly, we often encounter often special pairs of functors, consisting of one *selective* and one *sorting* functor that go between two categories, that kinda reverse each other. 
+
+--> 
+
 Human perception is functorial 
 ---
 
-We saw that, aside from being a category-theoretic concept, functors are connected to disciplines that study the human mind, like logic, linguistics, semiotics and the like. Why is it so? Recently, I wrote a [blog post about using logic to model real-life thinking](/logic-thought)) where I tackle the "unreasonable effectiveness" of functors (and "maps" in general), where I argue that is because human perception, human thinking, is functorial, that perception is just a series of functors.
+We saw that, aside from being a category-theoretic concept, functors are connected to many disciplines that study the human mind such as logic, linguistics, semiotics and the like. Why is it so? Recently, I wrote a [blog post about using logic to model real-life thinking](/logic-thought)) where I tackle the "unreasonable effectiveness" of functors (and "maps" in general), where I argue that human perception, human thinking, is functorial.
 
-My thesis is that to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. For example, our brain creates a functor between the category of raw sensory data that we receive from our senses, to a category containing some basic model of how the world works (one that tells us where are we in space, how many objects are we seeing etc.). Then we are connecting this model to another, more abstract model, which provides us with a higher-level view of the situation that we are in, and so on.
+My thesis is that to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
+
+We may say that perception starts with raw sensory data. From it, we go, (using a functor) to a category containing some basic model of how the world works (one that tells us where are we in space, how many objects are we seeing etc.). Then we are connecting this model to another, even more abstract model, which provides us with a higher-level view of the situation that we are in, and so on.
 
 ![Perception is functorial](../10_functors/chain.svg)
 

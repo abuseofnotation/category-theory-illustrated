@@ -63,16 +63,16 @@ Or someone being sceptical to David Hume's scepticism:
 
 Although many people don't necessarily subscribe to this view of mathematics as a workhorse, we can see it encoded inside the structure of most mathematics textbooks --- each chapter starts with an explanation of a concept, followed by some examples, and then ends with a list of problems that this concept solves. 
 
-There is nothing wrong with this approach, but mathematics is so much more than solving problems. It was the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was, and still is, a language which can allow for people with different cultural backgrounds to understand each other. And it is also art and a means of entertainment.
+There is nothing wrong with this approach, but mathematics is so much more than a tool for solving problems. It was the basis of a religious cult in ancient Greece (the Pythagoreans), it was seen by philosophers as means to understanding the laws which govern the universe. It was, and still is, a language which can allow for people with different cultural backgrounds to understand each other. And it is also art and a means of entertainment. It is a mode of thinking, Or we can even say it is thinking itself. Some people say that "writing is thinking", but I would argue that writing, when refined enough, and free from any kind of bias in on the side of the author, automatically becomes *mathematical writing* --- you can almost convert the words into formulas and diagrams.
 
 Category theory embodies all these aspects of mathematics, so I think it's very good grounds to writing a book where all of them shine --- a book that isn't based on solving of problems, but exploring concepts and seeking connections between them. A book that is, overall, pretty.
 
 Who is this book for 
 ====
 
-So, who is this book for? Some people would phrase the question as "Who *should* read this book", but if you ask it this way, then the answer is nobody. Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems (it is, in fact, something much more).
+So, who is this book for? Some people would phrase the question as "Who *should* read this book", but if you ask it this way, then the answer is "nobody". Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems (whereas it is, in fact, (as we established) something much more).
 
-Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPSes to work properly. Due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
+Let's take an example --- many people claim that Einstein's theories of relativity are essential for GPS-es to work properly. Due to relativistic effects, the clocks on GPS satellites tick faster than identical clocks on the ground.
 
 They seem to think that if the theory didn't exist, the engineers that developed the GPSes would have faced this phenomenon in the following way:
 
@@ -94,20 +94,20 @@ Although I am not an expert in special relativity, I suspect that the way this c
 >
 > Engineer 2: Just adjust it by X and see if it works. Oh, and tell that to some physicist. They might find it interesting.
 
-In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the Egyptians were able to build the pyramids without even knowing Euclidean geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. Thinking itself is mathematical. So going through any math textbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
+In other words, we can solve problems without any advanced math, or with no math at all, as evidenced by the fact that the Egyptians were able to build the pyramids without even knowing Euclidean geometry. And with that I am not claiming that math is so insignificant, that it is not even good enough to serve as a tool for building stuff. Quite the contrary, I think that math is much more than just a simple tool. So going through any math textbook (and of course especially this one) would help you in ways that are much more vital than finding solutions to "complex" problems.
 
-Some people say that we don’t use maths in our daily life. But, if true, that is only because other people have solved all hard problems for us and the solutions are encoded on the tools that we use, however not knowing math means that you will be forever a consumer, bound to use those existing tools and solutions and thinking patterns, not being able to do many things on your own.
+Some people say that we don’t use maths in our daily life. But, if true, that is only because other people have solved all hard problems for us and the solutions are encoded on the tools that we use, however not knowing math means that you will be forever a consumer, bound to use those existing tools and solutions and thinking patterns, not being able to do anything on your own.
 
-And so "Who is this book for" is not to be read as who should, but who *can* read it. Then the answer is "everyone".
+And so "Who is this book for" is not to be read as who should, but who *can* read it. Then, the answer is "everyone".
 
 About category theory
 ===
 
 Like we said, the fundaments of mathematics are the fundaments of thought. Category theory allows us to formalize those fundaments that we use in our daily (intellectual) lives.
 
-The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, that is part of the problem: sometimes intuition makes it *too easy* for us to say something that can be interpreted in many ways, some of which are wrong. For example, when I say that two things are equal, it would seem obvious to you what I meant, although it isn't obvious at all (how are they equal?, in what context?, etc.) 
+The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, intuition also makes it easy to be misunderstood --- what we say usually can be interpreted in many ways, some of which are wrong. Misunderstanding of these kinds are the reason why biases appear. Moreover, some people (called "sophists" in ancient Greece) would introduce biases on purpose in order to get short-term gains (not caring that introducing biases hurts everyone on the long run).
 
-It's in these situations that people often resort to *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
+It's in such situations, that people often resort to *formulas* and *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 
 Category theory formalizes the concept of diagrams and their components --- arrows and objects --- to create a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
 
