@@ -99,7 +99,7 @@ Defining products in terms of functions
 ---
 
 
-In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of We may think of this as a *low-level* approach to the definition. This time we will try to do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, we will attempt to fly over the difficulties that we met in the previous section and provide a definition of a product in terms of functions and *external* diagrams.
+In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of. We may think of this as a *low-level* approach to the definition. This time we will try to do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, we will attempt to fly over the difficulties that we met in the previous section and provide a definition of a product in terms of functions and *external* diagrams.
 
 How can we define products in terms of external diagrams i.e. given two sets how can we pinpoint the set that is their product? To do that, we must first think about *what functions* are there for a given product, and we have two of those --- the functions for retrieving the two elements of the pair (the "getters", so to say). 
 
