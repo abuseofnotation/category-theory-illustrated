@@ -207,7 +207,7 @@ There is a common figure of speech (which is used  all the time in this book) wh
 
 Or "$a$ is related to $F a$, in the same way as $b$ is related to $F b$," e.g. "If schools are like corporations, then teachers are like bosses". 
 
-This figure of speech is nothing but a way to describe a functor in our day-to-day language: what we mean by it is that there is a certain connection (or category-theory therms a "morphism") between schools and teachers, that is similar to the connection between corporations and bosses i.e. that there is some kind of structure-preserving map that connects the category of school-related things, to the category of work-related things which maps schools ($a$) to corporations ($F a$) and teacher ($b$) to bosses ($F b$), and which is such that the connections between schools and teachers ($a \to b$) are mapped to the connections between corporations and bosses ($F a \to F b$).
+This figure of speech is nothing but a way to describe a functor in our day-to-day language: what we mean by it is that there is a certain set of connections (or category-theory therms a "morphisms") between schools and teachers, that is similar to the connections between corporations and bosses i.e. that there is some kind of structure-preserving map that connects the category of school-related things, to the category of work-related things which maps schools ($a$) to corporations ($F a$) and teacher ($b$) to bosses ($F b$), and which is such that the connections between schools and teachers ($a \to b$) are mapped to the connections between corporations and bosses ($F a \to F b$).
 
 Diagrams are functors
 ---
@@ -282,22 +282,24 @@ Even more interestingly, we often encounter often special pairs of functors, con
 
 --> 
 
-Human perception is functorial 
+Human perception might be functorial 
 ---
 
-We saw that, aside from being a category-theoretic concept, functors are connected to many disciplines that study the human mind such as logic, linguistics, semiotics and the like. Why is it so? Recently, I wrote a [blog post about using logic to model real-life thinking](/logic-thought)) where I tackle the "unreasonable effectiveness" of functors (and "maps" in general), where I argue that human perception, human thinking, is functorial.
+As we saw, in addition to category theory, functors apper in many disciplines that study the human mind, such as logic, linguistics, semiotics and the like. I thought about why is it so in a [blog post](/logic-thought) that I wrote. My response to that question is that human perception, human thinking, is itself functorial: to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
 
-My thesis is that to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
-
-We may say that perception starts with raw sensory data. From it, we go, (using a functor) to a category containing some basic model of how the world works (one that tells us where are we in space, how many objects are we seeing etc.). Then we are connecting this model to another, even more abstract model, which provides us with a higher-level view of the situation that we are in, and so on.
+We may say that perception starts with raw sensory data. From it, we go, (using a functor) to a category containing some basic model of how the world works, mapping the objects we are seeing to some concepts that we formed in our mind.
 
 ![Perception is functorial](../10_functors/chain.svg)
 
-You can view this as a progression from simpler to more abstract from categories with less morphisms to categories with more morphisms --- we start with the category of pieces of sensory data that have no connections between one another, and proceed to another category where some of these pieces of data are connected. Then, we transfer this structure in another category with even more connections.
+Then we are connecting this model to another, even more abstract model (or models), which provide us with a higher-level overview of the situation that we are in, again using functorial connection (technically these are functors from subcategories).
 
 ![Perception is functorial](../10_functors/logic_thought.svg)
 
-All this is, of course, just a speculation, but we might convince yourself that there is some basis for it, especially after we see how significant functors are for the mathematical structures that we saw before.
+You can view this as a progression of connections that go from simpler to more abstract (i.e. from categories with less morphisms to categories with more morphisms). 
+
+These connections are functorial in nature, because they work purely in terms of *structure*: the idea of a given object has nothing in common with the object itself (e.g. the idea of a biscuit isn't round, sweet etc). What ideas have in common with the objects of representation is that the connections they have between one another mimic some connections a real-life buiscuit has with other objects.
+
+All this is, of course, just a speculation. But we might convince yourself that there is some basis for it, especially after we see how significant functors are for the mathematical structures that we saw before.
 
 Functors in monoids
 ===
@@ -457,11 +459,11 @@ The smoothness of the mapping means that paths may stretch or collapse but not b
 Functors in programming. The list functor
 ===
 
-Types in programming language form a category, associated to that category are some functors that programmers use every day, such as the list functor, that we will use as an example. The list functor is an example of a functor that maps from the realm of simple (primitive) types and functions to the realm of more complex (generic) types and functions. 
+Types in programming language form a category, and in that category there are some functors that programmers use every day, such as the list functor, that we will use as an example. The list functor is an example of a functor that maps the realm of simple (primitive) types and functions to the realm of more complex (generic) types and functions. 
 
 ![A functor in programming](../10_functors/functor_programming.svg)
 
-But let's start with the basics: defining the concept of a functor in programming context is as simple as changing the terms we use, according to the table in chapter 2 (the one that compares category theory with programming languages), and (perhaps more importantly) changing the font we use in our formulas from "modern" to "monospaced".
+But let's start with the basics: defining the concept of a functor in programming context is as simple as changing the font we use in our formulas from "modern" to "monospaced". And also, using the more "programmy" terms listed in the table in chapter 2.
 
 > A functor between two categories (let's call them `A` and `B`) consists of a mapping that maps each ~~object~~ *type* in `A` to a type in `B` and a mapping that maps each ~~morphism~~ *function* between types in `A` to a function between types in `B`, in a way that preserves the structure of the category.
 
@@ -474,7 +476,7 @@ The first component of a functor is a mapping that converts one type (let's call
 
 ![A functor in programming - type mapping](../10_functors/functor_programming_objects.svg)
 
-Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function. A value-level function from `String`, to `List<String>` (or in mathy Haskell/ML-inspired notation $string \to List\ string$ is) converts a *value* of type `String` (such as `"foo"`) and to a value of type `List<String>`. You even have (as we will see later) a value-level functions with signature $a \to List\ a$ that can convert any value to a list of elements containing that value, but this is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.).
+Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function, e.g. a value-level function from `a`, to `List<a>` (or in mathy Haskell/ML-inspired notation $a \to List\ a$) converts a *value* of type `a` to a value of type `List<a>` and is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.).
 
 Function mapping
 ---
@@ -485,7 +487,7 @@ So the type mapping of a functor is simply a generic type in a programming langu
 
 In programming languages, this mapping is represented by a higher-order function called `map` with a signature (using Haskell notation), $(a \to b) \to (Fa \to Fb)$, where $F$ represents the generic type.
 
-Note that although any possible function that has this type signature (that that obeys the functor laws) gives rise to a functor, *not all such functors are useful*. Usually, there is only one of them that makes sense for a given generic type and that's why we talk about *the* list functor, and see `map` is defined directly in the in the generic datatype, as a method.
+Note that, although any possible function that has this type signature (that that obeys the functor laws) gives rise to a functor, *not all such functors are useful*. Usually, there is only one of them that makes sense for a given generic type and that's why we talk about *the* list functor, and we define `map` directly in the in the generic datatype, as a method.
 
 In the case of lists and similar structures, the *useful* implementation of `map` is the one that applies the original (simple) function to all elements of the list. 
 
@@ -528,7 +530,7 @@ So, why is a map useful? Well, it obviously has to do with the fact that the poi
 
 And functors in programming are used for similar reason - functions that involve simple types like `string`, `number`, `boolean` etc. are ... simple, and least when compared with functions that work with lists and other generic types. Using the `map` function allows us to operate on such types without having to think about them and to derive functions that transform them, from functions that transform simple values. In other words, functors are means of *abstraction*.
 
-Of course, not all routes on the map and no functions that between generic datatypes can be derived just by functions between the types they contain. This is generally true for many "useful" functors: because their source categories are "simpler" than the target, some of the morphisms in the target have no equivalents in the source i.e. making the model simpler inevitably results in losing some of its capabilities. This is a consequence of "the map is not the territory" principle (or in programming context, "every abstraction is a leaky abstraction", as Joel Spolsky put it): 
+Of course, not all routes on the map and no functions that between generic datatypes can be derived just by functions between the types they contain. This is generally true for many "useful" functors: because their source categories are "simpler" than the target, some of the morphisms in the target have no equivalents in the source i.e. making the model simpler inevitably results in losing some of its capabilities. This is a consequence of "the map is not the territory" principle (or "every abstraction is a leaky abstraction", as Joel Spolsky puts it).
 
 Pointed functors
 ===

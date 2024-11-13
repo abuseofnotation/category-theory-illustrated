@@ -3,8 +3,7 @@ layout: default
 title: index
 ---
 
-
-Category Theory Illustrated is a primer in category theory and other mathematical theories that is made to be *really* accessible to people with no prior exposure to the subject, without being dumbed down, by utilizing visual explanations.
+Discover the beauty of mathematics through the lens of category theory with this unique exploration that goes beyond problem-solving. In this book, you'll find a refreshing perspective on math as an art form, a language, and a way of thinking that unifies diverse fields of knowledge. Delve into the fascinating world of sets, groups, types, and partial orders, and explore the deep connections between these concepts. Whether you're a curious beginner or a seasoned mathematician, this book offers clear explanations, diagrams, and engaging insights—it's a journey into the heart of mathematics for everyone.
 
 [![cover.svg](cover.svg)](00_about)
 

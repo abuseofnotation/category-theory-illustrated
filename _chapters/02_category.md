@@ -75,13 +75,14 @@ In other words, products are extremely important concept, that is vital if you w
 Defining products in terms of sets 
 ---
 
-A product is, as we said, a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). So, to define a product we must define the concept of an ordered pair. So how can we do that? Note that an ordered pair of elements is not just a set containing the two elements ---  that would just be a *pair*, but not an *ordered pair*).
-
-Rather, an ordered pair is a structure that contains two objects as well as information about which of those objects is the first and which one is second (and in programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose as ordering does for pairs.)
-
-The ordered part is important as, while some mathematical operations (such as addition) don't care about order, others (such as subtraction) do (and in programming, when we manipulate an object we obviously want to access a specific property, not just any random property).
+A product is, as we said, a set of *ordered* pairs (formally speaking $A \times B ≠ B \times A$). So, to define a product we must define the concept of an ordered pair. So how can we do that? 
 
 ![A pair](../02_category/pair.svg)
+
+Note that an ordered pair of elements is not just a set containing the two elements ---  that would just be a *pair*, but not an *ordered* one, as an ordered pair also contains information about which of those objects is the first and which one is second in the pair. In programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose. 
+
+The order of elements in the pair is important as, while some mathematical operations (such as addition) don't care about order, others (such as subtraction) do. In programming, when we manipulate an object we obviously want to access a specific property of the object, not just any random property.
+
 
 So does that mean that we have to define ordered pair as a "primitive" type, like we defined sets in order to use them? That's possible, but there is another approach if we can define a construct that is *isomorphic* to the ordered pair, using only sets, we can use that construct instead of them. And mathematicians had come up with multiple ingenious ways to do that. Here is the first one, which was suggested by Norbert Wiener in 1914. Note the smart use of the fact that the empty set is unique. 
 
@@ -98,10 +99,9 @@ Suggested in 1921 Kazimierz Kuratowski, this one uses just the component of the 
 Defining products in terms of functions 
 ---
 
+In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of --- we may think of this as a *low-level* approach to the definition. This time we will try to do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, we will attempt to fly over the difficulties that we met in the previous section and provide a definition of a product in terms of functions and *external* diagrams.
 
-In the product definitions presented in the previous section worked by *zooming in* into the individual elements of the product and seeing what they can be made of We may think of this as a *low-level* approach to the definition. This time we will try to do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will *zoom out*, we will attempt to fly over the difficulties that we met in the previous section and provide a definition of a product in terms of functions and *external* diagrams.
-
-How can we define products in terms of external diagrams i.e. given two sets how can we pinpoint the set that is their product? To do that, we must first think about *what functions* are there for a given product, and we have two of those --- the functions for retrieving the two elements of the pair (the "getters", so to say). 
+To define products in terms of external diagrams, we must, given two sets, devise a way to pinpoint the set that is their product, so to achieve that, we must first think about *what functions* are there for a given product. We have two of those --- the functions for retrieving the two elements of the pair (the "getters", so to say). 
 
 ![Product](../02_category/product.svg)
 
@@ -109,7 +109,7 @@ Formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we
 
 ![Product, external diagram](../02_category/product_external.svg)
 
-This diagram already provides a definition, but not a complete definition, because the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other objects that qualify as well.
+This diagram already provides a definition, but not a complete one, as the product of $Y$ and $B$ is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself. And there can be many other objects that qualify as well.
 
 ![Product, external diagram](../02_category/product_candidates.svg)
 
@@ -356,13 +356,12 @@ You may say that they apply to an entirely different *categories of objects*.
 Category Theory --- brief definition
 ===
 
-Maybe it is about time to see what a category is. We will start with a short definition --- a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which can be viewed as functions) and that should be composable. We can say a lot more about categories, and even present a formal definition, but for now it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't *see* their elements. Or to put it another way, category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
+Maybe it is about time to see what a category is. We will start with a short definition --- a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't *see* their elements. Or to put it another way, category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
 ![Category theory and set theory compared](../02_category/set_category.svg)
 
-When we are within the realm of sets, we can view each set as a collection of individual elements. In category theory, we don't have such a notion . However, taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. Plus we always have a way to "go back" to set theory, using the tricks from the last section.
+When we are within the realm of sets, we can view each set as a collection of individual elements. In category theory, we don't have such a notion. However, taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. Plus we always have a way to "go back" to set theory, using the tricks from the last section.
 
-But why would we want to have this more general definition? It is because, in this way we can use our theory to describe objects other than sets. We already discussed one such object --- types in programming languages. Remember that we said that programming types (classes) are somewhat similar to sets, and programming methods are somewhat similar to functions between sets, but they are not exactly identical? Category theory allows us to generalize the similarities of these... ahem, categories.
 
 | Category Theory | Set theory | Programming Languages |
 | ---             | ---        | ---                   |
@@ -385,7 +384,7 @@ By switching to external diagrams, we lose sight of the particular (the elements
 Sets Vs Categories
 ---
 
-One remark before we continue: in the last few paragraphs, it might sound as if though category theory and set theory are somehow competing with each another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected in some sort of hierarchy. 
+One remark before we continue: in the last section, would make it seem like category theory and set theory are somehow competing with each another. Perhaps that notion would be somewhat correct if category and set theory were meant to describe *concrete* phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as *descriptions* of the world, and as such it makes sense for them to be connected in some sort of hierarchy. 
 
 In contrast, abstract theories, like category theory and set theory, are more like *languages* for expressing such descriptions --- they still can be connected, and *are* connected in more than one way, but there is no inherent hierarchical relationship between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you will see in the next chapter.
 
@@ -394,9 +393,7 @@ Defining Categories (again)
 
 > "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra (from "On the cruelty of really teaching computing science")
 
-All category theory books (including this one) start by talking about set theory. However looking back I really don't know why this is the case --- most books that focus on a given subject usually don't start off by introducing an *entirely different subject* before even starting to talk about the main one, even if the two subjects are very closely related. 
-
-Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is one of those things that people do just because everyone else does it. But, one thing is for certain --- we don't *need* to study sets in order to understand categories. So now I would like to start over and talk about categories as a foundational concept. So let's pretend like this is a new book (I wonder if I can dedicate this to a different person).
+All category theory books, including this one, start by talking about set theory. However looking back I really don't know why this is the case --- most books that focus on a given subject usually don't start off by introducing an *entirely different subject*, (before even starting to talk about the main one). Perhaps the set-first approach *is* the best way to introduce people to categories. Or perhaps using sets to introduce categories is one of those things that people do just because everyone else does it. But, one thing is for certain --- we don't *need* to study sets in order to understand categories. So now I would like to start over and talk about categories as a foundational concept. So let's pretend like this is a new book (I wonder if I can dedicate this to a different person).
 
 So. A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
 
@@ -431,14 +428,14 @@ Formally, this requirement says that there should exist an operation (denoted wi
 
 ![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
-**NB:** Note (if you haven't already) that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$).
+This is the most important part of the definition --- in set theory we picked functions (out of the other types of relations) because they are composable, here we just invent the concept of a morphism and define them to be composable. You will see where this definition would get us.
+
+**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$).
 
 The law of identity
 ---
 
-Before the standard Arabic numerals that we use today, there were Roman numbers. Roman numerals weren't any good, because they lacked the concept of *zero* --- a number that indicated the absence of a quantity, and any number system that lacks this simple concept is bound to remain extremely limited. It is the same in programming, where we have multiple values that indicate the absence of a value. 
-
-The zero of category theory is what we call the "identity morphism" for each object. In short, this is a morphism that doesn't do anything.
+In order to have numbers, you have to have a zero. The zero of category theory is what we call the "identity morphism" for each object. In short, this is a morphism that doesn't do anything.
 
 ![The identity morphism (but can also be any other morphism)](../02_category/identity.svg)
 
@@ -503,12 +500,12 @@ Addendum: Why are categories like that?
 
 *Why* are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they *work*, I mean, look at how many applications are there. 
 
-But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice (due to a phenomenon called "emergence")). Or you can add one more law and get yet another theory, so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my* attempt to provide such an explanation, regarding the laws of *identity* and *associativity*.
+But at the same time category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice). Or you can add one more law and get yet another theory (by the way, there are indeed such laws that refine the ones), so if this specific set of laws works better than any other, then this fact demands an explanation. Not a *mathematical* explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is *my* attempt to provide such an explanation, regarding the laws of *identity* and *associativity*.
 
 Identity and isomorphisms
 ===
 
-The reason the identity law is required is by far the more obvious one. We need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, we need the identity morphism to be able to speak properly. For example, once we have the concept of identity morphism defined, we can define a category-theoretic definition of an *isomorphism*, based on it (which is important, because the concept of an isomorphism is very important for category theory): 
+The reason the identity law is required is by far the more obvious one. We need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, we need the identity morphism to be able to speak properly. For example, once we have the concept of identity morphism defined, we can define a category-theoretic definition of an *isomorphism*, based on it (which is important, because the concept of an isomorphism is very important for category theory).
 
 Like we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$.  and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$. 
 
@@ -527,58 +524,76 @@ Associativity and reductionism
 
 Associativity --- what does it mean and why is it there? In order to tackle this question, we must first talk about another concept --- the concept of *reductionism*: 
 
-Reductionism is the idea that the behaviour of some more complex phenomenon can be understood in terms of a number of *simpler* and more fundamental phenomena, or in other words, the idea that things keep getting simpler and simpler as they get "smaller" (or when they are viewed at a lower level), like for example, the behavior of matter can be understood by studying the behaviors of its constituents i.e. atoms. Whether the reductionist view is *universally valid*, i.e. whether it is possible to explain everything with a simpler things (and devise a *theory of everything* that reduces the whole universe to a few very simple laws) is a question that we can argue about until that universe's inevitable collapse. But, what is certain is that reductionism underpins all our understanding, especially when it comes to science and mathematics --- each scientific discipline has a set of fundaments using which it tries to explain a given set of more complex phenomena, e.g. particle physics tries to explain the behaviour of atoms in terms of a given set of elementary particles, chemistry tries to explain the behaviour of various chemical substances in terms of the chemical elements that they are composed of, etc. A behavior that cannot be reduced to the fundamentals of a given scientific discipline is simply outside of the scope of that discipline (and therefore a new discipline has to be created to tackle it). So, if this principle is so important, it would be beneficial to be able to formalize it, and this is what we will try to do now.
+Reductionism is the idea that the behaviour of complex phenomenon can be understood in terms of a number of *simpler* and more fundamental phenomena. In other words, that things keep getting simpler and simpler as they get "smaller" (or when they are viewed from a lower level). Like for example, the behavior of matter can be understood completely by studying the behaviors of its constituents i.e. atoms (the word means "undividable"). 
+
+Whether the reductionist view is *universally valid*, i.e. whether it is possible to devise a *theory of everything* that describes the whole universe with a set of very simple laws, is a question over which we can argue until that universe's inevitable collapse. What is certain, though, is that *reductionism underpins all our understanding*, especially when it comes to science and mathematics --- each scientific discipline is based on a set of *fundaments* e.g. elementary particles in particle physics, chemical elements in chemistry etc. 
 
 Commutativity
 ---
 
-One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts*. Let's try to formalize that. It would mean that a set of objects when combined in whichever way, will always result in the same object. 
+So, if this principle is so important, it would be beneficial to be able to formalize it (translate it to mathematical language, and this is what we will try to do now. One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts* i.e. if we combine the same set of parts, we always get the same result. To formalize that, we get a set of objects (balls) and a way to combine them, (which we will denote with a dot). 
 
-So, if we have
+So, if we have, a given "recipe", for example
 
-$A \circ B \circ C = D$
+![Commutativity](../02_category/commutativity_1.svg)
 
-We also have 
+Then, we would also have 
 
-$B \circ A \circ C = X$
+![Commutativity](../02_category/commutativity_2.svg)
 
-$C \circ A \circ B = X$
+Or quite simply
 
-etc
-
-Or simply
-
-$A \circ B = B \circ  A$
+![Commutativity](../02_category/commutativity_formula.svg)
 
 Incidentally this is the definition of a mathematical law called *commutativity*.
 
-**Task:** if our objects are sets, which set operation can represents the sum?
+A simple context where this law applies --- the natural numbers are commutative under the operation of addiction, e.g. 1 + 2 = 2 + 1 (we will learn more about this in the chapter on groups).
+
+**Question:** if our objects are sets, what set operations can play the part of the dot in this example (i.e. which ones are commutative)?
 
 Associativity
 ---
 
-Commutativity law is applicable only in contexts where the order is irrelevant i.e. when an object can be represented as the sum of its parts *when combined in whichever way*. But there are many cases in which an object is to be represented by the sum of its parts, but only when *combined in one specific way*.
+Sometimes we observe phenomena that still can be represented as a combination of a given set of fundaments, but only when they are combined in a *specific* way (as opposed to *any* combination, as in commutative contexts) e.g. as any mechanic can confirm, a bicycle is indeed just the combination of wheels, frame, handlebars etc. 
 
-In such contexts, commutativity would not hold, because the fact that A can be combined with B to get C would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all).
+![functions are not commutative](../02_category/commutativity_bike.svg)
 
-But a weaker version of the law of reductionism would still hold in this case, namely that if we take a bunch of objects, combined in a certain order, it would be true that *any pair of those objects could, at any time, be replaced by the object we get by combining them*, i.e. if we have.
+but that does not mean that every combination of the above parts constitutes a bicycle. For example, placing the front wheel of the bicycle on the rear end of the frame would 
+
+![functions are not commutative](../02_category/commutativity_bike_2.svg)
+
+And, to take a formal example, if function A can be combined with B to get C
+
+![functions are not commutative](../02_category/commutativity_functions.svg)
+
+would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all).
+
+![functions are not commutative - 2](../02_category/commutativity_functions_2.svg)
+
+Functional composition does not obey the law of commutativity, but it obeys a more restrictive law, which we call *associativity*: although each part has a specific place where it goes, the *order by which we combine the individual parts doesn't matter for the final outcome* e.g. when we are assembling a bicycle, it doesn't matter if we attach the front wheel to the frame first, or the back wheel, the result will be the same.
+
+![bikes are associative](../02_category/associativity_bike.svg)
+
+Similarily, when combining functions, each two functions can, at any time, be replaced by the function that we get by combining them.
+
+![A . (B . C) = (A . B) . C](../02_category/associativity_function.svg)
+
+
+So, if we have, foe example 
 
 $A \circ  B = D$
-
-and 
 
 $B \circ  C = X$
 
 we would also have
 
-$(A \circ B \circ C) = D \circ C = A \circ X$
+A . B . C = D . C = A . X
+
 
 or simply 
 
-$(A\circ  B)\circ  C = A \circ (B \circ C)$
-
 And this, I think, is the essence of associativity --- the ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
 
-Note that associativity only allows for combining things in one dimension. Later we will learn about extensions of category theory that allow for working in 2 dimensions.
+Note that associativity only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
 
 {%endif%}

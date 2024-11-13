@@ -13,7 +13,7 @@ Also, I will not merely transport you to a different branch of mathematics, but 
 What is logic
 ===
 
-Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. that which really exists. For example, if science explains how our universe works then logic is the part of the description which is also applicable to any other universe that is *possible to exist*. A scientific theory aims to be consistent with both itself and observations, while a logical theory only needs to be consistent with itself.
+Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. that which really exists. For example, if science explains how our universe works then logic is the part of the description which is also applicable to any other universe that is *possible to exist*. A scientific theory aims to be consistent with both itself and observations, while a logical theory only needs to be consistent with itself (and true regardless of observations).
 
 Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form.
 
@@ -77,7 +77,9 @@ For example, our previous example will not stop being true if we *substitute* "S
 
 ![Variation of modus ponens](../05_logic/modus_ponens_variations.svg)
 
-Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. You can turn each tautology into contradiction or the other way around by adding a "not". 
+Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. You can turn each tautology into contradiction, or the other way around, by adding a "not". 
+
+The other statements, ones which may be true or false depending on the values of some other propositions are called "contingent stantements". In logic, we don't care about contingent statements --- after all, those are studied in all other sciences (and we are not like other sciences).
 
 The simplest tautology is the so called law of identity, the statement that each proposition implies itself (e.g. "All bachelors are unmarried"). It may remind you of something.
 
@@ -87,12 +89,12 @@ Here are some more complex (less boring) tautologies (the symbol $¬$ means "not
 
 ![Tautologies](../05_logic/tautology_list.svg)
 
-We will learn how to determine which propositions are a tautologies shortly, but first let's see why is this important at all i.e. what are tautologies good for. 
+We will learn how to determine which propositions are a tautologies shortly, but first let's see why are tautologies important in the first place.
 
 Axiom schemas/Rules of inference
 ---
 
-Tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* or *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution.
+Tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* and *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution.
 
 Realizing that the colors of the balls in modus ponens are superficial, we may want to represent the general structure of modus ponens that all of its variations share.
 
@@ -117,7 +119,7 @@ Here is one such collection which consists of the following five axiom schemes *
 
 ![A minimal collection of Hilbert axioms](../05_logic/min_hilbert.svg)
 
-Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his hame right.)
+Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his hame right).
 
 Conclusion
 ---
@@ -560,7 +562,7 @@ For our first example with implies, let's take the formula $A → B$, and examin
 
 Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotel), namely that $A → A$ is always true, or that everything follows from itself.
 
-And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semantic consequence)? In this case, $A$ would be below $B$ in our Hasse diagram (e.g. $A$ is the blue ball and $B$ is the orange one). Then the situation is somewhat similar to the previous case: $A ∧ X → B$ will be true, no matter what $X$ is (simply because $A$ already implies $B$, by itself). And so $A → B$ will again correspond to the $True$ object.
+And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semantic consequence)? In this case, $A$ would be below $B$ in our Hasse diagram (e.g. $A$ is the blue ball and $B$ is the orange one). Then the situation is somewhat similar to the previous case: $A ∧ X → B$ will be true, no matter what $X$ is (simply because $A$ already implies $B$, by itself). And so $A → B$ will again correspond to the $\top$ object.
 
 ![Implies when A follows from B](../05_logic/implies_b_follows.svg)
 
@@ -577,18 +579,23 @@ Now for the a more complicated task: what would happen if $A$ is above $B$ i.e. 
 Translated to logical language, this says that if we have $B \models A$, then the proof of $A → B$ coincides with the proof of $B$.
 -->
 
-<!--
 Classical VS intuitionistic logic
 ===
+Let's recap: we saw that logic consists of the values *True* and *False* and the operations *and* *or* and *implies*.
 
-So, we already formulated the definition of intuitionistic logic in terms of order/lattice --- it is represented by a lattice that is bounded (i.e. has greatest and least objects ($True$ and $False$)) and that has function objects (the law of distributivity which we mentioned earlier is always true for lattices that have function object).
+![A Heyting algebra](../05_logic/logic_operations.svg)
+
+So, in order to represent logic, an order has to have a *greatest and least objects* and it has to have a *meet* and *join* for each two object, and also a function object (the law of distributivity which we mentioned earlier is always true for lattices that have function object).
+
+![A Heyting algebra](../05_logic/heyting_algebra.svg)
+
+In other words it has to be a *bounded* ($\top$ and $\bot$) *lattice* ($\land$ and $\lor$) that has *function objects* ($\to$). Such lattices are called *Heyting algebras*.
+
+
+Intuitionistic logic is also called *constructive* logic, or constructive mathematics. And the proofs in intuitionistic logic are constructive.
 
 More interestingly, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
 
-Constructive proofs
----
-
-Intuitionistic logic is also called *constructive* logic, or constructive mathematics. And the proofs in intuitionistic logic are constructive.
 
 
 Proving a negative
@@ -604,11 +611,13 @@ Given those definitions, a positive statement is proven by just applying the rul
 
 ![Path from truth](../05_logic/paths_truth.svg)
 
+<!--
 
  https://www.algebraicjulia.org/blog/post/2021/09/cset-graphs-4/
 
 https://personal.math.ubc.ca/~cytryn/teaching/scienceOneF10W11/handouts/OS.proof.4methods.html
 
 https://en.wikibooks.org/wiki/Mathematical_Proof/Methods_of_Proof#Direct_proof
+
 -->
 
