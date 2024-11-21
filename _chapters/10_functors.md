@@ -299,12 +299,15 @@ You can view this as a progression of connections that go from simpler to more a
 
 These connections are functorial in nature, because they work purely in terms of *structure*: the idea of a given object has nothing in common with the object itself (e.g. the idea of a biscuit isn't round, sweet etc). What ideas have in common with the objects of representation is that the connections they have between one another mimic some connections a real-life buiscuit has with other objects.
 
-All this is, of course, just a speculation. But we might convince yourself that there is some basis for it, especially after we see how significant functors are for the mathematical structures that we saw before.
+
+All this is, of course, just a speculation, but how else would we be capable of forming thoughts, e.g. to imagine a person riding a bike and bumping in a tree, when no part of our brains (nor the impulses they create) resembles in any way people/bikes/trees?
+
+The answer is structure --- thoughts have the structure of the situation, that's why they refer to it (although they cannot refer to any of the elements by itself).
 
 Functors in monoids
 ===
 
-So, after this slight detour, we will return to our usual modus operandi: 
+So, after this slight detour, we will return to our usual modus operandi.
 
 Hey, do you know that in group theory, there is this cool thing called *group homomorphism* (or *monoid homomorphism* when we are talking about monoids) --- it is a function between the groups' underlying sets which preserves the group operation.
 

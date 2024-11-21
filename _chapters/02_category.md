@@ -531,7 +531,7 @@ Whether the reductionist view is *universally valid*, i.e. whether it is possibl
 Commutativity
 ---
 
-So, if this principle is so important, it would be beneficial to be able to formalize it (translate it to mathematical language, and this is what we will try to do now. One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts* i.e. if we combine the same set of parts, we always get the same result. To formalize that, we get a set of objects (balls) and a way to combine them, (which we will denote with a dot). 
+So, if this principle is so important, it would be beneficial to be able to formalize it (i.e. to translate it to mathematical language), and this is what we will try to do now. One way to state the principle of reductionism is to say that *each thing is nothing but a sum of its parts* i.e. if we combine the same set of parts, we always get the same result. To formalize that, we get a set of objects (balls) and a way to combine them, (which we will denote with a dot). 
 
 So, if we have, a given "recipe", for example
 
@@ -554,30 +554,30 @@ A simple context where this law applies --- the natural numbers are commutative 
 Associativity
 ---
 
-Sometimes we observe phenomena that still can be represented as a combination of a given set of fundaments, but only when they are combined in a *specific* way (as opposed to *any* combination, as in commutative contexts) e.g. as any mechanic can confirm, a bicycle is indeed just the combination of wheels, frame, handlebars etc. 
+Sometimes we observe phenomena that still can be represented as a combination of a given set of fundaments, but only when they are combined in a *specific* way (as opposed to *any* combination, as in commutative contexts) e.g. as any mechanic can confirm, a bicycle is indeed just the combination of wheels, and frameset...
 
-![functions are not commutative](../02_category/commutativity_bike.svg)
+![bikes are not commutative](../02_category/commutativity_bike.svg)
 
-but that does not mean that every combination of the above parts constitutes a bicycle. For example, placing the front wheel of the bicycle on the rear end of the frame would 
+...but that does not mean that every combination of the above parts constitutes a bicycle. For example, placing the front wheel of the bicycle on the rear end of the frame would result would not result in a working bicycle. And combining two wheels one with another is just not possible.
 
-![functions are not commutative](../02_category/commutativity_bike_2.svg)
+![bikes are not commutative](../02_category/commutativity_bike_2.svg)
 
-And, to take a formal example, if function A can be combined with B to get C
+
+And, to take a formal example, if function A can be combined with B to get C.
 
 ![functions are not commutative](../02_category/commutativity_functions.svg)
 
-would not automatically mean that B can be combined with A to get the same result (in the case of functions, they may not be able to be combined at all).
+would not automatically mean that B can be combined with A to get the same result.
 
 ![functions are not commutative - 2](../02_category/commutativity_functions_2.svg)
 
-Functional composition does not obey the law of commutativity, but it obeys a more restrictive law, which we call *associativity*: although each part has a specific place where it goes, the *order by which we combine the individual parts doesn't matter for the final outcome* e.g. when we are assembling a bicycle, it doesn't matter if we attach the front wheel to the frame first, or the back wheel, the result will be the same.
+Functional composition (and bike building as well) does not obey the law of commutativity, but it obeys a more restrictive law, which we call *associativity*: although each part has a specific place where it goes, the *order by which we combine the individual parts doesn't matter for the final outcome* e.g. when we are assembling a bicycle, it doesn't matter if we attach the front wheel to the frame first, or the back wheel, the result will be the same.
 
 ![bikes are associative](../02_category/associativity_bike.svg)
 
 Similarily, when combining functions, each two functions can, at any time, be replaced by the function that we get by combining them.
 
 ![A . (B . C) = (A . B) . C](../02_category/associativity_function.svg)
-
 
 So, if we have, foe example 
 
@@ -589,11 +589,10 @@ we would also have
 
 A . B . C = D . C = A . X
 
-
 or simply 
 
 And this, I think, is the essence of associativity --- the ability to study complex phenomenon by zooming in into a part that you want to examine in a given moment, and looking at it in isolation.
 
-Note that associativity only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
+Note that our operator only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
 
 {%endif%}
