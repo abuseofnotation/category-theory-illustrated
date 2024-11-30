@@ -345,7 +345,11 @@ When we defined monoids, we saw that their operations are two-argument functions
 
 However, this is not the only way to represent multi-argument function set-theoretically --- there is another, equally interesting way, that doesn't rely on any data structures, but only on functions: that way is to have a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to B \to C$. 
 
-The practice of transforming a function that takes a pair of objects to a function that takes just one object and returns a function that takes another one is called *currying*. It is achieved by a higher-order function. Here is how such a function might be implemented.
+![(A X B) -> C) = A -> B -> C](../03_monoid/curry.svg)
+
+The practice of transforming a function that takes a pair of objects to a function that takes just one object and returns a function that takes another one is called *currying*. 
+
+It is achieved by a higher-order function. Here is how such a function might be implemented.
 
 ```
 const curry = <A, B, C> (f:(a:A, b:B) => C) => (a:A) => (b:B) => f(a, b)
