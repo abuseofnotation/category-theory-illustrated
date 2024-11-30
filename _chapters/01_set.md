@@ -396,7 +396,7 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-**Question:** Try to come up with a good example that shows how a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
+**Question:** Come up with a good example of a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
 
 Equivalence relations and isomorphisms
 ===
