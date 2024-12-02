@@ -597,6 +597,7 @@ Intuitionistic logic is also called *constructive* logic, or constructive mathem
 More interestingly, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
 
 
+<!--
 
 Proving a negative
 ---
@@ -611,7 +612,6 @@ Given those definitions, a positive statement is proven by just applying the rul
 
 ![Path from truth](../05_logic/paths_truth.svg)
 
-<!--
 
  https://www.algebraicjulia.org/blog/post/2021/09/cset-graphs-4/
 
