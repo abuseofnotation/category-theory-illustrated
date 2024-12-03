@@ -579,25 +579,34 @@ Now for the a more complicated task: what would happen if $A$ is above $B$ i.e. 
 Translated to logical language, this says that if we have $B \models A$, then the proof of $A → B$ coincides with the proof of $B$.
 -->
 
-Classical VS intuitionistic logic
+Summary
 ===
+
 Let's recap: we saw that logic consists of the values *True* and *False* and the operations *and* *or* and *implies*.
 
 ![A Heyting algebra](../05_logic/logic_operations.svg)
 
 So, in order to represent logic, an order has to have a *greatest and least objects* and it has to have a *meet* and *join* for each two object, and also a function object (the law of distributivity which we mentioned earlier is always true for lattices that have function object).
 
-![A Heyting algebra](../05_logic/heyting_algebra.svg)
+![Heyting algebra](../05_logic/heyting_algebra.svg)
 
 In other words it has to be a *bounded* ($\top$ and $\bot$) *lattice* ($\land$ and $\lor$) that has *function objects* ($\to$). Such lattices are called *Heyting algebras*.
 
 
-Intuitionistic logic is also called *constructive* logic, or constructive mathematics. And the proofs in intuitionistic logic are constructive.
+By the way, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
 
-More interestingly, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
-
-
+![Boolean algebra](../05_logic/boolean_algebra.svg)
 <!--
+
+When thinking of logic from this perspective (algebraically, constructively, categorically, there are many ways to call it) you can view the logic as a map of all possible propositions and the connections between them.
+
+![Logic as an order](../05_logic/logic_hasse.svg)
+
+
+Axioms are starting points.
+
+and finding a proof is just finding a path from one point to another.
+
 
 Proving a negative
 ---
