@@ -304,7 +304,9 @@ Our color-mixing lattice, has a *greatest element* (the black ball) and a *least
 
 **Task:** Prove that all finite lattices are bounded.
 
-{% if site.distribution == 'print' %}
+<!--
+{% if site.distribution == 'print'%}
+-->
 
 Interlude --- semilattices and trees
 ---
@@ -339,7 +341,9 @@ The implications of the tendency to use trees, as opposed to lattices, to model 
 
 In general, it seems that hierarchies that are specifically designed by *people*, such as cities tend to come up as trees, whereas hierarchies that are natural, such as the hierarchy of colors, tend to come be lattices.
 
+<!--
 {%endif%}
+-->
 
 Interlude: Formal concept analysis
 ===
@@ -420,7 +424,10 @@ And, even more interestingly, if we transfer the preorder connections between th
 
 In short, for every preorder, we can define the *partial order of the equivalence classes of this preorder*.
 
-{% if site.distribution == 'print' %}
+<!--
+{% if site.distribution == 'print'%}
+-->
+
 
 Maps as preorders
 ---

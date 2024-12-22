@@ -23,7 +23,9 @@ It is denoted $B \times Y$ and it comes equipped with two functions for retrievi
 
 **Question**: Why is this called a product? Hint: How many elements does it have?
 
+<!--
 {% if site.distribution == 'print'%}
+-->
 
 ## Interlude --- coordinate systems
 
@@ -53,7 +55,9 @@ With that, our effort to represent Cartesian coordinates with sets is complete, 
 
 But before we continue with that, let's see some other neat uses of products.
 
+<!--
 {%endif%}
+-->
 
 ## Products as Objects
 
@@ -171,7 +175,9 @@ This fact uncovers a deep connection between the concepts of the _product_ and _
 
 In category theory, concepts that have such a relationship are said to be _dual_ to each other. So, the concepts of _product_ and _sum_ are dual. This is why sums are known in a category-theoretic setting as _converse product_, or _coproduct_ for short. This naming convention is used for all dual constructs in category theory.
 
+<!--
 {% if site.distribution == 'print'%}
+-->
 
 ## De Morgan duality
 
@@ -222,7 +228,10 @@ $\neg(A \wedge B) = \neg{A} \vee \neg{B}$
 
 This probably provokes a lot of questions and we have a whole chapter about logic to address those. But before we get to it, we have to see what categories (and sets) are.
 
-{% endif %}
+<!--
+{%endif%}
+-->
+
 
 # Defining the rest of set theory using functions
 
@@ -547,7 +556,9 @@ This is the essence of associativity --- the ability to study complex phenomenon
 
 Note that the operator we defined only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
 
+<!--
 {% if site.distribution == 'print'%}
+-->
 
 ## Associativity and commutativity
 
@@ -567,4 +578,6 @@ Expanding the formula gives us the answer: they commute when the original dot op
 
 Thus, we established a connection between associativity and commutativity.
 
+<!--
 {%endif%}
+-->

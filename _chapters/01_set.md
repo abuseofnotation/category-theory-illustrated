@@ -453,8 +453,9 @@ We said that the most characteristic property of the equivalence relation is its
 **Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
 The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
-
+<!--
 {% if site.distribution == 'print'%}
+-->
 
 Interlude --- numbers as isomorphisms
 ===
@@ -477,7 +478,10 @@ At this point there are no more examples that we can add. In fact, because we co
 
 Before we close this chapter, there is one meta-note that we should definitely make: according to the definition of a number that we presented, a number is not an *object*, but a whole *system of interconnected objects*, containing in this case an infinite number of objects. This may seem weird to you, but it's actually pretty characteristic of the categorical way of modeling things.
 
+<!--
 {%endif%}
+-->
+
 
 Addendum: The case of composition in software development
 ===

@@ -141,8 +141,9 @@ The equivalence of those two functions is actually another instance of the adjun
 
 There definitely is more to be said about free and forgetful functors, as well as for adjunctions, but as always, I will leave things at the most interesting moment in order to revisit them from a different perspective later.
 
+<!--
 {%endif%}
-
+-->
 
 
 

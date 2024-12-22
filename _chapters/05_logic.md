@@ -611,9 +611,11 @@ In general, doing intuitionistic logic is this --- we start by the things that w
 {% if site.distribution == 'print' %}
 -->
 
+<!--
 The Rieger–Nishimura lattice
 ---
 I forgot to mention that a Heytung algebra that is generated from a given set of axioms is called the Free Heytung algebra of these axioms (just like the free monoids, if you remember those). Above, you saw my (dubious) attempt at drawing the free Heytung algebra of 3 generators, and the result was really messy, but if we attempt to draw the free Heytung algrebra of just 1 generator, then it is actually becomes pretty neat (yes, the free )
+-->
 
 <!--
 {%endif%}
