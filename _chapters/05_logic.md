@@ -404,7 +404,7 @@ The first part is finding a way to convert a *logical system* into a category - 
 
 **Task:** See whether you can prove that logic propositions and the "implies" relation form a category. What is missing?
 
-The second part involves converting a category into a logical system - this is much harder. To do it, we have to enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has objects that correspond to all valid logical propositions and no objects that correspond to invalid ones. 
+The second part involves converting a category into a logical system. This is much harder, and not all categories can be converted to logical systems, only some of them. So, next up, we will enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has an object that corresponds to every valid logical propositions and that no objects corresponds to an invalid ones. 
 
 ![Logic as a category](../05_logic/logic_curry_category.svg)
 
@@ -477,14 +477,14 @@ So *True* and *False* are just the *greatest* and *least* objects of our order (
 
 ![The whole logical system, represented as a Hasse diagram](../05_logic/lattice_true_false.svg)
 
-This is another example of the categorical concept of duality - $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (althought if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them).
+This is another example of the categorical concept of duality - $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (althought if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them). 
 
-So in order to represent logic, our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*).
+In fact, the whole lattice can be turned upside down and (switching the directions of the arrows and the dual concepts True/False and/or) the logic inside it will still be valid!
 
 The *implies* operation
 ---
 
-As we said, every lattice has representations of propositions implying one another (i.e. it has arrows), but to really represents a logical system it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object $A → B$ for each pair of objects $A$ and $B$, such that all axioms of logic are followed. 
+So, by now we know that our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*) in order to represent logic. As we said, every lattice has representations of propositions implying one another (i.e. it has arrows), but to really represents a logical system it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object $A → B$ for each pair of objects $A$ and $B$, such that all axioms of logic are followed. 
 
 ![Implies operation](../05_logic/implies.svg)
 
@@ -496,15 +496,15 @@ Modus ponens is the essence of the *implies* operation, and, because we already 
 
 > The function object $A → B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
 
-This definition is not complete, however, because (as usual) $A → B$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$ (not going to draw all the arrows here, because it will get too (and I mean too) messy).
+This definition is not complete, however, because (as usual) $A → B$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$ 
 
 ![Implies operation with universal property](../05_logic/implies_modus_ponens_impostors.svg)
 
-So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* (or of its equivalent for orders, the *meet* operation) you would already know where this is going: we recognize that $A \to B$ is the upper *limit* of $A → B ∧ C$ and $A → B ∧ C ∧ D$ and all other imposter formulas that can be in the place of $X$ in $A ∧ X → B$. The relationship can be described in a variety of ways:
+So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* (or of its equivalent for orders, the *meet* operation) you would already know where this is going: we recognize that $A \to B$ is the upper *limit* of $A → B ∧ C$. So, $A → B ∧ C ∧ D$ and all other imposter formulas that can be in the place of $X$ in $A ∧ X → B$ are below it. The relationship can be described in a variety of ways:
 
-* We can say that $A \to B$ is the most *trivial* result for which the formula $A ∧ X → B$ is satisfied and that all other results are *stronger*.
-* We can say that all other results imply $A \to B$ but not the other way around.
-* We can say that all other formulas lie *below* $A → B$ in the Hasse diagram.
+* We can say that $A \to B$ is the most *trivial* result for which the formula $A ∧ X → B$ is satisfied and that all other results are *stronger* 
+* We can say that all other formulas lie *below* $A → B$ in the Hasse diagram (so, the more trivial the result it, the upper it resides in the Hasse diagram).
+* We can say that all other results imply $A \to B$ but not the other way around (which again means the same thing).
 
 ![Implies operation with universal property](../05_logic/implies_universal_property.svg)
 
@@ -512,7 +512,7 @@ So, after choosing the best way to express the relationship (they are all equiva
 
 > The function object $A → B$ is the topmost object which is related to objects $A$ and $B$ in such a way that $A ∧ (A → B) → B$.
 
-The existence of this function object (called *exponential object* in category-theoretic terms) is the final condition for an order/lattice to be a representation of logic.
+The existence of this function object (called *exponential object* or *hom-object* in category-theoretic terms) is the final condition for an order/lattice to be a representation of logic.
 
 Note, by the way, that this definition of function object is valid specifically for intuinistic logic. For classical logic, the definition of  is simpler --- there $A → B$ is just $\lnot A ∨ B$, because of the law of excluded middle. 
 
@@ -560,7 +560,7 @@ For our first example with implies, let's take the formula $A → B$, and examin
 
 ![Implies identity](../05_logic/implies_identity.svg)
 
-Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotel), namely that $A → A$ is always true, or that everything follows from itself.
+Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotle), namely that $A → A$ is always true, or that everything follows from itself.
 
 And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semantic consequence)? In this case, $A$ would be below $B$ in our Hasse diagram (e.g. $A$ is the blue ball and $B$ is the orange one). Then the situation is somewhat similar to the previous case: $A ∧ X → B$ will be true, no matter what $X$ is (simply because $A$ already implies $B$, by itself). And so $A → B$ will again correspond to the $\top$ object.
 
@@ -568,46 +568,58 @@ And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semanti
 
 This is again a well-known result in logic (if I am not mistaken, it will be a deduction theorem of some sort): if $A \models B$), then the statement $(A → B)$ will always be true.
 
-<!--
-If and only if
----
-
-Now for the a more complicated task: what would happen if $A$ is above $B$ i.e. if $B \models A$? What would the topmost object that fits the formula $(A ∧ X) → B$ then? Well, in this case there are many objects $A \land X$ that are also above $B$ and so they *don't* imply $B$. The highest such object that is below $B$ (so it can still imply $B$) would be... $B$ itself (as it literary sets the upper bound).
-
-![Implies when B follows from A](../05_logic/implies_a_follows.svg)
-
-Translated to logical language, this says that if we have $B \models A$, then the proof of $A → B$ coincides with the proof of $B$.
--->
-
-Summary
+Interlude: Free Heytung algebras -- making ourselves a logic
 ===
 
-Let's recap: we saw that logic consists of the values *True* and *False* and the operations *and* *or* and *implies*.
+Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
+
+Before we start, let's recap the theoretic part: we saw that intuitionistic logic consists of the values *True* and *False* and the operations *and* *or* and *implies*.
 
 ![A Heyting algebra](../05_logic/logic_operations.svg)
 
-So, in order to represent logic, an order has to have a *greatest and least objects* and it has to have a *meet* and *join* for each two object, and also a function object (the law of distributivity which we mentioned earlier is always true for lattices that have function object).
+So, for an order to represent logic, an order/category has to have a *greatest and least objects* and it has to have a *meet* and *join* for each two object, and also a function object (the law of distributivity which we mentioned earlier is always true for lattices that have function object). In other words it has to be a *bounded* ($\top$ and $\bot$) *lattice* ($\land$ and $\lor$) that has *function objects* ($\to$). Such lattices are called *Heyting algebras*.
 
 ![Heyting algebra](../05_logic/heyting_algebra.svg)
-
-In other words it has to be a *bounded* ($\top$ and $\bot$) *lattice* ($\land$ and $\lor$) that has *function objects* ($\to$). Such lattices are called *Heyting algebras*.
-
 
 By the way, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
 
 ![Boolean algebra](../05_logic/boolean_algebra.svg)
+
+Anyway, making a logical lattice involves picking some primary propositions and graphing the connections between them. First, we pick the primary propositions that we want to work with, those are the statements that depend on our problem domain (or, in this case, just our color preferences). 
+
+![Logic as an order](../05_logic/algebra_balls.svg)
+
+
+Then, depending of the flavor of logic that we selected (intuitionistic, boolean), we start graphing the composite propositions, we have to have $A \land B$,  $A \lor B$ for all $A$s and $B$s.
+
+![Logic as an order](../05_logic/algebra_summary.svg)
+
+Then, we also have to create a proposition $A \to B$, for all $A$-s and $B$-s, which would make our list of propositions grow indefinitely (side note: drawing such diagrams is very hard and I can never be quite sure which is the correct place for each proposition, so please report me any errors you might see: I can send you a 100$ check, like Donald Knuth, but only if you promise not to cash it, as I am broke)).
+
+![Logic as an order](../05_logic/algebra_summary_full.svg)
+
+Whew, that was lenghty. But it is worth it, as when we are finished we will have a list of *all possible propositions that can be true* and we will be able to determine which propositions follow from any proposition by just following the path of the arrows coming from it. 
+
+Like, for example, if we discover that the proposition $B \land C$ is true, that implies that both $B$ and $C$ are also true in their own right, (which, in turn, implies that $A \lor B$, $A \lor C$ etc. are true). 
+
+![Logic as an order](../05_logic/algebra_summary_path.svg)
+
+In general, doing intuitionistic logic is this --- we start by the things that we already know and then we find the path that leads us to the things that we are interested in proving (or, depending on the viewpoint, we construct the proof by manipulating the proofs that we already have) . The only thing we are not able to do (in intuitionistic logic, specifically) is to prove that a given fact cannot be reached from on our path, that it cannot be proved from the axioms ("you cannot prove a negative").
+
+
 <!--
+{% if site.distribution == 'print' %}
+-->
 
-When thinking of logic from this perspective (algebraically, constructively, categorically, there are many ways to call it) you can view the logic as a map of all possible propositions and the connections between them.
+The Rieger–Nishimura lattice
+---
+I forgot to mention that a Heytung algebra that is generated from a given set of axioms is called the Free Heytung algebra of these axioms (just like the free monoids, if you remember those). Above, you saw my (dubious) attempt at drawing the free Heytung algebra of 3 generators, and the result was really messy, but if we attempt to draw the free Heytung algrebra of just 1 generator, then it is actually becomes pretty neat (yes, the free )
 
-![Logic as an order](../05_logic/logic_hasse.svg)
+<!--
+{%endif%}
+-->
 
-
-Axioms are starting points.
-
-and finding a proof is just finding a path from one point to another.
-
-
+<!--
 Proving a negative
 ---
 
@@ -622,11 +634,8 @@ Given those definitions, a positive statement is proven by just applying the rul
 ![Path from truth](../05_logic/paths_truth.svg)
 
 
- https://www.algebraicjulia.org/blog/post/2021/09/cset-graphs-4/
-
 https://personal.math.ubc.ca/~cytryn/teaching/scienceOneF10W11/handouts/OS.proof.4methods.html
 
 https://en.wikibooks.org/wiki/Mathematical_Proof/Methods_of_Proof#Direct_proof
 
 -->
-

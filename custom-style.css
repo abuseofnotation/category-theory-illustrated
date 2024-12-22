@@ -4,19 +4,21 @@
 
 body {
   font-size: 25px;
-  font-family: Arial, sans-serif;
+  font-family: "MellSans", sans-serif;
 }
 
 
 @font-face {
-    font-family: 'mell';
+    font-family: 'Rubik';
     src: url('RubikMonoOne.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'mell', cursive;
+  font-family: 'MellMono', cursive;
+  font-style: italic;
+  font-weight: normal;
 }
 
 .page-index img {
@@ -37,4 +39,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .chapters {
   font-size: 50px;
+}
+
+
+h1 {  
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 30px;
+  color: rgb(55, 55, 55);
 }

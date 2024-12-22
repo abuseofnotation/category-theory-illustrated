@@ -454,7 +454,6 @@ There should be a way to compose two morphisms with an appropriate type signatur
 
 This is it.
 
-{% if site.distribution == 'print'%}
 
 # Addendum: Why are categories like that?
 
@@ -547,6 +546,8 @@ Or more generally.
 This is the essence of associativity --- the ability to study complex phenomenon by zooming in on a part that you want to examine in a given moment, and looking at it in isolation.
 
 Note that the operator we defined only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
+
+{% if site.distribution == 'print'%}
 
 ## Associativity and commutativity
 

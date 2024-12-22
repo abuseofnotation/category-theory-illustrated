@@ -171,7 +171,7 @@ There is a unique function from any set to any singleton set.
 
 **Question:** Again, what about the other way around?
 
-Sets and Functions with numbers
+Sets and numbers
 ===
 
 All numerical operations can be expressed as functions acting on the set of (different types of) numbers. 

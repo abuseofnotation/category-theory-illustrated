@@ -549,8 +549,6 @@ And then, if we start applying the two generators and follow the laws, we get th
 
 The set of generators and laws that defines a given group is called the *presentation of a group*. Every group has a presentation.
 
-{% if site.distribution == 'print' %}
-
 Interlude: Free monoids
 ---
 
@@ -576,4 +574,3 @@ While the intuition behind free monoids seems simple enough, the formal definiti
 
 We understand that, being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exist a function from it to all of them. But what kind of function would that be? Tune in after a few chapters to find out.
 
-{%endif%}
