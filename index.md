@@ -8,9 +8,6 @@ title: index
 [Read online](00_about)
 --
 
-[Get pdf](print)
---
-
 _Discover the beauty of mathematics through the lens of category theory with this unique exploration that goes beyond problem-solving. In this book, you'll find a refreshing perspective on math as an art form, a language, and a way of thinking that unifies diverse fields of knowledge. Delve into the fascinating world of sets, groups, types, and partial orders, and explore the deep connections between these concepts. Whether you're a curious beginner or a seasoned mathematician, this book offers clear explanations, diagrams, and engaging insights—it's a journey into the heart of mathematics for everyone._
 
 > Category Theory Illustrated is the best introduction to Category Theory I’ve ever seen. It is highly visual, full of useful examples and is extremely clearly written. I highly recommend giving it a try.
