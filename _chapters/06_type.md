@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Types
+---
 
 
 In this chapter we will talk about types. This might be disappointing, if you expected to learn about as many *new* categories as possible (for which you don't even suspect that they are categories till the unexpected reveal), as we've been giving examples with the category of types in a given programming language ever since the first chapter, and so we already know how they form a category. We are also already familiar with the Curry-Howard correspondence that connects types and logic. However, types are not just about programming languages, and they are not just another category. They are also at the heart of a mathematical theory known as *type theory*. They are an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and they are as powerful tool as any of those formalisms.
