@@ -24,16 +24,21 @@ window.MathJax = {
     </head>
 
     <body>
+
       <div class="header">
+
+      {% if page.title != "index" %}
         <div class="container">
           <a href="{{site.baseurl}}/">
           <img src="{{site.baseurl}}/logo.svg" class="logo">
           </a>
         </div>
+      {% endif %}
       </div>
+
       <div class="container page-{{page.title}}">
         <!--<h1>{{page.title}}</h1> -->
-
+        
         <div class="prev-next">
         {% if page.previous.url %}
           <a class="button" href="{{site.baseurl}}{{page.previous.url}}">&laquo;prev</a>
