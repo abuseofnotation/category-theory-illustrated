@@ -171,7 +171,7 @@ There is a unique function from any set to any singleton set.
 
 **Question:** Again, what about the other way around?
 
-Sets and Functions with numbers
+Sets and numbers
 ===
 
 All numerical operations can be expressed as functions acting on the set of (different types of) numbers. 
@@ -396,7 +396,7 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-**Question:** Try to come up with a good example that shows how a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
+**Question:** Come up with a good example of a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
 
 Equivalence relations and isomorphisms
 ===
@@ -453,8 +453,9 @@ We said that the most characteristic property of the equivalence relation is its
 **Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
 The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
-
+<!--
 {% if site.distribution == 'print'%}
+-->
 
 Interlude --- numbers as isomorphisms
 ===
@@ -477,7 +478,10 @@ At this point there are no more examples that we can add. In fact, because we co
 
 Before we close this chapter, there is one meta-note that we should definitely make: according to the definition of a number that we presented, a number is not an *object*, but a whole *system of interconnected objects*, containing in this case an infinite number of objects. This may seem weird to you, but it's actually pretty characteristic of the categorical way of modeling things.
 
+<!--
 {%endif%}
+-->
+
 
 Addendum: The case of composition in software development
 ===

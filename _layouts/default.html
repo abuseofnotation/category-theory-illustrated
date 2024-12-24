@@ -6,6 +6,9 @@
 
       <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/custom-style.css">
 
+      <link rel="stylesheet" type="text/css" href="https://abuseofnotation.github.io/mell.css">
+      <meta name="fediverse:creator" content="@abuseofnotation@mathstodon.xyz">
+
   <script>
 window.MathJax = {
   tex: {
@@ -21,16 +24,21 @@ window.MathJax = {
     </head>
 
     <body>
+
       <div class="header">
+
+      {% if page.title != "index" %}
         <div class="container">
           <a href="{{site.baseurl}}/">
           <img src="{{site.baseurl}}/logo.svg" class="logo">
           </a>
         </div>
+      {% endif %}
       </div>
+
       <div class="container page-{{page.title}}">
         <!--<h1>{{page.title}}</h1> -->
-
+        
         <div class="prev-next">
         {% if page.previous.url %}
           <a class="button" href="{{site.baseurl}}{{page.previous.url}}">&laquo;prev</a>
@@ -50,21 +58,18 @@ window.MathJax = {
           <a class="button" href="{{site.baseurl}}{{page.next.url}}">next&raquo;</a>
         {% endif %}
         </div>
-        <script type='text/javascript' src='https://ko-fi.com/widgets/CounterWidget.js'></script><script type='text/javascript'>counterwidget.init('K3K539YDO');counterwidget.draw();</script>
       </div>
-      <div class="footer">
-        <div class="container chapters">
-          <h1>Contents</h1>
-          {% for chapter in site.chapters %}
-            <p><a href="{{chapter.url  | prepend:site.baseurl}}">{{chapter.title}}</a></p>
-          {% endfor %}
-          <!--
-          <h1>Download</h1>
-          <p><a href="{{site.baseurl}}{{site.baseurl}}.epub">as epub</a></p>
-          <p><a href="{{site.baseurl}}{{site.baseurl}}.txt">as txt</a></p>
-          -->
+
+
+
+      <div class="footer" style="background-color:#39bcedff">
+        <div class="container">
+          <h1>Support this project</h1>
+          <p><a target="_blank" href="https://ko-fi.com/abuseofnotation">Ko-fi</a></p>
+          <p><a target="_blank" href="https://patreon.com/abuseofnotation">Patreon</a></p>
         </div>
       </div>
+
 
       <div class="footer" style="background-color:#dc7100">
         <div class="container chapters">
@@ -83,6 +88,22 @@ window.MathJax = {
         </div>
       </div>
 
+
+      <div class="footer">
+        <div class="container chapters">
+          <h1>Contents</h1>
+          {% for chapter in site.chapters %}
+            <p><a href="{{chapter.url  | prepend:site.baseurl}}">{{chapter.title}}</a></p>
+          {% endfor %}
+          <!--
+          <h1>Download</h1>
+          <p><a href="{{site.baseurl}}{{site.baseurl}}.epub">as epub</a></p>
+          <p><a href="{{site.baseurl}}{{site.baseurl}}.txt">as txt</a></p>
+          -->
+        </div>
+      </div>
+
+
       <div class="footer" style="background-color:#39bcedff">
         <div class="container">
           <h1>Created by Jencel Panic</h1>
@@ -91,12 +112,9 @@ window.MathJax = {
           <p><a rel="me" target="_blank" href="https://mathstodon.xyz/@abuseofnotation">mastodon</a></p>
           <p><a target="_blank" href="https://twitter.com/AlexanderKatt/">twitter</a></p>
           <p><a target="_blank" href="https://github.com/abuseofnotation/category-theory-illustrated">Github</a></p>
+        </div>
+      </div>
 
-          <h1>Support this project</h1>
-          <p><a target="_blank" href="https://ko-fi.com/abuseofnotation">Ko-fi</a></p>
-          <p><a target="_blank" href="https://patreon.com/borismarinov">Patreon</a></p>
-      </div>
-      </div>
       <div class="footer">
         <div class="container">
           <p>

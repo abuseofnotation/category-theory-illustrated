@@ -304,7 +304,9 @@ Our color-mixing lattice, has a *greatest element* (the black ball) and a *least
 
 **Task:** Prove that all finite lattices are bounded.
 
-{% if site.distribution == 'print' %}
+<!--
+{% if site.distribution == 'print'%}
+-->
 
 Interlude --- semilattices and trees
 ---
@@ -339,7 +341,9 @@ The implications of the tendency to use trees, as opposed to lattices, to model 
 
 In general, it seems that hierarchies that are specifically designed by *people*, such as cities tend to come up as trees, whereas hierarchies that are natural, such as the hierarchy of colors, tend to come be lattices.
 
+<!--
 {%endif%}
+-->
 
 Interlude: Formal concept analysis
 ===
@@ -379,13 +383,13 @@ Preorder
 
 In the previous section, we saw how removing the law of *totality* from the laws of (linear) order produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. If you recall, the antisymmetry law mandated that you cannot have an object that is at the same time smaller and bigger than another one. (or that $a ≤ b ⟺ b ≰ a$).
 
-| | Linear order | Partial order | Preorder |
-| | $a ≤ b$ or $b ≤ a$ | $a ≤ b$ or $b ≤ a$ or neither |  $a ≤ b$ or $b ≤ a$ or neither or both | 
+|   | Linear order | Partial order | Preorder |
+|   | $a ≤ b$ or $b ≤ a$ | $a ≤ b$ or $b ≤ a$ or neither |  $a ≤ b$ or $b ≤ a$ or neither or both | 
 |---| ---             | ---        |
 |Reflexivity| X | X | X |
 |Transitivity| X | X | X |
-|Antisymmetry | X | X  |  |
-|Totality | X | | |
+|Antisymmetry | X | X  |    |
+|Totality | X |   |   |
 
 The result is a structure called a *preorder* which is not exactly an order in the everyday sense --- it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 
@@ -420,7 +424,10 @@ And, even more interestingly, if we transfer the preorder connections between th
 
 In short, for every preorder, we can define the *partial order of the equivalence classes of this preorder*.
 
-{% if site.distribution == 'print' %}
+<!--
+{% if site.distribution == 'print'%}
+-->
+
 
 Maps as preorders
 ---

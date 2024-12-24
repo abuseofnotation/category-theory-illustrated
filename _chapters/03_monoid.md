@@ -284,7 +284,9 @@ Products provide one way to create non-cyclic abelian groups --- by creating a p
 
 We can use this law to gain intuitive understanding of the what abelian groups are, but also to test whether a given group can be broken down to a product of more elementary groups.
 
-{% if site.distribution == 'print' %}
+<!--
+{% if site.distribution == 'print'%}
+-->
 
 Color-mixing monoid as a product
 ---
@@ -309,7 +311,9 @@ Or alternatively, you can view it as having multiple states, representing the di
 
 In both cases the monoid would be cyclic.
 
+<!--
 {%endif%}
+-->
 
 Dihedral groups
 ===
@@ -435,7 +439,9 @@ Or in other words, representing the elements of a group as permutations actually
 
 Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
 
-{% if site.distribution == 'print' %}
+<!--
+{% if site.distribution == 'print'%}
+-->
 
 Interlude: Symmetric groups
 ---
@@ -549,8 +555,6 @@ And then, if we start applying the two generators and follow the laws, we get th
 
 The set of generators and laws that defines a given group is called the *presentation of a group*. Every group has a presentation.
 
-{% if site.distribution == 'print' %}
-
 Interlude: Free monoids
 ---
 
@@ -576,4 +580,3 @@ While the intuition behind free monoids seems simple enough, the formal definiti
 
 We understand that, being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exist a function from it to all of them. But what kind of function would that be? Tune in after a few chapters to find out.
 
-{%endif%}
