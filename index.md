@@ -39,4 +39,4 @@ I want to make this book into the best introductory text, not only to category t
 
 - And if you want to get the whole version of the book as a pdf or an epub, as well as a lot of additional perks, support me on [Patreon](https://patreon.com/abuseofnotation) or [Ko-fi](https://ko-fi.com/abuseofnotation).
 
-_Thanks to my regular supporters: Artiom Kasapu, Meme Gawd, Al King_
+_Thanks to my regular supporters: Artiom Kasapu, Meme Gawd, Al King, David Mankins_
