@@ -3,30 +3,38 @@ layout: default
 title: About 
 ---
 
-{: style="text-align: center"}
-In memory of 
+<p style="text-align: center">
+    In memory of 
+</p>
 
-{: style="text-align: center"}
+<p style="text-align: center">
 Francis William Lawvere 
+</p>
 
-{: style="text-align: center"}
-1937 --- 2023
+<p style="text-align: center">
+1937 - 2023
+</p>
 
 <div style="page-break-after: always; opacity: 0 ; height: 400px"> 
 \pagebreak 
 </div>
 
-{: style="text-align: right"}
-*"Try as you may,*
+<p style="text-align: right">
+"Try as you may,
+</p>
 
-{: style="text-align: right"}
-*you just can't get away,*
+<p style="text-align: right">
+you just can't get away,
+</p>
 
-{: style="text-align: right"}
-*from mathematics"*
+<p style="text-align: right">
+from mathematics"
+</p>
 
-{: style="text-align: right" }
+<p style="text-align: right">
 Tom Lehrer 
+</p>
+
 
 <div style="page-break-after: always; opacity: 0 ; height: 400px"> 
 \pagebreak 
