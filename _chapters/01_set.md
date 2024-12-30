@@ -18,13 +18,14 @@ What is an Abstract Theory
 
 Most scientific and mathematical theories have a specific *domain*, which they are tied to, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created in order to explain how different *biological species* came to evolve using natural selection, quantum mechanics is a description of how particles behave at a specific scale, etc.
 
-Even most mathematical theories, although they are not inherently *bound* to a specific domain (like the scientific theories) are at least strongly related to some domain, as for example differential equations are created to model how events change over time. 
+Even mathematical theories, although they are not inherently *bound* to a specific domain (like the scientific theories) are at least strongly related to some domain, as for example differential equations are created to model how events change over time. 
 
-Set theory and category theory are different, they are not created to provide a rigorous explanation of how a particular phenomenon works, instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Theories that are like that are called *abstract* theories. 
+Set theory and category theory are different, they are not created to provide a rigorous explanation of how a particular phenomenon works, instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Such theories are called *abstract* theories. 
 
-The borders of the two are sometimes blurry. All theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. But theories have core concepts that don't refer to anything in particular, but are instead left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
+The borders of the two are sometimes blurry. All theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. The difference is that abstract theories have *core concepts* that don't refer to anything in particular, and are instead left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
 
 Concrete theories, like the theory of evolution, are composed of concrete concepts. For example, the concept of a *population*, also called a *gene-pool*, refers to a group of individuals that can interbreed. Abstract theories, like set theory, are composed of abstract concepts, like the concept of a set. The concept of a set by itself does not refer to anything. However, we cannot say that it is an empty concept, as there are countless things that can be represented by sets, for example, gene pools can be (very aptly) represented by sets of individual animals. Animal species can also be represented by sets &mdash; a set of all populations that can theoretically interbreed.
+
 You've already seen how abstract theories may be useful. Because they are so simple, they can be used as building blocks to many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later). Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
 
 <!-- comic - brain on category theory -->
@@ -190,7 +191,7 @@ Each numerical operation is a function between two of these sets. For example, s
 
 I will use the occasion to reiterate some of the more important characteristics of functions:
 
-- All numbers from the target have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
+- All numbers in the target have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
 - Zero from the source set is connected to itself in the target set &mdash; that is permitted.
 - Some numbers aren't the square of any other number &mdash; that is also permitted.
 
@@ -213,11 +214,11 @@ Sets are not exactly the same thing as types, but all types are (or can be seen 
 
 ![Set of boolean values](../01_set/boolean.svg)
 
-Another very basic set in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
+Another very basic set that is used in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
 
 ![Set of characters](../01_set/char.svg)
 
-Most of the types of programming are composite types &mdash; they are a combination of the primitive ones that are listed here. Again, we will cover these later.
+Most of the types that are used in programming are *composite* types ---  they are a combination of the primitive ones that are listed here. Again, we will cover these later.
 
 **Question:** What is the type equivalent of subsets in programming?
 
@@ -239,12 +240,11 @@ Purely-functional programming languages
 
 We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
 
-A peculiarity in such languages is that they don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
+Such languages don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
 
 In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly perform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
 
 We then link all those functions into a whole program, often by using a thing called *continuation passing style*.
-
 
 Functional Composition 
 ===
@@ -319,7 +319,7 @@ At this point you might be worried that I had forgotten that I am supposed to ta
 
 In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, compose with one another in an associative way, and can be represented by external diagrams.
 
-And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing till the end of this chapter.
+And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
 
 Isomorphism
 ===
@@ -453,6 +453,7 @@ We said that the most characteristic property of the equivalence relation is its
 **Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
 The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
+
 <!--
 {% if site.distribution == 'print'%}
 -->
@@ -494,4 +495,4 @@ To see why, imagine a person (e.g. me), tinkering with some sort of engineering 
 
 But things are different if the machine in question is software-based --- due to the ease with which new software components can be rolled out, our design can blur the line that separates some of the components or even do away with the concept of component altogether and make the whole program one giant component (*monolithic design*). Worse, when no ready-made components are available, this approach is actually easier than the component-based approach that we described in the previous paragraph, and so many people use it. 
 
-This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that currently, programmers are losing out by not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
+This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that  programmers are losing out if they are not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)

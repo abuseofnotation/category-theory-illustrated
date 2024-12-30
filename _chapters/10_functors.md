@@ -285,7 +285,7 @@ Even more interestingly, we often encounter often special pairs of functors, con
 Human perception might be functorial 
 ---
 
-As we saw, in addition to category theory, functors apper in many disciplines that study the human mind, such as logic, linguistics, semiotics and the like. I thought about why is it so in a [blog post](/logic-thought) that I wrote. My response to that question is that human perception, human thinking, is itself functorial: to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
+As we saw, in addition to category theory, functors apper in many disciplines that study the human mind, such as logic, linguistics, semiotics and the like. I thought about why is it so in a [blog post](https://abuseofnotation.github.io/logic-thought) that I wrote. My response to that question is that human perception, human thinking, is itself functorial: to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
 
 We may say that perception starts with raw sensory data. From it, we go, (using a functor) to a category containing some basic model of how the world works, mapping the objects we are seeing to some concepts that we formed in our mind.
 
