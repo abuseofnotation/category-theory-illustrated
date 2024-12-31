@@ -279,8 +279,6 @@ To avoid these difficulties, we devise a way to define the singleton set, using 
 
 ![Terminal object](../02_category/terminal_object_internal.svg)
 
-(Confusingly the diagram seems to depict multiple functions from elements of each set to the singleton set which may seem to contradict the "exactly one" statement above. Note however that each arrow from the same source set is a single colour, meaning it is the same function being applied to each element.)
-
 It turns out that this property defines the singleton set uniquely i.e. there is no other set that has it, other than the sets that are isomorphic to the singleton set. This is simply because, if there are two sets that have it, those two sets would also have unique morphisms between _themselves_ so they would be isomorphic to one another. More formally, if we have two sets $X$ and $Y$ such that $\exists!X \to 1 \land \exists!Y \to 1$ and they both hold this property ("exactly one function from any other set to this set") then we also have $X \cong Y$.
 
 ![Terminal object](../02_category/terminal_object_internal_isomorphisms.svg)
@@ -289,7 +287,7 @@ And because there is no other set, other than the singleton set that has this pr
 
 ![Terminal object](../02_category/terminal_object.svg)
 
-With this, we acquire a fully external definition (up to an isomorphism) of the singleton set, and thus a definition of a set element --- the elements of a given set are just the functions from the singleton set to that set. In category theory we call this unique singleton set the _terminal object_ (as all arrows eventually lead to it).
+With this, we acquire a fully external definition (up to an isomorphism) of the singleton set, and thus a definition of a set element --- the elements of a given set are just the functions from the singleton set to that set.
 
 ![Functions from the singleton set](../02_category/elements_external.svg)
 
@@ -303,7 +301,7 @@ Note that from this property it follows that the singleton set has exactly one e
 
 The empty set is the set that has no elements, but how would we say this without referring to elements?
 
-We said that there exists a unique function that goes _from_ the empty set _to_ any other set. Or stated differently: the empty set is the only set such that there exists a function from it to any other set. In category theory we name this set the _initial object_ (as tracing all arrows backward to their source, we would eventually get here).
+We said that there exists a unique function that goes _from_ the empty set _to_ any other set. But the reverse is also true: the empty set is the only set such that there exists a function from it to any other set.
 
 ![Initial object](../02_category/initial_object.svg)
 
