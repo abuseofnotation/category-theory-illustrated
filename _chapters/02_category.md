@@ -409,7 +409,7 @@ Formally, this requirement says that there should exist an _operation_, usually 
 
 This is the most important part of the definition --- if you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable, here we just invent the concept of a morphism and define them to be composable. You will see where this definition would get us.
 
-**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). It can sometimes be useful to pronounce "•" as "after", e.g. $f after $g.
+**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f after $g.
 
 ## The law of identity
 
@@ -417,7 +417,7 @@ To have numbers, you have to have a zero. The zero of category theory is what we
 
 ![The identity morphism (but can also be any other morphism)](../02_category/identity.svg)
 
-It's important to mark this morphism because there can be (let's again add this very important (and by now probably also very boring) reminder) many morphisms that go from one object to the same object. For example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
+It's important to mark this morphism because there can be (let's again add this very important, and by now probably also very boring, reminder) many morphisms that go from one object to the same object. For example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
 
 A structure must have an identity morphism for each object in order for it to be called a category --- this is known as the _law of identity_.
 
@@ -468,7 +468,7 @@ This is it.
 
 # Addendum: Why are categories like that?
 
-_Why_ are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they _work_, I mean, look at how many applications are there.
+_Why_ are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they _work_, I mean, look at how many applications there are.
 
 But at the same time, category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice). Or you can add one more law and get yet another theory (by the way, there are indeed such laws and such theories), so if this specific set of laws works better than any other, then this fact demands an explanation. Not a _mathematical_ explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is _my_ attempt to provide such an explanation, regarding the laws of _identity_ and _associativity_.
 
@@ -476,13 +476,13 @@ But at the same time, category theory is an abstract theory, so everything about
 
 The reason the identity law is required is by far the more obvious one. Why do we need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, we need the identity morphism to be able to speak properly. For example, once we have the concept of identity morphism defined, we can define a category-theoretic definition of an _isomorphism_, based on it (which is important, because the concept of an isomorphism is very important for category theory).
 
-As we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$. and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
+As we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$ and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 And here is the same thing expressed with a commuting diagram.
 
 ![Isomorphism](../02_category/isomorphism.svg)
 
-Like the previous one, the diagram expresses the same (simple) fact as the formula, namely that going from the one of objects ($A$ and $B$) to the other one and then back again to the starting object is the same as applying the identity morphism i.e. doing nothing.
+Like the previous one, the diagram expresses the same (simple) fact as the formula, namely that going from one object ($A$ or $B$) to the other and then back again to the starting object is the same as applying the identity morphism i.e. doing nothing.
 
 # Associativity and reductionism
 
@@ -492,13 +492,13 @@ Associativity --- what does it mean and why is it there? In order to tackle this
 
 Reductionism is the idea that the behaviour of complex phenomena can be understood in terms of a number of _simpler_ and more fundamental phenomena. In other words, that things keep getting simpler and simpler as they get "smaller" (or when they are viewed from a lower level). An example of reductionism is the idea that the behaviour of matter can be understood completely by studying the behaviours of its constituents i.e. atoms (the word means "undividable").
 
-Whether the reductionist view is _universally valid_, i.e. whether it is possible to devise a _theory of everything_ that describes the whole universe with a set of very simple laws, is a question over which we can argue until that universe's inevitable collapse. What is certain, though, is that _reductionism underpins all our understanding_, especially when it comes to science and mathematics --- each scientific discipline is based on a set of simple _fundaments_ (e.g. elementary particles in particle physics, chemical elements in chemistry etc. ) on which it builds on its much more complex theories.
+Whether the reductionist view is _universally valid_, i.e. whether it is possible to devise a _theory of everything_ that describes the whole universe with a set of very simple laws, is a question over which we can argue until that universe's inevitable collapse. What is certain, though, is that _reductionism underpins all our understanding_, especially when it comes to science and mathematics --- each scientific discipline is based on a set of simple _fundaments_ (e.g. elementary particles in particle physics, chemical elements in chemistry etc.) on which it builds on its much more complex theories.
 
 ## Commutativity
 
-So, if this principle is so important, it would be beneficial to be able to formalize it (i.e. to translate it into mathematical language), and this is what we will try to do now. One way to state the principle of reductionism is to say that _each thing is nothing but a sum of its parts_ i.e. if we combine the same set of parts, we always get the same result. To formalize that, we get a set of objects (balls) and a way to combine them, (which we will denote with a dot).
+So, if this principle is so important, it would be beneficial to be able to formalize it (i.e. to translate it into mathematical language), and this is what we will try to do now. One way to state the principle of reductionism is to say that _each thing is nothing but a sum of its parts_ i.e. if we combine the same set of parts, we always get the same result. To formalize that, we get a set of objects (balls) and a way to combine them (which we will denote with a dot).
 
-So, if we have, a given "recipe", for example
+So, if we have a given "recipe", for example
 
 ![Commutativity](../02_category/commutativity_1.svg)
 
