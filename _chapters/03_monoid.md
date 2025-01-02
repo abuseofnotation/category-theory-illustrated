@@ -179,11 +179,13 @@ Symmetry groups that have such "main" rotation, and in general, groups and monoi
 
 All rotation groups/monoids are cyclic groups. Another example of a cyclic monoid is, yes, the natural numbers under addition, with $+1$ as the generator.
 
-![The group of numbers under addition](../03_monoid/numbers_cyclic.svg)
+![The monoid of natural numbers under addition](../03_monoid/numbers_cyclic.svg)
 
-The *group* of integers under addition is cyclic too --- here wecan use $+1$ *or* $-1$ as the generator (as whichever of the two we choose, we would get the other one by applying the inverse wall).
+The *group* of integers under addition is cyclic too --- here we can use $+1$ *or* $-1$ as the generator (as whichever of the two we choose, we would get the other one by applying the inverse wall).
 
-Wait, how can this be a cyclic group when there are no cycles? This is because the integers are an *infinite* cyclic group. 
+![The group of integers under addition](../03_monoid/integers_cyclic.svg)
+
+Wait, how can this be a cyclic group when there are clearly no cycles? This is because the integers are an *infinite* cyclic group. 
 
 A number-based example of a finite cyclic group is the group of integers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
 
