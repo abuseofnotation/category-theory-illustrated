@@ -263,7 +263,7 @@ And let's examine the functions from the singleton set, to that random set.
 
 ![Functions from the singleton set](../02_category/elements_singleton_functions.svg)
 
-It's easy to see that there would be exactly one function for each element of the set i.e. that each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1 means the singleton set).
+It's easy to see that there would be exactly one function for each element of the set i.e. that each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
 
 So, we can say that what we call "elements" of a set are the functions from the singleton set to it.
 
@@ -275,7 +275,7 @@ Now, after coming up with a definition of a set _element_, based on functions, w
 
 However, our diagram is not yet fully external, as it depends on the idea of the singleton set, i.e. the set with one _element_. Furthermore, this makes the whole definition circular, as we cannot define the concept of a one-element set, without the concept of element.
 
-To avoid these difficulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, there is exactly one function from any other set to the singleton set i.e. if $1$ is the singleton set, then we have $\forall  X  \exists!  X \to 1$.
+To avoid these difficulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, there is exactly one function from any other set to the singleton set i.e. if $1$ is the singleton set, then we have exactly one function $X \to 1$ for all objects $$X$$ i.e. $\forall  X  \exists!  (X \to 1)$ (where $\exists!$ means "Exists unique").
 
 ![Terminal object](../02_category/terminal_object_internal.svg)
 
@@ -299,9 +299,17 @@ Note that from this property it follows that the singleton set has exactly one e
 
 ## Defining the empty set using functions
 
-The empty set is the set that has no elements, but how would we say this without referring to elements?
+The empty set is, of course, the set that has no elements, but how would we say this without referring to elements?
 
-We said that there exists a unique function that goes _from_ the empty set _to_ any other set. But the reverse is also true: the empty set is the only set such that there exists a function from it to any other set.
+In the previous chapter, we noted an interesting property of the empty set:
+
+> there is a unique function from the empty set to any other set.
+
+And, again, since the empty set is the only set that has this property, we can reverse the above statement and use it as a definition: 
+
+> the empty set is the set such that there exists a function from it to any other set.
+
+*Task:* why is the functions to the empty set unique?
 
 ![Initial object](../02_category/initial_object.svg)
 
@@ -309,11 +317,11 @@ Observant readers will notice the similarities between the diagrams depicting th
 
 ![Initial terminal duality](../02_category/initial_terminal_duality.svg)
 
-Some _even more_ observant readers may also notice the similarities between the product/coproduct diagrams and the initial/terminal object diagrams.
+Some _even more_ observant readers (folks, keep it down please, you are _too observant_) may also notice the similarities between the product/coproduct diagrams and the initial/terminal object diagrams.
 
 ![Coproduct and product](../02_category/coproduct_product_duality.svg)
 
-To them, I would like to say: Folks, keep it down please, you are _too observant_ --- we have, like, 4 chapters to go until we get to this.
+The similarity of the diagrams, is due to a similar general approach of defining things --- in both cases we find the property that makes a given concept useful and then define the concept so it has this property*.
 
 ## Functional application
 
@@ -331,13 +339,17 @@ The result is the function that represents the element returned by the applied f
 
 ## Conclusion
 
-If we had more time, we would cover the entirety of Lawvere's Elementary Theory of the Category of Sets (or ETCS for short), and list all concepts and axioms that are required to define a rigorous set theory using functions, but this is enough for you to get the main idea: that these axioms constitute a definition of set theory, that is based entirely on functions. This is a key idea, but there is an even bigger thing there: because it is more general than the traditional definition, this new definition also applies to objects that are not exactly sets but are _like_ sets in some respects.
+This was a taste of Lawvere's Elementary Theory of the Category of Sets (ETCS) which constitutes a rigorous definition of set theory (equivalent to ZFC set theory) using only the concept of a function. 
 
-You may say that they apply to entirely different _categories of objects_.
+We can cover this theory in it's entirety, listing all axioms that are needed, but for now it is probably more important to understand why do we need in the first place? 
 
-# Category Theory --- brief definition
+The short answer: because it is more general than the traditional definition, this new definition also applies to objects that are not exactly sets but are _like_ sets in some respects.
 
-Maybe it is about time to see what a category is. We will start with a short definition --- a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements. Or to put it another way, category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
+You may say that they apply to entirely different _categories of objects_ (nudge, nudge).
+
+# Categories brierly
+
+Maybe it is about time to see what a category is. Here is a short definition: a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
 ![Category theory and set theory compared](../02_category/set_category.svg)
 
@@ -361,13 +373,13 @@ By switching to external diagrams, we lose sight of the particular (the elements
 
 **NB:** The word "Object" is used in both programming languages and in category theory, but has completely different meanings. A categorical object is equivalent to a _type_ or a _class_ in programming language theory.
 
-## Sets Vs Categories
+## Sets VS Categories
 
 One remark before we continue: in the last section, we may have made it seem like category theory and set theory are somehow competing with each other. Perhaps that notion would be somewhat correct if category and set theory were meant to describe _concrete_ phenomena, in the way that the theory of relativity and the theory of quantum mechanics are both supposed to explain the physical world. Concrete theories are conceived mainly as _descriptions_ of the world, and as such it makes sense for them to be connected in some sort of hierarchy.
 
 In contrast, abstract theories, like category theory and set theory, are more like _languages_ for expressing such descriptions --- they still can be connected, and _are_ connected in more than one way, but there is no inherent hierarchical relationship between the two and therefore arguing over which of the two is more basic, or more general, is just a chicken-and-egg problem, as you will see in the next chapter.
 
-# Defining Categories (again)
+# Categories (again)
 
 > "...deal with all elements of a set by ignoring them and working with the set's definition." --- Dijkstra (from "On the cruelty of really teaching computing science")
 
@@ -381,9 +393,9 @@ A category consists of a collection of objects as well as some arrows connecting
 
 ![A category](../02_category/category.svg)
 
-Wait a minute, we said that all sets form a category, but at the same time, any one set can be seen as a category in its own right (just one which has no morphisms). This is true and an example of a phenomenon that is very characteristic of category theory --- one structure can be examined from many different angles and may play many different roles, often in a recursive fashion.
+Wait a minute, we said that all sets form a category, but at the same time, any one set can be seen as a category in its own right (just one which has no morphisms). This is true and very characteristic of category theory --- one structure can be examined from many different angles and may play many different roles, often in a recursive fashion.
 
-This particular analogy (a set as a category with no morphisms) is, however, not very useful. Not because it's incorrect in any way, but rather because category theory is _all about the morphisms_. If the _arrows_ in set theory are nothing but a connection between the sets that serve as their source and a destination, in category theory it's the _objects_ that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are colored: if you ask me, the category of sets should really be called _the category of functions_.
+This particular equivalence (a set as a category with no morphisms) is, however, rarely useful. Not because it's incorrect in any way, but rather because category theory is _all about the morphisms_ --- if the _arrows_ in set theory are nothing but a connection between the sets that serve as their source and a destination, in category theory it's the _objects_ that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are colored: if you ask me, the category of sets should really be called _the category of functions_.
 
 Speaking of which, note that objects in a category can be connected by multiple arrows and that having the same source and target sets does not in any way make arrows equivalent.
 
@@ -393,7 +405,7 @@ Why that is true is pretty obvious if we go back to set theory for a second (OK,
 
 ![Two sets connected with multiple functions](../02_category/set_arrows.svg)
 
-There are some types of categories in which only one morphism between two objects is allowed (or one in each direction), but we will talk about them later.
+There are some types of categories that have only one morphism between two objects (in each direction), but we will talk about them later.
 
 ## Composition
 
@@ -401,11 +413,11 @@ The most important requirement for a structure to be called a category is that _
 
 ![Composition of morphisms](../02_category/composition.svg)
 
-Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A → B$ and $f: B → C$, there exists a morphism $(f • g): A → C$.
+Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A /to B$ and $f: B /to C$, there exists a morphism $(f • g): A /to C$.
 
 ![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
-This is the most important part of the definition --- if you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable, here we just invent the concept of a morphism and define them to be composable. You will see where this definition would get us.
+This is the most important part of the definition. If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
 
 **NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f after $g.
 
@@ -427,23 +439,21 @@ Composition is special not only because you can take any two morphisms with appr
 
 ![Composition of morphisms with many objects](../02_category/composition_n_objects.svg)
 
-But let's get back to the math. If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$).
+If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$).
 
 This formula can be expressed using the following diagram, which would only commute if the formula is true (given that all our category-theoretic diagrams are commutative, we can say, in such cases, that the formula and the diagram are equivalent).
 
 ![Composition of morphisms with many objects](../02_category/composition_associativity.svg)
 
-This formula (and the diagram) is the definition of a property called $associativity$. Being associative is required for functional composition to really be called functional composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, it would be super weird).
+This formula (and the diagram) is the definition of a property called $associativity$. Being associative is required for functional composition to really be called functional composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, that would be super weird).
 
 Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h • g) • f = h • (g • f)$).
 
 And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. $(1 \times 2) \times 3 = 1 \times (2 \times 3)$. While division is not $(1 / 2) / 3 = 1 / (2 / 3)$.
 
-This approach (composing indefinitely many things) for building stuff is often used in programming. To see some examples, you don't need to look further than the pipe operator in Unix (`|`), which feeds the standard output of a program into the standard input of another program. If you _want_ to look further, note that there is a whole programming paradigm based on functional composition, called "concatenative programming" utilized in languages like Forth and Factor.
-
 ## Commuting diagrams
 
-The diagrams above use colours to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant --- the only reason to draw diagrams in the first place is to represent paths that are equivalent to each other. All other paths would just belong in different diagrams.
+The diagrams above use colours to illustrate the fact that the green morphism is equivalent to the other two (and not just some unrelated morphism), but in practice this notation is a little redundant, as the *only* reason to draw diagrams in the first place is to represent paths that are equivalent to each other. All other paths would just belong in different diagrams.
 
 ![Composition of morphisms - a commuting diagram](../02_category/composition_commuting_diagram.svg)
 
@@ -453,7 +463,7 @@ More formally, a commuting diagram is a diagram in which given two objects $a$ a
 
 The diagram above is one of the simplest commuting diagrams.
 
-## A summary
+## Summary
 
 For future reference, let's restate what a category is:
 
@@ -466,9 +476,7 @@ This is it.
 
 # Addendum: Why are categories like that?
 
-_Why_ are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they _work_, I mean, look at how many applications there are.
-
-But at the same time, category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice). Or you can add one more law and get yet another theory (by the way, there are indeed such laws and such theories), so if this specific set of laws works better than any other, then this fact demands an explanation. Not a _mathematical_ explanation (e.g. we cannot prove that this theory is better than some other one), but an explanation nevertheless. What follows is _my_ attempt to provide such an explanation, regarding the laws of _identity_ and _associativity_.
+_Why_ are categories defined by those two laws and not some other two (or one, three, four etc.). laws? From one standpoint, the answer to that seems obvious --- we study categories because they _work_. I mean, look at how many applications there are... But at the same time, category theory is an abstract theory, so everything about it is kinda arbitrary: you can remove a law --- and you get another theory that looks similar to category theory (although it might actually turn out to be quite different in practice). Or you can add one more law and get yet another theory (there are indeed such laws and such theories, and we will cover them later). So if this specific set of laws works better than any other, then this fact demands an explanation. Not a _mathematical_ explanation (e.g. we cannot in any way _prove_ that this theory is better than some other one), but an explanation nevertheless. What follows is _my_ attempt to provide such an explanation, regarding the laws of _identity_ and _associativity_.
 
 # Identity and isomorphisms
 

@@ -151,13 +151,13 @@ Every set is a subset of itself, in which case this function is the same as the 
 Functions and the Empty Set
 ---
 
-There is a unique function from the empty set to any other set.
+Although it doesn't look like it, there is a unique function from the empty set to any other set.
 
 ![Function with empty set](../01_set/function_empty.svg)
 
 **Question:** Is this really valid? Why? Check the definition.
 
-Note that this statement is also a result from the one saying that there is a function between a Subset and a Set, and the one that says that the empty set is a subset of any other set.
+This is because there is a function between a subset and a its set, and the empty set is a subset of any other set.
 
 **Question:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
 
@@ -495,4 +495,8 @@ To see why, imagine a person (e.g. me), tinkering with some sort of engineering 
 
 But things are different if the machine in question is software-based --- due to the ease with which new software components can be rolled out, our design can blur the line that separates some of the components or even do away with the concept of component altogether and make the whole program one giant component (*monolithic design*). Worse, when no ready-made components are available, this approach is actually easier than the component-based approach that we described in the previous paragraph, and so many people use it. 
 
-This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that  programmers are losing out if they are not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
+This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that  programmers are losing out if they are not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better, it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
+
+Anyway, the composition approach is sometimes used in programming, and when it is used, it tends to work rather well. To see some examples, you don't need to look further than the pipe operator in Unix (`|`), which feeds the standard output of a program into the standard input of another program. 
+
+If you _want_ to look further, look at the Haskell programming language, or some of the numerous libraries for functional programming for other languages. There is also a whole programming paradigm based on functional composition, called "concatenative programming" utilized in languages like Forth and Factor.
