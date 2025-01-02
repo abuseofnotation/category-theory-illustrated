@@ -31,14 +31,14 @@ The monoid operation should, like functional composition, be *associative* i.e. 
 
 ![Associativity in the color mixing operation](../03_monoid/balls_associativity.svg)
 
-When an operation is associative, it means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed, or add a term that is present at both sides of an equation and retain the equality of the existing terms.
+When an operation is associative, this means we can use all kinds of algebraic operations to any sequence of terms (or in other words to apply equation reasoning), like for example we can replace any element with a set of elements from which it is composed, or add a term that is present at both sides of an equation and retain the equality of the existing terms.
 
 ![Associativity in the color mixing operation](../03_monoid/balls_arithmetic.svg)
 
 The identity element
 ---
 
-An associative operation is not the only requirement for a structure to be considered a monoid (as opposed to a *semigroup*, which only requires associativity, but that's a separate topic for later!). Additionally, a set must feature what is called an *identity element* of a given operation, the concept of which you are already familiar from both sets and categories --- it is an element that when combined with any other element gives back that same element. Or simply $x • i = x$ and $i • x = x$ for any $x$. 
+Actually, not any (associative) operation for combining elements makes for a monoid (it makes for a *semigroup*, which is also a thing, but that's a separate topic). To be a monoid, a set must feature what is called an *identity element* of the operation, a concept of which you are already familiar from both sets and categories --- it is an element that when combined with any other element gives back that same element (not the identity but the other one). Or simply $x • i = x$ and $i • x = x$ for any $x$. 
 
 In the case of our color-mixing monoid the identity element is the white ball (or perhaps a transparent one, if we have one).
 
@@ -97,7 +97,7 @@ Formally, we can define a monoid from any set $A$, by defining an (associative) 
 Other monoid-like objects
 ===
 
-Monoid operations obey two laws --- they are *associative* and there is an *identity element*. In some cases we come across operations that also obey other laws that are also interesting. Imposing more rules to the way in which objects are combined results in the definition of other monoid-like structures.
+Monoid operations obey two laws --- they are *associative* and there is an *identity element*. In some cases we come across operations that also obey other laws that are also interesting. Imposing more (or less) rules to the way in which objects are combined results in the definition of other monoid-like structures.
 
 Commutative (abelian) monoids
 ---
@@ -141,7 +141,7 @@ And now on to symmetry groups.
 Symmetry groups and group classifications
 ===
 
-An interesting collection of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fitted before the action was applied).
+An interesting kind of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fitted before the action was applied).
 
 We won't use the balls this time, because in terms of symmetries they have just one position and hence just one action --- the identity action (which is its own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
 
@@ -173,9 +173,9 @@ But it gets  much simpler to grasp if we notice the following: although our grou
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_cyclic.svg)
 
-Symmetry groups that have this idea of a "main" rotation, and in general, groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. In these cases, the "main" rotation is called the group's *generator*.
+Symmetry groups that have such "main" rotation, and in general, groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. The "main" rotation is called the group's *generator*.
 
-All rotation groups are cyclic groups. Another example of a cyclic group is, indeed, the natural numbers under addition. Here we may use $+1$ or $-1$ as generators.
+All rotation groups are cyclic groups. Another example of a cyclic group is, yes, the natural numbers under addition. Here we may use $+1$ or $-1$ as generators.
 
 ![The group of numbers under addition](../03_monoid/numbers_cyclic.svg)
 
@@ -244,7 +244,7 @@ We get the set of elements of the new group by taking *the Cartesian product* of
 
 ![Two trivial groups](../03_monoid/groups_product_four.svg)
 
-The *actions* of a product group are comprised of the actions of the first group, combined with the actions of the second, where each action is applied only on the element that is a member of its original group, leaving the other element unchanged.
+And the *actions* of a product group are comprised of the actions of the first group, combined with the actions of the second, where each action is applied only on the element that is a member of its original group, leaving the other element unchanged.
 
 ![Klein four](../03_monoid/klein_four_as_product.svg)
 
@@ -561,7 +561,7 @@ The set of generators and laws that defines a given group is called the *present
 Interlude: Free monoids
 ---
 
-We saw how picking a different selection of laws gives rise to various types of monoids. But what monoids would we get if we picked no laws at all? These monoids (we get a different one depending on the set we picked) are called *free monoids*. The word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else).
+We saw how picking a different selection of laws gives rise to various types of monoids. But what monoids would we get if we pick no laws at all? These monoids (we get a different one depending on the set we pick) are called *free monoids*. The word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else).
 
 If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is isomorphic to the monoid of integers.
 
