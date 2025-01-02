@@ -3,6 +3,7 @@ layout: default
 title: Monoids 
 ---
 
+
 Monoids etc
 ===
 
