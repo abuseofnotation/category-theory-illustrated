@@ -551,7 +551,7 @@ The answer is "Yes": when we are looking for the join of two object, we are look
 
 ![Implies identity](../05_logic/join_bigger.svg)
 
-In other words, if $A \to B$, then $A \land B \leftrightarrow B$
+In other words, if $A \to B$, then $A \lor B \leftrightarrow B$
 
 Implies
 ---

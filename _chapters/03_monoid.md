@@ -53,7 +53,7 @@ To keep the suspense, before we discuss the relationship between monoids and cat
 Monoids from numbers
 ---
 
-Mathematics is not only about numbers, however numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said). This group is denoted $\left< \mathbb{N},+ \right>$ (in general, all groups are denoted by specifying the set and the operation, enclosed in angle brackets).
+Mathematics is not only about numbers, however numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ ($$\{ 0, 1, 2, 3 ...\}$$) forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said). This monoid is denoted $\left< \mathbb{N},+ \right>$ (in general, all monoids are denoted by specifying the set and the operation, enclosed in angle brackets).
 
 ![The monoid of numbers under addition](../03_monoid/numbers_addition.svg)
 
@@ -120,7 +120,9 @@ A group is a monoid such that for each of its elements, there is another element
 
 If we view *monoids* as a means of modeling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions are also *reversible*.
 
-A nice example of a monoid that we covered that is also a group is the set of integers under addition. The inverse of each number is its opposite number (positive numbers' inverse are negatives and vice versa). The above formula, then, becomes $x + (-x) = 0$
+A nice example of a group, which is related to a monoid we covered, is the set of integers under addition --- the operation is again ($+$), but the objects are the *integers* $\mathbb{Z}$, not the natural numbers $\mathbb{N}$ (so it's not $$\{ 0, 1, 2, 3 ...\}$$, but $$\{... -3, -2 -1, 0, 1, 2, 3 ...\}$$). The negative numbes are added, as the natural numbers don't have inverses. The the inverse of each number is its opposite number (positive numbers' inverse are negatives and vice versa). 
+
+In this instance, the above formula, becomes $x + (-x) = 0$
 
 The study of groups is a field that is much bigger than the theory of monoids (and perhaps bigger than category theory itself). And one of its the biggest branches is the study of the "symmetry groups" which we will look into next.
 
@@ -168,19 +170,23 @@ The diagram that enumerates all the rotations of a more complex geometrical figu
 
 ![The group of rotations in a more complex figure](../03_monoid/symmetry_rotation_square.svg)
 
-But it gets  much simpler to grasp if we notice the following: although our group has many rotations, and there are more still for figures with more sides (if I am not mistaken, the number of rotations is equal to the number of the sides), *all those rotations can be reduced to the repetitive application of just one rotation*, (for example, the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
+But it gets much simpler to grasp if we notice the following: although our group has many rotations, and there are more still for figures with more sides (if I am not mistaken, the number of rotations is equal to the number of the sides), *all those rotations can be reduced to the repetitive application of just one rotation*, (for example, the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_cyclic.svg)
 
 Symmetry groups that have such "main" rotation, and, in general, groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. And such rotation are called the group's *generator*.
 
-All rotation groups are cyclic groups. Another example of a cyclic groups is, yes, the natural numbers under addition. Here we can use $+1$ or $-1$ as generators.
+All rotation groups/monoids are cyclic groups, 
+
+Another example of a cyclic monoid is, yes, the natural numbers under addition, with $+1$ as the generator.
 
 ![The group of numbers under addition](../03_monoid/numbers_cyclic.svg)
 
+The *group* of integers under addition is cyclic too --- here wecan use $+1$ *or* $-1$ as the generator (as whichever of the two we choose, we would get the other one by applying the inverse wall).
+
 Wait, how can this be a cyclic group when there are no cycles? This is because the integers are an *infinite* cyclic group. 
 
-A number-based example of a finite cyclic group is the group of natural numbers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
+A number-based example of a finite cyclic group is the group of integers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
 
 For example: $1 \pmod{12} = 1$ (because $1/12 = 0$ with $1$ remainder) $2 \pmod{12} = 2$ etc. 
 
@@ -192,7 +198,7 @@ In effect numbers "wrap around", forming a group with as many elements as it the
 
 All cyclic groups that have the same number of elements (or that are of the *same order*) are isomorphic to each other (careful readers might notice that we haven't yet defined what a group isomorphisms are, even more careful readers might already have an idea about what it is).
 
- For example, the group of rotations of the triangle is isomorphic to the natural numbers under the addition with modulo $3$. 
+ For example, the group of rotations of the triangle is isomorphic to the group of integers under the addition with modulo $3$. 
 
 ![The group of numbers under addition](../03_monoid/symmetry_modular.svg)
 
@@ -369,7 +375,7 @@ There is a lot to say about these two functions, starting from the fact that its
 By the way, this isomorphism can be represented in terms of programming as well. It is equivalent to the statement that the following function always returns `true` for any arguments, 
 
 ```
-(...args) => uncurry(curry(f(...args)) === f(...args)
+(...args) => uncurry(curry(f))(...args) === f(...args)
 ```
 
 This is one part of the isomorphism, the other part is the equivalent function for curried functions.
@@ -427,7 +433,7 @@ So, basically the functions that represent the elements of a monoid also form a 
 Cayley's theorem
 ---
 
-Once we learn how to represent the elements of any monoid as permutations that also form a monoid, using currying, it isn't too surprising to learn that this constructed permutation monoid is isomorphic to the original one (the one from which it is constructed --- this is a result known as the Cayley's theorem:
+Once we learn how (using currying) to represent the elements of any monoid as permutations that also form a monoid, it isn't too surprising to learn that this constructed permutation monoid is isomorphic to the one from which it was constructed. This is a result known as the Cayley's theorem:
 
 > Any group is isomorphic to a permutation group. 
 
@@ -435,7 +441,7 @@ Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A
 
 ![The group of rotations in a triangle --- set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
 
-Or in other words, representing the elements of a group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*). 
+Or in other words, representing the elements of a monoid/group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*). 
 
 Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
 
@@ -478,7 +484,9 @@ Based on this insight, can state Cayley's theorem in terms of symmetric groups i
 
 Fun fact: the study of group theory actually started by examining symmetric groups, so this theorem was actually a prerequisite for the emergence of the normal definition of groups that we all know and love (OK, at least *I* love it) --- it provided a proof that the notion described by this definition is equivalent to the already existing notion of symmetric groups.
 
+<!--
 {% endif %}
+-->
 
 Monoids as categories
 ---
@@ -560,7 +568,7 @@ Interlude: Free monoids
 
 We saw how picking a different selection of laws gives rise to different types of monoid. But what monoids would we get if we pick no laws at all? These monoids (we get a different one depending on the set we picked) are called a *free monoids* (the word "free" is used in the sense that once you have the set, you can upgrade it to a monoid for free (i.e. without having to define anything else).
 
-If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is isomorphic to the monoid of integers.
+If you revisit the previous section you will notice that we already saw one such monoid. The free monoid with just one generator is isomorphic to the monoid of natural numbers.
 
 ![The free monoid with one generator](../03_monoid/infinite_cyclic_presentation_elements.svg)
 
