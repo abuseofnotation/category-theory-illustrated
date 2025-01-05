@@ -427,7 +427,7 @@ To have numbers, you have to have a zero. The zero of category theory is what we
 
 ![The identity morphism (but can also be any other morphism)](../02_category/identity.svg)
 
-It's important to mark this morphism because there can be (let's again add this very important, and by now probably also very boring, reminder) many morphisms that go from one object to the same object. For example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
+It's important to mark this morphism because there can be (let's again add this very important, and by now probably also very boring, reminder) many morphisms that go from one object to the same object. For example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $\operatorname{negate}$, $\operatorname{square}$, $\operatorname{add\ one}$, and are not at all the identity morphism.
 
 A structure must have an identity morphism for each object in order for it to be called a category --- this is known as the _law of identity_.
 
