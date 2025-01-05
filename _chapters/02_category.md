@@ -413,7 +413,7 @@ The most important requirement for a structure to be called a category is that _
 
 ![Composition of morphisms](../02_category/composition.svg)
 
-Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A /to B$ and $f: B /to C$, there exists a morphism $(f • g): A /to C$.
+Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A \to B$ and $f: B \to C$, there exists a morphism $(f • g): A \to C$.
 
 ![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
