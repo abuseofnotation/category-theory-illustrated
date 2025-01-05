@@ -419,7 +419,7 @@ Formally, this requirement says that there should exist an _operation_, usually 
 
 This is the most important part of the definition. If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
 
-**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f after $g.
+**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f \;\text{after}\; $g.
 
 ## The law of identity
 
