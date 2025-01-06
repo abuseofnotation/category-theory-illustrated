@@ -413,13 +413,13 @@ The most important requirement for a structure to be called a category is that _
 
 ![Composition of morphisms](../02_category/composition.svg)
 
-Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A /to B$ and $f: B /to C$, there exists a morphism $(f • g): A /to C$.
+Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A \to B$ and $f: B \to C$, there exists a morphism $(f • g): A \to C$.
 
 ![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
 This is the most important part of the definition. If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
 
-**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f after $g.
+**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f \;\text{after}\; $g.
 
 ## The law of identity
 
@@ -427,7 +427,7 @@ To have numbers, you have to have a zero. The zero of category theory is what we
 
 ![The identity morphism (but can also be any other morphism)](../02_category/identity.svg)
 
-It's important to mark this morphism because there can be (let's again add this very important, and by now probably also very boring, reminder) many morphisms that go from one object to the same object. For example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $negate$, $square$, $add one$, and are not at all the identity morphism.
+It's important to mark this morphism because there can be (let's again add this very important, and by now probably also very boring, reminder) many morphisms that go from one object to the same object. For example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $\operatorname{negate}$, $\operatorname{square}$, $\operatorname{add\ one}$, and are not at all the identity morphism.
 
 A structure must have an identity morphism for each object in order for it to be called a category --- this is known as the _law of identity_.
 
