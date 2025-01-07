@@ -267,11 +267,11 @@ The Klein four-group is *non-cyclic* (because there are not one, but two generat
 Cyclic product groups
 ---
 
-Product groups are *non-cyclic*, provided that the number of elements of the groups that comprise them (or their *orders*) aren't *relatively prime* (have some GCD other than 1).
+In the previous chapter, we saw one *non-cyclic* product group (the Klein four-group), which was a product of *cyclic groups*. Most product groups (even the product of cyclic groups) would be non-cyclic, because it would have the generators of both groups that comprise it, i.e. even if the two original groups are cyclic and thus have 1 generator each, their product would still have 2 generators. But the product of two cyclic groups would still be cyclic, if the number of elements of those groups (their *orders*) have some common divisor other than 1 (i.e. if they are *not relatively prime numbers*). 
 
-If two groups have orders that aren't relatively prime, (like for example $2$ and $2$, (which are both divided by 2) as the groups that comprise Klein four-groups), then even if the two groups are cyclic and have just 1 generator each, their product would have 2 generators.
+So, if you combine two groups with orders that have some common divisor (as $2$ and $2$, which are both divided by 2), then, their product would not be cyclic. But, if you combine two groups with orders that are relatively prime, (like $2$ and $3$) you would get a cyclic group.
 
-And if you combine two groups with orders that are relatively prime, (like $2$ and $3$) the resulting group would be isomorphic to a cyclic group of the same order, as the product of $Z_3$ and $Z_2$ is isomorphic to the group $Z_6$ ($Z_3 \times Z_2 \cong Z_6$)
+Furthermore, the product of two relatively prime groups, would be isomorphic to a cyclic group of the same order, as the product of the orders of it's components e.g. the product of $Z_3$ and $Z_2$ is isomorphic to the group $Z_6$ ($Z_3 \times Z_2 \cong Z_6$)
 
 ![Chinese reminder theorem](../03_monoid/chinese_remainder_theorem.svg)
 

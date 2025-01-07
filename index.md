@@ -5,7 +5,7 @@ title: index
 
 [![cover](cover_print.svg)](00_about)
 
-[Buy](https://ko-fi.com/s/ee517b2d98)
+[Buy](https://abuseofnotation.gumroad.com)
 --
 
 [Read online](00_about)
@@ -19,7 +19,7 @@ _Discover the beauty of mathematics through the lens of category theory with thi
 [Vitaly Kurin](https://twitter.com/y0b1byte) Machine Learning Research Scientist at Isomorphic Labs
 
 
->Should category theory be considered for this academic purpose or any work wherein clear thinking and explanations are valued, beginner-appropriate resources are essential. There is no book on category theory that makes its abstractions so tangible as "Category Theory Illustrated" does. I recommend it for programmers, managers, organizers, designers, or anyone else who values the structure and clarity of information, processes, and relationships.
+> There is no book on category theory that makes its abstractions so tangible as "Category Theory Illustrated" does. I recommend it for programmers, managers, organizers, designers, or anyone else who values the structure and clarity of information, processes, and relationships.
 
 [Evan Burchard](https://www.oreilly.com/pub/au/7124), Author of "The Web Game Developer's Cookbook" and "Refactoring JavaScript"
 
