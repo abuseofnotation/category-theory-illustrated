@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="0 0 595.3 206"
    version="1.1"
    id="svg7566"
    sodipodi:docname="product_parts.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata7572">
     <rdf:RDF>
@@ -34,17 +34,20 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1376"
+     inkscape:window-width="1080"
+     inkscape:window-height="1853"
      id="namedview7568"
      showgrid="false"
-     inkscape:zoom="3.317655"
-     inkscape:cx="297.64999"
-     inkscape:cy="103"
+     inkscape:zoom="2.3459363"
+     inkscape:cx="367.01763"
+     inkscape:cy="196.29689"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g7560" />
+     inkscape:current-layer="g7560"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
   <switch
      id="switch7564">
     <g
@@ -123,6 +126,26 @@
            cy="129.13847"
            r="13.5"
            id="circle7552-3" />
+        <g
+           aria-label="A"
+           id="text28280"
+           style="font-size:44.271px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:end;word-spacing:0px;text-anchor:end;opacity:0.525963;stroke-width:3.32034"
+           transform="matrix(0.75856719,0,0,0.75856719,-28.957402,170.06441)">
+          <path
+             d="m 279.65133,15.830255 -2.3021,-7.5260704 h -11.51046 l -2.30209,7.5260704 h -7.21617 l 11.15629,-31.742307 h 8.19014 l 11.20056,31.742307 z m -6.19794,-20.4974734 q -0.22136,-0.752607 -0.57553,-1.903653 -0.35416,-1.151046 -0.70833,-2.346363 -0.35417,-1.1953166 -0.57553,-2.0807366 -0.22135,0.88542 -0.61979,2.2135496 -0.35417,1.283859 -0.70834,2.479176 -0.30989,1.151046 -0.48698,1.638027 l -2.25782,7.348986 h 8.23441 z"
+             style="font-weight:bold;-inkscape-font-specification:'Sans Bold'"
+             id="path28398" />
+        </g>
+        <g
+           aria-label="B"
+           id="text28280-6"
+           style="font-size:44.271px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:end;word-spacing:0px;text-anchor:end;opacity:0.525963;stroke-width:3.32034"
+           transform="matrix(0.75856719,0,0,0.75856719,156.29393,115.51846)">
+          <path
+             d="m 346.37551,-17.681931 q 6.33075,0 9.56254,1.77084 3.23178,1.77084 3.23178,6.2422108 0,2.700531 -1.28386,4.559913 -1.23959,1.8593819 -3.58595,2.2578209 v 0.221355 q 1.59376,0.309897 2.87762,1.106775 1.28385,0.79687804 2.03646,2.30209204 0.75261,1.50521396 0.75261,3.98438996 0,4.294287 -3.09897,6.7291923 -3.09897,2.434905 -8.50003,2.434905 h -11.82036 v -31.609494 z m 0.75261,12.5286928 q 2.92188,0 4.02866,-0.929691 1.15105,-0.929691 1.15105,-2.700531 0,-1.8151108 -1.32813,-2.6119888 -1.32813,-0.796878 -4.20575,-0.796878 h -3.54168 v 7.0390888 z m -3.89585,5.31251994 V 8.3936877 h 4.38283 q 3.01043,0 4.20574,-1.151046 1.19532,-1.195317 1.19532,-3.143241 0,-1.77084 -1.23959,-2.833344 -1.19531,-1.10677496 -4.38283,-1.10677496 z"
+             style="font-weight:bold;-inkscape-font-specification:'Sans Bold'"
+             id="path28401" />
+        </g>
       </g>
     </g>
   </switch>

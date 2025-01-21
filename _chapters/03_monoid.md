@@ -377,11 +377,11 @@ Formally, any function that takes a pair of objects, can be transformed to a fun
 
 ![Monoid operations as functions (A X B) -> C) = A -> B -> C](../03_monoid/operation_functions.svg)
 
-This transformation is called *currying* in the name of Haskell Curry, although it was invented some years earlier by Moses Schönfinkel (perhaps *Schönfinkelisation* was too hard to pronounce). So, Schönfinkel discovered that the following two are isomorphic.
+This transformation is called *currying* in the name of Haskell Curry, although it was invented some years earlier by Moses Schönfinkel (*Schönfinkelisation* didn't stick out for some reason). So, Schönfinkel discovered that the following two expressions are isomorphic.
 
 ![The equivalence of curried and uncurried functions](../03_monoid/curry.svg)
 
-Let's take a step back and examine the groups/monoids that we covered so far in light of this equivalence e.g. a symmetric group.
+Let's take a step back and examine the groups/monoids that we covered so far in light of this equivalence e.g. let's examine the symmetric group $Z_3$:
 
 ![The group of rotations in a triangle - group notation](../03_monoid/symmetry_rotation_actions.svg)
 
@@ -389,7 +389,7 @@ The elements of this group can be viewed as functions which take a figure and ro
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_functions.svg)
 
-And, we can represent the group operation itself --- as functional composition. 
+And, we can represent the group operation itself as functional composition. 
 
 ![The group of rotations in a triangle - set notation and normal notation](../03_monoid/symmetry_rotation_set.svg)
 

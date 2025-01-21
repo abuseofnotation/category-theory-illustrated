@@ -3,7 +3,7 @@
    viewBox="0 0 595.3 200"
    version="1.1"
    id="svg6444"
-   sodipodi:docname="product_universal_property.svg"
+   sodipodi:docname="product_triple.svg"
    width="595.29999"
    height="200"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="2.1023898"
-     inkscape:cx="288.71906"
-     inkscape:cy="23.068986"
+     inkscape:cx="310.59892"
+     inkscape:cy="54.461832"
      inkscape:window-width="1080"
      inkscape:window-height="1853"
      inkscape:window-x="0"
@@ -35,7 +35,7 @@
      inkscape:lockguides="false" />
   <g
      id="g5935"
-     transform="matrix(0.626687,0,0,0.626687,282.99011,-13.602024)"
+     transform="matrix(0.63448174,0,0,0.63448174,282.5999,-11.45177)"
      style="stroke:#aa8800">
     <circle
        r="40.659069"
@@ -61,7 +61,7 @@
   </g>
   <g
      id="g5939"
-     transform="matrix(0.626687,0,0,0.626687,-87.538827,-16.196047)">
+     transform="matrix(0.63448174,0,0,0.63448174,-93.296418,-16.955441)">
     <circle
        r="40.659069"
        cy="-85.518654"
@@ -85,9 +85,9 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#808080;stroke-width:6.389;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
      id="g1482-7-0-7-1-1-7-3-5-2-8-4-0-1-6-7"
-     transform="matrix(-0.15912334,-0.06629682,0.11635816,-0.28334339,58.096531,164.10406)"
-     inkscape:transform-center-x="-52.296307"
-     inkscape:transform-center-y="19.401062">
+     transform="matrix(-0.16110252,-0.06712143,0.11780542,-0.28686762,55.234513,166.92248)"
+     inkscape:transform-center-x="-52.946769"
+     inkscape:transform-center-y="19.642379">
     <g
        id="g25985-4-4-7-73-5"
        style="stroke:#808080;stroke-opacity:1"
@@ -110,9 +110,9 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#808080;stroke-width:6.389;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
      id="g1482-7-0-7-1-1-7-3-5-2-8-4-0-1-6-7-8"
-     transform="matrix(-0.14059104,-0.11258851,0.1930284,-0.25304956,13.066317,136.99997)"
-     inkscape:transform-center-x="-46.902441"
-     inkscape:transform-center-y="34.412245">
+     transform="matrix(-0.14233971,-0.11398888,0.19542929,-0.25619699,9.6442127,139.48127)"
+     inkscape:transform-center-x="-47.485812"
+     inkscape:transform-center-y="34.84026">
     <g
        id="g25985-4-4-7-73-5-9"
        style="stroke:#808080;stroke-opacity:1"
@@ -135,9 +135,9 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#808080;stroke-width:6.389;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
      id="g1482-7-0-7-1-1-7-3-5-2-8-4-0-1-6-7-4"
-     transform="matrix(0.15912334,-0.06629682,-0.11635816,-0.28334339,517.9054,166.92549)"
-     inkscape:transform-center-x="52.296301"
-     inkscape:transform-center-y="19.401064">
+     transform="matrix(0.16110252,-0.06712143,-0.11780542,-0.28686762,520.76249,169.779)"
+     inkscape:transform-center-x="52.946762"
+     inkscape:transform-center-y="19.642378">
     <g
        id="g25985-4-4-7-73-5-5"
        style="stroke:#808080;stroke-opacity:1"
@@ -160,9 +160,9 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#808080;stroke-width:6.389;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
      id="g1482-7-0-7-1-1-7-3-5-2-8-4-0-1-6-7-8-4"
-     transform="matrix(0.14059104,-0.11258851,-0.1930284,-0.25304956,562.93562,139.82142)"
-     inkscape:transform-center-x="46.902441"
-     inkscape:transform-center-y="34.412248">
+     transform="matrix(0.14233971,-0.11398888,-0.19542929,-0.25619699,566.35279,142.33781)"
+     inkscape:transform-center-x="47.485818"
+     inkscape:transform-center-y="34.84026">
     <g
        id="g25985-4-4-7-73-5-9-7"
        style="stroke:#808080;stroke-opacity:1"
@@ -185,9 +185,9 @@
   <g
      style="display:inline;fill:#dddddd;stroke:#808080;stroke-width:6.389;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
      id="g1482-7-0-7-1-1-7-3-5-2-8-4-0-1-6-7-8-4-6-9"
-     transform="matrix(0.14059104,-0.11258851,-0.1930284,-0.25304956,725.98454,133.15113)"
-     inkscape:transform-center-x="46.90245"
-     inkscape:transform-center-y="34.412251">
+     transform="matrix(0.14233971,-0.11398888,-0.19542929,-0.25619699,731.42972,135.58456)"
+     inkscape:transform-center-x="47.485819"
+     inkscape:transform-center-y="34.840262">
     <g
        id="g25985-4-4-7-73-5-9-7-8-3-2"
        style="display:inline;fill:#4d4d4d;stroke:#333333;stroke-width:6.389;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
@@ -210,7 +210,7 @@
   </g>
   <g
      id="g5945"
-     transform="matrix(0.61951182,0,0,0.61951182,104.47168,-28.456649)"
+     transform="matrix(0.62721731,0,0,0.62721731,102.18648,-28.0333)"
      style="stroke-width:8.30645;stroke-dasharray:none">
     <circle
        r="46.641964"
@@ -239,8 +239,8 @@
        stroke="#ffdd00"
        stroke-width="6.08783"
        stroke-miterlimit="10"
-       cx="323.6875"
-       cy="169.32106"
+       cx="324.96472"
+       cy="167.93846"
        id="circle85875-6"
        r="21.916214"
        style="stroke:#aa8800;stroke-width:8.30645;stroke-dasharray:none" />
@@ -249,37 +249,66 @@
        stroke="#008dd2"
        stroke-width="6.08783"
        stroke-miterlimit="10"
-       cx="277.96588"
-       cy="169.81609"
+       cx="276.57919"
+       cy="168.81691"
        r="21.916214"
        id="circle85877-2"
        style="stroke-width:8.30645;stroke-dasharray:none" />
   </g>
   <circle
-     cy="-162.84451"
-     cx="298.41336"
+     cy="-165.64726"
+     cx="298.54041"
      stroke-miterlimit="10"
      opacity="0.14"
      stroke="#000000"
-     stroke-width="2.53958"
+     stroke-width="2.57117"
      id="circle6124-9"
      transform="scale(1,-1)"
-     r="25.480511" />
+     r="25.797438" />
   <circle
      fill="#8967ac"
      stroke="#651c5f"
-     stroke-width="7.06191"
+     stroke-width="7.14974"
      stroke-miterlimit="10"
-     cx="293.64273"
-     cy="158.47375"
+     cx="293.71045"
+     cy="161.22214"
      id="circle85883-6"
      style="fill:#a05a2c;stroke:#502d16"
-     r="25.422918" />
+     r="25.739128" />
+  <circle
+     fill="#fce600"
+     stroke="#ffdd00"
+     stroke-width="6.08783"
+     stroke-miterlimit="10"
+     cx="279.99014"
+     cy="154.80606"
+     id="circle85875-6-3"
+     r="11.923004"
+     style="stroke:#aa8800;stroke-width:4.51893;stroke-dasharray:none" />
+  <circle
+     fill="#39bced"
+     stroke="#008dd2"
+     stroke-width="6.08783"
+     stroke-miterlimit="10"
+     cx="306.43066"
+     cy="154.02135"
+     r="11.923004"
+     id="circle85877-2-6"
+     style="stroke-width:4.51893;stroke-dasharray:none" />
+  <circle
+     fill="#d71920"
+     stroke="#be1e2d"
+     stroke-width="3.34308"
+     stroke-miterlimit="10"
+     cx="294.2196"
+     cy="175.64526"
+     r="12.035083"
+     id="circle2-3-7" />
   <g
      aria-label="g"
      id="text3302-7"
      style="font-size:13.3333px;line-height:1.25;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:end;word-spacing:0px;text-anchor:end;fill:#4d4d4d"
-     transform="matrix(1.1092464,0,0,1.1092464,-35.199119,175.82665)">
+     transform="matrix(1.1230432,0,0,1.1230432,-39.221549,178.79087)">
     <path
        d="m 306.88672,-52.728069 q 1.34666,0 2.10666,1.066664 h 0.0533 l 0.16,-0.933331 h 1.68 v 7.293315 q 0,1.559996 -0.92,2.373327 -0.92,0.813331 -2.71999,0.813331 -0.77334,0 -1.44,-0.09333 -0.65333,-0.09333 -1.28,-0.333332 v -1.586663 q 1.34667,0.559999 2.84,0.559999 1.53333,0 1.53333,-1.653329 v -0.146667 q 0,-0.226666 0.0133,-0.466665 0.0267,-0.24 0.04,-0.426666 h -0.0533 q -0.37334,0.573332 -0.89334,0.826665 -0.51999,0.253333 -1.17333,0.253333 -1.29333,0 -2.02666,-0.986665 -0.72,-0.999997 -0.72,-2.773326 0,-1.786662 0.74667,-2.78666 0.74666,-0.999997 2.05333,-0.999997 z m 0.62666,1.613329 q -1.39999,0 -1.39999,2.199995 0,2.173327 1.42666,2.173327 0.76,0 1.12,-0.426665 0.37333,-0.439999 0.37333,-1.519996 v -0.24 q 0,-1.17333 -0.36,-1.679995 -0.36,-0.506666 -1.16,-0.506666 z"
        style="font-weight:bold;-inkscape-font-specification:'Sans Bold';fill:#4d4d4d"
@@ -287,7 +316,7 @@
   </g>
   <g
      id="g3729"
-     transform="matrix(1.1017129,0,0,1.1017129,-22.640939,19.304372)">
+     transform="matrix(1.115416,0,0,1.115416,-26.50717,20.321773)">
     <g
        aria-label="f"
        id="text3302"
@@ -311,7 +340,7 @@
   </g>
   <g
      id="g3723"
-     transform="matrix(1.1017129,0,0,1.1017129,-34.976766,19.46215)">
+     transform="matrix(1.115416,0,0,1.115416,-38.99643,20.481513)">
     <g
        aria-label="1"
        id="text3440"
@@ -335,7 +364,7 @@
   </g>
   <g
      id="g3745"
-     transform="matrix(1.1017129,0,0,1.1017129,-33.712827,28.795052)">
+     transform="matrix(1.115416,0,0,1.115416,-37.71677,29.930498)">
     <g
        aria-label="g"
        id="text3302-7-6-1"
@@ -369,7 +398,7 @@
   </g>
   <g
      id="g3737"
-     transform="matrix(1.1017129,0,0,1.1017129,-21.84862,24.840317)">
+     transform="matrix(1.115416,0,0,1.115416,-25.704996,25.926573)">
     <g
        aria-label="f"
        id="text3302-3"

@@ -13,15 +13,30 @@ When we are finished with that, we will try (and almost succeed) to define categ
 
 In the previous chapter, we needed a way to construct a set whose elements are _composite_ of the elements of some other sets e.g. when we discussed mathematical functions, we couldn't define $+$ and $-$ because we could only formulate functions that take one argument. Similarly, when we introduced the primitive types in programming languages, like `Char` and `Number`, we mentioned that most of the types that we actually use are _composite_ types. So how do we construct those?
 
-The simplest composite type, of the sets $B$ (containing $b$'s) and the set $Y$ (containing $y$'s) is the _Cartesian product_ of $B$ and $Y$. This is the set of _ordered pairs_ that contain one element of the set $Y$ and one element of the set $B$. Or formally speaking: $Y \times B = \{ (y, b) \}$ where $y ∈ Y, b ∈ B$ ($∈$ means "is an element of").
-
+So, consider the set $A$ (containing $a$'s) and the set $B$ (containing $B$'s) 
 ![Product parts](../02_category/product_parts.svg)
 
-It is denoted $B \times Y$ and it comes equipped with two functions for retrieving the $b$ and the $y$ from each $(b, y)$.
+The _Cartesian product_ (or _tuple_) of sets $A$ and $B$ (denoted $A \times B$) is the set of _ordered pairs_ that contain one element of the set $A$ and one element of the set $B$. Or formally speaking: $A \times B = \{ (a, b) \}$ where $a ∈ A, b ∈ B$ ($∈$ means "is an element of").
 
 ![Product](../02_category/product.svg)
 
 **Question**: Why is this called a product? Hint: How many elements does it have?
+
+Naturally, the product comes equipped with two functions, one for each property, which take a pair and extracts the value of the property, so $C \to A$ and $C \to B$, called the product's *projections* (in programming terms, we would dub these the "getters") --- the functions for retrieving back it's constituent values).
+
+![Product](../02_category/product_functions.svg)
+
+## Triple product
+
+There are occasions where we want to combine not two, but three sets into a product (e.g. $A \times B \times C$). We can achieve that by combining the first and second one into a product and then combining their product with the third set, (so it will be $(A \times B) \times C$.
+
+![Triple product](../02_category/triple_product.svg)
+
+There is another way to make a triple product of three sets --- combining the second and the third one and then combining the result with the first one (so $A \times (B \times C)$, but it doesn't actually matter which one you use, as the end results would be isomorphic $(A \times B) \times C \cong A \times (B \times C)$.
+
+![Triple product](../02_category/triple_product_associativity.svg)
+
+You might recognize this isomorphism, from the definition of functional composition. It means that the cartesian product operation is (like functional composition), *associative*.
 
 <!--
 {% if site.distribution == 'print'%}
@@ -95,33 +110,42 @@ Suggested in 1921 by Kazimierz Kuratowski, this one uses just the component of t
 
 ## Defining products in terms of functions
 
-The product definitions presented in the previous section worked by _zooming in_ into the individual elements of the product and seeing what they are made of. We may think of this as a _low-level_ approach to the definition. This time we will try to do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will _zoom out_ and attempt to fly over the difficulties that we met in the previous section by providing a definition of a product in terms of functions and _external_ diagrams.
+The product definitions presented in the previous section worked by _zooming in_ into the individual elements of the product and seeing what they are made of. We may think of this as a _low-level_ approach to the definition. This time (and throughout the most of this book) we will do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will _zoom out_ and attempt to fly over the difficulties that we met in the previous section by providing a definition of a product in terms of functions and _external_ diagrams.
 
-To define products in terms of external diagrams, we must, given two sets, devise a way to pinpoint the set that is their product, by looking at the functions that come from/to them. To achieve that, we must first ask ourselves _what functions_ are defined for all products. The answer: we have two of those --- the functions for retrieving the two elements of the pair (the "getters", so to say).
+To define products in terms of external diagrams, we must, given two sets, devise a way to pinpoint the set that is their product, by looking at the functions that come from/to them. 
 
-![Product](../02_category/product.svg)
+And what are the functions are guaranteed to exist for all products. Of course that would be the projections, the functions for retrieving back the two elements of the product $C \to A$ and $A \times B \to B$. What would a product be without them?
 
-Formally, if we have a set $G$ which is the product of sets $Y$ and $B$, then we should also have functions which give us back the elements of the product, so $G → Y$ and $G → B$. Now let's switch to the external view.
+![Product](../02_category/product_functions.svg)
+
+Now if we switch to the (semi) external view, this diagram already provides some definition of what a product is: if we have an object $C$ for which there are functions $C \to A$ and $A \times B \to B$, then $C$ can potentially be the product of $A$ and $B$ ($A \times B$).
 
 ![Product, external diagram](../02_category/product_external.svg)
 
-This diagram already provides a definition of what a product is, but not a complete definition, as the product of sets $Y$ and $B$, is not the only set for which such functions can be defined. For example, a set of triples of $Y \times B \times R$ for any element $R$ also qualifies. And if there is a function from $G$ to $B$ then the set $G$ itself meets our condition for being the product, because it is connected to $B$ and to itself.
+However, this definition is not complete, as the product $A$ and $B$, is not the *only* set for which such functions can be defined. For example, a set of triples (which is like a product, but has three elements) $A \times B \times X$ for any element $X$ also qualifies. Any other set that would happen to have some functions to $A$ and $B$, and would, by this definition, be "impostor products".
 
 ![Product, external diagram](../02_category/product_candidates.svg)
 
-However, the set of triples $Y \times B \times R$ is connected to $Y$ and $B$ only because it can be converted to $Y \times B$: the arrow $Y \times B \times R \to B$ is just the composition of the arrow $Y \times B \times R \to Y \times B$ and the arrow $Y \times B \to B$. The same reasoning applies to all other objects that can take the place of our product.
+Upon further inspection we discover that there are ways to expose those impostors. Take the set of triples, $A \times B \times X$ as an example. Looking at the canonical function that converts a triple to a product $A \times B \times X \to A \times B$, we realize that $A \times B \times X$ *is only connected to $A$ and $B$ because of this function*. That is, if we dub it $g: A \times B \times X \to A \times B$ and let $f^{1}$ and $f^{2}$ be the arrows for retrieving elements of a product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$), then, the arrow that connects the triple $A \times B \times X$ to $A$ and $B$ are just the compositions $f^{1} g$ and $f^{2}g$. 
 
-![Product, external diagram](../02_category/products_morphisms.svg)
+![Product, external diagram](../02_category/product_triple.svg)
 
-Intuitively, all such objects would be _more complex_ than the pair objects and you can always have a function that converts a more complex structure to a simpler one by throwing information away (we saw an example of this when we covered the functions that convert subsets to their supersets).
+We claim that the same reasoning applies to all other objects that can take the place of our product --- they all are connected to the product, and their getters are just the result of this connection. Why? Intuitively, all such objects would be _more complex_ than the product and you can always have a function that converts a more complex structure to a simpler one by just throwing information away (in the same way in which we threw the third element of the triple).
 
-More formally, if we suppose that there is a set $I$ that can serve as an impostor of the product of sets $B$ and $Y$ (i.e. that $I$ is such that there exists two functions, which we will call $ib: I → B$ and $iy: I → Y$ that allow us to derive elements $B$ and $Y$ from it), then there must also exist a unique function with the type signature $I → B \times Y$ that converts the impostor to the real product, and $ib$ and $iy$ are just results of composing that function with the usual "getter" functions that go from the pair to the elements. In other words, whichever object we pick for $I$, this diagram would commute).
+![Product, external diagram](../02_category/product_morphisms.svg)
+
+More formally, if we suppose that there is a set $I$ that can serve as an impostor of the product of sets $A$ and $B$ (i.e. that $I$ is such that there exists two functions $I \to A$ and $I \to B$, then there must also exist a unique function with the type signature $g: I /to A \times B$, that converts the impostor product to the real product, such that the above two functions would be just the composition of $g$ with the usual "getter" functions of the product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$). In other words, whichever object we pick for $I$, this diagram would commute (oh no, not this diagram again).
 
 ![Product, universal property](../02_category/product_universal_property.svg)
 
-In category theory, this type of property that a given object might possess (participating in a structure such that all similar objects can be converted to/from it) is called a _universal property_, but we won't go into more detail, as it is a bit early (after all we haven't even yet said what category theory is).
+You would see a lot of similar diagrams in this book. In category theory, we often (always) define properties that a given object might possess, by defining a structure such that all similar objects can be converted to it. This is what we call a *universal property*, but it is too early to go into more detail, (after all we haven't even yet said what category theory is).
 
-One thing that we should point out is that this definition (as all the previous ones, by the way) does not rule out the sets which are isomorphic to the product --- when we represent things using universal properties, an isomorphism is treated as equality. This is the same viewpoint that we adopt in programming, especially when we work on the higher level --- there might be many different implementations of pair, but as long as they work in the same way (i.e. we can convert one to the other and vice versa) they are all the same to us.
+## Isomorphism and equality
+
+One thing that we should point out, is that this definition (as all the previous ones, by the way) does not rule out the sets which are *isomorphic* to the product. When we represent things using universal properties, an isomorphism is treated as equality. 
+<!--TODO diagram-->
+
+This is the same viewpoint that we adopt in programming, especially when we work on the higher level --- there might be many different implementations of pair, but as long as they work in the same way (i.e. we can convert one to the other and vice versa) they are all the same to us.
 
 # Sums
 
@@ -279,7 +303,7 @@ To avoid these difficulties, we devise a way to define the singleton set, using 
 
 ![Terminal object](../02_category/terminal_object_internal.svg)
 
-It turns out that this property defines the singleton set uniquely i.e. there is no other set that has it, other than the sets that are isomorphic to the singleton set. This is simply because, if there are two sets that have it, those two sets would also have unique morphisms between _themselves_ so they would be isomorphic to one another. More formally, if we have two sets $X$ and $Y$ such that $\exists!X \to 1 \land \exists!Y \to 1$ and they both hold this property ("exactly one function from any other set to this set") then we also have $X \cong Y$.
+It turns out that this property defines the singleton set uniquely i.e. there is no other set that has it, other than the sets that are isomorphic to the singleton set. This is simply because, if there are two sets that have it, those two sets would also have unique functions between _themselves_ so they would be isomorphic to one another. More formally, if we have two sets $X$ and $Y$ such that $\exists!X \to 1 \land \exists!Y \to 1$ and they both hold this property ("exactly one function from any other set to this set") then we also have $X \cong Y$.
 
 ![Terminal object](../02_category/terminal_object_internal_isomorphisms.svg)
 
@@ -389,7 +413,7 @@ A category is a collection of objects (things) where the "things" can be anythin
 
 ![Balls](../02_category/elements.svg)
 
-A category consists of a collection of objects as well as some arrows connecting objects to one another. We call the arrows _morphisms_.
+A category consists of a collection of objects as well as some arrows connecting objects to one another. We call the arrows _morphisms_ (for now you can think of them as functions).
 
 ![A category](../02_category/category.svg)
 
@@ -563,6 +587,8 @@ Or more generally.
 This is the essence of associativity --- the ability to study complex phenomenon by zooming in on a part that you want to examine in a given moment, and looking at it in isolation.
 
 Note that the operator we defined only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
+
+**Question:** Actually, in this chapter, we already defined a case of 2-dimentional composition, only we didn't *say* it is  2-dimentional composition. Did you see it?
 
 <!--
 {% if site.distribution == 'print'%}
