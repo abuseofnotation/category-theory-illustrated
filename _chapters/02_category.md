@@ -191,9 +191,9 @@ The concepts of product and sum might already look similar in a way when we view
 
 ![Coproduct and product](../02_category/coproduct_product_duality.svg)
 
-The universal properties that define the two constructs are the same as well --- if we have a sum $Y + B$, for each impostor sum, such as $Y + B + R$, there exists a trivial function $Y + B  \to Y + B + R$.
+The universal properties that define the two constructs are the same as well --- if we have a sum $A + B$, for each impostor sum, such as $A + B + X$, there exists a trivial function $A + B  \to A + B + R$.
 
-And, if you remember, with products the arrows go the other way around --- the equivalent example for a product would be the function $Y \times B \times R \to Y \times B $
+And, if you remember, with products the arrows go the other way around --- the equivalent example for a product would be the function $A \times B \times R \to A \times B $
 
 This fact uncovers a deep connection between the concepts of the _product_ and _sum_, which is not otherwise apparent --- they are each other's opposites. _Product_ is the opposite of _sum_ and _sum_ is the opposite of _product_.
 
