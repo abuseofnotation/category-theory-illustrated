@@ -469,7 +469,7 @@ This formula can be expressed using the following diagram, which would only comm
 
 ![Composition of morphisms with many objects](../02_category/composition_associativity.svg)
 
-This formula (and the diagram) is the definition of a property called $associativity$. Being associative is required for functional composition to really be called functional composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, that would be super weird).
+This formula (and the diagram) is the definition of a property called *associativity*. Being associative is required for functional composition to really be called functional composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, that would be super weird).
 
 Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h • g) • f = h • (g • f)$).
 
@@ -576,15 +576,19 @@ Similarly, when combining functions, each pair of functions can, at any time, be
 
 ![A -> X . (X -> B . B -> C) = D,  (A -> X . X -> B) . B -> C = D](../02_category/associativity_function.svg)
 
+In other words, all different ways of combining a given set of functions at the end converge in into one and the same result.
+
+![A . (B . C) = D,  (A . B) . C = D](../02_category/associativity_function_tree.svg)
+
 This fact is captured by a more restrictive version of commutativity, that we call _associativity_, which for functions, is usually formulated like this.
 
 ![A -> X . (X -> B . B -> C) = (A -> X . X -> B) . B -> C](../02_category/associativity_formula_function.svg)
 
-Or more generally.
+Or more generally (for any operation).
 
 ![A . (B . C) = D,  (A . B) . C = D](../02_category/associativity_formula.svg)
 
-This is the essence of associativity --- the ability to study complex phenomenon by zooming in on a part that you want to examine in a given moment, and looking at it in isolation.
+This is the essence of associativity --- it gives us the ability to study complex phenomenon by zooming in on a part that you want to examine in a given moment, and looking at it in isolation.
 
 Note that the operator we defined only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
 

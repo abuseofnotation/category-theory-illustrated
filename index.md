@@ -5,7 +5,7 @@ title: index
 
 [![cover](cover_print.svg)](00_about)
 
-[Buy](https://abuseofnotation.gumroad.com)
+[Buy](https://ko-fi.com/s/ee517b2d98)
 --
 
 [Read online](00_about)
@@ -33,14 +33,14 @@ _Discover the beauty of mathematics through the lens of category theory with thi
 
 [Kiran](https://kirancodes.me/) Postdoc Researcher at the University of Illinois Urbana Champaign
 
-Let's talk
+Support
 ===
 
 I want to make this book into the best introductory text, not only to category theory, but to mathematics as a whole. It seems that I would need some help, though.
 
-- I am looking for a *publisher* who is willing to work release this book. You can contact me via [email](mailto:marinovboris@protonmail.com)
+- *Publishers*, if you are interested in publishing my book, contact me via [email](mailto:marinovboris@protonmail.com)
 
-- I am also looking for co-authors and/or technical reviewers, who are willing to help with polishing and enriching the text. Post an issue or PR on [Github](https://github.com/abuseofnotation/category-theory-illustrated). 
+- *Co-authors and/or technical reviewers*, post an issue or PR on [Github](https://github.com/abuseofnotation/category-theory-illustrated). 
 
 - And if you want to get the whole version of the book as a pdf or an epub, as well as a lot of additional perks, support me on [Patreon](https://patreon.com/abuseofnotation) or [Ko-fi](https://ko-fi.com/abuseofnotation).
 

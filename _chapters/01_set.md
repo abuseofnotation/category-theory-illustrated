@@ -157,7 +157,11 @@ Although it doesn't look like it, there is a unique function from the empty set 
 
 **Question:** Is this really valid? Why? Check the definition.
 
-This is because there is a function between a subset and a its set, and the empty set is a subset of any other set.
+If you still aren't convinced, check this out:
+1. There is a function between a subset and a its superset 
+2. The empty set is a subset of any other set.
+
+So, evidently, this function has to exist!
 
 **Question:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
 
@@ -264,7 +268,7 @@ Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves.  
+Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed again).
 
 **Question:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
@@ -305,7 +309,11 @@ We showed this equivalence by drawing an *internal* diagram, and explicitly draw
 
 Alternatively, we can just *say* that the arrow paths are all equivalent (all arrows starting from a given set element ultimately lead to the same corresponding element from the resulting set) and draw the equivalence as an external diagram.
 
-![Functional composition for sets](../01_set/functions_compose_sets.svg)
+![An external diagram, showing functional composition of two functions](../01_set/functions_compose_sets.svg)
+
+Or alternatively, if you want to express it as a formula (where $\circ$ is the composition operator).
+
+![An external diagram, showing functional composition of two functions, as a fformula](../01_set/functions_compose_formula.svg)
 
 The external diagram is a more appropriate representation of the concept of composition, as it is more general. In fact, it is *so* general that it can actually serve as a *definition of functional composition*.
 
@@ -315,11 +323,30 @@ The external diagram is a more appropriate representation of the concept of comp
 
 If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
-At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now - the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
+Associativity
+---
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, compose with one another in an associative way, and can be represented by external diagrams.
+If we want compose more than two functions we might wonder if the order in which we compose the functions matters for the final outcome i.e. whether combining two functions and then combining the result with a third function...
+
+![Composing functions (f and g) and c](../01_set/functions_associativity_external.svg)
+
+...would yield the same result as composing the second and the third functions, before adding the first one.
+
+![Composing functions f and (g and c)](../01_set/functions_associativity_external_2.svg)
+
+The answer is yes --- as long as the order is maintained, the result would always be the same. This property of functions is called *associatity.
+
+*Task:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
+
+Category theory --- a hint for the definition
+---
+
+At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
+
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, they compose with one another (associatively) and they can be represented by external diagrams.
 
 And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
+
 
 Isomorphism
 ===
