@@ -363,7 +363,9 @@ Invertible functions are called *isomorphisms*. When there exists an invertible 
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
-More formally, two sets $R$ and $G$ are isomorphic (or $R ≅ G$) if there exist functions $f: G → R$ and its reverse $g: R → G$, such that $f \circ g = ID_{R}$ and $g \circ f = ID_{G}$ (notice how the identity function comes in handy).
+More formally, two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+
+Notice how the identity function comes in handy.
 
 Isomorphism and identity
 ---
