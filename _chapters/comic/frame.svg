@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500mm"
+   height="500mm"
+   viewBox="0 0 499.99999 499.99999"
+   version="1.1"
+   id="svg259"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="frame.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview261"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.4204826"
+     inkscape:cx="1317.5337"
+     inkscape:cy="907.29081"
+     inkscape:window-width="1080"
+     inkscape:window-height="1853"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs256" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#ffeeaa;stroke:none;stroke-width:12.8998;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect1856"
+       width="478.08652"
+       height="479.88574"
+       x="14.386973"
+       y="9.151535" />
+    <path
+       style="fill:#deaa87;stroke:#552200;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 502.16085,240.4178 -357.29125,0.22613 -103.153136,83.88765 0.906987,9.52214 463.165339,3.62548 z"
+       id="path688" />
+    <path
+       style="fill:#784421;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 504.80315,337.04014 42.99706,334.09305 41.409221,324.1162 508.43109,325.47544 Z"
+       id="path1352" />
+    <rect
+       style="opacity:1;fill:none;stroke:#ffcc00;stroke-width:13.6347;stroke-dasharray:none;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect1483"
+       width="488.8829"
+       height="484.59128"
+       x="6.7876773"
+       y="8.3583126" />
+  </g>
+</svg>

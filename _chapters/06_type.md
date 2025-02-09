@@ -55,11 +55,17 @@ And removing the set, so it's no longer an element of itself would just take us 
 Resolving the paradox in set theory
 ---
 
-Most people's initial reaction when seeing Russell's paradox would be something like:
+The set of sets that do not contain themselves doesn't sound like a ver useful set. And it really isn't --- in fact, I haven't seen it mentioned for any other reason, other than the construction of Russell's paradox. So, most people's initial reaction when seeing it would be something like:
 
-> "Wait, can't we just add some rules that say that you cannot draw the set that contains itself?" 
+![
+THE STUDIO 
+ART STUDENT
+Wait, can't we just add some rules 
+that say that you cannot draw 
+the set of set that don't contain itself?
+](../comic/01.svg){: .comic-web-panel }
 
-This was exactly what Ernst Zermelo and Abraham Fraenkel set out to do (no pun intended). The extra rules they added led to a new definition of set theory, known as *Zermelo–Fraenkel set theory*, or *ZFC* (the *C* at the end is a separate story). ZFC was a success, and it is still in use today, however it compromises one of the best features that sets have, namely their *simplicity*. 
+This was exactly what Ernst Zermelo and Abraham Fraenkel set out to do (no pun intended). And the extra rules they added led to a new definition of set theory, known as *Zermelo–Fraenkel set theory*, or *ZFC* (the *C* at the end is a separate story) which is a version of set theory that is free of paradoxes. ZFC was a success, and it is still in use today, however it compromises one of the best features that sets have, namely their *simplicity*. 
 
 What do we mean by that? Well, the original formulation of set theory (which is nowadays called *naive* set theory) was based on just one (rather vague) rule/axiom: "Given a property P, there exists a set, containing all objects that have this property" i.e. any bunch of objects can form a set. 
 
@@ -73,12 +79,12 @@ In contrast, ZFC is defined by a larger number of (more restrictive) axioms, as 
 
 ![The axiom of union in ZFC](../06_type/zfc_union.svg)
 
-There are a total of about 8 such axioms (depending on the flavour of the theory), curated in a way that allows us to construct all sets that are interesting, without being able to construct sets that lead to a contradiction.
+There are a total of about 8 such axioms (depending on the flavour of the theory), curated in a way that allows us to construct all sets that are interesting, without being able to construct sets that lead to a contradiction. However, as we said. However, accepting ZFC would mean accepting that set theory is not as simple and straightforward, as it looks like. Indeed, it is more complex than category theory, and than this other theory which we will learn about in a minute...
 
 Resolving the paradox with type theory
 ---
 
-While Zermelo was working on refining axioms of set theory in order to avert Russell's paradox, Russell himself took a different route and decided to ditch sets altogether, and develop an entirely new mathematical concept that is free of paradoxes *by design*, one where you don't need to patch things up with extra axioms to avoid having illogical constructions. An so, in the same year  in which Zermelo published the first version of ZFC, (1908) Russell came up with his *theory of types*.
+While Zermelo was working on refining axioms of set theory in order to avert Russell's paradox, Russell himself took a different route towards solving his paradox and decided to ditch sets altogether, and develop an entirely new mathematical concept that is free of paradoxes *by design*, one where you don't need to patch things up with extra axioms to avoid having illogical constructions. An so, in the same year  in which Zermelo published the first version of ZFC, (1908) Russell came up with his *theory of types*.
 
 Type theory is not at all similar to set theory, but it is at the same time, not entirely different from it, as the concepts of *types* and *terms* are clearly reminiscent of the concepts of *sets* and *elements*. 
 
@@ -131,12 +137,13 @@ Or *orders*:
 
 But for *types*, their response would be:
 
-"Have you seen a set? Well, it's something completely different."
+"Have you seen a set? Well, that's something completely different."
 
 So let's see how do we define a type theory in its own right.
 
 Long disclaimer
 ---
+
 Notice that in the last sentence we said *a* type theory, not "type theory" or "the type theory". This is because (time for a long disclaimer) there are not one, but many different (albeit related) formulations of type theory that are, confusingly, called type *theories* (and, less confusingly, *type systems*), such as *simply-typed lambda calculus* or *intuitionistic type theory*. For this reason, it makes sense to speak about *a* type theory. <!--comic: Dr. Smisloff --- I think they are not confused enough --> 
 
 The term "type theory" (uncountable) refers to the whole field of study of type theories, just like category theory is the study of categories. But, (take a deep breath) you can sometimes think of the different type systems as "different versions of type theory" and so, when people talk about a given set of features that are common to all type systems, they sometimes use the term "type theory" to refer to any random type system that has these features. 
@@ -147,6 +154,16 @@ What are types?
 Anyhow, let's get back to our subject (however we want to call it). As we said, type theory was born out of Russell's search for a way to define all collections of objects that are *interesting*, without accidentally defining collections that lead us ashtray (e.g. to his eponymous paradox), and without having to make up a multitude of additional axioms (a-la ZFC). 
 
 He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer): the *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
+
+Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (if we count causing paradoxes as useful). And if we dig into it, we eventually discover the reason for this: there are no functions from any other set to this set, so *we cannot get to it* from anywhere (and, conversely, we cannot get anywhere from it, as there are no functions for which it is the source). 
+
+![
+THE STUDIO 
+JENCEL
+A set without functions is just a dead end
+ALYSSA
+Even worse, as a dead end is at least reachable.
+](../comic/02.svg){: .comic-web-panel }
 
 Building types
 ===

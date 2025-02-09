@@ -6,6 +6,7 @@ pandoc --from markdown --to epub3  --strip-comments \
  _chapters/03_monoid.md \
  _chapters/04_order.md \
  _chapters/05_logic.md \
+ _chapters/06_types.md \
  _chapters/10_functors.md \
  epub/title.txt \
  --output book.epub \
@@ -13,3 +14,5 @@ pandoc --from markdown --to epub3  --strip-comments \
  --epub-cover-image=cover_print.png \
  --resource-path=_chapters/02_category \
  --css=epub/epub-style.css
+
+ open book.epub
