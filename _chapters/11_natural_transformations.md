@@ -10,31 +10,49 @@ Natural transformations
 
 In this chapter, we will introduce the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
 
-Natural transformations really are at the heart of category theory --- As a matter of fact, category theory was invented with the purpose of studying natural transformations. However, the importance of natural transformations is not obvious at first. So, before introducing them, I like to talk about the body of knowledge that this heart maintains (I am good with metaphors... in principle).
+Natural transformations really are at the heart of category theory, however, their importance is not obvious at first. So, before introducing them, I like to talk about once more of the body of knowledge that this heart maintains (I am good with metaphors... in principle).
 
-The categorical way AKA Objects are overrated
+So, are you ready to hear about natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard). So, we will take the longer route. 
+
+I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
+
+Objects are overrated AKA Heraclitus was right!
 ===
 
 > The world is the collection of facts, not of things. --- Ludwig Wittgenstein
 
-Some 2500 years ago, the philosopher Parmenides postulated that the nature of universe is permanence, and what we see as transformations are merely illusory appearances. Although it is not obviously true, his view is easy to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics), can be viewed as an object. And so we might be inclined to think, that world is objects, persisting through space and time, that the key to understanding the world is understanding *what objects are*. In my opinion, this is what set theory does, to some extend (as well as classical logic) --- the main (we may say the only) atomic concept in set theory is a concept of a set. When mathematicians say that "everything is a set", they are saying that *all objects can be represented by sets*.
+Some 2500 years ago, the philosopher Parmenides gave an answer to this question, postulating that the nature of universe is permanence, stasis. That what we see as transformations are merely illusory appearances ("Whatever is is, and what is not cannot be"). He said that that things never really change, they only *appear* to change, or (another way to put it), only appearances change, but the *essence* does not (I think this is pretty how the world "essence" came to exist).
 
-However, there is another way to look at things. As what is an object, when viewed by itself? Can we study an object in isolation, and will there anything left to study about it, once it is detached from its environment? And, as Theseus once asked, if a given object undergoes a process to get all of it's part replaced, is it still the same object? 
+Although far from obviously true, his view is easy for people to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics and other disciplines), can be viewed as *objects*, persisting through space and time. If we subscribe to this view, then we would think that the key to understanding the world is understanding *what objects those are*. This is what set theory does, to some extend, in my opinion, as well as classical logic (Plato was influenced by Parmenides when he created his theory of forms).
 
-Asking such questions might lead us to suspect that, although what we *see* when we look at the world are the objects, it's processes or *morphisms* that are the real key to understanding it. For example, when we think hard about everyday objects we realize that each of them has a specific *function* or functions without which, it would not be itself. Is a lamp that doesn't glow still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all. In logic, for example, we specify objects using existential quantifiers i.e. we say there exist an object such that so and so. So instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
+However, there is another way to approach the question about the nature of the universe, which is equally compelling. Because, what is an object, when viewed by itself? Can we study an object in isolation? And will there anything left to study about it, once it is detached from its environment? If a given object undergoes a process to get all of it's part replaced, is it still the same object? 
 
-Although old, (dating back to Parmenides' rival  Heraclitus) this view has been largely unexplored, both in the realm of philosophy, and that of mathematics. But it is deeply engrained in category theory. For example, when we say that a given property defines an object *up to a unique isomorphism* what we mean is exactly this --- that if there are two or more objects that are isomorphic to one another and have exactly the same morphisms from/to all other objects in the category (have the same *functions* in the category), then these objects are, for all intends and purposes, equivalent. And the key to understanding how this works are natural transformations.
+Asking such questions might lead us to suspect that, although what we *see* when we look at the universe are the objects, it is the processes or *morphisms* that are the real key to understanding it. For example, when we think hard about everyday objects we realize that each of them has a specific *functions* (note the term) without which, a thing would not be itself e.g. is a lamp that doesn't glow, still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all.So, instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
 
-Isomorphisms and equivalence 
+Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored... until the 20th century, when a real mathematical revolution happened: Bertrand Russell's type theory, the little book from his student Ludwig Wittgenstein from which the above quote comes from, and which was admired by a circle of mathematicians and logicians, known as the "Vienna circle" (part of which was Rudolph Carnap who we encountered) etc. 
+
+Equivalent categories
 ===
 
-So, are you ready to hear about natural transformations? Actually it is my opinion that you are not, so I would like to continue with something else. Let's ask ourselves the same question that we were pondering at the beginning of the previous chapter ---  what does it mean for two categories to be equal. 
+Isomorphism invariance
+---
+
+An embodiment of Heraclitus' view in the realm of category theory is concept of *isomorphism invariance* that we implicitly touched several times. All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are isomorphism-invariant, or, equivalently, they define an objects *up to an isomorphism*. This means that if there are two or more objects that are isomorphic to one another, and one of them has a given property, then the rest of them have to have this property as well. 
+
+In short, in category theory **isomorphism = equality**.
+
+The key to understanding category theory lies in understanding isomorphism invariance. And the key to understanding how isomorphism invariance works are natural transformations.
+
+Categorical isomorphisms are *not* isomorphism-invariant
+---
+
+Let's ask ourselves the same question that we were pondering at the beginning of the previous chapter --- what does it mean for two categories to be equal. 
 
 In the prev chapter, we talked a lot about how great isomorphisms are and how important they are for defining the concept of equality in category theory, but at the same time we said that *categorical isomorphisms* do not capture the concept of equality of categories.
 
 ![Isomorphic categories](isomorphic_categories.svg)
 
-This is simply because (though it may seem contradictory) *isomorphic objects and morphisms aren't considered equal* according to categorical isomorphisms i.e. categories that only differ by having some additional isomorphic objects aren't isomorphic themselves e.g. those categories are not isomorphic.
+This is simply because (though it may seem contradictory) *categorical isomorphisms aren't isomorphism invariant*, i.e. categories that only differ by having some additional isomorphic objects aren't isomorphic themselves.
 
 ![Isomorphic categories](equal_categories.svg)
 
@@ -46,7 +64,10 @@ However, they are *equivalent*.
 **Heraclitus:** Who cares bro, they are isomorphic.
 -->
 
-To understand equivalent categories better, let's go back to the functor between a given map and the area it represents. In order for this functor to be invertible (and the categories --- isomorphic) the the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
+Equivalences are isomorphism invariant
+---
+
+To understand equivalent categories better, let's go back to the functor between a given map and the area it represents (we will only consider the thin categories (AKA orders) for now). In order for this functor to be invertible (and the categories --- isomorphic) the the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
 
 ![Isomorphic categories](isomorphic_map.svg)
 
@@ -56,110 +77,163 @@ For example, if there are intersections that are positioned in such a way that t
 
 ![Equivalent categories](equivalent_map.svg)
 
-Although these two categories are *not isomorphic*, i.e. going from one of them to the other and back again doesn't lead you to the same object, it would lead you at least to an *isomophic object*. In this case we say that the categories are *equivalent*.
+Although these two orders are *not isomorphic*, i.e. going from one of them to the other and back again doesn't lead you to the same object, it would lead you at least to an *isomophic object*. 
 
 ![Equivalent categories](equivalent_map_equivalence.svg)
 
+In this case we say that the orders are *equivalent*.
 
-Equivalence of orders
-===
+Defining equivalence in terms of objects
+---
 
-Now we will present a formal definition of order equivalence. But to do that, we need to revise the definition of order isomorphisms. In the chapter about orders, we presented a definition that is based on *set* isomorphisms:
-
-> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
-
-And we also have to attach the definition of set isomorphism (as we have the condition that the underlying sets be isomorphic).
-
-> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
-
-Needless to say that this definition is suboptimal. But since we know about functors (which, as we said, serve as functions between the orders), we now devise a new, simpler definition. To do that, we just take the the definition of set isomorphism and replace the word "function" with "functor":
-
-> Two *orders* $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
-
-In other words, the functors must be such that going back and forth again would bring us at the same place.
-
-![isomorphic orders](isomorphic_orders.svg)
-
-**Task:** Show that the two definitions are equivalent.
-
-And, surprisingly (actually not surprising at all when you get the bigger picture), we can get from order *isomorphism* to order *equivalence* in the same way: we only have to replace equality with isomorphism (so, $=$ with $\cong$).
-
-> Two *orders* $A$ and $B$ are equivalent (or $A ≅ B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{A}$ and $g \circ f \cong ID_{A}$.
-
-Here, going back and forth brings us not necessarily to the same, but to an an *isomorphic* object. 
+As we said, two orders are equivalent when going from one of them to the other and back again leads you to an object that is *isomorphic* to the one you started with. 
 
 ![Equivalent orders](equivalent_orders.svg)
 
-Order equivalence and equivalence classes
----
+But when does this happen? To understand this, we plot the orders as a Hasse diagram.
 
-By the way, remember the concept of *equivalence classes* that we covered in the chapter about orders? Turns out that this concept is related. To see how, we visualize the equivalence classes of the two equivalent orders that we saw above.
+![Equivalent orders](equivalent_orders_hasse.svg)
+
+You can see that all objects at a given *level* of the left order are connected to the corresponding level of the right one.
+
+Remember the concept of *equivalence classes* that we covered in the chapter about orders? Turns out that this concept is related to order equivalences. To see how, we visualize the equivalence classes of the two equivalent orders that we saw above.
 
 ![Orders with isomorphic equivalence classes](equivalent_order_classes.svg)
 
-It turns our that two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
+You can see that they are isomorphic. And that is no coincidence: two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
-**Task**: Prove this.
+Unfortunately, this is not true for all categories. we can have more than one morphism between any two objects, and so, besides isomorphic *objects*, categories should also have isomorphic *morphisms* to be equivalent. 
 
-Equivalence of categories
-===
-
-Now that we warmed up our minds up with order equivalences, we are ready to tackle the more complex *categorical equivalences* (similarly to the way we moved from *order functors* to *categorical functors* in the last chapter). And, as with functors, the definition may *look* a lot more complicated from first glance, but it will actually be just an upgrade of the definition that we have for orders.
-
-Why do we need to upgrade the definition? In the context of categories, we can have more than one morphism between any two objects, and so, besides isomorphic objects, we should also have isomorphic *morphisms*. For example, the following two categories are *not* equivalent (the category on the left has just one morphism, but the category on the right has two).
+For example, the following two categories are *not* equivalent, although their equivalence classes would be isomorphic (the category on the left has just one morphism, but the category on the right has two).
 
 ![Non-equivalent categories](unequal_categories.svg)
 
-(This not valid in the context of orders where we have, by definition, just one route between two objects).
+This is because when we are working with orders, we can get away by just thinking about *objects* but the categorical way demands us to think about morphisms.
 
-This might seem at odds with the idea that a map is equal to its territory when it covers all routes that exist, as in this case both categories we have a route between the two objects, however a route is not just means for going from point A to point B, and a morphism is more than its signature.
 
-So how do we make the definition of equivalence more general, so it applies to all categories? 
+Defining equivalence in terms of objects
+---
 
-Natural transformations
+In the chapter about orders, we presented a definition of order isomorphisms, that is based on *objects*:
+
+> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
+
+That a way to define them, but it is not the best way. Now that we know about functors (which, as we said, serve as functions between the orders and other categories), we can devise a new, simpler definition, which would also be valid for all categories, not just orders, and also would be valid for all forms of equality (isomorphism and equivalence).
+
+![isomorphic orders](isomorphic_orders.svg)
+
+We begin with the definition of **set isomorphism**:
+
+> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+
+To amend it so it is valid for all categories  by just replacing the word "function" with "functor" and "set" with "category":
+
+> Two *categories* $A$ and $B$ are isomorphic (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+
+**Task:** Show that the two definitions are equivalent.
+
+Believe it or not, this definition, is just one find-and-replace operation away from the definition of *equivalence*. We get there only by replace equality with isomorphism (so, $=$ with $\cong$). And, of course, instead of $A \cong B$ (isomorphism), we have $A \simeq B$ (equivalence).
+
+> Two *categories* $A$ and $B$ are equivalent (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{A}$ and $g \circ f \cong ID_{A}$.
+
+Comparing the formulas is enough to grasp both the similarities and the difference between isomorphism and equivalence that we already listed: with isomorphisms, going back and forth brings us to the same object, while with equivalence the object is just *isomorphic* to the original one. 
+
+
+This is truly all there is to it. 
+
+There is only one problem --- *we never said what it means for functors to be isomorphic*.
+
+Natural transformations, natural isomorphisms and categorical equivalence
 ===
 
-The progression that we made so far (morphisms -> functors -> natural transformations) might lure you into thinking that natural transformations are similar to morphisms and functors, but they are actually not completely similar, they are not "recursive", to be more precise --- both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are morphisms between morphisms (known as *2-morphisms*).
+So, how can we make the above definition "come to life"? The title of this chapter outlines the steps we need to take:
+
+1. *Morphisms between functors* (*natural transformations*).
+2. *Functor isomorphism* (*natural isomorphism*). 
+3. Finally *categorical equivalences*.
+
+If this sounds hard for you, remember that we are doing the same thing we always did --- talking about isomorphisms, in the very first chapter of this book, we introduced *set isomorphisms*, which are quite easy, and now we reached the point to examine *functor isomorphisms*. So, we are doing the same thing. 
+
+<!--comic-->
+Although actually...
+
+Actually, natural transformations are actually quite different from morphisms and functors, (the definition is not "recursive") --- both normal morphisms and functors are morphisms between objects (or *1-morphisms*), but natural transformations are *morphisms between morphisms* (known as *2-morphisms*).
 
 But enough talking, let's draw some diagrams. 
 
-We know that natural transformations are morphisms between functors, so let's draw two functors (I am omitting the arrows between the morphisms for brevity).
+We know that natural transformations are morphisms between functors, so let's draw two functors. 
 
 ![Two functors](natural_functors_objects.svg)
 
-Note that the functors are similar have the same signature --- both their input and output categories are the same --- this is a necessary (but not sufficient) condition for them to be connected by a natural transformation.
+The functors have the same signature. Naturally, how else would we have morphisms between them? 
 
-Building the object mapping mapping
+Now, a functor is comprised of two mappings (object mapping and morphism mapping) so a mapping between functors, would consist of "object mapping mapping" and "morphism mapping mapping".
+
+Object mapping mapping
 ---
 
-A functor is comprised of two components --- object mapping and morphism mapping, so a natural transformation, being a morphism between functors, should take those two mappings into account.
+Let's first connect the object mappings of the two functors, creating what we called "object mapping mapping". It is simpler than it sounds when we realize that we only need to connect the object in functors' *target category*. The objects in the source category would just always be the same as both functors would include *all* object from the source category, (because that is what functions do, right?) In other words, mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category: one morphism for each object in the source category (so for example, our current source category has two objects and we specify two morphisms).
 
-Let's first connect the object mappings of the two functors, creating what we called "object mapping mapping". It is simpler than it sounds when we realize that we only need to connect the object in functors' *target category*. The objects in the source category would just always be the same as both functors would include *all* object from the source category, (because that is what functions do, right?)
+![Two functors and a natural transformation](natural_transformation.svg)
 
-In other words, mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category.
+Note that, althought it looks like a function, this mappings does not (always) constitute a function, since not all objects have arrows coming from them (e.g. here the black and blue square do not have such).
 
-![Two functors](natural_transformation.svg)
+**Question:** When exactly would the mapping be a real function?
 
-Note that the mappings between these objects do not (always) have the character of a functor, since not all objects are mapped to other objects.
-
-Building the morphism mapping mapping
+Morphism mapping mapping
 ---
-Once the connections between the object mappings are already established, there is only one way to do the morphism mapping ---  take each morphism in the source category and connect the two images that this morphism has (generated by the two functors), in the target category.
+
+The morphism part might seem hard... until we realize that, once the connections between the object mappings are already established, there is only one way to connect the morphisms --- we take each morphism of the source category and connect the two morphisms given by the two functors, in the target category. And that's all there is to it. 
 
 ![Two functors](natural_functors.svg)
 
-Formal definition 
+Oh, actually, there is also this condition that the above diagram should commute (the naturality condition), but that happens pretty much automatically.
+
+The naturality condition
 ---
 
-Before we finish up this chapter, let's distill a rigorous definition of natural transformations: For any two functors $F$ and $G$ that both have the same type signature of source category $C$ and a target category $D$ (so $F : C \to D$ and $G : C \to D$), a natural transformation $\alpha : F \Rightarrow G$ is a collection of morphisms between objects in $D$ that maps all target objects of functor $F$ (or the image of $F$ in $D$ as it is also called) to target objects of functor $G$. 
+So, just like anything else in category theory, natural transformations have some laws that they are required to pass, but in this case it's one law --- the naturality condition. 
 
-Furthermore, the mapping must be such that any morphism in $C$ with a signature $X \to Y$, the object $F(X)$ in $D$ should always be mapped to $G(X)$ and object $F(Y)$ should be mapped to $G(Y)$.
+To we state this law, let's recap where are we now: we have two functors $F$ and $G$ that both have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), a family of morphisms in the target directory $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that are mapping each target object of functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, this diagram should commutes for all morphisms in $C$.
 
-Note that if the condition above (sometimes called the "naturality condition") is met, the below diagram would commute. This works the other way too --- if the diagram commutes, the condition is met, so we can say that *the diagram and the definition are isomorphic*. And because the diagram is much simpler we may think of it as the real definition.
+![Two functors and a natural transformation](natural_transformation.svg)
 
-![Two functors](natural_transformation_formula.svg)
+i.e. a transformation is natural when every morphism $f$ in $C$ is mapped to morphism $F(f)$ by $F$ and to $G(f)$ by $G$ (not very imaginative names, I know), in such a way, that we have $\alpha \circ F(f) = G(f) \circ \alpha$ i.e. when starting from the white square, going right and then down (via the yellow square) would be equivalent to going down and then right (via the black one).
 
-If you look just a little bit closely, you will see that the only difference between this diagram and our example is that here morphisms are displayed vertically, while in the example they are horizontal.
+I am sorry, what were we talking again. Oh yeah --- categorical equivalence. Remember that categorical equivalence is the reason why we natural transformations and isomorphisms? Or perhaps it's the other way around. Nevermind.
+
+Natural isomorphisms 
+---
+
+After understanding natural transformations, natural isomorphisms, are a non-brainer. 
+
+Think about it this way: if a natural transformation is just a family of morphisms in a given category that satisfy certain (aguably pretty complex) criteria, then what would a natural *isomorphism* be? That's right --- it is a family of *isomorphisms* that satisfy the same criteria.
+
+![Two functors and a natural transformation](natural_isomorphism.svg)
+
+That's right the diagram is the same as the one for ordinary natural transformation, except that $\alpha$ are not just ordinary morphisms, but isomorphisms.
+
+And the turning those morphisms into isomorphisms makes the diagram commute in more than one way i.e. if we have the naturality condition 
+
+$\alpha \circ F(f) = G(f) \circ \alpha$ i.e. the two paths going from **white** to **blue** are equivalent.
+
+We also have:
+
+$F(f) \circ  \alpha  =   \alpha  \circ G(f)$ i.e. the two paths going from **black** to **yellow** are also equivalent.
+
+Constructing categorical equivalences
+---
+
+
+Natural transformations in the list functor. Some thoughts on naturality
+===
+
+Before we continue, let's talk about this elusive the naturality condition. Before, we said that we shouldn't worry too much about it, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favoure phrase when writing about maths) that all transformations that we care about *are* natural.
+
+Natural transformations between the list functor
+---
+
+Now, suppose this sounds a bit vague. If only we had some example of a natural transformation that I can use... But wait, we do have one! In the previous chapter, we showed a natural transformation when we talked about what pointed functors are.
 
 Natural transformations again
 ===
@@ -226,7 +300,6 @@ Isomorphism is not hard to construct --- given two sets, containing three object
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
 
 
-
 Limits
 ===
 
@@ -246,8 +319,6 @@ OK, we said that limits summarize a structure. What is the structure that a prod
 ![External diagram](product_part_external.svg)
  
 Why is the product unique when it comes to representing the two objects? Because any other object that also represents them is connected to the product through a morphism (this is known as the *universal property* of limits).
-
-
 
 
 Natural transformations and associativity

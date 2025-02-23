@@ -173,6 +173,7 @@ Tensor-Hom adjunction
 The tensor-hom adjunction is actually a codename for the curry-uncurry function that we saw earlier.
 
 
+The adjunction between monoids and sets is a result of the fact that each monoid homomorphism is determined by where do you send the generator objects of the source monoid i.e. once you map the generators, all other objects just follow along. There are 3 possible functions between the singleton set and the 3 element set, which directly correspond to the three monoid homomorphisms between the free monoid with one generator and a three-object monoid.
 
 
 Adjunctions

@@ -131,7 +131,7 @@ We will look into two interpretations - one very old and the other, relatively r
 Classical logic. The truth-functional interpretation 
 ===
 
-> Beyond the world that we inhabit and perceive every day, there exist the *world of forms* where reside all ideas and concepts that manifest themselves in the objects that we perceive e.g. beyond all the people that have ever lived, there lies the prototypical person, and we are people only insofar as we resemble that person, beyond all the things in the world that are strong, lies the ultimate concepts of strength, from which all of them borrow etc. And although, as mere mortals, we live in the world of appearances and cannot perceive the world of forms, we can, through philosophy, "recollect" with it and know some of its features.
+> Beyond the world that we inhabit and perceive every day, there exist the *world of forms* where reside all ideas and concepts that manifest themselves in the objects that we perceive e.g. beyond all the people that have ever lived, there lies the prototypical person, and we are people only insofar as we resemble that person, beyond all the things in the world that are strong, lies the ultimate concepts of strength, from which all of them borrow and this is true for every single category, e.g. if there is a cup, there is also "cupness". And although, as mere mortals, we live in the world of appearances and cannot perceive the world of forms, we can, through philosophy, "recollect" with it and know some of its features.
 
 The above is a summary of a worldview that is due to the Greek philosopher Plato and is sometimes called Plato's *theory of forms*. Originally, the discipline of logic represents an effort to think and structure our thoughts in a way that they apply to this world of forms i.e. in a "formal" way. Today, this original paradigm of logic is known as "classical logic". Although it all started with Plato, most of it is due to the 20th century mathematician David Hilbert.
 
@@ -515,6 +515,8 @@ So, after choosing the best way to express the relationship (they are all equiva
 The existence of this function object (called *exponential object* or *hom-object* in category-theoretic terms) is the final condition for an order/lattice to be a representation of logic.
 
 Note, by the way, that this definition of function object is valid specifically for intuinistic logic. For classical logic, the definition of  is simpler --- there $A → B$ is just $\lnot A ∨ B$, because of the law of excluded middle. 
+
+Note also, that there might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, function object is defined *up to a (unique) isomorphism*.
 
 The *if and only if* operation
 ---
