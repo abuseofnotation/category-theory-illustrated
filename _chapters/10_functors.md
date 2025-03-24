@@ -257,7 +257,7 @@ You might even say that they are categorical objects *par excellence* (TODO: rem
 Maps are functors
 ---
 
-> A map is not the territory it represents, but, if correct, it has a similar structure to the territory, which accounts for its usefulness. Alfred Korzybski
+> A map is not the territory it represents, but, if correct, it has a similar structure to the territory, which accounts for its usefulness. --- Alfred Korzybski
 
 Functors are sometimes called "maps" for a good reason --- maps, like all other diagrams, are functors. If we consider some space, containing cities and roads that we travel by, as a category, in which the cities are objects and roads between them are morphisms, then a road map can be viewed as category that represent some region of that space, together with a functor that maps the objects in the map to real-world objects.
 
@@ -285,7 +285,7 @@ Even more interestingly, we often encounter often special pairs of functors, con
 Human perception might be functorial 
 ---
 
-As we saw, in addition to category theory, functors apper in many disciplines that study the human mind, such as logic, linguistics, semiotics and the like. I thought about why is it so in a [blog post](https://abuseofnotation.github.io/logic-thought) that I wrote. My response to that question is that human perception, human thinking, is itself functorial: to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
+As we saw, in addition to category theory, functors appear in many disciplines that study the human mind, such as logic, linguistics, semiotics and the like. I thought about why is it so in a [blog post](https://abuseofnotation.github.io/logic-thought) that I wrote. My response to that question is that human perception, human thinking, is itself functorial: to perceive the world around us, we are going through a bunch of functors that go from more raw "low-level" mental models to more abstract "high-level" ones. 
 
 We may say that perception starts with raw sensory data. From it, we go, (using a functor) to a category containing some basic model of how the world works, mapping the objects we are seeing to some concepts that we formed in our mind.
 
@@ -297,7 +297,7 @@ Then we are connecting this model to another, even more abstract model (or model
 
 You can view this as a progression of connections that go from simpler to more abstract (i.e. from categories with less morphisms to categories with more morphisms). 
 
-These connections are functorial in nature, because they work purely in terms of *structure*: the idea of a given object has nothing in common with the object itself (e.g. the idea of a biscuit isn't round, sweet etc). What ideas have in common with the objects of representation is that the connections they have between one another mimic some connections a real-life buiscuit has with other objects.
+These connections are functorial in nature, because they work purely in terms of *structure*: the idea of a given object has nothing in common with the object itself (e.g. the idea of a biscuit isn't round, sweet etc). What ideas have in common with the objects of representation is that the connections they have between one another mimic some connections a real-life biscuit has with other objects.
 
 
 All this is, of course, just a speculation, but how else would we be capable of forming thoughts, e.g. to imagine a person riding a bike and bumping in a tree, when no part of our brains (nor the impulses they create) resembles in any way people/bikes/trees?
@@ -475,11 +475,11 @@ Comparing these definitions makes us realize that mathematicians and programmers
 Type mapping
 ---
 
-The first component of a functor is a mapping that converts one type (let's call it `A`) to another type (`B`). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checking in the first place --- they go by the name of *generic types*. A generic type is nothing but a function that maps one (concrete) type to another (this is why generic types are sometimes called *type-level functions*). 
+The first component of a functor is a mapping that converts one type (let's call it `A`) to another type (`B`). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checking in the first place --- they go by the name of *generic types* . A generic type is nothing but a function that maps one (concrete) type to another (this is why generic types are sometimes called *type-level functions*). 
 
 ![A functor in programming - type mapping](../10_functors/functor_programming_objects.svg)
 
-Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function, e.g. a value-level function from `a`, to `List<a>` (or in mathy Haskell/ML-inspired notation $a \to List\ a$) converts a *value* of type `a` to a value of type `List<a>` and is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.).
+Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function, e.g. a value-level polymorphic function from `a`, to `List<a>` (or in mathy Haskell-inspired notation $forall\ a. a \to List\ a$) converts a *value* of type `a` to a value of type `List<a>` and is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.). We will review value-level polymorphic functions at the end of the chapter.
 
 Function mapping
 ---
@@ -565,28 +565,16 @@ And it might be familiar, because an identity functor is similar to an identity 
 Pointed functors
 ---
 
-Finally, the identity functor, together with all other functors to which the identity functor can be *naturally transformed* are called *pointed functors* (i.e. a functor is pointed if there exist a morphism from the identity functor to it). As we will see shortly, the list functor is a pointed functor.
+Finally, the identity functor, together with all other functors to which the identity functor can be *naturally transformed* are called *pointed functors* (i.e. a functor is pointed if there exist a natural transformation from the identity functor to it). As we will see shortly, the list functor is a pointed functor.
 
 ![Pointed functor](../10_functors/pointed_functor.svg)
 
-We still haven't discussed what does it mean for one functor to be naturally transformed to another one (although the commuting diagram above can give you some idea). This is a complex concept and we have a whole chapter about it (the next one). 
-
-However if we concentrate solely on the category of types in programming languages, then *a natural transformation is just a function* that translates each value of what we called the "simple types" to a value of the functor's generic type i.e. $a \to F\ a$), in a way that this diagram commutes.
-
+We still haven't discussed what does it mean for one functor to be naturally transformed to another one (although the commuting diagram above can give you some idea), however, if we concentrate solely on the category of types in programming languages, then *a natural transformation is just a polymorphic function* e.g. this one is $a \to List\ a$, that preserves the structure of the types i.e. one for which this diagram commutes. 
 ![Pointed functor in Set](../10_functors/pointed_functor_set.svg)
 
-What does it take for this diagram to commute? It means that when you have two equivalent routes for reaching from the top-left diagonal to the bottom-right diagonal i.e. that applying any function between any two types ($a \to b$), followed by the lifting function ($b \to F\ b$), is equivalent to applying the lifting function first ($a \to F\ a$), and then the mapped version of the original function second ($F\ a \to F\ b$).
+In the case of this functor, the function in question is $a \to [\ a\ ]$ --- the function that puts every value in a "singleton" list. 
 
-The list functor is pointed, because such a function exist for the list functor - it is the function $a \to [\ a\ ]$ that puts every value in a "singleton" list. So, for every function between simple types, such as the function $length:\ string \to number$ we have a square like this one.
-
-![Pointed functor in Set](../10_functors/pointed_functor_set_internal.svg)
-
-And the fact that the square commutes is expressed by the following equality:
-
-```
-[a].map(f) = [f(a)]
-```
-By the way, it may not look like it right now, but this commuting square might be the one of the most-important diagram that exist in category theory, second to only the triangle of functional composition.
+We will stop here, as natural transformations are a complex thing, and we want to examine them in a whole chapter (the next one).
 
 The category of small categories
 ===
@@ -598,7 +586,6 @@ Ha, I got you this time (or at least I *hope* I did) - you probably thought that
 We haven't yet mentioned the fact that functors compose (and in an associative way at that), but since a functor is just a bunch of functions, it is no wonder that it does.
 
 **Task:** Go through the functor definition and see how do they compose. 
-
 **Question:** What are the initial and terminal object of the category of small categories.
 
 Categories all the way down
