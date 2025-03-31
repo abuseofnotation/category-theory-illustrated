@@ -199,7 +199,7 @@ The naturality condition
 
 Just like anything else in category theory, natural transformations have some laws that they are required to pass. In this case it's one law --- the naturality condition. 
 
-To we state this law, let's recap where are we now: we have two functors $F$ and $G$ that both have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
+To we state this law, let's recap where are we now: we have two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
 
 ![Two functors and a natural transformation](../11_natural_transformations/natural_transformation.svg)
 
@@ -276,19 +276,19 @@ Natural transformations in programming
 
 In the previous chapter, we said that a natural transformation is equivalent to a polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated)?
 
-> Two functors $F$ and $G$ that both have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. 
+> Two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. 
 
 Indeed it is (I wasn't lying to you, in case you are wondering), however, in the case of programming, the source and target categories of both functors are the same category ($Set$), so the whole condition regarding the functors' type signatures can be dropped. 
 
-> Two ~~functors~~ generic types $F$ and $G$ and a family of morphisms in $Set$ (denoted $\alpha : Set \Rightarrow Set$) one for each object in $Set$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. 
+> Two ~~functors~~ generic types $F$ and $G$ ~~that have the same type signature~~ and a family of morphisms in $Set$ (denoted $\alpha : Set \Rightarrow Set$) one for each object in $Set$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. 
 
 As we know from the last chapter, a functor in programming is a generic type (which, has to have the `map` function with the appropriate signature). 
 
-What is  "family of morphisms in the target category $Set$ one for each object in $Set$"? That's right, that's just a bunch of functions, one function for every type. In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha :: forall\ a. F a \to G a$.
+And what is a "family of morphisms in $Set$ one for each object in $Set$"? That's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha :: forall\ a. F a \to G a$.
 
-And that's exactly what polymorphic functions are, here is how would we write the above definition in a more traditional language 
-(we use capital `<A>` instead of $a$, as customary 
+And that's exactly what polymorphic functions are. 
 
+Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary 
 
 ```typescript
 
@@ -322,19 +322,31 @@ or, alternatively
 $\alpha \circ F\ f = G\ f \circ \alpha$
 
 
-(you would also see it as something like  $alpha (fmap f x) = fmap f (alpha x)$, but note that here the $fmap$ function means two different things on the two sides, Haskell is just smart enough to deduce the type signature by itself)
+(in the programming world, you would also see it as something like  $\alpha (map\ f x) = map\ f (\alpha x)$, but note that here $map$ function means two different things on the two sides, Haskell is just smart enough to deduce which $fmap$ to use).
 
-And in TypeScript, when we are talking specifically about the identity functor and the list functor, the equality us:
+And in TypeScript, when we are talking specifically about the identity functor and the list functor, the equality is expressed as:
 
 ```
 [x].map(f) == [f(x)]
 ```
 
-So, is this equation true ? To verify it, we can have one last peak at the view of the values.
+So, is this equation true in our case? To verify it, we can have one last peak at the view of the values.
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
 
-And after we do verify it, we ask ourselves *why* is it true (in order to understand *when* it is true). The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation, like $list :: a \to list a$ only alters the structure, not dealing with individual values. So, the two types of functions can be mixed and matched in any way we please, without disturbing the end result.
+Why is naturality true?
+---
+
+And after we do verify it, we ask ourselves *why* is it true (in order to understand *when* it is true). The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and does not deal with individual values. 
+
+The naturality condition says that these two types of functions can be applied in any way we please, without disturbing the end result.
+
+
+Exceptions
+---
+
+
+
 <!--
 
 Naturality and structure
