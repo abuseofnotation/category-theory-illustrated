@@ -271,7 +271,7 @@ Now, suppose this sounds a bit vague. If only we had some example of a natural t
 
 And this clearly is a natural transformation. As a matter of fact, if we get down to the nitty-griti, it resembles a lot the equivalence diagram that we saw earlier --- both transformations involve the identity functor, and both transformations have the same category as source and target, that's why we can put everything in one circle (we don't do that in the equivalence diagram, but that's just a matter of presentation). The only difference between the two transformations is that an equivalence requires that a functor be *isomorphic* to the identity functor (i.e. it is two-way), while for a functor to be pointed, there must only be a natural transformation from it (one-way) (so the equivalence functor is pointed, but not the other way around). 
 
-Natural transformations in programming
+Natural transformations 
 ---
 
 In the previous chapter, we said that a natural transformation is equivalent to a polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated)?
@@ -284,11 +284,9 @@ Indeed it is (I wasn't lying to you, in case you are wondering), however, in the
 
 As we know from the last chapter, a functor in programming is a generic type (which, has to have the `map` function with the appropriate signature). 
 
-And what is a "family of morphisms in $Set$ one for each object in $Set$"? That's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha :: forall\ a. F a \to G a$.
+And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morhpisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha :: forall\ a. F a \to G a$.
 
-And that's exactly what polymorphic functions are. 
-
-Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary 
+But that's exactly what polymorphic functions are. Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary 
 
 ```typescript
 
@@ -306,7 +304,7 @@ function array<A>(a: <A>) : Array<A> {
 }
 ```
 
-The naturality condition in programming
+The naturality condition 
 ---
 
 To construct the diagram that represents the naturality condition, we choose two types that play the role of $a$, in our case $String$ and $Num$, and apply the natural transformation that we have defined, (putting every value to a singleton list) to get $[String]$ and $[Num]$.
@@ -334,16 +332,20 @@ So, is this equation true in our case? To verify it, we can have one last peak a
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
 
-Why is naturality true?
----
-
-And after we do verify it, we ask ourselves *why* is it true (in order to understand *when* it is true). The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and does not deal with individual values. 
+Why is the naturality condition true? The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and does not deal with individual values. 
 
 The naturality condition says that these two types of functions can be applied in any way we please, without disturbing the end result.
 
-
-Exceptions
+Some examples of natural transformations
 ---
+
+There are many polymorphic functions/natural transformations 
+
+
+Unnatural transformations
+---
+We rarely encounter the 
+
 
 
 
@@ -357,9 +359,6 @@ Isomorphism is not hard to construct --- given two sets, containing three object
 But most of these isomorphisms, are just random. In our studies we are only interested in structures that *make sense*. In category theory the abstract notion of making sense is captured by the naturality condition.
 
 -->
-
-Some examples of natural transformations
----
 
 Natural transformations again
 ===
