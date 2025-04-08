@@ -260,7 +260,7 @@ Natural transformations in programming. Natural transformations on the list func
 
 Here, we will see some more natural transformations and will examine further this elusive the naturality condition in the context of programming.
 
-Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural. For example, it is impossible to *program* a non-natural transformations.
+Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural. 
 
 Pointed functors again
 ---
@@ -332,22 +332,41 @@ So, is this equation true in our case? To verify it, we can have one last peak a
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
 
-Why is the naturality condition true? The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and does not deal with individual values. 
-
-The naturality condition says that these two types of functions can be applied in any way we please, without disturbing the end result.
+Why is the naturality condition true? The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and not individual values. The naturality condition says that these two types of functions can be applied in any order that we please, without changing the end result.
 
 Some examples of natural transformations
 ---
 
-There are many polymorphic functions/natural transformations 
+There are many polymorphic functions/natural transformations around, for example the function that takes the first element of a given list, known as `head` in Lisp-inspired languages, is a natural transformation between the list functor and the identity functor (we will again use the function `length` as an example
 
+![Head --- a natural transformation between the list functor and the identity functor](../11_natural_transformations/list_head_internal.svg)
 
-Unnatural transformations
+(Note that this works only if the lists are non-empty or if the `head` function returns an option --- otherwise the head function would be a partial function and thus not a real categorical morphism).
+
+The function `reverse` which reverses the order of the elements in a given list is a natural transformation between the list functor and itself.
+
+![Reverse --- a natural transformation between the list functor and itself](../11_natural_transformations/list_reverse_internal.svg)
+
+And other list operations such as `sort`, `take`, `flatten` are natural transformations as well (`flatten` is actually a very special kind of natural transformation, at that, but we will get to that at a later chapter). 
+
+Some examples of unnatural transformations
 ---
-We rarely encounter the 
 
+We rarely talk about "unnatural" transformations (they are called just "transformations", I guess), but they do exist and they are numerous.
 
+In fact it is enough to shift a single arrow of a single function of an, otherwise perfect, natural transformation to ruin commutativity.
 
+![Reverse --- a natural transformation between the list functor and itself](../11_natural_transformations/unnatural_transformation_internal.svg)
+
+And if we take a bunch of functions at random, they would generally not be commutative. 
+
+However, it is next to impossible to define a non-natural transformation without resorting to randomness. To see why, let's see what the type of a natural transformation is.
+
+$$forall\ a.\ F a \to G a$$
+
+The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types.
+
+And if we use a language like TypeScript, we have a way to define an unnatural transformation, by using type cohersion.
 
 <!--
 
