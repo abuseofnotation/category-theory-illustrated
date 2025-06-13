@@ -533,7 +533,7 @@ So, why is a map useful? Well, it obviously has to do with the fact that the poi
 
 And functors in programming are used for similar reason - functions that involve simple types like `string`, `number`, `boolean` etc. are ... simple, and least when compared with functions that work with lists and other generic types. Using the `map` function allows us to operate on such types without having to think about them and to derive functions that transform them, from functions that transform simple values. In other words, functors are means of *abstraction*.
 
-Of course, not all routes on the map and no functions that between generic datatypes can be derived just by functions between the types they contain. This is generally true for many "useful" functors: because their source categories are "simpler" than the target, some of the morphisms in the target have no equivalents in the source i.e. making the model simpler inevitably results in losing some of its capabilities. This is a consequence of "the map is not the territory" principle (or "every abstraction is a leaky abstraction", as Joel Spolsky puts it).
+Of course, not all routes on the map and no functions that between generic datatypes can be derived just by functions between the types they contain. This is generally true for many "useful" functors: because their source categories are "simpler" than the target, some of the morphisms in the target have no equivalents in the source i.e. making the model simpler inevitably results in losing some of its capabilities. This is a consequence of "the map is not the territory" principle ("every abstraction is a leaky abstraction", as Joel Spolsky puts it).
 
 Pointed functors
 ===

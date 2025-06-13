@@ -473,7 +473,7 @@ This formula (and the diagram) is the definition of a property called *associati
 
 Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h • g) • f = h • (g • f)$).
 
-And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. $(1 \times 2) \times 3 = 1 \times (2 \times 3)$. While division is not $(1 / 2) / 3 = 1 / (2 / 3)$.
+And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. $(1 \times 2) \times 3 = 1 \times (2 \times 3)$. While division is not $(1 / 2) / 3 \neq 1 / (2 / 3)$.
 
 ## Commuting diagrams
 
@@ -486,6 +486,8 @@ As we mentioned briefly in the last chapter, all diagrams that are like that (on
 More formally, a commuting diagram is a diagram in which given two objects $a$ and $b$ and two sequences of morphisms between those two objects, we can say that those sequences are equivalent.
 
 The diagram above is one of the simplest commuting diagrams.
+
+**NB:** Despite the fact that all diagrams in books commute, in general, **not all diagrams commute**. That is, there are many morphisms with the same type signature that are not equivalent to one another.
 
 ## Summary
 
