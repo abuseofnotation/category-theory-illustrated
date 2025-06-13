@@ -267,9 +267,7 @@ Natural transformations in programming. Natural transformations on the list func
 
 Here, we will see some more natural transformations and will examine further this elusive the naturality condition in the context of programming.
 
-Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural.  
-
-For example, it is impossible to *program* a non-natural transformations.
+Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural. 
 
 Pointed functors again
 ---
@@ -341,13 +339,12 @@ So, is this equation true in our case? To verify it, we can have one last peak a
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
 
-Why is the naturality condition true? The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and does not deal with individual values. 
-
-The naturality condition says that we can apply those two types of functions in any sequence that we please, without disturbing the end result.
+Why is the naturality condition true? The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and not individual values. The naturality condition just says that these two types of functions can be applied in any order that we please, without changing the end result.
 
 Some examples of natural transformations
 ---
 
+<<<<<<< HEAD
 Once we rid outselves of the feeling of cofusion, that new terminology imposes upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
 
 We already saw one transformation with signature $a \to list a$:
@@ -403,10 +400,20 @@ And, in the category of sets, where morphisms are functions i.e. mappings betwee
 
 Finally, if can just gather a bunch of random morphisms, one for each object, that fit the criteria, we get what I would call a "perfectly unnatural transformation" (but this is my terminology).
 
-However, there is clearly no way specify such "perfecly unnatural transformation" for categories that are infinite. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. you can do it in Typescript, but not in Haskell.
+
+However, it is next to impossible to define a non-natural transformation without resorting to randomness. To see why, let's see what the type of a natural transformation is.
+$$forall\ a.\ F a \to G a$$
+
+The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types, without resorting to type downcasting (which is not permitted in languages like Haskell).
+
+<!--
+{% if site.distribution == 'print' %}
+-->
 
 Interlude: Skolem variables
 ---
+
+However, there is clearly no way specify such "perfecly unnatural transformation" for categories that are infinite. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. you can do it in Typescript, but not in Haskell.
 
 Let's And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. in Typescript, you can do something like:
 
@@ -428,6 +435,9 @@ No, the correct way to prove this statement is by using general laws
 
 There are also technical reasons, for this, for example, in order to make it work you must keep all type information about your values at runtime, which may not be possible in some contexts. 
 
+<!--
+{%endif%}
+-->
 
 Natural transformations again
 ===
