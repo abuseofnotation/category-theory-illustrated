@@ -10,9 +10,7 @@ Natural transformations
 
 In this chapter, we will introduce the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
 
-Natural transformations really are at the heart of category theory, however, their importance is not obvious at first. So, before introducing them, I like to talk about once more of the body of knowledge that this heart maintains (I am good with metaphors... in principle).
-
-So, are you ready to hear about natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard). So, we will take the longer route. 
+Natural transformations really are at the heart of category theory, however, their importance is not obvious at first. So, before introducing them, I like to talk, once more, about the body of knowledge that this heart maintains (I am good with metaphors... in principle).
 
 I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
 
@@ -34,7 +32,9 @@ Although old, dating back to Parmenides' alleged rival Heraclitus, this view has
 Equivalent categories
 ===
 
-We will introduce natural transformation as a motivating example for creating a way to say that two categories are equal. But first we need to understand what equal categories are and should be.
+So, are you ready to hear about natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard). So, we will take the longer route. 
+
+My aim is to introduce natural transformation as a motivating example for creating a way to say that two categories are equal. But for that, we need to understand what equal categories are and should be.
 
 Isomorphism invariance
 ---
@@ -344,7 +344,6 @@ Why is the naturality condition true? The answer is simple, at least in our spec
 Some examples of natural transformations
 ---
 
-<<<<<<< HEAD
 Once we rid outselves of the feeling of cofusion, that new terminology imposes upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
 
 We already saw one transformation with signature $a \to list a$:
@@ -400,8 +399,10 @@ And, in the category of sets, where morphisms are functions i.e. mappings betwee
 
 Finally, if can just gather a bunch of random morphisms, one for each object, that fit the criteria, we get what I would call a "perfectly unnatural transformation" (but this is my terminology).
 
+However, it is next to impossible to define a non-natural transformation without resorting to randomness. And so, if we want the functions to be pure, there is no way specify such "perfecly unnatural transformation" for categories that are infinite. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. you can do it in Typescript, but not in Haskell.
 
-However, it is next to impossible to define a non-natural transformation without resorting to randomness. To see why, let's see what the type of a natural transformation is.
+To see why, let's see what the type of a natural transformation is.
+
 $$forall\ a.\ F a \to G a$$
 
 The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types, without resorting to type downcasting (which is not permitted in languages like Haskell).
@@ -410,12 +411,10 @@ The key is that the definition should be valid *for all* types a. For this reaso
 {% if site.distribution == 'print' %}
 -->
 
-Interlude: Skolem variables
+Interlude: Skolem variables and type downcasting
 ---
 
-However, there is clearly no way specify such "perfecly unnatural transformation" for categories that are infinite. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. you can do it in Typescript, but not in Haskell.
-
-Let's And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. in Typescript, you can do something like:
+Let's try to define the "semi-natural" transformation that we described above (the ones that include a single condition for a single value or type) e.g. an abstract function that reverses all lists, except the list of booleans). In Typescript, it will look something like this.
 
 ```typescript
 function unnatural<A> (a: Array<A>): Array <A>{
@@ -429,7 +428,12 @@ function unnatural<A> (a: Array<A>): Array <A>{
 <!--comic-->
 (Look at this piece of code! Doesn't this seem "unnatural"?)
 
-If you try to do this in Haskell, for example, it would immediately tell you that `a` is a "rigid type variable" (also known as "Skolem variable" in other context) i.e. that when you have a signature $\forall a. List a \to List a$ you are not supposed to try to guess what the type of $a$ is at runtime. This is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for 
+This will work. But, if you try to do the same in Haskell, for example, it would immediately tell you that you cannot, because `a` is a "rigid type variable" (also known as "Skolem variable" in other context) i.e. that when you have a signature $\forall a. List a \to List a$ you are not supposed to try to guess what the type of $a$ is at runtime. 
+
+Why is it so?  There are some technical reasons, as runtime type checks, like this one add performance overhead and require the runtime to preserve type information for each value, after compilation, but it is also 
+
+
+This is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for 
 
 No, the correct way to prove this statement is by using general laws 
 
@@ -489,18 +493,6 @@ In this case, our natural transformation $\alpha : F \Rightarrow G$ is just a fu
 
 **Task:** See how the two definitions are equivalent.
 
-
-Natural transformations from surjective functors are just regular functors.
- 
-Generally, a natural transformation is not a function, it is a *family of morphisms* in the target category, one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it (and to an object of the second functor).
-
-However, in the case of programming, because the source and target categories are both `Set`), a natural transformation there is "a family of morphisms in `Set` one morphism for each object in `Set`" i.e. *a polymorphic function*.
-
-
-Here is how would a natural transformation would look like in a case resembling yours (this is a natural transformation `Identity => List`, not `List => List`, but the principle is the same).
-
-
-
 Limits and colimits
 ====
 
@@ -539,8 +531,21 @@ Natural transformations and associativity
 The definition of natural transformation just states that (ab)c = a(bc)
 
 
+
+Natural transformations from surjective functors are just regular functors.
+===
+ 
+Generally, a natural transformation is not a function, it is a *family of morphisms* in the target category, one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it (and to an object of the second functor).
+
+However, in the case of programming, because the source and target categories are both `Set`), a natural transformation there is "a family of morphisms in `Set` one morphism for each object in `Set`" i.e. *a polymorphic function*.
+
+Here is how would a natural transformation would look like in a case resembling yours (this is a natural transformation `Identity => List`, not `List => List`, but the principle is the same).
+
+
+
 Free objects
 ===
+
 
 https://math.stackexchange.com/questions/131389/what-are-free-objects
 
