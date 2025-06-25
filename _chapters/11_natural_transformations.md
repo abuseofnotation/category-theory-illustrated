@@ -314,7 +314,7 @@ function array<A>(a: <A>) : Array<A> {
 The naturality condition 
 ---
 
-To construct the diagram that represents the naturality condition, we choose two types that play the role of $a$, in our case $String$ and $Num$, and apply the natural transformation that we have defined, (putting every value to a singleton list) to get $[String]$ and $[Num]$.
+To construct the diagram that represents the naturality condition, we choose two types that play the role of $a$, in our case $string$ and $num$, and one natural transformation --- in the previous chapter we discussed the natural transformation $\forall a.a \to [a]$ which is putting every value in a singleton list (to get $[string]$ and $[num]$).
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set.svg)
 
@@ -335,42 +335,59 @@ And in TypeScript, when we are talking specifically about the identity functor a
 [x].map(f) == [f(x)]
 ```
 
-So, is this equation true in our case? To verify it, we can have one last peak at the view of the values.
-
-![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
-
-Why is the naturality condition true? The answer is simple, at least in our specific case: the original function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list a$ only alter the structure, and not individual values. The naturality condition just says that these two types of functions can be applied in any order that we please, without changing the end result.
+So, is this equation true in our case? To verify it, we can have have to see some more examples.
 
 Some examples of natural transformations
 ---
 
 Once we rid outselves of the feeling of cofusion, that new terminology imposes upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
 
-We already saw one transformation with signature $a \to list a$:
+We already saw one transformation with signature $a \to list\ a$:
 
-$a \to [a]$
+![Natural transformation, defining a pointed functor in Set](../11_natural_transformations/pointed_functor_set_transformation.svg)
 
-This is pretty much the only one that is useful with *this* signature (the others being $a \to [a, a]$, $a \to [a, a, a]$ etc.), but there are many examples with signature $list a \to list a$, such as the function to *reverse* a list.
+This is pretty much the only one that is useful with *this* signature (the others being $a \to [a, a]$, $a \to [a, a, a]$ etc.), but there are many examples with signature $list\ a \to list\ a$, such as the function to *reverse* a list.
 
-$[a, b, c] \to [c, b, a]$
+![The natural transformation, for reversing a list in Set](../11_natural_transformations/reverse_set_transformation.svg)
 
 ...or *take1* that retrieves the first element of a list
  
-$[c, a, b] \to [ c ]$
+![The natural transformation, for taking the first element of a list in Set](../11_natural_transformations/take_set_transformation.svg)
 
-or *flatten* a list of lists of things to a regular list of things (the signature of this one is a little different, it's $list list a \to list a$).
+or *flatten* a list of lists of things to a regular list of things (the signature of this one is a little different, it's $list\ list\ a \to list\ a$).
 
-[ [c, a], [b] ] \to [c, a, b]
+![The natural transformation, for flattening a list in Set](../11_natural_transformations/flatten_set_transformation.svg)
 
-And, now let's test if those are really natural transformations.
+**Task:** Using the first naturality square (displayed above) draw the naturality squares for the rest of the natural transformations.
 
-To do so, we need to aquire an $f$, that is, we a function that acts on values, for example the function that converts a circle into a square.
+The naturality condition
+---
 
-And then convert it (or *lift* it, as the terminology goes) to a function that acts on lists of values (using *map*).
+So, what does the naturality condition entails, in this case?
 
-So, the naturality condition tells us that $\alpha \circ F\ f = F\ f \circ \alpha$ (note that you have $F\ f$ on both sides of the equation, because we are talking about a transformations). 
+To do so, we need to aquire an $f$, that is, we a function that acts on simple values (not lists), such as the function $length : string \to num$, which returns the number of characters a string has.
 
-Or, more informally, if you have a sequence of natural transformations that you want to apply, (such as $reverse$ , $take$, $flatten$ etc) and some lifted functions ($F f$, $F g$), you can mix and match between the two sequences in any way you like and you will get the same result e.g. 
+Then, we convert it, (or *lift* it, as the terminology goes) to a function that acts on more complex values, using a functor, such as the list functor, (and the higher-order function $map$).
+
+![A lifted function](../11_natural_transformations/lifted_function_f.svg)
+
+Then, we take the input and output types for this function (in this case $string$ and $num$), and the two morphisms of a natural transformation (e.g the abstract function $\forall a.a \to [a]$) that correspond to those two types.
+
+![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_transformations.svg)
+
+Then, we compose the two pairs of morphisms and observe that they commute --- we get two morphisms that are actually the same morphism.
+
+![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
+
+The above square shows the transformation $\forall a.a \to [a]$ (which is between the identity functor and the list functor. Here is another example, this time between the list functor and itself ($\forall a.[a] \to [a]$) --- $reverse$ (and you can see that this would work not just for $length$, but for any other function).
+
+![Pointed functor in Set](../11_natural_transformations/reverse_set_internal.svg)
+
+So, why does thishappen? Why do these particular morphisms make up a commuting square for each and every morphism?
+
+The answer is simple, at least in our specific case: the original, unlifted function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list\ a$ only alter the structure, and not individual values. The naturality condition just says that these two types of functions can be applied in any order that we please, without changing the end result.
+
+This means that if you have a sequence of natural transformations that you want to apply, (such as $reverse$ , $take$, $flatten$ etc) and some lifted functions ($F f$, $F g$), you can mix and match between the two sequences in any way you like and you will get the same result e.g. 
 
 $take1 \circ reverse \circ F\ f \circ F\ g$
 
@@ -378,18 +395,18 @@ is the same as
 
 $take1 \circ F\ f \circ reverse \circ F\ g$
 
-or
+...or...
 
 $ F\ f \circ F\ g \circ take1 \circ reverse$
 
-or any other such sequence (the only thing that isn't permitted is to flip the members of the two sequences --- ($take1 \circ reverse$ is of course different from $reverse \circ take1$and if you have $F\ f \circ F\ g$, then $F\ g \circ F\ f$ won't be permitted at all due to the different type signatures).
+...or any other such sequence (the only thing that isn't permitted is to flip the members of the two sequences --- ($take1 \circ reverse$ is of course different from $reverse \circ take1$and if you have $F\ f \circ F\ g$, then $F\ g \circ F\ f$ won't be permitted at all due to the different type signatures).
 
 **Task:** Prove the above results, using the formula of the naturality condition.
 
 Non-natural transformations
 ---
 
-Unnatural, or non-natural transformations (let's call them just *transformations*) are mentioned so rarely, that we might be inclined to ask if they exist. The answer is "yes and no". 
+"Unnatural", or "non-natural" transformations (let's call them just *transformations*) are mentioned so rarely, that we might be inclined to ask if they exist. The answer is "yes and no". 
 
 Why yes? On one hand, transformations, both natural and unnatural ones, consist of an innumerable amount of morphisms, forming an ever more innumerable amount of squares and obviously nothing stops some of these squares to be non-commuting. 
 

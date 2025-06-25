@@ -548,7 +548,7 @@ But wait, if the monoids' underlying *sets* correspond to *objects* in category 
 
 The only difference between different monoids would be the number of morphisms that they have and the relationship between them.
 
-The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of *closure* that monoid and group operations have and that categories lack --- it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how you flip a triangle, you still get a triangle. 
+The intuition behind this representation from a category-theoretic standpoint is encompassed by the law of *closure* that monoid and group operations have and that categories lack --- it is the law stating that applying the operation (functional composition) on any two objects always yields the same object, e.g. no matter how you flip a triangle, you still get a triangle. As Tom Lehrer sings, "Try as you may, you just can't get away from mathematics". In the case of monoids, we can't get away from the object.
 
 |                   | Categories    | Monoids   | Groups    |
 | ---               | ---           | ---       | ---       |
