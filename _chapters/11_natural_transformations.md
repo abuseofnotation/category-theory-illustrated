@@ -204,13 +204,25 @@ Oh, actually, there is also this condition that the above diagram should commute
 The naturality condition
 ---
 
-Just like anything else in category theory, natural transformations have some laws that they are required to pass. In this case it's one law --- the naturality condition. 
+Just like anything else in category theory, natural transformations have some laws that they are required to pass. In this case it's one law, typically called the naturality law, or the naturality condition. 
 
-To we state this law, let's recap where are we now: we have two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
+Before we state this law, let's recap where are we now. We have two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
 
-![Two functors and a natural transformation](../11_natural_transformations/natural_transformation.svg)
+![The commuting square of a natural transformation](../11_natural_transformations/natural_transformation_square.svg)
 
-i.e. a transformation is natural when every morphism $f$ in $C$ is mapped to morphism $F(f)$ by $F$ and to $G(f)$ by $G$ (not very imaginative names, I know), in such a way, that we have $\alpha \circ F(f) = G(f) \circ \alpha$ i.e. when starting from the white square, when going right and then down (via the yellow square) is be equivalent to going down and then right (via the black one).
+i.e. a transformation is natural when every morphism $f$ in $C$ is mapped to morphisms $F(f)$ by $F$ and to $G(f)$ by $G$ (not very imaginative names, I know), in such a way, that we have $\alpha \circ F(f) = G(f) \circ \alpha$ i.e. when starting from the white square, when going right and then down (via the yellow square) is be equivalent to going down and then right (via the black one).
+
+We may view a natural transformation is a mapping between morphisms and commutative squares: two functors and a natural transformation between two categories means that for each morphism in the source category of the functors, there exist one commutative square at the target category.
+
+![Commutin squares of a natural transformation](../11_natural_transformations/natural_transformation_squares.svg)
+
+When we fully understand this, we realize that commutative squares are made of morphisms too, so, like morphisms, they compose --- for any two morphisms with appropriate type signatures that have we can compose to get a third one, we have two naturality squares which compose the same way.
+
+![Composition of commuting squares of a natural transformation](../11_natural_transformations/natural_transformation_squares_composition.svg)
+
+Which means natural transformation make up a... 
+
+(Oh wait, it's too early for that, is it?)
 
 Natural isomorphisms 
 ---
@@ -278,12 +290,12 @@ Now, suppose this sounds a bit vague. If only we had some example of a natural t
 
 And this clearly is a natural transformation. As a matter of fact, if we get down to the nitty-griti, it resembles a lot the equivalence diagram that we saw earlier --- both transformations involve the identity functor, and both transformations have the same category as source and target, that's why we can put everything in one circle (we don't do that in the equivalence diagram, but that's just a matter of presentation). The only difference between the two transformations is that an equivalence requires that a functor be *isomorphic* to the identity functor (i.e. it is two-way), while for a functor to be pointed, there must only be a natural transformation from it (one-way) (so the equivalence functor is pointed, but not the other way around). 
 
-Natural transformations 
+Polymorphic functions as natural transformations 
 ---
 
 In the previous chapter, we said that a natural transformation is equivalent to a polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated)?
 
-> Two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. 
+> Two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$. Morphisms that map each object of the target of $F$ (or the image of $F$ in $D$ as it is also called) to some object in the target of $G$. 
 
 Indeed it is (I wasn't lying to you, in case you are wondering), however, in the case of programming, the source and target categories of both functors are the same category ($Set$), so the whole condition regarding the functors' type signatures can be dropped. 
 
@@ -311,38 +323,12 @@ function array<A>(a: <A>) : Array<A> {
 }
 ```
 
-The naturality condition 
----
-
-To construct the diagram that represents the naturality condition, we choose two types that play the role of $a$, in our case $string$ and $num$, and one natural transformation --- in the previous chapter we discussed the natural transformation $\forall a.a \to [a]$ which is putting every value in a singleton list (to get $[string]$ and $[num]$).
-
-![Pointed functor in Set](../11_natural_transformations/pointed_functor_set.svg)
-
-What does it take for this diagram to commute? It means that for any function $F f$ between the two types $F f :: F a \to F b$ (in our case it is just $ f :: a \to b$ cause it is the identity functor) . Applying $F f$ followed by ($alpha :: F b \to G\ b$), is equivalent to applying the ($alpha:: F a \to G\ a$), and then the mapped version of $f$ ($G f :: G\ a \to G\ b$), so in Haskell notation:
-
- $\alpha (F f x) = G f (\alpha x)$
-
-or, alternatively
-
-$\alpha \circ F\ f = G\ f \circ \alpha$
-
-
-(in the programming world, you would also see it as something like  $\alpha (map\ f x) = map\ f (\alpha x)$, but note that here $map$ function means two different things on the two sides, Haskell is just smart enough to deduce which $fmap$ to use).
-
-And in TypeScript, when we are talking specifically about the identity functor and the list functor, the equality is expressed as:
-
-```
-[x].map(f) == [f(x)]
-```
-
-So, is this equation true in our case? To verify it, we can have have to see some more examples.
-
 Some examples of natural transformations
 ---
 
 Once we rid outselves of the feeling of cofusion, that new terminology imposes upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
 
-We already saw one transformation with signature $a \to list\ a$:
+In the previous chapter we discussed one natural transformation/polymorphic function the function $\forall a.a \to [a]$ which puts every value in a singleton list. This function is a natural transformation between the identity functor and the list functor. 
 
 ![Natural transformation, defining a pointed functor in Set](../11_natural_transformations/pointed_functor_set_transformation.svg)
 
@@ -360,14 +346,30 @@ or *flatten* a list of lists of things to a regular list of things (the signatur
 
 **Task:** Using the first naturality square (displayed above) draw the naturality squares for the rest of the natural transformations.
 
-The naturality condition
+The naturality condition 
 ---
 
-So, what does the naturality condition entails, in this case?
+So, what does the naturality condition entail, in programming? To understand this, we construct some naturality squares of the transformations that we presented.
 
-To do so, we need to aquire an $f$, that is, we a function that acts on simple values (not lists), such as the function $length : string \to num$, which returns the number of characters a string has.
+We choose two types that play the role of $a$, in our case $string$ and $num$ and one natural transformation, like the transformation between the identity functor and the list functor.
 
-Then, we convert it, (or *lift* it, as the terminology goes) to a function that acts on more complex values, using a functor, such as the list functor, (and the higher-order function $map$).
+![Pointed functor in Set](../11_natural_transformations/pointed_functor_set.svg)
+
+The diagram commute when for all functions $f$, applying the $Ff$, the mapped/lifted version of $f$ with one functor (in our case this is just $ F f : string \to num$ cause it is the identity functor), followed by ($alpha :: F b \to G\ b$), is equivalent to applying ($alpha:: F a \to G\ a$), and then the mapped version of $f$ with the other functor (in our case $G f :: List\ a \to List\ b$) i.e. 
+
+$$\alpha \circ F\ f \cong G\ f \circ \alpha$$
+
+(in the programming world, you would also see it as something like  $\alpha (map\ f x) = map\ f (\alpha x)$, but note that here $map$ function means two different things on the two sides, Haskell is just smart enough to deduce which $fmap$ to use).
+
+And in TypeScript, when we are talking specifically about the identity functor and the list functor, the equality is expressed as:
+
+```
+[x].map(f) == [f(x)]
+```
+
+So, is this equation true in our case? To verify it, we take one last peak at the world of values.
+
+We aquire an $f$, that is, we a function that acts on simple values (not lists), such as the function $length : string \to num$, which returns the number of characters a string has and convert it, (or *lift* it, as the terminology goes) to a function that acts on more complex values, using the list functor, (and the higher-order function $map$).
 
 ![A lifted function](../11_natural_transformations/lifted_function_f.svg)
 
@@ -375,29 +377,31 @@ Then, we take the input and output types for this function (in this case $string
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_transformations.svg)
 
-Then, we compose the two pairs of morphisms and observe that they commute --- we get two morphisms that are actually the same morphism.
+When we compose these two pairs of morphisms we observe that they indeed commute --- we get two morphisms that are actually one and the same function.
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set_internal.svg)
 
-The above square shows the transformation $\forall a.a \to [a]$ (which is between the identity functor and the list functor. Here is another example, this time between the list functor and itself ($\forall a.[a] \to [a]$) --- $reverse$ (and you can see that this would work not just for $length$, but for any other function).
+The above square shows the transformation $\forall a.a \to [a]$ (which is between the identity functor and the list functor, here is another one, this time between the list functor and itself ($\forall a.[a] \to [a]$) --- $reverse$ 
 
 ![Pointed functor in Set](../11_natural_transformations/reverse_set_internal.svg)
 
-So, why does thishappen? Why do these particular morphisms make up a commuting square for each and every morphism?
+(and you can see that this would work not just for $length$, but for any other function).
+
+So, why does this happen? Why do these particular transformations make up a commuting square for each and every morphism?
 
 The answer is simple, at least in our specific case: the original, unlifted function $f :: a \to b$ (like our $length :: string \to num$) can only work on the individual values (not with structure), while the natural transformation functions, i.e. ones with signature  $list :: a \to list\ a$ only alter the structure, and not individual values. The naturality condition just says that these two types of functions can be applied in any order that we please, without changing the end result.
 
 This means that if you have a sequence of natural transformations that you want to apply, (such as $reverse$ , $take$, $flatten$ etc) and some lifted functions ($F f$, $F g$), you can mix and match between the two sequences in any way you like and you will get the same result e.g. 
 
-$take1 \circ reverse \circ F\ f \circ F\ g$
+$$take1 \circ reverse \circ F\ f \circ F\ g$$
 
 is the same as 
 
-$take1 \circ F\ f \circ reverse \circ F\ g$
+$$take1 \circ F\ f \circ reverse \circ F\ g$$
 
 ...or...
 
-$ F\ f \circ F\ g \circ take1 \circ reverse$
+$$ F\ f \circ F\ g \circ take1 \circ reverse$$
 
 ...or any other such sequence (the only thing that isn't permitted is to flip the members of the two sequences --- ($take1 \circ reverse$ is of course different from $reverse \circ take1$and if you have $F\ f \circ F\ g$, then $F\ g \circ F\ f$ won't be permitted at all due to the different type signatures).
 
@@ -406,29 +410,33 @@ $ F\ f \circ F\ g \circ take1 \circ reverse$
 Non-natural transformations
 ---
 
-"Unnatural", or "non-natural" transformations (let's call them just *transformations*) are mentioned so rarely, that we might be inclined to ask if they exist. The answer is "yes and no". 
+"Unnatural", or "non-natural" transformations (let's call them just *transformations*) are mentioned so rarely, that we might be inclined to ask if they exist. The answer is "yes and no". Why yes? On one hand, transformations, consist of an innumerable amount of morphisms, forming an ever more innumerable amount of squares and obviously nothing stops some of these squares to be non-commuting. 
 
-Why yes? On one hand, transformations, both natural and unnatural ones, consist of an innumerable amount of morphisms, forming an ever more innumerable amount of squares and obviously nothing stops some of these squares to be non-commuting. 
+For example, if we substitude one morphism from the family of morphisms that make up the natural transformation with some other random morphism that has the same signature, all squares that have this morphism as a component would stop commuting.
 
-For example, a transformation stops being natural if we change one of those morphisms, with another one with the same signature. for example, in a given natural transformation, if we substitude the one specific morphism, for one specific object with some other random morphism that has the same signature, we get an "almost-natural" transformation (e.g. a function that reverses all lists, but lists of booleans).
+![Unnatural transformation](../11_natural_transformations/unnatural_transformation_squares.svg)
 
-And, in the category of sets, where morphisms are functions i.e. mappings between values, it is enough to move just one arrow of just one of those functions in order to make the transformation "unnatural" (e.g. a function which reverses all lists, but one specific list).
+This would result in something like an "almost-natural" transformation (e.g. an abstract function that reverses all lists, except lists of integers).
+
+And in the category of sets, where morphisms are functions i.e. mappings between values, it is enough to move just one arrow of just one of those values in order to make the transformation "unnatural" (e.g. a function which reverses all lists, but one specific list).
+
+![Unnatural transformation in set --- like reverse, but one arrow is off](../11_natural_transformations/reverse_set_unnatural.svg)
 
 Finally, if can just gather a bunch of random morphisms, one for each object, that fit the criteria, we get what I would call a "perfectly unnatural transformation" (but this is my terminology).
 
-However, it is next to impossible to define a non-natural transformation without resorting to randomness. And so, if we want the functions to be pure, there is no way specify such "perfecly unnatural transformation" for categories that are infinite. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type) are always possible to specify e.g. you can do it in Typescript, but not in Haskell.
+But, although they do exist, it is very hard to define non-natural transformations. For example, for categories that are *infinite*, there is no way to specify such "perfecly unnatural transformation" (ones where none of the squares commute) without resorting to randomness. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type), are not possible to specify in some languages e.g. you can define such a transformation in Typescript, but not in Haskell.
 
 To see why, let's see what the type of a natural transformation is.
 
 $$forall\ a.\ F a \to G a$$
 
-The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types, without resorting to type downcasting (which is not permitted in languages like Haskell).
+The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types, without resorting to type downcasting, which is not permitted in languages like Haskell (as it breaks the principle of parametricity).
 
 <!--
 {% if site.distribution == 'print' %}
 -->
 
-Interlude: Skolem variables and type downcasting
+Interlude: Skolem variables and parametrization
 ---
 
 Let's try to define the "semi-natural" transformation that we described above (the ones that include a single condition for a single value or type) e.g. an abstract function that reverses all lists, except the list of booleans). In Typescript, it will look something like this.
@@ -441,20 +449,17 @@ function unnatural<A> (a: Array<A>): Array <A>{
         return a.reverse()
     }
 }
-
+```
 <!--comic-->
 (Look at this piece of code! Doesn't this seem "unnatural"?)
 
-This will work. But, if you try to do the same in Haskell, for example, it would immediately tell you that you cannot, because `a` is a "rigid type variable" (also known as "Skolem variable" in other context) i.e. that when you have a signature $\forall a. List a \to List a$ you are not supposed to try to guess what the type of $a$ is at runtime. 
+This will work, but, if you try to do the same in Haskell, for example, it would immediately tell you that you cannot ("`a` is a "rigid type variable" (also known as "Skolem variable" in other context)). Why is it so?  There are some *technical reasons*, as runtime type checks like this one, add performance overhead, because they require the runtime to preserve type information for each value, after compilation, but there is also a strong *philosophical reason*:
 
-Why is it so?  There are some technical reasons, as runtime type checks, like this one add performance overhead and require the runtime to preserve type information for each value, after compilation, but it is also 
+A general function should work in a general way. And the generality of a function that checks the type of a value at runtime (and behaves differently for different types) is dubious at best.Such function is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for it to be true.
 
+In other words, unnatural transformations wouldn't work in Haskell, simply because they are ... unnatural i.e. they do not follow the laws.
 
-This is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for 
-
-No, the correct way to prove this statement is by using general laws 
-
-There are also technical reasons, for this, for example, in order to make it work you must keep all type information about your values at runtime, which may not be possible in some contexts. 
+By the way, in programming, this principle is called "parametricity" and the natural abstract functions are called "parametrically polymorphic" (whereas the others are called ad-hoc polymorphism).
 
 <!--
 {%endif%}
@@ -463,18 +468,26 @@ There are also technical reasons, for this, for example, in order to make it wor
 Natural transformations again
 ===
 
-Now that we saw the definition of natural transformations, it is time to see the definition of natural transformations (and if you feel that the quality of the humour in this book is deteriorating, that's only because *things are getting serious*).
+Now, after we saw the definition of natural transformations, it is time to see the definition of natural transformations (and if you feel that the quality of the humour in this book is deteriorating, that's only because *things are getting serious*).
 
-Seriously though, I am sure that once you saw one definition of a natural transformation, you just cannot get enough of them. So let's work out one more. Let's start with our two functors.
+Let's again review the commuting diagram that represents a natural transformation.
 
 ![Two functors](../11_natural_transformations/natural_functors.svg)
 
-This diagram might prompt us into thinking of natural transformations as some kind of "double functors" that have not one but two arrows coming from each object. This notion, of course, cannot be defined (as we said several times, the whole point of functions is the that there is just one arrow for each object), but a related notion that can be defined is that of *product categories*.
+This diagram might prompt us into viewing natural transformations as some kind of "double functors" that have not one but two arrows coming from each of their morphisms. 
+
+Double functors don't exist, but this notion, can be formalized, with the aid of the concept of *product categories*.
 
 Product categories
 ---
 
-We already saw products between *groups/monoids*, the product categories are similar: take any two categories (in practice it is good if one of them is a finite one, but any two would work). 
+A lot of pages ago, when we covered monoids, we talkeed a lot about the concept of a *product* of two or more *groups/monoids*.
+
+
+![The Klein four as a product group](../11_natural_transformations/klein_four_as_a_product.svg)
+
+
+The product categories are similar: take any two categories (in practice it is good if one of them is a finite one, but any two would work). 
 
 ![Product category - components](../11_natural_transformations/product_components.svg)
 
