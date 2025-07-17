@@ -611,4 +611,4 @@ https://www.youtube.com/playlist?list=PLk-BCMYCWSzW-nPNnw19Y6oQJnvaAcp1I
 
 https://brilliant.org/courses/linear-algebra/linear-equations-5/
  https://www.math3ma.com/blog/what-is-category-theory-anyway
-
+https://people.cs.nott.ac.uk/psztxa/mgs.2025/
