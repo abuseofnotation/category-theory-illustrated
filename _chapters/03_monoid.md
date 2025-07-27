@@ -68,6 +68,8 @@ Anyways, the natural numbers also form a monoid under multiplication as well.
 
 **Task:** Go through other mathematical operations and verify that they are monoidal.
 
+**Task:** The natural numbers form a monoid under multiplication, but not a group. Find out why.
+
 Monoids from boolean algebra
 ---
 
@@ -145,7 +147,9 @@ Symmetry groups and group classifications
 
 An interesting kind of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fitted before the action was applied).
 
-We won't use the balls this time, because in terms of symmetries, they have just one position and hence just one action --- the identity action (which is its own reverse, by the way). So let's take this triangle, which, for our purposes, is the same as any other triangle (we are not interested in the triangle itself, but in its rotations).
+We won't use the balls this time, because in terms of symmetries, they have just one position and hence just one action --- the identity action (which is its own reverse, by the way). 
+
+Instead, let's take this triangle, which, for our purposes, is the same as any other triangle. We are not interested in the triangle itself, but in its rotations. The only thing we need to make ourselves believe is that this is an "unrotated" triangle i.e. the one which represents the identity rotation.
 
 ![A triangle](../03_monoid/symmetry_group.svg)
 
@@ -156,7 +160,7 @@ Let's first review the group of ways in which we can rotate our triangle i.e. it
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation.svg)
 
-Connecting the dots (or the triangles in this case) shows us that there are just two possible rotations that get us from any state of the triangle to any other one --- a *120-degree rotation* (i.e. flipping the triangle one time) and a *240-degree rotation* (i.e. flipping it twice, or equivalently, flipping it once in the opposite direction). Adding the identity action of 0-degree rotation makes up for 3 rotations (objects) in total.
+Connecting the dots (or the triangles in this case) shows us that there are just 3 possible rotations that get us from any state of the triangle to any other one --- a *120-degree rotation* (i.e. flipping the triangle one time) and a *240-degree rotation* (i.e. flipping it twice, or equivalently, flipping it once in the opposite direction) and the identity action of 0-degree rotation. 
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_actions.svg)
 
@@ -246,6 +250,8 @@ Let's see how the resulting group looks after taking the product of the followin
 
 ![Two trivial groups](../03_monoid/groups_product.svg)
 
+(again we have to pretend that the left versions of the figures are the "unflipped" versions, while the right ones are flipped (although it can work the other way around too))
+
 We get the set of elements of the new group by taking *the Cartesian product* of the set of elements of the first group and the set of elements of the second.
 
 ![Two trivial groups](../03_monoid/groups_product_four.svg)
@@ -256,11 +262,18 @@ And the *actions* of a product group are comprised of the actions of the first g
 
 The product of the two groups presented is called the *Klein four-group* and it is the simplest *non-cyclic Abelian* group. 
 
+
 Another way to present the Klein four-group is the *group of symmetries of a non-square rectangle*.
 
 ![Klein four](../03_monoid/klein_four.svg)
 
 **Task:** Show that the two representations are isomorphic.
+
+Here are some examples of how elements of the Klein four-group are combined.
+
+![Klein four](../03_monoid/klein_four_examples.svg)
+
+(i.e. horizontal/vertical rotations cancel each other out, while a horizontal rotation doesn't cancel out a vertical one.) 
 
 The Klein four-group is *non-cyclic* (because there are not one, but two generators) --- vertical and horizontal spin. It is, however, still *abelian*, because the ordering of the actions still does not matter for the end result. Actually, the Klein four-group is the *smallest non-cyclic group*.
 
