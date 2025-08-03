@@ -480,62 +480,75 @@ Double functors don't exist, but this notion, can be formalized, with *product c
 
 Oh wait, I just realized we never covered product categories... but don't worry, we will cover them now.
 
-Products
+Product groups
 ---
 
-We haven't covered product categories, but some pages ago, when we covered monoids, we talked about the concept of product *groups*.
+We haven't covered product categories, however some pages ago, when we covered monoids and groups, we talked about the concept of a *product group*. The good news is that product *categories* are a generalization of product *groups*...
 
-The good news is that product *categories* are a generalization of product *groups*. 
+The bad news is that you probably don't remember much about product groups , but don't worry, we will do a refresher now:
 
-So what were product groups? Given two groups $G$ and $H$, whose sets of elements can also be denoted $G$ and $H$... 
-
-(In this example we use two boolean groups (which we visualize represented as the groups of horizontal and vertical rotation of a square).)
+Given two groups $G$ and $H$, whose sets of elements can also be denoted $G$ and $H$... 
 
 ![The Klein four as a product group](../11_natural_transformations/groups_product.svg)
 
+(in this example we use two boolean groups, which we visualize as the groups of horizontal and vertical rotation of a square)
+
 ...the *product group* of these two groups is a group that has the cartesian product of these two sets $G \times H$ as its set of elements.
 
-![The Klein four as a product group](../11_natural_transformations/klein_four_as_product.svg)
+![The Klein four as a product group](../11_natural_transformations/klein_four_underlying_set.svg)
 
-And what can the group operation of such a group be? Well, I would say that out of the the few possible groups operations for this set that *exist*, this is the *only* operation that is *natural* (I didn't intend to involve natural transformation at this section, but they really apper everywhere). 
+And what can the group operation of such a group be? Well, I would say that out of the the few possible groups operations for this set that *exist*, this is the *only* operation that is *natural* (I didn't intend to involve natural transformation at this section, but they really apper everywhere). So, let's try to derive the operation of this group.
 
-Let's try to derive the group . We know that the group operation's definition is:
+We know what a group operation is, in principle: A group operation combines two elements from the group into a third element i.e. it is a function with the following type signature:
+
+$$\circ :  (A, A) \to A$$
+
+or equivalently
 
 $$\circ :  A \to A \to A$$
 
-And we know that the set of a product group is a product of some other two sets ($G \times H$), so, more specifically, the definition is:
+And for product groups, we said that the underlying set of the group (which we dubbed $A$ above) is a cartesian product of some other two sets which we dubbed $G$ and $H$. So, when we swap $A$ for $G \times H$ the definition becomes:
 
 $$\circ : G \times H \to G \times H \to G \times H$$
 
 i.e. the group operation takes one pair of elements from $G$ and $H$ and another pair of elements from $G$ and $H$, only to return --- guess what --- a pair of elements $G$ and $H$. 
 
-
-Let's take another example, we make a product of two totally different groups, as the color-mixing group and the group of triangle rotations. That would mean that we have pairs, containing a random color and a random number , and we need a a way to combine those and produce another pair, containing a color and a number. 
+Let's take an example. To avoid confusion, we take two totally different groups --- the color-mixing group and the group of integers under addition. That would mean that a value of $G \times H$ would be a pair, containing a random color and a random number, and the operation would combine two combine two such pairs and and produce another one.
 
 ![Equations of the product of numbers and colors](../11_natural_transformations/product_group_equations.svg)
 
-Obviously the only solution that is natural is
+Now, the operation must produce a pair, containing a number and a color. Furthermore, it would be good if it produces a number *by using those two numbers*, not just picking one at random, and likewise for colors. And furthermore, we want it to work not just for monoids of numbers and colors, but all other monoids that can be given to us. It is obvious that there is only one solution, to get the elements of the new pair by combining the elements of the pairs given.
 
 ![Solutions of the product of numbers and colors](../11_natural_transformations/product_group_solutions.svg)
 
-i.e. 
+And the operation of the product group of the two boolean groups which we presented earlier is the combination of the two operations 
+
+![The Klein four as a product group](../11_natural_transformations/klein_four_as_product.svg)
+
+So, the general definition of the operation is the following ($g1$, $g2$ are elements of $G$ and $h1$ and $h2$ elements of $H$).
 
 $$(g1, h1) \circ (g2, h2) = ( (g1 \circ g2), (g2 \circ h2))$$
 
+And that are product groups.
+
 <!--
-{% if site.distribution == 'print' %}
+{% if site.distribution != 'print' %}
 -->
 
-Interlude: Naturality in product group operations.
+Interlude: Naturality in product group operations
 ---
 
-As we said, the group operation of product groups is a natural transformation. To understand why, let's look at the equations once more.
+Now, we will show that the group operation of product groups is actually a natural transformation. To understand why, let's look at the equations once more.
 
 ![Equations of the product of numbers and colors](../11_natural_transformations/product_group_equations.svg)
 
-Let's say we search for a solutions to those equations that *makes sense*. That means that we are interested in solutions which produce a number, somehow by using those two numbers, not just picking one at random, and, similarily, ones that produce a new color using the colors given. Furthermore, we want this solution to also work on all other monoids, not just numbers and colors. Well, in this case, even if we want to do something different, our only logical recorse is using the monoid operations provided.
+We said that in order for the solutions for this equations, to make sense, they would have to work for all monoids, not just numbers and colors,in other words, there should be a mechanism that, given two monoids, produces a third one. This mechanism can be nothing more and nothing less of a polymorphic function.
 
-We see that the solution to this problem can only be a *polymorphic function* i.e. natural transformation that flattens a product of products to a product of values.
+$$forall G H. G \to H \to G \times H$$
+
+We shown above how polymorphic functions are transformations (this one is harder to reason about, since it is parametrized over not one, but two types, but we learned how to represent functions that take two arguments as functions that take one argument in chapter 2).
+
+We also said that we are interested in solutions which produce a number, somehow by using the two numbers provided, not just picking one at random, and, similarily, ones that produce a new color using the colors given. This condition corresponds to the *naturality condition* which indeed does hold (correct by construction) for all product groups.
 
 <!--
 {%endif%}
@@ -544,16 +557,15 @@ We see that the solution to this problem can only be a *polymorphic function* i.
 Product categories
 ---
 
-
 we are back at tackling product *categories*. 
 
-We know what product *groups*, are and we know that groups nothing but categories with just one object (and the group objects are the category's morphisms, remember?), so this should be enough for us to get started.
+We now know what product *groups*, are and we know that groups nothing but categories with just one object (and the group objects are the category's morphisms, remember?), so this should be enough to get us started.
 
-So here is a general definition: take any two categories (in practice it is good if one of them is a finite one, but any two would work). 
+Here is a way to make a product category. Take any two categories. 
 
 ![Product category - components](../11_natural_transformations/product_components.svg)
 
-And then take the set of all possible pairs of the objects of these categories.
+Then take the set of all possible pairs of the objects of these categories.
 
 ![Product category - objects](../11_natural_transformations/product_set.svg)
 
@@ -566,11 +578,17 @@ This is the *product category* of the two categories.
 Natural transformations as functors of product categories
 ---
 
-When looking into the last diagram, you might suspect that the categories we chose to demonstrate the notion of the product category is not arbitrary. And you would be right --- we can already see the naturality square in it. 
+In this section we are interested with the products of one particular category, namely the category we called $2$, containing two objects and one morphism (stylishly represented in black and white).
 
-![Product category](../11_natural_transformations/product_category_target_category.svg)
+![The category 2](../11_natural_transformations/category_two.svg)
 
-That is because the category with two objects and one morphism (which, if you remember is called $2$) is the key to constructing a functor that is equivalent to a natural transformation --- because it has two objects, it produces two copies of the source category and because the two objects are connected, the two copies are connected in the same way as the two "images" in the target category are connected. And so all that is left is to draw the two functors.
+This category is the key to constructing a functor that is equivalent to a natural transformation --- because it has two objects, it produces two copies of the source category and because the two objects are connected, the two copies are connected in the same way as the two "images" in the target category are connected. 
+
+So, given a product category of $2$ and some other category $C$...
+
+![The category 2](../11_natural_transformations/product_category_target_category.svg)
+
+...there exist a natural transformation between $C$ and the product category $2\times C
 
 ![Product category](../11_natural_transformations/product_category_natural_transformation.svg)
 
