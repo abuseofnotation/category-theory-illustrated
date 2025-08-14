@@ -95,9 +95,9 @@ In this case we say that the orders are *equivalent*.
 Defining equivalence in terms of objects
 ---
 
-So, two orders are isomorphic if there are two functors, such that going from one to the other and back again leads you to the same object.
+We know that two orders are isomorphic if there are two functors, such that going from one to the other and back again leads you to the same object.
 
-And two orders are equivalent if going from one of them to the other and back again leads you to the same object, *or to an object that is *isomorphic* to the one you started with.* 
+And two orders are equivalent if going from one of them to the other and back again leads you to the same object, *or to an object that is isomorphic to the one you started with.* 
 
 ![Equivalent orders](../11_natural_transformations/equivalent_orders.svg)
 
@@ -113,13 +113,13 @@ To formalize that notion, we remember the concept of *equivalence classes* that 
 
 You can see that they are isomorphic. And that is no coincidence: two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
-This is a definition for equivalence of orders, but unfortunately, it is not true for all categories --- when we are working with orders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
+This is a definition for equivalence of orders, but unfortunately, it does not hold for all categories --- when we are working with orders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
 
 For example, the following two categories are *not* equivalent, although their equivalence classes are isomorphic --- the category on the left has just one morphism, but the category on the right has two.
 
 ![Non-equivalent categories](../11_natural_transformations/unequal_categories.svg)
 
-We could define equivalence of categories by extending the notion of equivalence classes of orders to what we call *skeletons* of categories, a skeleton of a category being a subcategory which does not contain any isomorphic objects. However, we will leave this (pardon my French) as an *exercise for the reader*. Why? We already did this when we *upgraded* the notion of normal set-theoretic functions to *functors*, and so it makes more sense to build up on that notion.
+We could define equivalence of categories by generalizing the notion of equivalence classes of orders to what we call *skeletons* of categories, a skeleton of a category being a subcategory which does not contain any isomorphic objects, however, we will leave this (pardon my French) as an *exercise for the reader*. Why? We already did this when we generalized the notion of normal set-theoretic functions to *functors*, and so it makes more sense to build up on that notion.
 
 Also, we need a motivating example for introducing natural transformations, remember?
 
@@ -161,19 +161,19 @@ So, how can we make the above definition "come to life"? The title of this chapt
 2. *Functor isomorphisms* (called *natural isomorphisms*). 
 3. Finally *categorical equivalences*.
 
-If this sounds complicated, remember that we are doing the same thing we always did --- talking about isomorphisms. In the very first chapter of this book, we introduced *set isomorphisms*, which are quite easy, and now we reached the point to examine *functor isomorphisms*. So, we are doing the same thing. 
+If this sounds complicated, remember that we are doing the same thing we always did --- talking about isomorphisms. 
+
+In the very first chapter of this book, we introduced *set isomorphisms*, which are quite easy, and now we reached the point to examine *functor isomorphisms*. So, we are doing the same thing. 
 <!--comic-->
 Although actually...
 
 But actually, natural transformations are quite different from morphisms and functors, (the definition is not "recursive", like the definitions of functor and morphism are). This is because functions and functors are both morphisms between objects (or *1-morphisms*), while natural transformations are *morphisms between morphisms* (known as *2-morphisms*).
 
-But enough talking, let's draw some diagrams. 
-
-We know that natural transformations are morphisms between functors, so let's draw two functors. 
+But enough talking, let's draw some diagrams. We know that natural transformations are morphisms between functors, so let's draw two functors. 
 
 ![Two functors](../11_natural_transformations/natural_functors_objects.svg)
 
-The functors have the same signature. Naturally, how else would we have morphisms between them? 
+The functors have the same signature. Naturally. How else can there be morphisms between them? 
 
 Now, a functor is comprised of two mappings (object mapping and morphism mapping) so a mapping between functors, would consist of "object mapping mapping" and "morphism mapping mapping" (yes, I often do get in trouble with my choice of terminology, why do you ask?).
 
@@ -182,9 +182,7 @@ Object mapping mapping
 
 Let's first connect the object mappings of the two functors, creating what we called "object mapping mapping". 
 
-It is simpler than it sounds when we realize that we only need to connect the object in functors' *target category*. The objects in the source category would just always be the same for both functors, as both functors would include *all* object from the source category (as that is what functors (and morphisms in general) do). 
-
-In other words, mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category: one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it (and to an object of the second functor, so, for example, our current source category has two objects and we specify two morphisms.
+It is simpler than it sounds when we realize that we only need to connect the object in functors' *target category* --- the objects in the source category would just always be the same for both functors, as both functors would include *all* object from the source category (as that is what functors (and morphisms in general) do). In other words, mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category: one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it (and to an object of the second functor, so, for example, our current source category has two objects and we specify two morphisms.
 
 ![Two functors and a natural transformation](../11_natural_transformations/natural_transformation.svg)
 
@@ -264,7 +262,7 @@ Now, we ask ourselves, in which cases does there exist an isomorphism between th
 
 ![An equivalence diagram](../11_natural_transformations/equivalent_orders_functors.svg)
 
-The answer: exactly when those three objects are isomorphic to one-another: if we draw those green arrows in a different way (remember, this is the same category on the top and the bottom), we can see that these are are exactly the arrows that enable us to construct a two-way transformation (i.e. an *isomorphism*) between the two functors (the others are just identity arrows).
+The answer becomes trivial if we draw the isomorphism arrows connecting the three "interesting" objects in a different way (remember, this is the same category on the top and the bottom) --- we can see that these are exactly the arrows that enable us to construct a an isomorphism between the two functors (the others are just identity arrows).
 
 ![An equivalence diagram, showing a transformation](../11_natural_transformations/equivalent_orders_transformation.svg)
 
@@ -303,10 +301,7 @@ Indeed it is (I wasn't lying to you, in case you are wondering), however, in the
 
 As we know from the last chapter, a functor in programming is a generic type (which, has to have the `map` function with the appropriate signature). 
 
-And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morhpisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.
-
-But that's exactly what polymorphic functions are. Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary 
-
+And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morhpisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary 
 ```typescript
 
 function alpha<A>(a: F<A>) : G<A> {
@@ -326,9 +321,9 @@ function array<A>(a: <A>) : Array<A> {
 Some examples of natural transformations
 ---
 
-Once we rid outselves of the feeling of cofusion, that new terminology imposes upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
+Once we rid outselves of the feeling of cofusion, that such an excessive amount of new terminology and concepts impose upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
 
-In the previous chapter we discussed one natural transformation/polymorphic function the function $\forall a.a \to [a]$ which puts every value in a singleton list. This function is a natural transformation between the identity functor and the list functor. 
+For example, in the previous chapter, we discussed one natural transformation/polymorphic function the function $\forall a.a \to [a]$ which puts every value in a singleton list. This function is a natural transformation between the identity functor and the list functor. 
 
 ![Natural transformation, defining a pointed functor in Set](../11_natural_transformations/pointed_functor_set_transformation.svg)
 
@@ -428,7 +423,7 @@ But, although they do exist, it is very hard to define non-natural transformatio
 
 To see why, let's see what the type of a natural transformation is.
 
-$$forall\ a.\ F a \to G a$$
+$$\forall\ a.\ F a \to G a$$
 
 The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types, without resorting to type downcasting, which is not permitted in languages like Haskell (as it breaks the principle of parametricity).
 
@@ -544,7 +539,7 @@ Now, we will show that the group operation of product groups is actually a natur
 
 We said that in order for the solutions for this equations, to make sense, they would have to work for all monoids, not just numbers and colors,in other words, there should be a mechanism that, given two monoids, produces a third one. This mechanism can be nothing more and nothing less of a polymorphic function.
 
-$$forall G H. G \to H \to G \times H$$
+$$\forall G H. G \to H \to G \times H$$
 
 We shown above how polymorphic functions are transformations (this one is harder to reason about, since it is parametrized over not one, but two types, but we learned how to represent functions that take two arguments as functions that take one argument in chapter 2).
 
@@ -588,108 +583,62 @@ So, given a product category of $2$ and some other category $C$...
 
 ![The category 2](../11_natural_transformations/product_category_target_category.svg)
 
-...there exist a natural transformation between $C$ and the product category $2\times C
+...there exist a natural transformation between $C$ and the product category $2\times C$.
 
 ![Product category](../11_natural_transformations/product_category_natural_transformation.svg)
 
-Formal definition
----
+Furthermore, any natural transformation from $C$ to some other category (call it $D$, as it is customary) can be represented as a functor $2 \times C \to D$.
 
-Let's state formally what we saw in these diagrams. As you remember we call our two functors $F$ and $G$ and the our categories $C$ and $D$ (so $F : C \to D$ and $G : C \to D$). 
-
-Also, we call the category with two connected objects $2$ and the morphisms in it are $0$ and $1$.
-
-In this case, our natural transformation $\alpha : F \Rightarrow G$ is just a functor from the product category of $2$ to $C$ so $2 \times C \to G$, such that if we take the subcategory of $C$ comprised of just those objects that have the $0$ object, and the morphisms between them, then that functor is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
+That is, if we have a natural transformations $\alpha : F \Rightarrow G$ (where  $F: C \to D$ and  $G: C \to D$), then, we also have a functor  $2 \times C \to D$, such that if we take the subcategory of $2 \times C$ comprised of just those objects that have the $0$ object as part of the pair, and the morphisms between them, we get a functor that is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
 
 **Task:** See how the two definitions are equivalent.
 
-Limits and colimits
-====
+This perspective helps us realize that a natural transformation can be viewed as a collection of commuting squares. The source functor defines the left-hand side of each square, the target functor --- the right-hand side, and the transformation morphisms join these two sides.
 
-Interlude: Naturality explained
+We can even retrieve the structure of the source category of the functors, which (as categories are by definition structure and nothing more) is equivalent to retrieving the category itself.
+
+Composing natural transformations
+===
+
+If we view natural transformations as collections of squares, the task of composing natural transformations can be reduced to the task of composing squares. 
+
+There are two ways to compose squares, horizontally...
+
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition.svg)
+
+...and vertically.
+
+![Vertical composition of natural transformation](../11_natural_transformations/vertical_composition.svg)
+
+Those indeed correspond to the two ways of composing natural transformations.
+
+Horizontal composition
 ---
 
-Isomorphism is not hard to construct --- given two sets, containing three objects each, there are three isomorphisms that connect them, and that number grows exponentially. 
+The horizontal composition is the one that is a bit more complex. For it we need three categories $C$, $D$ and $E$ and two functors from $C$ $D$ and two from $D$ to $E$.
 
-But most of these isomorphisms, are just random. In our studies, whatever they are, we are only interested in structures that *make sense* in some way. In category theory the abstract notion of making sense is captured by the naturality condition.
+Then, we can compose these two pairs of functors together, to get two new functors $C \to E$.
 
+And, if there is a natural transformation $\alpha$ involving the $C \to D$ functors and one transformation $\bar\alpha$ involving the functors that go $D \to E$, we can compose those two natural transformations to get a new natural transformation $\bar\alpha \bullet \alpha$ involving the two new functors $C \to E$.
 
-Limits
-===
+The identity natural transformation. Whiskering
+---
+Given any functor, we can construct the *identity natural transformation* between this functor and itself.
 
-Products are one example of what is known in category theory as *limits*. A limit is an object that summarizes a structure (also called a diagram) consisting of other objects and morphisms in a way that allows us to later retrieve some of it.
+And an interesting special case of horizontal composition is horizontal composition involving this identity natural transformation: given a natural transformation $\bar\alpha$ involving functors with signature $D \to E$ and some functor with signature $F : C \to D$, we can take $alpha$ to be the identity natural transformation between functor $F$ and itself and compose it with $\bar\alpha$. We get a new to get a new natural transformation  $\bar\alpha \bullet \alpha$, which is the same as $\bar\alpha$ but has a different type signature.
 
-A limit also has to be unique in the sense that you cannot have two limit objects for the same structure.
-
-The notion of a limit is strongly related with the notion of a commuting diagrams. This is not obvious when we are examining products because the diagram of products does not have several routes reaching to the same point.
-
-Limits can be defined formally, just like everything else that we examine, but we won't bother to do that here.
-
-Products are Limits
+Vertical composition
 ---
 
-OK, we said that limits summarize a structure. What is the structure that a product is summarizing? It is a structure that consists of two objects (sets) that are have no connections between them.
- 
-![External diagram](../11_natural_transformations/product_part_external.svg)
- 
-Why is the product unique when it comes to representing the two objects? Because any other object that also represents them is connected to the product through a morphism (this is known as the *universal property* of limits).
+And now for *vertical* composition of natural transformations. Here we will need three (or more) functors with the same type signature, say $F, G, H: C \to D$. Then, natural transformations between two functors with appropriate signatures compose, e.g. $\alpha: F \to G$ and $\beta: G \to H$ make up $\beta \bullet \alpha : F \to H$.
 
 
-Natural transformations and associativity
-===
+Interchange law
+---
+Four naturality squares, with an appropriate structure can be composed 
 
-The definition of natural transformation just states that (ab)c = a(bc)
+Category of functors
+---
 
-
-
-Natural transformations from surjective functors are just regular functors.
-===
- 
-Generally, a natural transformation is not a function, it is a *family of morphisms* in the target category, one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it (and to an object of the second functor).
-
-However, in the case of programming, because the source and target categories are both `Set`), a natural transformation there is "a family of morphisms in `Set` one morphism for each object in `Set`" i.e. *a polymorphic function*.
-
-Here is how would a natural transformation would look like in a case resembling yours (this is a natural transformation `Identity => List`, not `List => List`, but the principle is the same).
-
-
-
-Free objects
-===
-
-
-https://math.stackexchange.com/questions/131389/what-are-free-objects
-
-Monads
-===
-
-
-Representable functors
-===
-
-A Hom-functor can always be converted to any set-valued functor (Yoneda lemma). But not the other way around
-
-Yoneda Lemma
-===
-
-
-https://www.azimuthproject.org/azimuth/show/Applied+Category+Theory+Course#Course
-
-
-https://eed3si9n.com/herding-cats/day1.html
-
-
-https://topology.mitpress.mit.edu/
-
-
-https://www.math3ma.com/blog/what-is-a-natural-transformation
-
-https://graphicallinearalgebra.net/2015/04/23/makelele-and-linear-algebra/
-
-https://www.math.toronto.edu/gscott/WhatVS.pdf
-
-https://www.youtube.com/playlist?list=PLk-BCMYCWSzW-nPNnw19Y6oQJnvaAcp1I
-
-https://brilliant.org/courses/linear-algebra/linear-equations-5/
- https://www.math3ma.com/blog/what-is-category-theory-anyway
-https://people.cs.nott.ac.uk/psztxa/mgs.2025/
+Now, we are approaching the end of the chapter and you all know what that means --- a new category! 
 
