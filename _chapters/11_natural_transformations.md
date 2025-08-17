@@ -595,43 +595,66 @@ That is, if we have a natural transformations $\alpha : F \Rightarrow G$ (where 
 
 This perspective helps us realize that a natural transformation can be viewed as a collection of commuting squares. The source functor defines the left-hand side of each square, the target functor --- the right-hand side, and the transformation morphisms join these two sides.
 
+![Notation for natural transformation](../11_natural_transformations/natural_transformation_notation.svg)
+
 We can even retrieve the structure of the source category of the functors, which (as categories are by definition structure and nothing more) is equivalent to retrieving the category itself.
 
 Composing natural transformations
 ===
 
-If we view natural transformations as collections of squares, the task of composing natural transformations can be reduced to the task of composing squares. 
-
-There are two ways to compose squares, horizontally...
-
-![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition.svg)
-
-...and vertically.
-
-![Vertical composition of natural transformation](../11_natural_transformations/vertical_composition.svg)
-
-Those indeed correspond to the two ways of composing natural transformations.
+Natural transformations are surely a different beast than normal morphisms and functors and so they don't compose in the same way. However, they do compose and here we will show how.
 
 Horizontal composition
 ---
+The setup for composing natural transformations is complicated: we need three categories $C$, $D$ and $E$ (just as composition of morphisms requires three objects). We need a total of four functors, distributed on two pairs, one pair of functors that goes from $C$ to $D$ and one that goes from $D$ to $E$ (so we can compose these two pairs of functors together, to get a new pair of functors that go $C \to E$). However, we will try to keep it simple and we will treat the natural transformation as a map from a morphism to a commuting square. As we showed above, this mapping already contains the two functors in itself.
 
-The horizontal composition is the one that is a bit more complex. For it we need three categories $C$, $D$ and $E$ and two functors from $C$ $D$ and two from $D$ to $E$.
+So, let's say that we have the natural transformation $\alpha$ involving the $C \to D$ functors (which we usually call $F$ and $G$).
 
-Then, we can compose these two pairs of functors together, to get two new functors $C \to E$.
+![Notation for natural transformation](../11_natural_transformations/horizontal_composition_notation.svg)
 
-And, if there is a natural transformation $\alpha$ involving the $C \to D$ functors and one transformation $\bar\alpha$ involving the functors that go $D \to E$, we can compose those two natural transformations to get a new natural transformation $\bar\alpha \bullet \alpha$ involving the two new functors $C \to E$.
+So, what will happen if we have one more transformation $\bar\alpha$ involving the functors that go $D \to E$ (which are labelled $F'$ and $G'$)? Well, since a natural transformation maps each morphism to a square, and a square contains four morphisms (two projections by the two functors and two components of the transformation), a square would be mapped to four squares.
+
+Let's start by drawing two of them for each projection of the morphism in $C$.
+
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_squares.svg)
+
+We have to have two more squares, corresponding to the two morphisms that are the components of the $\alpha$ natural transformation. However, these morphisms connect the objects that are the target of the two functors, objects that we already drew on our diagram, so rather than drawing them again, we just draw the connections between them.
+
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition.svg)
+
+We see that the result is an interesting structure which is sometimes visualized as a cube.
+
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube.svg)
+
+More interestingly, the cube contains not one, but two commuting squares, that connects $F'Ff$ and $G'Gf$ i.e. there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is called $\bar\alpha \bullet \alpha$.
+
+**Task:** Find the commuting square on the diagram above.
+
+**Task:** Show that commuting squares compose i.e. that when you stack two commuting squares next to each other you get a new commuting square.
 
 The identity natural transformation. Whiskering
 ---
-Given any functor, we can construct the *identity natural transformation* between this functor and itself.
 
-And an interesting special case of horizontal composition is horizontal composition involving this identity natural transformation: given a natural transformation $\bar\alpha$ involving functors with signature $D \to E$ and some functor with signature $F : C \to D$, we can take $alpha$ to be the identity natural transformation between functor $F$ and itself and compose it with $\bar\alpha$. We get a new to get a new natural transformation  $\bar\alpha \bullet \alpha$, which is the same as $\bar\alpha$ but has a different type signature.
+And an interesting special case of horizontal composition is horizontal composition involving the identity natural transformation: given a natural transformation $\bar\alpha$ involving functors with signature $D \to E$ and some functor with signature $F : C \to D$, we can take $\alpha$ to be the identity natural transformation between functor $F$ and itself and compose it with $\bar\alpha$. 
+
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_whiskering.svg)
+
+We get a new natural transformation $\bar\alpha \bullet \alpha$, that is practically the same as the one we started with ($\bar\alpha$) so what's the deal? We just found a way to *extend* a given natural transformation, using functors.
+
+**Task**: Try to extend the natural transformation in the other direction (by taking $\bar\alpha$ to be identity). 
+
+So, this is how you compose natural transformations. It's too bad that this is form of composition is different from the standard categorical composition. So, I guess natural transformations do not form a category, like we hoped they would...
+
+Well, OK, there is actually another way of composing categories, which might actually work.
 
 Vertical composition
 ---
 
-And now for *vertical* composition of natural transformations. Here we will need three (or more) functors with the same type signature, say $F, G, H: C \to D$. Then, natural transformations between two functors with appropriate signatures compose, e.g. $\alpha: F \to G$ and $\beta: G \to H$ make up $\beta \bullet \alpha : F \to H$.
+For *vertical* composition of natural transformations, we will need three (or more) functors with the same type signature, say $F, G, H: C \to D$ i.e. three functors that have the same source and target category. Then, we need two natural transformations between those functors with the appropriate type signatures e.g. $\alpha: F \to G$ and $\beta: G \to H$. 
 
+![Vertical composition of natural transformation](../11_natural_transformations/vertical_composition.svg)
+
+We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism $b \circ a : F \to H$. And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
 
 Interchange law
 ---
@@ -639,6 +662,5 @@ Four naturality squares, with an appropriate structure can be composed
 
 Category of functors
 ---
-
 Now, we are approaching the end of the chapter and you all know what that means --- a new category! 
 
