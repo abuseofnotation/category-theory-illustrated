@@ -604,8 +604,17 @@ Composing natural transformations
 
 Natural transformations are surely a different beast than normal morphisms and functors and so they don't compose in the same way. However, they do compose and here we will show how.
 
+The identity natural transformation
+---
+
+But before this, we have to get this one trivial definition out of the way --- for each functor, we have the identity natural transformation (actually a natural isomorphism) between it and itself.
+
+![The identity natural transformation](../11_natural_transformations/identity_natural_transformation.svg)
+
+
 Horizontal composition
 ---
+
 The setup for composing natural transformations is complicated: we need three categories $C$, $D$ and $E$ (just as composition of morphisms requires three objects). We need a total of four functors, distributed on two pairs, one pair of functors that goes from $C$ to $D$ and one that goes from $D$ to $E$ (so we can compose these two pairs of functors together, to get a new pair of functors that go $C \to E$). However, we will try to keep it simple and we will treat the natural transformation as a map from a morphism to a commuting square. As we showed above, this mapping already contains the two functors in itself.
 
 So, let's say that we have the natural transformation $\alpha$ involving the $C \to D$ functors (which we usually call $F$ and $G$).
@@ -626,13 +635,13 @@ We see that the result is an interesting structure which is sometimes visualized
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube.svg)
 
-More interestingly, the cube contains not one, but two commuting squares, that connects $F'Ff$ and $G'Gf$ i.e. there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is called $\bar\alpha \bullet \alpha$.
+More interestingly, the cube contains not one, but two commuting squares (visualized in grey and red) that connect morphisms $F'Ff$ and $G'Gf$ i.e. there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is called $\bar\alpha \bullet \alpha$.
 
 **Task:** Find the commuting square on the diagram above.
 
 **Task:** Show that commuting squares compose i.e. that when you stack two commuting squares next to each other you get a new commuting square.
 
-The identity natural transformation. Whiskering
+Whiskering
 ---
 
 And an interesting special case of horizontal composition is horizontal composition involving the identity natural transformation: given a natural transformation $\bar\alpha$ involving functors with signature $D \to E$ and some functor with signature $F : C \to D$, we can take $\alpha$ to be the identity natural transformation between functor $F$ and itself and compose it with $\bar\alpha$. 
@@ -656,11 +665,16 @@ For *vertical* composition of natural transformations, we will need three (or mo
 
 We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism $b \circ a : F \to H$. And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
 
-Interchange law
+Categories of functors
 ---
-Four naturality squares, with an appropriate structure can be composed 
 
-Category of functors
----
 Now, we are approaching the end of the chapter and you all know what that means --- a new category! 
 
+
+
+Interchange law
+---
+
+Four naturality squares, with an appropriate structure can be composed 
+
+$$(β \circ α) \bullet (\bar β \circ \bar α) = (β \bullet \bar β) \circ (α \bullet \bar α)$$
