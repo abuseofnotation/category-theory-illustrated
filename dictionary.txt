@@ -116,3 +116,5 @@ Peirce
 TODO
 mathy
 Tanenbaum
+svg
+naturality

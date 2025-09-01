@@ -12,10 +12,15 @@ In this chapter, we will introduce the concept of a morphism between functors or
 
 Natural transformations really are at the heart of category theory, however, their importance is not obvious at first. So, before introducing them, I like to talk, once more, about the body of knowledge that this heart maintains (I am good with metaphors... in principle).
 
-I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
+Equivalent categories
+===
+
+Our first section aims to introduce natural transformation as a motivating example for creating a way to say that two categories are equal. But for that, we need to understand what equal categories are and should be.
+
+So, are you ready to hear about equivalent categories and natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard). So, we will take a longer route. I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
 
 Objects are overrated AKA Heraclitus was right!
-===
+---
 
 > The world is the collection of facts, not of things. --- Ludwig Wittgenstein
 
@@ -27,22 +32,14 @@ However, there is another way to approach the question about the nature of the u
 
 Asking such questions might lead us to suspect that, although what we *see* when we look at the universe are the objects, it is the processes/relations/transitions or *morphisms* between the objects that are the real key to understanding it. For example, when we think hard about everyday objects we realize that each of them has a specific *functions* (note the term) without which, a thing would not be itself e.g. is a lamp that doesn't glow, still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all. So, instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
 
-Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored, until the 20th century, when a real mathematical revolution happened: Bertrand Russell created type theory, his student Ludwig Wittgenstein wrote a little book from from which the above quote comes from. A book which was admired by a group of mathematicians and logicians, known as the "Vienna circle", part of which was Rudolph Carnap who, coined the word "functor"...
-
-Equivalent categories
-===
-
-So, are you ready to hear about natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard). So, we will take the longer route. 
-
-My aim is to introduce natural transformation as a motivating example for creating a way to say that two categories are equal. But for that, we need to understand what equal categories are and should be.
+Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored, until the 20th century, when a real mathematical revolution happened: Bertrand Russell created type theory, his student Ludwig Wittgenstein wrote a little book, from which the above quote comes from, and this book inspired a group of mathematicians and logicians, known as the "Vienna circle". Part of this group was Rudolph Carnap who coined the word "functor"...
 
 Isomorphism invariance
 ---
 
-An embodiment of Heraclitus' view in the realm of category theory is concept of *isomorphism invariance* that we implicitly touched several times. 
+An embodiment of Heraclitus' view in the realm of category theory is the concept of *isomorphism invariance* that we implicitly touched several times. 
 
-All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are *isomorphism-invariant*.
-Or, equivalently, they define an objects *up to an isomorphism*. 
+All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are *isomorphism-invariant*. Or, equivalently, they define an objects *up to an isomorphism*. 
 
 Or, if there are two or more objects that are isomorphic to one another, and one of them has a given property, then the rest of them would to also have this property as well. 
 
@@ -63,13 +60,12 @@ This is because (though it may seem contradictory at first) *categorical isomorp
 
 ![Isomorphic categories](../11_natural_transformations/equal_categories.svg)
 
-For this reason, we need a new concept of equality of categories. A concept that would ellucidate the *differences* between categories with different structure, but also the *sameness* of categories who have the same categorical structures, disregarding the differences that are irrelevant for category-theoretic standpoint. That concept is *equivalence*.
+For this reason, we need a new concept of equality of categories. A concept that would elucidate the *differences* between categories with different structure, but also the *sameness* of categories who have the same categorical structures, disregarding the differences that are irrelevant for category-theoretic standpoint. That concept is *equivalence*.
 
-<!--comic
+<!--comic-->
 **Parmenides:** This category surely cannot be equal to the other one --- it has a different amount of objects!
 
 **Heraclitus:** Who cares bro, they are isomorphic.
--->
 
 Equivalences are isomorphism invariant
 ---
@@ -86,7 +82,7 @@ For example, if there are intersections that are positioned in such a way that t
 
 These two categories are *not isomorphic* --- going from one of them to the other and back again doesn't lead you to the same object. 
 
-However, going from one of them to the other would lead you at least to an *isomophic object*. 
+However, going from one of them to the other would lead you at least to an *isomorphic object*. 
 
 ![Equivalent categories](../11_natural_transformations/equivalent_map_equivalence.svg)
 
@@ -105,7 +101,7 @@ But when does this happen? To understand this, we plot the orders as a Hasse dia
 
 ![Equivalent orders](../11_natural_transformations/equivalent_orders_hasse.svg)
 
-You can see that, althought not all objects are connected one-to-one, *all objects at a given level are connected to objects of the corresponding level*.
+You can see that, although not all objects are connected one-to-one, *all objects at a given level are connected to objects of the corresponding level*.
 
 To formalize that notion, we remember the concept of *equivalence classes* that we covered in the chapter about orders. Let's visualize the relationship of the equivalence classes of the two orders that we saw above.
 
@@ -113,15 +109,15 @@ To formalize that notion, we remember the concept of *equivalence classes* that 
 
 You can see that they are isomorphic. And that is no coincidence: two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
-This is a definition for equivalence of orders, but unfortunately, it does not hold for all categories --- when we are working with orders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
+This is a definition for equivalence of orders, but unfortunately, it does not hold for all categories --- when we are working with orders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e. to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
 
 For example, the following two categories are *not* equivalent, although their equivalence classes are isomorphic --- the category on the left has just one morphism, but the category on the right has two.
 
 ![Non-equivalent categories](../11_natural_transformations/unequal_categories.svg)
 
-We could define equivalence of categories by generalizing the notion of equivalence classes of orders to what we call *skeletons* of categories, a skeleton of a category being a subcategory which does not contain any isomorphic objects, however, we will leave this (pardon my French) as an *exercise for the reader*. Why? We already did this when we generalized the notion of normal set-theoretic functions to *functors*, and so it makes more sense to build up on that notion.
+One way of defining equivalence of categories is by generalizing the notion of equivalence classes of orders to what we call *skeletons* of categories, a skeleton of a category being a subcategory in which all objects that are isomorphic to one another are "merged" into one object (isomorphic objects are necessarily identical).
 
-Also, we need a motivating example for introducing natural transformations, remember?
+However, we will leave this (pardon my French) as an *exercise for the reader*. Why? We already did this when we generalized the notion of normal set-theoretic functions to *functors*, and so it makes more sense to build up on that notion. Also, we need a motivating example for introducing natural transformations, remember?
 
 Defining equivalence in terms of morphisms
 ---
@@ -212,7 +208,7 @@ i.e. a transformation is natural when every morphism $f$ in $C$ is mapped to mor
 
 We may view a natural transformation is a mapping between morphisms and commutative squares: two functors and a natural transformation between two categories means that for each morphism in the source category of the functors, there exist one commutative square at the target category.
 
-![Commutin squares of a natural transformation](../11_natural_transformations/natural_transformation_squares.svg)
+![Commuting squares of a natural transformation](../11_natural_transformations/natural_transformation_squares.svg)
 
 When we fully understand this, we realize that commutative squares are made of morphisms too, so, like morphisms, they compose --- for any two morphisms with appropriate type signatures that have we can compose to get a third one, we have two naturality squares which compose the same way.
 
@@ -244,7 +240,7 @@ I am sorry, what were we talking about again? Oh yeah --- categorical equivalenc
 
 1. At the beginning of the section we introduced the notion of equivalence as two functors, such that going from one of them to the other and back again leads you to the same object, or to an *object that is isomorphic* to the one you started with. 
 
-2. And then, we discussed that for categories that are not thin (thick?) the situation is a bit more complex, due to the fact that we should worry not only about isomorphic objects, but about *isomorphic morphisms*. 
+2. And then, we discussed that for categories that are not thin (thick?) the situation is a bit more complex since they can have more than one morphism between two objects, and we should worry not only about isomorphic objects, but about *isomorphic morphisms*. 
 
 Now, we will show how these two notions are formalized by the definition that we presented.
 
@@ -275,23 +271,27 @@ With this, we are finished with categorical equivalence, but not with natural tr
 Natural transformations in programming. Natural transformations on the list functor
 ===
 
-Here, we will see some more natural transformations and will examine further this elusive the naturality condition in the context of programming.
+In the course of this book, we learned that programming/computer science is the study of the category of types in programming languages. However (in order to avoid this being too obvious) in the computer science context, we use different terms for the standard category-theoretic concepts. 
 
-Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural. 
+We learned that objects are known as *types*, products and coproducts are, respectively, *objects/tuple* types and *sum* types. And, in the last chapter, we learned that functors are known as *generic types*. Now it's the time to learn what natural transformations are in this context. They are known as *(parametrically) polymorphic functions*.
 
 Pointed functors again
 ---
 
-Now, suppose this sounds a bit vague. If only we had some example of a natural transformation in programming, that we can use... But wait, we do have one! We showed a natural transformation in the previous chapter, when we talked about what pointed functors. That's right, a functor is pointed when there is a natural transformation between it and the identity functor i.e. to have one green arrow for every object/type.
+Now, suppose this sounds a bit vague. If only we had some example of a natural transformation in programming, that we can use... But wait, we did show a natural transformation, in the previous chapter, when we talked about pointed functors. 
+
+That's right, a functor is pointed when there is a natural transformation between it and the identity functor i.e. to have one green arrow for every object/type.
 
 ![Pointed functor](../11_natural_transformations/pointed_functor.svg)
 
-And this clearly is a natural transformation. As a matter of fact, if we get down to the nitty-griti, it resembles a lot the equivalence diagram that we saw earlier --- both transformations involve the identity functor, and both transformations have the same category as source and target, that's why we can put everything in one circle (we don't do that in the equivalence diagram, but that's just a matter of presentation). The only difference between the two transformations is that an equivalence requires that a functor be *isomorphic* to the identity functor (i.e. it is two-way), while for a functor to be pointed, there must only be a natural transformation from it (one-way) (so the equivalence functor is pointed, but not the other way around). 
+And this clearly is a natural transformation. As a matter of fact, if we get down to the nitty-gritty, we would see that it resembles a lot the equivalence diagram that we saw earlier --- both transformations involve the identity functor, and both transformations have the same category as source and target, that's why we can put everything in one circle (we don't do that in the equivalence diagram, but that's just a matter of presentation). 
+
+Actually, the only difference between the two transformations is that an equivalence is defined by a natural *natural isomorphism* of a given functors to the identity functor ( $ID \cong f \circ g $ and $ID \cong g \circ f$), while a pointed functor is defined by a one-way *natural transformation* from the identity functor ($ID \to f $)  i.e. the equivalence functor is pointed, but not the other way around). 
 
 Polymorphic functions as natural transformations 
 ---
 
-In the previous chapter, we said that a natural transformation is equivalent to a polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated)?
+We said that a natural transformation is equivalent to a (parametrically) polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated):
 
 > Two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$. Morphisms that map each object of the target of $F$ (or the image of $F$ in $D$ as it is also called) to some object in the target of $G$. 
 
@@ -301,7 +301,8 @@ Indeed it is (I wasn't lying to you, in case you are wondering), however, in the
 
 As we know from the last chapter, a functor in programming is a generic type (which, has to have the `map` function with the appropriate signature). 
 
-And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morhpisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary 
+And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morhpisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary.
+
 ```typescript
 
 function alpha<A>(a: F<A>) : G<A> {
@@ -321,7 +322,7 @@ function array<A>(a: <A>) : Array<A> {
 Some examples of natural transformations
 ---
 
-Once we rid outselves of the feeling of cofusion, that such an excessive amount of new terminology and concepts impose upon us (this can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
+Once we rid ourselves of the feeling of confusion, that such an excessive amount of new terminology and concepts impose upon us (which can take years, by the way), we realize that there are, of course, many polymorphic functions/natural transformations that programmers use.
 
 For example, in the previous chapter, we discussed one natural transformation/polymorphic function the function $\forall a.a \to [a]$ which puts every value in a singleton list. This function is a natural transformation between the identity functor and the list functor. 
 
@@ -344,6 +345,8 @@ or *flatten* a list of lists of things to a regular list of things (the signatur
 The naturality condition 
 ---
 
+Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural. 
+
 So, what does the naturality condition entail, in programming? To understand this, we construct some naturality squares of the transformations that we presented.
 
 We choose two types that play the role of $a$, in our case $string$ and $num$ and one natural transformation, like the transformation between the identity functor and the list functor.
@@ -364,7 +367,7 @@ And in TypeScript, when we are talking specifically about the identity functor a
 
 So, is this equation true in our case? To verify it, we take one last peak at the world of values.
 
-We aquire an $f$, that is, we a function that acts on simple values (not lists), such as the function $length : string \to num$, which returns the number of characters a string has and convert it, (or *lift* it, as the terminology goes) to a function that acts on more complex values, using the list functor, (and the higher-order function $map$).
+We acquire an $f$, that is, we a function that acts on simple values (not lists), such as the function $length : string \to num$, which returns the number of characters a string has and convert it, (or *lift* it, as the terminology goes) to a function that acts on more complex values, using the list functor, (and the higher-order function $map$).
 
 ![A lifted function](../11_natural_transformations/lifted_function_f.svg)
 
@@ -407,7 +410,7 @@ Non-natural transformations
 
 "Unnatural", or "non-natural" transformations (let's call them just *transformations*) are mentioned so rarely, that we might be inclined to ask if they exist. The answer is "yes and no". Why yes? On one hand, transformations, consist of an innumerable amount of morphisms, forming an ever more innumerable amount of squares and obviously nothing stops some of these squares to be non-commuting. 
 
-For example, if we substitude one morphism from the family of morphisms that make up the natural transformation with some other random morphism that has the same signature, all squares that have this morphism as a component would stop commuting.
+For example, if we substitute one morphism from the family of morphisms that make up the natural transformation with some other random morphism that has the same signature, all squares that have this morphism as a component would stop commuting.
 
 ![Unnatural transformation](../11_natural_transformations/unnatural_transformation_squares.svg)
 
@@ -419,7 +422,7 @@ And in the category of sets, where morphisms are functions i.e. mappings between
 
 Finally, if can just gather a bunch of random morphisms, one for each object, that fit the criteria, we get what I would call a "perfectly unnatural transformation" (but this is my terminology).
 
-But, although they do exist, it is very hard to define non-natural transformations. For example, for categories that are *infinite*, there is no way to specify such "perfecly unnatural transformation" (ones where none of the squares commute) without resorting to randomness. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type), are not possible to specify in some languages e.g. you can define such a transformation in Typescript, but not in Haskell.
+But, although they do exist, it is very hard to define non-natural transformations. For example, for categories that are *infinite*, there is no way to specify such "perfectly unnatural transformation" (ones where none of the squares commute) without resorting to randomness. And even transformations on finite categories, or the "semi-natural" transformations which we described above (the ones that include a single condition for a single value or type), are not possible to specify in some languages e.g. you can define such a transformation in Typescript, but not in Haskell.
 
 To see why, let's see what the type of a natural transformation is.
 
@@ -445,16 +448,17 @@ function unnatural<A> (a: Array<A>): Array <A>{
     }
 }
 ```
+
 <!--comic-->
 (Look at this piece of code! Doesn't this seem "unnatural"?)
 
-This will work, but, if you try to do the same in Haskell, for example, it would immediately tell you that you cannot ("`a` is a "rigid type variable" (also known as "Skolem variable" in other context)). Why is it so?  There are some *technical reasons*, as runtime type checks like this one, add performance overhead, because they require the runtime to preserve type information for each value, after compilation, but there is also a strong *philosophical reason*:
+This will work, but, if you try to do the same in Haskell, for example, it would immediately tell you that you cannot ("`a` is a "rigid type variable" (also known as "Skolem variable" in other context)). Why is it so?  There are some *technical reasons*, as runtime type checks like this one, add performance overhead, because they require the runtime to preserve type information for each value, after compilation, but there is also a strong *philosophical reason*: a general function should work in a general way. And the generality of a function that checks the type of a value at runtime (and behaves differently for different types) is dubious at best. 
 
-A general function should work in a general way. And the generality of a function that checks the type of a value at runtime (and behaves differently for different types) is dubious at best.Such function is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for it to be true.
+Such function is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for it to be true.
 
 In other words, unnatural transformations wouldn't work in Haskell, simply because they are ... unnatural i.e. they do not follow the laws.
 
-By the way, in programming, this principle is called "parametricity" and the natural abstract functions are called "parametrically polymorphic" (whereas the others are called ad-hoc polymorphism).
+By the way, in programming, this principle is called "parametricity" and the natural abstract functions are called "parametrically polymorphic", whereas unnatural polymorphic functions are known as ad-hoc polymorphic.
 
 <!--
 {%endif%}
@@ -469,13 +473,11 @@ Let's again review the commuting diagram that represents a natural transformatio
 
 ![Two functors](../11_natural_transformations/natural_functors.svg)
 
-This diagram might prompt us into viewing natural transformations as some kind of "double functors" that have not one but two arrows coming from each of their morphisms. 
-
-Double functors don't exist, but this notion, can be formalized, with *product categories*. 
+This diagram might prompt us into viewing natural transformations as some kind of "two-arrow functors" that have not one but two arrows coming from each of their morphisms --- this notion, can be formalized, by using *product categories*. 
 
 Oh wait, I just realized we never covered product categories... but don't worry, we will cover them now.
 
-Product groups
+Product groups and product categories
 ---
 
 We haven't covered product categories, however some pages ago, when we covered monoids and groups, we talked about the concept of a *product group*. The good news is that product *categories* are a generalization of product *groups*...
@@ -508,7 +510,7 @@ $$\circ : G \times H \to G \times H \to G \times H$$
 
 i.e. the group operation takes one pair of elements from $G$ and $H$ and another pair of elements from $G$ and $H$, only to return --- guess what --- a pair of elements $G$ and $H$. 
 
-Let's take an example. To avoid confusion, we take two totally different groups --- the color-mixing group and the group of integers under addition. That would mean that a value of $G \times H$ would be a pair, containing a random color and a random number, and the operation would combine two combine two such pairs and and produce another one.
+Let's take an example. To avoid confusion, we take two totally different groups --- the color-mixing group and the group of integers under addition. That would mean that a value of $G \times H$ would be a pair, containing a random color and a random number, and the operation would combine two combine two such pairs and produce another one.
 
 ![Equations of the product of numbers and colors](../11_natural_transformations/product_group_equations.svg)
 
@@ -543,7 +545,7 @@ $$\forall G H. G \to H \to G \times H$$
 
 We shown above how polymorphic functions are transformations (this one is harder to reason about, since it is parametrized over not one, but two types, but we learned how to represent functions that take two arguments as functions that take one argument in chapter 2).
 
-We also said that we are interested in solutions which produce a number, somehow by using the two numbers provided, not just picking one at random, and, similarily, ones that produce a new color using the colors given. This condition corresponds to the *naturality condition* which indeed does hold (correct by construction) for all product groups.
+We also said that we are interested in solutions which produce a number, somehow by using the two numbers provided, not just picking one at random, and, similarly, ones that produce a new color using the colors given. This condition corresponds to the *naturality condition* which indeed does hold (correct by construction) for all product groups.
 
 <!--
 {%endif%}
@@ -591,7 +593,7 @@ Furthermore, any natural transformation from $C$ to some other category (call it
 
 That is, if we have a natural transformations $\alpha : F \Rightarrow G$ (where  $F: C \to D$ and  $G: C \to D$), then, we also have a functor  $2 \times C \to D$, such that if we take the subcategory of $2 \times C$ comprised of just those objects that have the $0$ object as part of the pair, and the morphisms between them, we get a functor that is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
 
-**Task:** See how the two definitions are equivalent.
+**Task:** Show that the two definitions are equivalent.
 
 This perspective helps us realize that a natural transformation can be viewed as a collection of commuting squares. The source functor defines the left-hand side of each square, the target functor --- the right-hand side, and the transformation morphisms join these two sides.
 
@@ -671,9 +673,10 @@ Categories of functors
 Now, we are approaching the end of the chapter and you all know what that means --- a new category! 
 
 
-
 Interchange law
 ---
+
+We've seen two ways to compose natural transformations: vertically (◦), like stacking squares, and horizontally (•), like composing their functors side-by-side. 
 
 Four naturality squares, with an appropriate structure can be composed 
 

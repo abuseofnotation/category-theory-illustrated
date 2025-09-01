@@ -462,7 +462,7 @@ The smoothness of the mapping means that paths may stretch or collapse but not b
 Functors in programming. The list functor
 ===
 
-Types in programming language form a category, and in that category there are some functors that programmers use every day, such as the list functor, that we will use as an example. The list functor is an example of a functor that maps the realm of simple (primitive) types and functions to the realm of more complex (generic) types and functions. 
+Types in a given programming language form a category, and in that category there are some functors that programmers use every day, such as the list functor, that we will use as an example. The list functor is an example of a functor that maps the realm of simple (primitive) types and functions to the realm of more complex (generic) types and functions. 
 
 ![A functor in programming](../10_functors/functor_programming.svg)
 
