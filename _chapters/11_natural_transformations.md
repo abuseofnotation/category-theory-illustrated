@@ -663,15 +663,43 @@ Vertical composition
 
 For *vertical* composition of natural transformations, we will need three (or more) functors with the same type signature, say $F, G, H: C \to D$ i.e. three functors that have the same source and target category. Then, we need two natural transformations between those functors with the appropriate type signatures e.g. $\alpha: F \to G$ and $\beta: G \to H$. 
 
-![Vertical composition of natural transformation](../11_natural_transformations/vertical_composition.svg)
+![Vertical composition of natural transformations](../11_natural_transformations/vertical_composition.svg)
 
 We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism $b \circ a : F \to H$. And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
 
 Categories of functors
 ---
 
-Now, we are approaching the end of the chapter and you all know what that means --- a new category! 
+Now, we are approaching the end of the chapter, we will introduce our category and call it quits. To do that, we introduce a more compressed notation for vertical composition of natural transformations (where they do indeed look vertical).
 
+We started this chapter by looking at category of sets and using internal diagrams, displaying the set elements as points and the sets/objects as collections. 
+
+![Vertical composition of natural transformations - internal diagram](../11_natural_transformations/vertical_composition_internal.svg)
+
+**Task:** identify the function, the three functors, and the two natural transformations used in this diagram.
+
+<!--
+answer
+(A little note, if you want to understand the diagram better: $F$ and $G$ are the $List$ functor, $H$ is the $ID$ functor, $\alpha$ is  $reverse: List \to List$ and $\beta$ is $head : List \to ID$ and $f$ is $length : string \to int$)
+-->
+
+Then, we quickly passed to normal external diagrams, where objects are points and categories are collections.
+
+![Vertical composition of natural transformations](../11_natural_transformations/vertical_composition.svg)
+
+And now we go one more level further, and show the category of categories, where categories are points and functors are morphisms.
+
+![Vertical composition of natural transformations in Cat](../11_natural_transformations/vertical_composition_cat.svg)
+
+In this notation, we display natural transformations as (double) arrows between morphisms.
+
+![Vertical composition of natural transformations in Cat](../11_natural_transformations/vertical_composition_cat_2.svg)
+
+And you can already see the new category that is formed: For each two objects in the category of categories Cat (like $C$ and $D$ in this case), there exist one category where functors are objects and natural transformations are morphisms. Natural transformations compose with vertical compositions, and, of course, the identity natural transformation is the identity morphism.
+
+![Vertical composition of natural transformations in Cat](../11_natural_transformations/functor_category.svg)
+
+Now, you might be wondering the following: $Cat$ is a category that has, as every other category, morphisms between objects, but it also has *morphisms between morphisms* (which can even compose and form categories). What does that make of it.
 
 Interchange law
 ---
