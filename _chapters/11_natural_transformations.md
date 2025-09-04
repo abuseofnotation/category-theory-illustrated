@@ -138,7 +138,7 @@ To amend it so it is valid for all categories  by just replacing the word "funct
 
 > Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
 
-**Task:** Show that the two definitions are equivalent.
+**Task 1:** Check if that definition is valid.
 
 Believe it or not, this definition, is just one find-and-replace operation away from the definition of *equivalence*. We get there only by replace equality with isomorphism (so, $=$ with $\cong$). 
 
@@ -182,9 +182,9 @@ It is simpler than it sounds when we realize that we only need to connect the ob
 
 ![Two functors and a natural transformation](../11_natural_transformations/natural_transformation.svg)
 
-Note that this mapping does not map every object from the source category,  i.e. not all objects have arrows coming from them (e.g. here the black and blue square do not have arrows), although, in some cases, it *might*.
+Note that this mapping does not map every object from the target category,  i.e. not all objects have arrows coming from them (e.g. here the black and blue square do not have arrows), although, in some cases, it *might*.
 
-**Question:** When exactly would the mapping encompass all objects?
+**Task 2:** When exactly would the mapping encompass all objects?
 
 Morphism mapping mapping
 ---
@@ -340,7 +340,10 @@ or *flatten* a list of lists of things to a regular list of things (the signatur
 
 ![The natural transformation, for flattening a list in Set](../11_natural_transformations/flatten_set_transformation.svg)
 
-**Task:** Using the first naturality square (displayed above) draw the naturality squares for the rest of the natural transformations.
+**Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
+
+![The natural transformation, for reversing a list in Set](../11_natural_transformations/reverse_set_transformation_task.svg)
+Do the same for the rest of the transformations.
 
 The naturality condition 
 ---
@@ -403,7 +406,7 @@ $$ F\ f \circ F\ g \circ take1 \circ reverse$$
 
 ...or any other such sequence (the only thing that isn't permitted is to flip the members of the two sequences --- ($take1 \circ reverse$ is of course different from $reverse \circ take1$and if you have $F\ f \circ F\ g$, then $F\ g \circ F\ f$ won't be permitted at all due to the different type signatures).
 
-**Task:** Prove the above results, using the formula of the naturality condition.
+**Task 4:** Prove the above results, using the formula of the naturality condition.
 
 Non-natural transformations
 ---
@@ -593,7 +596,7 @@ Furthermore, any natural transformation from $C$ to some other category (call it
 
 That is, if we have a natural transformations $\alpha : F \Rightarrow G$ (where  $F: C \to D$ and  $G: C \to D$), then, we also have a functor  $2 \times C \to D$, such that if we take the subcategory of $2 \times C$ comprised of just those objects that have the $0$ object as part of the pair, and the morphisms between them, we get a functor that is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
 
-**Task:** Show that the two definitions are equivalent.
+**Task 5:** Show that the two definitions are equivalent.
 
 This perspective helps us realize that a natural transformation can be viewed as a collection of commuting squares. The source functor defines the left-hand side of each square, the target functor --- the right-hand side, and the transformation morphisms join these two sides.
 
@@ -621,7 +624,7 @@ The setup for composing natural transformations is complicated: we need three ca
 
 So, let's say that we have the natural transformation $\alpha$ involving the $C \to D$ functors (which we usually call $F$ and $G$).
 
-![Notation for natural transformation](../11_natural_transformations/horizontal_composition_notation.svg)
+![Notation for natural transformation](../11_natural_transformations/horizontal_composition_notation.svg) 
 
 So, what will happen if we have one more transformation $\bar\alpha$ involving the functors that go $D \to E$ (which are labelled $F'$ and $G'$)? Well, since a natural transformation maps each morphism to a square, and a square contains four morphisms (two projections by the two functors and two components of the transformation), a square would be mapped to four squares.
 
@@ -633,15 +636,17 @@ We have to have two more squares, corresponding to the two morphisms that are th
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition.svg)
 
-We see that the result is an interesting structure which is sometimes visualized as a cube.
+The result is an interesting structure which is sometimes visualized as a cube.
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube.svg)
 
-More interestingly, the cube contains not one, but two commuting squares (visualized in grey and red) that connect morphisms $F'Ff$ and $G'Gf$ i.e. there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is called $\bar\alpha \bullet \alpha$.
+More interestingly, this cube contains not one, but two commuting squares (visualized in grey and red) that connect morphisms $F'Ff$ and $G'Gf$. 
 
-**Task:** Find the commuting square on the diagram above.
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube_commuting.svg)
 
-**Task:** Show that commuting squares compose i.e. that when you stack two commuting squares next to each other you get a new commuting square.
+So, there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is usually marked $\bar\alpha \bullet \alpha$ ( with a black dot).
+
+**Task 6:** Show that commuting squares compose i.e. that when you stack two commuting squares next to each other you get a new commuting square.
 
 Whiskering
 ---
@@ -650,9 +655,9 @@ And an interesting special case of horizontal composition is horizontal composit
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_whiskering.svg)
 
-We get a new natural transformation $\bar\alpha \bullet \alpha$, that is practically the same as the one we started with ($\bar\alpha$) so what's the deal? We just found a way to *extend* a given natural transformation, using functors.
+We get a new natural transformation $\bar\alpha \bullet \alpha$, that is practically the same as the one we started with (i.e. the same as $\bar\alpha$) so what's the deal? We just found a way to *extend* natural transformations, using functors: i.e   we can use a functor with signature $C \to D$ to extend a $D \to E$ natural transformation and make it $C \to E$.
 
-**Task**: Try to extend the natural transformation in the other direction (by taking $\bar\alpha$ to be identity). 
+**Task 7**: Try to extend the natural transformation in the other direction (by taking $\bar\alpha$ to be identity). 
 
 So, this is how you compose natural transformations. It's too bad that this is form of composition is different from the standard categorical composition. So, I guess natural transformations do not form a category, like we hoped they would...
 
@@ -661,11 +666,11 @@ Well, OK, there is actually another way of composing categories, which might act
 Vertical composition
 ---
 
-For *vertical* composition of natural transformations, we will need three (or more) functors with the same type signature, say $F, G, H: C \to D$ i.e. three functors that have the same source and target category. Then, we need two natural transformations between those functors with the appropriate type signatures e.g. $\alpha: F \to G$ and $\beta: G \to H$. 
+Recall that categorical composition involves three objects and two successive arrows between them. For vertical composition of natural transformations, we will need three (or more) *functors* with the same type signature, say $F, G, H: C \to D$ i.e. (same source and target category) and two successive *natural transformations* between those functors i.e. $\alpha: F \to G$ and $\beta: G \to H$. 
 
 ![Vertical composition of natural transformations](../11_natural_transformations/vertical_composition.svg)
 
-We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism $b \circ a : F \to H$. And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
+We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism, which we call $b \circ a : F \to H$ (the composition operator is the  usual white circle, as opposed to the black one, which denotes horizontal composition). And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
 
 Categories of functors
 ---
@@ -676,7 +681,7 @@ We started this chapter by looking at category of sets and using internal diagra
 
 ![Vertical composition of natural transformations - internal diagram](../11_natural_transformations/vertical_composition_internal.svg)
 
-**Task:** identify the function, the three functors, and the two natural transformations used in this diagram.
+**Task 8:** identify the function, the three functors, and the two natural transformations used in this diagram.
 
 <!--
 answer
@@ -695,17 +700,93 @@ In this notation, we display natural transformations as (double) arrows between 
 
 ![Vertical composition of natural transformations in Cat](../11_natural_transformations/vertical_composition_cat_2.svg)
 
-And you can already see the new category that is formed: For each two objects in the category of categories Cat (like $C$ and $D$ in this case), there exist one category where functors are objects and natural transformations are morphisms. Natural transformations compose with vertical compositions, and, of course, the identity natural transformation is the identity morphism.
+And you can already see the new category that is formed: For each two categories (like $C$ and $D$ in this case), there exists a category which has functors for objects and natural transformations as morphisms. 
 
 ![Vertical composition of natural transformations in Cat](../11_natural_transformations/functor_category.svg)
 
-Now, you might be wondering the following: $Cat$ is a category that has, as every other category, morphisms between objects, but it also has *morphisms between morphisms* (which can even compose and form categories). What does that make of it.
+Natural transformations compose with vertical compositions, and, of course, the identity natural transformation is the identity morphism.
 
 Interchange law
 ---
 
-We've seen two ways to compose natural transformations: vertically (◦), like stacking squares, and horizontally (•), like composing their functors side-by-side. 
+Vertical and horizontal composition of natural transformations are related to each other in the following way: 
 
-Four naturality squares, with an appropriate structure can be composed 
+If we have (as we had) two successive natural transformations, in the vertical sense, like $\alpha: F \to G$ and $\beta: G \to H$.
+
+![The interchange law -- horizontal component](../11_natural_transformations/interchange_law_horizontal.svg)
+
+And two successive ones, this time in horizontal sense e.g. $\bar\alpha: F' \to G'$ and $\bar\beta: G' \to H'$. (note that $\alpha$ has nothing to do with $\bar\alpha$ as $\beta$ has nothing to do with $\bar\beta$, we just call them that way to avoid using too many letters)
+
+![The interchange law -- vertical component](../11_natural_transformations/interchange_law_vertical.svg)
+
+And if the two pairs of natural transformations both start from the same category and the same functor, then the compositions of the two pairs of natural transformations obey the following law
 
 $$(β \circ α) \bullet (\bar β \circ \bar α) = (β \bullet \bar β) \circ (α \bullet \bar α)$$
+
+
+**Task 9:** Draw the paths of the two compositions of the transformations (on the two sides of the equation) and ensure that they indeed lead to the same place. 
+
+![The interchange law](../11_natural_transformations/interchange_law.svg)
+
+2-Categories
+---
+
+At this point you might be wondering the following (although statistically you are more likely to wonder what the heck is all this about): We know that all categories are objects of $Cat$ the category of small categories, in which functors play the role of morphisms. 
+
+But, functors between given categories also form a category, under vertical composition. Which means that $Cat$ not only has (as any other category) morphisms between objects, *but* also has *morphisms between morphisms*. And furthermore, those two types of morphisms compose in this very interesting way. 
+
+So, what does that make of $Cat$? I don't know, perhaps we can call natural transformations "2-morphisms" and $Cat$ is some kind of "2-category"?
+
+But wait, actually it's way too early for you to find out. We haven't even covered limits...
+
+<!--
+{% if site.distribution != 'print' %}
+-->
+
+Answers 
+===
+
+**Task 1:** Check if that definition is valid.
+---
+The definition in question is:
+
+> Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+
+We can check it by expanding the definition of a functor.
+
+The functor has:
+1. Object mapping
+2. Morphism mapping
+3. Law
+
+Expanding the object mapping gives us exactly the definition of set isomorphism:
+
+> Two **sets** $A$ and $B$ are **isomorphic** (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+
+Expanding the morphism mapping and the law would give us the rest.
+
+
+**Task 2:** When exactly would the mapping encompass all objects?
+---
+
+As we say above: 
+> mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category: one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it.
+
+So the mapping encompasses all object *from the image of the functor*. So when would that encompass all objects period. Simple --- when the functor is bijective (or surjective, if we are with there being more than one arrow per object). Most often, that happens when the two categories are actually one and the same category.
+
+**Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
+---
+To draw a square of the $reverse: List a \to List a$ natural transformation, we must first:
+1. Pick a function $f$ from number (because we want to use the mapping that is displayed) to something else, say  $+1 : number \to number$. 
+2. Lift it to a function $Ff: List number \to List number$ that adds one to every number from the list.
+
+Then we:
+1. Draw the results of the application of the function on the sets that are at the top, at the corresponding boxes at the bottom e.g. $[1, 2$]$ becomes $[2, 3]$.
+2. Draw the connections of applying the $reverse$ natural transformation.
+
+If you worked correctly, the functions would commute.
+
+
+<!--
+{%endif%}
+-->

@@ -433,17 +433,19 @@ There are some types of categories that have only one morphism between two objec
 
 ## Composition
 
-The most important requirement for a structure to be called a category is that _two morphisms can make a third_, or in other words, that morphisms are _composable_ --- given two successive arrows with appropriate type signatures, we can make a third one (in set theory, it is equivalent to the consecutive application of the first two).
+The most important requirement for a structure to be called a category is that _two morphisms can make a third_, or in other words, that morphisms are _composable_. 
+
+Given three objects and two successive arrows with between them, we can make a third arrow (in set theory, it is equivalent to the consecutive application of the first two).
 
 ![Composition of morphisms](../02_category/composition.svg)
 
-Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $•$ such that for each pair of morphisms $g: A \to B$ and $f: B \to C$, there exists a morphism $(f • g): A \to C$.
+Formally, this requirement says that there should exist an _operation_, usually denoted with the symbol $\circ$ such that for each pair of morphisms $g: A \to B$ and $f: B \to C$, there exists a morphism $(f \circ g): A \to C$.
 
 ![Composition of morphisms in the context of additional morphism](../02_category/composition_arrows.svg)
 
-This is the most important part of the definition. If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
+If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
 
-**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f • g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "•" as "after", e.g. $f \;\text{after}\; $g.
+**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f \circ g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "\circ" as "after", e.g. $f \;\text{after}\; $g.
 
 ## The law of identity
 
@@ -463,7 +465,7 @@ Composition is special not only because you can take any two morphisms with appr
 
 ![Composition of morphisms with many objects](../02_category/composition_n_objects.svg)
 
-If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h • g) • f = h • (g • f)$).
+If we carefully review the definition above, we can see that it can be reduced to multiple applications of the following formula: given 3 objects and 2 morphisms between them $f$ $g$ $h$, combining $h$ and $g$ and then combining the end result with $f$ should be the same as combining $h$ to the result of $g$ and $f$ (or simply $(h \circ g) \circ f = h \circ (g \circ f)$).
 
 This formula can be expressed using the following diagram, which would only commute if the formula is true (given that all our category-theoretic diagrams are commutative, we can say, in such cases, that the formula and the diagram are equivalent).
 
@@ -471,7 +473,7 @@ This formula can be expressed using the following diagram, which would only comm
 
 This formula (and the diagram) is the definition of a property called *associativity*. Being associative is required for functional composition to really be called functional composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, that would be super weird).
 
-Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h • g) • f = h • (g • f)$).
+Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h \circ g) \circ f = h \circ (g \circ f)$).
 
 And it is not only about categories either, it is a property of many other operations on other types of objects as well e.g. if we look at numbers, we can see that the multiplication operation is associative e.g. $(1 \times 2) \times 3 = 1 \times (2 \times 3)$. While division is not $(1 / 2) / 3 \neq 1 / (2 / 3)$.
 
@@ -494,11 +496,10 @@ The diagram above is one of the simplest commuting diagrams.
 For future reference, let's restate what a category is:
 
 A category is a collection of _objects_ (we can think of them as _points_) and _morphisms_ (or _arrows_) that go from one object to another, where:
-Each object has to have the identity morphism.
-There should be a way to compose two morphisms with an appropriate type signature into a third one, in a way that is _associative_.
+- Each object has to have the identity morphism.
+- There should be a way to compose two morphisms with an appropriate type signature into a third one, in a way that is _associative_.
 
 This is it.
-
 
 # Addendum: Why are categories like that?
 
