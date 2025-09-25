@@ -62,7 +62,12 @@ If we increment the number of objects to two, we see a couple of more interestin
 
 ![the finite category 2](../10_functors/finite_two.svg)
 
-**Task:** There are just two more categories that have 2 objects and at most one morphism between two objects, draw them.
+---
+**Task 1:** There are just two more categories that have 2 objects and at most one morphism between two objects, draw them.
+
+![the finite category 2](../10_functors/finite_two_task.svg)
+
+---
 
 And finally the category $3$ has 3 objects and also 3 morphisms (one of which is the composition of the other two).
 
@@ -107,7 +112,7 @@ It is just that the so-called "morphism mapping" between categories that have ju
 
 ![Order isomorphism](../10_functors/category_order_isomorphism_2.svg)
 
-**Question:** What are the morphism functions for orders?
+**Task 2:** What is the morphism mapping for orders?
 
 <!--
 We always map the single morphism of the source category to the single morphism of the target category (which is guaranteed to exist, due to the *order-preserving* condition)
@@ -352,7 +357,8 @@ And if we remember that the group operation of combining two objects corresponds
 
 And many algebraic operations satisfy this equation, for example the functor law for the group homomorphism between $n \to 2ⁿ$ is just the famous algebraic rule, stating that $gᵃ gᵇ= gᵃ⁺ᵇ$.
 
-**Task:** Although it's trivial, we didn't prove that the first functor law (the one about the preservation of identities always holds. Interestingly enough, for groups/monoids it actually follows from the second law. Try to prove that. Start with the definition of the identity function.
+**Task 3:** We didn't talk about the first functor law (the one about the preservation of identities). Interestingly enough, for groups it actually follows from the second law. Try to prove that. 
+
 
 Functors in orders
 ===
@@ -384,24 +390,9 @@ Functor laws
 
 It is not hard to see that monotone maps obey the first functor law as identities are the only morphisms that go between a given object and itself. 
 
-And the second law ($F(g•f) = F(g)•F(f)$) also follows trivially: both morphisms $F(g•f)$ and $F(g)•F(f)$ have the same type signature. But because in orders there can be just one morphism with a given type signature, these two morphisms must be equal to one another.
+And the second law ($F(g•f) = F(g)•F(f)$) also follows trivially. 
 
-**Task:** Expand the proof.
-
-<!--
-And the second law ($F(g•f) = F(g)•F(f)) also follows from the fact that there is only one morphism with a given signature. 
-
-Suppose that in the source order we have two morphisms with the following type signature:
-
-$f :: a \to b$ and $g :: b \to c$. 
-
-Then, if we compose those two morphisms in the target order ($F(g)•F(f)$), we get a morphism from object $F(a)$ to object $F(c)$ ($F(g)•F(f) :: F(a) \to F(c)$).
-
-If we compose the two morphisms in the source order, and we use the functor to get the corresponding morphism in the target order ($F(g•f)$) we get another morphism from object $F(a)$ to object $F(c)$ ($F(g•f) :: F(a) \to F(c)$)
-
-But because in orders there can be just one morphism between $F(a)$ and $F(c)$ so these two morphisms must be equal to one another.
- 
--->
+**Task 4:** Show why the law holds.
 
 Linear functions
 ===
@@ -414,34 +405,13 @@ But if we start plotting some such functions we will realize that there is anoth
 
 ![Linear functions](../10_functors/linear_functions.svg)
 
-**Question:** Why is that?
+**Task 5:** Why are the graphs of linear functions comprised of straight lines?
 
 Another interesting property of these functions is that most of them *preserve* addition, that is for any $x$ and $y$, you have $f(x) + f(y) = f(x + y)$. We already know that this equation is equivalent to the second functor law. So linear functions are just *functors between the group of natural numbers under addition and itself.* As we will see later, they are example of functors in the *category of vector spaces*.
 
 ![Linear functions](../10_functors/linear_function_functor.svg)
 
-**Question:** Are the two formulas we presented to define linear functions completely equivalent?
-
-<!--
-Let 
-$f(x) = ax $
-
-and 
-
-$f(y) = ay $
-
-Then
-
-$f(x) + f(y) = ax + ay $
-
-This means that
-
-$f(x) + f(y) = a(x + y)$
-
-but $f(x) = ax$, so 
-
-$f(x) + f(y) = f(x + y)$
--->
+**Task 6:** Show that linear functions preserve addition.
 
 And if we view that natural numbers as an order, linear functions are also functors as well, as all functions that are plotted with straight lines are obviously monotonic.
 
@@ -520,7 +490,7 @@ Composition law:
 a.map(f).map(g) == a.map((a) => g(f(a)))
 ```
 
-**Task:** Use examples to verify that the laws are followed.
+**Task 7:** Use examples to verify that the laws are followed.
 
 What are functors for
 ===
@@ -585,8 +555,9 @@ Ha, I got you this time (or at least I *hope* I did) - you probably thought that
 
 We haven't yet mentioned the fact that functors compose (and in an associative way at that), but since a functor is just a bunch of functions, it is no wonder that it does.
 
-**Task:** Go through the functor definition and see how do they compose. 
-**Question:** What are the initial and terminal object of the category of small categories.
+**Task 8:** Go through the functor definition and see how do functors compose. 
+
+**Task 9:** What are the initial and terminal object of the category of small categories.
 
 Categories all the way down
 ---
@@ -594,3 +565,115 @@ Categories all the way down
 The recursive nature of category theory might sometimes leave us confused: we started by saying that categories are *composed of objects and morphisms*, but now we are saying that there are *morphisms between categories* (functors). And on top of that, there is a category where *the objects are categories themselves*. Does that mean that categories are an example of... categories? Sounds a bit weird on intuitive level (as for example biscuits don't contain other biscuits and houses don't use houses as building material), but it is actually the case. Like, for example, every monoid is a category with one just object, but at the same time, monoids can be seen as belonging to one category - the category of monoids, where they are connected by monoid homomorphisms. We also have the category of groups, for example, which contains the category of monoids as a subcategory, as all monoids are groups etc.
 
 Category theory does *categorize* everything, so, from a category-theoretic standpoint, all of maths is *categories all the way down*. Whether you would threat a given category as a universe or as a point depends solemnly on the context. Category theory is an *abstract* theory. That is, it does not seek to represent an actual state of affairs, but to provide a language that you can use to express many different ideas.
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers 
+===
+
+---
+
+**Task 1:** There are just two more categories that have 2 objects and at most one morphism between two objects, draw them.
+
+The answer is this:
+
+![the finite category 2](../10_functors/finite_two_task_solution.svg)
+
+The third category is such that $f \circ f = id$, if it doesn't, you would end up with the category with an infinite amount of morphisms (see the free monoid in the chapter on monoids).
+
+Also, the objects in category theory don't have identity so flipping the arrow from the left to the right doesn't count as a new category.
+
+---
+
+**Task 2:** What is the morphism mapping for orders?
+
+The morphism mapping of orders consist just of mapping the only existing morphism between a given pair of objects in one order, to the only existing morphism of their counterparts in the other order. The "order-preserving" condition of order isomorphisms guarantees that this morphism exists i.e. that if you have $A \to B$ in one order, you would have $F(A) \to F(B)$ in the other.
+
+---
+
+**Task 3:** We didn't talk about the first functor law (the one about the preservation of identities). Interestingly enough, for groups it actually follows from the second law. Try to prove that. 
+
+
+---
+
+**Task 4:** Show why the law holds.
+
+This is similar to the proof of Task 2: both morphisms $F(g•f)$ and $F(g)•F(f)$ have the same type signature. But because in orders there can be just one morphism with a given type signature, these two morphisms must be equal to one another.
+
+Suppose that in the source order we have two morphisms with the following type signature:
+
+$f :: a \to b$ and $g :: b \to c$. 
+
+Then, if we compose those two morphisms in the target order ($F(g)•F(f)$), we get a morphism from object $F(a)$ to object $F(c)$ ($F(g)•F(f) :: F(a) \to F(c)$).
+
+If we compose the two morphisms in the source order, and we use the functor to get the corresponding morphism in the target order ($F(g•f)$) we get another morphism from object $F(a)$ to object $F(c)$ ($F(g•f) :: F(a) \to F(c)$)
+
+But because in orders there can be just one morphism between $F(a)$ and $F(c)$ so these two morphisms must be equal to one another.
+ 
+---
+
+**Task 5:** Why are the graphs of linear functions comprised of straight lines?
+
+The slope of a function represents changes in the derivative, the derivative of linear functions is constant, so they are straight lines.
+
+---
+
+**Task 6:** Show that linear functions preserve addition.
+
+Let's say we have a function $f$, such that it multiplies the number by a certain constant $a$.
+
+We have
+
+$f(x) = a \times x$
+
+and 
+
+$f(y) = a \times y $
+
+And if we sum the two we get
+
+$f(x) + f(y) = a \times x + a \times y $
+
+
+By the law of distributivity of addition we get
+
+$f(x) + f(y) = a\times(x + y)$ 
+
+but by the definition of $f$ we also have
+
+$f(x + y ) = a\times (x + y) $
+
+So 
+
+$f(x) + f(y) = f(x + y)$
+
+You can show that this works in the other direction as well, but it is a little more complicated.
+
+---
+
+**Task 7:** Use examples to verify that the laws are followed.
+
+Identity law:
+```
+a.map(a => a) == a
+```
+Composition law:
+```
+a.map(f).map(g) == a.map((a) => g(f(a)))
+```
+---
+
+**Task 8:** Go through the functor definition and see how do functors compose. 
+
+---
+
+**Task 9:** What are the initial and terminal object of the category of small categories.
+
+---
+
+<!--
+{%endif%}
+-->
+

@@ -17,7 +17,7 @@ Equivalent categories
 
 Our first section aims to introduce natural transformation as a motivating example for creating a way to say that two categories are equal. But for that, we need to understand what equal categories are and should be.
 
-So, are you ready to hear about equivalent categories and natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard). So, we will take a longer route. I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
+So, are you ready to hear about equivalent categories and natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard!). So, we will take a longer route. I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
 
 Objects are overrated AKA Heraclitus was right!
 ---
@@ -26,11 +26,13 @@ Objects are overrated AKA Heraclitus was right!
 
 What is the quintessential characteristic of all things in this world? Some 2500 years ago, the philosopher Parmenides gave an answer to this question, postulating that the nature of universe is permanence, stasis. According to his view, what we perceive as processes/transformations/change are merely illusory appearances ("Whatever is is, and what is not cannot be"). He said that that things never really change, they only *appear* to change, or (another way to put it), only appearances change, but the *essence* does not (I think, this is pretty how the world "essence" came to exist).
 
-Although far from obviously true, his view is easy for people to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics and other disciplines), can be viewed as *objects*, persisting through space and time. If we subscribe to this view, then we would think that the key to understanding the world is understanding *what objects those are*. In my opinion, this is what set theory does, to some extend, as well as classical logic (Plato was influenced by Parmenides when he created his theory of forms).
+Although far from obviously true, his view is easy for people to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics and other disciplines), can be viewed as *objects*, persisting through space and time. If we subscribe to this view, then we would think that the key to understanding the world is understanding *what objects are*. In my opinion, this is what set theory does, to some extend, as well as classical logic (Plato was influenced by Parmenides when he created his theory of forms).
 
 However, there is another way to approach the question about the nature of the universe, which is equally compelling. Because, what is an object, when viewed by itself? Can we study an object in isolation? And will there anything left to study about it, once it is detached from its environment? If a given object undergoes a process to get all of it's part replaced, is it still the same object?
 
-Asking such questions might lead us to suspect that, although what we *see* when we look at the universe are the objects, it is the processes/relations/transitions or *morphisms* between the objects that are the real key to understanding it. For example, when we think hard about everyday objects we realize that each of them has a specific *functions* (note the term) without which, a thing would not be itself e.g. is a lamp that doesn't glow, still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all. So, instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
+Asking such questions might lead us to suspect that, although what we *see* when we look at the universe are the objects, it is the processes/relations/transitions or *morphisms* between the objects that are the real key to understanding it. For example, when we think hard about everyday objects we realize that each of them has a specific *functions* (note the term) without which, a thing would not be itself e.g. is a lamp that doesn't glow, still a lamp? Is there food that is non-edible (or an edible item that isn't food)? And this is even more valid for mathematical objects, which, without the functions that go between them, are not objects at all. 
+
+So, instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
 
 Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored, until the 20th century, when a real mathematical revolution happened: Bertrand Russell created type theory, his student Ludwig Wittgenstein wrote a little book, from which the above quote comes from, and this book inspired a group of mathematicians and logicians, known as the "Vienna circle". Part of this group was Rudolph Carnap who coined the word "functor"...
 
@@ -39,9 +41,7 @@ Isomorphism invariance
 
 An embodiment of Heraclitus' view in the realm of category theory is the concept of *isomorphism invariance* that we implicitly touched several times. 
 
-All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are *isomorphism-invariant*. Or, equivalently, they define an objects *up to an isomorphism*. 
-
-Or, if there are two or more objects that are isomorphic to one another, and one of them has a given property, then the rest of them would to also have this property as well. 
+All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are *isomorphism-invariant*. Or, equivalently, they define an objects *up to an isomorphism*. Or, in other words, if there are two or more objects that are isomorphic to one another, and one of them has a given property, then the rest of them would to also have this property as well. 
 
 In short, in category theory **isomorphism = equality**.
 
@@ -50,13 +50,13 @@ The key to understanding category theory lies in understanding isomorphism invar
 Categorical isomorphisms are *not* isomorphism-invariant
 ---
 
-Let's ask ourselves the same question that we were pondering at the beginning of the previous chapter --- what does it mean for two categories to be equal. 
+Let's ask ourselves the same question that we were pondering at the beginning of the previous chapter --- what does it mean for two categories to be equal? 
 
 In the prev chapter, we talked a lot about how great isomorphisms are and how important they are for defining the concept of equality in category theory, but at the same time we said that *categorical isomorphisms* do not capture the concept of equality of categories.
 
 ![Isomorphic categories](../11_natural_transformations/isomorphic_categories.svg)
 
-This is because (though it may seem contradictory at first) *categorical isomorphisms aren't isomorphism invariant*, i.e. categories that only differ by having some additional isomorphic objects aren't isomorphic themselves.
+This is because (though it may seem contradictory at first) *categorical isomorphisms are not isomorphism invariant*, i.e. categories that only differ by having some additional isomorphic objects aren't isomorphic themselves.
 
 ![Isomorphic categories](../11_natural_transformations/equal_categories.svg)
 
@@ -70,13 +70,13 @@ For this reason, we need a new concept of equality of categories. A concept that
 Equivalences are isomorphism invariant
 ---
 
-To understand equivalent categories better, let's go back to the functor between a given map and the area it represents (we will only consider the thin categories (AKA orders) for now). In order for this functor to be invertible (and the categories --- isomorphic) the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
+To understand equivalent categories better, let's go back to the functor between a given map and the area it represents (we will only consider the thin categories (AKA orders) for now). This functor would be invertible (and the categories --- isomorphic) when the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
 
 ![Isomorphic categories](../11_natural_transformations/isomorphic_map.svg)
 
 Such a map is necessary if your goal is to know about all *places*, however, like we said, when working with category theory, we are not so interested in *places*, but in the *routes* that connect them i.e. we focus not on *objects* but on *morphisms*.
 
-For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may may collapse them into one intersection and still show all routes that exist. 
+For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may may collapse them into one intersection and still show all routes that exist (the tree routes would be represented by the "identity route"). 
 
 ![Equivalent categories](../11_natural_transformations/equivalent_map.svg)
 
@@ -532,7 +532,7 @@ $$(g1, h1) \circ (g2, h2) = ( (g1 \circ g2), (g2 \circ h2))$$
 And that are product groups.
 
 <!--
-{% if site.distribution != 'print' %}
+{% if site.distribution == 'print' %}
 -->
 
 Interlude: Naturality in product group operations
@@ -620,7 +620,7 @@ But before this, we have to get this one trivial definition out of the way --- f
 Horizontal composition
 ---
 
-The setup for composing natural transformations is complicated: we need three categories $C$, $D$ and $E$ (just as composition of morphisms requires three objects). We need a total of four functors, distributed on two pairs, one pair of functors that goes from $C$ to $D$ and one that goes from $D$ to $E$ (so we can compose these two pairs of functors together, to get a new pair of functors that go $C \to E$). However, we will try to keep it simple and we will treat the natural transformation as a map from a morphism to a commuting square. As we showed above, this mapping already contains the two functors in itself.
+The setup for composing natural transformations may look complicated the first time you see it: we need three categories $C$, $D$ and $E$ (just as composition of morphisms requires three objects). We need a total of four functors, distributed on two pairs, one pair of functors that goes from $C$ to $D$ and one that goes from $D$ to $E$ (so we can compose these two pairs of functors together, to get a new pair of functors that go $C \to E$). However, we will try to keep it simple and we will treat the natural transformation as a map from a morphism to a commuting square. As we showed above, this mapping already contains the two functors in itself.
 
 So, let's say that we have the natural transformation $\alpha$ involving the $C \to D$ functors (which we usually call $F$ and $G$).
 
@@ -640,13 +640,14 @@ The result is an interesting structure which is sometimes visualized as a cube.
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube.svg)
 
-More interestingly, this cube contains not one, but two commuting squares (visualized in grey and red) that connect morphisms $F'Ff$ and $G'Gf$. 
+More interestingly, when we compose the squares from the cube horizontally, we see that it contains not one, but two commuting squares (visualized in grey and red) that connect morphisms $F'Ff$ and $G'Gf$. 
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube_commuting.svg)
 
-So, there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is usually marked $\bar\alpha \bullet \alpha$ ( with a black dot).
+So, there is a natural transformation between the composite functor $F' \circ F : C \to E$ and $G' \circ G : C \to E$ --- a natural transformation that is usually marked $\bar\alpha \bullet \alpha$ (with a black dot).
 
-**Task 6:** Show that commuting squares compose i.e. that when you stack two commuting squares next to each other you get a new commuting square.
+**Task 6:** Show that natural transformations indeed compose i.e. that if you have natural transformations $F'Ff \Rightarrow F'Gf$  and  $F'Gf \Rightarrow G'Gf$ you have $F'Ff \Rightarrow G'Gf$. 
+
 
 Whiskering
 ---
@@ -723,15 +724,18 @@ And if the two pairs of natural transformations both start from the same categor
 
 $$(β \circ α) \bullet (\bar β \circ \bar α) = (β \bullet \bar β) \circ (α \bullet \bar α)$$
 
+---
 
 **Task 9:** Draw the paths of the two compositions of the transformations (on the two sides of the equation) and ensure that they indeed lead to the same place. 
 
 ![The interchange law](../11_natural_transformations/interchange_law.svg)
 
+---
+
 2-Categories
 ---
 
-At this point you might be wondering the following (although statistically you are more likely to wonder what the heck is all this about): We know that all categories are objects of $Cat$ the category of small categories, in which functors play the role of morphisms. 
+At this point you might be wondering the following (although statistically you are more likely to wonder what the heck is all this about): We know that all categories are objects of $Cat$, the category of small categories, in which functors play the role of morphisms. 
 
 But, functors between given categories also form a category, under vertical composition. Which means that $Cat$ not only has (as any other category) morphisms between objects, *but* also has *morphisms between morphisms*. And furthermore, those two types of morphisms compose in this very interesting way. 
 
@@ -740,24 +744,26 @@ So, what does that make of $Cat$? I don't know, perhaps we can call natural tran
 But wait, actually it's way too early for you to find out. We haven't even covered limits...
 
 <!--
-{% if site.distribution != 'print' %}
+{% if site.distribution == 'print' %}
 -->
 
 Answers 
 ===
 
-**Task 1:** Check if that definition is valid.
 ---
+
+**Task 1:** Check if that definition is valid.
+
 The definition in question is:
 
 > Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
 
 We can check it by expanding the definition of a functor.
 
-The functor has:
+The functor consists of:
 1. Object mapping
 2. Morphism mapping
-3. Law
+3. Laws
 
 Expanding the object mapping gives us exactly the definition of set isomorphism:
 
@@ -765,27 +771,113 @@ Expanding the object mapping gives us exactly the definition of set isomorphism:
 
 Expanding the morphism mapping and the law would give us the rest.
 
+---
 
 **Task 2:** When exactly would the mapping encompass all objects?
----
 
 As we say above: 
 > mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category: one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it.
 
-So the mapping encompasses all object *from the image of the functor*. So when would that encompass all objects period. Simple --- when the functor is bijective (or surjective, if we are with there being more than one arrow per object). Most often, that happens when the two categories are actually one and the same category.
+So the mapping encompasses all object *from the image of the functor*. So when would that encompass all objects period. Simple --- when the functor is one-to-one (or onto, if we are with there being more than one arrow per object). Most often, that happens when the two categories are actually one and the same category and the functor is the identity functor.
 
-**Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
 ---
-To draw a square of the $reverse: List a \to List a$ natural transformation, we must first:
-1. Pick a function $f$ from number (because we want to use the mapping that is displayed) to something else, say  $+1 : number \to number$. 
-2. Lift it to a function $Ff: List number \to List number$ that adds one to every number from the list.
+**Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
+
+To draw a square of the $reverse: List\ a \to List\ a$ natural transformation, we must first:
+1. Pick a function $f$ from number, say  $+1 : number \to number$. 
+2. Lift it to a function $Ff: List\ number \to List\ number$ that adds one to every number from the list.
 
 Then we:
-1. Draw the results of the application of the function on the sets that are at the top, at the corresponding boxes at the bottom e.g. $[1, 2$]$ becomes $[2, 3]$.
+1. Draw the results of the application of the function on the sets that are at the top, at the corresponding boxes at the bottom e.g. $[1, 2]$ becomes $[2, 3]$.
 2. Draw the connections of applying the $reverse$ natural transformation.
 
-If you worked correctly, the functions would commute.
+If we worked correctly, the square would commute.
 
+---
+
+**Task 4:** Prove the above results, using the formula of the naturality condition.
+
+We want to prove that:
+
+$$take1 \circ reverse \circ F\ f \circ F\ g$$
+
+is the same as 
+
+$$take1 \circ F\ f \circ reverse \circ F\ g$$
+
+We note that part of the equation contains a "lifted" function (one which is the result of the application of functor), followed by a natural transformation:
+
+$$take1 \circ (F\ f \circ reverse) \circ F\ g$$
+
+The naturality says that
+
+$$\alpha \circ F\ f \cong G\ f \circ \alpha$$
+
+We can replace $\alpha$ with $reverse$ (sinse $reverse$ is a natural transformation) and replace both the $F\ f$ and $G\ f$ with $F\ f$ (since $F$ and $G$ are the same functor (list))
+
+$$reverse \circ F\ f \cong F\ f \circ\ reverse$$
+
+Applying this we get:
+
+$$take1 \circ (reverse \circ F\ f) \circ F\ g$$
+
+---
+
+**Task 5:** Show that the two definitions are equivalent.
+
+This entails extracting a natural transformation from a functor $2 \times C \to D$, and the other way around. We will describe one direction of this process:
+
+As we said, we can split the category $2 \times C$ into two subcategories which are both isomorphic to $C$, one containing the objects that are paired with the first object of $2$ and one containing the objects paired with the second object (let's call those $C^1$ and $C^2$).
+
+Likewise, we can split the functor $2 \times C \to D$ into two functors $C^1 \to D$ and $C^2 \to D$. 
+
+Now, all we need to do is show that there is a natural transformation between those two functors i.e. we have to find a family of morphisms in category $D$ that connects the images of those two functors. 
+
+This family is the image of the morphisms from the category $2$ i.e. if we traverse $2 \times C \to D$ and collect all morphisms in $D$ which come from the category $2$, we already have our transformation.
+
+This transformation is natural due to the way composition for product categories is defined (it is defined as the component-wise composition of the morphisms of the categories that are part of the product).
+
+---
+
+**Task 6:** Show that natural transformations indeed compose i.e. that if you have natural transformations $F'Ff \Rightarrow F'Gf$  and  $F'Gf \Rightarrow G'Gf$ you have $F'Ff \Rightarrow G'Gf$. 
+
+To show that two transformations compose, we only need to find a way, given two natural transformations  with the above signatures, to construct a new one. 
+
+We remember that a natural transformation is just a family of morphisms. The natural transformation we need is comprised of all morphisms that comprise the natural transformation  $\bar\alpha$ with all morphisms that comprise $alpha$.
+
+That this family is a transformation follows from the signatures of the morphisms.
+
+That this transformation is natural, because for all morphisms we have the commuting square.
+
+![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube_commuting.svg)
+
+---
+
+**Task 7**: Try to extend the natural transformation in the other direction (by taking $\bar\alpha$ to be identity). 
+
+It works basically the same way and the result is also the same --- you get a new natural transformation with a different signature.
+
+---
+
+**Task 8:** identify the function, the three functors, and the two natural transformations used in this diagram.
+
+![Vertical composition of natural transformations - internal diagram](../11_natural_transformations/vertical_composition_internal.svg)
+
+First the functors: $F$ and $G$ are the $List$ functor, $H$ is the $ID$ functor.
+
+Natural transformations: $\alpha$ is $reverse: List \to List$ and $\beta$ is $head : List \to ID$ (or, if we want to be punctual, the type should be its *Non-empty* list, as $head$ is only a partial natural transformation of $List$).
+
+The function $f$ is, as usual, $length : string \to int$.
+
+---
+
+**Task 9:** Draw the paths of the two compositions of the transformations (on the two sides of the equation) and ensure that they indeed lead to the same place.
+
+One option is this:
+
+![The interchange law](../11_natural_transformations/interchange_law_solution.svg)
+
+---
 
 <!--
 {%endif%}
