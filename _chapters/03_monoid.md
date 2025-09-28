@@ -3,7 +3,6 @@ layout: default
 title: Monoids 
 ---
 
-
 Monoids etc
 ===
 
@@ -64,20 +63,20 @@ Anyways, the natural numbers also form a monoid under multiplication as well.
 
 ![The monoid of numbers under multiplication](../03_monoid/numbers_multiplication.svg)
 
-**Question:** Which are the identity elements of those monoids?
+**Task 1:** Which are the identity elements of those monoids?
 
-**Task:** Go through other mathematical operations and verify that they are monoidal.
+**Task 2:** Go through other mathematical operations and verify that they are monoidal.
 
-**Task:** The natural numbers form a monoid under multiplication, but not a group. Find out why.
+**Task 3:** The natural numbers form a monoid under multiplication, but not a group. Find out why.
 
 Monoids from boolean algebra
 ---
 
 Thinking about operations that we covered, we may remember the boolean operations *and* and *or*. Both of them form monoids, which operate on the set, consisting of just two values $\{ True, False \}$. 
 
-**Task:** Prove that $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all possible values. Do the same for *or*.
+**Task 4:** Prove that **AND** $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all possible values. Do the same for *or*.
 
-**Question:** Which are the identity elements of the *and* and *or* operations?
+**Task 5:** Which are the identity elements of the *and* and *or* operations?
 
 Monoid operations in terms of set theory
 ===
@@ -209,7 +208,7 @@ All cyclic groups that have the same number of elements (or that are of the *sam
 
 All cyclic groups are *commutative* (or "abelian" as they are also called). 
 
-**Task:** Show that there are no other groups with 3 objects, other than $Z_3$.
+**Task 6:** Show that there are no other groups with 3 objects, other than $Z_3$.
 
 There are abelian groups that are not cyclic, but, as we shall see below, the concepts of cyclic groups and abelian groups are deeply related.
 
@@ -267,7 +266,7 @@ Another way to present the Klein four-group is the *group of symmetries of a non
 
 ![Klein four](../03_monoid/klein_four.svg)
 
-**Task:** Show that the two representations are isomorphic.
+**Task 7:** Show that the two representations are isomorphic.
 
 Here are some examples of how elements of the Klein four-group are combined.
 
@@ -346,9 +345,9 @@ Those two operations and their composite results in a group called $Dih3$ that i
 
 ![The group of rotations and reflections in a triangle](../03_monoid/symmetry_reflection.svg)
 
-**Task:** Prove that this group is indeed not abelian.
+**Task 8:** Prove that this group is indeed not abelian.
 
-**Question:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
+**Task 9:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
 
 Groups that represent the set of rotations and reflections of any 2D shape are called *dihedral groups*.
 
@@ -441,9 +440,9 @@ $+2 \circ +3 \cong +5$
 
 So, basically, the functions that represent the elements of a monoid also form a monoid, under the operation of functional composition (and the functions that represent the elements that form a group also form a group). 
 
-**Question:** Which are the identity elements of function groups?
+**Task 10:** Which are the identity elements of function groups?
 
-**Task:** Show that the functions representing inverse group elements are also inverse.
+**Task 11:** Show that the functions representing inverse group elements are also inverse.
 
 
 <!--
@@ -480,7 +479,7 @@ By the way, this isomorphism can be represented in terms of programming as well.
 
 This is one part of the isomorphism, the other part is the equivalent function for curried functions.
 
-**Task:** Write the other part of the isomorphism.
+**Task 12:** Write the other part of the isomorphism.
 
 <!--
 {%endif%}
@@ -536,7 +535,7 @@ Based on this insight, can state Cayley's theorem in terms of symmetric groups i
 
 > All groups are isomorphic to subgroups of symmetric groups.
 
-**Task:** Show how the two are equivalent.
+**Task 13:** Show how the two are equivalent.
 
 Fun fact: the study of group theory actually started by examining symmetric groups, so this theorem was actually a prerequisite for the emergence of the normal definition of groups that we all know and love (OK, at least *I* love it) --- it provided a proof that the notion described by this definition is equivalent to the already existing notion of symmetric groups.
 
@@ -636,11 +635,218 @@ The free monoid is a special one --- each element of the free monoid over a give
 
 ![Converting the elements of the free monoid to the elements of the color-mixing monoid](../03_monoid/balls_free_color_mixing.svg)
 
-**Task:** Write up the laws of the color-mixing monoid.
+**Task 14:** Write up the laws of the color-mixing monoid.
 
 If we put on our programmers' hat, we will see that the type of the free monoid under the set of generators T (which we can denote as `FreeMonoid<T>`) is isomorphic to the type `List<T>` (or `Array<T>`, if you prefer) and that the intuition behind the special property that we described above is actually very simple: keeping objects in a list allows you to convert them to any other structure i.e. when we want to perform some manipulation on a bunch of objects, but we don't know exactly what this manipulation is, we just keep a list of those objects until it's time to do it.
 
 While the intuition behind free monoids seems simple enough, the formal definition is not easily written... yet, simply because we have to cover more stuff.
 
 We understand that being the most general of all monoids for a given set of generators, a free monoid can be converted to all of them. i.e. there exists a function from it to all of them. But what kind of function would that be? Tune in after a few chapters to find out.
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers
+===
+
+---
+
+
+**Task 1:** Which are the identity elements of those monoids?
+
+For the monoid of natural numbers under addition, it is zero: $n + 0 = n$ and $0 + n = n$.
+
+For the monoid of natural numbers under *multiplication* --- 1: $n × 1 = n$ and $1 × n = n$
+
+---
+
+**Task 2:** Go through other mathematical operations and verify that they are monoidal.
+
+All (finite) strings under *string concatenation* (`+`), with the empty 
+string as identity:
+- Associative: `(a + b) + c === a + (b + c)`
+- Identity: `s + "" === "" + s = s`
+
+All natural numbers under the **maximum ** functions, with 0 as identity:
+ - Associative: `max(max(a,b), c) === max(a, max(b,c))`
+ - Identity: `max(a, 0) = a`
+
+All n×n matrices, under *matrix multiplication*, with the identity matrix 
+  - Associative: $(AB)C = A(BC)$
+  - Identity: $AI = IA = A$
+
+---
+
+**Task 3:** The natural numbers form a monoid under multiplication, but not a group. Find out why.
+
+Because they lack *inverses*. 
+
+Numbers do have multiplicative inverses, but they are fractions, thus not natural e.g. the inverse of 2 is 1/2. 
+
+Real numbers also don't have inverses for all numbers (think about which one is missing).
+
+---
+
+**Task 4:** Prove that **AND** $∧$ is associative by expanding the formula $(A ∧ B) ∧ C = A ∧ (B ∧ C)$ with all possible values.
+
+| A | B | C | A ∧ B | (A ∧ B) ∧ C | B ∧ C | A ∧ (B ∧ C) |
+|---|---|---|-------|-------------|-------|-------------|
+| T | T | T | T     | T           | T     | T           |
+| T | T | F | T     | F           | F     | F           |
+| T | F | T | F     | F           | F     | F           |
+| T | F | F | F     | F           | F     | F           |
+| F | T | T | F     | F           | T     | F           |
+| F | T | F | F     | F           | F     | F           |
+| F | F | T | F     | F           | F     | F           |
+| F | F | F | F     | F           | F     | F           |
+
+---
+
+**Task 5:** Which are the identity elements of the AND and OR operations?
+
+For **AND** operation the identity element is $True$, for **OR**, it is $False$.
+
+---
+
+**Task 6:** Show that there are no other groups with 3 objects, other than $Z₃$.
+
+Take any group with 3 elements ${e, a, b}$ where $e$ is identity.
+
+In such a group, we necessary have 
+
+$$a \circ b = e$$
+
+and
+
+$$b \circ a = e$$
+
+Why? $a \circ b$ cannot be equal to $a$, as that would mean $a = e$ (and the group would really be ${e, b}$), and it cannot be equal to $b$, for the same reason. So, $a$ and $b$ are each other's reverse.
+
+Therefore, we must also have
+$$a \circ a = b$$
+and 
+$$b \circ b = a$$
+
+Why? $a \circ a$ cannot be equal as that would mean $a = e$. And it cannot be equal to $a$, as that would mean it is it's own reverse, and we established that it's inverse is $b$. Same for $b$.
+
+So, we already established the result of applying the operation of any element of our group with any other and we can say that our group is isomorphic to $Z_3$.
+
+Furthermore, we did this without assuming anything about this group other than that it has three elements. So, every group with three elements, is (as our example group) isomorphic to $Z_3$.
+
+---
+
+**Task 7:** Show that the two representations [of Klein four-group] are isomorphic.
+
+The two representations are:
+1. Product group: Z₂ × Z₂ = {(0,0), (0,1), (1,0), (1,1)}
+2. Rectangle symmetries: {identity, horizontal flip, vertical flip, 180° rotation}
+
+**Isomorphism:**
+- (0,0) ↔ identity
+- (0,1) ↔ horizontal flip  
+- (1,0) ↔ vertical flip
+- (1,1) ↔ 180° rotation
+
+This preserves the group operation. For example:
+- (0,1) + (1,0) = (1,1) corresponds to horizontal flip ∘ vertical flip = 180° rotation
+
+---
+
+**Task 8:** Prove that the group [Dih₃] is indeed not abelian.
+
+In Dih₃ (triangle symmetries), take:
+- r = 120° rotation
+- f = reflection over a vertical axis
+
+Then:
+- f ∘ r ≠ r ∘ f
+
+**Concrete example:** Label triangle vertices 1,2,3. With r rotating clockwise and f flipping across the vertical axis through vertex 1:
+- f ∘ r sends: 1→2, 2→1, 3→3
+- r ∘ f sends: 1→3, 2→2, 3→1
+
+Since these give different results, the group is not abelian.
+
+---
+
+**Task 9:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
+
+The defining factor is that **the generators don't commute**. More formally, for a group to be non-abelian, there must exist elements a, b such that:
+- a ∘ b ≠ b ∘ a
+- Or equivalently: the commutator [a,b] = a⁻¹b⁻¹ab ≠ e
+
+In Dih₃, the rotation and reflection generators don't commute, making the group non-abelian.
+
+---
+
+**Task 10:** Which are the identity elements of function groups?
+
+No catch here, the identity element is the identity function.
+
+---
+
+**Task 11:** Show that the functions representing inverse group elements are also inverse.
+
+If g is a group element with inverse g⁻¹, and we represent them as functions f_g and f_{g⁻¹}, then:
+
+f_g ∘ f_{g⁻¹} = f_{g∘g⁻¹} = f_e = id
+f_{g⁻¹} ∘ f_g = f_{g⁻¹∘g} = f_e = id
+
+Therefore f_{g⁻¹} is the inverse function of f_g.
+
+---
+
+Task 12: Write the other part of the [currying] isomorphism.
+
+```typescript
+// First part (given)
+const curry = <A, B, C>(f: (a: A, b: B) => C) => 
+  (a: A) => (b: B) => f(a, b)
+
+// Second part (other direction)
+const uncurry = <A, B, C>(f: (a: A) => (b: B) => C) => 
+  (a: A, b: B) => f(a)(b)
+
+// The isomorphism property:
+// For all f: (a: A, b: B) => C, we have uncurry(curry(f)) = f
+// For all g: (a: A) => (b: B) => C, we have curry(uncurry(g)) = g
+```
+---
+
+Task 13: Show how the two Cayley's theorem formulations are equivalent.
+
+The two formulations are:
+1. "Any group is isomorphic to its corresponding permutation group"
+2. "All groups are isomorphic to subgroups of symmetric groups"
+
+**Equivalence:**
+- The "corresponding permutation group" in (1) is exactly the image of the group under the Cayley embedding
+- This image is a subgroup of the symmetric group Sₙ where n is the group order
+- Therefore, every group is isomorphic to a subgroup of some symmetric group
+
+---
+
+**Task 14:** Write up the laws of the color-mixing monoid.
+
+For primary colors R, G, B and their mixtures:
+
+**Identity laws:**
+- White (or transparent) is identity: color ∘ white = color
+
+**Mixing laws:**
+- R ∘ G = Yellow
+- R ∘ B = Magenta  
+- G ∘ B = Cyan
+- R ∘ G ∘ B = Black
+
+**Commutativity:**
+- R ∘ G = G ∘ R (etc.)
+
+**Associativity:**
+- (R ∘ G) ∘ B = R ∘ (G ∘ B) = Black
+
+<!--
+{%endif%}
+-->
 

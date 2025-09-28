@@ -212,7 +212,7 @@ We can do the same for $or$, here is the table.
 | False | True  | True  |
 | False | False | False |
 
-**Task:** Draw the diagram for *or*.
+**Task 1:** Draw the diagram for *or*.
 
 Using those tables, we can also prove some axiom schemas we can use later:
 
@@ -320,7 +320,7 @@ As the existence of a proof of a proposition is taken to mean that the propositi
 
 ![And in the BHK interpretation](../05_logic/bhk_and.svg)
 
-**Question:** what would be the **or** operation in this case?
+**Task 2:** What would be the **or** operation in this case?
 
 The *implies* operation
 ---
@@ -361,9 +361,9 @@ The only way for there to be such function is if the set of proofs of the propos
 
 ![False in the BHK interpretation](../05_logic/bhk_false_function_2.svg)
 
-**Task:** Look up the definition of function and verify that there cannot exist a function from any set *to the empty set* 
+**Task 3:** Look up the definition of function and verify that there cannot exist a function from any set *to the empty set* 
 
-**Task** Look up the definition of function and verify that there does exist a function *from the empty set* to itself (in fact there exist a function from the empty set to any other set.
+**Task 4** Look up the definition of function and verify that there does exist a function *from the empty set* to itself (in fact there exist a function from the empty set to any other set.
 
 The law of excluded middle
 ---
@@ -391,7 +391,7 @@ Programmers might find the definition of the BHK interpretation interesting for 
 
 This similarity is known as the *Curry-Howard isomorphism*.
 
-**Task:** The Curry-Howard isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works (I recommend the Coq Tutorial by Mike Nahas).
+**Task 5:** The Curry-Howard isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works (I recommend the Coq Tutorial by Mike Nahas).
 
 Cartesian closed categories
 ---
@@ -402,7 +402,7 @@ The first part is finding a way to convert a *logical system* into a category - 
 
 ![Logic as a category](../05_logic/category_curry_logic.svg)
 
-**Task:** See whether you can prove that logic propositions and the "implies" relation form a category. What is missing?
+**Task 6:** See whether you can prove that logic propositions and the "implies" relation form a category. What is missing?
 
 The second part involves converting a category into a logical system. This is much harder, and not all categories can be converted to logical systems, only some of them. So, next up, we will enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has an object that corresponds to every valid logical propositions and that no objects corresponds to an invalid ones. 
 
@@ -541,7 +541,7 @@ The join (or least upper bound) of the *topmost* object $\top$ (which plays the 
 
 This corresponds to the logical statement that $A \lor \top$ is equal to $\top$ i.e. it is true. Hence, the above observation is a proof of that statement, (an alternative to truth tables).
 
-**Task**: Think of the duel situation, with False. What does it imply, logically?
+**Task 7**: Think of the duel situation, with False. What does it imply, logically?
 
 And and Or
 ---
@@ -613,15 +613,89 @@ In general, doing intuitionistic logic is this --- we start by the things that w
 {% if site.distribution == 'print' %}
 -->
 
+Answers
+===
+
+---
+**Task 1**: Draw the diagram for *or*
+
+The *or* operation can be represented as a function that takes a pair of boolean values and returns `True` if at least one of them is `True`.
+
+| p | q | p ∨ q |
+|---|---|-------|
+| True | True | True |
+| True | False | True |
+| False | True | True |
+| False | False | False |
+
+---
+
+**Task 2**: What would be the *or* operation in the BHK interpretation?
+
+In the BHK interpretation, the proof of $A ∨ B$ the well-known disjoint union/coproduct/meet, containing either a proof of A or a proof of B, along with information about which one it is.
+
+---
+
+**Task 3**: Verify there cannot exist a function from any set to the empty set
+
+For any non-empty set $A$, there cannot be a function $f: A → ∅$ because:
+A function must assign to each element of $A$ exactly one element of $∅$ ut ∅ has no elements, so there's nothing to assign.
+
+The only exception is when $A$ is also empty ($∅ → ∅$ is possible).
+
+---
+
+**Task 4**: Verify there exists a function from the empty set to any set
+
+There is exactly one function from ∅ to any set B, called the *empty function*:
+
+A function must assign to each element of the domain exactly one element of the codomain, so if $∅$ has no elements, so this condition is satisfied
+
+And we mentioned the corresponding logical principle that a false premise can imply anything.
+
+---
+
+**Task 5**: Install a proof assistant
+
+Here you are on your own, sorry :)
+
+---
+
+**Task 6:** See whether you can prove that logic propositions and the "implies" relation form a category
+
+We want to prove that there is a category with logical propositions as object and implication as morphism.
+Let's check the axioms:
+
+- *Identity* is covered --- as we said, for every proposition $A$, we have $A → A$ 
+- *Composition* too, because $A → B$ and $B → C$, then $A → C$ easily follows from modus ponens (this can be your first proof with the proof assistant).
+- *Associativity* also checks out as $(A → B) → ((B → C) → (A → C))$.
+
+And if we want to consider all proof from $A \to B$ as equivalent, we get an order, else, a normal category.
+
+---
+
+**Task 7**: Think of the dual situation with False
+
+The dual situation concerns the meet operation ($∧$) and the bottom element $⊥$ (False):
+
+$$⊥: A ∧ ⊥ = ⊥$$ 
+
+That is, if we unite any statement with a false statement, the result would be false e.g. the statement "The grass is green *and* pigs can fly" is not true (and changing the part where we say "The grass is green" to something else won't fix it).
+
+This is, of course dual to the one we mentioned:
+
+$$A ∨ ⊤ = ⊤$$
+
+<!--
+{%endif%}
+-->
+
 <!--
 The Rieger–Nishimura lattice
 ---
 I forgot to mention that a Heytung algebra that is generated from a given set of axioms is called the Free Heytung algebra of these axioms (just like the free monoids, if you remember those). Above, you saw my (dubious) attempt at drawing the free Heytung algebra of 3 generators, and the result was really messy, but if we attempt to draw the free Heytung algrebra of just 1 generator, then it is actually becomes pretty neat (yes, the free )
 -->
 
-<!--
-{%endif%}
--->
 
 <!--
 Proving a negative

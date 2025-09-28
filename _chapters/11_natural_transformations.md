@@ -8,7 +8,7 @@ Natural transformations
 
 > I didn’t invent categories to study functors; I invented them to study natural transformations. --- Saunders Mac Lane
 
-In this chapter, we will introduce the concept of a morphism between functors or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
+In this chapter, we will introduce the concept of a morphism between functors, or *natural transformation*. Understanding natural transformations will enable us to define category equality and some other advanced concepts.
 
 Natural transformations really are at the heart of category theory, however, their importance is not obvious at first. So, before introducing them, I like to talk, once more, about the body of knowledge that this heart maintains (I am good with metaphors... in principle).
 
@@ -24,9 +24,9 @@ Objects are overrated AKA Heraclitus was right!
 
 > The world is the collection of facts, not of things. --- Ludwig Wittgenstein
 
-What is the quintessential characteristic of all things in this world? Some 2500 years ago, the philosopher Parmenides gave an answer to this question, postulating that the nature of universe is permanence, stasis. According to his view, what we perceive as processes/transformations/change are merely illusory appearances ("Whatever is is, and what is not cannot be"). He said that that things never really change, they only *appear* to change, or (another way to put it), only appearances change, but the *essence* does not (I think, this is pretty how the world "essence" came to exist).
+What is the quintessential characteristic of all things in this world? Some 2500 years ago, the philosopher Parmenides gave an answer to this question, postulating that the nature of the universe is permanence, stasis. According to his view, what we perceive as processes/transformations/change is merely illusory appearances ("Whatever is is, and what is not cannot be"). He said that that things never really change, they only *appear* to change, or (another way to put it), only appearances change, but the *essence* does not (I think this is pretty much how the word "essence" came to exist).
 
-Although far from obviously true, his view is easy for people to relate to --- objects are all around us, everything we "see", both literary (in real life), or metaphorically (in mathematics and other disciplines), can be viewed as *objects*, persisting through space and time. If we subscribe to this view, then we would think that the key to understanding the world is understanding *what objects are*. In my opinion, this is what set theory does, to some extend, as well as classical logic (Plato was influenced by Parmenides when he created his theory of forms).
+Although far from obviously true, his view is easy for people to relate to --- objects are all around us, everything we "see", both literally (in real life), or metaphorically (in mathematics and other disciplines), can be viewed as *objects*, persisting through space and time. If we subscribe to this view, then we would think that the key to understanding the world is understanding *what objects are*. In my opinion, this is what set theory does, to some extent, as well as classical logic (Plato was influenced by Parmenides when he created his theory of forms).
 
 However, there is another way to approach the question about the nature of the universe, which is equally compelling. Because, what is an object, when viewed by itself? Can we study an object in isolation? And will there anything left to study about it, once it is detached from its environment? If a given object undergoes a process to get all of it's part replaced, is it still the same object?
 
@@ -34,7 +34,7 @@ Asking such questions might lead us to suspect that, although what we *see* when
 
 So, instead of thinking about objects that just happen to have some morphisms between them, we might take the opposite view and say *that objects are only interesting as sources and targets of morphisms.* 
 
-Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored, until the 20th century, when a real mathematical revolution happened: Bertrand Russell created type theory, his student Ludwig Wittgenstein wrote a little book, from which the above quote comes from, and this book inspired a group of mathematicians and logicians, known as the "Vienna circle". Part of this group was Rudolph Carnap who coined the word "functor"...
+Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored, until the 20th century, when a real mathematical revolution happened: Bertrand Russell created type theory, his student Ludwig Wittgenstein wrote a little book, from which the above quote comes, and this book inspired a group of mathematicians and logicians, known as the "Vienna circle". Part of this group was Rudolph Carnap who coined the word "functor"...
 
 Isomorphism invariance
 ---
@@ -50,7 +50,7 @@ The key to understanding category theory lies in understanding isomorphism invar
 Categorical isomorphisms are *not* isomorphism-invariant
 ---
 
-Let's ask ourselves the same question that we were pondering at the beginning of the previous chapter --- what does it mean for two categories to be equal? 
+Let's return to the question that we were pondering at the beginning of the previous chapter --- what does it mean for two categories to be equal? 
 
 In the prev chapter, we talked a lot about how great isomorphisms are and how important they are for defining the concept of equality in category theory, but at the same time we said that *categorical isomorphisms* do not capture the concept of equality of categories.
 
@@ -314,7 +314,7 @@ Generic types work by replacing the `<A>` with some concrete type, like `string`
 
 ```typescript
 
-function array<A>(a: <A>) : Array<A> {
+function array<A>(a: A) : Array<A> {
     return [a]
 }
 ```
@@ -340,10 +340,14 @@ or *flatten* a list of lists of things to a regular list of things (the signatur
 
 ![The natural transformation, for flattening a list in Set](../11_natural_transformations/flatten_set_transformation.svg)
 
+---
+
 **Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
 
 ![The natural transformation, for reversing a list in Set](../11_natural_transformations/reverse_set_transformation_task.svg)
 Do the same for the rest of the transformations.
+
+---
 
 The naturality condition 
 ---
@@ -538,11 +542,13 @@ And that are product groups.
 Interlude: Naturality in product group operations
 ---
 
-Now, we will show that the group operation of product groups is actually a natural transformation. To understand why, let's look at the equations once more.
+Now, we will have a really peculiar interlude, in which we will show that the group operation of product groups is actually a natural transformation. 
+
+To understand why this is the case, let's look at the equations once more.
 
 ![Equations of the product of numbers and colors](../11_natural_transformations/product_group_equations.svg)
 
-We said that in order for the solutions for this equations, to make sense, they would have to work for all monoids, not just numbers and colors,in other words, there should be a mechanism that, given two monoids, produces a third one. This mechanism can be nothing more and nothing less of a polymorphic function.
+We said that in order for the solutions for this equations, to make sense, they would have to work for all monoids, not just numbers and colors. In other words, there should be a mechanism that, given two monoids, produces a third one. This mechanism can be nothing more (and nothing less) than a polymorphic function.
 
 $$\forall G H. G \to H \to G \times H$$
 
@@ -557,7 +563,7 @@ We also said that we are interested in solutions which produce a number, somehow
 Product categories
 ---
 
-we are back at tackling product *categories*. 
+We are back at tackling product *categories*. 
 
 We now know what product *groups*, are and we know that groups nothing but categories with just one object (and the group objects are the category's morphisms, remember?), so this should be enough to get us started.
 
@@ -582,7 +588,10 @@ In this section we are interested with the products of one particular category, 
 
 ![The category 2](../11_natural_transformations/category_two.svg)
 
-This category is the key to constructing a functor that is equivalent to a natural transformation --- because it has two objects, it produces two copies of the source category and because the two objects are connected, the two copies are connected in the same way as the two "images" in the target category are connected. 
+This category is the key to constructing a functor that is equivalent to a natural transformation:
+
+- Because it has two objects, it produces two copies of the source category.
+- because the two objects are connected, the two copies are connected in the same way as the two "images" in the target category are connected. 
 
 So, given a product category of $2$ and some other category $C$...
 
@@ -778,14 +787,14 @@ Expanding the morphism mapping and the law would give us the rest.
 As we say above: 
 > mapping the two functors' object components involves nothing more than specifying a bunch of morphisms in the target category: one morphism for each object in the source category i.e. each object from the image of the first functor, should have one arrow coming from it.
 
-So the mapping encompasses all object *from the image of the functor*. So when would that encompass all objects period. Simple --- when the functor is one-to-one (or onto, if we are with there being more than one arrow per object). Most often, that happens when the two categories are actually one and the same category and the functor is the identity functor.
+So the mapping encompasses all object *from the image of the functor*. So when would that encompass all objects period. Simple --- when the functor is one-to-one (or onto, if we are with there being more than one arrow per object). Most probably, that would happen when the two categories are actually one and the same category and the functor is the identity functor.
 
 ---
 **Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
 
 To draw a square of the $reverse: List\ a \to List\ a$ natural transformation, we must first:
-1. Pick a function $f$ from number, say  $+1 : number \to number$. 
-2. Lift it to a function $Ff: List\ number \to List\ number$ that adds one to every number from the list.
+1. Pick a function $f$ from number (because we want to use the mapping that is displayed) to something else, say  $+1 : number \to number$. 
+2. Lift it to a function $Ff: List number \to List number$ that adds one to every number from the list.
 
 Then we:
 1. Draw the results of the application of the function on the sets that are at the top, at the corresponding boxes at the bottom e.g. $[1, 2]$ becomes $[2, 3]$.
@@ -839,15 +848,21 @@ This transformation is natural due to the way composition for product categories
 
 ---
 
-**Task 6:** Show that natural transformations indeed compose i.e. that if you have natural transformations $F'Ff \Rightarrow F'Gf$  and  $F'Gf \Rightarrow G'Gf$ you have $F'Ff \Rightarrow G'Gf$. 
+**Task 6:** Show that natural transformations indeed compose i.e. that if you have natural transformations $ \alpha: F'F \Rightarrow F'G$  and  $\bar\alpha : F'G \Rightarrow G'G$ you have $\bar\alpha \bullet \alpha : F'F \Rightarrow G'G$. 
 
-To show that two transformations compose, we only need to find a way, given two natural transformations  with the above signatures, to construct a new one. 
+To show that two transformations compose, we need to find a way, given two natural transformations with the above signatures, to construct a new one.
 
-We remember that a natural transformation is just a family of morphisms. The natural transformation we need is comprised of all morphisms that comprise the natural transformation  $\bar\alpha$ with all morphisms that comprise $alpha$.
+To do that, we remember that a natural transformation is just a family of morphisms, one for each object in the category $C$ (and that we know how to compose morphisms). 
+
+For each object $c$ in $C$, let $\bar\alpha_c$ be the morphism that corresponds to it in the natural transformation $\bar\alpha$ and let $\alpha_c$ be the morphism that corresponds to it in $\alpha$.
+
+Then, the morphism that corresponds to it in $\bar\alpha \bullet \alpha$ is either $\bar\alpha_c ∘ F'(\alpha_c)$, if you follow the grey arrows of the cube, or alternatively $$(\bar\alpha \bullet \alpha)_c = G'(\bar\alpha_c) ∘ \alpha_c$$, if you follow the grey arrows.
+
+Or, $\bar\alpha_c ∘ \alpha_c$ if you don't care so much about notation.
 
 That this family is a transformation follows from the signatures of the morphisms.
 
-That this transformation is natural, because for all morphisms we have the commuting square.
+This transformation is natural, because for all those morphisms we have the commuting square.
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube_commuting.svg)
 

@@ -39,12 +39,12 @@
      id="namedview15615"
      showgrid="false"
      inkscape:zoom="3.1026364"
-     inkscape:cx="331.97574"
-     inkscape:cy="49.474054"
+     inkscape:cx="343.90108"
+     inkscape:cy="100.39849"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg15613"
+     inkscape:current-layer="g26939"
      inkscape:showpageshadow="2"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1" />
@@ -131,7 +131,13 @@
        style="fill:none;stroke:#008000;stroke-width:8.15366;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        inkscape:connector-curvature="0"
        id="path1480-1-3-1-5-7-5-05-2"
-       d="M -1331.2844,125.1915 C -855.98661,69.129152 -321.32477,85.366992 294.16077,215.83122"
+       d="M -1321.7383,123.68974 C -846.44047,67.627398 -311.77863,83.865238 303.70691,214.32946"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:0.910116;fill:none;stroke:#008000;stroke-width:8.15366;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:connector-curvature="0"
+       id="path1480-1-3-1-5-7-5-05-2-6"
+       d="M -1325.7851,134.23686 C -850.48733,78.174504 -315.82549,94.412342 299.66005,224.87658"
        sodipodi:nodetypes="cc" />
   </g>
   <g

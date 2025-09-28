@@ -6,7 +6,7 @@ title: Functors
 Functors 
 ===
 
-From this chapter on, we will change the tactic a bit (as I am sure you are tired of jumping through different subjects) and we will dive at full throttle into the world of categories, using the structures that we saw so far as context. This will allow us to generalize some of the concepts that we examined in these structures and thus make them valid for all categories. 
+From this chapter on, we will change the tactic a bit (as I am sure you are tired of jumping through different subjects) and we will dive at full throttle into the world of categories, using the structures that we saw so far as context. This will allow us to generalize some of the concepts that we examined in these structures and thus make them (the concepts) valid for all categories. 
 
 Categories we saw so far
 ===
@@ -54,7 +54,7 @@ The simplest category is $0$ (enjoy the minimalism of this diagram).
 
 ![The finite category 0](../10_functors/finite_zero.svg)
 
-The next simplest category is $1$ --- it is comprised of one object no morphism besides its identity morphism (which we don't draw, as usual)
+The next simplest category is $1$ --- it is comprised of one object and no morphisms besides its identity morphism (which we don't draw, as usual)
 
 ![the finite category 1](../10_functors/finite_one.svg)
 
@@ -131,7 +131,7 @@ By examining them more closely, we realize that categorical isomorphisms are not
 
 But first, we need to examine *one-way connections* between them, i.e. *functors*.
 
-PS: Categorical isomorphisms are also *very rare in practice* --- the only one that comes to mind me is the Curry-Howard-Lambek isomorphism from the previous chapter. That's because if two categories are isomorphic then there is no reason at all to treat them as different categories --- they are one and the same. 
+PS: Categorical isomorphisms are also *very rare in practice* --- the only one that comes to mind is the Curry-Howard-Lambek isomorphism from the previous chapter. That's because if two categories are isomorphic then there is no reason at all to treat them as different categories --- they are one and the same. 
 
 <!--
 comics:
@@ -179,7 +179,7 @@ A more formal definition of a morphism mapping involves the concept of the *homo
 
 ![Functor for morphisms](../10_functors/functor_morphisms_formal.svg)
 
-(Notice how the concepts of *homomorphism set* and of *underlying set* allowed us to "escape" to set theory when defining categorical concepts and define everything using functions.)
+Notice how the concepts of *homomorphism set* and of *underlying set* allowed us to "escape" to set theory when defining categorical concepts and define everything using functions? 
 
 Functor laws
 ---
@@ -351,19 +351,19 @@ Because of the above, the morphism mapping is the only relevant component of the
 Functor laws
 ---
 
-The first functor law trivial, it just says that the one and only identity object of the source group (which corresponds to the identity morphism of its one and only object) should be mapped to the one and only identity object of the target group. 
+The first functor law trivial, it just says that the one and only identity object of the source group (which corresponds to the identity morphism of its one and only object) should be mapped to the one and only identity object of the target group For groups, this even follows immediately from the second law and for monoids, it has to be added as an extra condition.
 
 And if we remember that the group operation of combining two objects corresponds to *functional composition* if we view groups as categories, we realize that the group homomorphism equation $F(a + b) = F(a) \times F(b)$ is just a formulation of the second functor law: $F(g•f) = F(g)•F(f)$.
 
 And many algebraic operations satisfy this equation, for example the functor law for the group homomorphism between $n \to 2ⁿ$ is just the famous algebraic rule, stating that $gᵃ gᵇ= gᵃ⁺ᵇ$.
 
-**Task 3:** We didn't talk about the first functor law (the one about the preservation of identities). Interestingly enough, for groups it actually follows from the second law. Try to prove that. 
+**Task 3:** Prove that the first functor law (preservation of identities ) of groups can be proven from the second law. Note that this is valid for groups, but not monoids.
 
 
 Functors in orders
 ===
 
-And now let's talk about a concept that is completely unrelated to functors, nudge-nudge (hey, bad jokes are better than no jokes at all, right?) In the theory of orders, we have the concept of functions between orders (which is unsurprising, given that orders, like monoids/groups, are based on sets) and one very interesting type of such function, which has applications in calculus and analysis, is a *monotonic function* (also called *monotone map*). This is a function between two orders that *preserves the order of the objects in the source order, in the target order. So a function $F$ is monotonic  when for every $a$ and $b$ in the source order, if $a ≤ b$ then $F(a) ≤ F(b)$.
+And now let's talk about a concept that is completely unrelated to functors, nudge-nudge (hey, bad jokes are better than no jokes at all, right?) In the theory of orders, we have the concept of functions between orders (which is unsurprising, given that orders, like monoids/groups, are based on sets) and one very interesting type of such function, which has applications in calculus and analysis, is a *monotonic function* (also called *monotone map*). This is a function between two orders that *preserves the order of the objects in the source order, in the target order. So a function $F$ is monotonic when for every $a$ and $b$ in the source order, if $a ≤ b$ then $F(a) ≤ F(b)$.
 
 For example, the function that maps the current time to the distance traveled by some object is monotonic because the distance traveled increases (or stays the same) as time increases.
 
@@ -390,7 +390,17 @@ Functor laws
 
 It is not hard to see that monotone maps obey the first functor law as identities are the only morphisms that go between a given object and itself. 
 
-And the second law ($F(g•f) = F(g)•F(f)$) also follows trivially. 
+And the second law ($F(g \circ f) = F(g) \circ F(f)$) also follows trivially --- we just have to prove that if function $F$ preserves order, i.e. that if 
+
+$$a ≤ b \to F(a) ≤ F(b)$$ 
+
+and 
+
+$$b ≤ c \to F(a) ≤ F(b)$$
+
+then obviously 
+
+$$F(a) ≤ F(c)$$
 
 **Task 4:** Show why the law holds.
 
@@ -490,8 +500,7 @@ Composition law:
 a.map(f).map(g) == a.map((a) => g(f(a)))
 ```
 
-**Task 7:** Use examples to verify that the laws are followed.
-
+**Task 7:** Use examples to convince yourself that the laws are followed.
 What are functors for
 ===
 
@@ -564,7 +573,7 @@ Categories all the way down
 
 The recursive nature of category theory might sometimes leave us confused: we started by saying that categories are *composed of objects and morphisms*, but now we are saying that there are *morphisms between categories* (functors). And on top of that, there is a category where *the objects are categories themselves*. Does that mean that categories are an example of... categories? Sounds a bit weird on intuitive level (as for example biscuits don't contain other biscuits and houses don't use houses as building material), but it is actually the case. Like, for example, every monoid is a category with one just object, but at the same time, monoids can be seen as belonging to one category - the category of monoids, where they are connected by monoid homomorphisms. We also have the category of groups, for example, which contains the category of monoids as a subcategory, as all monoids are groups etc.
 
-Category theory does *categorize* everything, so, from a category-theoretic standpoint, all of maths is *categories all the way down*. Whether you would threat a given category as a universe or as a point depends solemnly on the context. Category theory is an *abstract* theory. That is, it does not seek to represent an actual state of affairs, but to provide a language that you can use to express many different ideas.
+Category theory does *categorize* everything, so, from a category-theoretic standpoint, all of maths is *categories all the way down*. Whether you would treat a given category as a universe or as a point depends solely on the context. Category theory is an *abstract* theory. That is, it does not seek to represent an actual state of affairs, but to provide a language that you can use to express many different ideas.
 
 <!--
 {% if site.distribution == 'print' %}
@@ -593,22 +602,42 @@ The morphism mapping of orders consist just of mapping the only existing morphis
 
 ---
 
-**Task 3:** We didn't talk about the first functor law (the one about the preservation of identities). Interestingly enough, for groups it actually follows from the second law. Try to prove that. 
+**Task 3:** Prove that the first functor law (preservation of identities ) of groups can be proven from the second law i.e. that if $C$ and $D$ are groups and  $F: C \to D$ --- a group homomorphism, you have $ID_C = F(ID_D)$. Note that this is valid for groups, but not monoids.
 
+
+We know that
+
+$ID_D = ID_D \circ ID_D$
+
+So
+
+$F(ID_D) = F(ID_D) \circ F(ID_D)$ (second functor law)
+
+But we can add the identity operation anywhere, without changing the equations, so we have
+
+$F(ID_D) \circ ID_C = F(ID_D) \circ F(ID_D)$ (adding identity to the equation). 
+
+And cancelling out $F(ID_D)$, we have
+
+$ID_C = F(ID_D)$ 
+
+This last step is valid only for groups, as cancelling out a morphism is done by applying it's reverse, and monoids don't have reverses.
 
 ---
 
 **Task 4:** Show why the law holds.
 
-This is similar to the proof of Task 2: both morphisms $F(g•f)$ and $F(g)•F(f)$ have the same type signature. But because in orders there can be just one morphism with a given type signature, these two morphisms must be equal to one another.
+In categorical language, the problem states that if we have $f : a \to b$ and $g : b \to c$, then $F(g \circ f) = F(g) \circ F(f)$.
 
-Suppose that in the source order we have two morphisms with the following type signature:
+The proof uses the same approach as the one in Task 2: because in orders there can be just one morphism with a given type signature, two morphisms with equal type signatures must be equal to one another.
 
-$f :: a \to b$ and $g :: b \to c$. 
+Then, if we compose those two morphisms in the target order ($F(g)\circ F(f)$), we get a morphism $F(a) \to F(c)$
 
-Then, if we compose those two morphisms in the target order ($F(g)•F(f)$), we get a morphism from object $F(a)$ to object $F(c)$ ($F(g)•F(f) :: F(a) \to F(c)$).
+$$F(g)\circ F(f) : F(a) \to F(c)$$
 
-If we compose the two morphisms in the source order, and we use the functor to get the corresponding morphism in the target order ($F(g•f)$) we get another morphism from object $F(a)$ to object $F(c)$ ($F(g•f) :: F(a) \to F(c)$)
+If we compose the two morphisms in the *source* order, and we use the functor law to obtain the corresponding morphism in the target order, we get another morphism from object $F(a) \to F(c)$ 
+
+$$F(g \circ f) : F(a) \to F(c)$$
 
 But because in orders there can be just one morphism between $F(a)$ and $F(c)$ so these two morphisms must be equal to one another.
  
@@ -616,7 +645,9 @@ But because in orders there can be just one morphism between $F(a)$ and $F(c)$ s
 
 **Task 5:** Why are the graphs of linear functions comprised of straight lines?
 
-The slope of a function represents changes in the derivative, the derivative of linear functions is constant, so they are straight lines.
+A linear function grows with a constant rate, (i.e. their derivative is always constant).
+
+Slope of a function reflects the change in it's rate of growth, so in case of linear functions it is a straight line.
 
 ---
 
@@ -636,7 +667,6 @@ And if we sum the two we get
 
 $f(x) + f(y) = a \times x + a \times y $
 
-
 By the law of distributivity of addition we get
 
 $f(x) + f(y) = a\times(x + y)$ 
@@ -653,23 +683,58 @@ You can show that this works in the other direction as well, but it is a little 
 
 ---
 
-**Task 7:** Use examples to verify that the laws are followed.
+**Task 7:** Use examples to convince yourself that the laws are followed.
+
+Trivial, exercise, the point here is playing a bit to familiarize yourself with the laws, everyone has a favourite set and functions which they use, here are mine:
 
 Identity law:
 ```
-a.map(a => a) == a
+[1, 2, 3].map(a => a) == [1, 2, 3]
 ```
 Composition law:
 ```
-a.map(f).map(g) == a.map((a) => g(f(a)))
+let f = (a) => a + 1
+let g = (a) => a * 2
+[1, 2, 3].map(f).map(g) == [1, 2, 3].map((a) => g(f(a)))
 ```
 ---
 
 **Task 8:** Go through the functor definition and see how do functors compose. 
 
+Another trivial exercise, with, perhaps, non-trivial setup. It all comes down to go through the elements a functor consists of and to see how the elements of two functors can compose. 
+
+The two elements are the object mapping and the morphism mapping.
+
+The object mapping is just a function, connecting two categories' underlying sets, so if we have two functors with the appropriate type signature e.g. 
+
+$C \to D$ 
+
+and 
+
+$D \to E$
+
+we also have two functions that connect these categories' underlying sets: 
+
+$set(C) \to set(D)$ 
+
+and
+
+$set(D) \to set(E)$. 
+
+So the answer, for object mapping is to compose the two functions to get a function (which can be the basis for a $C \to D$ functor).
+$$set(C) \to set(E)$$ 
+
+For morphism mapping, do the same thing for the categories' hom-sets.
+
 ---
 
 **Task 9:** What are the initial and terminal object of the category of small categories.
+
+If you remember the concepts of initial and terminal objects from the category of sets $Set$, you can prove that they are the same for the category of categories $Cat$
+
+The initial object in $Set$ is the empty set, the initial category is the empty category. The unique functor from the empty category to any other category is the same --- the functor which maps nothing to nothing.
+
+The terminal object in $Set$ is the one-element set, the terminal category is the category $1$, which has one object and just the identity morphism. The unique functor from any object to the terminal object is the functor that maps all objects to the only object and all morphisms to the only morphism.
 
 ---
 

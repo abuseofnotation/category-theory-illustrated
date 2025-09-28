@@ -20,7 +20,7 @@ The _Cartesian product_ (or _tuple_) of sets $A$ and $B$ (denoted $A \times B$) 
 
 ![Product](../02_category/product.svg)
 
-**Question**: Why is this called a product? Hint: How many elements does it have?
+**Task 1**: Why is this called a product? Hint: How many elements does it have?
 
 Naturally, the product comes equipped with two functions, one for each property, which take a pair and extracts the value of the property, so $C \to A$ and $C \to B$, called the product's *projections* (in programming terms, we would dub these the "getters") --- the functions for retrieving back it's constituent values).
 
@@ -319,7 +319,7 @@ Note that from this property it follows that the singleton set has exactly one e
 
 ![Functions from the singleton set](../02_category/singleton_elements_external.svg)
 
-**Question:** Why exactly does it follow (check the definition)?
+**Task 2:** Why exactly does it follow (check the definition)?
 
 ## Defining the empty set using functions
 
@@ -333,7 +333,7 @@ And, again, since the empty set is the only set that has this property, we can r
 
 > the empty set is the set such that there exists a function from it to any other set.
 
-*Task:* why is the functions to the empty set unique?
+*Task 3:* why is the functions to the empty set unique?
 
 ![Initial object](../02_category/initial_object.svg)
 
@@ -457,7 +457,7 @@ It's important to mark this morphism because there can be (let's again add this 
 
 A structure must have an identity morphism for each object in order for it to be called a category --- this is known as the _law of identity_.
 
-**Question:** What is the identity morphism in the category of sets?
+**Task 4:** What is the identity morphism in the category of sets?
 
 ## The law of associativity
 
@@ -547,7 +547,7 @@ Incidentally, this is the definition of a mathematical law called _commutativity
 
 A simple context where this law applies --- the natural numbers are commutative under the operation of addiction, e.g. 1 + 2 = 2 + 1 (we will learn more about this in the chapter on groups).
 
-**Question:** If our objects are sets, what set operations can play the part of the dot in this example (i.e. which ones are commutative)?
+**Task 5:** If our objects are sets, what set operations can play the part of the dot in this example (i.e. which ones are commutative)?
 
 ## Associativity
 
@@ -595,7 +595,7 @@ This is the essence of associativity --- it gives us the ability to study comple
 
 Note that the operator we defined only allows for combining things in one dimension (you can attach a thing left and right, but not up or down). Later we will learn about an extension of the concept of a category theory (called monoidal category) that "supports" working in 2 dimensions.
 
-**Question:** Actually, in this chapter, we already defined a case of 2-dimentional composition, only we didn't *say* it is  2-dimentional composition. Did you see it?
+**Task 6:** Actually, in this chapter, we already defined a case of 2-dimentional composition, only we didn't *say* it is  2-dimentional composition. Did you see it?
 
 <!--
 {% if site.distribution == 'print'%}
@@ -622,3 +622,66 @@ Thus, we established a connection between associativity and commutativity.
 <!--
 {%endif%}
 -->
+
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers
+===
+
+---
+
+**Task 1:** Why is this called a product? Hint: How many elements does it have?
+
+**Solution:**
+The Cartesian product is called a "product" because the number of elements in $A × B$ equals the **product** of the number of elements in $A$ and $B$ e.g. if $A$ has 2 elements and $B$ has 3 elements, then $A × B$ has 2 × 3 = 6 elements
+
+---
+
+**Task 2:** Why exactly does it follow [that the singleton set has exactly one element]?
+
+There is exactly one function from any set to the singleton set, including the singleton set itself.
+
+So, there is exactly one function from $1 \to 1$. But functions $1 \to X$ correspond to elements of $X$, 1 has exactly one element.
+
+---
+
+**Task 3** Why is the function to the empty set unique?
+
+As we established, there is exactly one such function, the peculiar "empty function".
+
+---
+
+**Task 4:** What is the identity morphism in the category of sets?
+
+In the category of sets, the identity morphism for a set A is the *identity function* $id_A: A → A$ which maps each element to itself. Check the laws!
+
+---
+
+**Task 5:** If our objects are sets, what set operations can play the part of the dot in this example (i.e. which ones are commutative)?
+
+Commutative set operations: 
+
+- *Set union*: the set of elements in $A$ or $B$ (or both): ${1,2} ∪ {2,3} = {1,2,3} = {2,3} ∪ {1,2}$
+
+- *Set intersection* the set of elements in both $A$ and $B$: ${1,2} ∩ {2,3} = {2} = {2,3} ∩ {1,2}$
+
+Non-commutative operations:
+- Set difference ($A - B ≠ B - A$)
+
+---
+
+**Task 6**: Actually, in this chapter, we already defined a case of 2-dimensional composition, only we didn't *say* it is 2-dimensional composition. Did you see it?
+
+Yes we did --- products.
+
+a function $f: A \to B $, can be composed with a function $g : B \to C$, to to obtain $g \circ f : A \to C$ (functional composition).
+
+But, $f: A \to B $ can also be compose with a function $f': A' \to B'$ (or any other signature, really), to obtain $f \times f': A\times A' \to B \times B'$$!
+
+<!--
+{%endif%}
+-->
+

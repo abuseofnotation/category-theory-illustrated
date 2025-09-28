@@ -124,11 +124,11 @@ The question "How far are we from New York?" is a function with set of all place
 
 The question "Who is my father?" is a function whose source is the set of all people in the world.
 
-**Question:** What is the target of this function?
+**Task 1:** What is the target of this function?
 
 Note that the question "Who is my child?" is *NOT* a straightforward function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.
 
-**Question:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
+**Task 2:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
 
 The Identity Function
 ---
@@ -155,7 +155,7 @@ Although it doesn't look like it, there is a unique function from the empty set 
 
 ![Function with empty set](../01_set/function_empty.svg)
 
-**Question:** Is this really valid? Why? Check the definition.
+**Task 3:** Is this really valid? Why? Check the definition.
 
 If you still aren't convinced, check this out:
 1. There is a function between a subset and a its superset 
@@ -163,7 +163,7 @@ If you still aren't convinced, check this out:
 
 So, evidently, this function has to exist!
 
-**Question:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
+**Task 4:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
 
 Functions and Singleton Sets
 ---
@@ -172,9 +172,9 @@ There is a unique function from any set to any singleton set.
 
 ![Function with a singleton set](../01_set/function_singleton.svg)
 
-**Question:** Is this really the only way to connect *any* set to a singleton set in a valid way?
+**Task 5:** Is this really the only way to connect *any* set to a singleton set in a valid way?
 
-**Question:** Again, what about the other way around?
+**Task 6:** Again, what about the other way around?
 
 Sets and numbers
 ===
@@ -224,7 +224,7 @@ Another very basic set that is used in programming is the set of keyboard charac
 
 Most of the types that are used in programming are *composite* types ---  they are a combination of the primitive ones that are listed here. Again, we will cover these later.
 
-**Question:** What is the type equivalent of subsets in programming?
+**Task 7:** What is the type equivalent of subsets in programming?
 
 Functions and methods/subroutines
 ---
@@ -270,7 +270,7 @@ Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and
 
 Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed again).
 
-**Question:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
+**Task 8:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
 Composition of relationships
 ---
@@ -294,7 +294,7 @@ One of the main ways in which modern engineering differs from ancient craftsmans
 
 ![A espresso machine ](../01_set/machine.svg)
 
-**Task:** Think about what would be those functions' sources and targets.
+**Task 9:** Think about what would be those functions' sources and targets.
 
 By the way, diagrams that are "zoomed out" that show functions without showing set elements are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*. 
 
@@ -336,7 +336,7 @@ If we want compose more than two functions we might wonder if the order in which
 
 The answer is yes --- as long as the order is maintained, the result would always be the same. This property of functions is called *associatity.
 
-*Task:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
+*Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
 Category theory --- a hint for the definition
 ---
@@ -425,7 +425,7 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-**Question:** Come up with a good example of a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
+**Task 11:** Come up with a good example of a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
 
 Equivalence relations and isomorphisms
 ===
@@ -479,7 +479,7 @@ We said that the most characteristic property of the equivalence relation is its
 
 ![Symmetry of isomorphisms](../01_set/isomorphism_symmetry.svg)
 
-**Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
+**Task 12:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
 The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
 
