@@ -60,7 +60,7 @@ This is because (though it may seem contradictory at first) *categorical isomorp
 
 ![Isomorphic categories](../11_natural_transformations/equal_categories.svg)
 
-For this reason, we need a new concept of equality of categories. A concept that would elucidate the *differences* between categories with different structure, but also the *sameness* of categories who have the same categorical structures, disregarding the differences that are irrelevant for category-theoretic standpoint. That concept is *equivalence*.
+For this reason, we need a new concept of equality of categories. A concept that would elucidate the *differences* between categories with different structure, but also the *sameness* of categories that have the same categorical structures, disregarding the differences that are irrelevant for category-theoretic standpoint. That concept is *equivalence*.
 
 <!--comic-->
 **Parmenides:** This category surely cannot be equal to the other one --- it has a different amount of objects!
@@ -76,7 +76,7 @@ To understand equivalent categories better, let's go back to the functor between
 
 Such a map is necessary if your goal is to know about all *places*, however, like we said, when working with category theory, we are not so interested in *places*, but in the *routes* that connect them i.e. we focus not on *objects* but on *morphisms*.
 
-For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may may collapse them into one intersection and still show all routes that exist (the tree routes would be represented by the "identity route"). 
+For example, if there are intersections that are positioned in such a way that there are routes from one and to the other and vice-versa a map may collapse them into one intersection and still show all routes that exist (the tree routes would be represented by the "identity route"). 
 
 ![Equivalent categories](../11_natural_transformations/equivalent_map.svg)
 
@@ -132,17 +132,17 @@ That a way to define them, but it is not the best way. Now that we know about fu
 
 We begin with the definition of **set isomorphism**:
 
-> Two **sets** $A$ and $B$ are **isomorphic** (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+> Two **sets** $A$ and $B$ are **isomorphic** (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 To amend it so it is valid for all categories  by just replacing the word "function" with "functor" and "set" with "category":
 
-> Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+> Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 **Task 1:** Check if that definition is valid.
 
 Believe it or not, this definition, is just one find-and-replace operation away from the definition of *equivalence*. We get there only by replace equality with isomorphism (so, $=$ with $\cong$). 
 
-> Two **categories** $A$ and $B$ are **equivalent** (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{A}$ and $g \circ f \cong ID_{A}$.
+> Two **categories** $A$ and $B$ are **equivalent** (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{B}$ and $g \circ f \cong ID_{A}$.
 
 Like we said at the beginning, with isomorphisms, going back and forth brings us to the same object, while with equivalence the object is just *isomorphic* to the original one. This is truly all there is to it. 
 
@@ -200,7 +200,7 @@ The naturality condition
 
 Just like anything else in category theory, natural transformations have some laws that they are required to pass. In this case it's one law, typically called the naturality law, or the naturality condition. 
 
-Before we state this law, let's recap where are we now. We have two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
+Before we state this law, let's recap where are we now: We have two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each object of the target of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some objects of the image of $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
 
 ![The commuting square of a natural transformation](../11_natural_transformations/natural_transformation_square.svg)
 
@@ -258,13 +258,15 @@ Now, we ask ourselves, in which cases does there exist an isomorphism between th
 
 ![An equivalence diagram](../11_natural_transformations/equivalent_orders_functors.svg)
 
-The answer becomes trivial if we draw the isomorphism arrows connecting the three "interesting" objects in a different way (remember, this is the same category on the top and the bottom) --- we can see that these are exactly the arrows that enable us to construct a an isomorphism between the two functors (the others are just identity arrows).
+The answer becomes trivial if we draw the isomorphism arrows connecting the three "interesting" objects in a different way (remember, this is the same category on the top and the bottom) --- we can see that these are exactly the arrows that enable us to construct an isomorphism between the two functors (the others are just identity arrows).
 
 ![An equivalence diagram, showing a transformation](../11_natural_transformations/equivalent_orders_transformation.svg)
 
-And when would this isomorphism be such that preserves the structure of the category (so that each morphism from the output of the composite functor has an equivalent one in the output of the identity)? Exactly when the isomorphism is *natural* i.e. when every morphism points to a commuting square -- this ensures not only that no morphism is lost, when applying the composite functor, but that the morphisms in the target of the functor behave in the same way as their counterparts in the source.
+And when would this isomorphism be such that preserves the structure of the category (so that each morphism from the output of the composite functor has an equivalent one in the output of the identity)? Exactly when the isomorphism is *natural* i.e. when every morphism is mapped to a commuting square, e.g. here is the commuting square of the morphism that is marked in red.
 
 ![ An equivalence diagram, showing a natural transformation](../11_natural_transformations/equivalent_orders_natural_transformation.svg)
+
+i.e. naturality condition assures us that the morphisms in the target of the functor behave in the same way as their counterparts in the source.
 
 With this, we are finished with categorical equivalence, but not with natural transformations --- natural transformations are a very general concept, and categorical equivalences are only a very narrow case of them.
 
@@ -278,7 +280,7 @@ We learned that objects are known as *types*, products and coproducts are, respe
 Pointed functors again
 ---
 
-Now, suppose this sounds a bit vague. If only we had some example of a natural transformation in programming, that we can use... But wait, we did show a natural transformation, in the previous chapter, when we talked about pointed functors. 
+Now, suppose this sounds a bit vague. If only we had some example of a natural transformation in programming, that we can use... But wait, we did show a natural transformation in the previous chapter, when we talked about pointed functors. 
 
 That's right, a functor is pointed when there is a natural transformation between it and the identity functor i.e. to have one green arrow for every object/type.
 
@@ -301,7 +303,9 @@ Indeed it is (I wasn't lying to you, in case you are wondering), however, in the
 
 As we know from the last chapter, a functor in programming is a generic type (which, has to have the `map` function with the appropriate signature). 
 
-And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morhpisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary.
+And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morphisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. 
+
+Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary.
 
 ```typescript
 
@@ -461,7 +465,7 @@ function unnatural<A> (a: Array<A>): Array <A>{
 
 This will work, but, if you try to do the same in Haskell, for example, it would immediately tell you that you cannot ("`a` is a "rigid type variable" (also known as "Skolem variable" in other context)). Why is it so?  There are some *technical reasons*, as runtime type checks like this one, add performance overhead, because they require the runtime to preserve type information for each value, after compilation, but there is also a strong *philosophical reason*: a general function should work in a general way. And the generality of a function that checks the type of a value at runtime (and behaves differently for different types) is dubious at best. 
 
-Such function is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sitted at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for it to be true.
+Such function is like, (if we switch to the logic branch of the Curry-Howard isomorphism) proving a general statement, of the form "All $a$'s have a given property" by merely pointing out that the $a$s that are currently in existence happen to have it. Surely, even if valid in some contexts, such proofs are a very limited in terms of both scope and information they carry e.g. the assertion that all people who are sited at the table next to you have brown hair doesn't tell you anything of substance, unless there is a deeper reason for it to be true.
 
 In other words, unnatural transformations wouldn't work in Haskell, simply because they are ... unnatural i.e. they do not follow the laws.
 
@@ -476,7 +480,7 @@ Natural transformations again
 
 Now, after we saw the definition of natural transformations, it is time to see the definition of natural transformations (and if you feel that the quality of the humour in this book is deteriorating, that's only because *things are getting serious*).
 
-Let's again review the commuting diagram that represents a natural transformation.
+Let's review again the commuting diagram that represents a natural transformation.
 
 ![Two functors](../11_natural_transformations/natural_functors.svg)
 
@@ -489,7 +493,12 @@ Product groups and product categories
 
 We haven't covered product categories, however some pages ago, when we covered monoids and groups, we talked about the concept of a *product group*. The good news is that product *categories* are a generalization of product *groups*...
 
-The bad news is that you probably don't remember much about product groups , but don't worry, we will do a refresher now:
+The bad news is that you probably don't remember much about product groups, as covered them briefly. 
+
+But don't worry, we will do a more in-depth treatment now:
+
+Product groups
+---
 
 Given two groups $G$ and $H$, whose sets of elements can also be denoted $G$ and $H$... 
 
@@ -501,7 +510,7 @@ Given two groups $G$ and $H$, whose sets of elements can also be denoted $G$ and
 
 ![The Klein four as a product group](../11_natural_transformations/klein_four_underlying_set.svg)
 
-And what can the group operation of such a group be? Well, I would say that out of the the few possible groups operations for this set that *exist*, this is the *only* operation that is *natural* (I didn't intend to involve natural transformation at this section, but they really apper everywhere). So, let's try to derive the operation of this group.
+And what can the group operation of such a group be? Well, I would say that out of the few possible groups operations for this set that *exist*, this is the *only* operation that is *natural* (I didn't intend to involve natural transformation at this section, but they really do appear everywhere). So, let's try to derive the operation of this group.
 
 We know what a group operation is, in principle: A group operation combines two elements from the group into a third element i.e. it is a function with the following type signature:
 
@@ -531,43 +540,20 @@ And the operation of the product group of the two boolean groups which we presen
 
 So, the general definition of the operation is the following ($g1$, $g2$ are elements of $G$ and $h1$ and $h2$ elements of $H$).
 
-$$(g1, h1) \circ (g2, h2) = ( (g1 \circ g2), (g2 \circ h2))$$
+$$(g1, h1) \circ (g2, h2) = ( (g1 \circ g2), (h1 \circ h2))$$
 
 And that are product groups.
-
-<!--
-{% if site.distribution == 'print' %}
--->
-
-Interlude: Naturality in product group operations
----
-
-Now, we will have a really peculiar interlude, in which we will show that the group operation of product groups is actually a natural transformation. 
-
-To understand why this is the case, let's look at the equations once more.
-
-![Equations of the product of numbers and colors](../11_natural_transformations/product_group_equations.svg)
-
-We said that in order for the solutions for this equations, to make sense, they would have to work for all monoids, not just numbers and colors. In other words, there should be a mechanism that, given two monoids, produces a third one. This mechanism can be nothing more (and nothing less) than a polymorphic function.
-
-$$\forall G H. G \to H \to G \times H$$
-
-We shown above how polymorphic functions are transformations (this one is harder to reason about, since it is parametrized over not one, but two types, but we learned how to represent functions that take two arguments as functions that take one argument in chapter 2).
-
-We also said that we are interested in solutions which produce a number, somehow by using the two numbers provided, not just picking one at random, and, similarly, ones that produce a new color using the colors given. This condition corresponds to the *naturality condition* which indeed does hold (correct by construction) for all product groups.
-
-<!--
-{%endif%}
--->
 
 Product categories
 ---
 
 We are back at tackling product *categories*. 
 
-We now know what product *groups*, are and we know that groups nothing but categories with just one object (and the group objects are the category's morphisms, remember?), so this should be enough to get us started.
+Since we know what product *groups* are, and we know that groups are nothing but categories with just one object (and the group objects are the category's morphisms, remember?), we are already almost there.
 
-Here is a way to make a product category. Take any two categories. 
+Here is a way to make a product category. 
+
+Take any two categories:
 
 ![Product category - components](../11_natural_transformations/product_components.svg)
 
@@ -575,7 +561,7 @@ Then take the set of all possible pairs of the objects of these categories.
 
 ![Product category - objects](../11_natural_transformations/product_set.svg)
 
-And, finally, we make a category of that set by taking all morphisms coming from any of the two categories and replicate them to all pairs that feature some objects from their type signature.
+And, finally, we make a category out of that set by taking all morphisms coming from any of the two categories and replicate them to all pairs that feature some objects from their type signature, in the same way as we did for product groups (in this example, only one of the categories has morphisms).
 
 ![Product category](../11_natural_transformations/product_category.svg)
 
@@ -601,7 +587,7 @@ So, given a product category of $2$ and some other category $C$...
 
 ![Product category](../11_natural_transformations/product_category_natural_transformation.svg)
 
-Furthermore, any natural transformation from $C$ to some other category (call it $D$, as it is customary) can be represented as a functor $2 \times C \to D$.
+Furthermore, this connection is two-way: any natural transformation from $C$ to some other category (call it $D$, as it is customary) can be represented as a functor $2 \times C \to D$.
 
 That is, if we have a natural transformations $\alpha : F \Rightarrow G$ (where  $F: C \to D$ and  $G: C \to D$), then, we also have a functor  $2 \times C \to D$, such that if we take the subcategory of $2 \times C$ comprised of just those objects that have the $0$ object as part of the pair, and the morphisms between them, we get a functor that is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
 
@@ -611,7 +597,34 @@ This perspective helps us realize that a natural transformation can be viewed as
 
 ![Notation for natural transformation](../11_natural_transformations/natural_transformation_notation.svg)
 
-We can even retrieve the structure of the source category of the functors, which (as categories are by definition structure and nothing more) is equivalent to retrieving the category itself.
+We can even retrieve the structure of the source category of these functors, which (as categories are by definition structure and nothing more) is equivalent to retrieving the category itself.
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Interlude: Naturality in product group operations
+---
+
+Now, we will have one really peculiar interlude, in which we will show that the group operation of product groups is actually a natural transformation. 
+
+To understand why this is the case, let's look at the equations once more.
+
+![Equations of the product of numbers and colors](../11_natural_transformations/product_group_equations.svg)
+
+We said that in order for the solutions for this equations, to make sense, they would have to work for all monoids, not just numbers and colors. In other words, there should be a mechanism that, given two monoids, produces a third one. This mechanism can be nothing more (and nothing less) than a polymorphic function.
+
+$$\forall G H. G \to H \to G \times H$$
+
+We shown above how polymorphic functions are transformations (this one is harder to reason about, since it is parametrized over not one, but two types, but we learned how to represent functions that take two arguments as functions that take one argument in chapter 2).
+
+And the naturality condition guarantees that our solution would produce a number/color etc. *by using the two numbers/colors provided*, not just picking one at random.
+
+You can prove that the naturality condition indeed does hold (correct by construction) for all product groups.
+
+<!--
+{%endif%}
+-->
 
 Composing natural transformations
 ===
@@ -621,7 +634,7 @@ Natural transformations are surely a different beast than normal morphisms and f
 The identity natural transformation
 ---
 
-But before this, we have to get this one trivial definition out of the way --- for each functor, we have the identity natural transformation (actually a natural isomorphism) between it and itself.
+Let's first get one trivial definition out of the way: for each functor, we have the identity natural transformation (actually a natural isomorphism) between it and itself.
 
 ![The identity natural transformation](../11_natural_transformations/identity_natural_transformation.svg)
 
@@ -641,7 +654,7 @@ Let's start by drawing two of them for each projection of the morphism in $C$.
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_squares.svg)
 
-We have to have two more squares, corresponding to the two morphisms that are the components of the $\alpha$ natural transformation. However, these morphisms connect the objects that are the target of the two functors, objects that we already drew on our diagram, so rather than drawing them again, we just draw the connections between them.
+We have to have two more squares, corresponding to the two morphisms that are the components of the $\alpha$ natural transformation. However, these morphisms connect the objects that are the target of the two functors, objects that we already have on our diagram, so we just have to draw the connections between them.
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition.svg)
 
@@ -649,7 +662,7 @@ The result is an interesting structure which is sometimes visualized as a cube.
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube.svg)
 
-More interestingly, when we compose the squares from the cube horizontally, we see that it contains not one, but two commuting squares (visualized in grey and red) that connect morphisms $F'Ff$ and $G'Gf$. 
+More interestingly, when we compose the commuting squares from the sides of the cube horizontally, we see that it contains not one, but two bigger commuting squares (they look like *rectangles* in this diagram), visualized in grey and red. Both of them connect morphisms $F'Ff$ and $G'Gf$. 
 
 ![Horizontal composition of natural transformation](../11_natural_transformations/horizontal_composition_cube_commuting.svg)
 
@@ -685,7 +698,7 @@ We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F 
 Categories of functors
 ---
 
-Now, we are approaching the end of the chapter, we will introduce our category and call it quits. To do that, we introduce a more compressed notation for vertical composition of natural transformations (where they do indeed look vertical).
+Now, we are approaching the end of the chapter, we will introduce our category and call it quits. To do that, we first introduce a more compressed notation for vertical composition of natural transformations (where they do indeed look vertical).
 
 We started this chapter by looking at category of sets and using internal diagrams, displaying the set elements as points and the sets/objects as collections. 
 
@@ -793,8 +806,8 @@ So the mapping encompasses all object *from the image of the functor*. So when w
 **Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
 
 To draw a square of the $reverse: List\ a \to List\ a$ natural transformation, we must first:
-1. Pick a function $f$ from number (because we want to use the mapping that is displayed) to something else, say  $+1 : number \to number$. 
-2. Lift it to a function $Ff: List number \to List number$ that adds one to every number from the list.
+1. Pick a function, $f$ say  $+1 : number \to number$. 
+2. Lift it with the functor e.g $Ff: List number \to List number$ adds one to every number from the list.
 
 Then we:
 1. Draw the results of the application of the function on the sets that are at the top, at the corresponding boxes at the bottom e.g. $[1, 2]$ becomes $[2, 3]$.
@@ -832,11 +845,13 @@ $$take1 \circ (reverse \circ F\ f) \circ F\ g$$
 
 ---
 
-**Task 5:** Show that the two definitions are equivalent.
+**Task 5:** Show that the two definitions [of natural transformation] are equivalent.
 
-This entails extracting a natural transformation from a functor $2 \times C \to D$, and the other way around. We will describe one direction of this process:
+This entails extracting a natural transformation from a functor $2 \times C \to D$, and the other way around. 
 
-As we said, we can split the category $2 \times C$ into two subcategories which are both isomorphic to $C$, one containing the objects that are paired with the first object of $2$ and one containing the objects paired with the second object (let's call those $C^1$ and $C^2$).
+Here,we will describe one direction of this process:
+
+As we said, we can split the category $2 \times C$ into two subcategories (let's call those $C^1$ and $C^2$) which are both isomorphic to $C$, one containing the objects that are paired with the first object of $2$ and one containing the objects paired with the second object.
 
 Likewise, we can split the functor $2 \times C \to D$ into two functors $C^1 \to D$ and $C^2 \to D$. 
 
@@ -856,11 +871,9 @@ To do that, we remember that a natural transformation is just a family of morphi
 
 For each object $c$ in $C$, let $\bar\alpha_c$ be the morphism that corresponds to it in the natural transformation $\bar\alpha$ and let $\alpha_c$ be the morphism that corresponds to it in $\alpha$.
 
-Then, the morphism that corresponds to it in $\bar\alpha \bullet \alpha$ is either $\bar\alpha_c ∘ F'(\alpha_c)$, if you follow the grey arrows of the cube, or alternatively $$(\bar\alpha \bullet \alpha)_c = G'(\bar\alpha_c) ∘ \alpha_c$$, if you follow the grey arrows.
+Then, the morphism that corresponds to it in $\bar\alpha \bullet \alpha$ is either $\bar\alpha_c ∘ F'(\alpha_c)$, if you follow the grey arrows of the cube, or alternatively $$(\bar\alpha \bullet \alpha)_c = G'(\bar\alpha_c) ∘ \alpha_c$$, if you follow the grey arrows. Or, just $\bar\alpha_c ∘ \alpha_c$ if you don't care so much about notation.
 
-Or, $\bar\alpha_c ∘ \alpha_c$ if you don't care so much about notation.
-
-That this family is a transformation follows from the signatures of the morphisms.
+That such morphisms form a transformation follows from the signatures of the morphisms.
 
 This transformation is natural, because for all those morphisms we have the commuting square.
 

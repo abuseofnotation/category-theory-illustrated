@@ -357,7 +357,7 @@ And if we remember that the group operation of combining two objects corresponds
 
 And many algebraic operations satisfy this equation, for example the functor law for the group homomorphism between $n \to 2ⁿ$ is just the famous algebraic rule, stating that $gᵃ gᵇ= gᵃ⁺ᵇ$.
 
-**Task 3:** Prove that the first functor law (preservation of identities ) of groups can be proven from the second law. Note that this is valid for groups, but not monoids.
+**Task 3:** Prove that the first functor law (preservation of identities) of groups can be proven from the second law. Note that this is valid for groups, but not monoids.
 
 
 Functors in orders
@@ -590,9 +590,13 @@ The answer is this:
 
 ![the finite category 2](../10_functors/finite_two_task_solution.svg)
 
-The third category is such that $f \circ f = id$, if it doesn't, you would end up with the category with an infinite amount of morphisms (see the free monoid in the chapter on monoids).
+Isomorphisms are equaluty in category theory, so flipping the arrow from the left to the right doesn't count as a new category.
 
-Also, the objects in category theory don't have identity so flipping the arrow from the left to the right doesn't count as a new category.
+For the third category we have to specify what composing the morphism with itself would yield: 
+
+$$f \circ f = id$$ 
+
+This law guarantees that there would be just 1 morphism besides identity: if this law doesn't exist, you would end up with the category with an infinite amount of morphisms (see the free monoid in the chapter on monoids), if it is changed to something else, they would be a finite number of morphisms, but still more than 1.
 
 ---
 
@@ -602,7 +606,7 @@ The morphism mapping of orders consist just of mapping the only existing morphis
 
 ---
 
-**Task 3:** Prove that the first functor law (preservation of identities ) of groups can be proven from the second law i.e. that if $C$ and $D$ are groups and  $F: C \to D$ --- a group homomorphism, you have $ID_C = F(ID_D)$. Note that this is valid for groups, but not monoids.
+**Task 3:** Prove that the first functor law (preservation of identities) of groups can be proven from the second law i.e. that if $C$ and $D$ are groups and  $F: C \to D$ --- a group homomorphism, you have $ID_C = F(ID_D)$. Note that this is valid for groups, but not monoids.
 
 
 We know that
@@ -621,7 +625,7 @@ And cancelling out $F(ID_D)$, we have
 
 $ID_C = F(ID_D)$ 
 
-This last step is valid only for groups, as cancelling out a morphism is done by applying it's reverse, and monoids don't have reverses.
+This last step is valid only for groups, as cancelling out a morphism is done by applying it's reverse, and monoid morphisms don't have reverses.
 
 ---
 
@@ -639,7 +643,9 @@ If we compose the two morphisms in the *source* order, and we use the functor la
 
 $$F(g \circ f) : F(a) \to F(c)$$
 
-But because in orders there can be just one morphism between $F(a)$ and $F(c)$ so these two morphisms must be equal to one another.
+But because in orders there can be just one morphism with signature $F(a) \to F(c)$ so these two morphisms must be equal to one another:
+
+$$F(g)\circ F(f) = F(g \circ f)$$
  
 ---
 
@@ -647,15 +653,13 @@ But because in orders there can be just one morphism between $F(a)$ and $F(c)$ s
 
 A linear function grows with a constant rate, (i.e. their derivative is always constant).
 
-Slope of a function reflects the change in it's rate of growth, so in case of linear functions it is a straight line.
+The slope of a function reflects the change in its rate of growth, so in case of linear functions it is a straight line.
 
 ---
 
 **Task 6:** Show that linear functions preserve addition.
 
-Let's say we have a function $f$, such that it multiplies the number by a certain constant $a$.
-
-We have
+Let's say we have a function $f$, such that it multiplies the number by a certain constant $a$, e.g. we have
 
 $f(x) = a \times x$
 
@@ -663,7 +667,7 @@ and
 
 $f(y) = a \times y $
 
-And if we sum the two we get
+If we sum the two we get
 
 $f(x) + f(y) = a \times x + a \times y $
 
@@ -673,9 +677,9 @@ $f(x) + f(y) = a\times(x + y)$
 
 but by the definition of $f$ we also have
 
-$f(x + y ) = a\times (x + y) $
+$f(x + y) = a\times (x + y) $
 
-So 
+Uniting the two terms that are both equal to $a\times (x + y)$ we get:
 
 $f(x) + f(y) = f(x + y)$
 
@@ -685,7 +689,7 @@ You can show that this works in the other direction as well, but it is a little 
 
 **Task 7:** Use examples to convince yourself that the laws are followed.
 
-Trivial, exercise, the point here is playing a bit to familiarize yourself with the laws, everyone has a favourite set and functions which they use, here are mine:
+Trivial exercise, the point here is playing a bit to familiarize yourself with the laws, everyone has a favourite set and functions which they use, here are mine:
 
 Identity law:
 ```
@@ -703,7 +707,7 @@ let g = (a) => a * 2
 
 Another trivial exercise, with, perhaps, non-trivial setup. It all comes down to go through the elements a functor consists of and to see how the elements of two functors can compose. 
 
-The two elements are the object mapping and the morphism mapping.
+The two elements of a functor are the object mapping and the morphism mapping.
 
 The object mapping is just a function, connecting two categories' underlying sets, so if we have two functors with the appropriate type signature e.g. 
 
@@ -721,8 +725,8 @@ and
 
 $set(D) \to set(E)$. 
 
-So the answer, for object mapping is to compose the two functions to get a function (which can be the basis for a $C \to D$ functor).
-$$set(C) \to set(E)$$ 
+So the answer, for object mapping is to compose the two functions to get a function (which can be the basis for a $C \to D$ functor)
+$$set(C) \to set(E)$$.
 
 For morphism mapping, do the same thing for the categories' hom-sets.
 
@@ -730,11 +734,11 @@ For morphism mapping, do the same thing for the categories' hom-sets.
 
 **Task 9:** What are the initial and terminal object of the category of small categories.
 
-If you remember the concepts of initial and terminal objects from the category of sets $Set$, you can prove that they are the same for the category of categories $Cat$
+If you remember the concepts of initial and terminal objects from the category of sets $Set$, you will find out that they are basically the same for the category of categories $Cat$
 
-The initial object in $Set$ is the empty set, the initial category is the empty category. The unique functor from the empty category to any other category is the same --- the functor which maps nothing to nothing.
+The initial object in $Set$ is the empty set, the initial category in $Cat$ is the empty category. The unique functor from the empty category to any other category is the same --- the functor which maps nothing to nothing.
 
-The terminal object in $Set$ is the one-element set, the terminal category is the category $1$, which has one object and just the identity morphism. The unique functor from any object to the terminal object is the functor that maps all objects to the only object and all morphisms to the only morphism.
+The terminal object in $Set$ is the one-element set, the terminal category in $Cat$ is the category $1$, which has one object and no morphisms other than identity. The unique functor from any object to the terminal object is the functor that maps all objects to the only object and all morphisms to the only morphism.
 
 ---
 

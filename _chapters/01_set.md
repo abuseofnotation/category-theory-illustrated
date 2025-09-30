@@ -425,8 +425,6 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-**Task 11:** Come up with a good example of a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
-
 Equivalence relations and isomorphisms
 ===
 
@@ -479,7 +477,7 @@ We said that the most characteristic property of the equivalence relation is its
 
 ![Symmetry of isomorphisms](../01_set/isomorphism_symmetry.svg)
 
-**Task 12:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
+**Task 11:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
 The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
 
@@ -529,3 +527,97 @@ This is bad, as the benefits of monolithic design are mostly short-term --- not 
 Anyway, the composition approach is sometimes used in programming, and when it is used, it tends to work rather well. To see some examples, you don't need to look further than the pipe operator in Unix (`|`), which feeds the standard output of a program into the standard input of another program. 
 
 If you _want_ to look further, look at the Haskell programming language, or some of the numerous libraries for functional programming for other languages. There is also a whole programming paradigm based on functional composition, called "concatenative programming" utilized in languages like Forth and Factor.
+
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers
+===
+
+---
+
+**Task 1:** What is the target of the function "Who is my father?"
+
+It is the set of all people who are fathers. Or the set of all people, period (a function can always be upgraded by expanding it's target set).
+
+---
+
+**Task 2:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid?
+
+No, a function does not *need* to express a meaningful relationship to be valid, but still, the functions that *interest* us do express something. 
+
+We will talk a lot about this in the following chapters. 
+
+---
+
+**Task 3:** Is the function from the empty set to any other set really valid? Why? Check the definition.
+
+Yes, it is valid. Zero is a natural number! This is called *vacuous truth*, when the condition is satisfied simply because there are no cases to check.
+
+---
+
+**Task 4:** What about the other way around? Are there functions with the empty set as a target as opposed to its source?
+
+No, there are not. With one exception. Read on to find out.
+
+---
+
+**Task 5:** Is the function from any set to a singleton set really the only way to connect them in a valid way?
+
+Yes. As the singleton set contains exactly one element, so there is only one way to define a function with it as target.
+
+---
+
+**Task 6: **Again, what about the other way around? 
+
+For any set $A$, there is one function from a singleton set to $A$ (i.e. $\emptyset \to A$, for each element of $A$. We will encounter these functions in the following chapter.
+
+---
+
+**Task 7:** What is the type equivalent of subsets in programming?
+
+The type equivalent is a *subtype*. e.g a type `Square` is a subtype of `Rectangle`, meaning every `Square` *is a* `Rectangle` (and all functions that expect an argument of type `Rectangle` accept `Square` (but not the other way around)).
+
+---
+
+**Task 8:** Think about which qualities of a function make composition possible. Does it work with other types of relationships, like many-to-many and one-to-many?
+
+Many-to-one relationships (functions) guarantee that there is exactly *one* output for each input, i.e. when you connect the output of $g$ to the input of $f$, there is no ambiguity about what to pass.
+
+With one-to-many or many-to-many relationships, the output can consist of  *many* values.
+
+---
+
+**Task 9:** Think about what would be those functions' sources and targets. (Referring to espresso machine components)
+
+$$Grinder : WholeCoffeeBeans \to GroundCoffee$$
+$$Heater : Water \to HotWater$$
+
+etc
+
+---
+
+**Task 10:** Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
+
+You are on your own here, sorry :)
+
+---
+
+**Task 11:** One law down, two to go: Verify that isomorphisms also satisfy the other equivalence relation laws [Reflexivity and Transitivity].
+
+
+First, reflexivity --- for any set $A$, the identity function $id_A: A → A$ is an isomorphism --- its inverse is itself. So, every set is isomorphic to itself ($A ≅ A$).
+
+Transitivity: we want to prove that if we have isomorphisms $A ≅ B$ and $B ≅ C$, we have $A ≅ C$. 
+
+Isomorphisms $A ≅ B$ consists of functions $A \to B$ and $B \to A$.
+
+Similarily, $B ≅ C$ consists of functions $B \to C$ and $C \to B$.
+
+Composing these functions appropriately, we get two function $A \to C$ and $C \to A$, which are invertible, because their components are invertible.
+
+<!--
+{%endif%}
+-->

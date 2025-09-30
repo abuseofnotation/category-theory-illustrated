@@ -498,7 +498,7 @@ Formally, if we use $Perm$ to denote the permutation group then $Perm(A) \cong A
 
 Or in other words, representing the elements of a monoid/group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*). 
 
-Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result.
+Cayley's theorem may not seem very impressive, but that only shows how influential it has been as a result (and how much we learned).
 
 <!--
 {% if site.distribution == 'print'%}
@@ -513,9 +513,11 @@ So, for example, the group $\mathrm{S}_1$ of permutations of the one-element set
 
 ![The S1 symmetric group](../03_monoid/s1.svg)
 
-The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements (by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$).
+The group $\mathrm{S}_2$, has $1 \times 2 = 2$ elements, because there are two ways to arrange a set of two elements.
 
 ![The S2 symmetric group](../03_monoid/s2.svg)
+
+(by the way, the colors are there to give you some intuition as to why the number of permutations of a $n$-element set is $n!$).
 
 And with $\mathrm{S}_3$ we are already feeling the power of exponential (and even faster than exponential!) growth of the factorial function --- it has $1\times 2\times 3=6$ elements.
 
@@ -663,12 +665,14 @@ For the monoid of natural numbers under *multiplication* --- 1: $n × 1 = n$ and
 
 **Task 2:** Go through other mathematical operations and verify that they are monoidal.
 
+Here are some monoids:
+
 All (finite) strings under *string concatenation* (`+`), with the empty 
 string as identity:
 - Associative: `(a + b) + c === a + (b + c)`
 - Identity: `s + "" === "" + s = s`
 
-All natural numbers under the **maximum ** functions, with 0 as identity:
+All natural numbers under the *maximum* function, with 0 as identity:
  - Associative: `max(max(a,b), c) === max(a, max(b,c))`
  - Identity: `max(a, 0) = a`
 
@@ -684,11 +688,13 @@ Because they lack *inverses*.
 
 Numbers do have multiplicative inverses, but they are fractions, thus not natural e.g. the inverse of 2 is 1/2. 
 
-Real numbers also don't have inverses for all numbers (think about which one is missing).
+Real numbers also don't have inverses for all numbers (which one is missing?).
 
 ---
 
 **Task 4:** Prove that **AND** $∧$ is associative by expanding the formula $(A ∧ B) ∧ C = A ∧ (B ∧ C)$ with all possible values.
+
+We can prove this by drawing what we call a *truth table* (more info in the next chapter).
 
 | A | B | C | A ∧ B | (A ∧ B) ∧ C | B ∧ C | A ∧ (B ∧ C) |
 |---|---|---|-------|-------------|-------|-------------|
@@ -711,7 +717,7 @@ For **AND** operation the identity element is $True$, for **OR**, it is $False$.
 
 **Task 6:** Show that there are no other groups with 3 objects, other than $Z₃$.
 
-Take any group with 3 elements ${e, a, b}$ where $e$ is identity.
+Take any group with 3 elements $\{e, a, b\}$ where $e$ is identity.
 
 In such a group, we necessary have 
 
@@ -721,16 +727,21 @@ and
 
 $$b \circ a = e$$
 
-Why? $a \circ b$ cannot be equal to $a$, as that would mean $a = e$ (and the group would really be ${e, b}$), and it cannot be equal to $b$, for the same reason. So, $a$ and $b$ are each other's reverse.
+Why? $a \circ b$ cannot be equal to $a$, as that would make $b$ the identity element, $b = e$ (and the group would really be $\{e, a\}$), and it cannot be equal to $b$, as it would make $a$ idenity.
+
+In other words, $a$ and $b$ are each other's inverses.
 
 Therefore, we must also have
+
 $$a \circ a = b$$
+
 and 
+
 $$b \circ b = a$$
 
-Why? $a \circ a$ cannot be equal as that would mean $a = e$. And it cannot be equal to $a$, as that would mean it is it's own reverse, and we established that it's inverse is $b$. Same for $b$.
+Why? $a \circ a$ cannot be equal to $e$ as that would mean $a = e$. And it cannot be equal to $a$, as that would mean $a$ is it's own inverse, and we established that it's inverse is $b$. Same for $b \circ b$.
 
-So, we already established the result of applying the operation of any element of our group with any other and we can say that our group is isomorphic to $Z_3$.
+So, we already established the result of applying the operation of any element of our group with any other, and we can conclude that our group is isomorphic to $Z_3$.
 
 Furthermore, we did this without assuming anything about this group other than that it has three elements. So, every group with three elements, is (as our example group) isomorphic to $Z_3$.
 
@@ -738,45 +749,40 @@ Furthermore, we did this without assuming anything about this group other than t
 
 **Task 7:** Show that the two representations [of Klein four-group] are isomorphic.
 
-The two representations are:
-1. Product group: Z₂ × Z₂ = {(0,0), (0,1), (1,0), (1,1)}
-2. Rectangle symmetries: {identity, horizontal flip, vertical flip, 180° rotation}
+This is a nice exercise in relating spatial intuition to computation.
 
-**Isomorphism:**
-- (0,0) ↔ identity
-- (0,1) ↔ horizontal flip  
-- (1,0) ↔ vertical flip
-- (1,1) ↔ 180° rotation
+A non-square rectangle has two independent ways it can be rotated, while keeping the symmetry -- horizontal and vertical (let's annotate them $H$ and $V$).
 
-This preserves the group operation. For example:
-- (0,1) + (1,0) = (1,1) corresponds to horizontal flip ∘ vertical flip = 180° rotation
+For each of these two ways, there are two positions in which the figure can be, let's call them "normal" and "flipped". Let's annotated them $0$ and $1$. So, we have:
+
+$$H = \{0, 1 \}$$
+
+$$V = \{0, 1 \}$$
+
+The position of the figure is composed of two pieces of information, whether it is flipped horizontally or not, or whether it is flipped vertically, i.e. its state is the cartesian product of $H$ and $V$.
+
+$$H \times V = \{ (0, 0), (0, 1), (1, 0), (1, 1) \}$$
+
+It's not hard to see that if we add the standard product group operation to this product set, we will get the Klein four-group.
 
 ---
 
 **Task 8:** Prove that the group [Dih₃] is indeed not abelian.
 
-In Dih₃ (triangle symmetries), take:
-- r = 120° rotation
-- f = reflection over a vertical axis
+The proof entails providing a counterexample, which is easy: if $r$ is the 120° rotation and $f$ is the reflection over a vertical axis, we have.
+$$
+f ∘ r ≠ r ∘ f
+$$
 
-Then:
-- f ∘ r ≠ r ∘ f
-
-**Concrete example:** Label triangle vertices 1,2,3. With r rotating clockwise and f flipping across the vertical axis through vertex 1:
-- f ∘ r sends: 1→2, 2→1, 3→3
-- r ∘ f sends: 1→3, 2→2, 3→1
-
-Since these give different results, the group is not abelian.
 
 ---
 
 **Task 9:** Besides having two main actions, what is the defining factor that makes this and any other group non-abelian?
 
-The defining factor is that **the generators don't commute**. More formally, for a group to be non-abelian, there must exist elements a, b such that:
-- a ∘ b ≠ b ∘ a
-- Or equivalently: the commutator [a,b] = a⁻¹b⁻¹ab ≠ e
+The defining factor is that *the actions don't commute*. 
+$$a ∘ b ≠ b ∘ a$$
 
-In Dih₃, the rotation and reflection generators don't commute, making the group non-abelian.
+i.e. the actions must be somehow interdependent with one another (one changes the state of the other) e.g. if we flip a figure horizontally, then rotating it would make it go in a different direction that if it wasn't flipped (as opposed to the figure in the Klein four-group, in which the horizontal and vertical reflections are independent of one another).
 
 ---
 
@@ -788,16 +794,17 @@ No catch here, the identity element is the identity function.
 
 **Task 11:** Show that the functions representing inverse group elements are also inverse.
 
-If g is a group element with inverse g⁻¹, and we represent them as functions f_g and f_{g⁻¹}, then:
+Combining a group element with it's inverse would result in the identity element:
 
-f_g ∘ f_{g⁻¹} = f_{g∘g⁻¹} = f_e = id
-f_{g⁻¹} ∘ f_g = f_{g⁻¹∘g} = f_e = id
+$$1  + (-1) = 0$$
 
-Therefore f_{g⁻¹} is the inverse function of f_g.
+This equation also holds for their corresponding functions:
+
+$$+1 ∘ -1 = +0$$
 
 ---
 
-Task 12: Write the other part of the [currying] isomorphism.
+**Task 12:** Write the other part of the [currying] isomorphism.
 
 ```typescript
 // First part (given)
@@ -814,37 +821,41 @@ const uncurry = <A, B, C>(f: (a: A) => (b: B) => C) =>
 ```
 ---
 
-Task 13: Show how the two Cayley's theorem formulations are equivalent.
+**Task 13:** Show how the two [Cayley's theorem formulations] are equivalent.
 
 The two formulations are:
 1. "Any group is isomorphic to its corresponding permutation group"
 2. "All groups are isomorphic to subgroups of symmetric groups"
 
+They are equivalent, because the permutation group is a subgroup of a symmetric group:
+
+1. The symmetric group with a given number of elements is the group of *all* permutations of that number of elements. 
+2. A permutation group with a given number of elements is a group that contains *some* permutations of that number of elements.
+
+So, we can get any permutation group of a given order if we remove some elements from the symmetric group of that order. e.g. the 3 permutations that form $Z_3$, the group of rotations of a triangle, can be found amongst the 6 permutations that form $S_3$ the symmetry group of order 3.
+
+<!--
 **Equivalence:**
 - The "corresponding permutation group" in (1) is exactly the image of the group under the Cayley embedding
 - This image is a subgroup of the symmetric group Sₙ where n is the group order
 - Therefore, every group is isomorphic to a subgroup of some symmetric group
+-->
 
 ---
 
 **Task 14:** Write up the laws of the color-mixing monoid.
 
-For primary colors R, G, B and their mixtures:
+Our generators are the primary colors --- $Red$, $Yellow$ and $Blue$
 
-**Identity laws:**
-- White (or transparent) is identity: color ∘ white = color
+And from the picture, we know that:
 
-**Mixing laws:**
-- R ∘ G = Yellow
-- R ∘ B = Magenta  
-- G ∘ B = Cyan
-- R ∘ G ∘ B = Black
+- $Blue ∘ Yellow = Green$
 
-**Commutativity:**
-- R ∘ G = G ∘ R (etc.)
+- $Yellow ∘ Red = Orange$   
 
-**Associativity:**
-- (R ∘ G) ∘ B = R ∘ (G ∘ B) = Black
+- $Blue ∘ Yellow ∘ Red = Brown$   
+
+etc.
 
 <!--
 {%endif%}

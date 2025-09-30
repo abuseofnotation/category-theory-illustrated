@@ -635,8 +635,7 @@ Answers
 
 **Task 1:** Why is this called a product? Hint: How many elements does it have?
 
-**Solution:**
-The Cartesian product is called a "product" because the number of elements in $A × B$ equals the **product** of the number of elements in $A$ and $B$ e.g. if $A$ has 2 elements and $B$ has 3 elements, then $A × B$ has 2 × 3 = 6 elements
+The Cartesian product is called a "product" because the number of elements in $A × B$ equals the *product* of the number of elements in $A$ and $B$ e.g. if $A$ has 2 elements and $B$ has 3 elements, then $A × B$ has $2 × 3 = 6$ elements
 
 ---
 
@@ -644,11 +643,11 @@ The Cartesian product is called a "product" because the number of elements in $A
 
 There is exactly one function from any set to the singleton set, including the singleton set itself.
 
-So, there is exactly one function from $1 \to 1$. But functions $1 \to X$ correspond to elements of $X$, 1 has exactly one element.
+So, there is exactly one function from $1 \to 1$. But functions $1 \to X$ correspond to elements of $X$. So $1$ really has exactly one element.
 
 ---
 
-**Task 3** Why is the function to the empty set unique?
+**Task 3:** Why is the function to the empty set unique?
 
 As we established, there is exactly one such function, the peculiar "empty function".
 
@@ -679,7 +678,7 @@ Yes we did --- products.
 
 a function $f: A \to B $, can be composed with a function $g : B \to C$, to to obtain $g \circ f : A \to C$ (functional composition).
 
-But, $f: A \to B $ can also be compose with a function $f': A' \to B'$ (or any other signature, really), to obtain $f \times f': A\times A' \to B \times B'$$!
+But, $f: A \to B $ can also be compose with a function $f': A' \to B'$ (or any other signature, really), to obtain $f \times f': A\times A' \to B \times B'$!
 
 <!--
 {%endif%}

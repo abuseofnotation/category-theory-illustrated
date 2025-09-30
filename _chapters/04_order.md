@@ -575,7 +575,7 @@ Both equivalence relations and orders are reflexive and transitive. The differen
 
 - Orders are *antisymmetric* (if $a \leq b$ then you cannot have $b \leq a$)
 
-i.e. hierarchy is the opposite of equality (but they are also quite similar).
+i.e. hierarchy is the opposite of equality (but they are also quite similar in some respects).
 
 ---
 
@@ -586,43 +586,28 @@ i.e. hierarchy is the opposite of equality (but they are also quite similar).
 - Chronological order
 
 **Partial Orders:**
-- *Divisibility of integers (some numbers divide others, but some are incomparable (neither divides the other)).
-- "Ancestor of" relation, your parents and grandparents are before you, your children --- after you, but other people are neither.
+- Divisibility of integers --- some numbers divide others, but some are incomparable (neither divides the other).
+- "Ancestor of" relation --- your parents and grandparents are before you, your children --- after you, but other people are neither.
 
 ---
 
 **Task 3**: Which concept in category theory reminds you of joins?
 
-Joins correspond to **coproducts** in category theory.
+Joins correspond to *coproducts* in category theory.
 
 ---
 
 **Task 4:** Prove that all finite lattices are bounded.
 
-**Proof that all finite lattices are bounded:**
+To prove all finite lattices are bounded, we have to find the top and bottom element of a random finite lattice. To do that:
 
-1. Let L be a finite lattice with elements {a₁, a₂, ..., aₙ}
+1. Take the set of all elements in the lattice. 
+2. Take their join. 
+3. Done, you found the top element ($\top$). 
 
-2. **Greatest element (top, ⊤):**
-   - Take the join of all elements: ⊤ = a₁ ∨ a₂ ∨ ... ∨ aₙ
-   - Since join is defined for all finite subsets in a lattice, this exists
-   - For any element x ∈ L, we have x ≤ ⊤ (by definition of join)
-   - Therefore ⊤ is the greatest element
+Similarily, the bottom element is the *meet* of all elements.
 
-3. **Least element (bottom, ⊥):**
-   - Take the meet of all elements: ⊥ = a₁ ∧ a₂ ∧ ... ∧ aₙ  
-   - Since meet is defined for all finite subsets in a lattice, this exists
-   - For any element x ∈ L, we have ⊥ ≤ x (by definition of meet)
-   - Therefore ⊥ is the least element
-
-4. Since both ⊤ and ⊥ exist, the lattice is bounded.
-
-**Note:** This proof relies on finiteness. Infinite lattices may not be bounded (e.g., the integers with usual order is a lattice but has no top or bottom).
-
-To prove all finite lattices are bounded, we have to construct the top and bottom element of a lattice:
-
-1. The top element is the join of all elements of the lattice. Since a lattice has to have joins for all sets of elements (and finite number of objects can be put into a set) it is guaranteed to exist.
-2. The bottom element is the *meet* of all elements. It is guaranteed to exist for the same reason.
+This works, since a lattice has to have joins for all sets of elements (and finite number of objects can be put into a set). 
 
 The proof relies on finitenes, e.g. you cannot get the set of all integers.
 
@@ -630,8 +615,15 @@ The proof relies on finitenes, e.g. you cannot get the set of all integers.
 
 **Task 5:** Take a set of objects and one containing attributes and create your own concept lattice.
 
-*Objects (G):* {Fish, Frog, Dog, WaterWeed, Corn}
-*Attributes (M):* {LivesInWater, LivesOnLand, CanMove, IsPlant, IsAnimal}
+Here is a classic example:
+
+**Objects (G)**
+
+{Fish, Frog, Dog, WaterWeed, Corn}
+
+**Attributes (M):**
+
+{LivesInWater, LivesOnLand, CanMove, IsPlant, IsAnimal}
 
 *Incidence relation:*
 
@@ -661,8 +653,6 @@ The proof is simple:
 2. There can be, by definition, only one arrow connecting two objects in a thin category (only one $A \to B$ morphism).
 
 So, all paths that connect a given pair of objects are equivalent to this morphism.
-
-
 
 <!--
 {%endif%}

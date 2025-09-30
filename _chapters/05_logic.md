@@ -79,7 +79,7 @@ For example, our previous example will not stop being true if we *substitute* "S
 
 Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. You can turn each tautology into contradiction, or the other way around, by adding a "not". 
 
-The other statements, ones which may be true or false depending on the values of some other propositions are called "contingent stantements". In logic, we don't care about contingent statements --- after all, those are studied in all other sciences (and we are not like other sciences).
+The other statements, ones which may be true or false depending on the values of some other propositions are called "contingent statements". In logic, we don't care about contingent statements --- after all, those are studied in all other sciences (and we are not like other sciences).
 
 The simplest tautology is the so called law of identity, the statement that each proposition implies itself (e.g. "All bachelors are unmarried"). It may remind you of something.
 
@@ -119,7 +119,7 @@ Here is one such collection which consists of the following five axiom schemes *
 
 ![A minimal collection of Hilbert axioms](../05_logic/min_hilbert.svg)
 
-Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his hame right).
+Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his name right).
 
 Conclusion
 ---
@@ -295,7 +295,7 @@ Intuitionistic logic. The BHK interpretation
 
 > [...] logic is life in the human brain; it may accompany life outside the brain but it can never guide it by virtue of its own power. --- L.E.J. Brouwer
 
-I don't know about you, but I feel that the classical truth-functional interpretation of logic (althought it works and is correct in its own right) doesn't fit well the categorical framework that we are using here: It is too "low-level", it relies on manipulating the values of the propositions. According to it, the operations *and* and *or* are just 2 of the 16 possible binary logical operations and they are not really connected to each other (but we know that they actually are.)
+I don't know about you, but I feel that the classical truth-functional interpretation of logic (although it works and is correct in its own right) doesn't fit well the categorical framework that we are using here: It is too "low-level", it relies on manipulating the values of the propositions. According to it, the operations *and* and *or* are just 2 of the 16 possible binary logical operations and they are not really connected to each other (but we know that they actually are.)
 
 For these and other reasons, in the 20th century a whole new school of logic was founded, called *intuitionistic logic*. If we view classical logic as based on *set theory*, then intuitionistic logic would be based on *category theory* and its related theories. If *classical logic* is based on Plato's theory of forms, then intuitionism began with a philosophical idea originating from Kant and Schopenhauer: the idea that the world as we experience it is largely predetermined of out perceptions of it. Thus without absolute standards for truth, a proof of a proposition becomes something that you *construct*, rather than something you discover.
 
@@ -305,7 +305,7 @@ Anyway, intuitionistic logic is not bivalent, i.e. we cannot have all propositio
 
 ![The True/False dichotomy](../05_logic/true_false.svg)
 
-One thing that we still do have there are propositions that are "true" in the sense that a proof for them is given - the primary propositions. So with some caveats (which we will see later) the bivalence between true and false proposition might be thought out as similar to the bivalence between the existence or absense of a proof for a given proposition - there either is a proof of it or there isn't.
+One thing that we still do have there are propositions that are "true" in the sense that a proof for them is given - the primary propositions. So with some caveats (which we will see later) the bivalence between true and false proposition might be thought out as similar to the bivalence between the existence or absence of a proof for a given proposition - there either is a proof of it or there isn't.
 
 ![The proved/unproved dichotomy](../05_logic/proved_unproved.svg)
 
@@ -372,7 +372,7 @@ Although intuitionistic logic differs a lot from classical logic when it comes t
 
 ![The formula of the principle of the excluded middle](../05_logic/excluded_middle_formula.svg)
 
-This law is valid in classical logic and is true when we look at its truth tables, but there is no justification for it terms of the BHK interpretation. Why? in intuitionistic logic saying that something is false amounts to *constructing a proof* that it is false (that it implies the bottom value) and there is no method/function/alghorithm that can either prove that a given proposition is either true and false.
+This law is valid in classical logic and is true when we look at its truth tables, but there is no justification for it terms of the BHK interpretation. Why? in intuitionistic logic saying that something is false amounts to *constructing a proof* that it is false (that it implies the bottom value) and there is no method/function/algorithm that can either prove that a given proposition is either true and false.
 
 The question of whether you can use the law of excluded middle spawned a heated debate between the classical logic proponent David Hilbert and the intuitionistic logic proponent L.E.J. Brouwer, known as *the Brouwer–Hilbert controversy*.
 
@@ -454,7 +454,7 @@ Wait, where have we heard about distributive lattices before? In the previous ch
 
 The *or* and *and* operations (or, more generally, the *coproduct* and the *product*) are, of course, categorically dual, which would explain why the symbols that represent them $\lor$ and $\land$ are the one and the same symbol, but flipped vertically. 
 
-And even the symbol itself looks like a representation of the way the arrows converge. This is probably not the case, as this symbol is used way before Hasse diagrams were a thing --- for all we know the $\lor$ symbol is probably symbolizes the "u" in "uel" (the latin word for "or") and the *and* symbol is just a flipped "u") --- but I still find the similarity fascinating.
+And even the symbol itself looks like a representation of the way the arrows converge. This is probably not the case, as this symbol is used way before Hasse diagrams were a thing --- for all we know the $\lor$ symbol is probably symbolizes the "u" in "uel" (the Latin word for "or") and the *and* symbol is just a flipped "u") --- but I still find the similarity fascinating.
 
 The *negation* operation
 ---
@@ -477,7 +477,7 @@ So *True* and *False* are just the *greatest* and *least* objects of our order (
 
 ![The whole logical system, represented as a Hasse diagram](../05_logic/lattice_true_false.svg)
 
-This is another example of the categorical concept of duality - $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (althought if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them). 
+This is another example of the categorical concept of duality - $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (although if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them). 
 
 In fact, the whole lattice can be turned upside down and (switching the directions of the arrows and the dual concepts True/False and/or) the logic inside it will still be valid!
 
@@ -525,7 +525,7 @@ When we examined the *if and only if* operation can be defined in terms *implies
 
 ![Implies identity](../05_logic/isomorphism.svg)
 
-We have something similar for categorical logic as well --- We say that when two propositions are connected to each other, then, particularily when we speak of orders, they are isomorphic.
+We have something similar for categorical logic as well --- We say that when two propositions are connected to each other, then, particularly when we speak of orders, they are isomorphic.
 
 A taste of categorical logic
 ===
@@ -600,7 +600,7 @@ Then, we also have to create a proposition $A \to B$, for all $A$-s and $B$-s, w
 
 ![Logic as an order](../05_logic/algebra_summary_full.svg)
 
-Whew, that was lenghty. But it is worth it, as when we are finished we will have a list of *all possible propositions that can be true* and we will be able to determine which propositions follow from any proposition by just following the path of the arrows coming from it. 
+Whew, that was lengthy. But it is worth it, as when we are finished we will have a list of *all possible propositions that can be true* and we will be able to determine which propositions follow from any proposition by just following the path of the arrows coming from it. 
 
 Like, for example, if we discover that the proposition $B \land C$ is true, that implies that both $B$ and $C$ are also true in their own right, (which, in turn, implies that $A \lor B$, $A \lor C$ etc. are true). 
 
@@ -632,26 +632,26 @@ The *or* operation can be represented as a function that takes a pair of boolean
 
 **Task 2**: What would be the *or* operation in the BHK interpretation?
 
-In the BHK interpretation, the proof of $A ∨ B$ the well-known disjoint union/coproduct/meet, containing either a proof of A or a proof of B, along with information about which one it is.
+In the BHK interpretation, the proof of $A ∨ B$ the well-known disjoint union/coproduct/meet --- a structure, containing either a proof of A or a proof of B, along with information about which one it is.
 
 ---
 
-**Task 3**: Verify there cannot exist a function from any set to the empty set
+**Task 3**: Verify there cannot exist a function from any set to the empty set.
 
 For any non-empty set $A$, there cannot be a function $f: A → ∅$ because:
 A function must assign to each element of $A$ exactly one element of $∅$ ut ∅ has no elements, so there's nothing to assign.
 
-The only exception is when $A$ is also empty ($∅ → ∅$ is possible).
+The only exception is when $A$ is also empty (see next question).
 
 ---
 
 **Task 4**: Verify there exists a function from the empty set to any set
 
-There is exactly one function from ∅ to any set B, called the *empty function*:
+There is exactly one function from $∅$ to any set B, called the *empty function*:
 
-A function must assign to each element of the domain exactly one element of the codomain, so if $∅$ has no elements, so this condition is satisfied
+A function must assign to each element of the domain exactly one element of the codomain, so if $∅$ has no elements this condition is satisfied
 
-And we mentioned the corresponding logical principle that a false premise can imply anything.
+And we mentioned the corresponding logical principle of explosion, that says that everything follows from $False$.
 
 ---
 
@@ -667,10 +667,10 @@ We want to prove that there is a category with logical propositions as object an
 Let's check the axioms:
 
 - *Identity* is covered --- as we said, for every proposition $A$, we have $A → A$ 
-- *Composition* too, because $A → B$ and $B → C$, then $A → C$ easily follows from modus ponens (this can be your first proof with the proof assistant).
+- *Composition* too, because $A → B$ and $B → C$, then $A → C$, this easily follows from modus ponens (this can be your first proof with the proof assistant).
 - *Associativity* also checks out as $(A → B) → ((B → C) → (A → C))$.
 
-And if we want to consider all proof from $A \to B$ as equivalent, we get an order, else, a normal category.
+And, if we want to consider all proofs from $A \to B$ as equivalent, we get an order, else, a normal category.
 
 ---
 
@@ -680,7 +680,7 @@ The dual situation concerns the meet operation ($∧$) and the bottom element $�
 
 $$⊥: A ∧ ⊥ = ⊥$$ 
 
-That is, if we unite any statement with a false statement, the result would be false e.g. the statement "The grass is green *and* pigs can fly" is not true (and changing the part where we say "The grass is green" to something else won't fix it).
+That is, if we unite any statement with a false statement, the result would be always be false e.g. the statement "The grass is green *and* pigs can fly" is false (and changing the part where we say "The grass is green" to something else won't change that).
 
 This is, of course dual to the one we mentioned:
 
