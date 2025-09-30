@@ -105,7 +105,7 @@ You can see that, although not all objects are connected one-to-one, *all object
 
 To formalize that notion, we remember the concept of *equivalence classes* that we covered in the chapter about orders. Let's visualize the relationship of the equivalence classes of the two orders that we saw above.
 
-![Orders with isomorphic equivalence classes](equivalent_order_classes.svg)
+![Orders with isomorphic equivalence classes](../11_natural_transformations/equivalent_order_classes.svg)
 
 You can see that they are isomorphic. And that is no coincidence: two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
@@ -252,7 +252,7 @@ To understand, this how are the two related, let's construct the identity functo
 
 Then, we draw the composite of the two functors that establish an equivalence between the two categories, highlighting the 3 "interesting" objects, i.e. the ones due to which the categories aren't isomorphic.
 
-![The composite functor between the two functors that make up the equivalence](equivalent_orders_composite.svg)
+![The composite functor between the two functors that make up the equivalence](../11_natural_transformations/equivalent_orders_composite.svg)
 
 Now, we ask ourselves, in which cases does there exist an isomorphism between those two functors?
 
@@ -364,7 +364,7 @@ We choose two types that play the role of $a$, in our case $string$ and $num$ an
 
 ![Pointed functor in Set](../11_natural_transformations/pointed_functor_set.svg)
 
-The diagram commute when for all functions $f$, applying the $Ff$, the mapped/lifted version of $f$ with one functor (in our case this is just $ F f : string \to num$ cause it is the identity functor), followed by ($alpha :: F b \to G\ b$), is equivalent to applying ($alpha:: F a \to G\ a$), and then the mapped version of $f$ with the other functor (in our case $G f :: List\ a \to List\ b$) i.e. 
+The diagram commute when for all functions $f$, applying the $Ff$, the mapped/lifted version of $f$ with one functor (in our case this is just $F f : string \to num$ cause it is the identity functor), followed by ($alpha :: F b \to G\ b$), is equivalent to applying ($alpha:: F a \to G\ a$), and then the mapped version of $f$ with the other functor (in our case $G f :: List\ a \to List\ b$) i.e. 
 
 $$\alpha \circ F\ f \cong G\ f \circ \alpha$$
 
@@ -778,7 +778,7 @@ Answers
 
 The definition in question is:
 
-> Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+> Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 We can check it by expanding the definition of a functor.
 
@@ -803,6 +803,7 @@ As we say above:
 So the mapping encompasses all object *from the image of the functor*. So when would that encompass all objects period. Simple --- when the functor is one-to-one (or onto, if we are with there being more than one arrow per object). Most probably, that would happen when the two categories are actually one and the same category and the functor is the identity functor.
 
 ---
+
 **Task 3:** Draw example naturality squares of the $reverse$ natural transformation.
 
 To draw a square of the $reverse: List\ a \to List\ a$ natural transformation, we must first:

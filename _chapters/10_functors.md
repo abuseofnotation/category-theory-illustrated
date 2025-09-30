@@ -63,6 +63,7 @@ If we increment the number of objects to two, we see a couple of more interestin
 ![the finite category 2](../10_functors/finite_two.svg)
 
 ---
+
 **Task 1:** There are just two more categories that have 2 objects and at most one morphism between two objects, draw them.
 
 ![the finite category 2](../10_functors/finite_two_task.svg)
@@ -435,6 +436,7 @@ For those, the above formula looks like this: $f(x) + b + f(y) + b = f(x + y) + 
 
 The category of topological spaces
 ---
+
 The smoothness of the mapping means that paths may stretch or collapse but not break. 
 -->
 
@@ -701,6 +703,7 @@ let f = (a) => a + 1
 let g = (a) => a * 2
 [1, 2, 3].map(f).map(g) == [1, 2, 3].map((a) => g(f(a)))
 ```
+
 ---
 
 **Task 8:** Go through the functor definition and see how do functors compose. 

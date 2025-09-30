@@ -617,6 +617,7 @@ Answers
 ===
 
 ---
+
 **Task 1**: Draw the diagram for *or*
 
 The *or* operation can be represented as a function that takes a pair of boolean values and returns `True` if at least one of them is `True`.
