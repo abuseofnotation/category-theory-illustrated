@@ -5,7 +5,7 @@ title: index
 
 [![cover](cover_print.svg)](00_about)
 
-[Buy full version](https://ko-fi.com/s/ee517b2d98)
+[Buy full version](https://abuseofnotation.gumroad.com/l/cti)
 --
 
 [Read web version](00_about)
