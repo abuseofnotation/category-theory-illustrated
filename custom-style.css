@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
+  color: white;
   background-color:  #8967acff;
 }
 
@@ -42,9 +43,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-h1 {  
+.content h1 {  
   font-size: 60px;
+  font-weight: bold;
+  color: #009fda;
 }
+
 
 h2 {
   font-size: 50px;

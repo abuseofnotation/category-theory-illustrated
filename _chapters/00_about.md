@@ -63,7 +63,7 @@ People don't expect any return on investment from *physical theories*, e.g., no 
 And bashing philosophical theories for being impractical would be even more absurd --- imagine bashing Wittgenstein, for example:
 
 > "All too well, but what can you do with the picture theory of language?" 
-> "Well, I am told it does have its applications is programming language theory..."
+> "Well, I am told it does have its applications in programming language theory..."
 
 Or someone being sceptical to David Hume's scepticism:
 
@@ -113,7 +113,7 @@ About category theory
 
 Like we said, the fundaments of mathematics are the fundaments of thought. Category theory allows us to formalize those fundaments that we use in our daily (intellectual) lives.
 
-The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, intuition also makes it easy to be misunderstood --- what we say usually can be interpreted in many ways, some of which are wrong. Misunderstanding of these kinds are the reason why biases appear. Moreover, some people (called "sophists" in ancient Greece) would introduce biases on purpose in order to get short-term gains (not caring that introducing biases hurts everyone on the long run).
+The way we think and talk is based on intuition that develops naturally and is a very easy way to get our point across. However, intuition also makes it easy to be misunderstood --- what we say usually can be interpreted in many ways, some of which are wrong. Misunderstanding of these kinds are the reason why biases appear. Moreover, certain people (called "sophists" in ancient Greece) would introduce biases on purpose in order to twist the discourse in the direction that suits them.
 
 It's in such situations, that people often resort to *formulas* and *diagrams* to refine their thoughts. Diagrams (even more than formulas) are ubiquitous in science and mathematics.
 

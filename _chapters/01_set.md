@@ -18,13 +18,14 @@ What is an Abstract Theory
 
 Most scientific and mathematical theories have a specific *domain*, which they are tied to, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created in order to explain how different *biological species* came to evolve using natural selection, quantum mechanics is a description of how particles behave at a specific scale, etc.
 
-Even most mathematical theories, although they are not inherently *bound* to a specific domain (like the scientific theories) are at least strongly related to some domain, as for example differential equations are created to model how events change over time. 
+Even mathematical theories, although they are not inherently *bound* to a specific domain (like the scientific theories) are at least strongly related to some domain, as for example differential equations are created to model how events change over time. 
 
-Set theory and category theory are different, they are not created to provide a rigorous explanation of how a particular phenomenon works, instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Theories that are like that are called *abstract* theories. 
+Set theory and category theory are different, they are not created to provide a rigorous explanation of how a particular phenomenon works, instead they provide a more general framework for explaining all kinds of phenomena. They work less like tools and more like languages for defining tools. Such theories are called *abstract* theories. 
 
-The borders of the two are sometimes blurry. All theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. But theories have core concepts that don't refer to anything in particular, but are instead left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
+The borders of the two are sometimes blurry. All theories *use abstraction*, otherwise they would be pretty useless: without abstraction Darwin would have to speak about specific animal species or even individual animals. The difference is that abstract theories have *core concepts* that don't refer to anything in particular, and are instead left for people to generalize on. All theories are applicable outside of their domains, but set theory and category theory do not have a domain to begin with.
 
 Concrete theories, like the theory of evolution, are composed of concrete concepts. For example, the concept of a *population*, also called a *gene-pool*, refers to a group of individuals that can interbreed. Abstract theories, like set theory, are composed of abstract concepts, like the concept of a set. The concept of a set by itself does not refer to anything. However, we cannot say that it is an empty concept, as there are countless things that can be represented by sets, for example, gene pools can be (very aptly) represented by sets of individual animals. Animal species can also be represented by sets &mdash; a set of all populations that can theoretically interbreed.
+
 You've already seen how abstract theories may be useful. Because they are so simple, they can be used as building blocks to many concrete theories. Because they are common, they can be used to unify and compare different concrete theories, by putting these theories in common grounds (this is very characteristic of category theory, as we will see later). Moreover, good (abstract) theories can serve as *mental models* for developing our thoughts. 
 
 <!-- comic - brain on category theory -->
@@ -123,11 +124,11 @@ The question "How far are we from New York?" is a function with set of all place
 
 The question "Who is my father?" is a function whose source is the set of all people in the world.
 
-**Question:** What is the target of this function?
+**Task 1:** What is the target of this function?
 
 Note that the question "Who is my child?" is *NOT* a straightforward function, because a person can have no children, or can have multiple children. We will learn to represent such questions as functions later.
 
-**Question:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
+**Task 2:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
 
 The Identity Function
 ---
@@ -150,15 +151,19 @@ Every set is a subset of itself, in which case this function is the same as the 
 Functions and the Empty Set
 ---
 
-There is a unique function from the empty set to any other set.
+Although it doesn't look like it, there is a unique function from the empty set to any other set.
 
 ![Function with empty set](../01_set/function_empty.svg)
 
-**Question:** Is this really valid? Why? Check the definition.
+**Task 3:** Is this really valid? Why? Check the definition.
 
-Note that this statement is also a result from the one saying that there is a function between a Subset and a Set, and the one that says that the empty set is a subset of any other set.
+If you still aren't convinced, check this out:
+1. There is a function between a subset and a its superset 
+2. The empty set is a subset of any other set.
 
-**Question:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
+So, evidently, this function has to exist!
+
+**Task 4:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
 
 Functions and Singleton Sets
 ---
@@ -167,9 +172,9 @@ There is a unique function from any set to any singleton set.
 
 ![Function with a singleton set](../01_set/function_singleton.svg)
 
-**Question:** Is this really the only way to connect *any* set to a singleton set in a valid way?
+**Task 5:** Is this really the only way to connect *any* set to a singleton set in a valid way?
 
-**Question:** Again, what about the other way around?
+**Task 6:** Again, what about the other way around?
 
 Sets and numbers
 ===
@@ -190,7 +195,7 @@ Each numerical operation is a function between two of these sets. For example, s
 
 I will use the occasion to reiterate some of the more important characteristics of functions:
 
-- All numbers from the target have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
+- All numbers in the target have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
 - Zero from the source set is connected to itself in the target set &mdash; that is permitted.
 - Some numbers aren't the square of any other number &mdash; that is also permitted.
 
@@ -213,13 +218,13 @@ Sets are not exactly the same thing as types, but all types are (or can be seen 
 
 ![Set of boolean values](../01_set/boolean.svg)
 
-Another very basic set in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
+Another very basic set that is used in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
 
 ![Set of characters](../01_set/char.svg)
 
-Most of the types of programming are composite types &mdash; they are a combination of the primitive ones that are listed here. Again, we will cover these later.
+Most of the types that are used in programming are *composite* types ---  they are a combination of the primitive ones that are listed here. Again, we will cover these later.
 
-**Question:** What is the type equivalent of subsets in programming?
+**Task 7:** What is the type equivalent of subsets in programming?
 
 Functions and methods/subroutines
 ---
@@ -239,12 +244,11 @@ Purely-functional programming languages
 
 We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
 
-A peculiarity in such languages is that they don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
+Such languages don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
 
 In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly perform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
 
 We then link all those functions into a whole program, often by using a thing called *continuation passing style*.
-
 
 Functional Composition 
 ===
@@ -264,9 +268,9 @@ Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves.  
+Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed again).
 
-**Question:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
+**Task 8:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
 Composition of relationships
 ---
@@ -290,7 +294,7 @@ One of the main ways in which modern engineering differs from ancient craftsmans
 
 ![A espresso machine ](../01_set/machine.svg)
 
-**Task:** Think about what would be those functions' sources and targets.
+**Task 9:** Think about what would be those functions' sources and targets.
 
 By the way, diagrams that are "zoomed out" that show functions without showing set elements are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*. 
 
@@ -305,7 +309,11 @@ We showed this equivalence by drawing an *internal* diagram, and explicitly draw
 
 Alternatively, we can just *say* that the arrow paths are all equivalent (all arrows starting from a given set element ultimately lead to the same corresponding element from the resulting set) and draw the equivalence as an external diagram.
 
-![Functional composition for sets](../01_set/functions_compose_sets.svg)
+![An external diagram, showing functional composition of two functions](../01_set/functions_compose_sets.svg)
+
+Or alternatively, if you want to express it as a formula (where $\circ$ is the composition operator).
+
+![An external diagram, showing functional composition of two functions, as a fformula](../01_set/functions_compose_formula.svg)
 
 The external diagram is a more appropriate representation of the concept of composition, as it is more general. In fact, it is *so* general that it can actually serve as a *definition of functional composition*.
 
@@ -315,11 +323,30 @@ The external diagram is a more appropriate representation of the concept of comp
 
 If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
-At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now - the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
+Associativity
+---
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, compose with one another in an associative way, and can be represented by external diagrams.
+If we want compose more than two functions we might wonder if the order in which we compose the functions matters for the final outcome i.e. whether combining two functions and then combining the result with a third function...
 
-And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing till the end of this chapter.
+![Composing functions (f and g) and c](../01_set/functions_associativity_external.svg)
+
+...would yield the same result as composing the second and the third functions, before adding the first one.
+
+![Composing functions f and (g and c)](../01_set/functions_associativity_external_2.svg)
+
+The answer is yes --- as long as the order is maintained, the result would always be the same. This property of functions is called *associatity.
+
+*Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
+
+Category theory --- a hint for the definition
+---
+
+At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
+
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, they compose with one another (associatively) and they can be represented by external diagrams.
+
+And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
+
 
 Isomorphism
 ===
@@ -336,7 +363,9 @@ Invertible functions are called *isomorphisms*. When there exists an invertible 
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
-More formally, two sets $R$ and $G$ are isomorphic (or $R ≅ G$) if there exist functions $f: G → R$ and its reverse $g: R → G$, such that $f \circ g = ID_{R}$ and $g \circ f = ID_{G}$ (notice how the identity function comes in handy).
+More formally, two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+
+Notice how the identity function comes in handy.
 
 Isomorphism and identity
 ---
@@ -396,8 +425,6 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-**Question:** Come up with a good example of a statement that demonstrates the isomorphism between singleton sets (I obviously couldn't). Consider that all of people and objects are sharing one and the same universe.
-
 Equivalence relations and isomorphisms
 ===
 
@@ -450,9 +477,10 @@ We said that the most characteristic property of the equivalence relation is its
 
 ![Symmetry of isomorphisms](../01_set/isomorphism_symmetry.svg)
 
-**Task:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
+**Task 11:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
 The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
+
 <!--
 {% if site.distribution == 'print'%}
 -->
@@ -494,4 +522,102 @@ To see why, imagine a person (e.g. me), tinkering with some sort of engineering 
 
 But things are different if the machine in question is software-based --- due to the ease with which new software components can be rolled out, our design can blur the line that separates some of the components or even do away with the concept of component altogether and make the whole program one giant component (*monolithic design*). Worse, when no ready-made components are available, this approach is actually easier than the component-based approach that we described in the previous paragraph, and so many people use it. 
 
-This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that currently, programmers are losing out by not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better --- it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
+This is bad, as the benefits of monolithic design are mostly short-term --- not being separated to components makes programs harder to reason about, harder to modify (e.g. you cannot replace a faulty component with a new one) and generally more primitive than component-based programs. For these reasons, I think that  programmers are losing out if they are not utilizing the principles of functional composition. In fact, I was so unhappy with the situation that I decided to write a whole book on applied category theory to help people understand the principles of composition better, it's called Category Theory Illustrated (Oh wait, I am writing that right now, aren't I?)
+
+Anyway, the composition approach is sometimes used in programming, and when it is used, it tends to work rather well. To see some examples, you don't need to look further than the pipe operator in Unix (`|`), which feeds the standard output of a program into the standard input of another program. 
+
+If you _want_ to look further, look at the Haskell programming language, or some of the numerous libraries for functional programming for other languages. There is also a whole programming paradigm based on functional composition, called "concatenative programming" utilized in languages like Forth and Factor.
+
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers
+===
+
+---
+
+**Task 1:** What is the target of the function "Who is my father?"
+
+It is the set of all people who are fathers. Or the set of all people, period (a function can always be upgraded by expanding it's target set).
+
+---
+
+**Task 2:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid?
+
+No, a function does not *need* to express a meaningful relationship to be valid, but still, the functions that *interest* us do express something. 
+
+We will talk a lot about this in the following chapters. 
+
+---
+
+**Task 3:** Is the function from the empty set to any other set really valid? Why? Check the definition.
+
+Yes, it is valid. Zero is a natural number! This is called *vacuous truth*, when the condition is satisfied simply because there are no cases to check.
+
+---
+
+**Task 4:** What about the other way around? Are there functions with the empty set as a target as opposed to its source?
+
+No, there are not. With one exception. Read on to find out.
+
+---
+
+**Task 5:** Is the function from any set to a singleton set really the only way to connect them in a valid way?
+
+Yes. As the singleton set contains exactly one element, so there is only one way to define a function with it as target.
+
+---
+
+**Task 6: **Again, what about the other way around? 
+
+For any set $A$, there is one function from a singleton set to $A$ (i.e. $\emptyset \to A$, for each element of $A$. We will encounter these functions in the following chapter.
+
+---
+
+**Task 7:** What is the type equivalent of subsets in programming?
+
+The type equivalent is a *subtype*. e.g a type `Square` is a subtype of `Rectangle`, meaning every `Square` *is a* `Rectangle` (and all functions that expect an argument of type `Rectangle` accept `Square` (but not the other way around)).
+
+---
+
+**Task 8:** Think about which qualities of a function make composition possible. Does it work with other types of relationships, like many-to-many and one-to-many?
+
+Many-to-one relationships (functions) guarantee that there is exactly *one* output for each input, i.e. when you connect the output of $g$ to the input of $f$, there is no ambiguity about what to pass.
+
+With one-to-many or many-to-many relationships, the output can consist of  *many* values.
+
+---
+
+**Task 9:** Think about what would be those functions' sources and targets. (Referring to espresso machine components)
+
+$$Grinder : WholeCoffeeBeans \to GroundCoffee$$
+$$Heater : Water \to HotWater$$
+
+etc
+
+---
+
+**Task 10:** Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
+
+You are on your own here, sorry :)
+
+---
+
+**Task 11:** One law down, two to go: Verify that isomorphisms also satisfy the other equivalence relation laws [Reflexivity and Transitivity].
+
+
+First, reflexivity --- for any set $A$, the identity function $id_A: A → A$ is an isomorphism --- its inverse is itself. So, every set is isomorphic to itself ($A ≅ A$).
+
+Transitivity: we want to prove that if we have isomorphisms $A ≅ B$ and $B ≅ C$, we have $A ≅ C$. 
+
+Isomorphisms $A ≅ B$ consists of functions $A \to B$ and $B \to A$.
+
+Similarily, $B ≅ C$ consists of functions $B \to C$ and $C \to B$.
+
+Composing these functions appropriately, we get two function $A \to C$ and $C \to A$, which are invertible, because their components are invertible.
+
+<!--
+{%endif%}
+-->

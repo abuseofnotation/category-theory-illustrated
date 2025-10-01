@@ -44,7 +44,7 @@ window.MathJax = {
       {% endif %}
       </div>
 
-      <div class="container page-{{page.title}}">
+      <div class="content container page-{{page.title}}">
         <!--<h1>{{page.title}}</h1> -->
         
         <div class="prev-next">
@@ -66,6 +66,9 @@ window.MathJax = {
           <a class="button" href="{{site.baseurl}}{{page.next.url}}">next&raquo;</a>
         {% endif %}
         </div>
+        {% if page.title == "sooofsa" %}
+        <p><i>You are reading the free online version of Category Theory Illustrated. Extra content is available in the ebook. To get it, visit the pages below.</i></p>
+        {% endif %}
       </div>
 
 
@@ -133,7 +136,7 @@ window.MathJax = {
 
             Drawn in <a target="_blank" href="https://inkscape.org">Inkscape</a>. 
 
-            Written with <a target="_blank" href="https://www.vim.org">vim</a>. 
+            Set in <a target="_blank" href="https://ko-fi.com/s/4cad3c65e7">Mell Sans</a>. 
           </i>
           </p>
 

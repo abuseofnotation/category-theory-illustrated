@@ -8,11 +8,13 @@ pandoc --from markdown --to epub3  --strip-comments \
  _chapters/05_logic.md \
  _chapters/06_types.md \
  _chapters/10_functors.md \
+ _chapters/11_natural_transformations.md \
  epub/title.txt \
  --output book.epub \
  --toc \
  --epub-cover-image=cover_print.png \
  --resource-path=_chapters/02_category \
  --css=epub/epub-style.css
+# --verbose
 
  open book.epub

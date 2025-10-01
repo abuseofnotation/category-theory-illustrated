@@ -91,9 +91,9 @@ Actually, here are the reasons: this law does not look so "set in stone" as the 
 
 Orders, like the order people based on their soccer skills, that don't follow the totality law are called *partial orders*, (and linear orders are also called *total orders*.)
 
-**Question:**  Previously, we covered a relation that is pretty similar to this. Do you remember it? What is the difference?
+**Task 1:**  Previously, we covered a relation that is pretty similar to this. Do you remember it? What is the difference?
 
-**Task:** Think about some orders that you know about and figure out whether they are partial or total.
+**Task 2:** Think about some orders that you know about and figure out whether they are partial or total.
 
 Partial orders are actually much more interesting than linear/total orders. But before we dive into them, let's say a few things about numbers.
 
@@ -190,7 +190,7 @@ If, however, one of those elements is established as smaller than the rest of th
 
 ![A join diagram](../04_order/non_join_fix.svg)
 
-**Question:** Which concept in category theory reminds you of joins?
+**Task 3:** Which concept in category theory reminds you of joins?
 
 Meets
 ---
@@ -302,7 +302,7 @@ Bounded lattices
 
 Our color-mixing lattice, has a *greatest element* (the black ball) and a *least element* (the white one). Lattices that have a least and greatest elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
 
-**Task:** Prove that all finite lattices are bounded.
+**Task 4:** Prove that all finite lattices are bounded.
 
 <!--
 {% if site.distribution == 'print'%}
@@ -376,20 +376,20 @@ Add top and bottom values, and we get a lattice.
 
 Ordering the concept as a lattice might help us see connections between the concepts, in the context e.g. we see that *all balls in our set that contain the color yellow also contain the color red.*
 
-**Task:** Take a set of object and one containing attributes and create your own concept lattice. Example: the objects can be lifeforms: fish, frog, dog, water weed, corn etc. and attributes can be their characteristics: "lives in water", "lives in land", "can move", "is a plant", "is an animal" etc. 
+**Task 5:** Take a set of object and one containing attributes and create your own concept lattice. Example: the objects can be lifeforms: fish, frog, dog, water weed, corn etc. and attributes can be their characteristics: "lives in water", "lives in land", "can move", "is a plant", "is an animal" etc. 
 
 Preorder
 ===
 
 In the previous section, we saw how removing the law of *totality* from the laws of (linear) order produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. If you recall, the antisymmetry law mandated that you cannot have an object that is at the same time smaller and bigger than another one. (or that $a ≤ b ⟺ b ≰ a$).
 
-|   | Linear order | Partial order | Preorder |
-|   | $a ≤ b$ or $b ≤ a$ | $a ≤ b$ or $b ≤ a$ or neither |  $a ≤ b$ or $b ≤ a$ or neither or both | 
-|---| ---             | ---        |
-|Reflexivity| X | X | X |
-|Transitivity| X | X | X |
-|Antisymmetry | X | X  |    |
-|Totality | X |   |   |
+| | Linear order | Partial order | Preorder |
+| :--- | :--- | :--- | :--- |
+| **Element Comparability** | $a ≤ b$ or $b ≤ a$ | $a ≤ b$ or $b ≤ a$ or neither | $a ≤ b$ or $b ≤ a$ or neither or both |
+| **Reflexivity** | X | X | X |
+| **Transitivity** | X | X | X |
+| **Antisymmetry** | X | X | - |
+| **Totality** | X | - | - |
 
 The result is a structure called a *preorder* which is not exactly an order in the everyday sense --- it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 
@@ -521,7 +521,7 @@ So, an order is a category that has at most one morphism between two objects. Bu
 
 An interesting fact that follows trivially from the fact that the they have at most one morphism between given two objects is that in thin categories *all diagrams commute*.
 
-**Task:** Prove this. 
+**Task 6:** Prove this. 
 
 Products and coproducts
 ---
@@ -555,3 +555,107 @@ We can see that the two definitions and their diagrams are the same. So, speakin
 Overall, orders (thin categories) are often used for exploring categorical concepts in a context that is easier to understand e.g. understand the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts).
 
 Orders are also helpful when they are used as thin categories i.e. as an alternative to "full-fledged" categories, in contexts when we aren't particularily interested in the difference between the morphisms that go from one object to another. We will see an example of that in the next chapter.
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers
+===
+
+---
+
+**Task 1**: Previously, we covered a relation that is pretty similar to this. Do you remember it? What is the difference?
+
+It's the *equivalence relation* from Chapter 1. 
+
+Both equivalence relations and orders are reflexive and transitive. The difference is that:
+
+- Equivalence relations are symmetric (if $a = b$ then you always have $b = a$)
+
+- Orders are *antisymmetric* (if $a \leq b$ then you cannot have $b \leq a$)
+
+i.e. hierarchy is the opposite of equality (but they are also quite similar in some respects).
+
+---
+
+**Task 2:** Think about some orders that you know about and figure out whether they are partial or total.
+
+**Total Orders:**
+- Alphabetical order
+- Chronological order
+
+**Partial Orders:**
+- Divisibility of integers --- some numbers divide others, but some are incomparable (neither divides the other).
+- "Ancestor of" relation --- your parents and grandparents are before you, your children --- after you, but other people are neither.
+
+---
+
+**Task 3**: Which concept in category theory reminds you of joins?
+
+Joins correspond to *coproducts* in category theory.
+
+---
+
+**Task 4:** Prove that all finite lattices are bounded.
+
+To prove all finite lattices are bounded, we have to find the top and bottom element of a random finite lattice. To do that:
+
+1. Take the set of all elements in the lattice. 
+2. Take their join. 
+3. Done, you found the top element ($\top$). 
+
+Similarily, the bottom element is the *meet* of all elements.
+
+This works, since a lattice has to have joins for all sets of elements (and finite number of objects can be put into a set). 
+
+The proof relies on finitenes, e.g. you cannot get the set of all integers.
+
+---
+
+**Task 5:** Take a set of objects and one containing attributes and create your own concept lattice.
+
+Here is a classic example:
+
+**Objects (G)**
+
+{Fish, Frog, Dog, WaterWeed, Corn}
+
+**Attributes (M):**
+
+{LivesInWater, LivesOnLand, CanMove, IsPlant, IsAnimal}
+
+*Incidence relation:*
+
+- Fish: LivesInWater, CanMove, IsAnimal
+- Frog: LivesInWater, LivesOnLand, CanMove, IsAnimal  
+- Dog: LivesOnLand, CanMove, IsAnimal
+- WaterWeed: LivesInWater, IsPlant
+- Corn: LivesOnLand, IsPlant
+
+*Attribute sets:*
+
+- LivesInWater: {Fish, Frog, WaterWeed}
+- LivesOnLand: {Frog, Dog, Corn}
+- CanMove: {Fish, Frog, Dog}
+- IsPlant: {WaterWeed, Corn}
+- IsAnimal: {Fish, Frog, Dog}
+
+Now draw the lattice!
+
+---
+
+**Task 6:** Prove that in thin categories all diagrams commute.
+
+The proof is simple: 
+
+1. Given a path of arrows between two objects $A$ and $B$, we can compose those arrows to get a single arrow $A \to B$
+
+2. There can be, by definition, only one arrow connecting two objects in a thin category (only one $A \to B$ morphism).
+
+So, all paths that connect a given pair of objects are equivalent to this morphism.
+
+<!--
+{%endif%}
+-->
+
