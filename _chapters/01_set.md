@@ -235,7 +235,7 @@ Some functions in programming (also called methods, subroutines, etc.) kinda res
 
 However functions in most programming languages can also be quite different from mathematical functions &mdash; they can perform various operations that have nothing to do with returning a value. These operations are sometimes called side effects. 
 
-Why are functions in programming different? Well, figuring a way to encode *effectful* functions in a way that is mathematically sound isn't trivial and at the time when most programming paradigms that are in use today were created, people had bigger problems than the their functions not being mathematically sound (e.g. actually being able to run any program at all). 
+Why are functions in programming different? Well, figuring a way to encode *effectful* functions in a way that is mathematically sound isn't trivial and at the time when most programming paradigms that are in use today were created, people had bigger problems than the functions not being mathematically sound (e.g. actually being able to run any program at all). 
 
 Nowadays, many people feel that mathematical functions are too limiting and hard to use. And they might be right. But mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you almost everything about what the function does (this is probably the reason why most functional languages are strongly-typed).
 
@@ -363,7 +363,7 @@ Invertible functions are called *isomorphisms*. When there exists an invertible 
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
 
-More formally, two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+More formally, two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 Notice how the identity function comes in handy.
 
