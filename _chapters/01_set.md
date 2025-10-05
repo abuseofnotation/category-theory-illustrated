@@ -396,11 +396,11 @@ Composing two isomorphisms into another isomorphism is possible by composing the
 
 Informally, we can see that the two morphisms are indeed reverse to each other and hence form an isomorphism. If we want to prove that fact formally, we will do something like the following: 
 
-Given that if two functions are isomorphic, then their composition is equal to an identity function, proving that functions $g \circ f$ and $f' \circ g'$, are isomorphic is equivalent to proving that their composition is equal to identity.
+Given that if two functions are reverses of each other, then their composition is equal to an identity function, proving that functions $g \circ f$ and $f' \circ g'$, are reverses is equivalent to proving that their composition is equal to identity.
 
 $g \circ f \circ f' \circ g' = id$
 
-But we know already that $f$ and $f'$ are isomorphic and hence $f\circ f' = id$, so the above formula is equivalent to (you can reference the diagram to see what that means):
+But we know already that $f$ and $f'$ are reverses and hence $f\circ f' = id$, so the above formula is equivalent to (you can reference the diagram to see what that means):
 
 $g \circ id \circ g' = id$
 
@@ -408,7 +408,7 @@ And we know that anything composed with $id$ is equal to itself, so it is equiva
 
 $g \circ g' = id$
 
-which is true, because $g$ and $g'$ are isomorphic and isomorphic functions composed are equal to identity.
+which is true, because $g$ and $g'$ are reverses and reverse functions composed are equal to identity.
 
 By the way, there is another way to obtain the isomorphism &mdash; by composing the two morphisms one way in order to get the third function and then taking its reverse. But to do this, we have to prove that the function we get from composing two bijective functions is also bijective. 
 
