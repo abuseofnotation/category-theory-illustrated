@@ -190,7 +190,7 @@ The *group* of integers under addition is cyclic too --- here we can use $+1$ *o
 
 Wait, how can this be a cyclic group when there are clearly no cycles? This is because the integers are an *infinite* cyclic group. 
 
-A number-based example of a finite cyclic group is the group of integers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer addition of that number and the modulus*.
+A number-based example of a finite cyclic group is the group of integers under *modular arithmetic* (sometimes called "clock arithmetic"). Modular arithmetic's operation is based on a number called the modulus (let's take $12$ for example). In it, each number is mapped to the *remainder of the integer division of that number and the modulus*.
 
 For example: $1 \pmod{12} = 1$ (because $1/12 = 0$ with $1$ remainder) $2 \pmod{12} = 2$ etc. 
 
