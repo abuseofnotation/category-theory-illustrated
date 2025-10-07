@@ -114,11 +114,11 @@ The product definitions presented in the previous section worked by _zooming in_
 
 To define products in terms of external diagrams, we must, given two sets, devise a way to pinpoint the set that is their product, by looking at the functions that come from/to them. 
 
-And what are the functions are guaranteed to exist for all products. Of course that would be the projections, the functions for retrieving back the two elements of the product $C \to A$ and $A \times B \to B$. What would a product be without them?
+And what are the functions are guaranteed to exist for all products. Of course that would be the projections, the functions for retrieving back the two elements of the product $A \times B \to A$ and $A \times B \to B$. What would a product be without them?
 
 ![Product](../02_category/product_functions.svg)
 
-Now if we switch to the (semi) external view, this diagram already provides some definition of what a product is: if we have an object $C$ for which there are functions $C \to A$ and $A \times B \to B$, then $C$ can potentially be the product of $A$ and $B$ ($A \times B$).
+Now if we switch to the (semi) external view, this diagram already provides some definition of what a product is: if we have an object $C$ for which there are functions $C \to A$ and $C to B$, then $C$ can potentially be the product of $A$ and $B$ ($A \times B$).
 
 ![Product, external diagram](../02_category/product_external.svg)
 
@@ -371,7 +371,7 @@ The short answer: because it is more general than the traditional definition, th
 
 You may say that they apply to entirely different _categories of objects_ (nudge, nudge).
 
-# Categories brierly
+# Categories briefly
 
 Maybe it is about time to see what a category is. Here is a short definition: a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
@@ -649,7 +649,7 @@ So, there is exactly one function from $1 \to 1$. But functions $1 \to X$ corres
 
 **Task 3:** Why is the function to the empty set unique?
 
-As we established, there is exactly one such function, the peculiar "empty function".
+As we established, no matter what the source set is, there is exactly one such function, the peculiar "empty function".
 
 ---
 

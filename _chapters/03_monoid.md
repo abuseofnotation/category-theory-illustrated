@@ -279,7 +279,7 @@ The Klein four-group is *non-cyclic* (because there are not one, but two generat
 Cyclic product groups
 ---
 
-In the previous chapter, we saw one *non-cyclic* product group (the Klein four-group), which was a product of *cyclic groups*. Most product groups (even the product of cyclic groups) would be non-cyclic, because it would have the generators of both groups that comprise it, i.e. even if the two original groups are cyclic and thus have 1 generator each, their product would still have 2 generators. But the product of two cyclic groups would still be cyclic if the number of elements of those groups (their *orders*) have some common divisor other than 1 (i.e. if they are *not relatively prime numbers*). 
+In the previous chapter, we saw one *non-cyclic* product group (the Klein four-group), which was a product of *cyclic groups*. Most product groups (even the product of cyclic groups) would be non-cyclic, because it would have the generators of both groups that comprise it, i.e. even if the two original groups are cyclic and thus have 1 generator each, their product would still have 2 generators. But the product of two cyclic groups would still be cyclic if the number of elements of those groups (their *orders*) don't have a common divisor other than 1 (i.e. if they are *relatively prime numbers*). 
 
 So, if you combine two groups with orders that have some common divisor (as $2$ and $2$, which are both divided by 2), then, their product would not be cyclic. But, if you combine two groups with orders that are relatively prime, (like $2$ and $3$) you would get a cyclic group.
 

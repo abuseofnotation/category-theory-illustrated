@@ -13,8 +13,7 @@ In other words, sets are an *example of a category* (the *proto-example*, we mig
 What is an Abstract Theory
 ===
 
-> Instead of asking what can be defined and deduced from what is assumed to begin with, we ask instead what more general ideas and principles can be found, in terms of which what was our starting-point can be defined or deduced.
-> Bertrand Russell, from Introduction to Mathematical Philosophy
+> Instead of asking what can be defined and deduced from what is assumed to begin with, we ask instead what more general ideas and principles can be found, in terms of which what was our starting-point can be defined or deduced. --- Bertrand Russell, from "Introduction to Mathematical Philosophy"
 
 Most scientific and mathematical theories have a specific *domain*, which they are tied to, and in which they are valid. They are created with this domain in mind and are not intended to be used outside of it. For example, Darwin's theory of evolution is created in order to explain how different *biological species* came to evolve using natural selection, quantum mechanics is a description of how particles behave at a specific scale, etc.
 
@@ -120,7 +119,7 @@ Functions in everyday life
 
 Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask that has an answer can be expressed as a function.
 
-The question "How far are we from New York?" is a function with set of all places in the world as source set and its target set consisting of the set of all positive numbers.
+The question "How far are we from New York?" is a function that has the set of all places in the world as source set and its target set consisting of the set of all natural numbers.
 
 The question "Who is my father?" is a function whose source is the set of all people in the world.
 
@@ -133,7 +132,7 @@ Note that the question "Who is my child?" is *NOT* a straightforward function, b
 The Identity Function
 ---
 
-For every set $G$, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element of $G$ to itself. It is called *the identity function* of $G$ or $ID_{G}: G → G$.
+For every set $G$, no matter what it represents, we can define the function that does nothing --- a function which maps every element of $G$ to itself. It is called *the identity function* of $G$ or $ID_{G}: G → G$.
 
 ![The identity function](../01_set/function_identity.svg)
 
@@ -156,12 +155,6 @@ Although it doesn't look like it, there is a unique function from the empty set 
 ![Function with empty set](../01_set/function_empty.svg)
 
 **Task 3:** Is this really valid? Why? Check the definition.
-
-If you still aren't convinced, check this out:
-1. There is a function between a subset and a its superset 
-2. The empty set is a subset of any other set.
-
-So, evidently, this function has to exist!
 
 **Task 4:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
 
@@ -193,7 +186,7 @@ Each numerical operation is a function between two of these sets. For example, s
 
 ![The square function](../01_set/square.svg)
 
-I will use the occasion to reiterate some of the more important characteristics of functions:
+Let's reiterate some of the more important characteristics of functions:
 
 - All numbers in the target have (or should have) two arrows pointing at them (one for the positive square root and one for the negative one), and that is OK. 
 - Zero from the source set is connected to itself in the target set &mdash; that is permitted.
@@ -201,8 +194,7 @@ I will use the occasion to reiterate some of the more important characteristics 
 
 Overall everything is permitted, as long as you can always provide exactly one result (also known as *The result™*) per value. For numerical operations, this is always true, simply because math is designed this way.
 
-> Every generalization of number has first presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible.  
-> Bertrand Russell, from Introduction to Mathematical Philosophy
+> Every generalization of number has first presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible. --- Bertrand Russell, from "Introduction to Mathematical Philosophy"
 
 Note that most mathematical operations, such as addition, multiplication, etc. require two numbers in order to produce a result. This does not mean that they are not functions, it just means they're a little fancier. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
@@ -218,18 +210,18 @@ Sets are not exactly the same thing as types, but all types are (or can be seen 
 
 ![Set of boolean values](../01_set/boolean.svg)
 
-Another very basic set that is used in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
+Another very basic set that is used in programming is the set of keyboard characters, or `Char`. 
 
 ![Set of characters](../01_set/char.svg)
 
-Most of the types that are used in programming are *composite* types ---  they are a combination of the primitive ones that are listed here. Again, we will cover these later.
+Characters are actually used rarely by themselves and mostly as parts of sequences. Most of the types that are used in programming are *composite* types ---  they are a combination of the primitive ones that are listed here. Again, we will cover these later.
 
 **Task 7:** What is the type equivalent of subsets in programming?
 
 Functions and methods/subroutines
 ---
 
-Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions &mdash; they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example, here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
+Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions &mdash --- they take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example, here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
 
 ![A function from Char to Boolean](../01_set/char_boolean.svg)
 
@@ -262,11 +254,11 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
 We can define a function that is the equivalent to performing the operation described above. 
-That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows.
-
-Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
+That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows. Let us call it $h: Y → G$. 
 
 ![Functional composition](../01_set/functions_compose.svg)
+
+We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
 Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed again).
 
@@ -275,9 +267,7 @@ Composition is the essence of all things categorical. The key insight is that th
 Composition of relationships
 ---
 
-To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
-
-If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \circ g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
+To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one e.g if we have a function $g: P → Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \circ g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
 
 ![Functional composition connect](../01_set/morphism_general.svg)
 
@@ -296,16 +286,15 @@ One of the main ways in which modern engineering differs from ancient craftsmans
 
 **Task 9:** Think about what would be those functions' sources and targets.
 
-By the way, diagrams that are "zoomed out" that show functions without showing set elements are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*. 
+By the way, diagrams that are "zoomed out" that show functions without showing set elements are called *external diagrams* (and the ones we used so far are *internal*). 
 
 Composition and external diagrams 
 ---
 
-Let's look at the diagram that demonstrates functional composition in which we showed that successive application of the two composed functions ($f \circ g$) and the new function ($h$) are equivalent.
+Let's look at the diagram that demonstrates functional composition, in which we showed that successive application of the two composed functions ($f \circ g$) and the new function ($h$) are equivalent. We showed this equivalence by drawing an *internal* diagram, and explicitly drawing the elements of the functions' sources and targets in such a way that the two paths are equivalent.
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-We showed this equivalence by drawing an *internal* diagram, and explicitly drawing the elements of the functions' sources and targets in such a way that the two paths are equivalent.
 
 Alternatively, we can just *say* that the arrow paths are all equivalent (all arrows starting from a given set element ultimately lead to the same corresponding element from the resulting set) and draw the equivalence as an external diagram.
 
@@ -321,7 +310,7 @@ The external diagram is a more appropriate representation of the concept of comp
 
 ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
-If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
+If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*).
 
 Associativity
 ---
@@ -334,24 +323,24 @@ If we want compose more than two functions we might wonder if the order in which
 
 ![Composing functions f and (g and c)](../01_set/functions_associativity_external_2.svg)
 
-The answer is yes --- as long as the order is maintained, the result would always be the same. This property of functions is called *associatity.
+The answer is yes --- as long as the order is maintained, the result would always be the same. This property of functions is called *associativity.
 
-*Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
+**Task 10:** Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
 Category theory --- a hint for the definition
 ---
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, they compose with one another (associatively) and they can be represented by external diagrams.
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*) i.e. things that have a source and a target, they compose with one another (associatively) and they can be represented by external diagrams.
 
-And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
+Another way of defining category theory (without actually defining it) is saying it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
 
 
 Isomorphism
 ===
 
-To explain what isomorphism is, we go back to the examples of the types of relationships that functions can represent, and to the first and most elementary of them all &mdash; the *one-to-one* type of relationship. We know that all functions have exactly one element from the source set, pointing to one element from the target set. But for one-to-one functions *the reverse is also true* &mdash; exactly one element from the target set points to one element from the source. 
+One of the relationships that functions can represent is the *one-to-one* relationship, in which we have one element from the source set, pointing to one element from the target set. But for one-to-one functions *the reverse is also true* &mdash; exactly one element from the target set points to one element from the source. 
 
 ![Opposite colors](../01_set/function_one_one.svg)
 
@@ -370,7 +359,7 @@ Notice how the identity function comes in handy.
 Isomorphism and identity
 ---
 
-If you look closely you would see that the identity function is invertible too (its reverse is itself), so each set is isomorphic to itself in that way.
+If you look closely, you would see that the identity function is invertible too, its reverse is itself, so each set is isomorphic to itself in that way.
 
 ![The identity function](../01_set/isomorphism_identity.svg)
 
@@ -394,7 +383,9 @@ Composing two isomorphisms into another isomorphism is possible by composing the
 
 ![Composing isomorphisms](../01_set/isomorphisms_compose.svg)
 
-Informally, we can see that the two morphisms are indeed reverse to each other and hence form an isomorphism. If we want to prove that fact formally, we will do something like the following: 
+Informally, we can see that the two morphisms are indeed reverse to each other and hence form an isomorphism. 
+
+Let's prove this fact formally:
 
 Given that if two functions are reverses of each other, then their composition is equal to an identity function, proving that functions $g \circ f$ and $f' \circ g'$, are reverses is equivalent to proving that their composition is equal to identity.
 
@@ -410,7 +401,7 @@ $g \circ g' = id$
 
 which is true, because $g$ and $g'$ are reverses and reverse functions composed are equal to identity.
 
-By the way, there is another way to obtain the isomorphism &mdash; by composing the two morphisms one way in order to get the third function and then taking its reverse. But to do this, we have to prove that the function we get from composing two bijective functions is also bijective. 
+By the way, there is another way to obtain the isomorphism &mdash; by composing the two morphisms one way in order to get the third function and then taking its reverse. But to do this, we have to prove that the function we get from composing two one-to-one functions is also one-to-one. 
 
 Isomorphisms Between Singleton Sets
 ---
@@ -430,14 +421,14 @@ Equivalence relations and isomorphisms
 
 We said that isomorphic sets aren't necessarily the same set (although the reverse is true). However, it is hard to get away from the notion that being isomorphic means that they are *equal* or *equivalent* in some respect. For example, all people who are connected by the *isomorphic* mother/child relationship share some of the same genes. 
 
-And in computer science, if we have functions that convert an object of type $A$ to an object of type $B$ and the other way around (as for example the functions between a data structure and its id), we also can pretty much regard $A$ and $B$ as two formats of the same thing, as having one means that we can easily obtain the other.
+And in computer science, if we have functions that convert an object of type $A$ to an object of type $B$ and the other way around, we also can pretty much regard $A$ and $B$ as two formats of the same thing, as having one means that we can easily obtain the other.
 
 Equivalence relations
 ---
 
-What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash; the concept of an *equivalence relation*. 
+What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way --- the concept of an *equivalence relation*. 
 
-So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition, it's when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
+We already know what a relation is --- it is a connection between two sets (an example of which is function). And a relation is an equivalence relation, when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
 
 Reflexivity
 ---
@@ -555,6 +546,12 @@ We will talk a lot about this in the following chapters.
 **Task 3:** Is the function from the empty set to any other set really valid? Why? Check the definition.
 
 Yes, it is valid. Zero is a natural number! This is called *vacuous truth*, when the condition is satisfied simply because there are no cases to check.
+
+If you still aren't convinced, check this out:
+1. There is a function between a subset and its superset 
+2. The empty set is a subset of any other set.
+
+So, evidently, this function has to exist!
 
 ---
 
