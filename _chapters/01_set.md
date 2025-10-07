@@ -235,7 +235,7 @@ Some functions in programming (also called methods, subroutines, etc.) kinda res
 
 However functions in most programming languages can also be quite different from mathematical functions &mdash; they can perform various operations that have nothing to do with returning a value. These operations are sometimes called side effects. 
 
-Why are functions in programming different? Well, figuring a way to encode *effectful* functions in a way that is mathematically sound isn't trivial and at the time when most programming paradigms that are in use today were created, people had bigger problems than the their functions not being mathematically sound (e.g. actually being able to run any program at all). 
+Why are functions in programming different? Well, figuring a way to encode *effectful* functions in a way that is mathematically sound isn't trivial and at the time when most programming paradigms that are in use today were created, people had bigger problems than the functions not being mathematically sound (e.g. actually being able to run any program at all). 
 
 Nowadays, many people feel that mathematical functions are too limiting and hard to use. And they might be right. But mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you almost everything about what the function does (this is probably the reason why most functional languages are strongly-typed).
 
