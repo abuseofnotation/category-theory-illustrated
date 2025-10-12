@@ -76,23 +76,23 @@ But before we continue with that, let's see some other neat uses of products.
 
 ## Products as Objects
 
-In the previous chapter, we established the correspondence of various concepts in programming languages and set theory --- sets resemble types, and functions resemble methods/subroutines. This picture is made complete with products, that are like stripped-down _classes_ (also called _records_ or _structs_) --- the sets that form the product correspond to the class's _properties_ (also called _members_) and the functions for accessing them are like what programmers call _getter methods_ e.g. the famous example of object-oriented programming of a `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers. And objects with more than two values can be expressed as compositions of nested products e.g. a record with 3 members $a$, $b$ and $c$ could be expressed as nested tuples ($a$, ($b$, $c$)), or more formally $a \times b \times c$.
+In the previous chapter, we established the correspondence of various concepts in programming languages and set theory --- sets resemble types, and functions resemble methods/subroutines. This picture is made complete with products, that are like stripped-down _classes_ (also called _records_ or _structs_) --- the sets that form the product correspond to the class's _properties_ (also called _members_) and the functions for accessing them are like what programmers call _getter methods_ e.g. the famous example of object-oriented programming of a `Person` class with `name` and `age` fields is nothing more than a product of the set of strings, and the sets of numbers. And objects with more than two values can be expressed as compositions of nested products, as we showed above.
 
 ## Using Products to Define Numeric Operations
 
-Products can also be used for expressing functions that take more than one argument (and this is indeed how multi-param functions are implemented in languages that actually have tuples, like the ones from the ML family). For example, "plus" is a function from the set of products of two numbers to the set of numbers, so, $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$.
+Products can also be used for expressing functions that take more than one argument (and this is indeed how multi-param functions are implemented in languages from the ML family). For example, "plus" is a function from the set of products of two numbers to the set of numbers, so, $+: \mathbb{Z} \times \mathbb{Z} → \mathbb{Z}$.
 
 ![The plus function](../02_category/plus.svg)
 
 By the way, such functions (ones that take two objects of one type and return a third object of the same type) are called _operations_.
 
-## Defining products in terms of sets
+# Defining products in terms of sets
 
 A product is, as we said, a set of _ordered_ pairs (formally speaking $A \times B ≠ B \times A$). So, to define a product we must define the concept of an ordered pair. So how can we do that?
 
 ![A pair](../02_category/pair.svg)
 
-Note that an ordered pair of elements is not just a set containing the two elements (that would be an _ unordered pair_) but it also contains information about which of those objects comes first and which one goes second in the pair. In programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose.
+Note that an ordered pair of elements is not just a set containing the two elements (that would be an _unordered_ pair) but it also contains information about which of those objects comes first and which one goes second in the pair. In programming, we have the ability to assign names to each member of an object, which accomplishes the same purpose.
 
 The order of elements in the pair is important. While some mathematical operations (such as addition) don't care about order, others (such as subtraction) do. In programming, when we manipulate an object we obviously want to access a specific property of the object, not just any random property.
 
@@ -108,11 +108,15 @@ Suggested in 1921 by Kazimierz Kuratowski, this one uses just the component of t
 
 ![A pair, represented by sets](../02_category/pair_as_set_1.svg)
 
-## Defining products in terms of functions
+# Defining products in terms of functions
 
-The product definitions presented in the previous section worked by _zooming in_ into the individual elements of the product and seeing what they are made of. We may think of this as a _low-level_ approach to the definition. This time (and throughout the most of this book) we will do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will _zoom out_ and attempt to fly over the difficulties that we met in the previous section by providing a definition of a product in terms of functions and _external_ diagrams.
+The product definitions presented in the previous section worked by _zooming in_ into the individual elements of the product and seeing what they are made of. We may think of this as a _low-level_ approach to the definition. This time (and throughout the most of this book) we will do the opposite --- we will try to be as oblivious to the contents of our sets as possible i.e. instead of zooming in we will _zoom out_ and attempt to fly over the difficulties that we met in the previous section by providing a definition of a product in terms of functions and _external_ diagrams. 
 
-To define products in terms of external diagrams, we must, given two sets, devise a way to pinpoint the set that is their product, by looking at the functions that come from/to them. 
+Why do we want to do that? Well, we will answer that question later.
+
+## The projections
+
+To define products in terms of external diagrams, we must, given two sets, devise a way to pinpoint the set that is their product, by looking only at the functions that come from/to them. 
 
 And what are the functions are guaranteed to exist for all products? Of course that would be the projections, the functions for retrieving back the two elements of the product $A \times B \to A$ and $A \times B \to B$. What would a product be without them?
 
@@ -122,27 +126,64 @@ Now if we switch to the (semi) external view, this diagram already provides some
 
 ![Product, external diagram](../02_category/product_external.svg)
 
-However, this definition is not complete, as the product $A$ and $B$, is not the *only* set for which such functions can be defined. For example, a set of triples (which is like a product, but has three elements) $A \times B \times X$ for any element $X$ also qualifies. Any other set that would happen to have some functions to $A$ and $B$ would, by this definition, be "impostor products".
+So, we know for sure that the product $A$ and $B$, is some set $C$ for which we have $C \to A$ and $C \to B$
+
+## Impostor products
+
+"The product of $A$ and $B$, is some set $C$ for which we have $C \to A$ and $C \to B$". This definition is correct, but it is not complete, as the product is not the only set for which such functions can be defined.
+
+For example, a set of triples (which is like a product, but has three elements) $A \times B \times X$ for any element $X$ also qualifies. Any other set that would happen to have some functions to $A$ and $B$ would qualify.
 
 ![Product, external diagram](../02_category/product_candidates.svg)
 
-Upon further inspection we discover that there are ways to expose those impostors. Take the set of triples, $A \times B \times X$ as an example. Looking at the canonical function that converts a triple to a product $A \times B \times X \to A \times B$, we realize that $A \times B \times X$ *is only connected to $A$ and $B$ because of this function*. That is, if we dub it $g: A \times B \times X \to A \times B$ and let $f^{1}$ and $f^{2}$ be the arrows for retrieving elements of a product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$), then, the arrow that connects the triple $A \times B \times X$ to $A$ and $B$ are just the compositions $f^{1} g$ and $f^{2}g$. 
+In other words, the definition of a product does apply for the product set, but it also applies for a bunch of other sets that are not the product set, which we can call "impostor products". Sounds like we need to extend our definition to make it complete.
+
+## The extra condition
+
+Upon further inspection we discover that there is an extra condition that we can add to our definition so it only applies to to the true product, and not to the "impostors".
+
+We take the set of triples as an example and make two key observations:
+
+One: For any triple $A \times B \times X$ there is a function $g: A \times B \times X \to A \times B$ that converts the triple to a product by just throwing one of the elements away (note that the product sets in this diagram don't show all possible values, to make it more readable)
+
+![Product, external diagram](../02_category/product_triple_internal.svg)
+
+Two: If we compose this function with the projection functions of the product, the result would be equivalent to the projection functions of the triple.
+
+![Product, external diagram](../02_category/product_triple_internal_diagram.svg)
+
+Externally, the situation looks like this.
 
 ![Product, external diagram](../02_category/product_triple.svg)
 
-We claim that the same reasoning applies to all other objects that can take the place of our product --- they all are connected to the product, and their getters are just the result of this connection. Why? Intuitively, all such objects would be _more complex_ than the product and you can always have a function that converts a more complex structure to a simpler one by just throwing information away (in the same way in which we threw the third element of the triple).
+The same condition (the same diagram) is also valid for the type, containing elements of 4 sets $A \times B \times X \times Y$ for some $X$ and $Y$, as well as 5, 6, 7 etc. (the only difference is that there we have more things to throw away).
+
+And we claim that it applies to *all* impostor products in general, all sets that have such projections. For all of them, there exists a function for converting the impostor to the real product, that is such that the projections of the impostor can be reformulated as a composition of it and the projections of the real product.
 
 ![Product, external diagram](../02_category/product_morphisms.svg)
 
-More formally, if we suppose that there is a set $I$ that can serve as an impostor of the product of sets $A$ and $B$ (i.e. that $I$ is such that there exists two functions $I \to A$ and $I \to B$, then there must also exist a unique function with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the above two functions would be just the composition of $g$ with the usual "getter" functions of the product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$). In other words, whichever object we pick for $I$, this diagram would commute (oh no, not this diagram again).
+Why is this true? Intuitively, given a value of type $I$ which is connected to some other value $A$ and $B$, there exist a value from $A\times B$ which is connected to the same two values, simply because all types $I$ would (as the triples) be  _more complex_ than the product --- you can always have a function that converts a more complex structure to a simpler one by just throwing information away, in the same way in which we threw the third element of the triple. 
+
+## Formal definition
+
+Now, let's prove that the categorical definition of a product is equivalent to the set-theoretic one. For this, we first state the categorical product definition formally. 
+
+For some sets $A$ and $B$, there exist a product set $A \times B$ which has projections $f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$.
+
+Suppose that there exist some other set $I$ that also has these projections i.e. such that there exists functions with signature $x^1 : I \to A$ and $x^2 : I \to B$.
+
+Then, there exists a unique function with the type signature $g: I \to A \times B$, converting the impostor product to the real product, such that the functions $I \to A$ and $I \to B$ are just the composite functions with the projections of the product with $g$ i.e. the $f^{1} g : I \to A$ and $f^{2}g : I \to B$. This $g$ is easy to define: we map each element of $i \in I$, to the element of $A\times B$, that we get by just applying it's projection functions $x^{1}$ and $x^{2}$ i.e. we have  $g: i \mapsto (x^1(i), x^2(i))$ for all $i \in I$. 
+
+In other words, whichever object we pick for $I$, this diagram would commute (we will learn what that means shortly).
 
 ![Product, universal property](../02_category/product_universal_property.svg)
 
-You would see a lot of similar diagrams in this book. In category theory, we often (always) define properties that a given object might possess, by defining a structure such that all similar objects can be converted to it. This is what we call a *universal property*, but it is too early to go into more detail, (after all we haven't even yet said what category theory is).
+By the way, in category theory, we often (always) define properties that a given object might possess, by defining a structure such that all similar objects can be converted to it. This is what we call a *universal property*, but it is too early to go into more detail, (after all we haven't even yet said what category theory is).
 
 ## Isomorphism and equality
 
-One thing that we should point out, is that this definition (as all the previous ones, by the way) does not rule out the sets which are *isomorphic* to the product. When we represent things using universal properties, an isomorphism is treated as equality. 
+One thing that we should point out, is that this definition does not rule out the sets which are *isomorphic* to the product. When we represent things using universal properties, an isomorphism is treated as equality. 
+
 <!--TODO diagram-->
 
 This is the same viewpoint that we adopt in programming, especially when we work on the higher level --- there might be many different implementations of pair, but as long as they work in the same way (i.e. we can convert one to the other and vice versa) they are all the same to us.
@@ -157,7 +198,7 @@ The sum of two sets $B$ and $Y$, denoted $B + Y$ is a set that contains _all ele
 
 We can immediately see the connection with the _or_ logical structure: For example, because a parent is either a mother or a father of a child, the set of all parents is the sum of the set of mothers and the set of fathers, or $P = M + F$.
 
-## Defining Sums in Terms of Sets
+# Defining Sums in Terms of Sets
 
 As with the product, representing sums in terms of sets is not so straightforward e.g. when a given object is an element of both sets, then it appears in the sum twice which is not permitted, because a set cannot contain the same element twice.
 
@@ -169,11 +210,11 @@ And, as with the product, there is a low-level way to express a sum using sets a
 
 ![A member of a coproduct, examined](../02_category/coproduct_member_set.svg)
 
-## Defining sums in terms of functions
+# Defining sums in terms of functions
 
 As you might already suspect, the interesting part is expressing the sum of two sets using functions. To do that, we have to go back to the conceptual part of the definition. We said that sums express an _or_ relation between two things.
 
-A property of every _or_ relation is that if something is an $A$ that something is also an $A \vee B$ (The $\vee$ symbol means _or_ by the way). For example, if my hair is _brown_, then my hair is also _either blond or brown_. This is what _or_ means, right? This property can be expressed as a function, two functions actually --- one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$).
+A property of every _or_ relation is that if something is an $A$ that something is also an $A \vee B$ (The $\vee$ symbol means _or_ by the way). For example, if "my hair is _brown_" is a true statement, then "my hair is _either blond or brown_" is also true. This is what _or_ means, right? This property can be expressed as a function, two functions actually --- one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$).
 
 ![Coproduct, external diagram](../02_category/coproduct_external.svg)
 
@@ -184,6 +225,8 @@ As you might have already noticed, this definition is pretty similar to the defi
 All these sets express relationships which are more vague than the simple sum, and therefore given such a set, there would exist a unique function that would distinguish it from the true sum. The only difference is that, unlike the functions that define products, this time this function goes _from the sum_ to the impostor.
 
 ![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
+
+The definition is exactly the same as that of the product, except the arrows are reversed.
 
 # Interlude: Categorical Duality
 
@@ -345,13 +388,13 @@ Some _even more_ observant readers (folks, keep it down please, you are _too obs
 
 ![Coproduct and product](../02_category/coproduct_product_duality.svg)
 
-The similarity of the diagrams, is due to a similar general approach of defining things --- in both cases we find the property that makes a given concept useful and then define the concept so it has this property*.
+The similarity of the diagrams, is due to a similar general approach of defining things --- in both cases we find the property that makes a given concept useful and then define the concept so it has this property.
 
 ## Functional application
 
-After seeing the functional definition of set elements, we might be inclined to ask the following: If elements are represented by functions, then how do you _apply_ a given function to an element of a set, (and retrieve an element of another set)?
+After seeing the functional definition of set elements, we might be inclined to ask the following: If elements are represented by functions, then how do we _apply_ a given function to an element of a set, (and retrieve an element of another set)?
 
-The answer is surprisingly simple --- _selecting_ an element from a set is the same as constructing a function from the singleton set to that element.
+The answer is surprisingly simple --- we said that _selecting_ an element from a set is the same as constructing a function from the singleton set to that element.
 
 ![Functional application - internal diagram](../02_category/application_internal.svg)
 
@@ -373,19 +416,7 @@ You may say that they apply to entirely different _categories of objects_ (nudge
 
 # Categories briefly
 
-Maybe it is about time to see what a category is. Here is a short definition: a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
-
-![Category theory and set theory compared](../02_category/set_category.svg)
-
-When we are within the realm of sets, we can view each set as a collection of individual elements. In category theory, we don't have such a notion. However, taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. Plus we always have a way to "go back" to set theory, using the tricks from the last section.
-
-| Category Theory       | Set theory         | Programming Languages |
-| --------------------- | ------------------ | --------------------- |
-| Category              | **N/A**            | **N/A**               |
-| Objects and Morphisms | Sets and Functions | Classes and methods   |
-| **N/A**               | Element            | Object                |
-
-Notice the somehow weird, (but actually completely logical) symmetry (or perhaps "reverse symmetry") between the world as viewed through the lenses of set theory, and the way it is viewed through the lens of category theory:
+Maybe it is about time to see what a category is. Here is a short definition: a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. 
 
 | Category Theory       | Set theory         |
 | --------------------- | ------------------ |
@@ -393,7 +424,15 @@ Notice the somehow weird, (but actually completely logical) symmetry (or perhaps
 | Objects and Morphisms | Sets and functions |
 | **N/A**               | Element            |
 
-By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we gain the ability to zoom out and see the whole universe where we have been previously trapped. In the same way that the whole realm of sets can be thought of as one category, a programming language can also be thought of as a category. The concept of a category allows us to find and analyze similarities between these and other structures.
+
+(notice the somehow weird symmetry between the world as viewed through the lenses of set theory, and the way it is viewed through the lens of category theory)
+
+We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
+
+![Category theory and set theory compared](../02_category/set_category.svg)
+
+When we are within the realm of sets, we can view each set as a collection of individual elements. In category theory, we don't have such a notion. However, taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. And, as Lawvere showed with the Elementary Theory of the Category of Sets, we don't *lose* anything by switching to the categorical view.
+
 
 **NB:** The word "Object" is used in both programming languages and in category theory, but has completely different meanings. A categorical object is equivalent to a _type_ or a _class_ in programming language theory.
 
@@ -409,11 +448,11 @@ In contrast, abstract theories, like category theory and set theory, are more li
 
 All category theory books, including this one, start by talking about set theory. Looking back, I really don't know why this is the case --- books that focus on a given subject usually don't start off by introducing an _entirely different subject_, (before even starting to talk about the main one). Perhaps the set-first approach _is_ the best way to introduce people to categories. Or perhaps using sets to introduce categories is one of those things that people do just because everyone else does it. But, one thing is for certain --- we don't _need_ to study sets in order to understand categories. So now I would like to start over and talk about categories as a foundational concept. So let's pretend like this is a new book (I wonder if I can dedicate this to a different person).
 
-A category is a collection of objects (things) where the "things" can be anything you want. Consider, for example, these ~~colorful~~ gray balls:
+A category is a collection of objects (things) where the "things" can be anything you want. 
 
 ![Balls](../02_category/elements.svg)
 
-A category consists of a collection of objects as well as some arrows connecting objects to one another. We call the arrows _morphisms_ (for now you can think of them as functions).
+It also can have some arrows, connecting the objects to one another. We call the arrows _morphisms_ (for now you can think of them as functions).
 
 ![A category](../02_category/category.svg)
 
@@ -421,7 +460,7 @@ Wait a minute, we said that all sets form a category, but at the same time, any 
 
 This particular equivalence (a set as a category with no morphisms) is, however, rarely useful. Not because it's incorrect in any way, but rather because category theory is _all about the morphisms_ --- if the _arrows_ in set theory are nothing but a connection between the sets that serve as their source and a destination, in category theory it's the _objects_ that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are colored: if you ask me, the category of sets should really be called _the category of functions_.
 
-Speaking of which, note that objects in a category can be connected by multiple arrows and that having the same source and target sets does not in any way make arrows equivalent.
+Speaking of which, note that objects in a category can be connected by multiple arrows and that having the same source and target does not in any way make arrows equivalent.
 
 ![Two objects connected with multiple arrows](../02_category/arrows.svg)
 
@@ -433,7 +472,7 @@ There are some types of categories that have only one morphism between two objec
 
 ## Composition
 
-The most important requirement for a structure to be called a category is that _two morphisms can make a third_, or in other words, that morphisms are _composable_. 
+The most important requirement for a structure to be called a category is that _two morphisms can make a third_, i.e. that morphisms are _composable_. 
 
 Given three objects and two successive arrows with between them, we can make a third arrow (in set theory, it is equivalent to the consecutive application of the first two).
 
@@ -471,7 +510,7 @@ This formula can be expressed using the following diagram, which would only comm
 
 ![Composition of morphisms with many objects](../02_category/composition_associativity.svg)
 
-This formula (and the diagram) is the definition of a property called *associativity*. Being associative is required for functional composition to really be called functional composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, that would be super weird).
+This formula (and the diagram) is the definition of a property called *associativity*. Being associative is required for composition to really be called composition (and thus for a category to really be called a category). It is also required for our diagrams to work, as diagrams can only represent associative structures (imagine if the diagram above would not commute, that would be super weird).
 
 Associativity is not just about diagrams. For example, when we express relations using formulas, associativity just means that brackets don't matter in our formulas (as evidenced by the definition $(h \circ g) \circ f = h \circ (g \circ f)$).
 
@@ -509,7 +548,7 @@ _Why_ are categories defined by those two laws and not some other two (or one, t
 
 The reason the identity law is required is by far the more obvious one. Why do we need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, we need the identity morphism to be able to speak properly. For example, once we have the concept of identity morphism defined, we can define a category-theoretic definition of an _isomorphism_, based on it (which is important, because the concept of an isomorphism is very important for category theory).
 
-As we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$ and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
+As we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$ and $B → A$) such that their compositions are equivalent to the identity morphisms of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 And here is the same thing expressed with a commuting diagram.
 
@@ -564,8 +603,6 @@ And, to take a formal example, if function A can be combined with B to get C...
 ![functions are not commutative](../02_category/commutativity_functions.svg)
 
 ...would not automatically mean that B can be combined with A to get the same result
-
-![functions are not commutative - 2](../02_category/commutativity_functions_2.svg)
 
 Side note: composing any function with any other is only possible for functions that have the same set, both as source and target, but even then the end result would not always be the same.
 

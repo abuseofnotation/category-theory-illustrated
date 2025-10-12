@@ -177,7 +177,7 @@ All numerical operations can be expressed as functions acting on the set of (dif
 Number sets
 ---
 
-Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {1, 2, 3... }$. We also have the set of Real numbers $\mathbb{R}$, which includes almost all numbers and the set of positive real numbers (or $\mathbb{R}_{>0}$). 
+Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {1, 2, 3... }$. We also have the set of Real numbers $\mathbb{R}$ and the set of positive real numbers (or $\mathbb{R}_{>0}$). 
 
 Number functions
 ---
@@ -295,14 +295,13 @@ Let's look at the diagram that demonstrates functional composition, in which we 
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-
 Alternatively, we can just *say* that the arrow paths are all equivalent (all arrows starting from a given set element ultimately lead to the same corresponding element from the resulting set) and draw the equivalence as an external diagram.
 
 ![An external diagram, showing functional composition of two functions](../01_set/functions_compose_sets.svg)
 
 Or alternatively, if you want to express it as a formula (where $\circ$ is the composition operator).
 
-![An external diagram, showing functional composition of two functions, as a fformula](../01_set/functions_compose_formula.svg)
+![An external diagram, showing functional composition of two functions, as a formula](../01_set/functions_compose_formula.svg)
 
 The external diagram is a more appropriate representation of the concept of composition, as it is more general. In fact, it is *so* general that it can actually serve as a *definition of functional composition*.
 
