@@ -130,21 +130,23 @@ So, we know for sure that the product $A$ and $B$, is some set $C$ for which we 
 
 ## Impostor products
 
-"The product of $A$ and $B$, is some set $C$ for which we have $C \to A$ and $C \to B$". This definition is correct, but it is not complete, as the product is not the only set for which such functions can be defined.
+>"The product of $A$ and $B$, is some set $C$ for which we have $C \to A$ and $C \to B$". 
+
+This definition is correct, but it is not complete, as the product is not the only set for which such functions can be defined.
 
 For example, a set of triples (which is like a product, but has three elements) $A \times B \times X$ for any element $X$ also qualifies. Any other set that would happen to have some functions to $A$ and $B$ would qualify.
 
 ![Product, external diagram](../02_category/product_candidates.svg)
 
-In other words, the definition of a product does apply for the product set, but it also applies for a bunch of other sets that are not the product set, which we can call "impostor products". Sounds like we need to extend our definition to make it complete.
+In other words, the definition of a product does apply to the product set, as it should, but it also applies for a bunch of other sets that are not the product set, which we can call "impostor products". Sounds like we need to extend our definition to make it complete.
 
-## The extra condition
+## The universal property
 
-Upon further inspection we discover that there is an extra condition that we can add to our definition so it only applies to to the true product, and not to the "impostors".
+Upon further inspection we discover that there is an extra property that we can add to our definition so it only applies to to the true product, and not to the "impostors".
 
 We take the set of triples as an example and make two key observations:
 
-One: For any triple $A \times B \times X$ there is a function $g: A \times B \times X \to A \times B$ that converts the triple to a product by just throwing one of the elements away (note that the product sets in this diagram don't show all possible values, to make it more readable)
+One: For any triple $A \times B \times X$ there is a function $g: A \times B \times X \to A \times B$ that converts the triple to a product by just throwing one of the elements away (note that the product sets in this diagram don't show all possible values, to make it more readable).
 
 ![Product, external diagram](../02_category/product_triple_internal.svg)
 
@@ -152,13 +154,13 @@ Two: If we compose this function with the projection functions of the product, t
 
 ![Product, external diagram](../02_category/product_triple_internal_diagram.svg)
 
-Externally, the situation looks like this.
+We have two commuting triangles, one for each element.
 
 ![Product, external diagram](../02_category/product_triple.svg)
 
-The same condition (the same diagram) is also valid for the type, containing elements of 4 sets $A \times B \times X \times Y$ for some $X$ and $Y$, as well as 5, 6, 7 etc. (the only difference is that there we have more things to throw away).
+The same property (the same diagram) is also valid for the type, containing elements of 4 sets $A \times B \times X \times Y$ for some $X$ and $Y$, as well as 5, 6, 7 etc. (the only difference is that there we have more things to throw away).
 
-And we claim that it applies to *all* impostor products in general, all sets that have such projections. For all of them, there exists a function for converting the impostor to the real product, that is such that the projections of the impostor can be reformulated as a composition of it and the projections of the real product.
+And we claim that it applies to *all* impostor products in general (all sets that have such projections). For all of them, there exists a function for converting the impostor to the real product, that is such that the projections of the impostor can be reformulated as a composition of it and the projections of the real product.
 
 ![Product, external diagram](../02_category/product_morphisms.svg)
 
@@ -170,9 +172,9 @@ Now, let's prove that the categorical definition of a product is equivalent to t
 
 For some sets $A$ and $B$, there exist a product set $A \times B$ which has projections $f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$.
 
-Suppose that there exist some other set $I$ that also has these projections i.e. such that there exists functions with signature $x^1 : I \to A$ and $x^2 : I \to B$.
+Suppose that there exist some other set $I$ (imposter) that also has such projections i.e. there exist functions with signature $x^1 : I \to A$ and $x^2 : I \to B$.
 
-Then, there exists a unique function with the type signature $g: I \to A \times B$, converting the impostor product to the real product, such that the functions $I \to A$ and $I \to B$ are just the composite functions with the projections of the product with $g$ i.e. the $f^{1} g : I \to A$ and $f^{2}g : I \to B$. This $g$ is easy to define: we map each element of $i \in I$, to the element of $A\times B$, that we get by just applying it's projection functions $x^{1}$ and $x^{2}$ i.e. we have  $g: i \mapsto (x^1(i), x^2(i))$ for all $i \in I$. 
+Then, there exists a unique function with the type signature $g: I \to A \times B$, converting the impostor product to the real product, such that the functions $I \to A$ and $I \to B$ are just the composite functions with the projections of the product with $g$ i.e. the $f^{1} g : I \to A$ and $f^{2}g : I \to B$. What is this $g$? Let $i$ be an element of $I$. We can define $g$ by mapping each element of $i$ to the element of $A\times B$, that we get by just applying it's two projection functions $x^{1}$ and $x^{2}$ and making a tuple out of the two values i.e. we have  $g: i \mapsto (x^1(i), x^2(i))$ for all $i \in I$. 
 
 In other words, whichever object we pick for $I$, this diagram would commute (we will learn what that means shortly).
 
@@ -182,7 +184,7 @@ By the way, in category theory, we often (always) define properties that a given
 
 ## Isomorphism and equality
 
-One thing that we should point out, is that this definition does not rule out the sets which are *isomorphic* to the product. When we represent things using universal properties, an isomorphism is treated as equality. 
+One thing that we should point out, is that this definition, this property does not rule out the sets which are *isomorphic* to the product --- when we represent things using universal properties, an isomorphism is treated as equality. 
 
 <!--TODO diagram-->
 
@@ -214,21 +216,55 @@ And, as with the product, there is a low-level way to express a sum using sets a
 
 As you might already suspect, the interesting part is expressing the sum of two sets using functions. To do that, we have to go back to the conceptual part of the definition. We said that sums express an _or_ relation between two things.
 
+## The projections
+
 A property of every _or_ relation is that if something is an $A$ that something is also an $A \vee B$ (The $\vee$ symbol means _or_ by the way). For example, if "my hair is _brown_" is a true statement, then "my hair is _either blond or brown_" is also true. This is what _or_ means, right? This property can be expressed as a function, two functions actually --- one for each set that takes part in the sum relation (for example, if parents are either mothers or fathers, then there surely exist functions $mothers → parents$ and $fathers → parents$).
 
 ![Coproduct, external diagram](../02_category/coproduct_external.svg)
+
+## Impostor sums
 
 As you might have already noticed, this definition is pretty similar to the definition of the product from the previous section --- the difference being reversed arrows. And the similarities don't end here. As with products, we have sets that can be thought of as _impostor_ sums --- ones for which these functions exist, but which also contain additional information.
 
 ![Coproduct, external diagram](../02_category/coproduct_candidates.svg)
 
-All these sets express relationships which are more vague than the simple sum, and therefore given such a set, there would exist a unique function that would distinguish it from the true sum. The only difference is that, unlike the functions that define products, this time this function goes _from the sum_ to the impostor.
+## The universal property
+
+All these sets express relationships which are more vague than the simple sum, and therefore given such a set, there would exist a unique function that would distinguish it from the true sum. 
+
+
+The only difference is that, unlike the functions that define products, this time this function goes _from the sum_ to the impostor.
 
 ![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
 
+
+## Formal definition
+
 The definition is exactly the same as that of the product, except the arrows are reversed.
 
-# Interlude: Categorical Duality
+In the same way, in which for any $X$ we can write the function $g$  that throws $X$ away.
+
+$$A \times B \times X \to A \times B$$ 
+
+.. we can always write, for any $X$ a $g$  that just *adds* some values $X$. 
+
+$$A + B \to A + B + X$$ 
+
+In fact, the existence of the function above, follows trivially from the existence of the projections. 
+
+We know that for any $X$ and $Y$, we have
+
+$$Y \to Y + X$$ 
+
+But since $Y$ can be any set, we can substitute it for the set $(A + B)$ and get
+
+$$(A + B) \to (A + B) + X$$ 
+
+And we can remove the brackets, as sums are (like products) associative up to an isomorphism.
+
+And we can do the same calculation with the product set (and it's projections).
+
+# Categorical Duality
 
 The concepts of product and sum might already look similar in a way when we view them through their internal diagrams. The _external_ view makes this similarity precise --- these two diagrams are one and the same diagram, only their arrows are flipped --- many-to-one relationships become one-to-many and the other way around.
 
@@ -238,9 +274,10 @@ The universal properties that define the two constructs are the same as well ---
 
 And, if you remember, with products the arrows go the other way around --- the equivalent example for a product would be the function $A \times B \times R \to A \times B $
 
-This fact uncovers a deep connection between the concepts of the _product_ and _sum_, which is not otherwise apparent --- they are each other's opposites. _Product_ is the opposite of _sum_ and _sum_ is the opposite of _product_.
+This fact uncovers a deep connection between the concepts of the _product_ and _sum_, which is not otherwise apparent --- they are each other's opposites. _Product_ is the opposite of _sum_ and _sum_ is the opposite of _product_. The famous DeMorgan's law in logic $\neg(A \wedge B) = \neg{A} \vee \neg{B}$ is a direct consequence of this duality.
 
 In category theory, concepts that have such a relationship are said to be _dual_ to each other. So, the concepts of _product_ and _sum_ are dual. This is why sums are known in a category-theoretic setting as _converse product_, or _coproduct_ for short. This naming convention is used for all dual constructs in category theory.
+
 
 <!--
 {% if site.distribution == 'print'%}
@@ -261,7 +298,7 @@ This means, among other things, that the concepts of _and_ and _or_ are also dua
 
 ![Coproduct and product](../02_category/demorgan_duality.svg)
 
-The duality of $\land$ and $\lor$ can be seen in the two formulas that are most often associated with De Morgan which are known as De Morgan laws (although De Morgan didn't actually discover those (they were previously formulated, by William of Ockham (of "Ockham's razor" fame, among other people)).
+The duality of $\land$ and $\lor$ can be seen in the two formulas that are most often associated with De Morgan which are known as De Morgan laws (although De Morgan didn't actually discover those (they were previously formulated, by William of Ockham (of "Ockham's razor" fame)).
 
 $\neg(A \wedge B) = \neg{A} \vee \neg{B}$
 
