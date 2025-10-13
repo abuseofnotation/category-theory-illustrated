@@ -4,43 +4,45 @@ title: Types
 ---
 
 
-In this chapter we will talk about types. This might be disappointing, if you expected to learn about as many *new* categories as possible (for which you don't even suspect that they are categories till the unexpected reveal), as we've been giving examples with the category of types in a given programming language ever since the first chapter, and so we already know how they form a category. We are also already familiar with the Curry-Howard correspondence that connects types and logic. However, types are not just about programming languages, and they are not just another category. They are also at the heart of a mathematical theory known as *type theory*. They are an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and they are as powerful tool as any of those formalisms.
+In this chapter we will talk about types. This might be disappointing for you, if you expected to learn about as many *new* categories as possible (which you don't even suspect that they are categories till the unexpected reveal), as we've been talking about the category of types in a given programming language ever since the first chapter, and we already know how they form a category. We are also already familiar with the Curry-Howard correspondence that connects types and logic. However, types are not just about programming languages. And they are more than just another category. They are also at the heart of a mathematical theory known as *type theory*. 
+
+Type theory is an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and it is as powerful tool as any of those formalisms. 
 
 Sets, Types and Russell's paradox
 ===
 
-Sets
----
 
-So, here we are, back at sets. We discussed once, that most books about category theory (and mathematics in general) begin with sets, and often go back to sets. Even in a book about category theory like this one, the standard definitions of most mathematical objects start by "It like is a set, but..."
+We started talking about sets again. Most books about category theory (and mathematics in general) begin with sets, and often go back to sets. Even in a book about category theory like this one, the standard definitions of most mathematical objects involve sets. Indeed, a person who only knows about sets may ditch all my explanations about, for example, monoids being a one-object category and say:
 
-* **Category** --- It is a like set, but you don't see the sets, not their elements (or alternatively: "It is like a set, but elements are connected").
-* **Monoid** --- It is like a set, but you also have this binary operation.
-* **Order** --- It is like a set, but the elements are ordered.
 
-**Task:** Provide short definitions of these objects that don't mention sets.
+> "Have you seen a set? It's the same thing, but you also have this binary operation."
 
-The reason for the prevalence of this set-centric viewpoint (I used to be baffled by it, but now I get it) is that *sets are simple to understand*, especially when we are operating on the conceptual level that is customary for introductory materials. We all, for example, group together a set of supplies that are needed for a given activity, (e.g. a protractor, a compass, and a pencil for the math class, or paper, paint and brush when drawing) so as not to forget some of them. Or we group people that often hang out together as this or that company. And so, when we draw a circle around a few things, everyone knows what we are talking about. 
+Or for *orders* as being categories with one morphism, saying instead: 
+
+> "Have you seen a set? It's the same thing, but some elements are bigger than others."
+
+The reason for the prevalence of this set-centric viewpoint is actually trivial: *sets are simple to understand*, especially when we are operating on the conceptual level that is customary for introductory materials. We all, for example, group together a set of supplies that are needed for a given activity, (e.g. a *protractor*, a *compass*, and a *pencil* for the math class, or *paper*, a cans of *paint* and *brushes* when drawing) so as not to forget some of them. Or we group people that often hang out together as this or that company. And so, when we draw a circle around a few things, everyone knows what we are talking about. 
 
 ![Sets](../06_type/sets.svg)
 
-However, this initial understanding of sets is somewhat *too simple*, (or *naive*, as mathematicians call it), as, when it is examined closely, it leads to a bunch of paradoxes which are not easy to resolve. The most famous of them is Russell's paradox.
+However, this initial understanding of sets is somewhat *too simple*, (or *naive*, as mathematicians call it), as, when it is examined closely, it leads to a bunch of paradoxes which are not easy to resolve, the most famous of which is Russell's paradox.
 
 Russell's paradox
 ---
 
 Besides being interesting on its own right, Russell's paradox is one of the motivations for creating type theory, so we will start this chapter by understanding how and why it occurs. 
 
-Most sets that we discussed (like the empty set and singleton sets) do not contain *themselves*. 
+Most sets that we saw (like the empty set and singleton sets) do not contain *themselves*. 
 
 ![Sets that don't contains themselves](../06_type/sets_dont_contain_themselves.svg)
 
-However, in set theory everything is a set, and the elements of sets are again sets, so *a set can contain itself*. This is the root cause of Russel's paradox. 
+However, as the elements of sets are again sets, *a set can contain itself*. 
 
 ![A set that contains itself](../06_type/set_contains_itself.svg)
 
+This ability is the root cause of Russel's paradox. 
 
-In order to understand Russell's paradox, we will try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\\\{x \mid x ∉ x \\\}$).
+The paradox occurs when we will try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\\\{x \mid x ∉ x \\\}$).
 
 ![Russel's paradox - option one](../06_type/russells_paradox.svg)
 
@@ -55,17 +57,11 @@ And removing the set, so it's no longer an element of itself would just take us 
 Resolving the paradox in set theory
 ---
 
-The set of sets that do not contain themselves doesn't sound like a ver useful set. And it really isn't --- in fact, I haven't seen it mentioned for any other reason, other than the construction of Russell's paradox. So, most people's initial reaction when seeing it would be something like:
+The set of sets that do not contain themselves doesn't sound like a ver useful set. And it really isn't --- in fact, I haven't seen it mentioned for any other reason, other than the construction of Russell's paradox. So, most people's initial reaction when learning about Russell's paradox would be something like this: 
 
-![
-THE STUDIO 
-ART STUDENT
-Wait, can't we just add some rules 
-that say that you cannot draw 
-the set of set that don't contain itself?
-](../comic/01.svg){: .comic-web-panel }
+>"Wait, can't we just add some rules that say that you cannot draw the set of set that don't contain itself?"
 
-This was exactly what Ernst Zermelo and Abraham Fraenkel set out to do (no pun intended). And the extra rules they added led to a new definition of set theory, known as *Zermelo–Fraenkel set theory*, or *ZFC* (the *C* at the end is a separate story) which is a version of set theory that is free of paradoxes. ZFC was a success, and it is still in use today, however it compromises one of the best features that sets have, namely their *simplicity*. 
+This was exactly what the mathematicians Ernst Zermelo and Abraham Fraenkel set out to do (no pun intended). And the extra rules they added led to a new definition of set theory, known as *Zermelo–Fraenkel set theory*, or *ZFC* (the *C* at the end is a separate story) which is a version of set theory that is free of paradoxes. ZFC was a success, and it is still in use today, however it compromises one of the best features that sets have, namely their *simplicity*. 
 
 What do we mean by that? Well, the original formulation of set theory (which is nowadays called *naive* set theory) was based on just one (rather vague) rule/axiom: "Given a property P, there exists a set, containing all objects that have this property" i.e. any bunch of objects can form a set. 
 
@@ -79,18 +75,20 @@ In contrast, ZFC is defined by a larger number of (more restrictive) axioms, as 
 
 ![The axiom of union in ZFC](../06_type/zfc_union.svg)
 
-There are a total of about 8 such axioms (depending on the flavour of the theory), curated in a way that allows us to construct all sets that are interesting, without being able to construct sets that lead to a contradiction. However, as we said. However, accepting ZFC would mean accepting that set theory is not as simple and straightforward, as it looks like. Indeed, it is more complex than category theory, and than this other theory which we will learn about in a minute...
+There are a total of about 8 such axioms (depending on the flavour of the theory). They are curated in a way that allows us to construct all sets that are interesting, without being able to construct the infamous set that contain itself. However, accepting ZFC would mean accepting that set theory is not as simple and straightforward, as it looks like. 
+
+Indeed, it is more complex than category theory, and more complex than this other theory about which we will learn about in a minute...
 
 Resolving the paradox with type theory
 ---
 
-While Zermelo was working on refining axioms of set theory in order to avert Russell's paradox, Russell himself took a different route towards solving his paradox and decided to ditch sets altogether, and develop an entirely new mathematical concept that is free of paradoxes *by design*, one where you don't need to patch things up with extra axioms to avoid having illogical constructions. An so, in the same year  in which Zermelo published the first version of ZFC, (1908) Russell came up with his *theory of types*.
+While Zermelo was working on refining the axioms of set theory in order to avert Russell's paradox, Russell himself took a different route toward solving his paradox and decided to ditch sets altogether, and develop an entirely new mathematical concept that is free of paradoxes *by design*. One where you don't need to patch things up with extra axioms to avoid having illogical constructions. An so, in 1908, the same year in which Zermelo published the first version of ZFC,  Russell came up with his *theory of types*.
 
 Type theory is not at all similar to set theory, but it is at the same time, not entirely different from it, as the concepts of *types* and *terms* are clearly reminiscent of the concepts of *sets* and *elements*. 
 
 |Theory |Set theory| Type Theory|
 |------ | ---------| --------|
-|An | Element     | Term       |
+|A(n) | Element     | Term       |
 |Belongs to a | Set     | Type       |
 |Notation | $a \in A$ |  $a : A$  | 
 
@@ -104,15 +102,15 @@ In type theory, a term can have only one type. (note that the red ball in the sm
 
 ![A type and a subtype](../06_type/type_subtype.svg)
 
-Due to this law, types cannot contain themselves, so because of it, Russell's paradox, is entirely avoided. 
+Due to this law, types cannot contain themselves, so Russell's paradox, is entirely avoided. 
 
-The law may sound weird --- we are basically saying that if you have the type **Human** that contains all humans and the type **Mathematician** that contains all mathematicians, than the mathematician **Jencel** is a different object than the human **Jencel**.
+The law may sound weird e.g. because a term can only belong to one type, in type theory, the natural number 1 is denoted as $1: \mathbb{N}$) and it is an entirely separate object from the integer 1 (denoted or $1: \mathbb{Z}$) 
 
-<!--comic(and no, I am not implying that mathematicians aren't human). -->
+![A set and a subset](../06_type/int_nat_type.svg)
 
 It only starts to make some sense once we realize that we can always convert the more general version of the value to the more specific one, using the image function that we learned about in the first chapter.
 
-![A type and a subtype with a function](../06_type/type_subtype_function.svg)
+![A set and a subset](../06_type/int_nat_type_function.svg)
 
 As you would see shortly, the concept of types has to do a lot with the concept of functions.
 
@@ -125,37 +123,37 @@ What are types
 On types and sets again
 ---
 
-In the last section, we almost fell in the trap of explaining types as something that is are "like sets, but... " (e.g. they are like sets, but a term can only be a member of one type). However, while it may be technically true, any such explanation would not be at all appropriate, as, while types started as alternative to sets, they actually ended up being quite different. So, thinking in terms of sets won't get you far as a type theorist. 
+In the last section, we almost fell in the trap of explaining types as something that is are "like sets, but... " (e.g. they are like sets, but a term can only be a member of one type). However, while it may be technically true, any such explanation would not be at all appropriate, as, while types started as alternative to sets, they actually ended up being quite different. So, thinking in terms of sets won't get you far. Indeed, if we take the proverbial set theorist from the previous section, and ask them about types, their truthful response would have be:
 
-Indeed, if I get to rephrase an old Bulgarian joke, if a person who only knows sets, has to explain what monoids are, they can just say: 
+> "Have you seen a set? Well, it has nothing to do with it.
 
-"Have you seen a set? It's the same thing, but you also have this binary operation."
+So let's see how do we define a type theory in its own right. 
 
-Or *orders*: 
-
-"Have you seen a set? It's the same thing, but you also have this notion that some elements are bigger than others."
-
-But for *types*, their response would be:
-
-"Have you seen a set? Well, that's something completely different."
-
-So let's see how do we define a type theory in its own right.
+But first...
 
 Long disclaimer
 ---
 
-Notice that in the last sentence we said *a* type theory, not "type theory" or "the type theory". This is because (time for a long disclaimer) there are not one, but many different (albeit related) formulations of type theory that are, confusingly, called type *theories* (and, less confusingly, *type systems*), such as *simply-typed lambda calculus* or *intuitionistic type theory*. For this reason, it makes sense to speak about *a* type theory. <!--comic: Dr. Smisloff --- I think they are not confused enough --> 
+Before we begin, let's get this long disclaimer out of the way:
 
-The term "type theory" (uncountable) refers to the whole field of study of type theories, just like category theory is the study of categories. But, (take a deep breath) you can sometimes think of the different type systems as "different versions of type theory" and so, when people talk about a given set of features that are common to all type systems, they sometimes use the term "type theory" to refer to any random type system that has these features. 
+Notice that in the last sentence we said *a* type theory, not "type theory" or "the type theory". This is because  there are not one, but many different (albeit related) formulations of type theory that are, confusingly, called type *theories* (and, less confusingly, *type systems*), such as *simply-typed lambda calculus* or *intuitionistic type theory*. For this reason, it makes sense to speak about *a* type theory.
+
+Have I confused you enough? No?
+
+The term "type theory" (uncountable) refers to the whole field of study of type theories, just like category theory is the study of categories. But, (take a deep breath) you can sometimes think of the different type systems as "different versions of type theory" and so, when people talk about a given set of features that are common to all type systems, they sometimes use the term "type theory" to refer to any random type system that has these features.
 
 What are types?
 ---
 
 Anyhow, let's get back to our subject (however we want to call it). As we said, type theory was born out of Russell's search for a way to define all collections of objects that are *interesting*, without accidentally defining collections that lead us ashtray (e.g. to his eponymous paradox), and without having to make up a multitude of additional axioms (a-la ZFC). 
 
-He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer): the *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
+He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer): 
 
-Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (if we count causing paradoxes as useful). And if we dig into it, we eventually discover the reason for this: there are no functions from any other set to this set, so *we cannot get to it* from anywhere (and, conversely, we cannot get anywhere from it, as there are no functions for which it is the source). 
+> The *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
+
+Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (if we don't count causing paradoxes as useful). And if we dig into it, we eventually discover the reason for this: there are no functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it.
+
+<!--
 
 ![
 THE STUDIO 
@@ -164,6 +162,8 @@ A set without functions is just a dead end
 ALYSSA
 Even worse, as a dead end is at least reachable.
 ](../comic/02.svg){: .comic-web-panel }
+
+-->
 
 Building types
 ===
@@ -176,28 +176,25 @@ In set theory, (and especially in its naive version) all possible sets and funct
 
 In type theory, we start with a space that is empty. 
 
-[digram ommitted] 
+[digram omitted] 
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 
 We can define some finite types, like the *booleans*, by just listing out their values, for example when we say "$\top$ is a Boolean".
 
-And then "$\bot is a boolean". Et voila, we have just defined a type.
+And then "$\bot$ is a boolean". Et voila, we have just defined a type.
 
 Then, we start defining functions (and other kinds of morphisms), and only *through the functions* we create the non-primitive types.
 
-do the types come to be. 
-
-Because a term can only belong to one type, in type theory, the natural number 1 is denoted as $1: \mathbb{N}$) and it is an entirely separate object from the integer 1 (denoted or $1: \mathbb{Z}$) 
-
-![A set and a subset](../06_type/int_nat_type.svg)
 
 In programming
 ----
 
 > "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
 
-After exploring something so abstract, I think it's good to get our hands dirty with some more concrete. We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
+After exploring something so abstract, I think it's good to get our hands dirty with some more concrete. 
+
+We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
 
 ```
 class MyType<A> {
@@ -293,7 +290,6 @@ We already saw that functions in type theory and set theory look identical ---
 However, in set theory, sets are just assumed to exist, as for example the set of colors, as any other set is just assumed to exist.
 
 And type theory, functions are build.
-
 
 These ways, type theory holds, is nothing more than the process of *substituting* one value with another, according to a finite number of rules.
 
