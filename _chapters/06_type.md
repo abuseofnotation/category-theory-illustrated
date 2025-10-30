@@ -11,13 +11,11 @@ Type theory is an alternative to set theory, as well as category theory itself, 
 Sets, Types and Russell's paradox
 ===
 
+We started talking about sets again. Most books about category theory (and mathematics in general) begin with sets, and often go back to sets. Even in a book about category theory like this one, the standard definitions of most mathematical objects involve sets. Indeed, upon hearing the definition about monoids being one-object categories, a person who only knows about sets might say:
 
-We started talking about sets again. Most books about category theory (and mathematics in general) begin with sets, and often go back to sets. Even in a book about category theory like this one, the standard definitions of most mathematical objects involve sets. Indeed, a person who only knows about sets may ditch all my explanations about, for example, monoids being a one-object category and say:
+> "Forget that! Have you seen a set? It's the same thing, but you also have this binary operation."
 
-
-> "Have you seen a set? It's the same thing, but you also have this binary operation."
-
-Or for *orders* as being categories with one morphism, saying instead: 
+Or for *orders* as being categories with one morphism: 
 
 > "Have you seen a set? It's the same thing, but some elements are bigger than others."
 
@@ -114,18 +112,19 @@ It only starts to make some sense once we realize that we can always convert the
 
 As you would see shortly, the concept of types has to do a lot with the concept of functions.
 
-What are types
-===
-
-> "Every propositional function φ(x)—so it is contended—has, in addition to its range of truth, a range of significance, i.e. a range within which x must lie if φ(x) is to be a proposition at all, whether true or false. This is the first point in the theory of types; the second point is that ranges of significance form types, i.e. if x belongs to the range of significance of φ(x), then there is a class of objects, the *type* of x, all of which must also belong to the range of significance of φ(x)" --- Bertrand Russell - Principles of Mathematics
-
 
 On types and sets again
 ---
 
+> "Every propositional function φ(x)—so it is contended—has, in addition to its range of truth, a range of significance, i.e. a range within which x must lie if φ(x) is to be a proposition at all, whether true or false. This is the first point in the theory of types; the second point is that ranges of significance form types, i.e. if x belongs to the range of significance of φ(x), then there is a class of objects, the *type* of x, all of which must also belong to the range of significance of φ(x)" --- Bertrand Russell - Principles of Mathematics
+
 In the last section, we almost fell in the trap of explaining types as something that is are "like sets, but... " (e.g. they are like sets, but a term can only be a member of one type). However, while it may be technically true, any such explanation would not be at all appropriate, as, while types started as alternative to sets, they actually ended up being quite different. So, thinking in terms of sets won't get you far. Indeed, if we take the proverbial set theorist from the previous section, and ask them about types, their truthful response would have be:
 
 > "Have you seen a set? Well, it has nothing to do with it.
+
+
+Type theory
+===
 
 So let's see how do we define a type theory in its own right. 
 
@@ -151,7 +150,7 @@ He thought a lot (at least I imagine he did) and he managed to devise a formal s
 
 > The *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
 
-Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (if we don't count causing paradoxes as useful). And if we dig into it, we eventually discover the reason for this: there are no functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it.
+Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it. This set is a oasis at the center of the dessert... or perhaps a little dessert in the center of big oasis... Contact me if you can think of some good metaphor.
 
 <!--
 
@@ -166,7 +165,7 @@ Even worse, as a dead end is at least reachable.
 -->
 
 Building types
-===
+---
 
 We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types are sets (although not all sets are types) and all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favour, please don't mention it and act surprised when we make it explicit).
 
@@ -174,25 +173,32 @@ In set theory, (and especially in its naive version) all possible sets and funct
 
 ![Sets and functions in set theory](../06_type/set_theory_functions.svg)
 
-In type theory, we start with a space that is empty. 
+In type theory, we start with a space that is almost empty, it only contains the ~~set~~ type $1$ (cause we have to start from somewhere).
 
-[digram omitted] 
+![Sets and functions in set theory](../06_type/unit_type.svg)
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 
-We can define some finite types, like the *booleans*, by just listing out their values, for example when we say "$\top$ is a Boolean".
+The easiest are the finite types, like the *booleans*, because we can just straight out list out their values, for example when we say there exist a set that we call boolean.
 
-And then "$\bot$ is a boolean". Et voila, we have just defined a type.
+![Sets and functions in set theory](../06_type/boolean_empty.svg)
+
+"$\True$ is a Boolean".
+
+![Sets and functions in set theory](../06_type/boolean_true.svg)
+
+And then "$\False$ is a boolean". 
+
+![Sets and functions in set theory](../06_type/boolean_false.svg)
+
+Et voila, we have just defined a type!
 
 Then, we start defining functions (and other kinds of morphisms), and only *through the functions* we create the non-primitive types.
-
 
 In programming
 ----
 
 > "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
-
-After exploring something so abstract, I think it's good to get our hands dirty with some more concrete. 
 
 We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
 
@@ -242,6 +248,29 @@ Methods are functions that allow us to do something with a value of that type, o
 
 (There are also methods that mutate the type's properties, but we don't talk about these in functional programming.)
 
+The Lambda calculus
+===
+
+In the previous section we described what type theory is, but 
+
+Typing rules and the principle of substitution
+---
+
+So, why do we call morphisms in type theory *rules*? To understand that, we have to understand the principle that is underneath all of type theory --- the principle of substitution.
+
+We already saw that functions in type theory and set theory look identical --- 
+
+However, in set theory, sets are just assumed to exist, as for example the set of colors, as any other set is just assumed to exist.
+
+And type theory, functions are build.
+
+These ways, type theory holds, is nothing more than the process of *substituting* one value with another, according to a finite number of rules.
+
+This principle is also underneat the way axiom schemas are used in logic, but it is actually much more general than that. It is also the principle behind algrebra in general e.g. the rules of addition are nothing but rules that define when can you substitute a value to another.
+
+But wait, are substitution rules really powerful enough to represent all functions? How would we go about in representing types that have an infinite number of terms (such as the natural numbers), and functions between them (such as the `sum` function).
+
+
 In Category Theory
 ---
 
@@ -253,7 +282,11 @@ Secondly, a categorical object has to have at least one morphism coming *to* it,
 
 And thirdly, it has to have morphisms from it to some other objects. Has to be the *source* of at least one arrow.
 
-In type theory
+Interlude: Terminal objects are nullary products
+---
+
+
+Natural deduction
 ---
 
 We will now see how these type-creating functions look like in type theory. 
@@ -278,31 +311,6 @@ $$\frac
   {mytype\;a : MyType \; A}
   {a : A}
 $$
-
-
-Typing rules and the principle of substitution
-===
-
-So, why do we call morphisms in type theory *rules*? To understand that, we have to understand the principle that is underneath all of type theory --- the principle of substitution.
-
-We already saw that functions in type theory and set theory look identical --- 
-
-However, in set theory, sets are just assumed to exist, as for example the set of colors, as any other set is just assumed to exist.
-
-And type theory, functions are build.
-
-These ways, type theory holds, is nothing more than the process of *substituting* one value with another, according to a finite number of rules.
-
-This principle is also underneat the way axiom schemas are used in logic, but it is actually much more general than that. It is also the principle behind algrebra in general e.g. the rules of addition are nothing but rules that define when can you substitute a value to another.
-
-But wait, are substitution rules really powerful enough to represent all functions? How would we go about in representing types that have an infinite number of terms (such as the natural numbers), and functions between them (such as the `sum` function).
-
-
-Type theory and logic
---- 
-
-Type theory and computation
----
 
 
 The product type
