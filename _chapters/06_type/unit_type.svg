@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 595.3 199.99999"
+   version="1.1"
+   id="svg14095"
+   sodipodi:docname="unit_type.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   width="595.29999"
+   height="200">
+  <metadata
+     id="metadata21165">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14099" />
+  <sodipodi:namedview
+     id="namedview14097"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     objecttolerance="10.0"
+     gridtolerance="10.0"
+     guidetolerance="10.0"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.92474385"
+     inkscape:cx="428.27665"
+     inkscape:cy="-104.34858"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14095" />
+  <g
+     id="g16549"
+     transform="matrix(1.6196914,0,0,1.6196914,-130.87189,-166.33559)">
+    <circle
+       style="opacity:0.13999999;stroke:#000000;stroke-width:1.59287286;stroke-miterlimit:10;stroke-dasharray:none"
+       id="circle8173-9"
+       r="28.831097"
+       cy="167.09486"
+       cx="271.45605"
+       stroke-miterlimit="10" />
+    <circle
+       style="fill:#cccccc;stroke:#808285;stroke-width:3.45764494;stroke-miterlimit:10;stroke-dasharray:none"
+       id="circle8175-3"
+       r="28.831097"
+       cy="162.2897"
+       cx="265.33234"
+       stroke-miterlimit="10" />
+  </g>
+  <circle
+     stroke-miterlimit="10"
+     cx="298.71997"
+     cy="95.300621"
+     r="20.834068"
+     id="circle8211-7"
+     style="fill:#000000;stroke:#666666;stroke-width:5.40329027;stroke-miterlimit:10;stroke-dasharray:none" />
+</svg>

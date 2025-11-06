@@ -123,7 +123,7 @@ In the last section, we almost fell in the trap of explaining types as something
 > "Have you seen a set? Well, it has nothing to do with it.
 
 
-Type theory
+What is type theory
 ===
 
 So let's see how do we define a type theory in its own right. 
@@ -167,38 +167,173 @@ Even worse, as a dead end is at least reachable.
 Building types
 ---
 
+> "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
+
 We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types are sets (although not all sets are types) and all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favour, please don't mention it and act surprised when we make it explicit).
 
 In set theory, (and especially in its naive version) all possible sets and functions are *already there from the start*, as the Platonic world of forms. What we do is merely exploring the ones that interests us.
 
 ![Sets and functions in set theory](../06_type/set_theory_functions.svg)
 
-In type theory, we start with a space that is almost empty, it only contains the ~~set~~ type $1$ (cause we have to start from somewhere).
+In type theory, we start with a space that is empty.
 
-![Sets and functions in set theory](../06_type/unit_type.svg)
+*[diagram ommited]*
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 
-The easiest are the finite types, like the *booleans*, because we can just straight out list out their values, for example when we say there exist a set that we call boolean.
+We start with defining the primitives, then, we proceed to defining some functions (and other kinds of morphisms), and only *through the functions* we create the non-primitive types.
 
-![Sets and functions in set theory](../06_type/boolean_empty.svg)
+Picking a theory
+---
 
-"$\True$ is a Boolean".
+OK, I think we got too far in trying to define type theory without actually defining type theory, so from here we will pick one type theory, or one type system, to work with (and if this sentence confuses you, read again the disclaimer). 
 
-![Sets and functions in set theory](../06_type/boolean_true.svg)
+Picking a type theory/system, also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages, like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
 
-And then "$\False$ is a boolean". 
+To please both parties (or to annoy them both), we will go with a language that is somewhere in between --- namely (a subset of) Haskell. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers. Unlike Lambda Calculus that only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
 
-![Sets and functions in set theory](../06_type/boolean_false.svg)
+Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called polymorphic lambda calculus or *System F*.
+
+
+Base types. The boolean type
+===
+
+So, let's start with an empty space, when nothing is defined. 
+
+![An empty diagram](../06_type/empty_type.svg)
+
+In Haskell we can do that by removing the standard library, (called "Prelude") which is typically imported implicitly.
+
+```
+{-# LANGUAGE NoImplicitPrelude #-}
+```
+
+So, let's define some types. But how? Let's start with base types, like the *booleans*. For them the process is quite simple, because we can just straight out *list out their values*, for example when we say there exist a type that we call Boolean (this statement is equivalent to defining a *type-level function*, but we will not elaborate).
+
+![Sets and functions in set theory](../06_type/bool_type_empty.svg)
+
+"$True$ is a Boolean".
+
+![Sets and functions in set theory](../06_type/bool_type_true.svg)
+
+And then "$False$ is a boolean". 
+
+![Sets and functions in set theory](../06_type/bool_type_full.svg)
 
 Et voila, we have just defined a type!
 
-Then, we start defining functions (and other kinds of morphisms), and only *through the functions* we create the non-primitive types.
+
+The Boolean type.
+---
+
+We started this section with a diagrammatic representation of how the boolean type is constructed. Now let's construct it in Haskell:
+
+```haskell
+data Bool where
+  True  :: Bool
+  False :: Bool
+```
+The tree lines correspond exactly to the thee pictures that we saw above:
+
+First `data Bool`, says that there exist a datatype that we call "Bool", this is known as a 
+
+![Sets and functions in set theory](../06_type/bool_type_empty.svg)
+
+Then, `True :: Bool` adds one value to this newly created datatype. 
+
+![Sets and functions in set theory](../06_type/bool_type_true.svg)
+
+And `False :: Bool` creates another such arrow.
+
+![Sets and functions in set theory](../06_type/bool_type_full.svg)
+
+
+Term elimination
+---
+
+And are we done? Not quite, for we must define at least one arrow, coming *from* our new type, for it to be useful in any way (otherwise, it will just be a one-way street). For the Booleans, this function is called `ifElse`
+
+```haskell
+ifElse :: Bool -> a -> a -> a
+ifElse True a b = a 
+ifElse False a b = b
+```
+
+(You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
+
+
+Isomorphisms
+---
+
+But why (with the risk of repeating myself) does this exact type has to be the Boolean type? What is stopping our colleague Bobby who always wants to do everything their way, to define their own version of Boolean and using it in their project.
+
+```haskell
+data BobbysBool where
+  BobbysTrue  :: Bool
+  BobbyFalse :: Bool
+```
+
+The answer is "nothing". But that is not a huge deal --- we can just whip up a function to convert their Bool to ours:
+
+```haskell
+convert BobbysBool -> Bool
+convert BobbysTrue = True
+convert BobbyFalse = False
+```
+
+This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
+
+
+
+
+Inductive types. The natural number type.
+===
+
+Learning mathematics, can feel overwhelming, because of the huge, even infinite, body of knowledge: how do you proceed so big of a task? But it turns out the answer is simple: you start off knowing 0 things, 0 theories. Then, you learn 1 theory - congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
+
+This argument applies not only to mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously synthesized in the 19th century by the Italian mathematician Giuseppe Peano.
+
+1. $0$ is a natural number.
+2. If $n$ is a natural number, $n+1$ is a natural number.
+
+(There are some laws as well, but we will cover them later.)
+
+Or as we Haskellians say:
+
+```haskell
+data Nat where
+  Zero :: Nat
+  Succ :: Nat -> Nat
+```
+Let's follow the arrows, like we did with the Booleans. We have an arrow with no source, so implicitly we can say it comes from the unit type.
+
+
+
+
+
+more precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
+
+
+Typing rules and the principle of substitution
+---
+
+So, why do we call morphisms in type theory *rules*? To understand that, we have to understand the principle that is underneath all of type theory --- the principle of substitution.
+
+We already saw that functions in type theory and set theory look identical --- 
+
+However, in set theory, sets are just assumed to exist, as for example the set of colors, as any other set is just assumed to exist.
+
+And type theory, functions are build.
+
+These ways, type theory holds, is nothing more than the process of *substituting* one value with another, according to a finite number of rules.
+
+This principle is also underneat the way axiom schemas are used in logic, but it is actually much more general than that. It is also the principle behind algrebra in general e.g. the rules of addition are nothing but rules that define when can you substitute a value to another.
+
+But wait, are substitution rules really powerful enough to represent all functions? How would we go about in representing types that have an infinite number of terms (such as the natural numbers), and functions between them (such as the `sum` function).
+
 
 In programming
 ----
-
-> "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
 
 We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
 
@@ -247,29 +382,6 @@ Methods are functions that allow us to do something with a value of that type, o
 ```
 
 (There are also methods that mutate the type's properties, but we don't talk about these in functional programming.)
-
-The Lambda calculus
-===
-
-In the previous section we described what type theory is, but 
-
-Typing rules and the principle of substitution
----
-
-So, why do we call morphisms in type theory *rules*? To understand that, we have to understand the principle that is underneath all of type theory --- the principle of substitution.
-
-We already saw that functions in type theory and set theory look identical --- 
-
-However, in set theory, sets are just assumed to exist, as for example the set of colors, as any other set is just assumed to exist.
-
-And type theory, functions are build.
-
-These ways, type theory holds, is nothing more than the process of *substituting* one value with another, according to a finite number of rules.
-
-This principle is also underneat the way axiom schemas are used in logic, but it is actually much more general than that. It is also the principle behind algrebra in general e.g. the rules of addition are nothing but rules that define when can you substitute a value to another.
-
-But wait, are substitution rules really powerful enough to represent all functions? How would we go about in representing types that have an infinite number of terms (such as the natural numbers), and functions between them (such as the `sum` function).
-
 
 In Category Theory
 ---
@@ -371,17 +483,6 @@ Types and logic
 ===
 
 
-Numbers as types
-===
-
-Learning mathematics, can feel overwhelming, because of the huge, even infinite, body of knowledge: how do you proceed so big of a task? But it turns out the answer is simple: you start off knowing 0 things, 0 theories. Then, you learn 1 theory - congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
-
-This little argument applies not only to learning mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously syntesized in the 19th century by the Italian mathematician Giuseppe Peano:
-
-1. $0$ is a natural number.
-2. If $n$ is a naturan number, $n+1$ is a natural number.
-
-And then, he gave the following laws.
 
 
 Types and categories
