@@ -184,7 +184,7 @@ All rotation groups/monoids are cyclic groups. Another example of a cyclic monoi
 
 ![The monoid of natural numbers under addition](../03_monoid/numbers_cyclic.svg)
 
-The *group* of integers under addition is cyclic too --- here we can use $+1$ *or* $-1$ as the generator (as whichever of the two we choose, we would get the other one by applying the inverse wall).
+The *group* of integers under addition is cyclic too --- here we can use $+1$ *or* $-1$ as the generator (as whichever of the two we choose, we would get the other one by applying the inverse law).
 
 ![The group of integers under addition](../03_monoid/integers_cyclic.svg)
 
