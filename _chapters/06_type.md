@@ -167,8 +167,6 @@ Even worse, as a dead end is at least reachable.
 Building types
 ---
 
-> "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
-
 We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types are sets (although not all sets are types) and all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favour, please don't mention it and act surprised when we make it explicit).
 
 In set theory, (and especially in its naive version) all possible sets and functions are *already there from the start*, as the Platonic world of forms. What we do is merely exploring the ones that interests us.
@@ -181,7 +179,51 @@ In type theory, we start with a space that is empty.
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 
-We start with defining the primitives, then, we proceed to defining some functions (and other kinds of morphisms), and only *through the functions* we create the non-primitive types.
+Type formation, term introduction, term elimination
+---
+
+> "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
+
+Before introducing the specific formulae for building types, I want to elaborate on the general idea. In the last section, we said:
+
+> The interesting collections, the collections that we want to talk about in the first place, are the collections that are the *source* and *target* of functions.
+
+This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions, and other types of morphisms.
+
+```
+class MyType<A> {
+
+  a: A;
+  constructor(a) {
+    this.a = a;
+  }
+
+  getA() {
+    return this.a;
+  }
+
+}
+```
+
+What kinds of morphisms? We can categorize them in three groups.
+
+Type formation rule
+---
+
+First off, a type has to have a *definition* which specifies what it is. Note that this is not a morphism from one type to the other, but from one type universe, to another type universe to another.
+
+
+Term introduction rule 
+---
+
+Next up, a type has to have at least one *constructor* which allows us to produce a value/term of that type. 
+
+Term elimination
+---
+
+Finally, a type has to have at least one *method* in order to be useful --- we don't want to construct types just for the sake of constructing new types. 
+
+Methods are functions that allow us to do something with a value of that type, once we constructed it.
 
 Picking a theory
 ---
@@ -193,6 +235,7 @@ Picking a type theory/system, also involves picking a *language* that this theor
 To please both parties (or to annoy them both), we will go with a language that is somewhere in between --- namely (a subset of) Haskell. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers. Unlike Lambda Calculus that only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
 
 Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called polymorphic lambda calculus or *System F*.
+
 
 
 Base types. The boolean type
@@ -208,44 +251,35 @@ In Haskell we can do that by removing the standard library, (called "Prelude") w
 {-# LANGUAGE NoImplicitPrelude #-}
 ```
 
-So, let's define some types. But how? Let's start with base types, like the *booleans*. For them the process is quite simple, because we can just straight out *list out their values*, for example when we say there exist a type that we call Boolean (this statement is equivalent to defining a *type-level function*, but we will not elaborate).
-
-![Sets and functions in set theory](../06_type/bool_type_empty.svg)
-
-"$True$ is a Boolean".
-
-![Sets and functions in set theory](../06_type/bool_type_true.svg)
-
-And then "$False$ is a boolean". 
-
-![Sets and functions in set theory](../06_type/bool_type_full.svg)
-
-Et voila, we have just defined a type!
-
-
-The Boolean type.
----
-
-We started this section with a diagrammatic representation of how the boolean type is constructed. Now let's construct it in Haskell:
+So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
 ```haskell
 data Bool where
   True  :: Bool
   False :: Bool
 ```
-The tree lines correspond exactly to the thee pictures that we saw above:
 
-First `data Bool`, says that there exist a datatype that we call "Bool", this is known as a 
+
+Type formation
+---
+
+First, `data Bool`, says that there exist a datatype that we call "Bool".
 
 ![Sets and functions in set theory](../06_type/bool_type_empty.svg)
 
-Then, `True :: Bool` adds one value to this newly created datatype. 
+
+Term introduction
+---
+
+Then, `True :: Bool` says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. 
 
 ![Sets and functions in set theory](../06_type/bool_type_true.svg)
 
-And `False :: Bool` creates another such arrow.
+And `False :: Bool` creates another such value.
 
 ![Sets and functions in set theory](../06_type/bool_type_full.svg)
+
+Et voila, we have just defined a type!
 
 
 Term elimination
@@ -308,9 +342,6 @@ data Nat where
 Let's follow the arrows, like we did with the Booleans. We have an arrow with no source, so implicitly we can say it comes from the unit type.
 
 
-
-
-
 more precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
 
 
@@ -335,7 +366,9 @@ But wait, are substitution rules really powerful enough to represent all functio
 In programming
 ----
 
-We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
+We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. 
+
+This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
 
 ```
 class MyType<A> {
@@ -352,7 +385,11 @@ class MyType<A> {
 }
 ```
 
-It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of *a bunch of functions*. However, not just any random collection of functions would suffice -- there are 3 special kinds of functions that have to be defined in order for a type to work. 
+It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of *a bunch of functions*. 
+
+However, not just any random collection of functions would suffice -- there are 3 special kinds of functions that have to be defined in order for a type to work. 
+
+
 
 First off, a type has to have a *definition* which specifies what it is. Note that this is not a function between values, but a function between types --- a *type-level function*. In programming, we call these types of functions *generic types*, but they are functions nevertheless --- we supply some types and get a definition of the new type.
 
