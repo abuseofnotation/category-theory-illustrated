@@ -188,7 +188,7 @@ Before introducing the specific formulae for building types, I want to elaborate
 
 > The interesting collections, the collections that we want to talk about in the first place, are the collections that are the *source* and *target* of functions.
 
-This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions, and other types of morphisms.
+This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions and more generally morphisms.
 
 ```
 class MyType<A> {
@@ -205,38 +205,36 @@ class MyType<A> {
 }
 ```
 
-What kinds of morphisms? We can categorize them in three groups.
+What kinds of rules? We can categorize them in three groups.
 
-Type formation rule
+1. First off, a type has to have a *definition* which specifies what it is. Note that this is not a morphism from one type to the other, but from one type universe, to another type universe to another. In type theory, this is known as a *type formation rule*. 
+
+![A type represented as a ball](../06_type/rule_type_formation.svg)
+
+2. Next up, a type has to have at least one at least one arrow pointing to the new type. 
+In programming, this arrow is called a *constructor*. In type theory, this is known as a *term introduction rule* ("term" being the word for "value").
+
+![A type and an arrow pointing towards it](../06_type/rule_term_introduction.svg)
+
+3. Finally, as we don't want to construct types just for the sake of constructing new types, a type has to have at least one arrow coming from the new type.  In programming, these are the type's methods. In type theory, this is known as a *term elimination rule* (as if we are eliminating the type in favour of the result of the method).
+
+![A type and an arrow, coming from it ](../06_type/rule_term_elimination.svg)
+
+
+OK, I think we got too far in trying to define type theory without actually defining type theory, so we will proceed with the formulas... after our second long disclaimer.
+
+Picking a theory (another long disclaimer)
 ---
 
-First off, a type has to have a *definition* which specifies what it is. Note that this is not a morphism from one type to the other, but from one type universe, to another type universe to another.
+As we said in the first long disclaimer, there is not one, but many type theories, so if we want to do type theory, we we have to pick one type theory, to work with (if this sentence confuses you, read the disclaimer again).
 
+Picking a type theory, or type system let's call it, also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages, like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
 
-Term introduction rule 
----
+To please both parties (or to annoy them both), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers. Unlike Lambda Calculus that, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
 
-Next up, a type has to have at least one *constructor* which allows us to produce a value/term of that type. 
+Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
 
-Term elimination
----
-
-Finally, a type has to have at least one *method* in order to be useful --- we don't want to construct types just for the sake of constructing new types. 
-
-Methods are functions that allow us to do something with a value of that type, once we constructed it.
-
-Picking a theory
----
-
-OK, I think we got too far in trying to define type theory without actually defining type theory, so from here we will pick one type theory, or one type system, to work with (and if this sentence confuses you, read again the disclaimer). 
-
-Picking a type theory/system, also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages, like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
-
-To please both parties (or to annoy them both), we will go with a language that is somewhere in between --- namely (a subset of) Haskell. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers. Unlike Lambda Calculus that only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
-
-Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called polymorphic lambda calculus or *System F*.
-
-
+Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called polymorphic lambda calculus or *System F*. 
 
 Base types. The boolean type
 ===
@@ -247,8 +245,13 @@ So, let's start with an empty space, when nothing is defined.
 
 In Haskell we can do that by removing the standard library, (called "Prelude") which is typically imported implicitly.
 
-```
+```haskell
 {-# LANGUAGE NoImplicitPrelude #-}
+```
+And we use one more extension, that would allow us to write type definitions that are a bit more explicit.
+
+```haskell
+{-# LANGUAGE GADTs, NoImplicitPrelude #-}
 ```
 
 So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
@@ -258,14 +261,14 @@ data Bool where
   True  :: Bool
   False :: Bool
 ```
-
+Let's go through this definition:
 
 Type formation
 ---
 
 First, `data Bool`, says that there exist a datatype that we call "Bool".
 
-![Sets and functions in set theory](../06_type/bool_type_empty.svg)
+![The Boolean type without values --- an empty circle](../06_type/bool_type_empty.svg)
 
 
 Term introduction
@@ -273,14 +276,15 @@ Term introduction
 
 Then, `True :: Bool` says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. 
 
-![Sets and functions in set theory](../06_type/bool_type_true.svg)
+![ The Boolean type with one value: a circle with one ball --- True](../06_type/bool_type_true.svg)
 
 And `False :: Bool` creates another such value.
 
-![Sets and functions in set theory](../06_type/bool_type_full.svg)
+![The full Boolean type: a circle with two balls True and False](../06_type/bool_type_full.svg)
 
 Et voila, we have just defined a type!
 
+Wait, didn't we say that types are defined by arrows? Yes, but we have to start from somewhere, and so Haskell allows you to define some primitive types directly. And if we want to go fully arrow-driven, we can do what we did in chapter 2 and represent those types as arrows from the *initial type* (but we have to define the initial type as a primitive).
 
 Term elimination
 ---
@@ -288,15 +292,22 @@ Term elimination
 And are we done? Not quite, for we must define at least one arrow, coming *from* our new type, for it to be useful in any way (otherwise, it will just be a one-way street). For the Booleans, this function is called `ifElse`
 
 ```haskell
-ifElse :: Bool -> a -> a -> a
+ifElse :: forall a. Bool -> a -> a -> a
 ifElse True a b = a 
 ifElse False a b = b
+
+
+```
+You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
+
+Here are some expressions which use the function accompanied with indications of what they return (`--` is Haskell's comment syntax)
+
+```haskell
+ifElse True 1 2 --1
+ifElse False 1 2 --2
 ```
 
-(You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
-
-
-Isomorphisms
+Isomorphisms between types
 ---
 
 But why (with the risk of repeating myself) does this exact type has to be the Boolean type? What is stopping our colleague Bobby who always wants to do everything their way, to define their own version of Boolean and using it in their project.
@@ -317,13 +328,75 @@ convert BobbyFalse = False
 
 This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
 
+Polymorphic types. The Maybe type
+===
+
+Now, we will define the type we in Haskell call, `Maybe` (and what in other languages is usually called `Option`). If you haven't encountered it, the Haskell documentation provides a very good description:
+
+>The Maybe type encapsulates an optional value. A value of type Maybe a either contains a value of type a (represented as `Just a`), or it is empty (represented as `Nothing`). Using `Maybe` is a good way to deal with errors or exceptional cases without resorting to drastic measures such as error.
+
+But, once you learn to read it, the type definition, by itself is clear enough:
+
+```haskell
+data Maybe a where
+  Nothing :: forall a. Maybe a
+  Just :: forall a. a -> Maybe a
+```
+Here is a brief description
+
+Type formation
+---
+
+Maybe is the second simplest type, after `Bool` and it looks a lot like `Bool`, but, unlike `Bool`, `Maybe` is a *polymorphic* type, as we can tell by looking at the *type formation rule*
+
+```haskell
+data Maybe a 
+```
+
+Maybe is different from Bool. It is polymorphic. i.e. there is not just one `Maybe`, but many `Maybe`'s --- one for each type `a` e.g. if there is `Bool`, there is also`Maybe Bool`.
+
+![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
+
+Polymorphic types are a morphisms from the universe of types, to itself (i.e. the kind of `Maybe` is `Type -> Type`), while `Bool` is just a `Type`.
+
+Term introduction
+---
+Now, it's time to fill our type.
+
+The first line is similar to what we saw with boolean. It says that there is a value called `Nothing` in each `Maybe` type.
+
+```haskell
+  Nothing :: forall a. Maybe a
+```
+So, here it is (we are drawing just `Maybe Boolean`, but the other `Maybe` types would look similar).
+
+![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
 
 
+Of course there would be no point in having many `Maybe`s if they all are all isomorphic to each other. That's where the second line comes.
+
+```haskell
+  Just :: forall a. a -> Maybe a
+```
+The constructor `Just` represents an arrow from type `a` to type `Maybe a` e.g. from `Boolean` to `Maybe Boolean`.
+
+![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
+
+
+
+Term elimination
+---
+
+```haskell
+maybe :: b -> (a -> b) -> Maybe a -> b
+maybe n _ Nothing  = n
+maybe _ f (Just x) = f x
+```
 
 Inductive types. The natural number type.
 ===
 
-Learning mathematics, can feel overwhelming, because of the huge, even infinite, body of knowledge: how do you proceed so big of a task? But it turns out the answer is simple: you start off knowing 0 things, 0 theories. Then, you learn 1 theory - congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
+Learning mathematics can feel overwhelming, because of the huge, even infinite, body of knowledge: how do you proceed so big of a task? But it turns out the answer is simple: you start off knowing 0 things, 0 theories. Then, you learn 1 theory - congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
 
 This argument applies not only to mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously synthesized in the 19th century by the Italian mathematician Giuseppe Peano.
 
@@ -342,86 +415,24 @@ data Nat where
 Let's follow the arrows, like we did with the Booleans. We have an arrow with no source, so implicitly we can say it comes from the unit type.
 
 
-more precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
+More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
+
+Composite types. The list type.
+===
 
 
-Typing rules and the principle of substitution
----
+Types as mathematical foundation
+===
 
-So, why do we call morphisms in type theory *rules*? To understand that, we have to understand the principle that is underneath all of type theory --- the principle of substitution.
+Types and computation
+===
 
-We already saw that functions in type theory and set theory look identical --- 
-
-However, in set theory, sets are just assumed to exist, as for example the set of colors, as any other set is just assumed to exist.
-
-And type theory, functions are build.
-
-These ways, type theory holds, is nothing more than the process of *substituting* one value with another, according to a finite number of rules.
-
-This principle is also underneat the way axiom schemas are used in logic, but it is actually much more general than that. It is also the principle behind algrebra in general e.g. the rules of addition are nothing but rules that define when can you substitute a value to another.
-
-But wait, are substitution rules really powerful enough to represent all functions? How would we go about in representing types that have an infinite number of terms (such as the natural numbers), and functions between them (such as the `sum` function).
+Types and logic
+===
 
 
-In programming
-----
-
-We already have some idea of what a type is: a type is a collection of terms, that is the source and target of *functions*. 
-
-This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming.
-
-```
-class MyType<A> {
-
-  a: A;
-  constructor(a) {
-    this.a = a;
-  }
-
-  getA() {
-    return this.a;
-  }
-
-}
-```
-
-It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of *a bunch of functions*. 
-
-However, not just any random collection of functions would suffice -- there are 3 special kinds of functions that have to be defined in order for a type to work. 
-
-
-
-First off, a type has to have a *definition* which specifies what it is. Note that this is not a function between values, but a function between types --- a *type-level function*. In programming, we call these types of functions *generic types*, but they are functions nevertheless --- we supply some types and get a definition of the new type.
-
-```
-class MyType<A> {
-  a: A;
-```
-
-(For non-generic types, the rule would correspond to a type-level function with no arguments, which would correspond to a (non-generic) type.)
-
-Next up, a type has to have at least one *constructor* which allows us to produce a value/term of that type. The constructor is a "normal" value-level function.
-
-```
-  constructor(a) {
-    this.a = a;
-  }
-```
-
-Finally, a type has to have at least one *method* in order to be useful --- we don't want to construct types just for the sake of constructing new types. 
-
-Methods are functions that allow us to do something with a value of that type, once we constructed it.
-
-```
-  getA() {
-    return this.a;
-  }
-```
-
-(There are also methods that mutate the type's properties, but we don't talk about these in functional programming.)
-
-In Category Theory
----
+Types and Category Theory
+===
 
 Now, let's see the categorical perspective of what are we taling about. We already know that a type corresponds to an *object* in the category of types, and a categorical object has to have at three kinds of morphisms in order for the object to play a role in the category, which correspond to the three types of functions in programming.
 
@@ -431,18 +442,28 @@ Secondly, a categorical object has to have at least one morphism coming *to* it,
 
 And thirdly, it has to have morphisms from it to some other objects. Has to be the *source* of at least one arrow.
 
+In thinking of a category as a type theory, the objects of a category are
+regarded as types (or sorts) and the arrows as mappings between the corresponding
+types. Roughly speaking, a category may be thought of a type theory shorn of
+its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian
+closed categories correspond to the typed λ-calculus. Later Seely [1984] proved
+that locally Cartesian closed categories correspond to Martin-L¨of, or predicative,
+type theories. Lambek and Dana Scott independently observed that C-monoids,
+i.e., categories with products and exponentials and a single, nonterminal object
+correspond to the untyped λ-calculus. The analogy between type theories and
+categories has since led to what Jacobs [1999] terms a “type-theoretic boom”,
+with much input from, and applications to, computer science
+
+
 Interlude: Terminal objects are nullary products
 ---
-
 
 Natural deduction
 ---
 
 We will now see how these type-creating functions look like in type theory. 
 
-
 The functions that define a type are called *typing rules* and each of them has a name.
-
 
 For this, we need to get to know the formal language that is used for defining them, called *natural deduction*.
 
@@ -463,9 +484,7 @@ $$
 
 
 The product type
-===
-
-> "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Hal Abelson Jerry Sussman and Julie Sussman, SICP 
+---
 
 Type formation rules
 ---
@@ -510,29 +529,3 @@ $$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}
 
 
 
-Types as mathematical foundation
-===
-
-Types and computation
-===
-
-Types and logic
-===
-
-
-
-
-Types and categories
-===
-
-In thinking of a category as a type theory, the objects of a category are
-regarded as types (or sorts) and the arrows as mappings between the corresponding
-types. Roughly speaking, a category may be thought of a type theory shorn of
-its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian
-closed categories correspond to the typed λ-calculus. Later Seely [1984] proved
-that locally Cartesian closed categories correspond to Martin-L¨of, or predicative,
-type theories. Lambek and Dana Scott independently observed that C-monoids,
-i.e., categories with products and exponentials and a single, nonterminal object
-correspond to the untyped λ-calculus. The analogy between type theories and
-categories has since led to what Jacobs [1999] terms a “type-theoretic boom”,
-with much input from, and applications to, computer science

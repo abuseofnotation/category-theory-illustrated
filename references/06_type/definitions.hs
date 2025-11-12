@@ -1,4 +1,4 @@
-{-# LANGUAGE GADTs, NoImplicitPrelude #-}
+{-# LANGUAGE GADTs,  NoImplicitPrelude #-}
 
 import qualified Prelude as P
 
@@ -7,9 +7,18 @@ data Bool where
   False :: Bool
   deriving (P.Show)
 
+data Maybe a where
+  Nothing :: forall a. Maybe a
+  Just :: forall a. a -> Maybe a
+  deriving (P.Show)
+
+maybe :: forall a b.  b -> (a -> b) -> Maybe a -> b
+maybe n _ Nothing  = n
+maybe _ f (Just x) = f x
+
 data List a where
-  Nil :: List a
-  Cons :: a -> List a -> List a
+  Nil :: forall a. List a
+  Cons :: forall a. a -> List a -> List a
   deriving (P.Show)
 
 data Nat where
@@ -25,6 +34,10 @@ not :: Bool -> Bool
 not False = True
 not True = False
 
-ifElse :: Bool -> a -> a -> a
+ifElse :: forall a. Bool -> a -> a -> a
 ifElse True a b = a 
 ifElse False a b = b
+
+main = do 
+  P.print (ifElse True 1 2) --1
+  P.print (ifElse False 1 2) --2
