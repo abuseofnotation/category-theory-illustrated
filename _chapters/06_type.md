@@ -3,7 +3,6 @@ layout: default
 title: Types
 ---
 
-
 In this chapter we will talk about types. This might be disappointing for you, if you expected to learn about as many *new* categories as possible (which you don't even suspect that they are categories till the unexpected reveal), as we've been talking about the category of types in a given programming language ever since the first chapter, and we already know how they form a category. We are also already familiar with the Curry-Howard correspondence that connects types and logic. However, types are not just about programming languages. And they are more than just another category. They are also at the heart of a mathematical theory known as *type theory*. 
 
 Type theory is an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and it is as powerful tool as any of those formalisms. 
@@ -216,7 +215,7 @@ In programming, this arrow is called a *constructor*. In type theory, this is kn
 
 ![A type and an arrow pointing towards it](../06_type/rule_term_introduction.svg)
 
-3. Finally, as we don't want to construct types just for the sake of constructing new types, a type has to have at least one arrow coming from the new type.  In programming, these are the type's methods. In type theory, this is known as a *term elimination rule* (as if we are eliminating the type in favour of the result of the method).
+3. Finally, as we don't want to construct types just for the sake of constructing new types, a type has to have at least one arrow coming from the new type.  In programming, these are the type's methods. In type theory, this is known as a *term elimination rule* (as if we are eliminating the type by replacing it with the result of the method).
 
 ![A type and an arrow, coming from it ](../06_type/rule_term_elimination.svg)
 
@@ -353,7 +352,7 @@ Maybe is the second simplest type, after `Bool` and it looks a lot like `Bool`, 
 data Maybe a 
 ```
 
-Maybe is different from Bool. It is polymorphic. i.e. there is not just one `Maybe`, but many `Maybe`'s --- one for each type `a` e.g. if there is `Bool`, there is also`Maybe Bool`.
+Maybe is different from Bool in that it is polymorphic. i.e. there is not just one `Maybe`, but many `Maybe`'s --- one for each type `a` e.g. if there is `Bool`, there is also`Maybe Bool`.
 
 ![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
 
@@ -370,7 +369,7 @@ The first line is similar to what we saw with boolean. It says that there is a v
 ```
 So, here it is (we are drawing just `Maybe Boolean`, but the other `Maybe` types would look similar).
 
-![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
+![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
 
 
 Of course there would be no point in having many `Maybe`s if they all are all isomorphic to each other. That's where the second line comes.
@@ -380,18 +379,29 @@ Of course there would be no point in having many `Maybe`s if they all are all is
 ```
 The constructor `Just` represents an arrow from type `a` to type `Maybe a` e.g. from `Boolean` to `Maybe Boolean`.
 
-![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
-
+![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
 
 
 Term elimination
 ---
 
+The `Maybe` type is used for handling errors i.e. for defining *partial functions*. Let's say we want to define a function that does not have an arrow for all values in the source. Does this mean that this function cannot be defined?
+
+![A partial function from  `Nat` to `Boolen`: returns False for composite numbers, True for primes and is not defined for 0 and 1](../06_type/isprime_int_bool.svg)
+
+No, we just have to wrap the target type in `Maybe` and it becomes a regular function.
+
+![A function from  `Nat` to `Maybe Boolen`: returns `Just False` for composite numbers, `Just True` for primes and `Nothing` for 0 and 1](../06_type/isprime_int_maybe_bool.svg)
+
+To close the case, we define one good function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
+
+
 ```haskell
-maybe :: b -> (a -> b) -> Maybe a -> b
+maybe :: forall a b. b -> (a -> b) -> Maybe a -> b
 maybe n _ Nothing  = n
 maybe _ f (Just x) = f x
 ```
+Notice that this function defines an arrows from type `Maybe a` to any type `b`, provided that a function `a -> b` (and a value of `b`) is provided.
 
 Inductive types. The natural number type.
 ===
@@ -412,13 +422,60 @@ data Nat where
   Zero :: Nat
   Succ :: Nat -> Nat
 ```
-Let's follow the arrows, like we did with the Booleans. We have an arrow with no source, so implicitly we can say it comes from the unit type.
+Let's follow the arrows. 
+
+
+Type formation
+---
+
+The first line indicates that the natural numbers type is a normal non-polymorphic, or "monomorphic" type.
+
+```haskell
+data Nat 
+```
+
+Term introduction
+---
+
+The first constructor is also 
+
+```haskell
+  Zero :: Nat
+```
+
+
+```haskell
+  Succ :: Nat -> Nat
+```
+
+Term elimination
+---
 
 
 More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
 
 Composite types. The list type.
 ===
+
+Type formation
+---
+
+Term introduction
+---
+
+Term elimination
+---
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Interlude: From Haskell and System F
+===
+
+<!--
+{%endif%}
+-->
 
 
 Types as mathematical foundation
@@ -435,12 +492,6 @@ Types and Category Theory
 ===
 
 Now, let's see the categorical perspective of what are we taling about. We already know that a type corresponds to an *object* in the category of types, and a categorical object has to have at three kinds of morphisms in order for the object to play a role in the category, which correspond to the three types of functions in programming.
-
-Firstly, a categorical object has to have a morphism that defines it. This one is more special, as it is not an ordinary morphism in the object's category, but we will discuss what exactly it is later (it is connected to the idea of a universal property.)
-
-Secondly, a categorical object has to have at least one morphism coming *to* it, from some other object in the category. In other words, it has to be the *target* of at least one arrow.
-
-And thirdly, it has to have morphisms from it to some other objects. Has to be the *source* of at least one arrow.
 
 In thinking of a category as a type theory, the objects of a category are
 regarded as types (or sorts) and the arrows as mappings between the corresponding
@@ -459,7 +510,7 @@ Interlude: Terminal objects are nullary products
 ---
 
 Natural deduction
----
+===
 
 We will now see how these type-creating functions look like in type theory. 
 
@@ -529,3 +580,13 @@ $$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}
 
 
 
+<!--
+{% if site.distribution == 'print' %}
+-->
+
+Answers
+===
+
+<!--
+{%endif%}
+-->
