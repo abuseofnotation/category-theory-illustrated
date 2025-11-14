@@ -21,6 +21,10 @@ data List a where
   Cons :: forall a. a -> List a -> List a
   deriving (P.Show)
 
+foldl :: (b -> a -> b) -> b -> List a -> b
+foldl f z [] = z
+foldl f z (x:xs) = foldl f (f z x) xs
+
 data Nat where
   Zero :: Nat
   Succ :: Nat -> Nat

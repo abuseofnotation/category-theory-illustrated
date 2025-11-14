@@ -421,14 +421,10 @@ Composite types. The list type.
 ===
 
 
-Types as mathematical foundation
-===
-
-Types and computation
-===
 
 Types and logic
 ===
+
 
 
 Types and Category Theory
