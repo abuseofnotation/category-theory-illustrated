@@ -570,7 +570,7 @@ And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semanti
 
 This is again a well-known result in logic (if I am not mistaken, it will be a deduction theorem of some sort): if $A \models B$), then the statement $(A → B)$ will always be true.
 
-Interlude: Free Heytung algebras -- making ourselves a logic
+Interlude: Free Heyting algebras -- making ourselves a logic
 ===
 
 Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
