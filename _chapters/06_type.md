@@ -478,14 +478,10 @@ Interlude: From Haskell and System F
 -->
 
 
-Types as mathematical foundation
-===
-
-Types and computation
-===
 
 Types and logic
 ===
+
 
 
 Types and Category Theory
