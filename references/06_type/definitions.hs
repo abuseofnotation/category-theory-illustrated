@@ -21,14 +21,19 @@ data List a where
   Cons :: forall a. a -> List a -> List a
   deriving (P.Show)
 
-foldl :: (b -> a -> b) -> b -> List a -> b
-foldl f z [] = z
-foldl f z (x:xs) = foldl f (f z x) xs
+foldList :: (b -> a -> b) -> b -> List a -> b
+foldList f z Nil = z
+foldList f z (Cons x xs) = foldList f (f z x) xs
 
 data Nat where
   Zero :: Nat
   Succ :: Nat -> Nat
   deriving (P.Show)
+
+foldNat :: Nat -> a -> (a -> a) -> a
+foldNat Zero z s = z
+foldNat (Succ a) z s  = s (foldNat a z s)
+
 
 plus :: Nat -> Nat -> Nat
 plus Zero n = n
@@ -45,3 +50,4 @@ ifElse False a b = b
 main = do 
   P.print (ifElse True 1 2) --1
   P.print (ifElse False 1 2) --2
+  P.print (foldNat (Succ (Succ Zero)) 0 (P.+ 1)) -- 2

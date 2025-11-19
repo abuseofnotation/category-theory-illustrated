@@ -225,9 +225,9 @@ OK, I think we got too far in trying to define type theory without actually defi
 Picking a theory (another long disclaimer)
 ---
 
-As we said in the first long disclaimer, there is not one, but many type theories, so if we want to do type theory, we we have to pick one type theory, to work with (if this sentence confuses you, read the disclaimer again).
+As we said in the first long disclaimer, there is not one, but many type theories, so if we want to do type theory, we we have to pick one type theory, to work with (if this sentence confuses you, read the first disclaimer again).
 
-Picking a type theory, or type system let's call it, also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages, like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
+Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
 
 To please both parties (or to annoy them both), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers. Unlike Lambda Calculus that, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
 
@@ -273,7 +273,7 @@ First, `data Bool`, says that there exist a datatype that we call "Bool".
 Term introduction
 ---
 
-Then, `True :: Bool` says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. 
+Then, `True :: Bool` says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. In the diagram, we will represent that as an arrow from the empty type, as per the Elementary Theory of the Category of Sets (see chapter 2).
 
 ![ The Boolean type with one value: a circle with one ball --- True](../06_type/bool_type_true.svg)
 
@@ -294,9 +294,8 @@ And are we done? Not quite, for we must define at least one arrow, coming *from*
 ifElse :: forall a. Bool -> a -> a -> a
 ifElse True a b = a 
 ifElse False a b = b
-
-
 ```
+
 You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
 
 Here are some expressions which use the function accompanied with indications of what they return (`--` is Haskell's comment syntax)
@@ -367,10 +366,9 @@ The first line is similar to what we saw with boolean. It says that there is a v
 ```haskell
   Nothing :: forall a. Maybe a
 ```
-So, here it is (we are drawing just `Maybe Boolean`, but the other `Maybe` types would look similar).
+So, here it is.
 
 ![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
-
 
 Of course there would be no point in having many `Maybe`s if they all are all isomorphic to each other. That's where the second line comes.
 
@@ -380,7 +378,6 @@ Of course there would be no point in having many `Maybe`s if they all are all is
 The constructor `Just` represents an arrow from type `a` to type `Maybe a` e.g. from `Boolean` to `Maybe Boolean`.
 
 ![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
-
 
 Term elimination
 ---
@@ -408,12 +405,10 @@ Inductive types. The natural number type.
 
 Learning mathematics can feel overwhelming, because of the huge, even infinite, body of knowledge: how do you proceed so big of a task? But it turns out the answer is simple: you start off knowing 0 things, 0 theories. Then, you learn 1 theory - congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
 
-This argument applies not only to mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously synthesized in the 19th century by the Italian mathematician Giuseppe Peano.
+This argument applies not only to mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously synthesized in the 19th century by the Italian mathematician Giuseppe Peano (There are some laws as well, but we will cover them later).
 
 1. $0$ is a natural number.
 2. If $n$ is a natural number, $n+1$ is a natural number.
-
-(There are some laws as well, but we will cover them later.)
 
 Or as we Haskellians say:
 
@@ -422,8 +417,8 @@ data Nat where
   Zero :: Nat
   Succ :: Nat -> Nat
 ```
-Let's follow the arrows. 
 
+Let's follow the arrows. 
 
 Type formation
 ---
@@ -434,37 +429,117 @@ The first line indicates that the natural numbers type is a normal non-polymorph
 data Nat 
 ```
 
+i.e. there is just one natural numbers type.
+
+![The Natural numbers type without values --- an empty circle](../06_type/nat_type_empty.svg)
+
 Term introduction
 ---
 
-The first constructor is also 
+The first constructor is also trivial.
 
 ```haskell
   Zero :: Nat
 ```
+It allows us to construct one value, called zero 
 
+
+![The Natural numbers type with Zero added --- an circle, containing one ball - "0"](../06_type/nat_type_zero.svg)
+
+i.e. it is a *mot à mot* repetition of Peano's first axiom.
+
+> 1. $0$ is a natural number.
+
+The second constructor is more interesting. 
 
 ```haskell
   Succ :: Nat -> Nat
 ```
 
+It says that there is  constructor, called "Successor" `Succ` (or `+1`, as we can would call it) i.e. this is the equivalent of 
+
+> 2. If $n$ is a natural number, $n+1$ is a natural number.
+
+`Succ` is an arrow from the type of the natural numbers to itself which means that given one natural number, `Succ` constructs another one. 
+
+But right now we have just one term (value) of the natural numbers type: `Zero`. We draw the `Succ` arrow and construct another one, `Succ Zero` (known in some contexts as $1$.
+
+![The Natural numbers type without values --- ](../06_type/nat_type_one_double_diagram.svg)
+
+And now, we have one more value so we have to draw one more `Succ` arrow. This time the result is `Succ Succ Zero` i.e. two.
+
+![The Natural numbers type without values --- an empty circle](../06_type/nat_type_two_double_diagram.svg)
+
+And we go on like this, *ad infinitum*, creating an endless chain of values.
+
+![The Natural numbers type without values --- an empty circle](../06_type/nat_type_full.svg)
+
+This is how you define an *inductive* type (or a *recursive* type, we can also call it). 
+
 Term elimination
 ---
 
+Wait, there are also elimination rules, I always forget elimination rules. Here is:
 
-More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
+```haskell
+foldNat :: Nat -> a -> (a -> a) -> a
+foldNat Zero z s = z
+foldNat (Succ a) z s  = s (foldNat a z s)
+```
+This allows us, for example, to convert our `Nat`s to the normal Haskell `Nat`s:
+
+```haskell
+foldNat (Succ (Succ Zero)) 0 (+ 1) -- 2
+```
 
 Composite types. The list type.
 ===
 
+The landscape of types would be a really... flat place, without the *composite* types. Those are the types that allow you to unite several values of other types, into one. 
+
+The ultimate composite type is the list. The linked list specifically, is a thing of beauty, as we shall see shortly.
+
+```haskell
+data List a where
+  Nil :: forall a. List a
+  Cons :: forall a. a -> List a -> List a
+```
+Let's unpack:
+
 Type formation
 ---
+The type formation rule tells us the `List` is a composite type. 
+
+```haskell
+data List a 
+```
+
+This means, as we said earlier, that there is not one, but many (infinite, if you consider lists of lists (of lists)) `List` types, such as `List Nat` `List Bool`. Those are usually read as "List of natural numbers", "List of Booleans" etc.
 
 Term introduction
 ---
+Now, let's check the constructors. The first one tells us that 
 
+```haskell
+Nil :: forall a. List a
+```
+
+```haskell
+Cons :: forall a. a -> List a -> List a
+```
 Term elimination
 ---
+
+```haskell
+foldList :: (b -> a -> b) -> b -> List a -> b
+foldList f z Nil = z
+foldList f z (Cons x xs) = foldList f (f z x) xs
+```
+
+
+From list to bools
+
+From list to Natural numbers
 
 <!--
 {% if site.distribution == 'print' %}
@@ -472,6 +547,9 @@ Term elimination
 
 Interlude: From Haskell and System F
 ===
+
+More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
+
 
 <!--
 {%endif%}
