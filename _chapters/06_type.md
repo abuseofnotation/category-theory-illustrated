@@ -474,12 +474,16 @@ And we go on like this, *ad infinitum*, creating an endless chain of values.
 
 ![The Natural numbers type without values --- an empty circle](../06_type/nat_type_full.svg)
 
-This is how you define an *inductive* type (or a *recursive* type, we can also call it). 
+Hm, this notation is a bit clunky, if only there were a better way to represent such object. Oh, wait.
+
+![The Natural numbers type without values --- an empty circle](../06_type/nat_type_full_normal.svg)
+
+And this is how you define an *inductive* type (or a *recursive* type, we can also call it). 
 
 Term elimination
 ---
 
-Wait, there are also elimination rules, I always forget elimination rules. Here is:
+Wait, there are also elimination rules, I always forget elimination rules. Here it is:
 
 ```haskell
 foldNat :: Nat -> a -> (a -> a) -> a
@@ -495,7 +499,7 @@ foldNat (Succ (Succ Zero)) 0 (+ 1) -- 2
 Composite types. The list type.
 ===
 
-The landscape of types would be a really... flat place, without the *composite* types. Those are the types that allow you to unite several values of other types, into one. 
+The landscape of types would be a really... flat place, without the *composite types*. Those are the types that allow you to unite several values of other types, into one. 
 
 The ultimate composite type is the list. The linked list specifically, is a thing of beauty, as we shall see shortly.
 
@@ -508,25 +512,37 @@ Let's unpack:
 
 Type formation
 ---
-The type formation rule tells us the `List` is a composite type. 
+
+The type formation rule tells us the `List` (like `Maybe`) is a composite type. 
 
 ```haskell
 data List a 
 ```
 
-This means, as we said earlier, that there is not one, but many (infinite, if you consider lists of lists (of lists)) `List` types, such as `List Nat` `List Bool`. Those are usually read as "List of natural numbers", "List of Booleans" etc.
+This means, that there is not one, but many  `List` types, such as `List Nat` `List Bool` etc (infinitely many, if you consider lists of lists (of lists)). Those are usually read as "List of natural numbers", "List of Booleans" etc. 
+
+![The `List Nat` and `List Bool` types without values --- A type-universe function, connecting `Bool` and `Nat` to `List Bool` and `List Nat` empty circles.](../06_type/list_type_empty.svg)
 
 Term introduction
 ---
-Now, let's check the constructors. The first one tells us that 
+
+Now, let's check the constructors. The first defines a static value, one for each list, representing the empty list. 
 
 ```haskell
 Nil :: forall a. List a
 ```
 
+We will call this value `Nil` (although native Haskell lists use the `[]` symbol).
+
+![The `List Nat` type with just a Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_nil.svg)
+
+And now for the second constructor, the inductive part.
+
 ```haskell
 Cons :: forall a. a -> List a -> List a
 ```
+![The `List Nat` types wit just Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_nil.svg)
+
 Term elimination
 ---
 
