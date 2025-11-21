@@ -541,7 +541,7 @@ And now for the second constructor, the inductive part.
 ```haskell
 Cons :: forall a. a -> List a -> List a
 ```
-![The `List Nat` types wit just Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_nil.svg)
+![The `List Nat` types wit just Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_cons.svg)
 
 Term elimination
 ---
