@@ -536,12 +536,18 @@ We will call this value `Nil` (although native Haskell lists use the `[]` symbol
 
 ![The `List Nat` type with just a Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_nil.svg)
 
-And now for the second constructor, the inductive part.
+And now for the more interesting part. The signature of `Cons`, our second constructor is the following.
 
 ```haskell
 Cons :: forall a. a -> List a -> List a
 ```
+The `List a -> List a` part is pretty similar to the inductive `Succ` constructor, And indeed, like `Succ`, `Cons` is a recursive constructor that generates an infinite amount of terms. However, unlike `Succ` that has signature `Nat -> Nat` (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a` You can view this constructor as the operation of adding the value `a` to a list (and returning a new list).
+
+We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
+
 ![The `List Nat` types wit just Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_cons.svg)
+
+Like with natural numbers, we start with the base value.
 
 Term elimination
 ---
