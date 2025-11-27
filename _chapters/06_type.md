@@ -496,6 +496,9 @@ This allows us, for example, to convert our `Nat`s to the normal Haskell `Nat`s:
 foldNat (Succ (Succ Zero)) 0 (+ 1) -- 2
 ```
 
+Any other canonical function that converts a list to other type can also be defined using the elimination rule.
+
+
 Composite types. The list type.
 ===
 
@@ -541,16 +544,22 @@ And now for the more interesting part. The signature of `Cons`, our second const
 ```haskell
 Cons :: forall a. a -> List a -> List a
 ```
-The `List a -> List a` part is pretty similar to the inductive `Succ` constructor, And indeed, like `Succ`, `Cons` is a recursive constructor that generates an infinite amount of terms. However, unlike `Succ` that has signature `Nat -> Nat` (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a` You can view this constructor as the operation of adding the value `a` to a list (and returning a new list).
+The `List a -> List a` part is pretty similar to the inductive `Succ` constructor, And indeed, like `Succ`, `Cons` is a recursive constructor that generates an infinite amount of terms. However, unlike `Succ` that has signature `Nat -> Nat` (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a`. We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
 
-We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
+![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> Nil -> (0,Nill), 1 -> Nil -> (1,Nill) etc. ](../06_type/list_type_cons.svg)
 
-![The `List Nat` types wit just Nil value --- A circle with a single ball inside it. An arrow from the unit type, pointing to that value](../06_type/list_type_cons.svg)
+You can view this constructor as the operation of adding the value `a` to a list (and returning a new list).
 
-Like with natural numbers, we start with the base value.
+As you probably expect, the `List` type is inductive i.e. every arrow that you draw generates more arrows (here, we only draw *part* of them (the ones that come from the list `(1,Nill)`).
+
+![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> (1, nill) -> (0, (1,Nill)), 1 -> (1, Nil) -> (1,(1,Nill)) etc. ](../06_type/list_type_cons_2.svg)
+
+The result is a type with values that are... well, *lists* of other values, 
 
 Term elimination
 ---
+
+Now, let's write the term elimination rule.
 
 ```haskell
 foldList :: (b -> a -> b) -> b -> List a -> b
@@ -558,10 +567,53 @@ foldList f z Nil = z
 foldList f z (Cons x xs) = foldList f (f z x) xs
 ```
 
+**Task 1:** There is a certain mapping from `List` to `Boolean` which is very intuitive. So intuitive, that some dialects of Lisp have no `Boolean` type and all and rely just on this mapping. Try to guess this mapping.
 
-From list to bools
+![The list type: (Nil) (1,Nill), (1,(1,Nill)), (1,(1,Nill)) etc. and the `Boolean` type: True and False with places to draw arrows List to Bool](../06_type/list_bool_task.svg)
 
-From list to Natural numbers
+**Task 2:** Define this mapping (between `List` and `Bool`) in Haskell. Define it once by writing a function from scratch, and twice, with using the `foldList` function.
+
+```haskell
+f :: (Bool -> a -> Bool) 
+f = undefined
+```
+
+```haskell
+foldList f False 
+```
+
+**Task 3:** The type `List Unit` where `Unit` is the singleton type, known as $1$ (a type with one value). Draw the values of `List Unit` until you run out of space.
+
+![The list type, containing one value (`Nil`) the Unit type (containing one circle), with function `(Unit) -> Nil -> (Unit, Nil)`.](../06_type/list_unit_task.svg)
+
+**Task 4:** The `List Unit` type is actually isomorphic to another type that we reviewed here. Find out which.
+
+Positive and negative types. Either and Tuples.
+===
+
+Now, we will quickly present two more types. The `Either` type is an interesting one. It is a type that is parametrized by two types `a` and `b`, and has two constructors, one constructor, called `Left`, that takes a value of `a`. And another one, called `Right` that takes a `b`.
+
+```haskell
+data Either a b where
+  Left   :: forall a b. a -> Either a b
+  Right  :: forall a b. b -> Either a b
+  deriving (P.Show)
+```
+(We will not publish a `fold` function for now.)
+
+The next type that we will introduce is the `Tuple` type, which is also parametrized by `a` and `b`, but it contains both a value of `a` and a value of `b`. 
+
+It is a type that contains two values Here we will do something different --- instead of the definition, we will directly present the 
+
+```haskell
+first  :: Tuple a b -> a
+first    (Tuple a b) = a
+second :: Tuple a b -> b
+second   (Tuple a b) = b
+```
+
+**Task 5:** Write a constructor of Tuple. Write a `fold` function for Either.
+
 
 <!--
 {% if site.distribution == 'print' %}
@@ -581,7 +633,6 @@ More precisely, we can define arrows not only from an existing types to new ones
 
 Types and logic
 ===
-
 
 
 Types and Category Theory
@@ -682,6 +733,40 @@ $$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}
 
 Answers
 ===
+
+**Task 1:** There is a certain mapping from `List` to `Boolean` which is very intuitive. So intuitive, that some dialects of Lisp have no `Boolean` type and all and rely just on this mapping. Try to guess this mapping.
+
+---
+
+**Task 2:** Define this mapping (between `List` and `Bool`) in Haskell. Define it once by writing a function from scratch, and twice, with using the `foldList` function.
+
+---
+
+**Task 3:** The type `List Unit` where `Unit` is the singleton type, known as $1$ (a type with one value). Draw the values of `List Unit` until you run out of space.
+
+---
+
+**Task 4:** The `List Unit` type is actually isomorphic to another type that we reviewed here. Find out which.
+
+---
+
+
+**Task 5:** Write a constructor of Tuple. Write a `fold` function for Either.
+
+First the constructor for tuple:
+
+```haskell
+data Tuple a b where
+  Tuple :: forall a b. a -> b -> Tuple a b 
+```
+
+Then, the `fold` function of `Either`
+
+```haskell
+foldEither :: forall a b c. (a -> c) -> (b -> c) -> Either a b -> c
+foldEither fa fb (Left  val) = fa val
+foldEither fa fb (Right val) = fb val
+```
 
 <!--
 {%endif%}

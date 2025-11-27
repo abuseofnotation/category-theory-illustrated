@@ -7,14 +7,37 @@ data Bool where
   False :: Bool
   deriving (P.Show)
 
+ifElse :: forall a. Bool -> a -> a -> a
+ifElse True a b = a 
+ifElse False a b = b
+
+data Either a b where
+  Left   :: forall a b. a -> Either a b
+  Right  :: forall a b. b -> Either a b
+  deriving (P.Show)
+
+foldEither :: forall a b c. (a -> c) -> (b -> c) -> Either a b -> c
+foldEither fa fb (Left  val) = fa val
+foldEither fa fb (Right val) = fb val
+
+data Tuple a b where
+  Tuple :: forall a b. a -> b -> Tuple a b 
+  deriving (P.Show)
+
+first  :: Tuple a b -> a
+first    (Tuple a b) = a
+
+second :: Tuple a b -> b
+second   (Tuple a b) = b
+
 data Maybe a where
   Nothing :: forall a. Maybe a
   Just :: forall a. a -> Maybe a
   deriving (P.Show)
 
-maybe :: forall a b.  b -> (a -> b) -> Maybe a -> b
-maybe n _ Nothing  = n
-maybe _ f (Just x) = f x
+foldMaybe :: forall a b.  b -> (a -> b) -> Maybe a -> b
+foldMaybe n _ Nothing  = n
+foldMaybe _ f (Just x) = f x
 
 data List a where
   Nil :: forall a. List a
@@ -34,7 +57,6 @@ foldNat :: Nat -> a -> (a -> a) -> a
 foldNat Zero z s = z
 foldNat (Succ a) z s  = s (foldNat a z s)
 
-
 plus :: Nat -> Nat -> Nat
 plus Zero n = n
 plus (Succ m) n = Succ (plus m n)
@@ -42,10 +64,6 @@ plus (Succ m) n = Succ (plus m n)
 not :: Bool -> Bool
 not False = True
 not True = False
-
-ifElse :: forall a. Bool -> a -> a -> a
-ifElse True a b = a 
-ifElse False a b = b
 
 main = do 
   P.print (ifElse True 1 2) --1
