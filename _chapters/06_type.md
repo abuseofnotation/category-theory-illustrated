@@ -582,7 +582,7 @@ f = undefined
 foldList f False 
 ```
 
-**Task 3:** The type `List Unit` where `Unit` is the singleton type, known as $1$ (a type with one value). Draw the values of `List Unit` until you run out of space.
+**Task 3:** I present to you the type `List Unit` where `Unit` is the singleton type, known as $1$ (a type with one value). Draw the values of `List Unit` until you run out of space.
 
 ![The list type, containing one value (`Nil`) the Unit type (containing one circle), with function `(Unit) -> Nil -> (Unit, Nil)`.](../06_type/list_unit_task.svg)
 
@@ -591,7 +591,17 @@ foldList f False
 Positive and negative types. Either and Tuples.
 ===
 
-Now, we will quickly present two more types. The `Either` type is an interesting one. It is a type that is parametrized by two types `a` and `b`, and has two constructors, one constructor, called `Left`, that takes a value of `a`. And another one, called `Right` that takes a `b`.
+
+Now, we will quickly present two more types, (hm... I have the feeling that I actually have seen those before).
+
+Either
+---
+
+The `Either` type is an interesting one. 
+
+![The Either type ](../06_type/either_type.svg)
+
+It is a type that is parametrized by two types `a` and `b`, and has two constructors/term introduction rules --- one constructor, called `Left`, that takes a value of `a`. And another one, called `Right` that takes a `b`. Here is the definition of Either:
 
 ```haskell
 data Either a b where
@@ -601,41 +611,78 @@ data Either a b where
 ```
 (We will not publish a `fold` function for now.)
 
-The next type that we will introduce is the `Tuple` type, which is also parametrized by `a` and `b`, but it contains both a value of `a` and a value of `b`. 
+Tuple
+---
 
-It is a type that contains two values Here we will do something different --- instead of the definition, we will directly present the 
+The next type that we will introduce is the `Tuple` type, which is also parametrized by `a` and `b`, but it contains *both* a value of `a` and a value of `b`. 
+
+![The Either type ](../06_type/tuple_type.svg)
+
+Here we will do something different --- instead of the definition, we will directly present the type elimination rules.
 
 ```haskell
-first  :: Tuple a b -> a
-first    (Tuple a b) = a
-second :: Tuple a b -> b
-second   (Tuple a b) = b
+first  :: forall a b. Tuple a b -> a
+second :: forall a b. Tuple a b -> b
 ```
 
 **Task 5:** Write a constructor of Tuple. Write a `fold` function for Either.
 
+Positive and negative types
+---
+
+The `Either` type is uniquely defined by its introduction rules i.e. the elimination rules can be derived from the introduction rules.
+
+```haskell
+forall a b. a -> Either a b
+forall a b. b -> Either a b
+```
+
+`Tuple`, on the other hand, is defined by its elimination rules i.e. the introduction rules can be derived from them:
+
+```haskell
+forall a b. Tuple a b -> a
+forall a b. Tuple a b -> b
+```
+Types that, like `Either`, are defined by their introduction rules are called *positive types*. Types that are defined by their elimination are *negative*. All types that we saw so far (except `Tuple`) are positive. 
+
+**Task 6:** Besides `Tuple`, there is one very important negative type, which we will cover in this chapter (and in various other places).
 
 <!--
-{% if site.distribution == 'print' %}
+{% if site.distribution != 'print' %}
 -->
 
-Interlude: From Haskell and System F
+Interlude: From Haskell to System F
 ===
 
-More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (actually it's probably less than that, but nevermind). 
-
+More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (it's most probably less than that, but nevermind). 
 
 <!--
 {%endif%}
 -->
 
 
+Interlude: Terminal objects are nullary products
+===
 
-Types and logic
+Natural deduction
+===
+
+We will now see how these type-creating functions look like in type theory. 
+
+The functions that define a type are called *typing rules* and each of them has a name.
+
+For this, we need to get to know the formal language that is used for defining them, called *natural deduction*.
+
+$$\frac
+  {\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}
+  {\Gamma \vdash A \times B \; \mathrm{type}}
+$$
+
+Types and Logic
 ===
 
 
-Types and Category Theory
+Types Logic and Category Theory
 ===
 
 Now, let's see the categorical perspective of what are we taling about. We already know that a type corresponds to an *object* in the category of types, and a categorical object has to have at three kinds of morphisms in order for the object to play a role in the category, which correspond to the three types of functions in programming.
@@ -653,82 +700,9 @@ categories has since led to what Jacobs [1999] terms a “type-theoretic boom”
 with much input from, and applications to, computer science
 
 
-Interlude: Terminal objects are nullary products
----
-
-Natural deduction
-===
-
-We will now see how these type-creating functions look like in type theory. 
-
-The functions that define a type are called *typing rules* and each of them has a name.
-
-For this, we need to get to know the formal language that is used for defining them, called *natural deduction*.
-
-$$\frac
-  {A \; \mathrm{type}}
-  {MyType \; A \; \mathrm{type}}
-$$
-
-$$\frac
-  {a : A}
-  {mytype\;a : MyType \; A}
-$$
-
-$$\frac
-  {mytype\;a : MyType \; A}
-  {a : A}
-$$
-
-
-The product type
----
-
-Type formation rules
----
-
-When we define a new type we firstly want to *provide a type definition* show what the type should look like. This is known as the *type-formation rule*. 
-
-$$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}{\Gamma \vdash A \times B \; \mathrm{type}}$$
-
-Term introduction rules
----
-
-OK, now that we have the definition of the type, we would typically want a way to create values from that type or, in other words we would need *constructors*.
-
-```
-  constructor(a, b) {
-    this.a = a;
-    this.b = b;
-  }
-```
-
-In type-theoretic terms, we would call constructor a *term introduction rule*, (*term* being the type-theoretic word for value).
-
-
-Introduction rules for product types:
-
-$$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma\vdash B \; \mathrm{type}}{\Gamma, x:A, y:B \vdash (x, y):A \times B}$$
-
-Term elimination rules
----
-
-$$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}{\Gamma, z:A \times B \vdash \pi_1(z):A} \qquad \frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}{\Gamma, z:A \times B \vdash \pi_2(z):B}$$
-
-Computation rule
----
-
-$$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma\vdash B \; \mathrm{type}}{\Gamma, x:A, y:B \vdash \beta_{\times 1}(x, y):\pi_1((x, y)) =_A x} \qquad \frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}{\Gamma, x:A, y:B \vdash \beta_{\times 2}(x, y):\pi_2((x, y)) =_{B} y}$$
-
-Uniqueness rules 
----
-
-$$\frac{\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}{\Gamma, z:A \times B \vdash \eta_{\times}(z):z =_{A \times B} (\pi_1(z), \pi_2(z))}$$
-
-
 
 <!--
-{% if site.distribution == 'print' %}
+{% if site.distribution != 'print' %}
 -->
 
 Answers
@@ -742,31 +716,42 @@ Answers
 
 ---
 
-**Task 3:** The type `List Unit` where `Unit` is the singleton type, known as $1$ (a type with one value). Draw the values of `List Unit` until you run out of space.
+**Task 3:** I present to you the type `List Unit` where `Unit` is the singleton type, known as $1$ (a type with one value). Draw the values of `List Unit` until you run out of space.
+
+OK, here they are (we will draw just the end result, not the arrows). 
+
+![The values of the List Unit type, `(Unit, Nil)` `(Unit, (Unit, Nil))` `(Unit, (Unit, (Unit, Nil)))`, etc](../06_type/list_unit_task_answer.svg)
 
 ---
 
 **Task 4:** The `List Unit` type is actually isomorphic to another type that we reviewed here. Find out which.
 
----
+It is isomorphic to the type of Natural numbers (`Nat`). `List` and `Nat` are both inductive types, the only difference between the two is that the inductive constructor of `List` `Cons` is parametrized by a type i.e. there is one constructor for each value of the type, whereas `Nat` has just one `Succ` constructor. Therefore, a list of a type that has just one value, like `Unit`, is isomorphic to `Nat`.
 
+---
 
 **Task 5:** Write a constructor of Tuple. Write a `fold` function for Either.
 
-First the constructor for tuple:
+First the constructor for tuple. It is very straightforward, in order to be able to have functions that output an `a` and a `b`, you have to *input* an `a` and a `b` in the constructor.
 
 ```haskell
 data Tuple a b where
   Tuple :: forall a b. a -> b -> Tuple a b 
 ```
 
-Then, the `fold` function of `Either`
+The `fold` function of `Either` is also straightforward, although it may not appear so from a first glance: As the name suggest, an `Either a b`  is either an `a` or a `b`, so to convert `Either a b -> c`, you have to provide `(a -> c)` and `(b -> c)`.
 
 ```haskell
 foldEither :: forall a b c. (a -> c) -> (b -> c) -> Either a b -> c
 foldEither fa fb (Left  val) = fa val
 foldEither fa fb (Right val) = fb val
 ```
+
+---
+
+**Task 6:** Besides `Tuple`, there is one very important negative type, which we will cover in this chapter (and in various other places).
+
+It is the *function* type. We can think of functions as "objects that can be evaluated", which means that, as Tuples, they are characterized by their term elimination rule: a function `a -> b` (together with a value `a`) can be reduced to a value `b`.
 
 <!--
 {%endif%}
