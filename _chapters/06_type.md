@@ -661,17 +661,22 @@ More precisely, we can define arrows not only from an existing types to new ones
 -->
 
 
-Interlude: Terminal objects are nullary products
+Defining type theory formally.
 ===
+
+We saw how Lambda Calculus *works*, now we will see how it is defined formally. The answer is that, as all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
+
+Yes, Haskell's, typing rules are indeed arrows, but they are defined using a different language, called *natural deduction*. 
 
 Natural deduction
-===
+---
+There is no big difference between natural deduction and Haskell. In fact Haskell can probably be defined in Haskell itself, only that would be a bit confusing, and, pointless to an extend.
 
-We will now see how these type-creating functions look like in type theory. 
+So we use a different syntax, 
 
-The functions that define a type are called *typing rules* and each of them has a name.
-
-For this, we need to get to know the formal language that is used for defining them, called *natural deduction*.
+```haskell
+a -> b
+```
 
 $$\frac
   {\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}
@@ -700,6 +705,16 @@ categories has since led to what Jacobs [1999] terms a “type-theoretic boom”
 with much input from, and applications to, computer science
 
 
+
+value-level arrows are morphisms.
+
+What about type level arrows? We will learn in the next chapter.
+
+
+Addendum: The connection between tuple function top and bottom.
+===
+
+Terminal objects are nullary products
 
 <!--
 {% if site.distribution != 'print' %}
