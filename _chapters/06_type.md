@@ -670,22 +670,65 @@ Yes, Haskell's, typing rules are indeed arrows, but they are defined using a dif
 
 Natural deduction
 ---
-There is no big difference between natural deduction and Haskell. In fact Haskell can probably be defined in Haskell itself, only that would be a bit confusing, and, pointless to an extend.
-
-So we use a different syntax, 
+Natural deduction uses a different syntax, where the premise and the conclusion are separated by a horizontal dash, i.e. instead of 
 
 ```haskell
 a -> b
 ```
 
+We write 
+
 $$\frac
-  {\Gamma \vdash A \; \mathrm{type} \quad \Gamma \vdash B \; \mathrm{type}}
-  {\Gamma \vdash A \times B \; \mathrm{type}}
+    a
+    b
 $$
+
+
+Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. In our type system, it was defined in Haskell.
+
+```haskell
+data Bool where
+  True  :: Bool
+  False :: Bool
+```
+However, in some type systems the Boolean type is defined as one of the "primitive" types that are part of the system itself. And so, the boolean type is defined using natural deduction. Here is how this would look like:
+
+$$\frac
+    {}               
+    {Bool}
+$$
+
+$$\frac
+    {}               
+    {True : Bool}
+$$
+
+$$\frac
+    {}
+    {False : Bool}
+$$
+
+As you can see it's pretty simple. Want to make it a bit more complex? Let's add the concept of a context
+
+$$\frac
+    {}               
+    {Bool}
+$$
+
+$$\frac
+    {}               
+    {True : Bool}
+$$
+
+$$\frac
+    {}
+    {False : Bool}
+$$
+
 
 Types and Logic
 ===
-
+A statement can be viewed as a type and a proof of the statement --- a value of that type.
 
 Types Logic and Category Theory
 ===
