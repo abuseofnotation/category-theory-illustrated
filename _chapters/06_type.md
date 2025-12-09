@@ -410,7 +410,7 @@ This argument applies not only to mathematical theories, but to everything else 
 1. $0$ is a natural number.
 2. If $n$ is a natural number, $n+1$ is a natural number.
 
-Or as we Haskellians say:
+Or as Haskellians say:
 
 ```haskell
 data Nat where
@@ -497,7 +497,6 @@ foldNat (Succ (Succ Zero)) 0 (+ 1) -- 2
 ```
 
 Any other canonical function that converts a list to other type can also be defined using the elimination rule.
-
 
 Composite types. The list type.
 ===
@@ -609,7 +608,7 @@ data Either a b where
   Right  :: forall a b. b -> Either a b
   deriving (P.Show)
 ```
-(We will not publish a `fold` function for now.)
+(We will not publish a `fold` function.)
 
 Tuple
 ---
@@ -661,59 +660,43 @@ More precisely, we can define arrows not only from an existing types to new ones
 -->
 
 
-Defining type theory formally.
+Formal definition
 ===
 
 We saw how Lambda Calculus *works*, now we will see how it is defined formally. The answer is that, as all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
 
-Yes, Haskell's, typing rules are indeed arrows, but they are defined using a different language, called *natural deduction*. 
-
 Natural deduction
 ---
-Natural deduction uses a different syntax, where the premise and the conclusion are separated by a horizontal dash, i.e. instead of 
+
+Yes, Haskell's, typing rules are indeed arrows, but they are defined in a language that is different from Haskell, called *natural deduction*. Natural deduction is like Haskell, but it uses a syntax where, where the premise and the conclusion are separated by a horizontal dash, e.g. instead of...
 
 ```haskell
 a -> b
 ```
 
-We write 
+...we write...
 
 $$\frac
     a
     b
 $$
 
-
-Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. In our type system, it was defined in Haskell.
+Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. We defined it in Haskell like this:
 
 ```haskell
 data Bool where
   True  :: Bool
   False :: Bool
 ```
-However, in some type systems the Boolean type is defined as one of the "primitive" types that are part of the system itself. And so, the boolean type is defined using natural deduction. Here is how this would look like:
+
+However, in some type systems (e.g. in most programming languages) the Boolean type is defined as one of the "primitive" types that are part of the type system itself. If we want for our type system to feature the Boolean type as a primitive, we define it using natural deduction. 
 
 $$\frac
     {}               
-    {Bool}
+    {Bool :: Type}
 $$
 
-$$\frac
-    {}               
-    {True : Bool}
-$$
-
-$$\frac
-    {}
-    {False : Bool}
-$$
-
-As you can see it's pretty simple. Want to make it a bit more complex? Let's add the concept of a context
-
-$$\frac
-    {}               
-    {Bool}
-$$
+There is a type called Bool (technically, this is not a typing rule, but a "kinding" rule (and thus the double-colon)).
 
 $$\frac
     {}               
@@ -725,9 +708,122 @@ $$\frac
     {False : Bool}
 $$
 
+$True$ and $False$ are Bools.
+
+Oh I forgot, in natural deduction it is permitted to have conclusions without premises.
+
+Contexts
+---
+
+Is this *too* simple? Let's add the concept of the typing *context* (or typing *environment*) to the mix.
+
+Here's the deal: Types and variables have to be stored *somewhere*. So, given a bunch of values (e.g. $x$, $y$, $z$ etc.) and a bunch of types (e.g. $A$, $B$, $C$ etc.), a context is a *set* (Oops, I did it again) of all variables and their types e.g. ${ (x, A), (y, B), (z, B)... }$.
+
+We usually denote the context with the letter $\Gamma$, and we use the $\vdash$ symbol to denote something that follows from that context (oh, no not another arrow) e.g. $\Gamma \vdash a : b$ means that in the context $\Gamma$, there is a variable $a$ that has the type $b$.).
+
+So, when we consider the contex, the above definition becomes
+
+$$\frac
+    {}               
+    {\Gamma \vdash Bool :: Type}
+$$
+
+i.e. the context includes the type $Bool$ 
+
+$$\frac
+    {}               
+    {\Gamma \vdash True : Bool}
+$$
+
+i.e. the context includes the value $True$ of type $Bool$
+
+$$\frac
+    {}
+    {\Gamma \vdash False : Bool}
+$$
+
+i.e. the context includes the value $False$ of type $Bool$
+
+Thus, we straight away define the Boolean type to be part of the context.
+
+Value-level arrows
+---
+
+With that, we start listing the axioms of Lambda Calculus. They are nothing more than the definition of the type of value-level arrows. i.e. functions.
+
+There are several typing rules that we have to define, starting with the most basic one, which is sometimes called *Var*, that states the following: if we previously said that $x$ has type $A$, then $x$ has type $A$.
+
+$$\frac
+    {x : A \in \Gamma}
+    {\Gamma \vdash x : A}
+$$
+
+Now, we proceed to define the types of the arrows.
+
+We start with the type formation rule (or the kinding rule, as it is called here).
+
+$$\frac
+    {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
+    {\Gamma \vdash A \to B}
+$$
+
+And then the two typing rules. One is the term introduction for lambda terms, which is called *abstraction* (or *Abs*).
+
+$$\frac
+    {\Gamma, x:A \vdash y: B}
+    {\Gamma \vdash \lambda z : A \to B}
+$$
+
+(i.e. if we have a way given a value $x$ of type $A$ to obtain a value $y$ of type $B$, then we have ourselves a function $A \to B$).
+
+And there is also term elimination for lambdas, i.e. function *application* (App).
+
+$$\frac
+    {\Gamma \vdash z: A \to B, \Gamma \vdash x: A}
+    {\Gamma \vdash z x : B }
+$$
+
+The rules we reviewed so far define a type system called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except *you cannot make your own types*. In STLC all types have to be defined as part of the language (in the way in which we defined the Boolean type above). 
+
+And furthermore, the types in STLC are all *monomorphic* i.e. we define the List of strings is defined separately from the list of integers (and there is no way to define a function that works in all lists, regardless of the type of values they are storing). 
+
+To combat this problem, and to ascend ourselves from *Simply-typed* Lamblda Calculus and *Polymorphic* Lambda Calculus (System F), we add the type-level arrows.
+
+Hold it, actually we should talk about Kinds first.
+
+Kinds
+---
+As we know, $x: A \to A$ is read "$x$ has a *type* $A \to A$". But then how do we read $A : Type$? We cannot say that the type of $A$ is $Type$, cause we see that Russell is lurking behind our back, and so we invent another word for it: *kind*, as well as another notation (this is what the double-colon is about).
+
+Formally, in STLC there is just one kind, called $Type$.
+
+$$\frac
+    {}
+    {\Gamma \vdash Type}
+$$
+
+Type-level arrows
+---
+
+Let's recap: value-level arrows, such as `plus` accept and return *values*, and type-level functions, such as `Maybe` convert types to other types. So far, we defined type level arrows. Type-level arrows are pretty similar to them.
+
+And then the two typing rules. *abstraction* (or *Abs*).
+
+$$\frac
+    {\Gamma, X::A \vdash Y::B}
+    {\Gamma \vdash \Lambda Z : \forall X A \to B}
+$$
+
+And *application* (App).
+
+$$\frac
+    {\Gamma \vdash Z : \forall X\  A \to B, \Gamma \vdash X :: A}
+    {\Gamma \vdash Z[X] : B }
+$$
 
 Types and Logic
 ===
+
 A statement can be viewed as a type and a proof of the statement --- a value of that type.
 
 Types Logic and Category Theory
@@ -737,19 +833,9 @@ Now, let's see the categorical perspective of what are we taling about. We alrea
 
 In thinking of a category as a type theory, the objects of a category are
 regarded as types (or sorts) and the arrows as mappings between the corresponding
-types. Roughly speaking, a category may be thought of a type theory shorn of
-its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian
-closed categories correspond to the typed λ-calculus. Later Seely [1984] proved
-that locally Cartesian closed categories correspond to Martin-L¨of, or predicative,
-type theories. Lambek and Dana Scott independently observed that C-monoids,
-i.e., categories with products and exponentials and a single, nonterminal object
-correspond to the untyped λ-calculus. The analogy between type theories and
-categories has since led to what Jacobs [1999] terms a “type-theoretic boom”,
-with much input from, and applications to, computer science
+types. Roughly speaking, a category may be thought of a type theory shorn of its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian closed categories correspond to the typed λ-calculus. Later Seely [1984] proved that locally Cartesian closed categories correspond to Martin-L¨of, or predicative, type theories. Lambek and Dana Scott independently observed that C-monoids, i.e., categories with products and exponentials and a single, nonterminal object correspond to the untyped λ-calculus. The analogy between type theories and categories has since led to what Jacobs [1999] terms a “type-theoretic boom”, with much input from, and applications to, computer science
 
-
-
-value-level arrows are morphisms.
+Value-level arrows are morphisms.
 
 What about type level arrows? We will learn in the next chapter.
 
