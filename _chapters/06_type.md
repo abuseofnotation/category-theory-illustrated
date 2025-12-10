@@ -746,7 +746,7 @@ i.e. the context includes the value $False$ of type $Bool$
 
 Thus, we straight away define the Boolean type to be part of the context.
 
-Value-level arrows
+Value-level arrows --- The Simply-typed Lambda Calculus.
 ---
 
 With that, we start listing the axioms of Lambda Calculus. They are nothing more than the definition of the type of value-level arrows. i.e. functions.
@@ -783,6 +783,24 @@ $$\frac
     {\Gamma \vdash z x : B }
 $$
 
+
+For example, if we take the function $length: string \to int$. For it the abstraction would be: 
+
+$$\frac
+    {\Gamma, x:string \vdash y: int}
+    {\Gamma \vdash \lambda length : string \to int}
+$$
+
+And function *application*  would be
+
+$$\frac
+    {\Gamma \vdash length: string \to int, \Gamma \vdash x: string}
+    {\Gamma \vdash length\ x : int }
+$$
+
+
+
+
 The rules we reviewed so far define a type system called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except *you cannot make your own types*. In STLC all types have to be defined as part of the language (in the way in which we defined the Boolean type above). 
 
 And furthermore, the types in STLC are all *monomorphic* i.e. we define the List of strings is defined separately from the list of integers (and there is no way to define a function that works in all lists, regardless of the type of values they are storing). 
@@ -793,33 +811,66 @@ Hold it, actually we should talk about Kinds first.
 
 Kinds
 ---
-As we know, $x: A \to A$ is read "$x$ has a *type* $A \to A$". But then how do we read $A : Type$? We cannot say that the type of $A$ is $Type$, cause we see that Russell is lurking behind our back, and so we invent another word for it: *kind*, as well as another notation (this is what the double-colon is about).
 
-Formally, in STLC there is just one kind, called $Type$.
+In the expression $x: A$, $A$ is a type. But then what is $Type$ in the Expression $A :: Type$? We cannot say that $A$ has a *type* $Type$, cause we see that Russell's paradox lurking behind our back. In Lambda Calculus, it is resolved in the following way:
+
+* values have types (which are annotated with single-colon -- $:$) 
+* types have types-of-types i.e. *kinds* (which are annotated with a double-colon -- $::$. 
+
+This means that besides a type system and typing rules, we have a *kind-system* and *kinding rules*. But don't throw this book out of the window! The kinding system for both STLC and System F is pretty easy to define.
+
+In STLC there is just one kind, that we call $Type$ (sometimes it is marked with a $*$).
 
 $$\frac
     {}
     {\Gamma \vdash Type}
 $$
 
-Type-level arrows
+And then the type definition rules are defined using this kind e.g. for functions it is
+
+$$\frac
+    {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
+    {\Gamma \vdash A \to B}
+$$
+
+And, in System F, the kind system is just like the type system.
+
+Type-level arrows --- System F
 ---
 
-Let's recap: value-level arrows, such as `plus` accept and return *values*, and type-level functions, such as `Maybe` convert types to other types. So far, we defined type level arrows. Type-level arrows are pretty similar to them.
+Let's recap: value-level arrows (functions), such as `plus` accept and return *values*, and type-level arrows, such as `Maybe` convert types to other types. So far, we defined value-level arrows. Type-level arrows are pretty similar to them.
 
-And then the two typing rules. *abstraction* (or *Abs*).
+The two typing rules. *type abstraction* (or *TAbs*).
 
 $$\frac
-    {\Gamma, X::A \vdash Y::B}
-    {\Gamma \vdash \Lambda Z : \forall X A \to B}
+    {\Gamma, \alpha \vdash B}
+    {\Gamma \vdash \Lambda Z : \forall \alpha.B}
 $$
 
-And *application* (App).
+And *type application* (*TApp*).
 
 $$\frac
-    {\Gamma \vdash Z : \forall X\  A \to B, \Gamma \vdash X :: A}
+    {\Gamma \vdash Z : \forall \alpha . B , \Gamma \vdash X}
     {\Gamma \vdash Z[X] : B }
 $$
+
+Let's get an example (with `Maybe`).
+
+Type *abstraction*:
+
+$$\frac
+    {\Gamma, \alpha \vdash Maybe\ \alpha}
+    {\Gamma \vdash \Lambda Z : \forall \alpha. Maybe\ \alpha}
+$$
+
+And *type application* (*TApp*).
+
+$$\frac
+    {\Gamma \vdash Z : \forall \alpha . Maybe\ \alpha , \Gamma \vdash X}
+    {\Gamma \vdash Z[X] : Maybe\ X }
+$$
+
+And that's it.
 
 Types and Logic
 ===
@@ -831,8 +882,7 @@ Types Logic and Category Theory
 
 Now, let's see the categorical perspective of what are we taling about. We already know that a type corresponds to an *object* in the category of types, and a categorical object has to have at three kinds of morphisms in order for the object to play a role in the category, which correspond to the three types of functions in programming.
 
-In thinking of a category as a type theory, the objects of a category are
-regarded as types (or sorts) and the arrows as mappings between the corresponding
+In thinking of a category as a type theory, the objects of a category are regarded as types (or sorts) and the arrows as mappings between the corresponding
 types. Roughly speaking, a category may be thought of a type theory shorn of its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian closed categories correspond to the typed λ-calculus. Later Seely [1984] proved that locally Cartesian closed categories correspond to Martin-L¨of, or predicative, type theories. Lambek and Dana Scott independently observed that C-monoids, i.e., categories with products and exponentials and a single, nonterminal object correspond to the untyped λ-calculus. The analogy between type theories and categories has since led to what Jacobs [1999] terms a “type-theoretic boom”, with much input from, and applications to, computer science
 
 Value-level arrows are morphisms.
