@@ -764,7 +764,7 @@ We start with the type formation rule (or the kinding rule, as it is called here
 
 $$\frac
     {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
-    {\Gamma \vdash A \to B}
+    {\Gamma \vdash A \to B :: Type}
 $$
 
 And then the two typing rules. One is the term introduction for lambda terms, which is called *abstraction* (or *Abs*).
@@ -798,9 +798,6 @@ $$\frac
     {\Gamma \vdash length\ x : int }
 $$
 
-
-
-
 The rules we reviewed so far define a type system called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except *you cannot make your own types*. In STLC all types have to be defined as part of the language (in the way in which we defined the Boolean type above). 
 
 And furthermore, the types in STLC are all *monomorphic* i.e. we define the List of strings is defined separately from the list of integers (and there is no way to define a function that works in all lists, regardless of the type of values they are storing). 
@@ -826,51 +823,105 @@ $$\frac
     {\Gamma \vdash Type}
 $$
 
-And then the type definition rules are defined using this kind e.g. for functions it is
+And then the type definition rules are defined using this kind e.g. 
 
 $$\frac
-    {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
-    {\Gamma \vdash A \to B}
+    {}
+    {\Gamma \vdash Bool :: Type}
 $$
 
-And, in System F, the kind system is just like the type system.
+And, in System F, we would see later.
 
 Type-level arrows --- System F
 ---
 
-Let's recap: value-level arrows (functions), such as `plus` accept and return *values*, and type-level arrows, such as `Maybe` convert types to other types. So far, we defined value-level arrows. Type-level arrows are pretty similar to them.
+We started defining value-level arrows by defining value-level variables, using the trivial *Var* typing rule, 
+
+$$\frac
+    {x : A \in \Gamma}
+    {\Gamma \vdash x : A}
+$$
+
+System F we have the type-level variables, defined by the *TVar* *kinding* rule.
+
+$$\frac
+    {A :: K \in \Gamma}
+    {\Gamma \vdash A :: K}
+$$
+
+Then, we defined value-level arrows themselves, which convert values for other values.
+
+$$\frac
+    {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
+    {\Gamma \vdash A \to B :: Type}
+$$
+
+In System F, we have *type-level* arrows, that are defined with this kinding rules:
+
+$$\frac
+    {\Gamma, (\alpha :: A) \vdash (B :: Type)}
+    {\Gamma \vdash \forall (\alpha :: A). (B.A :: Type)}
+$$
+
+For example, for the $Maybe$ type, this rule would say.
+
+$$\frac
+    {\Gamma, (\alpha :: Type) \vdash \alpha \to Maybe\ \alpha :: Type}
+    {\Gamma \vdash \forall (\alpha :: type). \alpha \to Maybe\ \alpha :: Type}
+$$
+
+What's more interesting is augmenting value-level arrows functions to work with polymorphic types. 
+
+For this, we need them to accept a type as an argument, in addition to the value.
+
+For example, let's say we have a $MaybeString$ type, which works only with strings. Then, a function that wraps a string value in a $JustString$ constructor would look like this:
+
+$$z = \lambda x:string.\ \text{JustString}x)$$
+
+We augment that with a new syntax that passes 
+
+$$z' = \Lambda \alpha.\ \lambda x:\alpha.\ \text{Just}[\alpha]x)$$
 
 The two typing rules. *type abstraction* (or *TAbs*).
 
 $$\frac
-    {\Gamma, \alpha \vdash B}
-    {\Gamma \vdash \Lambda Z : \forall \alpha.B}
+    {\Gamma, (\alpha :: A) \vdash z : C}
+    {\Gamma \vdash \Lambda z' : \forall (\alpha :: A) . C}
 $$
 
 And *type application* (*TApp*).
 
 $$\frac
-    {\Gamma \vdash Z : \forall \alpha . B , \Gamma \vdash X}
-    {\Gamma \vdash Z[X] : B }
+    {\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}
+    {\Gamma \vdash z'[X] : C[\alpha := X]}
 $$
 
-Let's get an example (with `Maybe`).
+For $Maybe$, it would look like this
 
-Type *abstraction*:
-
-$$\frac
-    {\Gamma, \alpha \vdash Maybe\ \alpha}
-    {\Gamma \vdash \Lambda Z : \forall \alpha. Maybe\ \alpha}
+$$
+\frac
+{\Gamma, \alpha :: * \vdash
+\lambda x : \alpha.\ \text{Just}[\alpha]\ x
+: \alpha \to \text{Maybe } \alpha}
+{\Gamma \vdash
+\Lambda \alpha.\ \lambda x : \alpha.\ \text{Just}[\alpha]\ x
+: \forall \alpha.\ \alpha \to \text{Maybe } \alpha}
 $$
 
-And *type application* (*TApp*).
-
-$$\frac
-    {\Gamma \vdash Z : \forall \alpha . Maybe\ \alpha , \Gamma \vdash X}
-    {\Gamma \vdash Z[X] : Maybe\ X }
+$$
+\frac
+{\Gamma \vdash
+(\Lambda \alpha.\ \lambda x:\alpha.\ \text{Just}[\alpha]x)
+:
+\forall \alpha.\ \alpha \to \text{Maybe } \alpha
+\qquad
+\Gamma \vdash \text{String} :: *}
+{\Gamma \vdash
+(\Lambda \alpha.\ \lambda x:\alpha.\ \text{Just}[\alpha]x)[\text{String}]
+:
+(\alpha \to \text{Maybe }\alpha)[\alpha := \text{String}]}
 $$
 
-And that's it.
 
 Types and Logic
 ===
