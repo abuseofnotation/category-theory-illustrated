@@ -832,96 +832,71 @@ $$
 
 And, in System F, we would see later.
 
-Type-level arrows --- System F
+Type-level arrows and polymorphic functions --- System F
 ---
 
-We started defining value-level arrows by defining value-level variables, using the trivial *Var* typing rule, 
+We started defining STLC by defining value-level *variables*, using the trivial *Var* typing rule, 
 
 $$\frac
     {x : A \in \Gamma}
     {\Gamma \vdash x : A}
 $$
 
-System F we have the type-level variables, defined by the *TVar* *kinding* rule.
+System F we also have *type-level variables*, with the *TVar* *kinding* rule.
 
 $$\frac
     {A :: K \in \Gamma}
     {\Gamma \vdash A :: K}
 $$
 
-Then, we defined value-level arrows themselves, which convert values for other values.
+Now, let's proceed with the arrows themselves. Value-level arrows convert values to other values.
 
 $$\frac
     {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
     {\Gamma \vdash A \to B :: Type}
 $$
 
-In System F, we have *type-level* arrows, that are defined with this kinding rules:
+In System F, we have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
 
 $$\frac
     {\Gamma, (\alpha :: A) \vdash (B :: Type)}
     {\Gamma \vdash \forall (\alpha :: A). (B.A :: Type)}
 $$
 
-For example, for the $Maybe$ type, this rule would say.
+For example, for the $Maybe$ type, this rule would say
 
 $$\frac
-    {\Gamma, (\alpha :: Type) \vdash \alpha \to Maybe\ \alpha :: Type}
-    {\Gamma \vdash \forall (\alpha :: type). \alpha \to Maybe\ \alpha :: Type}
+    {\Gamma, (\alpha :: Type) \vdash Maybe\ \alpha :: Type}
+    {\Gamma \vdash \forall (\alpha :: type). Maybe\ \alpha :: Type}
 $$
 
-What's more interesting is augmenting value-level arrows functions to work with polymorphic types. 
+The more interesting (and harder) part is augmenting value-level arrows to work with polymorphic types i.e. to have functions which accept a type as an argument, in addition to a value.
 
-For this, we need them to accept a type as an argument, in addition to the value.
+For example, let's say we have a $MaybeString$ type, which works only with strings. Then, a function that wraps a some value in a $Maybe$ would look like this:
 
-For example, let's say we have a $MaybeString$ type, which works only with strings. Then, a function that wraps a string value in a $JustString$ constructor would look like this:
+$$z :: string \to MaybeString $$
 
-$$z = \lambda x:string.\ \text{JustString}x)$$
+From this, we abstract the type $String$ (with the rule *TAbs* to build a polymorphic function, which looks like this.
 
-We augment that with a new syntax that passes 
+$$z' :: \forall \alpha. \alpha \to Maybe\ \alpha$$
 
-$$z' = \Lambda \alpha.\ \lambda x:\alpha.\ \text{Just}[\alpha]x)$$
+And then, we use *TApp* to apply the type parameter $String$ to the abstract function to get our original function. Haskell does that automatically for us, so this is not a real Haskell syntax, but in the original notation of System F it looks like this.
 
-The two typing rules. *type abstraction* (or *TAbs*).
+$$z = z'[String]$$
+
+If you have an ides, you can look at the typing rules themselves, *type abstraction* (or *TAbs*), 
 
 $$\frac
     {\Gamma, (\alpha :: A) \vdash z : C}
-    {\Gamma \vdash \Lambda z' : \forall (\alpha :: A) . C}
+    {\Gamma \vdash (\Lambda \alpha :: A . z) : \forall (\alpha :: A) . C}
 $$
 
-And *type application* (*TApp*).
+And *type application* (*TApp*)
 
 $$\frac
     {\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}
     {\Gamma \vdash z'[X] : C[\alpha := X]}
 $$
-
-For $Maybe$, it would look like this
-
-$$
-\frac
-{\Gamma, \alpha :: * \vdash
-\lambda x : \alpha.\ \text{Just}[\alpha]\ x
-: \alpha \to \text{Maybe } \alpha}
-{\Gamma \vdash
-\Lambda \alpha.\ \lambda x : \alpha.\ \text{Just}[\alpha]\ x
-: \forall \alpha.\ \alpha \to \text{Maybe } \alpha}
-$$
-
-$$
-\frac
-{\Gamma \vdash
-(\Lambda \alpha.\ \lambda x:\alpha.\ \text{Just}[\alpha]x)
-:
-\forall \alpha.\ \alpha \to \text{Maybe } \alpha
-\qquad
-\Gamma \vdash \text{String} :: *}
-{\Gamma \vdash
-(\Lambda \alpha.\ \lambda x:\alpha.\ \text{Just}[\alpha]x)[\text{String}]
-:
-(\alpha \to \text{Maybe }\alpha)[\alpha := \text{String}]}
-$$
-
 
 Types and Logic
 ===
