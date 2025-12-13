@@ -37,15 +37,15 @@ However, as the elements of sets are again sets, *a set can contain itself*.
 
 ![A set that contains itself](../06_type/set_contains_itself.svg)
 
-This ability is the root cause of Russel's paradox. 
+This ability is the root cause of Russell's paradox. 
 
 The paradox occurs when we will try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\\\{x \mid x ∉ x \\\}$).
 
-![Russel's paradox - option one](../06_type/russells_paradox.svg)
+![Russell's paradox - option one](../06_type/russells_paradox.svg)
 
 However, there is something wrong with this picture --- if we look at the definition, we recognize that the set that we just defined *also does not contain itself* and therefore it belongs there as well.
 
-![Russel's paradox - option one](../06_type/russells_paradox_2.svg)
+![Russell's paradox - option one](../06_type/russells_paradox_2.svg)
 
 Hmm, something is not quite right here either --- because of the new adjustments that we made, our set now *contains itself*. 
 
@@ -54,7 +54,7 @@ And removing the set, so it's no longer an element of itself would just take us 
 Resolving the paradox in set theory
 ---
 
-The set of sets that do not contain themselves doesn't sound like a ver useful set. And it really isn't --- in fact, I haven't seen it mentioned for any other reason, other than the construction of Russell's paradox. So, most people's initial reaction when learning about Russell's paradox would be something like this: 
+The set of sets that do not contain themselves doesn't sound like a very useful set. And it really isn't --- in fact, I haven't seen it mentioned for any other reason, other than the construction of Russell's paradox. So, most people's initial reaction when learning about Russell's paradox would be something like this: 
 
 >"Wait, can't we just add some rules that say that you cannot draw the set of set that don't contain itself?"
 
@@ -143,13 +143,13 @@ The term "type theory" (uncountable) refers to the whole field of study of type 
 What are types?
 ---
 
-Anyhow, let's get back to our subject (however we want to call it). As we said, type theory was born out of Russell's search for a way to define all collections of objects that are *interesting*, without accidentally defining collections that lead us ashtray (e.g. to his eponymous paradox), and without having to make up a multitude of additional axioms (a-la ZFC). 
+Anyhow, let's get back to our subject (however we want to call it). As we said, type theory was born out of Russell's search for a way to define all collections of objects that are *interesting*, without accidentally defining collections that lead us astray (e.g. to his eponymous paradox), and without having to make up a multitude of additional axioms (a-la ZFC). 
 
 He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer): 
 
 > The *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
 
-Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it. This set is a oasis at the center of the dessert... or perhaps a little dessert in the center of big oasis... Contact me if you can think of some good metaphor.
+Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it. This set is a oasis at the center of the desert... or perhaps a little desert in the center of big oasis... Contact me if you can think of some good metaphor.
 
 <!--
 
@@ -187,7 +187,7 @@ Before introducing the specific formulae for building types, I want to elaborate
 
 > The interesting collections, the collections that we want to talk about in the first place, are the collections that are the *source* and *target* of functions.
 
-This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lense of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions and more generally morphisms.
+This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lens of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions and more generally morphisms.
 
 ```
 class MyType<A> {
@@ -255,17 +255,20 @@ And we use one more extension, that would allow us to write type definitions tha
 
 So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
-```haskell
-data Bool where
-  True  :: Bool
-  False :: Bool
-```
+$$
+\begin{aligned}
+\mathrm{Bool} &:\ \mathrm{Type} \\
+\mathrm{True} &:\ \mathrm{Bool} \\
+\mathrm{False} &:\ \mathrm{Bool}
+\end{aligned}
+$$
+
 Let's go through this definition:
 
 Type formation
 ---
 
-First, `data Bool`, says that there exist a datatype that we call "Bool".
+First, $Bool$, says that there exist a datatype that we call "Bool".
 
 ![The Boolean type without values --- an empty circle](../06_type/bool_type_empty.svg)
 
@@ -290,11 +293,13 @@ Term elimination
 
 And are we done? Not quite, for we must define at least one arrow, coming *from* our new type, for it to be useful in any way (otherwise, it will just be a one-way street). For the Booleans, this function is called `ifElse`
 
-```haskell
-ifElse :: forall a. Bool -> a -> a -> a
-ifElse True a b = a 
-ifElse False a b = b
-```
+$$
+\begin{aligned}
+\mathrm{ifElse} : \forall a.\ \mathrm{Bool} \to a \to a \to a \\
+\mathrm{ifElse} True\ a\ b\ =\ a\\
+\mathrm{ifElse} False\ a\ b\ =\ b \\
+\end{aligned}
+$$
 
 You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
 
@@ -310,18 +315,24 @@ Isomorphisms between types
 
 But why (with the risk of repeating myself) does this exact type has to be the Boolean type? What is stopping our colleague Bobby who always wants to do everything their way, to define their own version of Boolean and using it in their project.
 
-```haskell
-data BobbysBool where
-  BobbysTrue  :: Bool
-  BobbyFalse :: Bool
-```
+$$
+\begin{aligned}
+\mathrm{BobbysBool} &:\ \mathrm{Type} \\
+\mathrm{BobbysTrue} &:\ \mathrm{BobbysBool} \\
+\mathrm{BobbysFalse} &:\ \mathrm{BobbysBool}
+\end{aligned}
+$$
 
 The answer is "nothing". But that is not a huge deal --- we can just whip up a function to convert their Bool to ours:
 
 ```haskell
-convert BobbysBool -> Bool
-convert BobbysTrue = True
-convert BobbyFalse = False
+$$
+\begin{aligned}
+convert\ BobbysBool \to Bool \\
+convert\ BobbysTrue\ =\ True \\
+convert\ BobbyFalse\ =\ False 
+\end{aligned}
+$$
 ```
 
 This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
@@ -335,11 +346,14 @@ Now, we will define the type we in Haskell call, `Maybe` (and what in other lang
 
 But, once you learn to read it, the type definition, by itself is clear enough:
 
-```haskell
-data Maybe a where
-  Nothing :: forall a. Maybe a
-  Just :: forall a. a -> Maybe a
-```
+$$
+\begin{aligned}
+\mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}\,a \\
+\mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}\,a
+\end{aligned}
+$$
+
 Here is a brief description
 
 Type formation
@@ -347,9 +361,9 @@ Type formation
 
 Maybe is the second simplest type, after `Bool` and it looks a lot like `Bool`, but, unlike `Bool`, `Maybe` is a *polymorphic* type, as we can tell by looking at the *type formation rule*
 
-```haskell
-data Maybe a 
-```
+$$
+\mathrm{Maybe} :\ \mathrm{Type} \to \mathrm{Type} 
+$$
 
 Maybe is different from Bool in that it is polymorphic. i.e. there is not just one `Maybe`, but many `Maybe`'s --- one for each type `a` e.g. if there is `Bool`, there is also`Maybe Bool`.
 
@@ -363,18 +377,20 @@ Now, it's time to fill our type.
 
 The first line is similar to what we saw with boolean. It says that there is a value called `Nothing` in each `Maybe` type.
 
-```haskell
-  Nothing :: forall a. Maybe a
-```
+$$
+\mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}\,a \\
+$$
+
 So, here it is.
 
 ![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
 
 Of course there would be no point in having many `Maybe`s if they all are all isomorphic to each other. That's where the second line comes.
 
-```haskell
-  Just :: forall a. a -> Maybe a
-```
+$$
+\mathrm{Just} :\ \forall a.\ a \to \mathrm{Maybe}\,a
+$$
+
 The constructor `Just` represents an arrow from type `a` to type `Maybe a` e.g. from `Boolean` to `Maybe Boolean`.
 
 ![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
@@ -393,12 +409,15 @@ No, we just have to wrap the target type in `Maybe` and it becomes a regular fun
 To close the case, we define one good function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
 
 
-```haskell
-maybe :: forall a b. b -> (a -> b) -> Maybe a -> b
-maybe n _ Nothing  = n
-maybe _ f (Just x) = f x
-```
-Notice that this function defines an arrows from type `Maybe a` to any type `b`, provided that a function `a -> b` (and a value of `b`) is provided.
+$$
+\begin{aligned}
+maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe\ a\ &\to b \\
+maybe\ n\ \_ Nothing\ &=\ n \\
+maybe\ \_\ f\ (Just x)\ &=\ f\ x \\
+\end{aligned}
+$$
+
+Notice that this function defines an arrows from type $Maybe\ a$ to any type $b$, provided that a function $a \to b$ (and a value of $b$) is provided.
 
 Inductive types. The natural number type.
 ===
@@ -412,11 +431,14 @@ This argument applies not only to mathematical theories, but to everything else 
 
 Or as Haskellians say:
 
-```haskell
-data Nat where
-  Zero :: Nat
-  Succ :: Nat -> Nat
-```
+$$
+\begin{aligned}
+\mathbb{N} &:\ \mathrm{Type} \\
+\mathrm{Zero} &:\ \mathbb{N} \\
+\mathrm{Succ} &:\ \mathbb{N} \to \mathbb{N}
+\end{aligned}
+$$
+
 
 Let's follow the arrows. 
 
@@ -425,9 +447,9 @@ Type formation
 
 The first line indicates that the natural numbers type is a normal non-polymorphic, or "monomorphic" type.
 
-```haskell
-data Nat 
-```
+$$
+\mathbb{N} :\ \mathrm{Type} \\
+$$
 
 i.e. there is just one natural numbers type.
 
@@ -438,9 +460,10 @@ Term introduction
 
 The first constructor is also trivial.
 
-```haskell
-  Zero :: Nat
-```
+$$
+\mathrm{Zero} :\ \mathbb{N} \\
+$$
+
 It allows us to construct one value, called zero 
 
 
@@ -452,17 +475,17 @@ i.e. it is a *mot à mot* repetition of Peano's first axiom.
 
 The second constructor is more interesting. 
 
-```haskell
-  Succ :: Nat -> Nat
-```
+$$
+\mathrm{Succ} :\ \mathbb{N} \to \mathbb{N}
+$$
 
 It says that there is  constructor, called "Successor" `Succ` (or `+1`, as we can would call it) i.e. this is the equivalent of 
 
 > 2. If $n$ is a natural number, $n+1$ is a natural number.
 
-`Succ` is an arrow from the type of the natural numbers to itself which means that given one natural number, `Succ` constructs another one. 
+$Succ$ is an arrow from the type of the natural numbers to itself which means that given one natural number, `Succ` constructs another one. 
 
-But right now we have just one term (value) of the natural numbers type: `Zero`. We draw the `Succ` arrow and construct another one, `Succ Zero` (known in some contexts as $1$.
+But right now we have just one term (value) of the natural numbers type: $Zero$. We draw the $Succ$ arrow and construct another one, $Succ\ Zero$ (known in some contexts as $1$.
 
 ![The Natural numbers type without values --- ](../06_type/nat_type_one_double_diagram.svg)
 
@@ -505,11 +528,14 @@ The landscape of types would be a really... flat place, without the *composite t
 
 The ultimate composite type is the list. The linked list specifically, is a thing of beauty, as we shall see shortly.
 
-```haskell
-data List a where
-  Nil :: forall a. List a
-  Cons :: forall a. a -> List a -> List a
-```
+$$
+\begin{aligned}
+\mathrm{List} &:\ \mathrm{Type} \to \mathrm{Type} \\
+\mathrm{Nil} &:\ \forall a.\ \mathrm{List}\,a \\
+\mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}\,a \to \mathrm{List}\,a
+\end{aligned}
+$$
+
 Let's unpack:
 
 Type formation
@@ -517,9 +543,9 @@ Type formation
 
 The type formation rule tells us the `List` (like `Maybe`) is a composite type. 
 
-```haskell
-data List a 
-```
+$$
+\mathrm{List} :\ \mathrm{Type} \to \mathrm{Type} \\
+$$
 
 This means, that there is not one, but many  `List` types, such as `List Nat` `List Bool` etc (infinitely many, if you consider lists of lists (of lists)). Those are usually read as "List of natural numbers", "List of Booleans" etc. 
 
@@ -530,9 +556,9 @@ Term introduction
 
 Now, let's check the constructors. The first defines a static value, one for each list, representing the empty list. 
 
-```haskell
-Nil :: forall a. List a
-```
+$$
+\mathrm{Nil} :\ \forall a.\ \mathrm{List}\,a \\
+$$
 
 We will call this value `Nil` (although native Haskell lists use the `[]` symbol).
 
@@ -540,10 +566,11 @@ We will call this value `Nil` (although native Haskell lists use the `[]` symbol
 
 And now for the more interesting part. The signature of `Cons`, our second constructor is the following.
 
-```haskell
-Cons :: forall a. a -> List a -> List a
-```
-The `List a -> List a` part is pretty similar to the inductive `Succ` constructor, And indeed, like `Succ`, `Cons` is a recursive constructor that generates an infinite amount of terms. However, unlike `Succ` that has signature `Nat -> Nat` (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a`. We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
+$$
+\mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}\,a \to \mathrm{List}\,a
+$$
+
+The $List a \to List a$ part is pretty similar to the inductive $Succ$ constructor, And indeed, like $Succ$, $Cons$ is a recursive constructor that generates an infinite amount of terms. However, unlike $Succ$ that has signature $Nat \to Nat$ (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a`. We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
 
 ![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> Nil -> (0,Nill), 1 -> Nil -> (1,Nill) etc. ](../06_type/list_type_cons.svg)
 
@@ -683,11 +710,13 @@ $$
 
 Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. We defined it in Haskell like this:
 
-```haskell
-data Bool where
-  True  :: Bool
-  False :: Bool
-```
+$$
+\begin{aligned}
+\mathrm{Bool} &:\ \mathrm{Type} \\
+\mathrm{True} &:\ \mathrm{Bool} \\
+\mathrm{False} &:\ \mathrm{Bool}
+\end{aligned}
+$$
 
 However, in some type systems (e.g. in most programming languages) the Boolean type is defined as one of the "primitive" types that are part of the type system itself. If we want for our type system to feature the Boolean type as a primitive, we define it using natural deduction. 
 
