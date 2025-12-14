@@ -325,7 +325,6 @@ $$
 
 The answer is "nothing". But that is not a huge deal --- we can just whip up a function to convert their Bool to ours:
 
-```haskell
 $$
 \begin{aligned}
 convert\ BobbysBool \to Bool \\
@@ -333,24 +332,23 @@ convert\ BobbysTrue\ =\ True \\
 convert\ BobbyFalse\ =\ False 
 \end{aligned}
 $$
-```
 
 This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
 
 Polymorphic types. The Maybe type
 ===
 
-Now, we will define the type we in Haskell call, `Maybe` (and what in other languages is usually called `Option`). If you haven't encountered it, the Haskell documentation provides a very good description:
+Now, we will define the type we in Haskell call, $Maybe$ (and what in other languages is usually called `Option`). If you haven't encountered it, the Haskell documentation provides a very good description:
 
->The Maybe type encapsulates an optional value. A value of type Maybe a either contains a value of type a (represented as `Just a`), or it is empty (represented as `Nothing`). Using `Maybe` is a good way to deal with errors or exceptional cases without resorting to drastic measures such as error.
+>The Maybe type encapsulates an optional value. A value of type Maybe a either contains a value of type a (represented as $Just[a]$), or it is empty (represented as $Nothing$). Using $Maybe$ is a good way to deal with errors or exceptional cases without resorting to drastic measures such as error.
 
 But, once you learn to read it, the type definition, by itself is clear enough:
 
 $$
 \begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
-\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}\,a \\
-\mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}\,a
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
+\mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
 \end{aligned}
 $$
 
@@ -378,7 +376,7 @@ Now, it's time to fill our type.
 The first line is similar to what we saw with boolean. It says that there is a value called `Nothing` in each `Maybe` type.
 
 $$
-\mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}\,a \\
+\mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}[a] \\
 $$
 
 So, here it is.
@@ -388,7 +386,7 @@ So, here it is.
 Of course there would be no point in having many `Maybe`s if they all are all isomorphic to each other. That's where the second line comes.
 
 $$
-\mathrm{Just} :\ \forall a.\ a \to \mathrm{Maybe}\,a
+\mathrm{Just} :\ \forall a.\ a \to \mathrm{Maybe}[a]
 $$
 
 The constructor `Just` represents an arrow from type `a` to type `Maybe a` e.g. from `Boolean` to `Maybe Boolean`.
@@ -411,9 +409,9 @@ To close the case, we define one good function for deconstructing/eliminating th
 
 $$
 \begin{aligned}
-maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe\ a\ &\to b \\
-maybe\ n\ \_ Nothing\ &=\ n \\
-maybe\ \_\ f\ (Just x)\ &=\ f\ x \\
+maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe[a] &\to b \\
+maybe\ n\ f\ Nothing\ &=\ n \\
+maybe\ n\ f\ Just[x]\ &=\ f\ x \\
 \end{aligned}
 $$
 
@@ -508,11 +506,14 @@ Term elimination
 
 Wait, there are also elimination rules, I always forget elimination rules. Here it is:
 
-```haskell
-foldNat :: Nat -> a -> (a -> a) -> a
-foldNat Zero z s = z
-foldNat (Succ a) z s  = s (foldNat a z s)
-```
+$$
+\begin{aligned}
+foldNat : \mathbb{N} \to a \to (a \to a) &\to a\\
+foldNat\ Zero\ z\ s\ &=\ z\\
+foldNat\ (Succ\ a)\ z\ s\ &= s\ (foldNat\ a\ z\ s)\\
+\end{aligned}
+$$
+
 This allows us, for example, to convert our `Nat`s to the normal Haskell `Nat`s:
 
 ```haskell
@@ -531,8 +532,8 @@ The ultimate composite type is the list. The linked list specifically, is a thin
 $$
 \begin{aligned}
 \mathrm{List} &:\ \mathrm{Type} \to \mathrm{Type} \\
-\mathrm{Nil} &:\ \forall a.\ \mathrm{List}\,a \\
-\mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}\,a \to \mathrm{List}\,a
+\mathrm{Nil} &:\ \forall a.\ \mathrm{List}[a] \\
+\mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
 \end{aligned}
 $$
 
@@ -557,7 +558,7 @@ Term introduction
 Now, let's check the constructors. The first defines a static value, one for each list, representing the empty list. 
 
 $$
-\mathrm{Nil} :\ \forall a.\ \mathrm{List}\,a \\
+\mathrm{Nil} :\ \forall a.\ \mathrm{List}[a]
 $$
 
 We will call this value `Nil` (although native Haskell lists use the `[]` symbol).
@@ -567,7 +568,7 @@ We will call this value `Nil` (although native Haskell lists use the `[]` symbol
 And now for the more interesting part. The signature of `Cons`, our second constructor is the following.
 
 $$
-\mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}\,a \to \mathrm{List}\,a
+\mathrm{Cons} :\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
 $$
 
 The $List a \to List a$ part is pretty similar to the inductive $Succ$ constructor, And indeed, like $Succ$, $Cons$ is a recursive constructor that generates an infinite amount of terms. However, unlike $Succ$ that has signature $Nat \to Nat$ (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a`. We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
@@ -576,7 +577,7 @@ The $List a \to List a$ part is pretty similar to the inductive $Succ$ construct
 
 You can view this constructor as the operation of adding the value `a` to a list (and returning a new list).
 
-As you probably expect, the `List` type is inductive i.e. every arrow that you draw generates more arrows (here, we only draw *part* of them (the ones that come from the list `(1,Nill)`).
+As you probably expect, the $List$ type is inductive i.e. every arrow that you draw generates more arrows (here, we only draw *part* of them (the ones that come from the list $(1,Nill)$).
 
 ![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> (1, nill) -> (0, (1,Nill)), 1 -> (1, Nil) -> (1,(1,Nill)) etc. ](../06_type/list_type_cons_2.svg)
 
@@ -587,11 +588,13 @@ Term elimination
 
 Now, let's write the term elimination rule.
 
-```haskell
-foldList :: (b -> a -> b) -> b -> List a -> b
-foldList f z Nil = z
-foldList f z (Cons x xs) = foldList f (f z x) xs
-```
+$$
+\begin{aligned}
+foldList \ :\ (b \to a \to b) \to b \to List[a] &\to b \\
+foldList\ f\ z Nil &= z\\
+foldList\ f\ z (Cons\ x\ xs) &= foldList\ f\ (f\ z\ x)\ xs\\
+\end{aligned}
+$$
 
 **Task 1:** There is a certain mapping from `List` to `Boolean` which is very intuitive. So intuitive, that some dialects of Lisp have no `Boolean` type and all and rely just on this mapping. Try to guess this mapping.
 
@@ -629,12 +632,14 @@ The `Either` type is an interesting one.
 
 It is a type that is parametrized by two types `a` and `b`, and has two constructors/term introduction rules --- one constructor, called `Left`, that takes a value of `a`. And another one, called `Right` that takes a `b`. Here is the definition of Either:
 
-```haskell
-data Either a b where
-  Left   :: forall a b. a -> Either a b
-  Right  :: forall a b. b -> Either a b
-  deriving (P.Show)
-```
+$$
+\begin{aligned}
+\mathrm{Either} &:\ \mathrm{Type} \to \mathrm{Type} \to \mathrm{Type} \\
+\mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
+\mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
+\end{aligned}
+$$
+
 (We will not publish a `fold` function.)
 
 Tuple
@@ -646,10 +651,12 @@ The next type that we will introduce is the `Tuple` type, which is also parametr
 
 Here we will do something different --- instead of the definition, we will directly present the type elimination rules.
 
-```haskell
-first  :: forall a b. Tuple a b -> a
-second :: forall a b. Tuple a b -> b
-```
+$$
+\begin{aligned}
+first\ :\ \forall\ a\ b. Tuple[a\ b] \to a \\
+second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
+\end{aligned}
+$$
 
 **Task 5:** Write a constructor of Tuple. Write a `fold` function for Either.
 
@@ -658,17 +665,22 @@ Positive and negative types
 
 The `Either` type is uniquely defined by its introduction rules i.e. the elimination rules can be derived from the introduction rules.
 
-```haskell
-forall a b. a -> Either a b
-forall a b. b -> Either a b
-```
+$$
+\begin{aligned}
+\mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
+\mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
+\end{aligned}
+$$
 
 `Tuple`, on the other hand, is defined by its elimination rules i.e. the introduction rules can be derived from them:
 
-```haskell
-forall a b. Tuple a b -> a
-forall a b. Tuple a b -> b
-```
+$$
+\begin{aligned}
+first\ :\ \forall\ a\ b. Tuple[a\ b] \to a \\
+second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
+\end{aligned}
+$$
+
 Types that, like `Either`, are defined by their introduction rules are called *positive types*. Types that are defined by their elimination are *negative*. All types that we saw so far (except `Tuple`) are positive. 
 
 **Task 6:** Besides `Tuple`, there is one very important negative type, which we will cover in this chapter (and in various other places).
@@ -697,9 +709,9 @@ Natural deduction
 
 Yes, Haskell's, typing rules are indeed arrows, but they are defined in a language that is different from Haskell, called *natural deduction*. Natural deduction is like Haskell, but it uses a syntax where, where the premise and the conclusion are separated by a horizontal dash, e.g. instead of...
 
-```haskell
-a -> b
-```
+$$
+a \to b
+$$
 
 ...we write...
 
