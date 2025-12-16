@@ -229,7 +229,7 @@ As we said in the first long disclaimer, there is not one, but many type theorie
 
 Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
 
-To please both parties (or to annoy them both), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers. Unlike Lambda Calculus that, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
+To please both parties, (and annoy them both, at the same time), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers: unlike Lambda Calculus that, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
 
 Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
 
@@ -571,7 +571,9 @@ $$
 \mathrm{Cons} :\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
 $$
 
-The $List a \to List a$ part is pretty similar to the inductive $Succ$ constructor, And indeed, like $Succ$, $Cons$ is a recursive constructor that generates an infinite amount of terms. However, unlike $Succ$ that has signature $Nat \to Nat$ (i.e. for each `Nat`, there is another one) `Cons` has a signature `a -> List a -> List a` --- there is one `List a -> List a` constructor for every value of `a`. We can visualize `Cons` as an arrow, which points not to a value, but to another arrow. 
+The $List a \to List a$ part is pretty similar to the inductive $Succ$ constructor, And indeed, like $Succ$, $Cons$ is a recursive constructor that generates an infinite amount of terms. However, unlike $Succ$ that has signature $Nat \to Nat$ (i.e. for each `Nat`, there is another one) `Cons` has a signature $a \to List[a] \to List[a]$ --- there is one $List [a] \to List[a]$ constructor for every type $a$. 
+
+We can visualize $Cons$ as an arrow, which points not to a value, but to another arrow. 
 
 ![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> Nil -> (0,Nill), 1 -> Nil -> (1,Nill) etc. ](../06_type/list_type_cons.svg)
 
@@ -685,21 +687,39 @@ Types that, like `Either`, are defined by their introduction rules are called *p
 
 **Task 6:** Besides `Tuple`, there is one very important negative type, which we will cover in this chapter (and in various other places).
 
+Conclusion
+---
+
+In this section, we started from almost nothing --- just one base type. Then we defined a lot of stuff, very quickly.
+
+![All types we have seen so far (with combinations): Unit, Bool, Maybe Bool, Nat, Maybe Nat, List of Nat, Bool or Nat](../06_type/all_types.svg)
+
+One can see that some of the stuff programmers use is missing, such as strings and numbers other than naturals, but those would be equally easy to define.
+
 <!--
 {% if site.distribution != 'print' %}
 -->
 
-Interlude: From Haskell to System F
+Interlude: From Haskell to Lambda Calculus
 ===
 
-More precisely, we can define arrows not only from an existing types to new ones, but *products* of existing types to new ones.  There is not so much to say, as Haskell products work pretty much like regular products, except they can accept any number of arguments, from 0 to infinity (it's most probably less than that, but nevermind). 
+We did defined a lot of stuff, very quickly, in the prev section, but we relied on Haskell's Generalized Algebraic Datatypes (GADK's). 
+
+$$
+\begin{aligned}
+\mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
+\mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
+\end{aligned}
+$$
+
 
 <!--
 {%endif%}
 -->
 
 
-Formal definition
+System F --- Formal definition
 ===
 
 We saw how Lambda Calculus *works*, now we will see how it is defined formally. The answer is that, as all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
@@ -734,22 +754,22 @@ However, in some type systems (e.g. in most programming languages) the Boolean t
 
 $$\frac
     {}               
-    {Bool :: Type}
+    {\mathrm{Bool} :: \mathrm{Type}}
 $$
 
 There is a type called Bool (technically, this is not a typing rule, but a "kinding" rule (and thus the double-colon)).
 
 $$\frac
     {}               
-    {True : Bool}
+    {\mathrm{True} : \mathrm{Bool}}
 $$
 
 $$\frac
     {}
-    {False : Bool}
+    {\mathrm{False} : \mathrm{Bool}}
 $$
 
-$True$ and $False$ are Bools.
+$\mathrm{True}$ and $\mathrm{False}$ are Bools.
 
 Oh I forgot, in natural deduction it is permitted to have conclusions without premises.
 
@@ -762,28 +782,28 @@ Here's the deal: Types and variables have to be stored *somewhere*. So, given a 
 
 We usually denote the context with the letter $\Gamma$, and we use the $\vdash$ symbol to denote something that follows from that context (oh, no not another arrow) e.g. $\Gamma \vdash a : b$ means that in the context $\Gamma$, there is a variable $a$ that has the type $b$.).
 
-So, when we consider the contex, the above definition becomes
+So, when we consider the context, the above definition becomes
 
 $$\frac
     {}               
-    {\Gamma \vdash Bool :: Type}
+    {\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}
 $$
 
-i.e. the context includes the type $Bool$ 
+i.e. the context includes the type $\mathrm{Bool}$ 
 
 $$\frac
     {}               
-    {\Gamma \vdash True : Bool}
+    {\Gamma \vdash \mathrm{True} : \mathrm{Bool}}
 $$
 
-i.e. the context includes the value $True$ of type $Bool$
+i.e. the context includes the value $\mathrm{True}$ of type $\mathrm{Bool}$
 
 $$\frac
     {}
-    {\Gamma \vdash False : Bool}
+    {\Gamma \vdash \mathrm{False} : \mathrm{Bool}}
 $$
 
-i.e. the context includes the value $False$ of type $Bool$
+i.e. the context includes the value $\mathrm{False}$ of type $\mathrm{Bool}$
 
 Thus, we straight away define the Boolean type to be part of the context.
 
@@ -801,7 +821,7 @@ $$
 
 Now, we proceed to define the types of the arrows.
 
-We start with the type formation rule (or the kinding rule, as it is called here).
+We start with the type formation rule (or the *kinding* rule).
 
 $$\frac
     {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
@@ -839,41 +859,67 @@ $$\frac
     {\Gamma \vdash length\ x : int }
 $$
 
-The rules we reviewed so far define a type system called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except *you cannot make your own types*. In STLC all types have to be defined as part of the language (in the way in which we defined the Boolean type above). 
+The rules we reviewed so far define a type system called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except *you cannot make your own types* i.e. in STLC all types have to be defined as part of the language (in the way in which we defined the Boolean type above). This is because the types in STLC are all *monomorphic* i.e. we can define a version of it which works just for $\mathrm{int}$.
 
-And furthermore, the types in STLC are all *monomorphic* i.e. we define the List of strings is defined separately from the list of integers (and there is no way to define a function that works in all lists, regardless of the type of values they are storing). 
+$$
+\begin{aligned}
+\mathrm{MaybeInt} &:\ \mathrm{Type} \\
+\mathrm{NoInt} &:\ \mathrm{MaybeInt} \\
+\mathrm{JustInt} &: \mathrm{int} \to \mathrm{MaybeInt}
+\end{aligned}
+$$
 
-To combat this problem, and to ascend ourselves from *Simply-typed* Lamblda Calculus and *Polymorphic* Lambda Calculus (System F), we add the type-level arrows.
+And one for $\mathrm{string}$.
 
-Hold it, actually we should talk about Kinds first.
+$$
+\begin{aligned}
+\mathrm{MaybeString} &:\ \mathrm{Type} \\
+\mathrm{NoString} &:\ \mathrm{MaybeString} \\
+\mathrm{JustString} &:\mathrm{string} \to \mathrm{MaybeString}
+\end{aligned}
+$$
+
+(and there is no way to define a function that works in all maybes, regardless of the type of values they are storing). 
+
+To combat this problem, and to ascend ourselves from *Simply-typed* Lamblda Calculus and *Polymorphic* Lambda Calculus (AKA System F), we add the type-level arrows.
+
+$$
+\begin{aligned}
+\mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
+\mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
+\end{aligned}
+$$
+
+
+But, actually we should talk about Kinds first...
 
 Kinds
 ---
 
-In the expression $x: A$, $A$ is a type. But then what is $Type$ in the Expression $A :: Type$? We cannot say that $A$ has a *type* $Type$, cause we see that Russell's paradox lurking behind our back. In Lambda Calculus, it is resolved in the following way:
+In the expression "$x: A$" , "$A$" denotes the type of the value. But then what is $Type$ in the Expression "$A :: Type$"? We cannot say that $Type$ is a *type*, cause we will see Russell, lurking behind our back, with his eponymous paradox. In Lambda Calculus, it is resolved in the following way:
 
-* values have types (which are annotated with single-colon -- $:$) 
-* types have types-of-types i.e. *kinds* (which are annotated with a double-colon -- $::$. 
+* **Values** have **types** (which are annotated with single-colon -- $:$) 
+* **Types** have types-of-types i.e. **kinds** (which are annotated with a double-colon -- $::$.
+* **Kinds** have... OK, let's stop here for now...
 
-This means that besides a type system and typing rules, we have a *kind-system* and *kinding rules*. But don't throw this book out of the window! The kinding system for both STLC and System F is pretty easy to define.
-
-In STLC there is just one kind, that we call $Type$ (sometimes it is marked with a $*$).
+This means that besides a type system and typing rules, we have a *kind-system* and *kinding rules*. But please, don't throw this book out of the window -- the kinding system for both STLC is pretty easy to define: there is just one kind, that we call $\mathrm{Type}$ (sometimes it is marked with a $*$).
 
 $$\frac
     {}
     {\Gamma \vdash Type}
 $$
 
-And then the type definition rules are defined using this kind e.g. 
+And then the type definition rules are defined like this (i.e. everything is of Kind $mathrm{Type}$:
 
 $$\frac
     {}
-    {\Gamma \vdash Bool :: Type}
+    {\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}
 $$
 
-And, in System F, we would see later.
+And for System F, we would see in the next chapter.
 
-Type-level arrows and polymorphic functions --- System F
+Type-level arrows --- System F
 ---
 
 We started defining STLC by defining value-level *variables*, using the trivial *Var* typing rule, 
@@ -883,7 +929,7 @@ $$\frac
     {\Gamma \vdash x : A}
 $$
 
-System F we also have *type-level variables*, with the *TVar* *kinding* rule.
+As we know, System F we also have *type-level variables*, which are defined with a similar *TVar* *kinding* rule.
 
 $$\frac
     {A :: K \in \Gamma}
@@ -897,7 +943,7 @@ $$\frac
     {\Gamma \vdash A \to B :: Type}
 $$
 
-In System F, we have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
+And in System F, we have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
 
 $$\frac
     {\Gamma, (\alpha :: A) \vdash (B :: Type)}
@@ -907,17 +953,20 @@ $$
 For example, for the $Maybe$ type, this rule would say
 
 $$\frac
-    {\Gamma, (\alpha :: Type) \vdash Maybe\ \alpha :: Type}
-    {\Gamma \vdash \forall (\alpha :: type). Maybe\ \alpha :: Type}
+    {\Gamma, (\alpha :: Type) \vdash Maybe[\alpha]:: Type}
+    {\Gamma \vdash \forall (\alpha :: type). Maybe[\alpha]:: Type}
 $$
+
+Polymorphic functions
+---
 
 The more interesting (and harder) part is augmenting value-level arrows to work with polymorphic types i.e. to have functions which accept a type as an argument, in addition to a value.
 
-For example, let's say we have a $MaybeString$ type, which works only with strings. Then, a function that wraps a some value in a $Maybe$ would look like this:
+For example, if we work in the context of STLC and we use the $MaybeString$ type that we defined in the last section (and that works only with strings), we can define a function with the following type signature 
 
-$$z :: string \to MaybeString $$
+$$z :: string \to MaybeString$$
 
-From this, we abstract the type $String$ (with the rule *TAbs* to build a polymorphic function, which looks like this.
+Using the capabilities of System F,  we can abstract the type $String$ (with the rule *TAbs* to build a polymorphic function, which looks like this.
 
 $$z' :: \forall \alpha. \alpha \to Maybe\ \alpha$$
 
@@ -965,6 +1014,91 @@ Terminal objects are nullary products
 <!--
 {% if site.distribution != 'print' %}
 -->
+
+Appendix: definitions in Haskell
+===
+
+I thought a lot about whether to provide the definitions of the basic types in executable Haskell, or as formulas (i.e. monospaced or modern). At the end, I decided that formulas are better, but all of them are indeed Haskell.
+
+If you switch to using explicit `forall` instead of the $\forall$ symbol and two colons for annotating types, you would get something like this:
+
+```
+{-# LANGUAGE GADTs,  NoImplicitPrelude #-}
+
+import qualified Prelude as P
+
+data Bool where
+  True :: Bool
+  False :: Bool
+  deriving (P.Show)
+
+ifElse :: forall a. Bool -> a -> a -> a
+ifElse True a b = a 
+ifElse False a b = b
+
+data Either a b where
+  Left   :: forall a b. a -> Either a b
+  Right  :: forall a b. b -> Either a b
+  deriving (P.Show)
+
+foldEither :: forall a b c. (a -> c) -> (b -> c) -> Either a b -> c
+foldEither fa fb (Left  val) = fa val
+foldEither fa fb (Right val) = fb val
+
+data Tuple a b where
+  Tuple :: forall a b. a -> b -> Tuple a b 
+  deriving (P.Show)
+
+first  :: Tuple a b -> a
+first    (Tuple a b) = a
+
+second :: Tuple a b -> b
+second   (Tuple a b) = b
+
+data Maybe a where
+  Nothing :: forall a. Maybe a
+  Just :: forall a. a -> Maybe a
+  deriving (P.Show)
+
+foldMaybe :: forall a b.  b -> (a -> b) -> Maybe a -> b
+foldMaybe n _ Nothing  = n
+foldMaybe _ f (Just x) = f x
+
+data List a where
+  Nil :: forall a. List a
+  Cons :: forall a. a -> List a -> List a
+  deriving (P.Show)
+
+foldList :: (b -> a -> b) -> b -> List a -> b
+foldList f z Nil = z
+foldList f z (Cons x xs) = foldList f (f z x) xs
+
+data Nat where
+  Zero :: Nat
+  Succ :: Nat -> Nat
+  deriving (P.Show)
+
+foldNat :: Nat -> a -> (a -> a) -> a
+foldNat Zero z s = z
+foldNat (Succ a) z s  = s (foldNat a z s)
+
+plus :: Nat -> Nat -> Nat
+plus Zero n = n
+plus (Succ m) n = Succ (plus m n)
+
+not :: Bool -> Bool
+not False = True
+not True = False
+
+main = do 
+  P.print (ifElse True 1 2) --1
+  P.print (ifElse False 1 2) --2
+  P.print (foldNat (Succ (Succ Zero)) 0 (P.+ 1)) -- 2
+
+```
+The `GADTs` extension is just a way to write more verbose definitions.
+
+And `NoImplicitPrelude` is to prevent Haskell from loading the standard definitions.
 
 Answers
 ===
