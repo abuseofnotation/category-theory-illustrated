@@ -968,7 +968,7 @@ $$
 Polymorphic functions
 ---
 
-The more interesting (and harder) part is augmenting value-level arrows to work with polymorphic types i.e. to have functions which accept a type as an argument, in addition to a value.
+The more interesting (and harder) part of polymorphism is augmenting value-level arrows to work with polymorphic types i.e. to have functions which accept a type as an argument, in addition to a value.
 
 For example, if we work in the context of STLC and we use the $MaybeString$ type that we defined in the last section (and that works only with strings), we can define a function with the following type signature 
 
@@ -978,11 +978,13 @@ Using the capabilities of System F,  we can abstract the type $String$ (with the
 
 $$z' :: \forall \alpha. \alpha \to Maybe\ \alpha$$
 
-And then, we use *TApp* to apply the type parameter $String$ to the abstract function to get our original function. Haskell does that automatically for us, so this is not a real Haskell syntax, but in the original notation of System F it looks like this.
+And then, we use *TApp* to apply the type parameter $String$ to the abstract function to get our original function. 
 
 $$z = z'[String]$$
 
-If you have an ides, you can look at the typing rules themselves, *type abstraction* (or *TAbs*), 
+(Haskell does Type application that automatically for, so this is not a real Haskell syntax).
+
+Here are the typing rules themselves, *type abstraction* (or *TAbs*), 
 
 $$\frac
     {\Gamma, (\alpha :: A) \vdash z : C}
@@ -1005,6 +1007,7 @@ $$
 -->
 Interlude: Higher-kinds --- System F Omega
 ===
+
 
 
 <!--
