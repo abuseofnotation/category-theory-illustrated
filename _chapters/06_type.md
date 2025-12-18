@@ -773,6 +773,8 @@ $\mathrm{True}$ and $\mathrm{False}$ are Bools.
 
 Oh I forgot, in natural deduction it is permitted to have conclusions without premises.
 
+**Task 7:** Define the elimination rule for Booleans, using natural deduction.
+
 Contexts
 ---
 
@@ -807,7 +809,7 @@ i.e. the context includes the value $\mathrm{False}$ of type $\mathrm{Bool}$
 
 Thus, we straight away define the Boolean type to be part of the context.
 
-Value-level arrows --- The Simply-typed Lambda Calculus.
+Value-level arrows 
 ---
 
 With that, we start listing the axioms of Lambda Calculus. They are nothing more than the definition of the type of value-level arrows. i.e. functions.
@@ -859,29 +861,12 @@ $$\frac
     {\Gamma \vdash length\ x : int }
 $$
 
-The rules we reviewed so far define a type system called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except *you cannot make your own types* i.e. in STLC all types have to be defined as part of the language (in the way in which we defined the Boolean type above). This is because the types in STLC are all *monomorphic* i.e. we can define a version of it which works just for $\mathrm{int}$.
+Those rules are all you need to define value-level arrows.
 
-$$
-\begin{aligned}
-\mathrm{MaybeInt} &:\ \mathrm{Type} \\
-\mathrm{NoInt} &:\ \mathrm{MaybeInt} \\
-\mathrm{JustInt} &: \mathrm{int} \to \mathrm{MaybeInt}
-\end{aligned}
-$$
+Simply-typed Lambda Calculus
+---
 
-And one for $\mathrm{string}$.
-
-$$
-\begin{aligned}
-\mathrm{MaybeString} &:\ \mathrm{Type} \\
-\mathrm{NoString} &:\ \mathrm{MaybeString} \\
-\mathrm{JustString} &:\mathrm{string} \to \mathrm{MaybeString}
-\end{aligned}
-$$
-
-(and there is no way to define a function that works in all maybes, regardless of the type of values they are storing). 
-
-To combat this problem, and to ascend ourselves from *Simply-typed* Lamblda Calculus and *Polymorphic* Lambda Calculus (AKA System F), we add the type-level arrows.
+The rules we reviewed so far define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except the types in STLC are all *monomorphic* e.g. we cannot define the polymorphic types like $Maybe$.
 
 $$
 \begin{aligned}
@@ -891,6 +876,29 @@ $$
 \end{aligned}
 $$
 
+The best we can do is to define a separate version of the type which works just for $\mathrm{int}$.
+
+$$
+\begin{aligned}
+\mathrm{MaybeInt} &:\ \mathrm{Type} \\
+\mathrm{NoInt} &:\ \mathrm{MaybeInt} \\
+\mathrm{JustInt} &: \mathrm{int} \to \mathrm{MaybeInt}
+\end{aligned}
+$$
+
+And one for $\mathrm{string}$
+
+$$
+\begin{aligned}
+\mathrm{MaybeString} &:\ \mathrm{Type} \\
+\mathrm{NoString} &:\ \mathrm{MaybeString} \\
+\mathrm{JustString} &:\mathrm{string} \to \mathrm{MaybeString}
+\end{aligned}
+$$
+
+Furthermore, we cannot define a functions that works for polymorphic $Maybe$ (regardless of the type they are holding), so we have to generate not only the datatype, but all functions that use it.
+
+To combat this problem, and to ascend ourselves from *Simply-typed* Lamblda Calculus and *Polymorphic* Lambda Calculus (AKA System F), we define type-level arrows.
 
 But, actually we should talk about Kinds first...
 
@@ -919,7 +927,7 @@ $$
 
 And for System F, we would see in the next chapter.
 
-Type-level arrows --- System F
+Type-level arrows 
 ---
 
 We started defining STLC by defining value-level *variables*, using the trivial *Var* typing rule, 
@@ -988,6 +996,22 @@ $$\frac
     {\Gamma \vdash z'[X] : C[\alpha := X]}
 $$
 
+<!--
+{% if site.distribution != 'print' %}
+-->
+
+<!--
+{% if site.distribution != 'print' %}
+-->
+Interlude: Higher-kinds --- System F Omega
+===
+
+
+<!--
+{%endif%}
+-->
+
+
 Types and Logic
 ===
 
@@ -1011,9 +1035,6 @@ Addendum: The connection between tuple function top and bottom.
 
 Terminal objects are nullary products
 
-<!--
-{% if site.distribution != 'print' %}
--->
 
 Appendix: definitions in Haskell
 ===
@@ -1147,6 +1168,12 @@ foldEither fa fb (Right val) = fb val
 **Task 6:** Besides `Tuple`, there is one very important negative type, which we will cover in this chapter (and in various other places).
 
 It is the *function* type. We can think of functions as "objects that can be evaluated", which means that, as Tuples, they are characterized by their term elimination rule: a function `a -> b` (together with a value `a`) can be reduced to a value `b`.
+
+---
+
+**Task 7:** Define the elimination rule for Booleans, using natural deduction.
+
+TODO
 
 <!--
 {%endif%}
