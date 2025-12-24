@@ -1008,7 +1008,7 @@ $$
 Interlude: Higher-kinds --- System F Omega
 ===
 
-
+"System Fω can be stratified into an infinite hierarchy of Systems Fn, where F0 corresponds to the usual polymorphic System F (quantifying over kinds ∗), F1 to System F with type operators (quantifying over kinds e.g. ∗ → ∗), F2 additionally quantifying over kinds e.g. (∗ → ∗) → ∗ ("to the left of 2 arrows", so to speak), and so on."
 
 <!--
 {%endif%}
