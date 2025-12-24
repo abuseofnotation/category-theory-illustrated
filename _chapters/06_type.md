@@ -1020,6 +1020,14 @@ Types and Logic
 
 A statement can be viewed as a type and a proof of the statement --- a value of that type.
 
+
+
+Lambek's discovery introduced a semantics for the lambda calculus, since it lets us to speak of models of theories formulated in the lambda calculus:
+
+Z: T → Set
+just as we could for algebraic theories. These are again just functors that preserve finite products. In computer programming, the importance of a model is that it gives a picture of what a program actually accomplishes. A model Z sends any program to an actual function between sets.
+
+
 Types Logic and Category Theory
 ===
 
