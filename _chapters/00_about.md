@@ -108,6 +108,17 @@ Some people say that we don’t use maths in our daily life. But, if true, that 
 
 And so "Who is this book for" is not to be read as who should, but who *can* read it. Then, the answer is "everyone".
 
+About the language
+===
+
+Explaining mathematics involves a tradeoff between understandable/approachable and being rigorous/correct. Between the the first-grade teacher who says that if you have one apple and you get another one you'd have two, and presenting a 200-page wall of formulas that prove the same statement, as Russell and Whitehead did in "Principia Mathematica". 
+
+Here, I try to stay in the middle of this spectrum ("the middle way", as the Buddist teachings call it). This is simply my niche, this is simply because there *aren't so many texts* that are there (a math student often has to make by themselves the leap between talking about apples and oranges and talking about formal statements). 
+
+I think that this is because being in the middle is *hard*. You have to build bridges in both directions, to take care of both the less and more advanced, to have both the pictures and formulas. 
+
+And I did put of effort to have both: although I am sloppy/handwavy, I value correctness over everything else. Every statement has been checked extensively by me and other people who helped me with this project and all statements that can possibly leave the reader with the wrong impression have been edited. 
+
 About category theory
 ===
 
@@ -120,6 +131,7 @@ It's in such situations, that people often resort to *formulas* and *diagrams* t
 Category theory formalizes the concept of diagrams and their components --- arrows and objects --- to create a language for presenting all kinds of ideas. In this sense, category theory is a way to unify knowledge, both mathematical and scientific, and to unite various modes of thinking with common terms. 
 
 As a consequence of that, category theory and diagrams are also a very understandable way to communicate a formal concept clearly, something I hope to demonstrate in the following pages.
+
 
 Summary
 ===

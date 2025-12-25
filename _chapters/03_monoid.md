@@ -241,19 +241,19 @@ Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 Group/monoid products
 ===
 
-We already saw a lot of abelian groups that are also cyclic, but we didn't see any abelian groups that are not cyclic. So let's examine what these look like. This time, instead of looking into individual examples, we will present a general way for producing abelian non-cyclic groups from cyclic ones --- it is by uniting them by using *group product*.
+We already saw a lot of abelian groups that are also cyclic, but we didn't see any abelian groups that are *not* cyclic. So let's examine some of those like. Here, instead of looking into individual examples, we will present the general way in which abelian non-cyclic groups are produced --- it is by uniting cyclic groups using the concept of *group product*.
 
 Given any two groups, we can combine them to create a third group, comprised of all possible pairs of elements from the two groups and of the sum of all their actions. 
 
-Let's see how the resulting group looks after taking the product of the following two groups (which, having just two elements and one operation, are both isomorphic to $Z2$). To make it easier to imagine them, we can think of the first one as based on the vertical reflection of a figure and the second, as the horizontal reflection.
+Let's see how the resulting group looks after taking the product of the following two groups (which, having just two elements and one operation, are both isomorphic to $Z_2$). To make it easier to imagine them, we can think of the first one as based on the vertical reflection of a figure and the second, as the horizontal reflection.
 
-![Two trivial groups](../03_monoid/groups_product.svg)
+![Two trivial groups, each with two elements](../03_monoid/groups_product.svg)
 
-(again we have to pretend that the left versions of the figures are the "unflipped" versions, while the right ones are flipped (although it can work the other way around too))
+(again we have to pick an element of each group to represent the identity rotatiom, so, pretend that the left versions of the figures are the "unflipped" versions, while the right ones are flipped (although it can work the other way around too))
 
 We get the set of elements of the new group by taking *the Cartesian product* of the set of elements of the first group and the set of elements of the second.
 
-![Two trivial groups](../03_monoid/groups_product_four.svg)
+![Two trivial groups and their product group, containg all combinations of an element from the first with the ](../03_monoid/groups_product_four.svg)
 
 And the *actions* of a product group are comprised of the actions of the first group, combined with the actions of the second, where each action is applied only to the element that is a member of its original group, leaving the other element unchanged.
 
@@ -283,23 +283,25 @@ In the previous chapter, we saw one *non-cyclic* product group (the Klein four-g
 
 So, if you combine two groups with orders that have some common divisor (as $2$ and $2$, which are both divided by 2), then, their product would not be cyclic. But, if you combine two groups with orders that are relatively prime, (like $2$ and $3$) you would get a cyclic group.
 
-Furthermore, the product of two relatively prime groups would be isomorphic to a cyclic group of the same order, as the product of the orders of its components e.g. the product of $Z_3$ and $Z_2$ is isomorphic to the group $Z_6$ ($Z_3 \times Z_2 \cong Z_6$)
+Furthermore, the product of two relatively prime groups would be isomorphic to a cyclic group of the same order, as the product of the orders of its components e.g. the product of $Z_2$ and $Z_3$ is isomorphic to the group $Z_6$ ($Z_2\times Z_3 \cong Z_6$)
 
 ![Chinese reminder theorem](../03_monoid/chinese_remainder_theorem.svg)
+
+(the generator just adds 1 to each of the two groups)
 
 This is a consequence of an ancient result, known as the *Chinese Remainder theorem*.
 
 Abelian product groups
 ---
 
-Product groups are *abelian*, provided that the *groups that form them* are abelian. We can see that this is true by noticing that, although there is more than one generator, each acts only on its own part of the group, and so doesn't interfere with any others.
+Product groups are *abelian*, provided that the *groups that form them* are abelian. We can see that this is true by noticing that, although there are multiple generators, each generator acts only on its own part of the group, so the generators don't interfere with each other.
 
 Fundamental theorem of Finite Abelian groups
 ---
 
 Products provide one way to create non-cyclic abelian groups --- by creating a product of two or more cyclic groups. The fundamental theory of finite abelian groups is a result that tells us that *this is the only way* to produce non-cyclic abelian groups i.e. 
 
-> All abelian groups are either cyclic or products of cyclic groups.
+> All finite abelian groups are either cyclic or products of cyclic groups.
 
 We can use this law to gain an intuitive understanding of what Abelian groups are, but also to test whether a given group can be broken down to a product of more elementary groups.
 
@@ -341,7 +343,7 @@ Now, let's finally examine a non-commutative group --- the group of rotations *a
 
 ![Reflection of a triangle](../03_monoid/reflection.svg)
 
-Those two operations and their composite results in a group called $Dih3$ that is not abelian (and is furthermore the *smallest* non-abelian group).
+Those two operations and their composites result in a group called $Dih3$ that is not commutative i.e. it is *non-abelian* (and is furthermore the *smallest* non-abelian group).
 
 ![The group of rotations and reflections in a triangle](../03_monoid/symmetry_reflection.svg)
 
@@ -449,24 +451,25 @@ So, basically, the functions that represent the elements of a monoid also form a
 {% if site.distribution != 'print'%}
 -->
 
-Interlude: Currying
+Interlude: Currying 
 ---
 
-Take any function that accepts a pair of arguments of a given type (say $A$ and $B$) and maps them into some result of type $C$, so $A\times B\to C$  (in the case of monoids, the signature would be $A \times A \to A$, as all monoid objects are of the same type).
-
-Schönfinkel showed that for each such function, there exists a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to (B \to C)$, and vice versa.
-
-![The equivalence of curried and uncurried functions](../03_monoid/curry.svg)
-
-In programming, currying is achieved by a higher-order function. Here is how such a function might be implemented.
+As we said, any function that accepts a pair of arguments of a given type (say $A$ and $B$) and maps them into some result of type $C$, so $A\times B\to C$  (in the case of monoids, the signature would be $A \times A \to A$, as all monoid objects are of the same type), there exists a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to (B \to C)$, and vice versa. This function is given by a higher-order function, called `curry`. 
 
 ```typescript
-const curry = <A, B, C> (f:(a:A, b:B) => C) => (a:A) => (b:B) => f(a, b)
+const curry = <A, B, C> 
+    (f:(a:A, b:B) => C) => 
+        (a:A) => 
+            (b:B) => 
+                f(a, b)
 ```
 And equally important is the opposite function, which maps a curried function to a multi-argument one, which is known as *uncurry*.
 
 ```typescript
-const uncurry = <A, B, C> (f:(a:A) => (b:B) => C) => (a:A, b:B) => f(a)(b)
+const uncurry = <A, B, C> 
+    (f:(a:A) => (b:B) => C) => 
+        (a:A, b:B) => 
+            f(a)(b)
 ```
 
 There is a lot to say about these two functions, starting from the fact that their existence gives rise to an interesting relationship between the concept of a *product* and the concept of a *morphism* in category theory, called an *adjunction*. But we will cover this later. For now, we are interested in the fact the two function representations are isomorphic, formally $A\times B\to C\cong A\to B \to C$. 
@@ -488,7 +491,9 @@ This is one part of the isomorphism, the other part is the equivalent function f
 Cayley's theorem
 ---
 
-Once we learn how (using currying) to represent the elements of any monoid as permutations that also form a monoid, it isn't too surprising to learn that this constructed permutation monoid is isomorphic to the one from which it was constructed. This is a result known as the Cayley's theorem:
+In the previous section, we showed how, by using currying we can representing the elements of a given group/monoid as functions from the monoid's underlying set to itsel (AKA permutations) and that those permutations under functional composition make up *another monoid* --- the monoid of permutations, let's call it. 
+
+One thing that *didn't show* in the prev section (but which wouldn't be too surprising), is that every such permutation group/monoid is isomorphic to the monoid from which it is constructed. This is a result known as the Cayley's theorem:
 
 > Any group is isomorphic to its corresponding permutation group. 
 
@@ -507,7 +512,7 @@ Cayley's theorem may not seem very impressive, but that only shows how influenti
 Interlude: Symmetric groups
 ---
 
-The first thing that you have to know about the symmetric groups is that they are *not the same thing as symmetry groups*. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to $1\times 2\times 3...\times n$ or $n!$ (n-factorial). 
+Before we dive, note that symmetric groups are not the same thing as *symmetry* groups. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to $1\times 2\times 3...\times n$ or $n!$ (n-factorial). 
 
 So, for example, the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
 
@@ -531,7 +536,7 @@ Here are some examples:
 
 ![The S3 symmetric group](../03_monoid/s3_z3.svg)
 
-- $\mathrm{S}_3$ is also isomorphic to $Dih3$ (but no other symmetric group is isomorphic to a dihedral group)
+$\mathrm{S}_3$ is also isomorphic to $Dih3$ (but no other symmetric group is isomorphic to a dihedral group)
 
 Based on this insight, can state Cayley's theorem in terms of symmetric groups in the following way: 
 
@@ -581,9 +586,9 @@ Let's elaborate on this thought by reviewing the definition of a category from c
 
 Aside from the little-confusing fact that *monoid objects are morphisms* when viewed categorically, this describes exactly what monoids are. 
 
-Categories have an identity morphism for each object, so for categories with just one object, there should also be exactly one identity morphism. And monoids do have an identity object, which when viewed categorically corresponds to that identity morphism.
+Categories have an identity morphism for each object, so for categories with just one object, there should also be exactly one identity morphism. And monoids do have an identity *object*, which when viewed categorically corresponds to that identity morphism.
 
-Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object, this means that *all morphisms should be composable* with one another. And the monoid operation does exactly that --- given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
+Categories provide a way to compose two morphisms with an appropriate type signature, and for categories with one object, this means that *all morphisms are be composable* with one another. And the monoid operation does exactly that --- given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
 
 Philosophically, defining a monoid as a one-object category corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter its state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors, to adding quantities to a given set of things etc.
 
@@ -614,7 +619,7 @@ To make the representation complete, we add the law for combining the two genera
 
 ![Presentation of Klein four - third law](../03_monoid/klein_four_presentation_third_law.svg)
 
-And then, if we start applying the two generators and follow the laws, we get the four elements.
+And then, if we start applying the two generators and applying the laws, we get the four elements.
 
 ![The elements of Klein four](../03_monoid/klein_four_presentation_elements.svg)
 
