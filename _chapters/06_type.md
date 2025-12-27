@@ -166,7 +166,7 @@ Even worse, as a dead end is at least reachable.
 Building types
 ---
 
-We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types are sets (although not all sets are types) and all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favour, please don't mention it and act surprised when we make it explicit).
+We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types are sets (although not all sets are types) and all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favor, please don't mention it and act surprised when we make it explicit).
 
 In set theory, (and especially in its naive version) all possible sets and functions are *already there from the start*, as the Platonic world of forms. What we do is merely exploring the ones that interests us.
 
@@ -174,7 +174,7 @@ In set theory, (and especially in its naive version) all possible sets and funct
 
 In type theory, we start with a space that is empty.
 
-*[diagram ommited]*
+*[diagram ommitted]*
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 

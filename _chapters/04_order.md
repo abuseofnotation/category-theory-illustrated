@@ -504,7 +504,7 @@ So let's review the definition of a category again.
 > 1. Each object has to have the identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
 
-Looks like we have law number 2 covered. What about that other one --- the identity law? We have it too, under the name *reflexivity*. 
+Looks like we have law number 2 covered, with transitivity. What about the identity law? We have it too, under the name *reflexivity*. 
 
 ![Reflexivity](../04_order/reflexivity.svg)
 
@@ -514,11 +514,9 @@ And since partial orders and total orders are preorders too, they are categories
 
 Orders are special types of categories (all orders are categories, but not all categories are orders). More specifically, they are categories that has *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
 
-in other categories there can be *many different morphisms (arrows)* between two objects and in orders can have 
-
 ![Orders compared to other categories](../04_order/arrows_one_arrow.svg)
 
-In contrast, in the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around, and the existence of either of these functions does not imply that one set is "bigger" than the other one.
+Contrast, this with the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
 
 ![Orders compared to other categories](../04_order/order_category.svg)
 
@@ -559,7 +557,7 @@ We can see that the two definitions and their diagrams are the same. So, speakin
 
 Overall, orders (thin categories) are often used for exploring categorical concepts in a context that is easier to understand e.g. understand the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts).
 
-Orders are also helpful when they are used as thin categories i.e. as an alternative to "full-fledged" categories, in contexts when we aren't particularily interested in the difference between the morphisms that go from one object to another. We will see an example of that in the next chapter.
+Orders are also helpful when they are used as thin categories i.e. as an alternative to "full-fledged" categories, in contexts when we aren't particularly interested in the difference between the morphisms that go from one object to another. We will see an example of that in the next chapter.
 
 <!--
 {% if site.distribution == 'print' %}
