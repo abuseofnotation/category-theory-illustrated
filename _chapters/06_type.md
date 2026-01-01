@@ -812,7 +812,7 @@ Thus, we straight away define the Boolean type to be part of the context.
 Value-level arrows 
 ---
 
-With that, we start listing the axioms of Lambda Calculus. They are nothing more than the definition of the type of value-level arrows (functions).
+With that, we list the axioms of Lambda Calculus, which contain nothing more than the definition of the type of value-level arrows (functions).
 
 There are several typing rules that we have to define, starting with the trivial rule *Var*, that states the following: if we previously said that $x$ has type $A$, then $x$ has type $A$.
 
@@ -830,7 +830,7 @@ $$\frac
     {\Gamma \vdash A \to B :: Type}
 $$
 
-And then the two typing rules. One is the term introduction for lambda terms, which is called *abstraction* (or *Abs*).
+And then the two typing rules. One is the *term introduction* for lambda terms, which is called *abstraction* (or *Abs*).
 
 $$\frac
     {\Gamma, x:A \vdash y: B}
@@ -845,7 +845,6 @@ $$\frac
     {\Gamma \vdash z: A \to B, \Gamma \vdash x: A}
     {\Gamma \vdash z x : B }
 $$
-
 
 For example, if we take the function $length: string \to int$. For it the abstraction would be: 
 
@@ -896,9 +895,9 @@ $$
 \end{aligned}
 $$
 
-Furthermore, we cannot define a functions that works for polymorphic $Maybe$ (regardless of the type they are holding), so we have to generate not only the datatype, but all functions that use it.
+Furthermore, in STLC we cannot define a functions that works for polymorphic $Maybe$ (regardless of the type they are holding), so we have to generate not only the datatype, but all functions that use it.
 
-To combat this problem, and to ascend ourselves from *Simply-typed* Lamblda Calculus and *Polymorphic* Lambda Calculus (AKA System F), we define type-level arrows.
+To combat this problem, and to ascend ourselves from *Simply-typed* to *Polymorphic* Lambda Calculus (AKA System F), we define type-level arrows.
 
 But, actually we should talk about Kinds first...
 
@@ -1002,9 +1001,6 @@ $$
 {% if site.distribution != 'print' %}
 -->
 
-<!--
-{% if site.distribution != 'print' %}
--->
 Interlude: Higher-kinds --- System F Omega
 ===
 
@@ -1019,7 +1015,6 @@ Types and Logic
 ===
 
 A statement can be viewed as a type and a proof of the statement --- a value of that type.
-
 
 Lambek's discovery introduced a semantics for the lambda calculus, since it lets us to speak of models of theories formulated in the lambda calculus:
 
