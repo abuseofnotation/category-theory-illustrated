@@ -174,7 +174,7 @@ In set theory, (and especially in its naive version) all possible sets and funct
 
 In type theory, we start with a space that is empty.
 
-*[diagram ommitted]*
+*[diagram omitted]*
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 
@@ -365,7 +365,7 @@ $$
 
 Maybe is different from Bool in that it is polymorphic. i.e. there is not just one `Maybe`, but many `Maybe`'s --- one for each type `a` e.g. if there is `Bool`, there is also`Maybe Bool`.
 
-![The `Maybe Boolen` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
+![The `Maybe Boolean` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
 
 Polymorphic types are a morphisms from the universe of types, to itself (i.e. the kind of `Maybe` is `Type -> Type`), while `Bool` is just a `Type`.
 
@@ -381,7 +381,7 @@ $$
 
 So, here it is.
 
-![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
+![The `Maybe Boolean` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
 
 Of course there would be no point in having many `Maybe`s if they all are all isomorphic to each other. That's where the second line comes.
 
@@ -391,18 +391,18 @@ $$
 
 The constructor `Just` represents an arrow from type `a` to type `Maybe a` e.g. from `Boolean` to `Maybe Boolean`.
 
-![The `Maybe Boolen` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
+![The `Maybe Boolean` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
 
 Term elimination
 ---
 
 The `Maybe` type is used for handling errors i.e. for defining *partial functions*. Let's say we want to define a function that does not have an arrow for all values in the source. Does this mean that this function cannot be defined?
 
-![A partial function from  `Nat` to `Boolen`: returns False for composite numbers, True for primes and is not defined for 0 and 1](../06_type/isprime_int_bool.svg)
+![A partial function from  `Nat` to `Boolean`: returns False for composite numbers, True for primes and is not defined for 0 and 1](../06_type/isprime_int_bool.svg)
 
 No, we just have to wrap the target type in `Maybe` and it becomes a regular function.
 
-![A function from  `Nat` to `Maybe Boolen`: returns `Just False` for composite numbers, `Just True` for primes and `Nothing` for 0 and 1](../06_type/isprime_int_maybe_bool.svg)
+![A function from  `Nat` to `Maybe Boolean`: returns `Just False` for composite numbers, `Just True` for primes and `Nothing` for 0 and 1](../06_type/isprime_int_maybe_bool.svg)
 
 To close the case, we define one good function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
 
@@ -581,7 +581,7 @@ You can view this constructor as the operation of adding the value `a` to a list
 
 As you probably expect, the $List$ type is inductive i.e. every arrow that you draw generates more arrows (here, we only draw *part* of them (the ones that come from the list $(1,Nill)$).
 
-![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> (1, nill) -> (0, (1,Nill)), 1 -> (1, Nil) -> (1,(1,Nill)) etc. ](../06_type/list_type_cons_2.svg)
+![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> (1, Nill) -> (0, (1,Nill)), 1 -> (1, Nil) -> (1,(1,Nill)) etc. ](../06_type/list_type_cons_2.svg)
 
 The result is a type with values that are... well, *lists* of other values, 
 
@@ -694,7 +694,7 @@ In this section, we started from almost nothing --- just one base type. Then we 
 
 ![All types we have seen so far (with combinations): Unit, Bool, Maybe Bool, Nat, Maybe Nat, List of Nat, Bool or Nat](../06_type/all_types.svg)
 
-One can see that some of the stuff programmers use is missing, such as strings and numbers other than naturals, but those would be equally easy to define.
+One can see that some of the datatypes programmers use is missing, but those can be defined in much the same way as the types we already defined: e.g.  `char` is just a base types like booleans, but have more values, `string` can be a list of chars etc.
 
 <!--
 {% if site.distribution != 'print' %}
@@ -750,14 +750,14 @@ $$
 \end{aligned}
 $$
 
-However, in some type systems (e.g. in most programming languages) the Boolean type is defined as one of the "primitive" types that are part of the type system itself. If we want for our type system to feature the Boolean type as a primitive, we define it using natural deduction. 
+If we want to define it using natural deduction, so it is one of the "primitive" types that are part of the type system itself (as it is defined in most programming languages), it would look like this.
 
 $$\frac
     {}               
     {\mathrm{Bool} :: \mathrm{Type}}
 $$
 
-There is a type called Bool (technically, this is not a typing rule, but a "kinding" rule (and thus the double-colon)).
+This means that there is a type called Bool (technically, this is not a typing rule, but a "kinding" rule (and thus the double-colon)).
 
 $$\frac
     {}               
@@ -812,9 +812,9 @@ Thus, we straight away define the Boolean type to be part of the context.
 Value-level arrows 
 ---
 
-With that, we start listing the axioms of Lambda Calculus. They are nothing more than the definition of the type of value-level arrows. i.e. functions.
+With that, we start listing the axioms of Lambda Calculus. They are nothing more than the definition of the type of value-level arrows (functions).
 
-There are several typing rules that we have to define, starting with the most basic one, which is sometimes called *Var*, that states the following: if we previously said that $x$ has type $A$, then $x$ has type $A$.
+There are several typing rules that we have to define, starting with the trivial rule *Var*, that states the following: if we previously said that $x$ has type $A$, then $x$ has type $A$.
 
 $$\frac
     {x : A \in \Gamma}
@@ -1021,7 +1021,6 @@ Types and Logic
 A statement can be viewed as a type and a proof of the statement --- a value of that type.
 
 
-
 Lambek's discovery introduced a semantics for the lambda calculus, since it lets us to speak of models of theories formulated in the lambda calculus:
 
 Z: T → Set
@@ -1031,10 +1030,13 @@ just as we could for algebraic theories. These are again just functors that pres
 Types Logic and Category Theory
 ===
 
-Now, let's see the categorical perspective of what are we taling about. We already know that a type corresponds to an *object* in the category of types, and a categorical object has to have at three kinds of morphisms in order for the object to play a role in the category, which correspond to the three types of functions in programming.
+Now, let's see the categorical perspective of what are we talking about. 
 
-In thinking of a category as a type theory, the objects of a category are regarded as types (or sorts) and the arrows as mappings between the corresponding
-types. Roughly speaking, a category may be thought of a type theory shorn of its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian closed categories correspond to the typed λ-calculus. Later Seely [1984] proved that locally Cartesian closed categories correspond to Martin-L¨of, or predicative, type theories. Lambek and Dana Scott independently observed that C-monoids, i.e., categories with products and exponentials and a single, nonterminal object correspond to the untyped λ-calculus. The analogy between type theories and categories has since led to what Jacobs [1999] terms a “type-theoretic boom”, with much input from, and applications to, computer science
+We already know that a types correspond to an *object* in the category of types.
+
+The functions 
+
+In thinking of a category as a type theory, the objects of a category are regarded as types (or sorts) and the arrows as mappings between the corresponding types. Roughly speaking, a category may be thought of a type theory shorn of its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian closed categories correspond to the typed λ-calculus. Later Seely [1984] proved that locally Cartesian closed categories correspond to Martin-L¨of, or predicative, type theories. Lambek and Dana Scott independently observed that C-monoids, i.e., categories with products and exponentials and a single, nonterminal object correspond to the untyped λ-calculus. The analogy between type theories and categories has since led to what Jacobs [1999] terms a “type-theoretic boom”, with much input from, and applications to, computer science
 
 Value-level arrows are morphisms.
 

@@ -178,8 +178,11 @@ There can be multiple elements bigger than $a$ and $b$ (all elements that are bi
 
 ![Join with other elements](../04_order/join_other_elements.svg)
 
+Given any two elements in which one is bigger than the other (e.g. $a ≤ b$), the join is this bigger element (in this case $b$) 
 
-Separately, given any two elements in which one is bigger than the other (e.g. $a ≤ b$), the join is this bigger element (in this case $b$) e.g. in a linear orders, the *join* of any two elements is just the bigger element.
+![two connected balls, one is higher than the other (and is the join of the two)](../04_order/join_bigger_element.svg)
+
+e.g. in a linear orders, the *join* of any two elements is just the bigger element.
 
 Like with the greatest element, if two elements have several upper bounds that are equally big, then none of them is a *join* (a join must be unique).
 
@@ -520,9 +523,9 @@ Contrast, this with the category of sets where there are potentially infinite am
 
 ![Orders compared to other categories](../04_order/order_category.svg)
 
-So, like a monoid is a category that has one object, an order is a category that has at most one *morphism* between two objects. But the converse is also true ---  *every category* that has at most one morphism between objects is an order (or a *thin* category as it is called in category-theoretic terms).
+So, like a monoid is a category that has one object, an order is a category that has at most one *morphism* between two objects. But the converse is also true ---  *every category* that has at most one morphism between objects is an order.
 
-An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in thin categories *all diagrams commute*.
+An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in orders *all diagrams commute*.
 
 **Task 6:** Prove this. 
 
@@ -540,8 +543,8 @@ But wait, wasn't there some other operation that that corresponded to set inclus
 
 In category theory, an object $G$ is the coproduct of objects $Y$ and $B$ if the following two conditions are met:
 
-1. We have a morphism from any of the elements of the coproduct to the coproduct, so $Y → G$ and $B → G$.
-2. For any other object $P$ that also has those morphisms (so $Y → P$ and $B → P$) we would have morphism $G → P$.
+1. We have a unique morphism from any of the elements of the coproduct to the coproduct, so $Y → G$ and $B → G$.
+2. For any other object $P$ that also has those morphisms (so $Y → P$ and $B → P$) we would have a unique morphism $G → P$.
 
 ![Joins as coproduct](../04_order/coproduct_morphisms.svg)
 
@@ -553,11 +556,16 @@ In the realm of orders, we say that $G$ is the *join* of objects $Y$ and $B$ if:
 
 ![Joins as coproduct](../04_order/coproduct_join_morphisms.svg)
 
-We can see that the two definitions and their diagrams are the same. So, speaking in category theoretic terms, we can say that the *categorical coproduct* in the category of orders is the *join* operation. Which of course means that *products* correspond to *meets*.
+We can see that the two definitions, and their corresponding diagrams, are basically the same, we just replaced "bigger" with "has a unique morphism" (because in orders all morphisms are unique). 
 
-Overall, orders (thin categories) are often used for exploring categorical concepts in a context that is easier to understand e.g. understand the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts).
+Speaking in category-theoretic terms, we can say that the *categorical coproduct* in the *category of orders* is the *join* operation. Which of course means that *products* correspond to *meets*.
 
-Orders are also helpful when they are used as thin categories i.e. as an alternative to "full-fledged" categories, in contexts when we aren't particularly interested in the difference between the morphisms that go from one object to another. We will see an example of that in the next chapter.
+Orders as thin categories
+---
+
+In category-theoretic terms, orders (categories that have at most one morphism with a given type signature) are known as "thin" categories, and are often used for exploring categorical concepts in a context that is easier to understand than in normal (non-thin) categories. For example, as we saw, understanding the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts.
+
+Thin categories are also helpful in contexts when we want to keep it simple and we aren't particularly interested in the differences between the morphisms that go from one object to another. We will see an example of that in the next chapter.
 
 <!--
 {% if site.distribution == 'print' %}

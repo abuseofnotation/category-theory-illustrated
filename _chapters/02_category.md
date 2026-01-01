@@ -14,6 +14,7 @@ When we are finished with that, we will try (and almost succeed) to define categ
 In the previous chapter, we needed a way to construct a set whose elements are _composite_ of the elements of some other sets e.g. when we discussed mathematical functions, we couldn't define $+$ and $-$ because we could only formulate functions that take one argument. Similarly, when we introduced the primitive types in programming languages, like `Char` and `Number`, we mentioned that most of the types that we actually use are _composite_ types. So how do we construct those?
 
 So, consider the set $A$ (containing $a$'s) and the set $B$ (containing $B$'s) 
+
 ![Product parts](../02_category/product_parts.svg)
 
 The _Cartesian product_ (or _tuple_) of sets $A$ and $B$ (denoted $A \times B$) is the set of _ordered pairs_ that contain one element of the set $A$ and one element of the set $B$. Or formally speaking: $A \times B = \{ (a, b) \}$ where $a ∈ A, b ∈ B$ ($∈$ means "is an element of").
@@ -134,7 +135,11 @@ We claim that the same reasoning applies to all other objects that can take the 
 
 ![Product, external diagram](../02_category/product_morphisms.svg)
 
-More formally, if we suppose that there is a set $I$ that can serve as an impostor of the product of sets $A$ and $B$ (i.e. that $I$ is such that there exists two functions $I \to A$ and $I \to B$, then there must also exist a unique function with the type signature $g: I /to A \times B$, that converts the impostor product to the real product, such that the above two functions would be just the composition of $g$ with the usual "getter" functions of the product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$). In other words, whichever object we pick for $I$, this diagram would commute (oh no, not this diagram again).
+More formally, if we suppose that there is a set $I$ that can serve as an impostor of the product of sets $A$ and $B$ (i.e. that $I$ is such that there exists two functions $I \to A$ and $I \to B$, then there must also exist a unique function with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the above two functions would be just the composition of $g$ with the usual "getter" functions of the product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$). 
+
+We prove this by giving a formula for the function $g$, such that it fits our criteria. Given functions  $g^{1}: I \to A$ and $g^{2}: I \to B$, the function $g$ would be just the function that makes up a pair of the results of those two functions, so if $i$ is an element of $I$, then $g = (i) \to (g^{1}(i), g^{2}(i))$.
+
+So, the function $g$ exist for every object $I$. In other words, whichever object we pick for $I$, this diagram would commute (oh no, not this diagram again).
 
 ![Product, universal property](../02_category/product_universal_property.svg)
 
@@ -142,10 +147,22 @@ You would see a lot of similar diagrams in this book. In category theory, we oft
 
 ## Isomorphism and equality
 
-One thing that we should point out, is that this definition (as all the previous ones, by the way) does not rule out the sets which are *isomorphic* to the product. When we represent things using universal properties, an isomorphism is treated as equality. 
+One thing that we should point out, is that this definition (as all the previous ones, by the way) does not rule out the sets which are *isomorphic* to the product. When we represent things using universal properties, isomorphism is treated as equality. We say that the product is "unique up to *an isomorphism*. This is a shorthand for "there are actually more than one of it, but they are all isomorphic to each other, so we don't care".
+
 <!--TODO diagram-->
 
-This is the same viewpoint that we adopt in programming, especially when we work on the higher level --- there might be many different implementations of pair, but as long as they work in the same way (i.e. we can convert one to the other and vice versa) they are all the same to us.
+This is the same viewpoint that we often adopt in programming, especially when we work on the higher level: although there might be many different implementations list or a pair, or many different formats in which a given data can be stored, as long as we have a way to convert one to the other (and vice versa they are all the same to us.
+
+<!--
+
+TODO 
+
+Addendum: Testing the definition
+---
+
+In the previous section, we proved that the  definition of products in terms of functions works, but, as Donald Knuth once implied, proving something doesn't beat testing it. So
+
+-->
 
 # Sums
 
