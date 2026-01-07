@@ -20,7 +20,7 @@ We began by reviewing the mother of all categories --- *the category of sets*.
 
 ![The category of sets](../10_functors/category_sets.svg)
 
-We also saw that it contains within itself many other categories, such as the category of types in programming languages.
+We also saw that it contains within itself many other categories, such as the category of types (actually different categories of types, but let's think about the one we learned about (System F) for now).
 
 Special types of categories 
 ---
@@ -32,7 +32,7 @@ We also learned about other algebraic objects that turned out to be just *specia
 Other categories
 ---
 
-We also defined a lot of *categories based on different concepts*, like the ones based on logics/programming languages, but also some "less-serious ones", as for example the color-mixing partial order/category.
+We also defined a lot of *categories based on different concepts*, like the ones based on logics/types, but also some "less-serious ones", as for example the color-mixing partial order/category.
 
 ![Category of colors](../10_functors/category_color_mixing.svg)
 
@@ -441,36 +441,38 @@ The smoothness of the mapping means that paths may stretch or collapse but not b
 -->
 
 
-Functors in programming. The list functor
+Functors in types. The list functor
 ===
 
-Types in a given programming language form a category, and in that category there are some functors that programmers use every day, such as the list functor, that we will use as an example. The list functor is an example of a functor that maps the realm of simple (primitive) types and functions to the realm of more complex (generic) types and functions. 
+A type theory/type system forms a category, and in that category there are some functors that programmers use every day, such as the list functor, that we will use as an example. The list functor is an example of a functor that maps the realm of simple (primitive) types and functions to the realm of more complex (generic) types and functions. 
 
 ![A functor in programming](../10_functors/functor_programming.svg)
 
-But let's start with the basics: defining the concept of a functor in programming context is as simple as changing the font we use in our formulas from "modern" to "monospaced". And also, using the more "programmy" terms listed in the table in chapter 2.
+But let's start with the basics: defining the concept of a functor in type-theoretic context is as simple as changing some of the terms that are used, and optionally, changing the font we use in our formulas from "modern" to "monospaced". 
 
-> A functor between two categories (let's call them `A` and `B`) consists of a mapping that maps each ~~object~~ *type* in `A` to a type in `B` and a mapping that maps each ~~morphism~~ *function* between types in `A` to a function between types in `B`, in a way that preserves the structure of the category.
+> A functor between two ~~categories~~ type universes (let's call them `A` and `B`) consists of a mapping that maps each ~~object~~ *type* in `A` to a type in `B` and a mapping that maps each ~~morphism~~ *function* between types in `A` to a function between types in `B`, in a way that preserves the structure of the ~~category~~ type system.
+
+(Note that we are introducing a new term "type universe" this is just a name for the collection of all types that are in existence)
 
 Comparing these definitions makes us realize that mathematicians and programmers are two very different communities, that are united by the fact that they both use functors (and by their appreciation of peculiar typefaces).
 
 Type mapping
 ---
 
-The first component of a functor is a mapping that converts one type (let's call it `A`) to another type (`B`). So it is *like a function, but between types*. Such constructions are supported by almost all programming languages that have static type checking in the first place --- they go by the name of *generic types* . A generic type is nothing but a function that maps one (concrete) type to another (this is why generic types are sometimes called *type-level functions*). 
+The first component of a functor is a mapping that converts each type to another type. so, it is *a type-level arrow*. But we already know about those: in type-theoretic terms, they are known as *polymorphic type* (as a polymorphic type is nothing but an arrow that maps all types to other types).
 
 ![A functor in programming - type mapping](../10_functors/functor_programming_objects.svg)
 
-Note that although the diagrams they look similar, a *type-level* function is completely different from a *value-level* function, e.g. a value-level polymorphic function from `a`, to `List<a>` (or in mathy Haskell-inspired notation $forall\ a. a \to List\ a$) converts a *value* of type `a` to a value of type `List<a>` and is different from the *type-level* function `List<A>` as that one converts a *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.). We will review value-level polymorphic functions at the end of the chapter.
+Note that although the diagrams they look similar, a polymorphic *type-level* arrow is completely different from a polymorphic *value-level* arrow i.e. type-level* arrow `List<A>` as that one converts each *type* $a$ to a *type* $List\ a$ (e.g. the type `string` to the type $List\ string$, $number$ to $List\ number$ etc.) is not the same thing as a polymorphic value-level arrow from `a`, to `List<a>`, or in our mathy Haskell-inspired notation $\forall\ a. a \to List\ a$, which converts a value of type $a$ to a value of type $List a$ (we will learn about value-level polymorphic functions later in this chapter).
 
 Function mapping
 ---
 
-So the type mapping of a functor is simply a generic type in a programming language (we can also have functors between two generic types, but we will review those later). So what is the *function mapping* --- this is a mapping that convert any function operating on simple types, like $string \to number$ to a function between their more complex counterparts e.g. $List\ string \to List\ number$.
+So the type mapping of a functor is simply a polymorphic type (we can also have functors between different two polymorphic types, but we will review those later). So, what is the *function mapping*? This is a mapping that convert any function operating on simple types, like $string \to number$ to a function between their more complex counterparts e.g. $List\ string \to List\ number$.
 
 ![A functor in programming - function mapping](../10_functors/functor_programming_morphisms.svg)
 
-In programming languages, this mapping is represented by a higher-order function called `map` with a signature (using Haskell notation), $(a \to b) \to (Fa \to Fb)$, where $F$ represents the generic type.
+In type theory, this mapping is represented by a higher-order function called $map$ with a signature $(a \to b) \to (Fa \to Fb)$, where $F$ represents the generic type.
 
 Note that, although any possible function that has this type signature (that that obeys the functor laws) gives rise to a functor, *not all such functors are useful*. Usually, there is only one of them that makes sense for a given generic type and that's why we talk about *the* list functor, and we define `map` directly in the in the generic datatype, as a method.
 
@@ -478,7 +480,7 @@ In the case of lists and similar structures, the *useful* implementation of `map
 
 ```
 class Array<A> {
-  map (f: A ➞ B): Array<B> {
+  map (f: A => B): Array<B> {
     let result = [];
     for (obj of this) {
       result.push(f(obj));
@@ -503,6 +505,7 @@ a.map(f).map(g) == a.map((a) => g(f(a)))
 ```
 
 **Task 7:** Use examples to convince yourself that the laws are followed.
+
 What are functors for
 ===
 
@@ -512,7 +515,7 @@ Well, we saw that *maps are functors* and we know that *maps are useful*, so let
 
 So, why is a map useful? Well, it obviously has to do with the fact that the points and arrows of the map corresponds to the cities and the roads in the place you are visiting in i.e. due to the very fact that it is a functor, but there is a second aspect as well - maps (or at least those of them that are useful) are *simpler to work with* than the actual things they represent. For example, road maps are useful, because they are *smaller* than the territory they represent, so it is much easier to go look up the routes between two given places by following a map, than to actually travel through all of them in real life. 
 
-And functors in programming are used for similar reason - functions that involve simple types like `string`, `number`, `boolean` etc. are ... simple, and least when compared with functions that work with lists and other generic types. Using the `map` function allows us to operate on such types without having to think about them and to derive functions that transform them, from functions that transform simple values. In other words, functors are means of *abstraction*.
+And type-theoretic functors are used in programming for similar reason - functions that involve simple types like `string`, `number`, `boolean` etc. are ... simple, and least when compared with functions that work with lists and other generic types. Using the `map` function allows us to operate on such types without having to think about them and to derive functions that transform them, from functions that transform simple values. In other words, functors are means of *abstraction*.
 
 Of course, not all routes on the map and no functions that between generic datatypes can be derived just by functions between the types they contain. This is generally true for many "useful" functors: because their source categories are "simpler" than the target, some of the morphisms in the target have no equivalents in the source i.e. making the model simpler inevitably results in losing some of its capabilities. This is a consequence of "the map is not the territory" principle ("every abstraction is a leaky abstraction", as Joel Spolsky puts it).
 
@@ -524,15 +527,15 @@ Now, before we close it off, we will review one more functor-related concept tha
 Endofunctors
 ---
 
-To understand what pointed endofunctors are, we have to first understand what are *endofunctors*, and we already saw some examples of those in the last section. Let me explain: from the way the diagrams there looked like, we might get the impression that different type families belong to different categories.
+To understand what pointed endofunctors are, we have to first understand what are *endofunctors*, and we already saw some examples of those in the last section. Let me explain: from the way the diagrams there looked like, we might get the impression that different type universes belong to different categories.
 
 ![A functor in programming](../10_functors/functor_programming.svg)
 
-But that is not the case - all type families from a given programming language are actually part of one and the same category - the category of *types*.
+But that is not the case a type system is a category, so all type universes are actually part of one and the same category.
 
 ![A functor in programming](../10_functors/functor_programming_endo.svg)
 
-Wait, so this is permitted? Yes, these are exactly what we call *endofunctors* i.e. ones that have one and the same category as source and target.
+Yes, these are exactly what we call *endofunctors* i.e. ones that have one and the same category as source and target.
 
 The identity functor
 ---

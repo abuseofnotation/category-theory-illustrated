@@ -3,6 +3,9 @@ layout: default
 title: Types
 ---
 
+Types
+===
+
 In this chapter we will talk about types. This might be disappointing for you, if you expected to learn about as many *new* categories as possible (which you don't even suspect that they are categories till the unexpected reveal), as we've been talking about the category of types in a given programming language ever since the first chapter, and we already know how they form a category. We are also already familiar with the Curry-Howard correspondence that connects types and logic. However, types are not just about programming languages. And they are more than just another category. They are also at the heart of a mathematical theory known as *type theory*. 
 
 Type theory is an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and it is as powerful tool as any of those formalisms. 
@@ -242,16 +245,6 @@ So, let's start with an empty space, when nothing is defined.
 
 ![An empty diagram](../06_type/empty_type.svg)
 
-In Haskell we can do that by removing the standard library, (called "Prelude") which is typically imported implicitly.
-
-```haskell
-{-# LANGUAGE NoImplicitPrelude #-}
-```
-And we use one more extension, that would allow us to write type definitions that are a bit more explicit.
-
-```haskell
-{-# LANGUAGE GADTs, NoImplicitPrelude #-}
-```
 
 So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
@@ -327,13 +320,20 @@ The answer is "nothing". But that is not a huge deal --- we can just whip up a f
 
 $$
 \begin{aligned}
-convert\ BobbysBool \to Bool \\
-convert\ BobbysTrue\ =\ True \\
-convert\ BobbyFalse\ =\ False 
+convert\ BobbysBool &\to Bool \\
+convert\ BobbysTrue\ &=\ True \\
+convert\ BobbyFalse\ &=\ False 
 \end{aligned}
 $$
 
 This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
+
+
+Other base types
+---
+Almost forgot: in the same way as we constructed the Booleans, we can construct any other finite/base types, such as the type of balls.
+
+![The type of balls: a circle with several colorful balls](../06_type/balls_construct.svg)
 
 Polymorphic types. The Maybe type
 ===
@@ -571,13 +571,13 @@ $$
 \mathrm{Cons} :\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
 $$
 
-The $List a \to List a$ part is pretty similar to the inductive $Succ$ constructor, And indeed, like $Succ$, $Cons$ is a recursive constructor that generates an infinite amount of terms. However, unlike $Succ$ that has signature $Nat \to Nat$ (i.e. for each `Nat`, there is another one) `Cons` has a signature $a \to List[a] \to List[a]$ --- there is one $List [a] \to List[a]$ constructor for every type $a$. 
+The $List\ a \to List\ a$ part is pretty similar to the inductive $Succ$ constructor, And indeed, like $Succ$, $Cons$ is a recursive constructor that generates an infinite amount of terms. However, unlike $Succ$ that has signature $Nat \to Nat$ (i.e. for each `Nat`, there is another one) `Cons` has a signature $a \to List[a] \to List[a]$ --- there is one $List [a] \to List[a]$ constructor for every type $a$. We can visualize $Cons$ as an arrow, which points not to a value, but to another arrow. You can view this constructor as the operation of adding the value `a` to a list (and returning that list).
 
-We can visualize $Cons$ as an arrow, which points not to a value, but to another arrow. 
+![The `Cons` function --- An arrow from the `Nat` type, pointing to the type of arrows from list type to itself: x -> (1,x), x -> (2,x), x -> (3,x) etc. ](../06_type/list_type_cons_internal.svg)
+
+Let's start plotting the arrows of these functions, starting with the base value: `Nil`.
 
 ![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> Nil -> (0,Nill), 1 -> Nil -> (1,Nill) etc. ](../06_type/list_type_cons.svg)
-
-You can view this constructor as the operation of adding the value `a` to a list (and returning a new list).
 
 As you probably expect, the $List$ type is inductive i.e. every arrow that you draw generates more arrows (here, we only draw *part* of them (the ones that come from the list $(1,Nill)$).
 
@@ -694,16 +694,16 @@ In this section, we started from almost nothing --- just one base type. Then we 
 
 ![All types we have seen so far (with combinations): Unit, Bool, Maybe Bool, Nat, Maybe Nat, List of Nat, Bool or Nat](../06_type/all_types.svg)
 
-One can see that some of the datatypes programmers use is missing, but those can be defined in much the same way as the types we already defined: e.g.  `char` is just a base types like booleans, but have more values, `string` can be a list of chars etc.
+One can see that some of the datatypes programmers use is missing, but those can be defined in much the same way as the types we already defined: e.g. `char` is just a base types like booleans, but has more values, `string` can be implemented as a list of chars etc.
 
 <!--
 {% if site.distribution != 'print' %}
 -->
 
-Interlude: From Haskell to Lambda Calculus
+Interlude: Church encoding --- from Haskell to Lambda Calculus 
 ===
 
-We did defined a lot of stuff, very quickly, in the prev section, but we relied on Haskell's Generalized Algebraic Datatypes (GADK's). 
+In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). 
 
 $$
 \begin{aligned}
@@ -981,7 +981,7 @@ And then, we use *TApp* to apply the type parameter $String$ to the abstract fun
 
 $$z = z'[String]$$
 
-(Haskell does Type application that automatically for, so this is not a real Haskell syntax).
+(This is not a real Haskell syntax, as Haskell does type application automatically --- you just provide the value and the language deduces the type from it).
 
 Here are the typing rules themselves, *type abstraction* (or *TAbs*), 
 
@@ -1010,50 +1010,67 @@ Interlude: Higher-kinds --- System F Omega
 {%endif%}
 -->
 
-
-Types and Logic
+Types and Categories
 ===
 
-A statement can be viewed as a type and a proof of the statement --- a value of that type.
+In the last chapter, we talked a lot about the connection between types and logics known as Curry-Howard isomorphism: 
 
-Lambek's discovery introduced a semantics for the lambda calculus, since it lets us to speak of models of theories formulated in the lambda calculus:
+A statement can be viewed as a type.
 
-Z: T → Set
-just as we could for algebraic theories. These are again just functors that preserve finite products. In computer programming, the importance of a model is that it gives a picture of what a program actually accomplishes. A model Z sends any program to an actual function between sets.
+A proof of the statement --- a value of that type.
+
+And proof that depend on one-another are value-level arrows (function).
+
+Things look pretty similar from a category-theoretic standpoint:
+
+A type is an object.
+
+A value is a morphism from the Unit type.
+
+So, roughly speaking, a category may be thought of a type theory without its syntax.
+
+Let's talk about the specific type theories that we saw.
+
+Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
+
+And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
 
 
-Types Logic and Category Theory
-===
+What about type-level arrows (AKA polymorphic types)? We will learn about them in the next chapter.
 
-Now, let's see the categorical perspective of what are we talking about. 
-
-We already know that a types correspond to an *object* in the category of types.
-
-The functions 
-
-In thinking of a category as a type theory, the objects of a category are regarded as types (or sorts) and the arrows as mappings between the corresponding types. Roughly speaking, a category may be thought of a type theory shorn of its syntax. In the 1970s Lambek20 established that, viewed in this way, cartesian closed categories correspond to the typed λ-calculus. Later Seely [1984] proved that locally Cartesian closed categories correspond to Martin-L¨of, or predicative, type theories. Lambek and Dana Scott independently observed that C-monoids, i.e., categories with products and exponentials and a single, nonterminal object correspond to the untyped λ-calculus. The analogy between type theories and categories has since led to what Jacobs [1999] terms a “type-theoretic boom”, with much input from, and applications to, computer science
-
-Value-level arrows are morphisms.
-
-What about type level arrows? We will learn in the next chapter.
-
+<!--
 
 Addendum: The connection between tuple function top and bottom.
 ===
-
+TODO
+Tuple and functions are related via tensor-hom
 Terminal objects are nullary products
+--> 
 
 
 Appendix: definitions in Haskell
 ===
 
-I thought a lot about whether to provide the definitions of the basic types in executable Haskell, or as formulas (i.e. monospaced or modern). At the end, I decided that formulas are better, but all of them are indeed Haskell.
+I thought a lot about whether to provide the definitions of the basic types in executable Haskell, or as formulas (i.e. monospaced or modern). At the end, I decided that formulas are better, but all of them are indeed Haskell, with several caveats:
 
-If you switch to using explicit `forall` instead of the $\forall$ symbol and two colons for annotating types, you would get something like this:
+
+First, we want to start from a blank state. In Haskell we can do that by removing the standard library, (called "Prelude") which is typically imported implicitly.
+
+```haskell
+{-# LANGUAGE NoImplicitPrelude #-}
+```
+And we use one more extension, that would allow us to write type definitions that are a bit more explicit.
+
+```haskell
+{-# LANGUAGE GADTs, NoImplicitPrelude #-}
+```
+
+
+And that is pretty much it, that and using `forall` instead of the $\forall$ symbol.
+
 
 ```
-{-# LANGUAGE GADTs,  NoImplicitPrelude #-}
-
+{-# LANGUAGE GADTs,  NoImplicitPrelude #-} 
 import qualified Prelude as P
 
 data Bool where
@@ -1125,9 +1142,10 @@ main = do
   P.print (foldNat (Succ (Succ Zero)) 0 (P.+ 1)) -- 2
 
 ```
-The `GADTs` extension is just a way to write more verbose definitions.
 
-And `NoImplicitPrelude` is to prevent Haskell from loading the standard definitions.
+<!--
+{% if site.distribution != 'print' %}
+-->
 
 Answers
 ===
