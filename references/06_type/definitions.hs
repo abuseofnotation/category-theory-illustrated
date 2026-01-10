@@ -65,15 +65,6 @@ not :: Bool -> Bool
 not False = True
 not True = False
 
-type MaybeL = forall m a. a -> (a -> m) -> m -> m
-nothingL :: MaybeL
-nothingL val just nothing = nothing
-
-justL :: MaybeL
-justL val just nothing = just val
-
-foldL :: MaybeL -> m
-
 
 
 main = do 

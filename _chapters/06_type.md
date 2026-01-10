@@ -693,17 +693,61 @@ In this section, we started from almost nothing --- just $1$ type. Then we defin
 
 One can see that some types that programmers use are still missing, but those can be defined in much the same way as the types we already defined: e.g. $char$ is just a base type $string$ is just $List[chars]$ etc.
 
-<!--
-{% if site.distribution != 'print' %}
--->
-<!--
-{%endif%}
--->
 
-From Haskell to Lambda Calculus 
+Church encoding: From Haskell to Lambda Calculus 
+===
+
+In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). So, it's not obvious that we can do the same things with just functions. However, I will try to show you that we really can: there exist a mechanism for encoding every datatype as a function (which is known as *Church encoding*, in the name of the creator of Lambda Calculus Alonso Church).
+
+Base types: the Boolean type
 ---
 
-In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). So, it's not obvious that we can do the same things with just functions. However, I will try to show you that we really can. Consider the $Maybe$ type
+Consider the Boolean type, which we defined like this:
+
+$$
+\begin{aligned}
+\mathrm{Bool} &:\ \mathrm{Type} \\
+\mathrm{True} &:\ \mathrm{Bool} \\
+\mathrm{False} &:\ \mathrm{Bool}
+\end{aligned}
+$$
+
+Here is a version of the same thing, with just functions.
+
+$$
+\begin{aligned}
+type\ \mathrm{Bool} &= \forall a. a \to a \to a \\
+false &: \mathrm{Bool} \\
+false\ a\ b &= b \\
+true &: \mathrm{Bool} \\
+true\ a\ b &= a \\
+\end{aligned}
+$$
+
+Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ which accepts two values of type $a$ for all $a$ and returns another one. We can see that under this definition, $True$ is a function that returns the first $a$, and $False$ is a function that returns the second one.
+
+Don't believe that these can function as bools? Here is an implementation of the $ifElse$ function:
+
+$$
+\begin{aligned}
+ifElse &: \forall a. \mathrm{Bool} \to a \to a \to a \\
+ifElse &\ v\ a\ b\  = v\ a\ b \\
+\end{aligned}
+$$
+
+It is basically, empty, simply because the datatype itself is doing the work. This is one of the main principle behind the "Church encodings" of datatypes as they are called --- the datatype encodes the term elimination rule.
+
+Here is how you would use this:
+
+```haskell
+  ifElse true "True" "False" -- "True"
+  ifElse false "True" "False" -- "False"
+```
+
+Polymorphic types: the Maybe type
+---
+
+The Boolean type is, of course, a basic type. So, let's consider the $Maybe$ type, which is more complex:
 
 $$
 \begin{aligned}
@@ -713,6 +757,8 @@ $$
 \end{aligned}
 $$
 
+And let's not forget the fold:
+
 $$
 \begin{aligned}
 maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe[a] &\to b \\
@@ -721,52 +767,21 @@ maybe\ n\ f\ Just[x]\ &=\ f\ x \\
 \end{aligned}
 $$
 
-In pure Lambda Calculus it looks like this:
+$Maybe$ is more complex, not because it is polymorphic, but because it can *contain another value* in itself (in particular $Just$ constructor. Here is where we learn another important principle of Church encoding: using curried functions to hold values.
 
 $$
 \begin{aligned}
-\mathrm{Maybe} &:\ \forall a b. a \to b \to (a \to b) \to b
+type Maybe a &= forall b. b -> (a -> b)  -> b
+nothing &: Maybe a
+nothing n j &= n
+just &: a -> Maybe a
+just val n j &= (j val)
 \end{aligned}
 $$
 
 
-$$
-\begin{aligned}
-\mathrm{Nothing} val nothing just  = n
-\mathrm{Just} val nothing just  = j val
-\end{aligned}
-$$
-
-
-(“Either nothing or just `a`”)
-
-### Constructors
-
-$$
-\begin{aligned}
-\mathrm{Nothing}
-&;\equiv;
-\Lambda a.\ \Lambda r.\ \lambda n:r.\ \lambda j:(a \to r).\ n [6pt]
-\mathrm{Just}
-&;\equiv;
-\Lambda a.\ \lambda x:a.\ \Lambda r.\ \lambda n:r.\ \lambda j:(a \to r).\ j\ x
-\end{aligned}
-$$
-
-### Elimination
-
-Given `m : Maybe a`,
-[
-m\ [r]\ n\ j
-]
-
-
-### Elimination
-
-Given `m : Maybe a`,
-$$
-m\ [r]\ n\ j
-$$
+foldMaybe :: forall a b. b -> (a -> b) -> Maybe a -> b
+foldMaybe n j maybe = maybe n j
 
 
 
