@@ -1,0 +1,132 @@
+\documentclass[11pt,twoside]{book}
+
+% ---------- Page layout ----------
+\usepackage[a4paper,inner=3.5cm,outer=3cm,top=3cm,bottom=3cm]{geometry}
+
+% ---------- Headers / footers ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
+
+% ---------- Typography ----------
+\usepackage{microtype}
+\usepackage{fontspec}
+\setmainfont{STIX Two Text}
+
+% ---------- Math ----------
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{unicode-math}
+\setmathfont{STIX Two Math}
+% ensure logical and Greek symbols are in math font
+\setmathfont[range={"2200-"22FF}]{STIX Two Math}  % logical operators
+\setmathfont[range={"1D6C0-"1D7FF}]{STIX Two Math} % bold Greek/math alphabets
+\mathtoolsset{showonlyrefs}
+
+% ---------- Tables ----------
+\usepackage{longtable,booktabs,array}
+
+% ---------- Images and floats ----------
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{float}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.9}
+
+% ---------- Pandoc image macro: inline, scaled ----------
+\usepackage{etoolbox}
+\providecommand{\pandocbounded}[1]{%
+  \begin{center}%
+    \adjustbox{max width=\textwidth, max height=0.8\textheight}{#1}%
+  \end{center}%
+}
+
+% ---------- Code blocks ----------
+\usepackage{fvextra,fancyvrb}
+\AtBeginEnvironment{Verbatim}{\small} % shrink code blocks
+
+% ---------- Strikeout ----------
+\usepackage[normalem]{ulem}
+\newcommand{\st}[1]{\sout{#1}}
+
+% ---------- Pandoc helper macros ----------
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\parskip}{0pt}%
+}
+
+% ---------- Hyperlinks / PDF bookmarks ----------
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+% ---------- TOC formatting ----------
+\usepackage{tocloft}
+\setlength{\cftbeforechapskip}{6pt}
+\setlength{\cftbeforesecskip}{2pt}
+
+% ---------- Section spacing ----------
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{0pt}{2em}
+\titlespacing*{\section}{0pt}{2.5ex}{1ex}
+
+% ---------- Pandoc hooks ----------
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+$if(header-includes)$
+$header-includes$
+$endif$
+
+\begin{document}
+
+% ---------- Front matter ----------
+\frontmatter
+\pagestyle{empty}
+
+% ---------- Cover page ----------
+$if(cover-image)$
+\begin{titlepage}
+  \centering
+  \vspace*{\fill}
+  \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{$cover-image$}
+  \vspace*{\fill}
+\end{titlepage}
+\cleardoublepage
+$endif$
+
+% ---------- Title page ----------
+$if(title)$
+\title{$title$}
+\author{$author$}
+\date{$date$}
+\maketitle
+\cleardoublepage
+$endif$
+
+\pagestyle{fancy}
+
+% ---------- Table of Contents ----------
+\tableofcontents
+\cleardoublepage
+
+% ---------- Main matter ----------
+\mainmatter
+$body$
+
+% ---------- Back matter ----------
+\backmatter
+
+\end{document}

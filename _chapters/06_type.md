@@ -23,7 +23,7 @@ Or for *orders* as being categories with one morphism:
 
 The reason for the prevalence of this "set-centric" viewpoint is actually trivial: *sets are simple to understand*, especially when we are operating on the conceptual level that is customary for introductory materials. 
 
-We all, for example, group together a set of supplies that are needed for a given activity, (e.g. a *protractor*, a *compass*, and a *pencil* for the math class, or *paper*, a cans of *paint* and *brushes* when drawing) so as not to forget some of them. Or we group people that often hang out together as this or that company. And so, when we draw a circle around a few things, everyone knows what we are talking about. 
+We all, for example, group together a set of supplies that are needed for a given activity, (e.g. a *protractor*, a *compass*, and a *pencil* for the math class, or *paper*, cans of *paint* and *brushes* when drawing) so as not to forget some of them. Or we group people that often hang out together as this or that company. And so, when we draw a circle around a few things, everyone knows what we are talking about. 
 
 ![Sets](../06_type/sets.svg)
 
@@ -69,7 +69,7 @@ What do we mean by that? Well, the original formulation of set theory (which is 
 
 ![Naive set theory](../06_type/naive_sets.svg)
 
-In contrast, ZFC is defined by a larger number of (more restrictive) axioms, as for example, the *axiom of pairing*, which states that given any two sets, there exist a set which contains them as elements.
+In contrast, ZFC is defined by a larger number of (more restrictive) axioms, as for example, the *axiom of pairing*, which states that given any two sets, there exists a set which contains them as elements.
 
 ![The axiom of pairing in ZFC](../06_type/zfc_pairing.svg)
 
@@ -77,14 +77,14 @@ In contrast, ZFC is defined by a larger number of (more restrictive) axioms, as 
 
 ![The axiom of union in ZFC](../06_type/zfc_union.svg)
 
-There are a total of about 8 such axioms (depending on the flavour of the theory). They are curated in a way that allows us to construct all sets that are interesting, without being able to construct the infamous set that contain itself. However, accepting ZFC would mean accepting that set theory is not as simple and straightforward, as it looks like. 
+There are a total of about 8 such axioms (depending on the flavour of the theory). They are curated in a way that allows us to construct all sets that are interesting, without being able to construct the infamous set that contains itself. However, accepting ZFC would mean accepting that set theory is not as simple and straightforward, as it looks like. 
 
 Indeed, it is more complex than category theory, and more complex than this other theory about which we will learn about in a minute...
 
 Resolving the paradox with type theory
 ---
 
-While Zermelo was working on refining the axioms of set theory in order to avert Russell's paradox, Russell himself took a different route towards solving his paradox and decided to ditch sets altogether, and develop an entirely new mathematical concept that is free of paradoxes *by design* -- one where you don't need to patch things up with extra axioms to avoid having illogical constructions. An so, in 1908, the same year in which Zermelo published the first version of ZFC,  Russell came up with his *theory of types*.
+While Zermelo was working on refining the axioms of set theory in order to avert Russell's paradox, Russell himself took a different route towards solving his paradox and decided to ditch sets altogether, and develop an entirely new mathematical concept that is free of paradoxes *by design* -- one where you don't need to patch things up with extra axioms to avoid having illogical constructions. And so, in 1908, the same year in which Zermelo published the first version of ZFC,  Russell came up with his *theory of types*.
 
 Type theory is not at all similar to set theory, but it is at the same time, not entirely different from it, as the concepts of *types* and *terms* are clearly reminiscent of the concepts of *sets* and *elements*. 
 
@@ -134,7 +134,7 @@ Long disclaimer
 
 Before we begin, let's get this long disclaimer out of the way:
 
-Notice that in the last sentence we said *a* type theory, not "type theory" or "the type theory". This is because  there are not one, but many different (albeit related) formulations of type theory that are, confusingly, called type *theories* (and, less confusingly, *type systems*), such as *Simply-typed lambda calculus* or *System F*. For this reason, it makes sense to speak about *a* type theory.
+Notice that in the last sentence we said *a* type theory, not "type theory" or "the type theory". This is because  there are not one, but many different (albeit related) formulations of type theory that are, confusingly, called type *theories* (and, less confusingly, *type systems*), such as *Simply-typed lambda calculus* or *Polymorphic Lambda calculus*. For this reason, it makes sense to speak about *a* type theory.
 
 Have I confused you enough? No?
 
@@ -147,7 +147,7 @@ Anyhow, let's get back to our subject (however we want to call it). As we said, 
 
 He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer). The idea is the following: The *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
 
-Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it (there are no functions where it is the source either). This set is like a oasis at the center of the desert... or perhaps a little desert in the center of big oasis... Contact me if you can think of some good metaphor.
+Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no (interesting) functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it (there are no functions where it is the source either). This set is like a oasis at the center of the desert... or perhaps a little desert in the center of big oasis... Contact me if you can think of some good metaphor.
 
 <!--
 
@@ -164,7 +164,7 @@ Even worse, as a dead end is at least reachable.
 Building types
 ---
 
-We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types are sets (although not all sets are types) and all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favor, please don't mention it and act surprised when we make it explicit).
+We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types (at least on the first level) are sets, although not all sets are types. And all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favor, please don't mention it and act surprised when we make it explicit).
 
 In set theory, (and especially in its naive version) all possible sets and functions are *already there from the start*, as the Platonic world of forms. What we do is merely exploring the ones that interests us.
 
@@ -230,7 +230,7 @@ To please both parties, (and annoy them both, at the same time), we will go with
 
 Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
 
-Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called polymorphic lambda calculus or *System F*. 
+Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called *Polymorphic Lambda Calculus* or *System F*. 
 
 Base types. The boolean type
 ===
@@ -346,7 +346,7 @@ $$
 Type formation
 ---
 
-$Maybe$ is the second simplest type, after $Bool$ and it looks a lot like $Bool$, but, unlike $Bool$, $Maybe$ is a *polymorphic* type, as we can tell by looking at the *type formation rule*
+$Maybe$ looks a lot like $Bool$, but, unlike $Bool$, $Maybe$ is a *polymorphic* type, as we can tell by looking at the *type formation rule*
 
 $$
 \mathrm{Maybe} :\ \mathrm{Type} \to \mathrm{Type} 
@@ -356,7 +356,7 @@ Maybe is polymorphic . i.e. there is not just one $Maybe$, but many $Maybe$'s --
 
 ![The `Maybe Boolean` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
 
-Polymorphic types are a arrows from the universe of types, to itself (i.e. the kind of $Maybe$ is $Type \to Type$), while $Bool$ is just a $Type$.
+Polymorphic types are arrows from the universe of types, to itself (i.e. the kind of $Maybe$ is $Type \to Type$), while $Bool$ is just a $Type$.
 
 Term introduction: Nothing
 ---
@@ -577,11 +577,11 @@ However, unlike $Succ$, which has signature $X \to X$ (i.e. for each $X$, there 
 
 So, let's start plotting these arrows, starting with the base value $Nil$.
 
-![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> Nil -> (0,Nill), 1 -> Nil -> (1,Nill) etc. ](../06_type/list_type_cons.svg)
+![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> Nil -> (0,Nil), 1 -> Nil -> (1,Nil) etc. ](../06_type/list_type_cons.svg)
 
 As we said, the $List$ type is inductive i.e. every arrow that you draw generates more arrows (here, we only draw *part* of them (the ones that come from the orange ball)).
 
-![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> (1, Nill) -> (0, (1,Nill)), 1 -> (1, Nil) -> (1,(1,Nill)) etc. ](../06_type/list_type_cons_2.svg)
+![The `Cons` function --- An arrow from the `Nat` type, pointing to an arrow from the list type to itself: 0 -> (1, Nil) -> (0, (1,Nil)), 1 -> (1, Nil) -> (1,(1,Nil)) etc. ](../06_type/list_type_cons_2.svg)
 
 The result is a type with values that are... well, *lists* of other values, 
 
@@ -602,7 +602,7 @@ This rule is also the most useful function for manipulating lists.
 
 **Task 1:** There is a certain mapping from $List$ to $Boolean$ which is so useful, that some dialects of Lisp have no $Boolean$ type and all and rely just on this mapping. Draw it.
 
-![The list type: (Nil) (1,Nill), (1,(1,Nill)), (1,(1,Nill)) etc. and the `Boolean` type: True and False with places to draw arrows List to Bool](../06_type/list_bool_task.svg)
+![The list type: (Nil) (1,Nil), (1,(1,Nil)), (1,(1,Nil)) etc. and the `Boolean` type: True and False with places to draw arrows List to Bool](../06_type/list_bool_task.svg)
 
 **Task 2:** Define this mapping (between `List` and `Bool`) in Haskell. Define it once by writing a function from scratch, and twice, with using the `foldList` function.
 
@@ -697,7 +697,7 @@ One can see that some types that programmers use are still missing, but those ca
 Church encoding: From Haskell to Lambda Calculus 
 ===
 
-In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). So, it's not obvious that we can do the same things with just functions. However, I will try to show you that we really can: there exist a mechanism for encoding every datatype as a function (which is known as *Church encoding*, in the name of the creator of Lambda Calculus Alonso Church).
+In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). So, it's not obvious that it is possible to achieve the same things with just functions. However, it is possible: there exist a mechanism for encoding every type as a function, known as *Church encoding*, in the name of the creator of Lambda Calculus Alonzo Church. 
 
 Base types: the Boolean type
 ---
@@ -726,7 +726,7 @@ $$
 
 Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ which accepts two values of type $a$ for all $a$ and returns another one. We can see that under this definition, $True$ is a function that returns the first $a$, and $False$ is a function that returns the second one.
 
-Don't believe that these can function as bools? Here is an implementation of the $ifElse$ function:
+Don't believe that these can function as booleans? Here is an implementation of the $ifElse$ function:
 
 $$
 \begin{aligned}
@@ -735,7 +735,7 @@ ifElse &\ v\ a\ b\  = v\ a\ b \\
 \end{aligned}
 $$
 
-It is basically, empty, simply because the datatype itself is doing the work. This is one of the main principle behind the "Church encodings" of datatypes as they are called --- the datatype encodes the term elimination rule.
+The implementation is trivial, because the datatype itself is doing the work. This is one of the main principle behind the "Church encodings" of datatypes as they are called --- the datatype encodes the term elimination rule.
 
 Here is how you would use this:
 
@@ -757,39 +757,59 @@ $$
 \end{aligned}
 $$
 
-And let's not forget the fold:
+$Maybe$ is more complex, because it can *contain another value* in itself (with the $Just$ constructor). Here is where we learn another important principle of Church encoding: using curried functions to hold values.
 
 $$
 \begin{aligned}
-maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe[a] &\to b \\
-maybe\ n\ f\ Nothing\ &=\ n \\
-maybe\ n\ f\ Just[x]\ &=\ f\ x \\
-\end{aligned}
-$$
-
-$Maybe$ is more complex, not because it is polymorphic, but because it can *contain another value* in itself (in particular $Just$ constructor. Here is where we learn another important principle of Church encoding: using curried functions to hold values.
-
-$$
-\begin{aligned}
-type Maybe a &= forall b. b -> (a -> b)  -> b
-nothing &: Maybe a
-nothing n j &= n
-just &: a -> Maybe a
-just val n j &= (j val)
+type\ Maybe[a] &= \forall m. m \to (a \to m) \to m \\
+nothing &: Maybe[a] \\
+nothing\ n\ j &= n \\
+just &:\ a \to Maybe[a] \\
+just\ val\ n\ j\ &= (j\ val) \\
 \end{aligned}
 $$
 
 
-foldMaybe :: forall a b. b -> (a -> b) -> Maybe a -> b
-foldMaybe n j maybe = maybe n j
+Note how the Church-encoded type contains the same constructors as the normal type, i.e. how...
 
+$$
+\begin{aligned}
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
+\mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
+\end{aligned}
+$$
 
+...becomes...
 
-System F --- Formal definition
+$$
+\begin{aligned}
+\forall m. m \to (a \to m) \to m \\
+\end{aligned}
+$$
+
+In programming terms, we would say that we *parametrize* the constructors.
+
+Note also that the signature of the type is almost identical as the signature of the $fold$ function, used to eliminate it:
+
+$$
+\begin{aligned}
+foldMaybe &:: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
+\end{aligned}
+$$
+
+i.e. instead of providing constructors for types (which we later eliminate with the fold, we ask directly for the "folding" functions. This is why the fold function itself is trivial, as with the booleans:
+
+$$
+\begin{aligned}
+foldMaybe &:: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
+foldMaybe\ n\ j\ maybe &= maybe\ n\ j \\
+\end{aligned}
+$$
+
+Polymorphic lambda calculus -- Formal definition
 ===
 
-
-We saw how Lambda Calculus *works*, now we will see how it is defined formally. The answer is that, as all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
+So far, we saw how Lambda Calculus *works*. Now, we are about to see how it is defined formally. The answer is that, as all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
 
 Natural deduction
 ---
@@ -836,7 +856,7 @@ $$\frac
     {\mathrm{False} : \mathrm{Bool}}
 $$
 
-$\mathrm{True}$ and $\mathrm{False}$ are Bools.
+$\mathrm{True}$ and $\mathrm{False}$ are Booleans.
 
 Oh I forgot, in natural deduction it is permitted to have conclusions without premises.
 
@@ -913,14 +933,14 @@ $$\frac
     {\Gamma \vdash z x : B }
 $$
 
-For example, if we take the function $length: string \to int$. For it the abstraction would be: 
+To understand how those rules work, let's take the function $length: string \to int$ as an example. The abstraction rule for this function would be: 
 
 $$\frac
     {\Gamma, x:string \vdash y: int}
     {\Gamma \vdash \lambda length : string \to int}
 $$
 
-And function *application*  would be
+And the *application* rule would be
 
 $$\frac
     {\Gamma \vdash length: string \to int, \Gamma \vdash x: string}
@@ -932,7 +952,7 @@ Those rules are all you need to define value-level arrows.
 Simply-typed Lambda Calculus
 ---
 
-The rules we reviewed so far define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Haskell/System F, except the types in STLC are all *monomorphic* e.g. we cannot define the polymorphic types like $Maybe$.
+The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Polymorphic Lambda Calculus, except the types in STLC are all *monomorphic* e.g. we cannot define the polymorphic types like $Maybe$.
 
 $$
 \begin{aligned}
@@ -942,7 +962,7 @@ $$
 \end{aligned}
 $$
 
-The best we can do is to define a separate version of the type which works just for $\mathrm{int}$.
+The best we can do is to define a separate versions of the type, e.g. one which works just for $\mathrm{int}$.
 
 $$
 \begin{aligned}
@@ -962,7 +982,7 @@ $$
 \end{aligned}
 $$
 
-Furthermore, in STLC we cannot define a functions that works for polymorphic $Maybe$ (regardless of the type they are holding), so we have to generate not only the datatype, but all functions that use it.
+Furthermore, in STLC we cannot define a functions that works for polymorphic $Maybe$ (regardless of the type they are holding), so we have to redefine not only the types, but all functions that use them.
 
 To combat this problem, and to ascend ourselves from *Simply-typed* to *Polymorphic* Lambda Calculus (AKA System F), we define type-level arrows.
 
@@ -984,14 +1004,14 @@ $$\frac
     {\Gamma \vdash Type}
 $$
 
-And then the type definition rules are defined like this (i.e. everything is of Kind $mathrm{Type}$:
+And then the type definition rules are defined like this (i.e. everything is of kind $\mathrm{Type}$:
 
 $$\frac
     {}
     {\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}
 $$
 
-And for System F, we would see in the next chapter.
+And for Polymorphic Lambda Calculus, we would see in the next section.
 
 Type-level arrows 
 ---
@@ -1003,21 +1023,23 @@ $$\frac
     {\Gamma \vdash x : A}
 $$
 
-As we know, System F we also have *type-level variables*, which are defined with a similar *TVar* *kinding* rule.
+In Polymorphic Lambda Calculus we also have *type-level variables*, which are defined with a similar *TVar* *kinding* rule.
 
 $$\frac
     {A :: K \in \Gamma}
     {\Gamma \vdash A :: K}
 $$
 
-Now, let's proceed with the arrows themselves. Value-level arrows convert values to other values.
+Now, let's proceed with defining the type of the arrows themselves. 
+
+In Polymorphic Lambda Calculus, as in STLC, we have value-level arrows that convert values to other values...
 
 $$\frac
     {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
     {\Gamma \vdash A \to B :: Type}
 $$
 
-And in System F, we have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
+And, we also have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
 
 $$\frac
     {\Gamma, (\alpha :: A) \vdash (B :: Type)}
@@ -1040,7 +1062,7 @@ For example, if we work in the context of STLC and we use the $MaybeString$ type
 
 $$z :: string \to MaybeString$$
 
-Using the capabilities of System F,  we can abstract the type $String$ (with the rule *TAbs* to build a polymorphic function, which looks like this.
+Using the capabilities of Polymorphic Lambda Calculus,  we can abstract the type $String$ (with the rule *TAbs* to build a polymorphic function, which looks like this.
 
 $$z' :: \forall \alpha. \alpha \to Maybe\ \alpha$$
 
@@ -1050,7 +1072,9 @@ $$z = z'[String]$$
 
 (This is not a real Haskell syntax, as Haskell does type application automatically --- you just provide the value and the language deduces the type from it).
 
-Here are the typing rules themselves, *type abstraction* (or *TAbs*), 
+Here are the typing rules of polymorphic functions themselves:
+
+*Type abstraction* (or *TAbs*)
 
 $$\frac
     {\Gamma, (\alpha :: A) \vdash z : C}
@@ -1065,16 +1089,12 @@ $$\frac
 $$
 
 <!--
-{% if site.distribution != 'print' %}
--->
 
-Interlude: Higher-kinds --- System F Omega
+TODO Interlude: Higher-kinds --- System F Omega
 ===
 
 "System Fω can be stratified into an infinite hierarchy of Systems Fn, where F0 corresponds to the usual polymorphic System F (quantifying over kinds ∗), F1 to System F with type operators (quantifying over kinds e.g. ∗ → ∗), F2 additionally quantifying over kinds e.g. (∗ → ∗) → ∗ ("to the left of 2 arrows", so to speak), and so on."
 
-<!--
-{%endif%}
 -->
 
 Types and Categories
@@ -1094,16 +1114,19 @@ A type is an object.
 
 A value is a morphism from the Unit type.
 
+And we also have morphisms that connect the objects.
+
 So, roughly speaking, a category may be thought of a type theory without its syntax.
 
-Let's talk about the specific type theories that we saw.
+Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the prev chapter. As we know 
 
 Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
 
 And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
 
+All seems clear, but one thing: We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
 
-What about type-level arrows (AKA polymorphic types)? We will learn about them in the next chapter.
+We will get on with this in the next chapter.
 
 <!--
 

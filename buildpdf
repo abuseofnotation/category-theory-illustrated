@@ -1,0 +1,16 @@
+pandoc --from markdown --to pdf  --strip-comments \
+ --pdf-engine=lualatex \
+ --template=epub/template.tex \
+ _chapters/00_about.md \
+ _chapters/01_set.md \
+ _chapters/02_category.md \
+ _chapters/03_monoid.md \
+ _chapters/04_order.md \
+ _chapters/05_logic.md \
+ _chapters/10_functors.md \
+ _chapters/11_natural_transformations.md \
+ --output book.pdf \
+ --toc \
+ --resource-path=_chapters/02_category \
+ --css=epub/epub-style.css \
+# --verbose
