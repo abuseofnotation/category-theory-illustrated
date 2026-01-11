@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 595.3 199.99999"
+   version="1.1"
+   id="svg14095"
+   sodipodi:docname="curry_howard_type.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   width="595.29999"
+   height="200"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata4843">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14099" />
+  <sodipodi:namedview
+     id="namedview14097"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     objecttolerance="10.0"
+     gridtolerance="10.0"
+     guidetolerance="10.0"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.3077853"
+     inkscape:cx="320.00666"
+     inkscape:cy="287.89129"
+     inkscape:window-width="1080"
+     inkscape:window-height="1851"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14095"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <circle
+     style="opacity:0.14;stroke:#000000;stroke-width:3.80255;stroke-miterlimit:10;stroke-dasharray:none"
+     id="circle8173-9"
+     r="68.826553"
+     cy="106.54287"
+     cx="288.20557"
+     stroke-miterlimit="10" />
+  <circle
+     style="fill:#cccccc;stroke:#808285;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none"
+     id="circle8175-3"
+     r="68.826553"
+     cy="99.604469"
+     cx="281.96957"
+     stroke-miterlimit="10" />
+</svg>

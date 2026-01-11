@@ -769,8 +769,30 @@ just\ val\ n\ j\ &= (j\ val) \\
 \end{aligned}
 $$
 
+The general principle
+---
 
-Note how the Church-encoded type contains the same constructors as the normal type, i.e. how...
+By now, you have probably seen that the Church-encoding of the type has the same constructors as the "normal" type  the difference is only that it accepts them as parameters. 
+
+If we have a type which is like $Maybe$, but with just one value (like the $1$ type)...
+
+$$
+\begin{aligned}
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
+\end{aligned}
+$$
+
+...it's Church encoding would be...
+
+$$
+\begin{aligned}
+\forall m. m \to m \\
+\end{aligned}
+$$
+
+(This is indeed the Church encoding of the $1$ type)
+
+And then, if we extend the type to also have the $Just$ constructor...
 
 $$
 \begin{aligned}
@@ -779,7 +801,7 @@ $$
 \end{aligned}
 $$
 
-...becomes...
+...the encoding is extended like this...
 
 $$
 \begin{aligned}
@@ -787,24 +809,24 @@ $$
 \end{aligned}
 $$
 
-In programming terms, we would say that we *parametrize* the constructors.
-
-Note also that the signature of the type is almost identical as the signature of the $fold$ function, used to eliminate it:
+This is why the signature of the Church-encoded type is almost identical as the signature of the $fold$ function, used to eliminate it:
 
 $$
 \begin{aligned}
-foldMaybe &:: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
+foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
 \end{aligned}
 $$
 
-i.e. instead of providing constructors for types (which we later eliminate with the fold, we ask directly for the "folding" functions. This is why the fold function itself is trivial, as with the booleans:
+and the $fold$ function is trivial
 
 $$
 \begin{aligned}
-foldMaybe &:: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
+foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
 foldMaybe\ n\ j\ maybe &= maybe\ n\ j \\
 \end{aligned}
 $$
+
+When using Church encoding, instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
 
 Polymorphic lambda calculus -- Formal definition
 ===
@@ -952,7 +974,7 @@ Those rules are all you need to define value-level arrows.
 Simply-typed Lambda Calculus
 ---
 
-The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Polymorphic Lambda Calculus, except the types in STLC are all *monomorphic* e.g. we cannot define the polymorphic types like $Maybe$.
+The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Polymorphic Lambda Calculus, except that... it is not polymorphic i.e. we cannot define the polymorphic types like $Maybe$, just monomorphic ones (like Boolean).
 
 $$
 \begin{aligned}
@@ -982,7 +1004,7 @@ $$
 \end{aligned}
 $$
 
-Furthermore, in STLC we cannot define a functions that works for polymorphic $Maybe$ (regardless of the type they are holding), so we have to redefine not only the types, but all functions that use them.
+Furthermore, in STLC we cannot define a *functions* that work for polymorphic $Maybe$ (regardless of the type they are holding), so we have to redefine not only the types, but all functions that use them.
 
 To combat this problem, and to ascend ourselves from *Simply-typed* to *Polymorphic* Lambda Calculus (AKA System F), we define type-level arrows.
 
@@ -1100,21 +1122,24 @@ TODO Interlude: Higher-kinds --- System F Omega
 Types and Categories
 ===
 
-In the last chapter, we talked a lot about the connection between types and logics known as Curry-Howard isomorphism: 
+In the last chapter, we already established the main principle behind the Curry-Howard isomorphism:
 
-A statement can be viewed as a type.
+A proposition can be viewed as a type (this is why Curry-Howard is also known as "Propositions as Types")...
 
-A proof of the statement --- a value of that type.
+![A type: an empty circle](../06_type/curry_howard_type.svg)
 
-And proof that depend on one-another are value-level arrows (function).
+...and a proof of the proposition is a value of that type (i.e. a true proposition is equivalent to an *inhabited* type).
 
-Things look pretty similar from a category-theoretic standpoint:
+![An inhabited type: a circle with one ball](../06_type/curry_howard_value.svg)
 
-A type is an object.
+...and propositions that follow from one another are functions.
 
-A value is a morphism from the Unit type.
 
-And we also have morphisms that connect the objects.
+And with type theory, we saw that a value can be Church-encoded as an arrow.
+
+![An inhabited type: a circle with one ball, containing two balls connected with an arrow](../06_type/curry_howard_church_encoding.svg)
+
+So, for type theory, a value is just a special kind of arrow.
 
 So, roughly speaking, a category may be thought of a type theory without its syntax.
 
