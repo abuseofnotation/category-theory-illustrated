@@ -699,7 +699,7 @@ Church encoding: From Haskell to Lambda Calculus
 
 In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). So, it's not obvious that it is possible to achieve the same things with just functions. However, it is possible: there exist a mechanism for encoding every type as a function, known as *Church encoding*, in the name of the creator of Lambda Calculus Alonzo Church. 
 
-Base types: the Boolean type
+Base types. the Boolean type
 ---
 
 Consider the Boolean type, which we defined like this:
@@ -744,7 +744,18 @@ Here is how you would use this:
   ifElse false "True" "False" -- "False"
 ```
 
-Polymorphic types: the Maybe type
+
+
+$$
+\begin{aligned}
+\mathbb{N} &:\ \mathrm{Type} \\
+\mathrm{Zero} &:\ \mathbb{N} \\
+\mathrm{Succ} &:\ \mathbb{N} \to \mathbb{N}
+\end{aligned}
+$$
+
+
+Polymorphic types. The Maybe type
 ---
 
 The Boolean type is, of course, a basic type. So, let's consider the $Maybe$ type, which is more complex:
@@ -828,6 +839,8 @@ $$
 
 When using Church encoding, instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
 
+**Task 7:** Write a Church-encoded version of the natural numbers type
+
 Polymorphic lambda calculus -- Formal definition
 ===
 
@@ -882,7 +895,7 @@ $\mathrm{True}$ and $\mathrm{False}$ are Booleans.
 
 Oh I forgot, in natural deduction it is permitted to have conclusions without premises.
 
-**Task 7:** Define the elimination rule for Booleans, using natural deduction.
+**Task 8:** Define the elimination rule for Booleans, using natural deduction.
 
 Contexts
 ---
@@ -1122,34 +1135,58 @@ TODO Interlude: Higher-kinds --- System F Omega
 Types and Categories
 ===
 
-In the last chapter, we already established the main principle behind the Curry-Howard isomorphism:
+In the last chapter, we already established the main principles behind the Curry-Howard isomorphism, between types and logiv
 
 A proposition can be viewed as a type (this is why Curry-Howard is also known as "Propositions as Types")...
 
 ![A type: an empty circle](../06_type/curry_howard_type.svg)
 
-...and a proof of the proposition is a value of that type (i.e. a true proposition is equivalent to an *inhabited* type).
+And propositions that follow one another are connected with arrows.
+
+Now, that we know more about type theory, we enrich our understanding:
+
+A proposition can be viewed as a type 
+
+![A type: an empty circle](../06_type/curry_howard_type.svg)
+
+...a proof of the proposition is a value of that type (i.e. a true proposition is equivalent to an *inhabited* type).
 
 ![An inhabited type: a circle with one ball](../06_type/curry_howard_value.svg)
 
-...and propositions that follow from one another are functions.
+So, where does the discrepancy come from? We know that in type theory, "the only values are the ones which are sources and targets of arrows"
 
+Another way to say this is is that values are actually just another way to view arrows: the basic values can be encoded as arrows, via Church-encoding.
 
-And with type theory, we saw that a value can be Church-encoded as an arrow.
 
 ![An inhabited type: a circle with one ball, containing two balls connected with an arrow](../06_type/curry_howard_church_encoding.svg)
 
-So, for type theory, a value is just a special kind of arrow.
+And the rest of the values we get by by applying the basic arrows to one another.
 
-So, roughly speaking, a category may be thought of a type theory without its syntax.
 
-Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the prev chapter. As we know 
+Roughly speaking, a category may be thought of a type theory without its syntax.
+
+<!--
+Duality
+---
+
+Positive and negative types are dual to each other.
+
+-->
+
+Simply-typed Lambda calculus
+---
+
+Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the prev chapter. 
 
 Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
 
+
 And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
 
-All seems clear, but one thing: We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
+Polymorphic Lambda calculus
+---
+
+We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
 
 We will get on with this in the next chapter.
 
@@ -1161,7 +1198,6 @@ TODO
 Tuple and functions are related via tensor-hom
 Terminal objects are nullary products
 --> 
-
 
 Appendix: definitions in Haskell
 ===
@@ -1312,7 +1348,28 @@ It is the *function* type. We can think of functions as "objects that can be eva
 
 ---
 
-**Task 7:** Define the elimination rule for Booleans, using natural deduction.
+**Task 7:** Write a Church-encoded version of the natural numbers type
+
+Here it is
+
+$$
+\begin{aligned}
+type\ \mathbb{N} &= \forall b. b \to (b \to b) \to b \\
+zero &: \mathbb{N} \\
+zero\ z\ s &= z \\
+succ &: \mathbb{N} \to \mathbb{N} \\
+succ\ n\ z\ s &= s\ (n\ z\ s) \\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+foldNat &: \forall a\ b. b \to (b \to b) \to \mathbb{N} \to b \\
+foldNat\ z\ s\ n &= n\ z\ s \\
+\end{aligned}
+$$
+
+**Task 8:** Define the elimination rule for Booleans, using natural deduction.
 
 TODO
 
