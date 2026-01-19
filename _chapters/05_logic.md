@@ -60,13 +60,15 @@ Modus ponens
 
 As an example of a proposition that contains multiple levels of nesting (and also as a great introduction of the subject of logic in its own right), consider one of the oldest (it was already known by Stoics at 3rd century B.C.) and most famous propositions ever, namely the *modus ponens*. 
 
-Modus ponens is a proposition that is composed of two other propositions (which here we denote $A$ and $B$) and it states that if proposition $A$ is true and also if proposition $(A → B)$ is true (that is if $A$ implies $B$), then $B$ is true as well. For example, if we know that "Socrates is a human" and that "humans are mortal" (or "being human implies being mortal"), we also know that "Socrates is mortal."
+Modus ponens is a proposition that is composed of two other propositions (which here we denote $A$ and $B$) and it states that if proposition $A$ is true and also if proposition $(A → B)$ is true (that is if $A$ implies $B$), then $B$ is true as well. 
+
+For example, if we know that "Socrates is a human" ($A$) and that "humans are mortal" ($A \to B$) (or "being human implies being mortal"), we also know that "Socrates is mortal"($B$).
 
 ![Modus ponens](../05_logic/modus_ponens.svg)
 
-Let's dive into this proposition. We can see that it is composed of two other propositions in a $follows$ relation, where the proposition that follows ($B$) is primary, but the proposition from which $B$ follows is not primary (let's call that one $C$ --- so the whole proposition becomes $C → B$.)
+Let's dive into this proposition. We can see that it is composed of two other propositions in a $implies$ relation, where the proposition $B$ is primary, but the proposition which implies $B$ is not primary (let's call that one $C$ --- so the whole proposition becomes $C → B$.)
 
-Going one more level down, we notice that the $C$ propositions is itself composed of two propositions in an *and*, relationship --- $A$ and let's call the other one $D$ (so $A ∧ D$), where $D$ is itself composed of two propositions, this time in a $follows$ relationship --- $A → B$. But all of this is better visualized in the diagram.
+Going one more level down, we notice that the $C$ propositions is itself composed of two propositions in an *and*, relationship --- $A$ and let's call the other one $D$ (so $A ∧ D$), where $D$ is itself composed of two propositions, this time in a $implies$ relationship --- $A → B$. But all of this is better visualized in the diagram.
 
 Tautologies
 ---
@@ -562,7 +564,7 @@ For our first example with implies, let's take the formula $A → B$, and examin
 
 ![Implies identity](../05_logic/implies_identity.svg)
 
-Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotle), namely that $A → A$ is always true, or that everything follows from itself.
+Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotle), namely that $A → A$ is always true, or that everything implies itself (everything follows from itself).
 
 And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semantic consequence)? In this case, $A$ would be below $B$ in our Hasse diagram (e.g. $A$ is the blue ball and $B$ is the orange one). Then the situation is somewhat similar to the previous case: $A ∧ X → B$ will be true, no matter what $X$ is (simply because $A$ already implies $B$, by itself). And so $A → B$ will again correspond to the $\top$ object.
 
