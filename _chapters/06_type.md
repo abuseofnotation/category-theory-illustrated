@@ -1157,7 +1157,6 @@ So, where does the discrepancy come from? We know that in type theory, "the only
 
 Another way to say this is is that values are actually just another way to view arrows: the basic values can be encoded as arrows, via Church-encoding.
 
-
 ![An inhabited type: a circle with one ball, containing two balls connected with an arrow](../06_type/curry_howard_church_encoding.svg)
 
 And the rest of the values we get by by applying the basic arrows to one another.
