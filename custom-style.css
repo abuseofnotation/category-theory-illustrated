@@ -1,9 +1,5 @@
 :root {
-  --color: #57a445;
-}
-
-body {
-  font-size: 25px;
+  --color: #57a445; } body { font-size: 25px;
   font-family: "MellSans", sans-serif;
 }
 
@@ -62,12 +58,30 @@ h4 {
   font-size: 30px;
   color: rgb(55, 55, 55);
 }
+.presentation-controls {
+  visibility: hidden;
+}
 
 .presentation {
-
   font-size: 10px;
+  color: gray;
 
   h1, h2, h3, h4 {
     font-size: 15px;
   }
+
+  .presentation-controls {
+    visibility: visible;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    text-align: center;
+    .button {
+      line-height: 0;
+    }
+  }
 }
+

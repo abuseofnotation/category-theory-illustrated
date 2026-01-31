@@ -385,20 +385,21 @@ Leaving the differences between intuitionistic and classical logics aside, the B
 
 Such higher-level interpretations of logic are sometimes called *algebraic* interpretations, *algebraic* being an umbrella term describing all structures that can be represented using category theory, like groups and orders.
 
-The Curry-Howard isomorphism
+Logic and types
 ---
 
-Programmers might find the definition of the BHK interpretation interesting for other reason --- it is very similar to a definition of a programming language: propositions are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types* (which are currently not supported in most programming languages, but that's a separate topic). Finally a proof of a given proposition is represented by a value of the corresponding type. 
+Programmers might find the definition of the BHK interpretation interesting for other reason --- it is very similar to a definition of a type system of a programming language: propositions are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types* (which are currently not supported in most programming languages, but that's a separate topic). Finally a proof of a given proposition is represented by a value of the corresponding type. 
+
 ![Logic as a programming language](../05_logic/logic_curry.svg)
 
 This similarity is known as the *Curry-Howard isomorphism*.
 
 **Task 5:** The Curry-Howard isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works (I recommend the Coq Tutorial by Mike Nahas).
 
-Cartesian closed categories
+...and also categories
 ---
 
-Knowing about the Curry-Howard isomorphism and knowing also that programming languages can be described by category theory may lead us to think that *category theory is part of this isomorphism as well*. And we would be quite correct --- this is why it is sometimes known as the Curry-Howard-*Lambek* isomorphism (Joachim Lambek being the person who formulated the categorical side). So let's examine this isomorphism. As all other isomorphisms, it comes in two parts: 
+Knowing about the Curry-Howard isomorphism and knowing also that programming languages can be described by category theory may lead us to think that *category theory is part of this isomorphism as well* (objects are propositions/types and morphisms are proofs/functions). And we would be quite correct --- this is why it is sometimes known as the Curry-Howard-*Lambek* isomorphism (Joachim Lambek being the person who formulated the categorical side). So let's examine this isomorphism. As all other isomorphisms, it comes in two parts: 
 
 The first part is finding a way to convert a *logical system* into a category --- this would not be hard for us, as sets form a category and the flavor of the BHK interpretation that we saw is based on sets.
 

@@ -204,16 +204,16 @@ class MyType<A> {
 
 What kinds of rules? We can categorize them in three groups.
 
-1. First off, a type has to have a *definition* which specifies what it is. Note that this is not a morphism from one type to the other, but from one type universe, to another type universe. This is known as a *type formation rule*. 
+First off, a type has to have a *definition* which specifies what it is. Note that this is not a morphism from one type to the other, but from one type universe, to another type universe. This is known as a *type formation rule*. 
 
 ![A type represented as a ball](../06_type/rule_type_formation.svg)
 
-2. Next up, a type has to have at least one arrow pointing to the new type. This is known as a *term introduction rule* ("term" being the word for "value").
+Next up, a type has to have at least one arrow pointing to the new type. This is known as a *term introduction rule* ("term" being the word for "value").
 In programming, it is called a *constructor*.
 
 ![A type and an arrow pointing towards it](../06_type/rule_term_introduction.svg)
 
-3. Finally, as we don't want to construct types just for the sake of constructing new types, a type has to have at least one arrow coming *from* this new type. This is known as a *term elimination rule* (as if we are eliminating the type by replacing it with the result of the method).
+Finally, as we don't want to construct types just for the sake of constructing new types, a type has to have at least one arrow coming *from* this new type. This is known as a *term elimination rule* (as if we are eliminating the type by replacing it with the result of the method).
 
 ![A type and an arrow, coming from it ](../06_type/rule_term_elimination.svg)
 
@@ -224,7 +224,7 @@ Picking a theory (another long disclaimer)
 
 As we said in the first long disclaimer, there is not one, but many type theories. So if we want to do type theory, we have first pick *a* type theory (if this sentence confuses you, read the first disclaimer again).
 
-Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about language features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
+Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about the features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
 
 To please both parties, (and annoy them both, at the same time), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers: unlike Lambda Calculus that, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
 
@@ -275,13 +275,13 @@ Et voila, we have just defined a type!
 Term elimination
 ---
 
-Wait, scratch that. We actually haven't defined a type. Or rather we have defined one, but it is quite useless. For it would only be useful once we define at least one arrow, coming *from* it(otherwise, it will just be a one-way street). For the Booleans, this function is called `ifElse`
+Wait, scratch that. We actually haven't defined a type. Or rather we have defined one, but it is quite useless. For it would only be useful once we define at least one arrow, coming *from* it(otherwise, it will just be a one-way street). For the Booleans, this function is usually called $ifElse$.
 
 $$
 \begin{aligned}
 \mathrm{ifElse} : \forall a.\ \mathrm{Bool} \to a \to a \to a \\
-\mathrm{ifElse} True\ a\ b\ =\ a\\
-\mathrm{ifElse} False\ a\ b\ =\ b \\
+\mathrm{ifElse}\ True\ a\ b\ =\ a\\
+\mathrm{ifElse}\ False\ a\ b\ =\ b \\
 \end{aligned}
 $$
 
@@ -352,7 +352,7 @@ $$
 \mathrm{Maybe} :\ \mathrm{Type} \to \mathrm{Type} 
 $$
 
-Maybe is polymorphic . i.e. there is not just one $Maybe$, but many $Maybe$'s --- one for each type `a` e.g. if there is $Bool$, there is also $Maybe[Bool]$.
+Maybe is polymorphic i.e. there is not just one $Maybe$, but many $Maybe$'s --- one for each type `a` e.g. Let's take the type $Bool$ as an example. Because $Bool$ is a type, then (according to this rule) $Maybe[Bool]$ is also a type.
 
 ![The `Maybe Boolean` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
 
@@ -386,7 +386,7 @@ The constructor $Just$ represents an arrow from type $a$ to type $Maybe[a]$ e.g.
 
 ![The $Maybe Boolean$ type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
 
-Term elimination
+Using Maybe
 ---
 
 The $Maybe$ type is used for handling errors i.e. for defining *partial functions*. Let's say we want to define a function that does not have an arrow for all values in the source. Does this mean that this function cannot be defined?
@@ -397,7 +397,10 @@ No, we just have to wrap the target type in $Maybe$ and it becomes a regular fun
 
 ![A function from  $Nat$ to $Maybe Boolean$: returns $Just False$ for composite numbers, $Just True$ for primes and $Nothing$ for 0 and 1](../06_type/isprime_int_maybe_bool.svg)
 
-To close the case, we define one good function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
+Term elimination
+---
+
+To close the case, we define one function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
 
 $$
 \begin{aligned}
@@ -412,9 +415,11 @@ Notice that this function defines an arrows from type $Maybe\ a$ to any type $b$
 Inductive types. The natural number type.
 ===
 
-Learning mathematics can feel overwhelming, because you might not know how to proceed with such  huge, even infinite, body of knowledge. But, as it turns out, the answer is simple: you start off knowing 0 things. Then, you learn 1 theory - congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
+Learning mathematics can feel overwhelming at first: you might not know how to proceed with such huge, even infinite, body of knowledge. But, it turns out the answer is simple: you start off knowing 0 things. Then, you learn 1 theory -- congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
 
-This argument applies not only to mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously synthesized in the 19th century by the Italian mathematician Giuseppe Peano (There are some laws as well, but we will cover them later).
+This argument applies not only to mathematical theories, but to everything else that is "countable", so to say. This is because it is the basis of the mathematical definition of natural numbers, as famously synthesized in the 19th century by the Italian mathematician Giuseppe Peano
+
+<!--TODO (There are some laws as well, but we will cover them later). -->
 
 1. $0$ is a natural number.
 2. If $n$ is a natural number, $n+1$ is a natural number.
@@ -478,19 +483,19 @@ $Succ$ is an arrow from the type of the natural numbers to itself which means th
 
 But right now we have just one term (value) of the natural numbers type: $Zero$. We draw the $Succ$ arrow and construct another one, $Succ\ Zero$ (known in some contexts as $1$.
 
-![The Natural numbers type without values --- ](../06_type/nat_type_one_double_diagram.svg)
+![The successor function of the Natural numbers type --- 0 points to s(0)](../06_type/nat_type_one_double_diagram.svg)
 
 And now, we have one more value so we have to draw one more $Succ$ arrow. This time the result is $Succ Succ Zero$ i.e. two.
 
-![The Natural numbers type without values --- an empty circle](../06_type/nat_type_two_double_diagram.svg)
+![The successor function of the Natural numbers type --- 0 points to s(0), s(0) points to s(s(0))](../06_type/nat_type_two_double_diagram.svg)
 
 And we go on like this, *ad infinitum*, creating an endless chain of values.
 
-![The Natural numbers type without values --- an empty circle](../06_type/nat_type_full.svg)
+![The Natural numbers type: 0, s(0), s(s(0)), s(s(s(0))) etc.](../06_type/nat_type_full.svg)
 
 Hm, this notation is a bit clunky, if only there were a better way to represent such values... Oh, wait.
 
-![The Natural numbers type without values --- an empty circle](../06_type/nat_type_full_normal.svg)
+![The Natural numbers type: 0, 1, 2, 3 etc.](../06_type/nat_type_full_normal.svg)
 
 And this is how you define an *inductive* type (or a *recursive* type, we can also call it). 
 
@@ -621,7 +626,6 @@ foldList f False
 Positive and negative types. Either and Tuples.
 ===
 
-
 Now, we will quickly present two more types, (hm... I have the feeling that I actually have seen those before).
 
 Either
@@ -680,7 +684,11 @@ second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
 \end{aligned}
 $$
 
-Types that, like $Either$, are defined by their introduction rules are called *positive types*. Types that are defined by their elimination are *negative*. All types that we saw so far (except $Tuple$) are positive. 
+Types that, like $Either$, are defined by their introduction rules are called *positive types*. Types that are defined by their elimination are *negative*. All types that we saw so far (except $Tuple$) are positive.
+
+Positive and negative types are dual to each other. 
+
+Positive/negative types correspond to the categorical concepts of limit/colimit, but we will learn more about those later.
 
 **Task 6:** Besides $Tuple$, there is one very important negative type, which covered in this chapter (and in various other places).
 
@@ -837,7 +845,7 @@ foldMaybe\ n\ j\ maybe &= maybe\ n\ j \\
 \end{aligned}
 $$
 
-When using Church encoding, instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
+The general principle of Church encoding, is that instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
 
 **Task 7:** Write a Church-encoded version of the natural numbers type
 
@@ -1135,54 +1143,45 @@ TODO Interlude: Higher-kinds --- System F Omega
 Types and Categories
 ===
 
-In the last chapter, we already established the main principles behind the Curry-Howard isomorphism, between types and logiv
+In the last chapter, we established the main principles behind the Curry-Howard isomorphism, between types and logics and categories.
 
-A proposition can be viewed as a type (this is why Curry-Howard is also known as "Propositions as Types")...
-
-![A type: an empty circle](../06_type/curry_howard_type.svg)
-
-And propositions that follow one another are connected with arrows.
-
-Now, that we know more about type theory, we enrich our understanding:
-
-A proposition can be viewed as a type 
-
-![A type: an empty circle](../06_type/curry_howard_type.svg)
-
-...a proof of the proposition is a value of that type (i.e. a true proposition is equivalent to an *inhabited* type).
-
-![An inhabited type: a circle with one ball](../06_type/curry_howard_value.svg)
-
-So, where does the discrepancy come from? We know that in type theory, "the only values are the ones which are sources and targets of arrows"
-
-Another way to say this is is that values are actually just another way to view arrows: the basic values can be encoded as arrows, via Church-encoding.
-
-![An inhabited type: a circle with one ball, containing two balls connected with an arrow](../06_type/curry_howard_church_encoding.svg)
-
-And the rest of the values we get by by applying the basic arrows to one another.
-
-
-Roughly speaking, a category may be thought of a type theory without its syntax.
-
-<!--
-Duality
+Types are objects functions are morphisms
 ---
 
-Positive and negative types are dual to each other.
+Every type is an object
 
--->
+![category_type.svg](A bunch of balls)
 
-Simply-typed Lambda calculus
+And every value-level arrow/function is a morphism.
+
+![A bunch of balls, connected with each other with arrows](category_arrow.svg)
+
+Values are morphisms too
 ---
 
-Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the prev chapter. 
+We said that category theory is all about arrows. Here, we seemingly turned away from this, and we started drawing values and internal diagrams again.
 
-Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
+![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to s(0), one arrow pointing from s(0) to s(s(0)) etc.](category_nat_internal.svg)
 
+But there is no discrepancy. We said that in type theory, "the only values are the ones which are sources and targets of arrows" which is another way to say that *values are actually just another way to represent arrows*.
+
+![An internal diagram of the natural numbers type](category_nat_internal.svg)
+
+So, rather than going *back* to values, we went *full circle* and discovered that values are just convenient way to draw arrows.
+
+Simply-typed Lambda calculus is a cartesian closed category
+---
+
+If we view types as objects and arrows and values as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the prev chapter. 
+
+> Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
+
+Untyped lambda calculus is a monoid
+---
 
 And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
 
-Polymorphic Lambda calculus
+Polymorphic Lambda calculus is...
 ---
 
 We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 

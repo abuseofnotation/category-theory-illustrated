@@ -49,6 +49,11 @@ window.MathJax = {
 
       <div class="content container page-{{page.title}}">
         <!--<h1>{{page.title}}</h1> -->
+
+        <div class="presentation-controls">
+          <button class="button" id="prev"> < </button>
+          <button class="button" id="next"> > </button>
+        </div>
         
         <div class="prev-next">
         {% if page.previous.url %}
@@ -142,10 +147,9 @@ window.MathJax = {
             Set in <a target="_blank" href="https://ko-fi.com/s/4cad3c65e7">Mell Sans</a>. 
           </i>
           </p>
-
-
         </div>
       </div>
+
       <div class="footer" style="background-color:#dc7100">
         <div class="container">
           <p>
@@ -153,6 +157,20 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
           </p>
         </div>
       </div>
+
+
+      <div class="footer" style="background-color:#dc7100">
+        <div class="container">
+          <p>
+            <a href=".?presentation=true">Presentation mode</a>
+          </p>
+        </div>
+      </div>
+
+
+
+
+
     </body>
 
 
