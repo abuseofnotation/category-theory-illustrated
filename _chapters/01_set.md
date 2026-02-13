@@ -90,6 +90,8 @@ Functions
 
 > "By function I mean the unity of the act of arranging various representations under one common representation." --- Immanuel Kant, from "The Critique of Pure Reason"
 
+Now is the time to admit something: this chapter isn't actually about sets. It is about functions and we only started this way because there is no way to explain functions without explaining sets (although if you read on, you'll find that there actually is one).
+
 A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
 
 These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there). We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from this set to a value from the other one. These different terms demonstrate the multifaceted nature of the concept of function.
@@ -292,7 +294,7 @@ Composition in engineering
 
 Besides being useful for *analyzing* relationships that already exist, the principle of composition can help you in the practice of *building* objects that exhibit such relationships i.e. engineering. 
 
-One of the main ways in which modern engineering differs from ancient craftsmanship is the concept of a *part/module/component* - a product that performs a given function that is not made to be used directly, but is instead optimized to be combined with other such products in order to form a "end-user" product. For example, an *espresso machine* is just a combination of the components, such as , *pump, heater, grinder group* etc, when composed in an appropriate way.
+One of the main ways in which modern engineering differs from ancient craftsmanship is the concept of a *part/module/component* --- a product that performs a given function that is not made to be used directly, but is instead optimized to be combined with other such products in order to form a "end-user" product. For example, an *espresso machine* is just a combination of the components, such as , *pump, heater, grinder group* etc, when composed in an appropriate way.
 
 ![A espresso machine ](../01_set/machine.svg)
 
@@ -336,7 +338,7 @@ If we want compose more than two functions we might wonder if the order in which
 
 ![Composing functions f and (g and c)](../01_set/functions_associativity_external_2.svg)
 
-The answer is yes --- as long as the order is maintained, the result would always be the same. This property of functions is called *associatity.
+The answer is that order of composition doesn't matter --- as long as we compose the same functions, the result would always be the same. This property of functions is called *associatity*.
 
 *Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
@@ -345,10 +347,11 @@ Category theory --- a hint for the definition
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). They have a source and a target, they compose with one another (associatively) and they can be represented by external diagrams.
+In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). Things that are not necessarily functions but have a source and a target like functions, they compose with one another like functions (associatively) and they can be represented by external diagrams.
 
-And there is another way of defining category theory without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
+And there is another way of defining category theory, without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. 
 
+We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
 
 Isomorphism
 ===

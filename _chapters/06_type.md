@@ -1152,22 +1152,26 @@ Every type is an object
 
 ![category_type.svg](A bunch of balls)
 
-And every value-level arrow/function is a morphism.
+And every value-level arrow (function) is a morphism.
 
 ![A bunch of balls, connected with each other with arrows](category_arrow.svg)
 
 Values are morphisms too
 ---
 
-We said that category theory is all about arrows. Here, we seemingly turned away from this, and we started drawing values and internal diagrams again.
+We said that category theory is all about arrows. Here, we seemingly turned away from this, and we started drawing values and internal diagrams again, as for examples the natural numbers type.
 
-![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to s(0), one arrow pointing from s(0) to s(s(0)) etc.](category_nat_internal.svg)
+![The Natural numbers type: 0, 1, 2, 3 etc.](../06_type/nat_type_full_normal.svg)
 
-But there is no discrepancy. We said that in type theory, "the only values are the ones which are sources and targets of arrows" which is another way to say that *values are actually just another way to represent arrows*.
+But there is no discrepancy. We said that in type theory, "the only values are the ones which are sources and targets of arrows". In the case of natural numbers, it is the $successor$ arrow, and the $zero$ arrow).
 
-![An internal diagram of the natural numbers type](category_nat_internal.svg)
+![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to 1, one arrow pointing from 1 to 2  etc.](category_nat_internal.svg)
 
-So, rather than going *back* to values, we went *full circle* and discovered that values are just convenient way to draw arrows.
+ This means that *values are actually just another way to represent arrows*. So, for example, the type of natural numbers be represented externally like this.
+
+![An internal diagram of the natural numbers type](category_nat_external.svg)
+
+Rather than going *back* to values, we went *full circle* and discovered that values are just convenient way to draw arrows.
 
 Simply-typed Lambda calculus is a cartesian closed category
 ---

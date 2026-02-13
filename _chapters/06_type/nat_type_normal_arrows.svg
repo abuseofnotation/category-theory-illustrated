@@ -3,7 +3,7 @@
    viewBox="0 0 595.3 299.99999"
    version="1.1"
    id="svg14095"
-   sodipodi:docname="nat_type_full_normal.svg"
+   sodipodi:docname="nat_type_normal_arrows.svg"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    width="595.29999"
    height="300"
@@ -22,7 +22,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
