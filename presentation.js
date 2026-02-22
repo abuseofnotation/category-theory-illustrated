@@ -8,6 +8,7 @@
 
   if (params.get("presentation") === "true") {
     
+    let elements = []
     window.onload = () => {
 
       // Add a CSS style to the page
@@ -16,22 +17,24 @@
       // Amend links, so they preserve the url params
       Array.from(document.getElementsByTagName('a'))
         .forEach(a => {a.href = a.href + document.location.search})
+
+      elements = document.querySelectorAll("img, h1, h2, h3, h4, h5, h6"); 
     }
 
     // Controlls for next and previous page
     let index = 0;
 
     const next = () => {
-      if (document.images[index + 1] !== undefined) {
+      if (elements[index + 1] !== undefined) {
         index = index + 1
-        document.images[index].scrollIntoView(scrollConfig);
+        elements[index].scrollIntoView(scrollConfig);
       }
     }
 
     const prev = () => {
       if (index > 0) {
         index = index - 1
-        document.images[index].scrollIntoView(scrollConfig);
+        elements[index].scrollIntoView(scrollConfig);
       }
     }
 
