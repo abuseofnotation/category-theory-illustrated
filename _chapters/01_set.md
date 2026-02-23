@@ -338,7 +338,12 @@ If we want compose more than two functions we might wonder if the order in which
 
 ![Composing functions f and (g and c)](../01_set/functions_associativity_external_2.svg)
 
-The answer is that order of composition doesn't matter --- as long as we compose the same functions, the result would always be the same. This property of functions is called *associatity*.
+The answer is that order of composition doesn't matter --- as long as we compose the same functions, the result would always be the same. 
+
+![Composing functions f g and c --- showing the two paths f (g c) and (f g) c as a tree.](../01_set/associativity_function_tree.svg)
+
+This property of functions is called *associatity*.
+
 
 *Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
