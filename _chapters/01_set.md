@@ -257,7 +257,7 @@ We then link all those functions into a whole program, often by using a thing ca
 Functional Composition 
 ===
 
-Now, we were just about to reach the heart of the matter regarding the topic of functions. And that is functional composition. Assume that we have two functions, $g: Y → P$ and $f: P → G$ and the target of the first one is the same set as the source of the second one.
+Now, we were just about to reach the heart of the matter regarding the topic of functions. And that is functional composition. Assume that we have two functions,  and the target of the first one is the same set as the source of the second one, like $g: Y → P$ and $f: P → G$.
 
 ![Matching functions](../01_set/functions_matching.svg)
 
@@ -265,14 +265,13 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
-We can define a function that is the equivalent to performing the operation described above. 
-That would be a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows.
+In this way, we can define a function that is the equivalent to performing the operation described above: a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows.
 
 Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed again).
+Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed(composed) again). This insight is captured by the property is called associativity.
 
 **Task 8:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
@@ -389,7 +388,7 @@ Therefore, the concept of an isomorphism contains the concept of equality &mdash
 Isomorphism and composition
 ---
 
-An interesting fact about isomorphisms is that if we have functions that convert a member of set $A$ to a member of set $B$, and the other way around, then, because of functional composition, we know that any function from/to $A$ has a corresponding function from/to $B$.
+An interesting fact about isomorphisms is that if we have functions that convert a member of set $A$ to a member of set $B$, and the other way around, then, because of functional composition, we know that any function from $A$ has a corresponding function from $B$ and the other way around.
 
 ![The architecture of isomorphism](../01_set/isomorphism_general.svg)
 
