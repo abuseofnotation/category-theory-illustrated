@@ -1167,11 +1167,20 @@ But there is no discrepancy. We said that in type theory, "the only values are t
 
 ![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to 1, one arrow pointing from 1 to 2  etc.](category_nat_internal.svg)
 
- This means that *values are actually just another way to represent arrows*. So, for example, the type of natural numbers be represented externally like this.
+ This means that *values are actually just another way to represent arrows*. 
 
-![An internal diagram of the natural numbers type](category_nat_external.svg)
+As we saw in the second chapter, an arrow from $1 \to X$ for some type $X$ is equivalent to a value of $X$. So, for example, the type of natural numbers be represented externally like this. 
+
+![An internal diagram of the natural numbers type](category_nat_external_zero.svg)
+
+Notice that we have one arrow from $1 \to \mathbb{N}$ called $0$. 
+
+But we do have one more arrow: $s : \mathbb{N} \to \mathbb{N}$. So, what happens when we combine the two 
+
+![An internal diagram of the natural numbers type](category_nat_external_one.svg)
 
 Rather than going *back* to values, we went *full circle* and discovered that values are just convenient way to draw arrows.
+
 
 Simply-typed Lambda calculus is a cartesian closed category
 ---
