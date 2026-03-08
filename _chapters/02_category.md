@@ -304,7 +304,10 @@ And let's examine the functions from the singleton set, to that random set.
 
 ![Functions from the singleton set](../02_category/elements_singleton_functions.svg)
 
-It's easy to see that there would be exactly one function for each element of the set i.e. that each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
+It's easy to see that there would be exactly one function for each element of the set. So we may say that:
+
+Each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
+{: .theorem}
 
 So, we can say that what we call "elements" of a set are the functions from the singleton set to it.
 

@@ -1169,12 +1169,20 @@ But there is no discrepancy. We said that in type theory, "the only values are t
 
  This means that *values are actually just another way to represent arrows*. 
 
-As we saw in the second chapter, an arrow from $1 \to X$ for some type $X$ is equivalent to a value of $X$. So, for example, the type of natural numbers be represented externally like this. 
+For example, the type of natural numbers be represented externally like this. 
 
 ![An internal diagram of the natural numbers type](category_nat_external_zero.svg)
 
-Notice that we have one arrow from $1 \to \mathbb{N}$ called $0$. 
+This is where we go back to a simple theorem about set/type elements that we learned in the second chapter:
 
+> Each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
+{: .theorem}
+
+So, arrow from $1 \to X$ for some type $X$ is equivalent to a *value* of $X$ when we view it as a set.
+
+This means that the *arrow* from $1 \to \mathbb{N}$ which we call $0$ is isomorphic to the *value* $0$.
+
+So let's see if we have more $1 \to \mathbb{N}$
 But we do have one more arrow: $s : \mathbb{N} \to \mathbb{N}$. So, what happens when we combine the two 
 
 ![An internal diagram of the natural numbers type](category_nat_external_one.svg)
