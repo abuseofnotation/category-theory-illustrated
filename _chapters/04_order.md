@@ -3,8 +3,8 @@ layout: default
 title: Orders
 ---
 
-Orders
-===
+# Orders
+
 
 Given a set of objects, there can be numerous criteria, based on which to order them (depending on the objects themselves) --- size, weight, age, alphabetical order etc.
 
@@ -22,14 +22,14 @@ And the other is a *binary relation* between these things, which are often repre
 
 Not all binary relationships are orders --- only ones that fit certain criteria, which we are going to examine as we review the different types of orders.
 
-Linear order
-===
+## Linear order
+
 
 Let's start with an example --- the most straightforward type of order that you think of is *linear order* i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which element comes before which. For example, order of colors, sorted by the length of their light-waves (or by how they appear in the rainbow).
 
 ![Linear order](../04_order/linear_order.svg)
 
-Using set theory, we can represent this order, as well as any other order, as a sets of pairs of the order's underlying set with itself.
+Using set theory, we can represent this order, as well as any other order, as a sets of pairs of the order's underlying set with itself (a subset of the product set).
 
 ![Binary relation as a product](../04_order/binary_relation_product.svg)
 
@@ -47,10 +47,11 @@ And in programming, orders are defined by providing a function which, given two 
 
 However (this is where it gets interesting) not all such functions (and not all sets of pairs) define orders. For a set of pairs to really define an order i.e. give the same output every time, independent of how the objects were shuffled initially, functions have to obey several rules. 
 
-Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. Let's review them.
+Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. 
 
-Reflexivity 
----
+Let's review them.
+
+### Reflexivity 
 
 Let's get the boring law out of the way --- each object has to be bigger or equal to itself, or $a ≤ a$ for all $a$ (the relationship between elements in an order is commonly denoted as $≤$ in formulas, but it can also be represented with an arrow from first object to the second.)
 
@@ -58,8 +59,7 @@ Let's get the boring law out of the way --- each object has to be bigger or equa
 
 This law only exist to cover  the "base case": we can formulate it the opposite way too and say that each object should *not* have the relationship to itself, in which case we would have a relation than resembles *bigger than*, as opposed to *bigger or equal to* and a slightly different type of order, sometimes called a *strict* order.
 
-Transitivity
----
+### Transitivity
 
 The second law is maybe the least obvious, (but probably the most essential) --- it states that if object $a$ is bigger than object $b$, it is automatically bigger than all objects that are smaller than $b$ or $a ≤ b \land b ≤ c \to a ≤ c$. 
 
@@ -67,8 +67,7 @@ The second law is maybe the least obvious, (but probably the most essential) ---
 
 This is the law that to a large extend defines what an order is: if I am better at playing soccer than my grandmother, then I would also be better at it than my grandmother's friend, whom she beats, otherwise I wouldn't really be better than her.
 
-Antisymmetry
----
+### Antisymmetry
 
 The third law is called antisymmetry. It states that the function that defines the order should not give contradictory results (or in other words you have $x ≤ y$ and $y ≤ x$ only if $x = y$). 
 
@@ -76,8 +75,7 @@ The third law is called antisymmetry. It states that the function that defines t
 
 It also means that no ties are permitted --- either I am better than my grandmother at soccer or she is better at it than me.
 
-Totality
----
+### Totality
 
 The last law is called *totality* (or *connexity*) and it mandates that all elements that belong to the order should be *comparable* ($a ≤ b \lor b ≤ a$). That is, for any two elements, one would always be "bigger" than the other. 
 
@@ -95,8 +93,7 @@ Orders, like the order people based on their soccer skills, that don't follow th
 
 Partial orders are actually much more interesting than linear/total orders. But before we dive into them, let's say a few things about numbers.
 
-The order of natural numbers
----
+### The order of natural numbers
 
 Natural numbers form a linear order under the operation *bigger or equal to* (the symbol of which we have been using in our formulas.)
 
@@ -118,8 +115,8 @@ However, this is not the case with partial orders that we will look into next.
 
 <!--TODO Cantor's theorem -->
 
-Partial order 
-===
+## Partial order 
+
 
 Like a linear order, a *partial order* (also a *partially-ordered set*, or *poset*) consists of a set plus a relation, with the only difference that, although it still obeys the *reflexive, transitive* and the *antisymmetric* laws, the relation does not obey the law of *totality*, that is, not all elements are necessarily ordered. I say "necessarily" because even if all elements are ordered, it is still a partial order (just as a group is still a monoid) --- all linear orders are also partial orders, but not the other way around. We can even create an *order of orders*, based on which is more general.
 
@@ -135,8 +132,7 @@ However, including this **o**ther person whom none of us played yet, makes the h
 
 This is the main difference between partial and total orders --- partial orders cannot provide us with a definite answer of the question who is better than who. But sometimes this is what we need --- in sports, as well as in other domains, there isn't always an appropriate way to rate elements linearly. 
 
-Chains
----
+### Chains
 
 Before, we said that all linear orders can be represented by the same chain-like diagram, we can reverse this statement and say that all diagrams that look something different than the said diagram represent partial orders. 
 
@@ -152,8 +148,7 @@ The chains in an order don't have to be completely disconnected from each other 
 
 The above set is not linearly-ordered --- although we know that $d ≤ g$ and that $f ≤ g$, the relationship between $d$ and $f$ is *not* known --- any element can be bigger than the other one.
 
-Greatest and least objects
----
+### Greatest and least objects
 
 Although partial orders don't give us a definitive answer to "Who is better than who?", some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely "Who is number one?" i.e. who is the champion, the player who is better than anyone else. Or, more generally, the element that is bigger than all other elements. 
 
@@ -167,8 +162,7 @@ Sometimes we have more than one elements that are bigger than all other elements
 
 In addition to the greatest element, a partial order may also have a least (smallest) element, which is defined in the same way.
 
-Joins
----
+### Joins
 
 The *least upper bound* of two elements that are connected as part of an order is called the *join* of these elements, e.g. the green element is a join of the other two. 
 
@@ -194,8 +188,7 @@ If, however, one of those elements is established as smaller than the rest of th
 
 **Task 3:** Which concept in category theory reminds you of joins?
 
-Meets
----
+### Meets
 
 Given two elements, the biggest element that is smaller than both of them is called the *meet* of these elements.
 
@@ -203,8 +196,7 @@ Given two elements, the biggest element that is smaller than both of them is cal
 
 The same rules as for the joins apply, but in reverse.
 
-Hasse diagrams
----
+### Hasse diagrams
 
 The diagrams that we use in this section are called "Hasse diagrams" and they work much like our usual diagrams, however they have an additional rule that is followed --- "bigger" elements are always positioned above smaller ones. 
 
@@ -215,8 +207,7 @@ In terms of arrows, the rule means that if you add an arrow to a point, the poin
 This arrangement allows us to compare any two points by just seeing which one is above the other e.g. we can determine the *join* of two elements, by just identifying the elements that they connect to and see which one is lowest.
 
 
-Color order
----
+### Color order
 
 We all know many examples of total orders (any form of chart or ranking is a total order), but there are probably not so many obvious examples of partial orders that we can think of off the top of our head. So let's see some. This will gives us some context, and will help us understand what joins are.
 
@@ -228,8 +219,7 @@ If you go through it, you will notice that the join of any two colors is the col
 
 ![Join in a color mixing poset](../04_order/color_mixing_poset_join.svg)
 
-Numbers by division
----
+### Numbers by division
 
 We saw that when we order numbers by "bigger or equal to", they form a linear order. But numbers can also form a partial order, for example they form a partial order if we order them by which divides which, i.e. if $a$ divides $b$, then $a$ is before $b$ e.g. because $2 \times 5 = 10$, $2$ and $5$ come before $10$ (but $3$, for example, does not come before $10$.)
 
@@ -241,8 +231,7 @@ And the *meet* (the opposite of join) of two numbers is their *greatest common d
 
 ![Divides poset](../04_order/divides_poset_meet.svg)
 
-Inclusion order
----
+### Inclusion order
 
 Given a collection of all possible sets containing a combination of a given set of elements...
 
@@ -262,8 +251,7 @@ The order example with the number dividers is also isomorphic to an inclusion or
 
 ![Divides poset](../04_order/divides_poset_inclusion.svg)
 
-Order isomorphisms
----
+### Order isomorphisms
 
 We mentioned order isomorphisms several times already so this is about time to elaborate on what they are. 
 
@@ -275,8 +263,8 @@ Given two sets (we will use partial order of numbers by division and the prime i
 ![An isomorphism between the divides poset and the corresponding inclusion order](../04_order/divides_poset_isomorphism.svg)
 
 > An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism, it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
-Birkhoff's representation theorem
----
+
+### Birkhoff's representation theorem
 
 So far, we saw two different partial orders, one based on color mixing, and one based on number division, that can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one.) Many other partial orders can be defined in this way. Which ones exactly, is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the *finite* partial orders that meet the following two criteria: 
 
@@ -290,8 +278,8 @@ And the "prime" elements which we use to construct the inclusion order are the e
 
 By the way, the partial orders that are *not* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that *do not contain all possible combinations* of elements.
 
-Lattices
-===
+## Lattices
+
 
 We will now review the orders for which Birkhoff's theorem applies i.e. the *lattices*. Lattices are partial orders, in which every two elements have a *join* and a *meet*. So every lattice is also partial order, but not every partial order is a lattice (we will see even more members of this hierarchy). 
 
@@ -301,8 +289,7 @@ Most partial orders that are created based on some sort of rule are distributive
 
 Notice that we added the black ball at the top and the white one at the bottom. We did that because otherwise the top three elements wouldn't have a *join* element, and the bottom three wouldn't have a *meet*.
 
-Bounded lattices
----
+### Bounded lattices
 
 Our color-mixing lattice, has a *greatest element* (the black ball) and a *least element* (the white one). Lattices that have a least and greatest elements are called *bounded lattices*. It isn't hard to see that all finite lattices are also bounded.
 
@@ -312,8 +299,8 @@ Our color-mixing lattice, has a *greatest element* (the black ball) and a *least
 {% if site.distribution == 'print'%}
 -->
 
-Interlude --- semilattices VS trees
-===
+## Interlude --- semilattices VS trees
+
 
 Lattices are partial orders that have both *join* *and* *meet* for each pair of elements. Partial orders that just have *join* (and no *meet*), or just have *meet* and no *join* are called *semilattices*. More specifically, partial orders that have *meet* for every pair of elements are called *meet-semilattices*.
 
@@ -345,8 +332,8 @@ The implications of the tendency to use trees, as opposed to lattices, to model 
 
 In general, it seems that hierarchies that are specifically designed by *people*, such as cities tend to come up as trees, whereas hierarchies that are natural, such as the hierarchy of colors, tend to come be lattices.
 
-Interlude: Formal concept analysis
-===
+## Interlude: Formal concept analysis
+
 
 In the previous section we (along with Christopher Alexander) argued that lattice-based hierarchies are "natural", that is, they arise in nature. Now, we will see an interesting way to uncover such hierarchies, given a set of objects that share some attributes. This is an overview of a mathematical method, called *formal context analysis*.
 
@@ -382,8 +369,8 @@ Ordering the concept as a lattice might help us see connections between the conc
 {%endif%}
 -->
 
-Preorder
-===
+## Preorder
+
 
 In the previous section, we saw how removing the law of *totality* from the laws of (linear) order produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. 
 
@@ -409,8 +396,7 @@ And as a result of that, all "circle" relationships (e.g. where you have a weake
 
 All of that structure arises naturally from the simple law of transitivity.
 
-Preorders and equivalence relations
----
+### Preorders and equivalence relations
 
 Preorders may be viewed as a middle-ground between *partial orders* and *equivalence relations*, as they are missing exactly the property on which those two structures differ --- (anti)symmetry. Because of that, if we have a bunch of objects in a preorder that follow the law of *symmetry*, those objects form an equivalence relation. And if they follow the reverse law of *antisymmetry*, they form a partial order.
 
@@ -435,8 +421,7 @@ In short, for every preorder, we can define the *partial order of the equivalenc
 -->
 
 
-Maps as preorders
----
+### Maps as preorders
 
 We use maps to get around all the time, often without thinking about the fact that that they are actually diagrams. More specifically, some of them are preorders --- the objects represent cities or intersections, and the relations represent the roads. 
 
@@ -448,8 +433,7 @@ Transitivity reflects the fact that if you have a route allowing you to get from
 
 However, maps that contain more than one road (and even more than one *route*) connecting two intersections, cannot be represented using preorders. For that we would need categories (don't worry, we will get there).
 
-State machines as preorders 
----
+### State machines as preorders 
 
 Let's now reformat the preorder that we used in the previous two examples as a Hasse diagram that goes from left to right. Now, it (hopefully) doesn't look so much like a hierarchy, nor like map, but like a description of a process (which, if you think about it, is also a map just one that is temporal rather than spatial.) This is actually a very good way to describe a computation model known as *finite state machine*. 
 
@@ -488,8 +472,8 @@ State machines are, however not Turing-complete, that is, they cannot encode any
 |---   | ---   | ---        |
 -->
 
-Orders as categories
-===
+## Orders as categories
+
 
 We saw that preorders are a powerful concept, so let's take a deeper look at the law that governs them --- the transitivity law. What this law tells us that if we have two pairs of relationship $a ≤ b$ and $b ≤ c$, then we automatically have a third one $a ≤ c$. 
 
@@ -529,8 +513,7 @@ An interesting fact that follows from the fact that the they have at most one mo
 
 **Task 6:** Prove this. 
 
-Products and coproducts
----
+### Products and coproducts
 
 While we are rehashing diagrams from the previous chapters, let's look at the diagram defining the *coproduct* of two objects in a category, from chapter 2. 
 ![Joins as coproduct](../04_order/coproduct_join.svg)
@@ -560,8 +543,7 @@ We can see that the two definitions, and their corresponding diagrams, are basic
 
 Speaking in category-theoretic terms, we can say that the *categorical coproduct* in the *category of orders* is the *join* operation. Which of course means that *products* correspond to *meets*.
 
-Orders as thin categories
----
+### Orders as thin categories
 
 In category-theoretic terms, orders (categories that have at most one morphism with a given type signature) are known as "thin" categories, and are often used for exploring categorical concepts in a context that is easier to understand than in normal (non-thin) categories. For example, as we saw, understanding the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts.
 
@@ -571,8 +553,8 @@ Thin categories are also helpful in contexts when we want to keep it simple and 
 {% if site.distribution == 'print' %}
 -->
 
-Answers
-===
+## Answers
+
 
 ---
 

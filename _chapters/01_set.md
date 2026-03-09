@@ -3,15 +3,15 @@ layout: default
 title: Sets
 ---
 
-Sets
-===
+# Sets
+
 
 Ready, *set*, begin... (you don't know how hard I tried to resist to making that pun). We begin our inquiry with the theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it's meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
 
 Also, sets are an *example of a category* (the *proto-example*, we might say), and it is useful to have examples. 
 
-What is an Abstract Theory
-===
+## What is an Abstract Theory
+
 
 > Instead of asking what can be defined and deduced from what is assumed to begin with, we ask instead what more general ideas and principles can be found, in terms of which what was our starting-point can be defined or deduced.
 > Bertrand Russell, from Introduction to Mathematical Philosophy
@@ -34,8 +34,8 @@ You've already seen how abstract theories may be useful. Because they are so sim
 People have tried to be precise and at the same time down to Earth for centuries, and only recently discovered that "precise and down to Earth" is an oxymoron. Let's take Euclidean geometry as an example. Yes, Euclidean geometry is precise, because it is valid for all sets of objects, called ("point", "line", "angle", "circle", etc.), which have relationships, as defined by the five famous axioms. Yes, geometry does, in many instances, describe the natural world, because there are many sets of objects which have these relations. However, its "precise" part and its "down to Earth" part have nothing to do with each other. We can, for example, define a point as any stain on the floor of your room and a line as a piece of duct tape, put on the same floor. That will be a completely valid application of the Euclidean laws, albeit not very useful one. Or we can try to use geometry to reason about points on the surface of the Earth, which is a very useful application of geometry, however not of Euclidean geometry, because Euclidean geometry only describes points on a flat plane, and the Earth is not flat. You can argue that these are actually two separate theories there, which just happen to be perceived as one. You have the axioms, or the postulates on one hand, which are not useful for anything on their own, and you have applications in science and engineering which are somewhat based on them, but not quite. 
 -->
 
-Sets
-===
+## Sets
+
 
 > “A set is a gathering together into a whole of definite, distinct objects of our perception or of our thought—which are called elements of the set.” – Georg Cantor
 
@@ -52,8 +52,8 @@ This example may look overly-simple, but in fact, it's just as valid as any othe
 
 The key insight that makes the concept useful is the fact that it enables you to reason about several things as if they were one.
  
-Subsets 
----
+### Subsets 
+
 
 Let's construct one more set. The set of *all balls that are warm in color*. Let's call it $Y$ (because in the diagram, it's colored in **y**ellow).
 
@@ -63,8 +63,7 @@ Notice that $Y$ contains only elements that are also present in $G$. That is, ev
 
 ![Y and G together](../01_set/set_subset.svg)
 
-Singleton Sets
----
+### Singleton Sets
 
 The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid &mdash; simply put, there are things that are *one of a kind*. The set of kings/queens that a given kingdom has is a singleton set. 
 
@@ -72,8 +71,7 @@ The set of all *red balls* contains just one ball. We said above that sets summa
 
 What's the point of the singleton set? Well, it is part of the language of set theory, e.g., if we have a function which expects a set of given items, but if there is only one item that meets the criteria, we can just create a singleton set with that item.
 
-The Empty set
----
+### The Empty set
 
 Of course if one is a valid answer, zero can be also. If we want a set of all *black balls*  $B$ or all the *white balls*, $W$, the answer to all these questions is the same &mdash; the empty set.
 
@@ -83,19 +81,18 @@ Because a set is defined only by the items it contains, the empty set is *unique
 
 The empty set has some special properties, for example, it is a subset of every other set. Mathematically speaking, $\forall A  \to \varnothing \subseteq A$ ($\forall$ means "for all")
 
-Functions
-===
+## Functions
 
 > "By function I mean the unity of the act of arranging various representations under one common representation." --- Immanuel Kant, from "The Critique of Pure Reason"
 
 Now is the time to admit something: this chapter isn't actually about sets. It is about functions and we only started this way because there is no way to explain functions without explaining sets (although if you read on, you'll find that there actually is one).
 
-A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
+> A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
+{: .definition}
 
 These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there). We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from this set to a value from the other one. These different terms demonstrate the multifaceted nature of the concept of function.
 
-Different types of functions
----
+### Different types of functions
 
 Here is a function $f$, which converts each ball from the set $R$ to the ball with the opposite color in another set $G$ (in mathematics a function's name is often accompanied by the names of its source and target sets, like this: $f: R → G$)
 
@@ -117,8 +114,7 @@ An example might be the relationship between some kind of pattern or structure a
 
 We saw how versatile functions are, but there is one thing that you cannot have in a function. You cannot have a source element that is not mapped to anything, or that is mapped to more than one target element &mdash; that would constitute a *many-to-many* relationship and as we said functions express many-to-one relationships. There is a reason for that "design decision", and we will arrive at it shortly.
 
-Functions in everyday life
----
+### Functions in everyday life
 
 Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask that has an answer can be expressed as a function.
 
@@ -132,8 +128,7 @@ Note that the question "Who is my child?" is *NOT* a straightforward function, b
 
 **Task 2:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
 
-The Identity Function
----
+### The Identity Function
 
 For every set $G$, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element of $G$ to itself. It is called *the identity function* of $G$ or $ID_{G}: G → G$.
 
@@ -141,8 +136,7 @@ For every set $G$, no matter what it represents, we can define the function that
 
 You can think of $ID_{G}$ as a function which represents the set $G$ in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
 
-Functions and Subsets
----
+### Functions and Subsets
 
 For each set and subset, no matter what they represent, we can define a function (called the *image* of the subset) that maps each element of the subset to itself:
 
@@ -150,8 +144,7 @@ For each set and subset, no matter what they represent, we can define a function
 
 Every set is a subset of itself, in which case this function is the same as the identity.
 
-Functions and the Empty Set
----
+### Functions and the Empty Set
 
 Although it doesn't look like it, there is a unique function from the empty set to any other set.
 
@@ -167,8 +160,7 @@ So, evidently, this function has to exist!
 
 **Task 4:** What about the other way around. Are there functions with the empty set as a target as opposed to its source?
 
-Functions and Singleton Sets
----
+### Functions and Singleton Sets
 
 There is a unique function from any set to any singleton set.
 
@@ -178,18 +170,15 @@ There is a unique function from any set to any singleton set.
 
 **Task 6:** Again, what about the other way around?
 
-Sets and numbers
-===
+## Sets and numbers
 
 All numerical operations can be expressed as functions acting on the set of (different types of) numbers. 
 
-Number sets
----
+### Number sets
 
-Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {1, 2, 3... }$. We also have the set of Real numbers $\mathbb{R}$, which includes almost all numbers and the set of positive real numbers (or $\mathbb{R}_{>0}$). 
+Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {1, 2, 3... }$. 
 
-Number functions
----
+### Number functions
 
 Each numerical operation is a function between two of these sets. For example, squaring a number is a function from the set of real numbers to the set of real non-negative numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
 
@@ -208,8 +197,8 @@ Overall everything is permitted, as long as you can always provide exactly one r
 
 Note that most mathematical operations, such as addition, multiplication, etc. require two numbers in order to produce a result. This does not mean that they are not functions, it just means they're a little fancier. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
-Sets and Functions in Programming
-===
+## Sets and Functions in Programming
+
 
 Sets are used extensively in programming, especially in their incarnation as *types* (also called *classes*). All sets of numbers that we discussed earlier also exist in most languages as types.
 
@@ -228,8 +217,7 @@ Most of the types that are used in programming are *composite* types ---  they a
 
 **Task 7:** What is the type equivalent of subsets in programming?
 
-Functions and methods/subroutines
----
+### Functions and methods/subroutines
 
 Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions &mdash; they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example, here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
 
@@ -241,10 +229,9 @@ Why are functions in programming different? Well, figuring a way to encode *effe
 
 Nowadays, many people feel that mathematical functions are too limiting and hard to use. And they might be right. But mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you almost everything about what the function does (this is probably the reason why most functional languages are strongly-typed).
 
-Purely-functional programming languages
----
+### Purely-functional programming languages
 
-We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages.
+We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages. An example of a such language is Haskell, which we will meet later.
 
 Such languages don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
 
@@ -252,8 +239,7 @@ In purely functional programming languages, such operations are *outsourced* to 
 
 We then link all those functions into a whole program, often by using a thing called *continuation passing style*.
 
-Functional Composition 
-===
+## Functional Composition 
 
 Now, we were just about to reach the heart of the matter regarding the topic of functions. And that is functional composition. Assume that we have two functions,  and the target of the first one is the same set as the source of the second one, like $g: Y → P$ and $f: P → G$.
 
@@ -263,18 +249,15 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
-In this way, we can define a function that is the equivalent to performing the operation described above: a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows.
-
-Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
+In this way, we can define a function that is the equivalent to performing the operation described above: a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows. Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed(composed) again). This insight is captured by the property is called associativity.
+Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed(composed) again). This insight is captured by the property called associativity, which we will look into later.
 
 **Task 8:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
-Composition of relationships
----
+### Composition in everyday life
 
 To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
 
@@ -286,8 +269,7 @@ For example, if we again take the relationship between a person and his mother a
 
 Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's partner is our father, etc.
 
-Composition in engineering
----
+### Composition in engineering
 
 Besides being useful for *analyzing* relationships that already exist, the principle of composition can help you in the practice of *building* objects that exhibit such relationships i.e. engineering. 
 
@@ -299,8 +281,7 @@ One of the main ways in which modern engineering differs from ancient craftsmans
 
 By the way, diagrams that are "zoomed out" that show functions without showing set elements are called *external diagrams*, as opposed to the ones that we saw before, which are *internal*. 
 
-Composition and external diagrams 
----
+### Composition and external diagrams 
 
 Let's look at the diagram that demonstrates functional composition in which we showed that successive application of the two composed functions ($f \circ g$) and the new function ($h$) are equivalent.
 
@@ -314,18 +295,18 @@ Alternatively, we can just *say* that the arrow paths are all equivalent (all ar
 
 Or alternatively, if you want to express it as a formula (where $\circ$ is the composition operator).
 
-![An external diagram, showing functional composition of two functions, as a fformula](../01_set/functions_compose_formula.svg)
+![An external diagram, showing functional composition of two functions, as a formula](../01_set/functions_compose_formula.svg)
 
 The external diagram is a more appropriate representation of the concept of composition, as it is more general. In fact, it is *so* general that it can actually serve as a *definition of functional composition*.
 
 > The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that all the paths in this diagram are equivalent.
+{: .definition}
 
 ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
 If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
-Associativity
----
+### Associativity
 
 If we want compose more than two functions we might wonder if the order in which we compose the functions matters for the final outcome i.e. whether combining two functions and then combining the result with a third function...
 
@@ -339,13 +320,11 @@ The answer is that order of composition doesn't matter --- as long as we compose
 
 ![Composing functions f g and c --- showing the two paths f (g c) and (f g) c as a tree.](../01_set/associativity_function_tree.svg)
 
-This property of functions is called *associatity*.
-
+This property of functions is called *associativity*.
 
 *Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
-Category theory --- a hint for the definition
----
+### Category theory --- a hint for the definition
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
@@ -355,8 +334,7 @@ And there is another way of defining category theory, without defining category 
 
 We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
 
-Isomorphism
-===
+## Isomorphism
 
 To explain what isomorphism is, we go back to the examples of the types of relationships that functions can represent, and to the first and most elementary of them all &mdash; the *one-to-one* type of relationship. We know that all functions have exactly one element from the source set, pointing to one element from the target set. But for one-to-one functions *the reverse is also true* &mdash; exactly one element from the target set points to one element from the source. 
 
@@ -368,14 +346,14 @@ If we have a one-to-one-function that connects sets that are of the same size (a
 
 Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets, we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit*, and vise versa, we can say that temperatures measured in Celsius and Fahrenheit are isomorphic.
 
-Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
+Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets), or more formally:
 
-More formally, two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+{: .definition}
 
 Notice how the identity function comes in handy.
 
-Isomorphism and identity
----
+### Isomorphism and identity
 
 If you look closely you would see that the identity function is invertible too (its reverse is itself), so each set is isomorphic to itself in that way.
 
@@ -383,8 +361,7 @@ If you look closely you would see that the identity function is invertible too (
 
 Therefore, the concept of an isomorphism contains the concept of equality &mdash; all equal things are also isomorphic.
 
-Isomorphism and composition
----
+### Isomorphism and composition
 
 An interesting fact about isomorphisms is that if we have functions that convert a member of set $A$ to a member of set $B$, and the other way around, then, because of functional composition, we know that any function from $A$ has a corresponding function from $B$ and the other way around.
 
@@ -392,8 +369,7 @@ An interesting fact about isomorphisms is that if we have functions that convert
 
 For example, if you have a function "is the partner of" that goes from the set of all married people to the same set, then that function is invertible. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between them and this person/object, and vice versa. 
 
-Composing isomorphisms
----
+### Composing isomorphisms
 
 Another interesting fact about isomorphisms is that if we have two isomorphisms that have a set in common, then we can obtain a third isomorphism between the other two sets that would be the result of their (the isomorphisms) composition.
 
@@ -403,7 +379,7 @@ Composing two isomorphisms into another isomorphism is possible by composing the
 
 Informally, we can see that the two morphisms are indeed reverse to each other and hence form an isomorphism. If we want to prove that fact formally, we will do something like the following: 
 
-Given that if two functions are isomorphic, then their composition is equal to an identity function, proving that functions $g \circ f$ and $f' \circ g'$, are isomorphic is equivalent to proving that their composition is equal to identity.
+If two functions are isomorphic, then their composition is equal to an identity function, proving that functions $g \circ f$ and $f' \circ g'$, are isomorphic is equivalent to proving that their composition is equal to identity.
 
 $g \circ f \circ f' \circ g' = id$
 
@@ -419,8 +395,7 @@ which is true, because $g$ and $g'$ are isomorphic and isomorphic functions comp
 
 By the way, there is another way to obtain the isomorphism &mdash; by composing the two morphisms one way in order to get the third function and then taking its reverse. But to do this, we have to prove that the function we get from composing two bijective functions is also bijective. 
 
-Isomorphisms Between Singleton Sets
----
+### Isomorphisms Between Singleton Sets
 
 Between any two singleton sets, we may define the only possible function.
 
@@ -432,22 +407,20 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
 
-Equivalence relations and isomorphisms
-===
+## Equivalence relations and isomorphisms
+
 
 We said that isomorphic sets aren't necessarily the same set (although the reverse is true). However, it is hard to get away from the notion that being isomorphic means that they are *equal* or *equivalent* in some respect. For example, all people who are connected by the *isomorphic* mother/child relationship share some of the same genes. 
 
 And in computer science, if we have functions that convert an object of type $A$ to an object of type $B$ and the other way around (as for example the functions between a data structure and its id), we also can pretty much regard $A$ and $B$ as two formats of the same thing, as having one means that we can easily obtain the other.
 
-Equivalence relations
----
+### Equivalence relations
 
 What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash; the concept of an *equivalence relation*. 
 
 So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition, it's when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
 
-Reflexivity
----
+#### Reflexivity
 
 The first idea that defines equivalence, is that *everything is equivalent with itself*. 
 
@@ -455,8 +428,7 @@ The first idea that defines equivalence, is that *everything is equivalent with 
 
 This simple principle translates to the equally simple law of *reflexivity*: for all sets $A$, $A=A$.
 
-Transitivity
----
+#### Transitivity
 
 According to the Christian theology of the Holy Trinity, the Jesus' Father is God, Jesus is God, and the Holy Spirit is also God, however, the Father is not the same person as Jesus (neither is Jesus the Holy Spirit). If this seems weird to you, that's because it breaks the second law of equivalence relations, transitivity. Transitivity is the idea that things that are both equal to a third thing must also equal between themselves. 
 
@@ -466,8 +438,7 @@ Mathematically, for all sets $A$ $B$ and $C$, if $A=B$ and $B=C$ then $A=C$.
 
 Note that we don't need to define what happens in similar situations that involve more than three sets, as they can be settled by just multiple application of this same law. 
 
-Symmetry
----
+#### Symmetry
 
 If one thing is equal to another, the reverse is also true, i.e, the other thing is also equal to the first one. This idea is called *symmetry*. Symmetry is probably the most characteristic property of the equivalence relation, which is not true for almost any other relation. 
 
@@ -475,8 +446,7 @@ If one thing is equal to another, the reverse is also true, i.e, the other thing
 
 In mathematical terms: if $A=B$ then $B=A$.
 
-Isomorphisms as equivalence relations
----
+### Isomorphisms as equivalence relations
 
 Isomorphisms *are* indeed equivalence relations. And "incidentally", we already have all the information needed to prove it (in the same way in which James Bond seems to always incidentally have exactly the gadgets that are needed to complete his mission). 
 
@@ -492,8 +462,8 @@ What I am trying to say with all this is that it *makes sense* to treat any isom
 {% if site.distribution == 'print'%}
 -->
 
-Interlude --- numbers as isomorphisms
-===
+## Interlude --- numbers as isomorphisms
+
 
 Many people would say that the concept of a number is the most basic concept in mathematics. But actually they are wrong --- *sets and isomorphisms are more basic*! Or at least, numbers can be defined using sets and isomorphisms. 
 
@@ -518,8 +488,8 @@ Before we close this chapter, there is one meta-note that we should definitely m
 -->
 
 
-Addendum: The case of composition in software development
-===
+## Addendum: The case of composition in software development
+
 
 > An unstructured monolithic design is not a good idea, except maybe for a tiny operating system in, say, a toaster, but even there it is arguable.--- Andrew S. Tanenbaum
 
@@ -540,8 +510,8 @@ If you _want_ to look further, look at the Haskell programming language, or some
 {% if site.distribution == 'print' %}
 -->
 
-Answers
-===
+## Answers
+
 
 ---
 

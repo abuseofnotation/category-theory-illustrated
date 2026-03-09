@@ -40,14 +40,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .content h1 {  
-  font-size: 60px;
-  font-weight: bold;
-  color: #009fda;
+  font-size: 100px;
 }
 
 
 h2 {
   font-size: 50px;
+  font-weight: bold;
+  color: #009fda;
 }
 
 h3 {
@@ -62,16 +62,21 @@ h4 {
   visibility: hidden;
 }
 
-.presentation {
+.definition, .theorem {
+  border: 3px solid #000000;
+  margin: 0;
+  color: black;
+  font-weight: bold;
+}
 
-  h1, h2, h3, h4 {
-    margin: 1000px 50px;
-  }
+.presentation {
 
   img {
     margin: 600px 0px;
   }
-
+  h1, h2, h3, h4, h5, h6, .definition, .theorem, table {
+    margin: 1000px 50px;
+  }
 
   .presentation-controls {
     visibility: visible;

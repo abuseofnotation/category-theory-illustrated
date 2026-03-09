@@ -10,7 +10,6 @@
     
     let elements = []
     window.onload = () => {
-
       // Add a CSS style to the page
       document.getElementsByClassName('content')[0].classList.add('presentation')
 
@@ -18,7 +17,7 @@
       Array.from(document.getElementsByTagName('a'))
         .forEach(a => {a.href = a.href + document.location.search})
 
-      elements = document.querySelectorAll("img, h1, h2, h3, h4, h5, h6"); 
+      elements = document.querySelectorAll("img, h1, h2, h3, h4, h5, h6, .definition, .theorem, table"); 
     }
 
     // Controlls for next and previous page
