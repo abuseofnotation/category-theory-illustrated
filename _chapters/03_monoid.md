@@ -165,7 +165,8 @@ Connecting the dots (or the triangles in this case) shows us that there are just
 
 The rotations of a triangle form a monoid --- the *rotations are objects* (of which the zero-degree rotation is the identity) and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
 
-**NB:** Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with triangles, as we shall see later.
+Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with triangles, as we shall see later.
+{: .nota-bene}
 
 Cyclic groups/monoids
 ---
@@ -506,11 +507,11 @@ One thing that we *didn't say* in the prev section: every such permutation group
 This is a result known as the Cayley's theorem. In short:
 
 > Any group is isomorphic to its corresponding permutation group. 
+{: .theorem}
 
 Or formally, if we use $Perm$ to denote the permutation group then Cayley's theorem states that $Perm(A) \cong A$ for any $A$.
 
-
-Or in other words, representing the elements of a monoid/group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*). 
+Or in other words, representing the elements of a monoid/group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*) e.g. a triangle is a figure such that if you flip it two times it would go back to the original position (and everything that you can flip two times and go back to the original position is a triangle).
 
 Cayley's theorem is a very important result, so the fact that it does not look impressive in this context only shows the power of the categorical framework (and how much we learned).
 
@@ -583,6 +584,7 @@ Formal definition
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have an identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
+{: .definition}
 
 Let's see what these laws imply for categories with one object:
 

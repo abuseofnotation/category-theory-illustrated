@@ -6,9 +6,7 @@ title: Sets
 Sets
 ===
 
-Ready, *set*, begin... (you don't know how hard I tried to resist to making that pun). 
-
-We begin our inquiry with the theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it's meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
+Ready, *set*, begin... (you don't know how hard I tried to resist to making that pun). We begin our inquiry with the theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it's meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
 
 Also, sets are an *example of a category* (the *proto-example*, we might say), and it is useful to have examples. 
 
@@ -488,7 +486,7 @@ We said that the most characteristic property of the equivalence relation is its
 
 **Task 11:** One law down, two to go: Go through the previous section and verify that isomorphisms also satisfy the other equivalence relation laws.
 
-The practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as $=$ (and is also similar to having two opposite arrows connecting one set to the other).
+What I am trying to say with all this is that it *makes sense* to treat any isomorphism as equality. For this reason, the practice of using isomorphisms to define an equivalence relation is very prominent in category theory where isomorphisms are denoted with $≅$, which is almost the same as the way equality is denoted $=$ (note that the sign is also similar to two parallel arrows connecting one set to the other).
 
 <!--
 {% if site.distribution == 'print'%}

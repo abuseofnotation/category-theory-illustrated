@@ -393,7 +393,7 @@ You may say that they apply to entirely different _categories of objects_ (nudge
 
 # Categories brierly
 
-Maybe it is about time to see what a category is. Here is a short definition: a category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
+Maybe it is about time to see what a category is. Here is a short definition: A category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
 ![Category theory and set theory compared](../02_category/set_category.svg)
 
@@ -415,7 +415,8 @@ Notice the somehow weird, (but actually completely logical) symmetry (or perhaps
 
 By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we gain the ability to zoom out and see the whole universe where we have been previously trapped. In the same way that the whole realm of sets can be thought of as one category, a programming language can also be thought of as a category. The concept of a category allows us to find and analyze similarities between these and other structures.
 
-**NB:** The word "Object" is used in both programming languages and in category theory, but has completely different meanings. A categorical object is equivalent to a _type_ or a _class_ in programming language theory.
+The word "Object" is used in both programming languages and in category theory, but has completely different meanings. A categorical object is equivalent to a _type_ or a _class_ in programming language theory.
+{: .nota-bene}
 
 ## Sets VS Categories
 
@@ -465,7 +466,8 @@ Formally, this requirement says that there should exist an _operation_, usually 
 
 If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
 
-**NB:** Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f \circ g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "\circ" as "after", e.g. $f \;\text{after}\; $g.
+Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f \circ g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "\circ" as "after", e.g. $f \;\text{after}\; $g.
+{: .nota-bene}
 
 ## The law of identity
 
@@ -509,15 +511,18 @@ More formally, a commuting diagram is a diagram in which given two objects $a$ a
 
 The diagram above is one of the simplest commuting diagrams.
 
-**NB:** Despite the fact that all diagrams in books commute, in general, **not all diagrams commute**. That is, there are many morphisms with the same type signature that are not equivalent to one another.
+Despite the fact that all diagrams in books commute, in general, **not all diagrams commute**. That is, there are many morphisms with the same type signature that are not equivalent to one another.
+{: .nota-bene}
 
 ## Summary
 
 For future reference, let's restate what a category is:
 
-A category is a collection of _objects_ (we can think of them as _points_) and _morphisms_ (or _arrows_) that go from one object to another, where:
-- Each object has to have the identity morphism.
-- There should be a way to compose two morphisms with an appropriate type signature into a third one, in a way that is _associative_.
+
+> A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
+> 1. Each object has to have an identity morphism.
+> 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
+{: .definition}
 
 This is it.
 
