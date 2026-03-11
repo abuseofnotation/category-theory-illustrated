@@ -151,7 +151,9 @@ As an example, take the set of triples, $A \times B \times X$ and the canonical 
 
 More formally, we can define the product in the following way.
 
-> The product of $A$ and $B$, denoted $A \times B$, is a set, such that there exists functions $A \times B \to A$ and $A \times B \to B$. And such that if there is an impostor product $I$, which also has such functions ($I \to A$ and $I \to B$), then there must also exist a unique function with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the above two functions would be just the composition of $g$ with the usual "getter" functions of the product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$). 
+> The product of $A$ and $B$, denoted $A \times B$, is a set, such that: 
+1. There exist two "projection" functions $A \times B \to A$ and $A \times B \to B$. 
+2. For any impostor product $I$, that also has such projection functions ($I \to A$ and $I \to B$), there must also exist a unique function with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the projections of the impostor would be just the composition of $g$ with the projections of the product.
 {: .definition}
 
 We prove that a given set is a product by giving a formula for the function $g$, such that it fits our criteria. Given functions  $g^{1}: I \to A$ and $g^{2}: I \to B$, the function $g$ would be just the function that makes up a pair of the results of those two functions, so if $i$ is an element of $I$, then $g = (i) \to (g^{1}(i), g^{2}(i))$.
@@ -216,6 +218,13 @@ As you might have already noticed, this definition is pretty similar to the defi
 ![Coproduct, external diagram](../02_category/coproduct_candidates.svg)
 
 All these sets express relationships which are more vague than the simple sum, and therefore given such a set, there would exist a unique function that would distinguish it from the true sum. The only difference is that, unlike the functions that define products, this time this function goes _from the sum_ to the impostor.
+
+Here is the definition
+
+> The sum of $A$ and $B$, denoted $A + B$, is a set, such that: 
+1. There exists two "projection" functions $A \to A + B$ and $B \to A + B$. 
+2. For any impostor sum $I$, that also has such projection functions ($A \to I$ and $B \to I$), there must also exist a unique function with the type signature $g: A + B \to I$, that converts the real sum to the impostor sum, such that the projections of the impostor sum be just the composition of $g$ with the projections.
+{: .definition}
 
 ![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
 
@@ -372,7 +381,7 @@ In the previous chapter, we noted an interesting property of the empty set:
 
 And, again, since the empty set is the only set that has this property, we can reverse the above statement and use it as a definition: 
 
-> The empty set is the set such that there exists a function from it to any other set.
+> The empty set is a set such that there exists a function from it to any other set.
 {: .definition}
 
 *Task 3:* why is the functions to the empty set unique?
@@ -545,7 +554,14 @@ For future reference, let's restate what a category is:
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
 {: .definition}
 
-This is it.
+This is it. 
+
+And, because categories behave as sets, many set-theoretic definitions are also valid for categories, for example, if we rewrite the definition of a set product, change "set" to "object" and "function" to "morphism", we get the general definition of a categorical product:
+
+> The product of $A$ and $B$, denoted $A \times B$, is ~~a set~~ an object, such that: 
+1. There exists two "projection" ~~functions~~ morphisms $A \times B \to A$ and $A \times B \to B$. 
+2. For any impostor product $I$, that also has such projection ~~functions~~ morphisms ($I \to A$ and $I \to B$), there must also exist a unique ~~function~~ morphism with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the above two ~~functions~~ morphisms would be just the composition of $g$ with the projections of the product.
+{: .definition}
 
 ## Addendum: Why are categories like that?
 
@@ -555,7 +571,7 @@ _Why_ are categories defined by those two laws and not some other two (or one, t
 
 The reason the identity law is required is by far the more obvious one. Why do we need to have a morphism that does nothing? It's because morphisms are the basic building blocks of our language, we need the identity morphism to be able to speak properly. For example, once we have the concept of identity morphism defined, we can define a category-theoretic definition of an _isomorphism_, based on it (which is important, because the concept of an isomorphism is very important for category theory).
 
-As we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$ and $B → A$) such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
+As we said in the previous chapter, an isomorphism between two objects ($A$ and $B$) consists of two morphisms --- ($A → B$ and $B → A$), such that their compositions are equivalent to the identity functions of the respective objects. Formally, objects $A$ and $B$ are isomorphic if there exist morphisms $f: A → B$ and $g: B → A$ such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 And here is the same thing expressed with a commuting diagram.
 

@@ -17,7 +17,7 @@
       Array.from(document.getElementsByTagName('a'))
         .forEach(a => {a.href = a.href + document.location.search})
 
-      elements = document.querySelectorAll("img, h1, h2, h3, h4, h5, h6, .definition, .theorem, table"); 
+      elements = document.querySelectorAll("img, h1, h2, h3, h4, h5, h6, .definition, .theorem, table, pre"); 
     }
 
     // Controlls for next and previous page
@@ -27,6 +27,8 @@
       if (elements[index + 1] !== undefined) {
         index = index + 1
         elements[index].scrollIntoView(scrollConfig);
+      } else {
+        document.getElementsByClassName('prev-next')[0].children[1].click()
       }
     }
 
@@ -34,6 +36,8 @@
       if (index > 0) {
         index = index - 1
         elements[index].scrollIntoView(scrollConfig);
+      } else {
+        document.getElementsByClassName('prev-next')[0].children[0].click()
       }
     }
 
