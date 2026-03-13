@@ -49,9 +49,12 @@ And in programming, orders are defined by providing a function which, given two 
 
 However (this is where it gets interesting) not all such functions (and not all sets of pairs) define orders. For such function to really define an order i.e. to have the same output every time, independent of how the objects were shuffled initially, it has to obey several rules. 
 
-Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. 
+Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. Let's check what they are.
 
-Let's review them.
+>A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymetry, totality.
+{: .definition}
+
+And now, let's review them.
 
 ### Reflexivity 
 
@@ -80,9 +83,6 @@ It also means that no ties are permitted --- either I am better than my grandmot
 ### Totality
 
 The last law is called *totality* (or *connexity*) and it mandates that all elements that belong to the order should be *comparable* ($a ≤ b \lor b ≤ a$). That is, for any two elements, one would always be "bigger" than the other. 
-
->An linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymetry, totality.
-{: .definition}
 
 By the way, the law of totality makes the reflexivity law redundant, as reflexivity is just a special case of totality when $a$ and $b$ are one and the same object, but I still want to present it for reasons that will become apparent soon.
 
@@ -224,7 +224,7 @@ In terms of arrows, the rule means that if you add an arrow to a point, the poin
 This arrangement allows us to compare any two points by just seeing which one is above the other e.g. we can determine the *join* of two elements, by just identifying the elements that they connect to and see which one is lowest.
 
 
-### Color order
+### Color-mixing partial order
 
 We all know many examples of total orders (any form of chart or ranking is a total order), but there are probably not so many obvious examples of partial orders that we can think of off the top of our head. So let's see some. This will gives us some context, and will help us understand what joins are.
 
@@ -236,7 +236,7 @@ If you go through it, you will notice that the join of any two colors is the col
 
 ![Join in a color mixing poset](../04_order/color_mixing_poset_join.svg)
 
-### Numbers by division
+### The partial order of numbers by division
 
 We saw that when we order numbers by "bigger or equal to", they form a linear order. But numbers can also form a partial order, for example they form a partial order if we order them by which divides which, i.e. if $a$ divides $b$, then $a$ is before $b$ e.g. because $2 \times 5 = 10$, $2$ and $5$ come before $10$ (but $3$, for example, does not come before $10$.)
 
@@ -248,7 +248,7 @@ And the *meet* (the opposite of join) of two numbers is their *greatest common d
 
 ![Divides poset](../04_order/divides_poset_meet.svg)
 
-### Inclusion order
+### The inclusion partial order
 
 Given a collection of sets containing a combination of a given set of elements...
 
@@ -271,19 +271,6 @@ The order example with the number dividers is also isomorphic to an inclusion or
 
 ![Divides poset](../04_order/divides_poset_inclusion.svg)
 
-### Order isomorphisms
-
-We mentioned order isomorphisms several times already so this is about time to elaborate on what they are. 
-
-Given two sets (we will use partial order of numbers by division and the prime inclusion order as an example) an isomorphism between them is comprised of the following two functions: 
-
-1. One function from the prime inclusion order, to the number order (which in this case is just the *multiplication* of all the elements in the set) 
-2. One function from the number order to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
-
-![An isomorphism between the divides poset and the corresponding inclusion order](../04_order/divides_poset_isomorphism.svg)
-
-> An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism, it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
-{: .definition}
 
 ### Birkhoff's representation theorem
 
@@ -389,6 +376,24 @@ Ordering the concept as a lattice might help us see connections between the conc
 <!--
 {%endif%}
 -->
+
+### Order isomorphisms
+
+We mentioned order isomorphisms several times already so this is about time to elaborate on what they are. 
+
+Given two sets (we will use partial order of numbers by division and the prime inclusion order as an example) an isomorphism between them is comprised of the following two functions: 
+
+1. One function from the prime inclusion order, to the number order (which in this case is just the *multiplication* of all the elements in the set) 
+2. One function from the number order to the prime inclusion order (which is an operation called *prime factorization* of a number, consisting of finding the set of prime numbers that result in that number when multiplied with one another). 
+
+![An isomorphism between the divides poset and the corresponding inclusion order](../04_order/divides_poset_isomorphism.svg)
+
+An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism, it has to *respect those arrows*.
+
+> An isomorphism between two orders is an invertible function between their underlying sets such that applying this function (let's call it $F$) to any two elements in one set (let's call them $a$ and $b$) should result in two elements that have a corresponding order in the other set (so, $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
+{: .definition}
+
+Such functions are called *order-preserving* functions. 
 
 ## Preorder
 
