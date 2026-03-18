@@ -3,29 +3,25 @@ layout: default
 title: Logic
 ---
 
-Logic
-===
+# Logic
 
 Now let's talk about one more *seemingly* unrelated topic just so we can "surprise" ourselves when we realize it's category theory. By the way, in this chapter there will be another surprise in addition to that, so don't fall asleep. 
 
 Also, I will not merely transport you to a different branch of mathematics, but to an entirely different discipline --- *logic*. 
 
-What is logic
-===
+## What is logic
 
 Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. that which really exists. For example, if science explains how our universe works then logic is the part of the description which is also applicable to any other universe that is *possible to exist*. A scientific theory aims to be consistent with both itself and observations, while a logical theory only needs to be consistent with itself (and true regardless of observations).
 
-Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form.
+So, logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form.
 
 On top of that, it (logic) tries to organize those rules in *logical systems* (or *formal systems* as they are also called).
 
-Logic and mathematics 
----
+### Logic and mathematics 
 
-Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory, as we described it in the first chapter --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way.
+Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory, as we described it in the first chapter --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way, which we will understand later. So, let's begin.
 
-Primary propositions
----
+### Primary propositions
 
 A consequence of logic being the science of the possible is that in order to do anything at all in it, we should have an initial set of propositions that we accept as true or false. These are also called "premises", "primary propositions" or "atomic propositions" as Wittgenstein dubbed them. 
 
@@ -33,8 +29,7 @@ A consequence of logic being the science of the possible is that in order to do 
 
 In the context of logic itself, these propositions are abstracted away (i.e. we are not concerned about them directly) and so they can be represented with the colorful balls that you are familiar with. 
 
-Composing propositions
----
+### Composing propositions
 
 At the heart of logic, as in category theory, is the concept of *composition* --- if we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operators, like "and", "or" "follows" etc. The results would be new propositions, which we might call *composite propositions* to emphasize the fact that they are not primary. 
 
@@ -48,30 +43,41 @@ However, unlike monoids/groups, logics study combinations not just with one but 
 
 Important to note that $∧$ is the symbol for *and* and $∨$ is the symbol for $or$ (although the law above is actually valid even if *and* and $or$ are flipped).
 
-The equivalence of primary and composite propositions
----
+### The equivalence of primary and composite propositions
 
 When looking at the last diagram, it is important to emphasize that,  propositions that are composed of several premises (symbolized by gray balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls) and that they compose in the same way (although in the leftmost proposition the green ball is wrapped in a gray ball to make the diagram prettier).
 
 ![Balls as propositions](../05_logic/balls_propositions.svg)
 
-Modus ponens
----
+### Modus ponens
 
-As an example of a proposition that contains multiple levels of nesting (and also as a great introduction of the subject of logic in its own right), consider one of the oldest (it was already known by Stoics at 3rd century B.C.) and most famous propositions ever, namely the *modus ponens*. 
+As an example of a proposition that contains multiple levels of nesting (and also as a great introduction of the subject of logic in its own right), consider one of the oldest (it was already known by Stoics at 3rd century B.C.) and most famous propositions ever, namely the *modus ponens*. Usually it is presented like this:
 
-Modus ponens is a proposition that is composed of two other propositions (which here we denote $A$ and $B$) and it states that if proposition $A$ is true and also if proposition $(A → B)$ is true (that is if $A$ implies $B$), then $B$ is true as well. 
+> All humans  are mortal
+>
+> Socrates is human
+>
+> Therefore, Socrates is mortal.
 
-For example, if we know that "Socrates is a human" ($A$) and that "humans are mortal" ($A \to B$) (or "being human implies being mortal"), we also know that "Socrates is mortal"($B$).
+Or we also can say:
+
+> If today is Tuesday, then John will go to work.
+>
+> Today is Tuesday.
+>
+> Therefore, John will go to work.
+
+You see the pattern--- modus ponens is a proposition that is composed of two other propositions (which here we denote $A$ and $B$) and it states that if proposition $A$ is true and also if proposition $(A → B)$ is true (that is if $A$ implies $B$), then $B$ is true as well. In our first example, if we know that "Socrates is a human" ($A$) and that "humans are mortal"---or "being human implies being mortal" ($A \to B$), we also know that "Socrates is mortal" ($B$).
+
+Here is how we can express the same thing with a diagram.
 
 ![Modus ponens](../05_logic/modus_ponens.svg)
 
-Let's dive into this proposition. We can see that it is composed of two other propositions in a $implies$ relation, where the proposition $B$ is primary, but the proposition which implies $B$ is not primary (let's call that one $C$ --- so the whole proposition becomes $C → B$.)
+We can see that the modus ponens proposition is composed of two other propositions in a $implies$ relation, where the proposition $B$ is primary, but the proposition which implies $B$ is not primary (let's call that one $C$ --- so the whole proposition becomes $C → B$.)
 
 Going one more level down, we notice that the $C$ propositions is itself composed of two propositions in an *and*, relationship --- $A$ and let's call the other one $D$ (so $A ∧ D$), where $D$ is itself composed of two propositions, this time in a $implies$ relationship --- $A → B$. But all of this is better visualized in the diagram.
 
-Tautologies
----
+### Tautologies
 
 We often cannot tell whether a given composite proposition is true or false without knowing the values of the propositions that it is made of. However, with propositions such as *modus ponens* we can: modus ponens is *always true*, regardless of whether the propositions that form it are true or false. If we want to be fancy, we can also say that it is *true in all models of the logical system*, a model being a set of real-world premises are taken to be signified by our propositions.
 
@@ -79,7 +85,12 @@ For example, our previous example will not stop being true if we *substitute* "S
 
 ![Variation of modus ponens](../05_logic/modus_ponens_variations.svg)
 
-Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. You can turn each tautology into contradiction, or the other way around, by adding a "not". 
+We call such propositions tautologies.
+
+> Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. 
+{: .definition}
+
+You can turn each tautology into contradiction, or the other way around, by adding a "not". 
 
 The other statements, ones which may be true or false depending on the values of some other propositions are called "contingent statements". In logic, we don't care about contingent statements --- after all, those are studied in all other sciences (and we are not like other sciences).
 
@@ -93,8 +104,7 @@ Here are some more complex (less boring) tautologies (the symbol $¬$ means "not
 
 We will learn how to determine which propositions are a tautologies shortly, but first let's see why are tautologies important in the first place.
 
-Axiom schemas/Rules of inference
----
+### Axiom schemas/Rules of inference
 
 Tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* and *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution.
 
@@ -104,18 +114,21 @@ Realizing that the colors of the balls in modus ponens are superficial, we may w
 
 This structure (the one that looks like a coloring book in our example) is called *axiom schema*. And the propositions that are produced by it are *axioms*. 
 
+> An axiom schema is a formula (containing variables), from which we can derive propositions (by replacing those variables with proposition).
+{: .definition}
+
 Note that the propositions that we plug into the schema don't have to be primary. For example, having the proposition $a$ (that is symbolized below by the orange ball) and the proposition stating that $a$ implies $a \lor b$ (which is one of the tautologies that we saw above), we can plug those propositions into the *modus ponens* and prove that $a \lor b$ is true. 
 
 ![Using modus ponens for rule of inference](../05_logic/modus_ponens_composite.svg)
 
-*Axiom schemas* and *rules of inference* are almost the same thing except that rules of inference allow us to actually distill the conclusion from the premises. For example in the case above, we can use modus ponens as a rule of inference to proves that $a \lor b$ is true.
+And *rules of inference* are almost the same thing as axiom schemas e.g. axiom schemas can be easily applied as rules of inference and the other way around. 
 
-All axiom schemas can be easily applied as rules of inference and the other way around. 
+### Logical systems
 
-Logical systems
----
+Knowing that we can use axiom schemas/rules of inference to generate new propositions, we might ask whether it is possible to create a small collection of such schemas/rules that is curated in such a way that it enables us to generate *all* possible propositions. You would be happy (although a little annoyed, I imagine) to learn that there exist not only one, but many such collections. And yes, collections of this sort are what we call *logical systems*.
 
-Knowing that we can use axiom schemas/rules of inference to generate new propositions, we might ask whether it is possible to create a small collection of such schemas/rules that is curated in such a way that it enables us to generate *all* other propositions. You would be happy (although a little annoyed, I imagine) to learn that there exist not only one, but many such collections. And yes, collections of this sort are what we call *logical systems*.
+> A logical system (known also as formal system) is a collection of axiom schemas/rules of inference such that by applying them we can produce all possible propositions.
+{: .definition}
 
 Here is one such collection which consists of the following five axiom schemes *in addition to the inference rule modus ponens* (These are axiom schemes, even though we use colors).
 
@@ -123,15 +136,13 @@ Here is one such collection which consists of the following five axiom schemes *
 
 Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his name right).
 
-Conclusion
----
+### Conclusion
 
-We now have an idea about how do some of the main logical constructs (axioms, rules of inference) work. But in order to prove that they are true, and to understand *what they are*, we need to do so through a specific *interpretation* of those constructs. 
+We now have an idea about how do some of the main logical constructs (axioms, rules of inference) work. But in order to prove that they indeed work, and to understand *what they are*, we need to do so through a specific *interpretation* of those constructs. 
 
 We will look into two interpretations --- one very old and the other, relatively recent. This would be a slight detour from our usual subject matter of points and arrows, but I assure you that it would be worth it. So let's start.
 
-Classical logic. The truth-functional interpretation 
-===
+## Classical logic. The truth-functional interpretation 
 
 > Beyond the world that we inhabit and perceive every day, there exist the *world of forms* where reside all ideas and concepts that manifest themselves in the objects that we perceive e.g. beyond all the people that have ever lived, there lies the prototypical person, and we are people only insofar as we resemble that person, beyond all the things in the world that are strong, lies the ultimate concepts of strength, from which all of them borrow and this is true for every single category, e.g. if there is a cup, there is also "cupness". And although, as mere mortals, we live in the world of appearances and cannot perceive the world of forms, we can, through philosophy, "recollect" with it and know some of its features.
 
@@ -141,12 +152,18 @@ The existence of the world of forms implies that, even if there are many things 
 
 ![The set of boolean values](../05_logic/boolean_set.svg)
 
-According to the classical interpretation, you can think of *primary propositions* as just a bunch of boolean values. *Logical operators* are functions that take a one or several boolean values and return another boolean value (and *composite propositions* are, just the results of the application of these functions).
+Logical operators, then, are just our all-too-familiar functions.
+
+> According to the classical interpretation of logic: 
+>
+> 1. A *primary proposition* is a boolean value (i.e. it is something that is either true or false). 
+> 2. A *logical operator* is a *function* that takes a one or several boolean values and return another boolean value.
+> 3. A *composite proposition* is the results of the application of these functions to other propositions.
+{: .definition}
 
 Let's review all logical operators in this semantic context.
 
-The *negation* operation
----
+### The *negation* operation
 
 Let's begin with the negation operation. Negation is a unary operation, which means that it is a function that takes just *one* argument and (like all other logical operators) returns one value, where both the arguments and the return type are boolean values.
 
@@ -161,8 +178,7 @@ The same function can also be expressed in a slightly less-fancy way by this tab
 
 Tables like this one are called *truth tables* and they are ubiquitous in classical logic. They can be used not only for defining operators but for proving results as well.
 
-Interlude: Proving results by truth tables
----
+### Interlude: Proving results by truth tables
 
 Having defined the negation operator, we are in position to prove the first of the axioms of the logical system we saw, namely the *double negation elimination*. In natural language, this axiom is equivalent to the observation that saying "I am *not unable* to do X" is the same as saying  "I am *able* to do it". 
 
@@ -187,8 +203,7 @@ If we are tired of diagrams, we can represent the composition diagram above as t
 
 Each proposition in classical logic can be proved with such diagrams/tables.
 
-The *and* and *or* operations
----
+### The And and Or operations
 
 OK, *you* know what *and* means and *I* know what it means, but what about those annoying people that want everything to be formally specified (nudge, nudge). Well we already know how we can satisfy them --- we just have to construct the boolean function that represents *and*. 
 
@@ -218,11 +233,10 @@ We can do the same for $or$, here is the table.
 
 Using those tables, we can also prove some axiom schemas we can use later:
 
-- For *and* $p ∧ q → p$ and $p ∧ q → q$ "If I am tired and hungry, this means that I am hungry".
-- For *or*:  $p → p ∨ q$ and $q → p ∨ q$ "If I have a pen this means that I am either have a pen or a ruler".
+- For *And*: $p ∧ q → p$ and $p ∧ q → q$ "If I am tired and hungry, this means that I am hungry".
+- For *Or*:  $p → p ∨ q$ and $q → p ∨ q$ "If I have a pen this means that I am either have a pen or a ruler".
 
-The *implies* operation
----
+### The Implies operation
 
 Let's now look into something less trivial: the *implies* operation, (also known as *material condition*). This operation binds two propositions in a way that the truth of the first one implies the truth of the second one (or that the first proposition is a *necessary condition* for the second.) You can read $p → q$ as "if $p$ is true, then $q$ must also be true. 
 
@@ -245,10 +259,9 @@ Now there are some aspects of this which are non-obvious so let's go through eve
 It might help you to remember that in classical logic $p → q$ ($p$ implies $q$) is true when $\neg p ∨ q$ (either $p$ is false or $q$ is true.) 
 
 
-The *if and only if* operation
----
+### The If and only if operation
 
-Now, let's review the operation that indicates that two propositions are equivalent (or, when one proposition is *a necessary and sufficient condition* for the other (which implies that the reverse is also true.)) This operation yields true when the propositions have the same value.
+Now, let's review the operation that indicates that two propositions are equivalent (or, when one proposition is *a necessary and sufficient condition* for the other (which by itself implies that the reverse is also true.)) This operation yields true when the propositions have the same value.
 
 | p |	q | p ↔ q |
 |---| --- | ---   |
@@ -268,8 +281,7 @@ But what's more interesting about this operation is that it can be constructed u
 
 Because of this, the equivalence operation is called "if and only if", or "iff" for short.
 
-Proving results by axioms/rules of inference
----
+### Proving results by axioms/rules of inference
 
 Let's examine the above formula, stating that $p → q$ is the same as $¬p ∨ q$. 
 
@@ -292,8 +304,8 @@ Here is one way to do it. The formulas that are used at each step are specified 
 
 Note that to really prove that the two formulas are equivalent we have to also do it the other way around (start with ($¬p ∨ q$) and ($p → q$)).
 
-Intuitionistic logic. The BHK interpretation 
-===
+## Intuitionistic logic. The BHK interpretation 
+
 
 > [...] logic is life in the human brain; it may accompany life outside the brain but it can never guide it by virtue of its own power. --- L.E.J. Brouwer
 
@@ -307,16 +319,24 @@ Anyway, intuitionistic logic is not bivalent, i.e. we cannot have all propositio
 
 ![The True/False dichotomy](../05_logic/true_false.svg)
 
-But ther is one thing that we still *do* have --- there are still propositions that are "true" in the sense that a proof for them is given --- the primary propositions. So with some caveats (which we will see later) the bivalence between true and false proposition might be thought out as similar to the bivalence between the existence or absence of a proof for a given proposition --- there either is a proof of it or there isn't.
+But there is one thing that we still *do* have --- there are still propositions that are "true" in the sense that a proof for them is given --- the primary propositions. So with some caveats (which we will see later) the bivalence between true and false proposition might be thought out as similar to the bivalence between the existence or absence of a proof for a given proposition --- there either is a proof of it or there isn't.
 
 ![The proved/unproved dichotomy](../05_logic/proved_unproved.svg)
 
 This bivalence is at the heart of what is called the Brouwer–Heyting–Kolmogorov (BHK) interpretation of logic, something that we will look into next.
 
+Here is a definition of the BHK interpretation (note that the BHK interpretation the main concept is not that of proposition, but that of proof).
+
+> According to the BHK interpretation of logic: 
+>
+> 1. A *primary proposition* is a proposition for which a proof is given.
+> 2. A *logical operator* is a method for uniting several proofs into another proof.
+> 3. A *composite proposition* is just a construction of primary propositions.
+{: .definition}
+
 The original formulation of the BHK interpretation is not based on any particular mathematical theory. Here, we will first illustrate it using the language of set theory (just so we can abandon it a little later).
 
-The *and* and *or* operations
----
+### The And and Or operations
 
 As the existence of a proof of a proposition is taken to mean that the proposition is true, the definitions of *and* is rather simple --- the proof of $A ∧ B$ is just *a pair* containing a proof of $A$, and a proof of $B$ i.e. *a set-theoretic product* of the two (see chapter 2). The principle for determining whether the proposition is true or false is similar to that of primary propositions --- if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A \land B$ can be constructed (and so $A \land B$ is "true").
 
@@ -324,8 +344,7 @@ As the existence of a proof of a proposition is taken to mean that the propositi
 
 **Task 2:** What would be the **or** operation in this case?
 
-The *implies* operation
----
+### The Implies operation
 
 Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist a function which can convert a proof of $A$ to a proof of $B$. 
 
@@ -335,8 +354,7 @@ And, (it gets even more interesting) the *modus ponens* rule of inference is not
 
 (In order to define this formally, we also need to define functions in terms of sets i.e. we need to have a set representing $A \to B$ for each $A$ and $B$. We will come back to this later.)
 
-The *if and only if* operation
----
+### The If and only if operation
 
 In the section on classical logic, we proved that two propositions $A$ and $B$ are equivalent if $A$ implies $B$ and $B$ implies $A$. But if the *implies* operation is just a function, then proposition are equivalent precisely when there are two functions, converting each of them to the other i.e. when the sets containing the propositions are *isomorphic*.
 
@@ -344,8 +362,7 @@ In the section on classical logic, we proved that two propositions $A$ and $B$ a
 
 (Perhaps we should note that *not all set-theoretic functions are proofs*, only a designated set of them (which we call *canonical* functions) i.e. in set theory you can construct functions and isomorphisms between any pair of singleton sets, but that won't mean that all proofs are equivalent.)
 
-The *negation* operation
----
+### The Negation operation
 
 So according to BHK interpretation saying that $A$ is true, means that that we possess a proof of $A$ --- simple enough. But it's a bit harder to express the fact that $A$ is false: it is not enough to say that we *don't have a proof* of $A$ (the fact that don't have it, doesn't mean it doesn't exist). Instead, we must show that claiming that $A$ is true leads to a *contradiction*.
 
@@ -367,45 +384,36 @@ The only way for there to be such function is if the set of proofs of the propos
 
 **Task 4:** Look up the definition of function and verify that there does exist a function *from the empty set* to itself (in fact there exist a function from the empty set to any other set.
 
-The law of excluded middle
----
+### The law of excluded middle
 
 Although intuitionistic logic differs a lot from classical logic when it comes to its *semantics*, i.e. in the way the whole system is built (which we described above), it actually doesn't differ so much in terms of *syntax*, i.e. if we try to deduce the axiom schemas/rules of inference that correspond to the definitions of the structures outlined above, we would see that they are virtually the same as the ones that define classical logic. There is, however, one exception concerning the *double negation elimination axiom* that we saw earlier, a version of which is known as *the law of excluded middle*.
 
 ![The formula of the principle of the excluded middle](../05_logic/excluded_middle_formula.svg)
 
-This law is valid in classical logic and is true when we look at its truth tables, but there is no justification for it terms of the BHK interpretation. Why? in intuitionistic logic saying that something is false amounts to *constructing a proof* that it is false (that it implies the bottom value) and there is no method/function/algorithm that can either prove that a given proposition is either true and false.
+> The law of excluded middle is valid in classical logic and is true when we look at its truth tables, but there is no justification for it terms of the BHK interpretation. 
+{: .theorem}
+
+Why? in intuitionistic logic saying that something is false amounts to *constructing a proof* that it is false (that it implies the bottom value) and there is no method/function/algorithm that can either prove that a given proposition is either true and false.
+
 
 The question of whether you can use the law of excluded middle spawned a heated debate between the classical logic proponent David Hilbert and the intuitionistic logic proponent L.E.J. Brouwer, known as *the Brouwer–Hilbert controversy*.
 
-Logics as categories
-===
+## Logics as categories
 
-Leaving the differences between intuitionistic and classical logics aside, the BHK interpretation is interesting because it provides that higher-level view of logic, that we need in order to construct a interpretation of it based on category theory. 
+Aside from being an alternative to classical logic, the BHK interpretation is interesting because it provides that higher-level view of logic, that we need in order to construct a interpretation of it based on category theory. 
 
 Such higher-level interpretations of logic are sometimes called *algebraic* interpretations, *algebraic* being an umbrella term describing all structures that can be represented using category theory, like groups and orders.
 
-Logic and types
----
+So, you might suspect already: objects are propositions and morphisms are proofs. Based on this, we can construct our usual theorem.
 
-Programmers might find the definition of the BHK interpretation interesting for other reason --- it is very similar to a definition of a type system of a programming language: propositions are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types* (which are currently not supported in most programming languages, but that's a separate topic). Finally a proof of a given proposition is represented by a value of the corresponding type. 
+> A logical , system any logical system can be seen as a category with...
+{: .theorem}
 
-![Logic as a programming language](../05_logic/logic_curry.svg)
-
-This similarity is known as the *Curry-Howard isomorphism*.
-
-**Task 5:** The Curry-Howard isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works (I recommend the Coq Tutorial by Mike Nahas).
-
-...and also categories
----
-
-Knowing about the Curry-Howard isomorphism and knowing also that programming languages can be described by category theory may lead us to think that *category theory is part of this isomorphism as well* (objects are propositions/types and morphisms are proofs/functions). And we would be quite correct --- this is why it is sometimes known as the Curry-Howard-*Lambek* isomorphism (Joachim Lambek being the person who formulated the categorical side). So let's examine this isomorphism. As all other isomorphisms, it comes in two parts: 
+So let's examine this isomorphism. As all other isomorphisms, it comes in two parts: 
 
 The first part is finding a way to convert a *logical system* into a category --- this would not be hard for us, as sets form a category and the flavor of the BHK interpretation that we saw is based on sets.
 
 ![Logic as a category](../05_logic/category_curry_logic.svg)
-
-**Task 6:** See whether you can prove that logic propositions and the "implies" relation form a category. What is missing?
 
 The second part involves converting a category into a logical system. This is much harder, and not all categories can be converted to logical systems, only some of them. So, next up, we will enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has an object that corresponds to every valid logical propositions and that no objects corresponds to an invalid ones. 
 
@@ -413,8 +421,13 @@ The second part involves converting a category into a logical system. This is mu
 
 Categories that adhere to these criteria are called *cartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined --- orders.
 
-Logics as orders
----
+By the way, the parallel between logics and categories also relates them to types (in programming languages and in general), and it is known as Curry-Howard isomorphism, or Curry-Howard-Lambek isomorphism.
+
+**Task 5:** The Curry-Howard-Lambek isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
+
+**Task 6:** Try to prove that logics indeed form categories, using the definition of a category that we used in the previous chapter. What is missing?
+
+### Logics as orders
 
 So, we already saw that a logical system along with a set of primary propositions forms a category.
 
@@ -436,8 +449,7 @@ This is something quite characteristic of category theory --- examining a concep
 
 Now let's examine the question that we asked before --- exactly which ~~categories~~ orders represent logic and what laws does an order have to obey so it is isomorphic to a logical system? We will attempt to answer this question as we examine the elements of logic again, this time in the context of orders.
 
-The and and or operations
----
+### the And and Or operations
 
 By now you probably realized that the *and* and *or* operations are the bread and butter of logic (although it's not clear which is which). As we saw, in the BHK interpretation those are represented by set *products* and *sums*. The equivalent constructs in the realm of order theory are *meets* and *joins* (in category-theoretic terms *products* and *coproducts*.)
 
@@ -459,8 +471,7 @@ The *or* and *and* operations (or, more generally, the *coproduct* and the *prod
 
 And even the symbol itself looks like a representation of the way the arrows converge. This is probably not the case, as this symbol is used way before Hasse diagrams were a thing --- for all we know the $\lor$ symbol is probably symbolizes the "u" in "uel" (the Latin word for "or") and the *and* symbol is just a flipped "u") --- but I still find the similarity fascinating.
 
-The *negation* operation
----
+### The *negation* operation
 
 In order for a distributive lattice to represent a logical system, it has to also have objects that correspond to the values *True* and *False* (which are written $\top$ and $\bot$). But, to mandate that these objects exist, we must first find a way to specify what they are in order/category-theoretic terms.
 
@@ -484,8 +495,7 @@ This is another example of the categorical concept of duality --- $\top$ and $\b
 
 In fact, the whole lattice can be turned upside down and (switching the directions of the arrows and the dual concepts True/False and/or) the logic inside it will still be valid!
 
-The *implies* operation
----
+### The *implies* operation
 
 So, by now we know that our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*) in order to represent logic. As we said, every lattice has representations of propositions implying one another (i.e. it has arrows), but to really represents a logical system it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object $A → B$ for each pair of objects $A$ and $B$, such that all axioms of logic are followed. 
 
@@ -521,8 +531,7 @@ Note, by the way, that this definition of function object is valid specifically 
 
 Note also, that there might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, function object is defined *up to a (unique) isomorphism*.
 
-The *if and only if* operation
----
+### The *if and only if* operation
 
 When we examined the *if and only if* operation can be defined in terms *implies*, that is $A \leftrightarrow B$ is equivalent to $A \to B \land B \to A$.
 
@@ -530,13 +539,12 @@ When we examined the *if and only if* operation can be defined in terms *implies
 
 We have something similar for categorical logic as well --- We say that when two propositions are connected to each other, then, particularly when we speak of orders, they are isomorphic.
 
-A taste of categorical logic
-===
+## A taste of categorical logic
+
 
 In the previous section we saw some definitions, here we will convince ourselves that they really capture the concept of logic correctly, by proving some results using categorical logic.
 
-True and False
----
+### True and False
 
 The join (or least upper bound) of the *topmost* object $\top$ (which plays the role of the value *True*) and any other object that you can think of, is... $\top$ itself (or something isomorphic to it, which, as we said, is the same thing). This follows trivially from the fact that the join of two objects must be bigger or equal than both of these objects, and that there is no other object that is bigger or equal to the $\top$ is $\top$ itself. This is simply because $\top$ (as any other object) is equal to itself and because there is by definition no object that is bigger than it.
 
@@ -546,8 +554,7 @@ This corresponds to the logical statement that $A \lor \top$ is equal to $\top$ 
 
 **Task 7**: Think of the duel situation, with False. What does it imply, logically?
 
-And and Or
----
+### And and Or
 Above, we saw that the join between any random object and the top object is the top object itself. But, does this situation only occur when the second object is $\top$? Wouldn't the same thing happen if $\top$ it is replaced by any other object that is higher than the first one?
 
 ![Implies identity](../05_logic/join_bigger_true.svg)
@@ -558,8 +565,7 @@ The answer is "Yes": when we are looking for the join of two object, we are look
 
 In other words, if $A \to B$, then $A \lor B \leftrightarrow B$
 
-Implies
----
+### Implies
 
 For our first example with implies, let's take the formula $A → B$, and examine the case when $A$ and $B$ are the same object. We said that, $A → B$ ($A → A$ in our case) is the topmost object $X$ for which the criteria given by the formula $A ∧ X → B$ is satisfied. But in this case, the formula is satisfied for any $X$, (because it evaluates to $A ∧ X → A$, which is always true), i.e. the topmost object that satisfies it is... the topmost object there is i.e. (an object isomorphic to) $True$. 
 
@@ -573,8 +579,7 @@ And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semanti
 
 This is again a well-known result in logic (if I am not mistaken, it will be a deduction theorem of some sort): if $A \models B$), then the statement $(A → B)$ will always be true.
 
-Interlude: Free Heytung algebras -- making ourselves a logic
-===
+## Interlude: Free Heytung algebras -- making ourselves a logic
 
 Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
 
@@ -665,7 +670,7 @@ Here you are on your own, sorry :)
 
 ---
 
-**Task 6:** See whether you can prove that logic propositions and the "implies" relation form a category
+**Task 6:** Try to prove that logics indeed form categories, using the definition of a category that we used in the previous chapter. What is missing?
 
 We want to prove that there is a category with logical propositions as object and implication as morphism.
 Let's check the axioms:
@@ -702,8 +707,7 @@ I forgot to mention that a Heytung algebra that is generated from a given set of
 
 
 <!--
-Proving a negative
----
+### Proving a negative
 
 If classical logic is based on the belief that everything is either true or false, intuitionistic logic gives precedence to the famous common-sense principle that *you cannot prove a negative*.
 

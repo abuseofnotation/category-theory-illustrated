@@ -50,7 +50,7 @@ As you probably remember from the last chapter, functional composition is also a
 
 To keep the suspense, before we discuss the relationship between monoids and categories, we are going through see some simple examples of monoids. 
 
-### Monoids from numbers
+### Monoids and numbers
 
 Mathematics is not only about numbers, however, numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ ($$\{ 0, 1, 2, 3 ...\}$$) forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said). This monoid is denoted $\left< \mathbb{N},+ \right>$ (in general, all monoids are denoted by specifying the set and the operation, enclosed in angle brackets).
 
@@ -68,7 +68,7 @@ Anyways, the natural numbers also form a monoid under multiplication as well.
 
 **Task 3:** The natural numbers form a monoid under multiplication, but not a group. Find out why.
 
-### Monoids from boolean algebra
+### Monoids and boolean algebra
 
 Thinking about operations that we covered, we may remember the boolean operations *and* and *or*. Both of them form monoids, which operate on the set, consisting of just two values $\{ True, False \}$. 
 

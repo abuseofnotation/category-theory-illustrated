@@ -1395,3 +1395,22 @@ TODO
 <!--
 {%endif%}
 -->
+
+
+
+
+
+
+
+
+
+
+TODO
+### Logic and types
+
+Programmers might find the definition of the BHK interpretation interesting for other reason --- it is very similar to a definition of a type system of a programming language: propositions are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types* (which are currently not supported in most programming languages, but that's a separate topic). Finally a proof of a given proposition is represented by a value of the corresponding type. 
+
+![Logic as a programming language](../05_logic/logic_curry.svg)
+
+This similarity is known as the *Curry-Howard isomorphism*.
+

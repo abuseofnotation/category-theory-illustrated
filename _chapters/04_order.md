@@ -19,12 +19,11 @@ We denote the elements of our set, as usual, like this.
 
 ![Balls](../04_order/balls.svg)
 
-And the *binary relation* is denoted as an arrow.
+And the *binary relation* is a relation between two elements, which is often denoted with an arrow.
 
 ![Binary relation](../04_order/binary_relation.svg)
 
-And the laws are different depending on the type of order. 
-
+As for the laws, they are different depending on the type of order. 
 ## Linear order
 
 Let's start with an example --- the most straightforward type of order that you think of is *linear order* i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which element comes before which. For example, order of colors, sorted by the length of their light-waves (or by how they appear in the rainbow).
@@ -49,12 +48,12 @@ And in programming, orders are defined by providing a function which, given two 
 
 However (this is where it gets interesting) not all such functions (and not all sets of pairs) define orders. For such function to really define an order i.e. to have the same output every time, independent of how the objects were shuffled initially, it has to obey several rules. 
 
-Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. Let's check what they are.
+Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. 
 
 >A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymetry, totality.
 {: .definition}
 
-And now, let's review them.
+Let's check what they are.
 
 ### Reflexivity 
 
@@ -283,7 +282,7 @@ The partial orders that meet the first criteria are called *lattices*. The ones 
 
 And the "prime" elements which we use to construct the inclusion order are the elements that are not the *join* of any other elements. They are also called *join-irreducible* elements.
 
-> Each distributive lattice is isomorphic to an inclusion order of the *join-irreducible* elements.
+> Each distributive lattice is isomorphic to an inclusion order of its *join-irreducible* elements.
 {: .theorem}
 
 By the way, the partial orders that are *not* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that *do not contain all possible combinations* of elements.
@@ -390,13 +389,12 @@ Given two sets (we will use partial order of numbers by division and the prime i
 
 An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism, it has to *respect those arrows*.
 
-> An isomorphism between two orders is an invertible function between their underlying sets such that applying this function (let's call it $F$) to any two elements in one set (let's call them $a$ and $b$) should result in two elements that have a corresponding order in the other set (so, $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
+> An isomorphism between two orders is an invertible function between their underlying sets, such that applying this function (let's call it $F$) to any two elements that have a certain order in one set (let's call them $a$ and $b$) should result in two elements that have a corresponding order in the other set (i.e. $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 {: .definition}
 
 Such functions are called *order-preserving* functions. 
 
 ## Preorder
-
 
 In the previous section, we saw how removing the law of *totality* from the laws of (linear) order produces a different (and somewhat more interesting) structure, called *partial order*. Now let's see what will happen if we remove another one of the laws, namely the *antisymmetry* law. 
 
@@ -515,7 +513,7 @@ In other words, the transitivity law tells us that the $≤$ relationship compos
 
 (we have to also verify that the relation is associative, but that's easy)
 
-So let's review the definition of a category again.
+So, we suspect that preorders are categories, but is it really so? Let's review the definition of a category again.
 
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have the identity morphism.
@@ -530,15 +528,18 @@ So it's official --- preorders are categories (sounds kinda obvious, especially 
 
 And since partial orders and total orders are preorders too, they are categories as well. 
 
-Orders are special types of categories (all orders are categories, but not all categories are orders). More specifically, they are categories that has *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
-
-![Orders compared to other categories](../04_order/arrows_one_arrow.svg)
-
-Contrast, this with the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
+Orders are special types of categories (all orders are categories, but not all categories are orders). Most categories have many different morphisms between given two objects. For example, in the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
 
 ![Orders compared to other categories](../04_order/order_category.svg)
 
-So, like a monoid is a category that has one object, an order is a category that has at most one *morphism* between two objects. But the converse is also true ---  *every category* that has at most one morphism between objects is an order.
+Whereas preorders, two object, whereas have *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
+
+> A preorder, any preorder, can be seen as a category with at most one morphism between two given objects. The converse is also true: any category with at most one morphism between two given objects can be seen as a preorder (called also a *thin* category.
+{: .theorem}
+
+![Orders compared to other categories](../04_order/arrows_one_arrow.svg)
+
+So, like a monoid is a category that has one object, an order is a category that has at most one *morphism* between two objects. 
 
 An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in orders *all diagrams commute*.
 
@@ -573,7 +574,11 @@ In the realm of orders, we define join as:
 
 We can see that the two definitions, and their corresponding diagrams, are basically the same, we just replaced "bigger" with "has a unique morphism" (because in orders all morphisms are unique). 
 
-Speaking in category-theoretic terms, we can say that the *categorical coproduct* in the *category of orders* is the *join* operation. Which of course means that *products* correspond to *meets*.
+Speaking in category-theoretic terms, we can say that:
+> The *categorical coproduct* in the *category of preorders* is the *join* operation. 
+{: .theorem}
+
+Which of course means that *products* correspond to *meets* (duality).
 
 ### Orders as thin categories
 
