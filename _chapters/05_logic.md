@@ -330,7 +330,7 @@ Here is a definition of the BHK interpretation (note that the BHK interpretation
 > According to the BHK interpretation of logic: 
 >
 > 1. A *primary proposition* is a proposition for which a proof is given.
-> 2. A *logical operator* is a method for uniting several proofs into another proof.
+> 2. A *logical operator* is a constructor for uniting several proofs into another proof.
 > 3. A *composite proposition* is just a construction of primary propositions.
 {: .definition}
 
