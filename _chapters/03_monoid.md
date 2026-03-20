@@ -561,14 +561,11 @@ But wait, if the monoids' underlying *sets* correspond to *objects* in category 
 
 ![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_category.svg)
 
-> A monoid, any monoid, can be seen as a *category with one object*. The converse is also true: any category with one object can be seen as a monoid 
-{: .definition}
-
-e.g. no matter how you flip a triangle, it would still be a triangle. 
+So a monoid, any monoid, can be seen as a *category with one object*
 
 ### Formal definition
 
-"Any category with one object can be seen as a monoid". Let's check if that is really true, by reviewing the definition of a category:
+Let's check if that is really true, by reviewing the definition of a category:
 
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have an identity morphism.
@@ -586,6 +583,9 @@ For categories with just one object, there would also be one identity morphism. 
 But if the category has one object, all morphisms would have the same type signature (they would just be $A \to A$). So then *all morphisms would be composable with one another*. The monoid operation does exactly that --- given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
 
 We see that aside from the little-confusing fact that *monoid objects are morphisms* when viewed categorically, this describes exactly what monoids are. 
+
+> A monoid, any monoid, can be seen as a *category with one object*---the morphisms of the category are the monoid elements, the identity morphism is the identity element and the monoid operation is composition of morphisms. The converse is also true: any category with one object can be seen as a monoid 
+{: .definition}
 
 Philosophically, defining a monoid as a one-object category corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter its state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors, to adding quantities to a given set of things etc.
 

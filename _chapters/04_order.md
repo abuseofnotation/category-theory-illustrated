@@ -278,9 +278,14 @@ So far, we saw two different partial orders, one based on color mixing, and one 
 1. All elements have *joins* and *meets*.
 2. Those *meet* and *join* operations *distribute* over one another, that is if we denote joins as meets as  $∨$ or $∧$, then $x ∨ (y ∧ z) = (x ∨ y) ∧ (x ∨ z)$.
 
-The partial orders that meet the first criteria are called *lattices*. The ones that meet the second one are called distributive lattices. So we may phrase the theorem like this:
+The partial orders that meet the first criteria are called *lattices*. The ones that meet the second one are called *distributive lattices*. Let's write that down:
+
+> Partial orders in which all elements have *joins* and *meets* is called a *lattice*. A lattice whose *meet* and *join* operations *distribute* over one another is called a distributive lattice.
+{: .definitions}
 
 And the "prime" elements which we use to construct the inclusion order are the elements that are not the *join* of any other elements. They are also called *join-irreducible* elements.
+
+So we may phrase the theorem like this:
 
 > Each distributive lattice is isomorphic to an inclusion order of its *join-irreducible* elements.
 {: .theorem}
@@ -513,6 +518,8 @@ In other words, the transitivity law tells us that the $≤$ relationship compos
 
 (we have to also verify that the relation is associative, but that's easy)
 
+### Formal definition
+
 So, we suspect that preorders are categories, but is it really so? Let's review the definition of a category again.
 
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
@@ -534,7 +541,7 @@ Orders are special types of categories (all orders are categories, but not all c
 
 Whereas preorders, two object, whereas have *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
 
-> A preorder, any preorder, can be seen as a category with at most one morphism between two given objects. The converse is also true: any category with at most one morphism between two given objects can be seen as a preorder (called also a *thin* category.
+> A preorder, any preorder, can be seen as a category with at most one morphism between two given objects --- if one object is bigger then there is a morphism between them. The converse is also true: any category with at most one morphism between two given objects can be seen as a preorder (called also a *thin* category.
 {: .theorem}
 
 ![Orders compared to other categories](../04_order/arrows_one_arrow.svg)

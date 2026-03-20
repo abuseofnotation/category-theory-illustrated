@@ -156,9 +156,9 @@ Logical operators, then, are just our all-too-familiar functions.
 
 > According to the classical interpretation of logic: 
 >
-> 1. A *primary proposition* is a boolean value (i.e. it is something that is either true or false). 
+> 1. A *primary proposition* is something that is either true or false (a boolean value. 
 > 2. A *logical operator* is a *function* that takes a one or several boolean values and return another boolean value.
-> 3. A *composite proposition* is the results of the application of these functions to other propositions.
+> 3. A *composite proposition* something that results of the application of logical operators to other propositions.
 {: .definition}
 
 Let's review all logical operators in this semantic context.
@@ -329,28 +329,39 @@ Here is a definition of the BHK interpretation (note that the BHK interpretation
 
 > According to the BHK interpretation of logic: 
 >
-> 1. A *primary proposition* is a proposition for which a proof is given.
-> 2. A *logical operator* is a constructor for uniting several proofs into another proof.
-> 3. A *composite proposition* is just a construction of primary propositions.
+> 1. A *primary proposition* is something for which a proof is given.
+> 2. A *logical operator* is a construction that unites several proofs into another proof.
+> 3. A *composite proposition* is something for which a proof can be constructed, by combining primary propositions using logical operators.
 {: .definition}
 
 The original formulation of the BHK interpretation is not based on any particular mathematical theory. Here, we will first illustrate it using the language of set theory (just so we can abandon it a little later).
 
 ### The And and Or operations
 
-As the existence of a proof of a proposition is taken to mean that the proposition is true, the definitions of *and* is rather simple --- the proof of $A ∧ B$ is just *a pair* containing a proof of $A$, and a proof of $B$ i.e. *a set-theoretic product* of the two (see chapter 2). The principle for determining whether the proposition is true or false is similar to that of primary propositions --- if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A \land B$ can be constructed (and so $A \land B$ is "true").
+As the existence of a proof of a proposition is taken to mean that the proposition is true, the definitions of *and* is rather simple --- the proof of $A ∧ B$ 
+
+![And in the classical interpretation](../05_logic/classical_and.svg)
+
+...is just *a pair* containing a proof of $A$, and a proof of $B$ i.e. *a set-theoretic product* of the two (see chapter 2). 
 
 ![And in the BHK interpretation](../05_logic/bhk_and.svg)
+
+The principle for determining whether the proposition is true or false is similar to that of primary propositions --- if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A \land B$ can be constructed (and so $A \land B$ is "true").
+
 
 **Task 2:** What would be the **or** operation in this case?
 
 ### The Implies operation
 
-Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist a function which can convert a proof of $A$ to a proof of $B$. 
+Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist an arrow which can convert a proof of $A$ to a proof of $B$. 
 
 ![Implies in the BHK interpretation](../05_logic/bhk_implies.svg)
 
-And, (it gets even more interesting) the *modus ponens* rule of inference is nothing more than the process of *functional application*. i.e. if we have a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
+But in order to use about the proof, we need to also have an implies *set*, that is, a set containing all arrows between given two objects with one element for each arrow.
+
+![Implies object in the BHK interpretation](../05_logic/bhk_implies_object.svg)
+
+Once we have that the *modus ponens* rule of inference is nothing more than the process of *functional application*. i.e. if we have a pair, containing a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
 
 (In order to define this formally, we also need to define functions in terms of sets i.e. we need to have a set representing $A \to B$ for each $A$ and $B$. We will come back to this later.)
 
@@ -366,7 +377,13 @@ In the section on classical logic, we proved that two propositions $A$ and $B$ a
 
 So according to BHK interpretation saying that $A$ is true, means that that we possess a proof of $A$ --- simple enough. But it's a bit harder to express the fact that $A$ is false: it is not enough to say that we *don't have a proof* of $A$ (the fact that don't have it, doesn't mean it doesn't exist). Instead, we must show that claiming that $A$ is true leads to a *contradiction*.
 
-To express this, intuitionistic logic defines the constant $⊥$ which plays the role of *False* (also known as the "bottom value"). $⊥$ is defined as the proof of a formula that does not have any proofs. And the equivalent of false propositions are the ones that imply that the bottom value is provable (which is a contradiction). So $¬A$ is $A \to ⊥$. 
+To express this, intuitionistic logic defines the constant $⊥$ which plays the role of *False* (also known as the "bottom value"). $⊥$ is defined as the proof of a formula that does not have any proofs. And the equivalent of false propositions are the ones that imply that the bottom value is provable (which is a contradiction). So instead of 
+
+![Negation in the classical interpretation: Not A](../05_logic/classical_negation.svg)
+
+we can write
+
+![Negation in the BHK interpretation: A implies Bottom](../05_logic/bhk_negation.svg)
 
 In set theory, the $⊥$ constant is expressed by the empty set.
 
@@ -404,18 +421,9 @@ Aside from being an alternative to classical logic, the BHK interpretation is in
 
 Such higher-level interpretations of logic are sometimes called *algebraic* interpretations, *algebraic* being an umbrella term describing all structures that can be represented using category theory, like groups and orders.
 
-So, you might suspect already: objects are propositions and morphisms are proofs. Based on this, we can construct our usual theorem.
+So, you might suspect already: objects are propositions and morphisms are proofs. And a logical system any logical system can be seen as a category.
 
-> A logical , system any logical system can be seen as a category with...
-{: .theorem}
-
-So let's examine this isomorphism. As all other isomorphisms, it comes in two parts: 
-
-The first part is finding a way to convert a *logical system* into a category --- this would not be hard for us, as sets form a category and the flavor of the BHK interpretation that we saw is based on sets.
-
-![Logic as a category](../05_logic/category_curry_logic.svg)
-
-The second part involves converting a category into a logical system. This is much harder, and not all categories can be converted to logical systems, only some of them. So, next up, we will enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has an object that corresponds to every valid logical propositions and that no objects corresponds to an invalid ones. 
+But as usual there is a caveat --- not all categories can be converted to logical systems, only some of them. So, to conclude our theorem, we will enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has an object that corresponds to every valid logical propositions and that no objects corresponds to an invalid ones. 
 
 ![Logic as a category](../05_logic/logic_curry_category.svg)
 
@@ -425,7 +433,7 @@ By the way, the parallel between logics and categories also relates them to type
 
 **Task 5:** The Curry-Howard-Lambek isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
 
-**Task 6:** Try to prove that logics indeed form categories, using the definition of a category that we used in the previous chapter. What is missing?
+**Task 6:** We will concentrate on proving that some categories form logics. But meanwhile, you can prove that all logics form categories, using the definition of a category that we used in the previous chapter. 
 
 ### Logics as orders
 
@@ -433,7 +441,7 @@ So, we already saw that a logical system along with a set of primary proposition
 
 ![Logic as a preorder](../05_logic/logic_category.svg)
 
-If we assume that there is only one way to go from proposition $A$, to proposition $B$ (or there are many ways, but we are not interested in the difference between them), then logic is not only a category, but a *preorder* in which the relationship "bigger than" is taken to mean "implies", so ($A \to B$ is $A > B$).
+If we assume that there is only one way to go from proposition $A$, to proposition $B$ (or there are many ways, but we are not interested in the difference between them), then logic is not only a category, but a *preorder* in which the relationship "bigger than" is taken to mean "implies", so ($A \to B$ is $A ≤ B$).
 
 ![Logic as a preorder](../05_logic/logic_preorder.svg)
 
@@ -497,7 +505,7 @@ In fact, the whole lattice can be turned upside down and (switching the directio
 
 ### The *implies* operation
 
-So, by now we know that our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*) in order to represent logic. As we said, every lattice has representations of propositions implying one another (i.e. it has arrows), but to really represents a logical system it also has to have *function objects* i.e. there needs to be a rule that identifies a unique object $A → B$ for each pair of objects $A$ and $B$, such that all axioms of logic are followed. 
+So, by now we know that our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*) in order to represent logic. As we said, every lattice has representations of propositions implying one another (i.e. it has arrows), but to really represents a logical system it also has to have *implication objects* i.e. there needs to be a rule that identifies a unique object $A → B$ for each pair of objects $A$ and $B$, such that all axioms of logic are followed. 
 
 ![Implies operation](../05_logic/implies.svg)
 
@@ -507,7 +515,8 @@ We will describe this object in the same way we described all other operations -
 
 Modus ponens is the essence of the *implies* operation, and, because we already know how the operations that it contains (*and* and *implies*) are represented in our lattice, we can directly use it as a definition by saying that the object $A → B$ is the one for which modus ponens rule holds.
 
-> The function object $A → B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
+> The implication object $A → B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
+{: .definition}
 
 This definition is not complete, however, because (as usual) $A → B$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$ 
 
@@ -523,13 +532,14 @@ So how do we set apart the real formula from all those "imposter" formulas? If y
 
 So, after choosing the best way to express the relationship (they are all equivalent) we are ready to present our final definition: 
 
-> The function object $A → B$ is the topmost object which is related to objects $A$ and $B$ in such a way that $A ∧ (A → B) → B$.
+> The implication object $A → B$ is the topmost object which is related to objects $A$ and $B$ in such a way that $A ∧ (A → B) → B$.
+{: .definition}
 
-The existence of this function object (called *exponential object* or *hom-object* in category-theoretic terms) is the final condition for an order/lattice to be a representation of logic.
+The existence of this implication object (called *exponential object* or *hom-object* in category-theoretic terms) is the final condition for an order/lattice to be a representation of logic.
 
-Note, by the way, that this definition of function object is valid specifically for intuinistic logic. For classical logic, the definition of  is simpler --- there $A → B$ is just $\lnot A ∨ B$, because of the law of excluded middle. 
+Note, by the way, that this definition of implication object is valid specifically for intuitionistic logic. For classical logic, the definition of  is simpler --- there $A → B$ is just $\lnot A ∨ B$, because of the law of excluded middle. 
 
-Note also, that there might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, function object is defined *up to a (unique) isomorphism*.
+Note also, that there might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, implication object is defined *up to a (unique) isomorphism*.
 
 ### The *if and only if* operation
 
@@ -539,8 +549,41 @@ When we examined the *if and only if* operation can be defined in terms *implies
 
 We have something similar for categorical logic as well --- We say that when two propositions are connected to each other, then, particularly when we speak of orders, they are isomorphic.
 
-## A taste of categorical logic
+### Formal definition for orders
 
+So, we talked about a lot of stuff, now it's time to lay the definitions. We saw that intuitionistic logic consists of the values *True* and *False* and the operations *and* *or* and *implies*.
+
+![A Heyting algebra](../05_logic/logic_operations.svg)
+
+As we said, the "logical" orders (those who account for all those conditions) have special names. They are called *Heyting algebras*.
+
+> A order that has joins/meets, greatest/least objects and a implication object is called a Heyting algebra.
+{: .definition}
+
+And then we say...
+
+> An intuitionistic logical system can be seen as a Heyting algebra---the joins/meets are the "and" and "or" operations, the greatest/least objects are the values "True" and "False" and the implication object is the implication operation.
+{: .theorem}
+
+![Heyting algebra](../05_logic/heyting_algebra.svg)
+
+By the way, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
+
+![Boolean algebra](../05_logic/boolean_algebra.svg)
+
+### Formal definition for categories
+
+We phrased the above definition in terms of *thin* categories (orders), but if we adjust the terminology, they will also be valid for all other categories as well.
+
+> A category that has products/coproducts, initial/terminal objects and an exponential objects is Cartesian Closed.
+{: .definition}
+
+And then
+
+> A logical system any logical system can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
+{: .theorem}
+
+## A taste of categorical logic
 
 In the previous section we saw some definitions, here we will convince ourselves that they really capture the concept of logic correctly, by proving some results using categorical logic.
 
@@ -583,17 +626,6 @@ This is again a well-known result in logic (if I am not mistaken, it will be a d
 
 Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
 
-Before we start, let's recap the theoretic part: we saw that intuitionistic logic consists of the values *True* and *False* and the operations *and* *or* and *implies*.
-
-![A Heyting algebra](../05_logic/logic_operations.svg)
-
-So, for an order to represent logic, an order/category has to have a *greatest and least objects* and it has to have a *meet* and *join* for each two object, and also a function object (the law of distributivity which we mentioned earlier is always true for lattices that have function object). In other words it has to be a *bounded* ($\top$ and $\bot$) *lattice* ($\land$ and $\lor$) that has *function objects* ($\to$). Such lattices are called *Heyting algebras*.
-
-![Heyting algebra](../05_logic/heyting_algebra.svg)
-
-By the way, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
-
-![Boolean algebra](../05_logic/boolean_algebra.svg)
 
 Anyway, making a logical lattice involves picking some primary propositions and graphing the connections between them. First, we pick the primary propositions that we want to work with, those are the statements that depend on our problem domain (or, in this case, just our color preferences). 
 
