@@ -242,11 +242,11 @@ So, let's start with an empty space, when nothing is defined.
 So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Bool} &:\ \mathrm{Type} \\
 \mathrm{True} &:\ \mathrm{Bool} \\
 \mathrm{False} &:\ \mathrm{Bool}
-\end{aligned}
+\end{array}
 $$
 
 Let's go through this definition:
@@ -278,11 +278,11 @@ Term elimination
 Wait, scratch that. We actually haven't defined a type. Or rather we have defined one, but it is quite useless. For it would only be useful once we define at least one arrow, coming *from* it(otherwise, it will just be a one-way street). For the Booleans, this function is usually called $ifElse$.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{ifElse} : \forall a.\ \mathrm{Bool} \to a \to a \to a \\
 \mathrm{ifElse}\ True\ a\ b\ =\ a\\
 \mathrm{ifElse}\ False\ a\ b\ =\ b \\
-\end{aligned}
+\end{array}
 $$
 
 You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
@@ -300,21 +300,21 @@ Isomorphisms between types
 But why (with the risk of repeating myself) does this exact type has to be the Boolean type? What is stopping our colleague Bobby who always wants to do everything their way, to define their own version of Boolean and using it in their project.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{BobbysBool} &:\ \mathrm{Type} \\
 \mathrm{BobbysTrue} &:\ \mathrm{BobbysBool} \\
 \mathrm{BobbysFalse} &:\ \mathrm{BobbysBool}
-\end{aligned}
+\end{array}
 $$
 
 The answer is "nothing". But that is not a huge deal --- we can just whip up a function to convert their Bool to ours:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 convert\ BobbysBool &\to Bool \\
 convert\ BobbysTrue\ &=\ True \\
 convert\ BobbyFalse\ &=\ False 
-\end{aligned}
+\end{array}
 $$
 
 This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
@@ -336,11 +336,11 @@ Now, we will define the type that is known in Haskell as, $Maybe$ (and what in o
 But, once you learn to read it, the type definition, by itself is clear enough:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{aligned}
+\end{array}
 $$
 
 Type formation
@@ -403,11 +403,11 @@ Term elimination
 To close the case, we define one function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe[a] &\to b \\
 maybe\ n\ f\ Nothing\ &=\ n \\
 maybe\ n\ f\ Just[x]\ &=\ f\ x \\
-\end{aligned}
+\end{array}
 $$
 
 Notice that this function defines an arrows from type $Maybe\ a$ to any type $b$, provided that a function $a \to b$, and a value of $b$ is provided.
@@ -427,11 +427,11 @@ This argument applies not only to mathematical theories, but to everything else 
 Or as Haskellians say:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathbb{N} &:\ \mathrm{Type} \\
 \mathrm{Zero} &:\ \mathbb{N} \\
 \mathrm{Succ} &:\ \mathbb{N} \to \mathbb{N}
-\end{aligned}
+\end{array}
 $$
 
 
@@ -505,11 +505,11 @@ Term elimination
 Wait, there are also elimination rule, I always forget elimination rules. Here it is:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 foldNat : \mathbb{N} \to a \to (a \to a) &\to a\\
 foldNat\ Zero\ z\ s\ &=\ z\\
 foldNat\ (Succ\ a)\ z\ s\ &= s\ (foldNat\ a\ z\ s)\\
-\end{aligned}
+\end{array}
 $$
 
 This allows us, for example, to convert our `Nat`s to the normal Haskell `Nat`s:
@@ -528,11 +528,11 @@ The landscape of types would be a really... flat place, without the *composite t
 The ultimate composite type is the list. The linked list specifically, is a thing of beauty:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{List} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nil} &:\ \forall a.\ \mathrm{List}[a] \\
 \mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
-\end{aligned}
+\end{array}
 $$
 
 Let's unpack:
@@ -596,11 +596,11 @@ Term elimination
 Now, let's write the term elimination rule.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 foldList \ :\ (b \to a \to b) \to b \to List[a] &\to b \\
 foldList\ f\ z Nil &= z\\
 foldList\ f\ z (Cons\ x\ xs) &= foldList\ f\ (f\ z\ x)\ xs\\
-\end{aligned}
+\end{array}
 $$
 
 This rule is also the most useful function for manipulating lists.
@@ -638,11 +638,11 @@ The $Either$ type is an interesting one.
 It is a type that is parametrized by two types $a$ and $b$, and has two constructors/term introduction rules --- one constructor, called $Left$, that takes a value of $a$. And another one, called $Right$ that takes a $b$. Here is the definition of Either (excluding the term elimination rule).
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Either} &:\ \mathrm{Type} \to \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
 \mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
-\end{aligned}
+\end{array}
 $$
 
 Tuple
@@ -655,10 +655,10 @@ The next type that we will introduce is the $Tuple$ type, which is also parametr
 Here we will do something different --- instead of the definition, we will directly present the type elimination rules.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 first\ :\ \forall\ a\ b. Tuple[a\ b] \to a \\
 second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
-\end{aligned}
+\end{array}
 $$
 
 **Task 5:** Write an elimination rule for Tuple. Write an introduction rule for Either.
@@ -669,19 +669,19 @@ Positive and negative types
 The $Either$ type is uniquely defined by its introduction rules i.e. the elimination rules can be derived from the introduction rules.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
 \mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
-\end{aligned}
+\end{array}
 $$
 
 $Tuple$, on the other hand, is defined by its elimination rules i.e. the introduction rules can be derived from them:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 first\ :\ \forall\ a\ b. Tuple[a\ b] \to a \\
 second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
-\end{aligned}
+\end{array}
 $$
 
 Types that, like $Either$, are defined by their introduction rules are called *positive types*. Types that are defined by their elimination are *negative*. All types that we saw so far (except $Tuple$) are positive.
@@ -713,23 +713,23 @@ Base types. the Boolean type
 Consider the Boolean type, which we defined like this:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Bool} &:\ \mathrm{Type} \\
 \mathrm{True} &:\ \mathrm{Bool} \\
 \mathrm{False} &:\ \mathrm{Bool}
-\end{aligned}
+\end{array}
 $$
 
 Here is a version of the same thing, with just functions.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 type\ \mathrm{Bool} &= \forall a. a \to a \to a \\
 false &: \mathrm{Bool} \\
 false\ a\ b &= b \\
 true &: \mathrm{Bool} \\
 true\ a\ b &= a \\
-\end{aligned}
+\end{array}
 $$
 
 Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ which accepts two values of type $a$ for all $a$ and returns another one. We can see that under this definition, $True$ is a function that returns the first $a$, and $False$ is a function that returns the second one.
@@ -737,10 +737,10 @@ Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ whi
 Don't believe that these can function as booleans? Here is an implementation of the $ifElse$ function:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 ifElse &: \forall a. \mathrm{Bool} \to a \to a \to a \\
 ifElse &\ v\ a\ b\  = v\ a\ b \\
-\end{aligned}
+\end{array}
 $$
 
 The implementation is trivial, because the datatype itself is doing the work. This is one of the main principle behind the "Church encodings" of datatypes as they are called --- the datatype encodes the term elimination rule.
@@ -755,11 +755,11 @@ Here is how you would use this:
 
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathbb{N} &:\ \mathrm{Type} \\
 \mathrm{Zero} &:\ \mathbb{N} \\
 \mathrm{Succ} &:\ \mathbb{N} \to \mathbb{N}
-\end{aligned}
+\end{array}
 $$
 
 
@@ -769,23 +769,23 @@ Polymorphic types. The Maybe type
 The Boolean type is, of course, a basic type. So, let's consider the $Maybe$ type, which is more complex:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{aligned}
+\end{array}
 $$
 
 $Maybe$ is more complex, because it can *contain another value* in itself (with the $Just$ constructor). Here is where we learn another important principle of Church encoding: using curried functions to hold values.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 type\ Maybe[a] &= \forall m. m \to (a \to m) \to m \\
 nothing &: Maybe[a] \\
 nothing\ n\ j &= n \\
 just &:\ a \to Maybe[a] \\
 just\ val\ n\ j\ &= (j\ val) \\
-\end{aligned}
+\end{array}
 $$
 
 The general principle
@@ -796,17 +796,17 @@ By now, you have probably seen that the Church-encoding of the type has the same
 If we have a type which is like $Maybe$, but with just one value (like the $1$ type)...
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
-\end{aligned}
+\end{array}
 $$
 
 ...it's Church encoding would be...
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \forall m. m \to m \\
-\end{aligned}
+\end{array}
 $$
 
 (This is indeed the Church encoding of the $1$ type)
@@ -814,35 +814,35 @@ $$
 And then, if we extend the type to also have the $Just$ constructor...
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{aligned}
+\end{array}
 $$
 
 ...the encoding is extended like this...
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \forall m. m \to (a \to m) \to m \\
-\end{aligned}
+\end{array}
 $$
 
 This is why the signature of the Church-encoded type is almost identical as the signature of the $fold$ function, used to eliminate it:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
-\end{aligned}
+\end{array}
 $$
 
 and the $fold$ function is trivial
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
 foldMaybe\ n\ j\ maybe &= maybe\ n\ j \\
-\end{aligned}
+\end{array}
 $$
 
 The general principle of Church encoding, is that instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
@@ -873,11 +873,11 @@ $$
 Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. We defined it in Haskell like this:
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Bool} &:\ \mathrm{Type} \\
 \mathrm{True} &:\ \mathrm{Bool} \\
 \mathrm{False} &:\ \mathrm{Bool}
-\end{aligned}
+\end{array}
 $$
 
 If we want to define it using natural deduction, so it is one of the "primitive" types that are part of the type system itself (as it is defined in most programming languages), it would look like this.
@@ -998,31 +998,31 @@ Simply-typed Lambda Calculus
 The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Polymorphic Lambda Calculus, except that... it is not polymorphic i.e. we cannot define the polymorphic types like $Maybe$, just monomorphic ones (like Boolean).
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{aligned}
+\end{array}
 $$
 
 The best we can do is to define a separate versions of the type, e.g. one which works just for $\mathrm{int}$.
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{MaybeInt} &:\ \mathrm{Type} \\
 \mathrm{NoInt} &:\ \mathrm{MaybeInt} \\
 \mathrm{JustInt} &: \mathrm{int} \to \mathrm{MaybeInt}
-\end{aligned}
+\end{array}
 $$
 
 And one for $\mathrm{string}$
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 \mathrm{MaybeString} &:\ \mathrm{Type} \\
 \mathrm{NoString} &:\ \mathrm{MaybeString} \\
 \mathrm{JustString} &:\mathrm{string} \to \mathrm{MaybeString}
-\end{aligned}
+\end{array}
 $$
 
 Furthermore, in STLC we cannot define a *functions* that work for polymorphic $Maybe$ (regardless of the type they are holding), so we have to redefine not only the types, but all functions that use them.
@@ -1372,20 +1372,20 @@ It is the *function* type. We can think of functions as "objects that can be eva
 Here it is
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 type\ \mathbb{N} &= \forall b. b \to (b \to b) \to b \\
 zero &: \mathbb{N} \\
 zero\ z\ s &= z \\
 succ &: \mathbb{N} \to \mathbb{N} \\
 succ\ n\ z\ s &= s\ (n\ z\ s) \\
-\end{aligned}
+\end{array}
 $$
 
 $$
-\begin{aligned}
+\begin{array}{lcl}
 foldNat &: \forall a\ b. b \to (b \to b) \to \mathbb{N} \to b \\
 foldNat\ z\ s\ n &= n\ z\ s \\
-\end{aligned}
+\end{array}
 $$
 
 **Task 8:** Define the elimination rule for Booleans, using natural deduction.

@@ -11,13 +11,13 @@ Also, I will not merely transport you to a different branch of mathematics, but 
 
 ## What is logic
 
-Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. that which really exists. For example, if science explains how our universe works then logic is the part of the description which is also applicable to any other universe that is *possible to exist*. A scientific theory aims to be consistent with both itself and observations, while a logical theory only needs to be consistent with itself (and true regardless of observations).
+Logic is the science of the *possible*. As such, it is at the root of all other sciences, all of which are sciences of the *actual*, i.e. that which really exists. For example, if science explains how our universe works then logic is the part of the description which is also applicable to any other universe that is *possible to exist*. A scientific theory aims to be consistent with both itself and observations, while a logical theory only needs to be consistent with itself (and true regardless of observations).  
 
-So, logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form.
+So, we may say:
 
-On top of that, it (logic) tries to organize those rules in *logical systems* (or *formal systems* as they are also called).
-
-### Logic and mathematics 
+> Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form ("formally"). 
+> On top of that, logic tries to organize those rules in *logical systems* (or *formal systems* as they are also called).
+{: .definition}
 
 Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory, as we described it in the first chapter --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way, which we will understand later. So, let's begin.
 
@@ -357,11 +357,11 @@ Now for the punchline: in the BHK interpretation, the *implies* operation is jus
 
 ![Implies in the BHK interpretation](../05_logic/bhk_implies.svg)
 
-But in order to use about the proof, we need to also have an implies *set*, that is, a set containing all arrows between given two objects with one element for each arrow.
+But in order to use about the proof, we need to also have an implies *set*, or a *homomorphism set* as it is called in set theory), that is, a set containing all arrows between given two objects with one element for each arrow.
 
 ![Implies object in the BHK interpretation](../05_logic/bhk_implies_object.svg)
 
-Once we have that the *modus ponens* rule of inference is nothing more than the process of *functional application*. i.e. if we have a pair, containing a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
+If we have that set, the *modus ponens* rule of inference is nothing more than the process of *functional application*. i.e. if we have a pair, containing a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
 
 (In order to define this formally, we also need to define functions in terms of sets i.e. we need to have a set representing $A \to B$ for each $A$ and $B$. We will come back to this later.)
 
@@ -401,7 +401,11 @@ The only way for there to be such function is if the set of proofs of the propos
 
 **Task 4:** Look up the definition of function and verify that there does exist a function *from the empty set* to itself (in fact there exist a function from the empty set to any other set.
 
-### The law of excluded middle
+
+<!--
+{% if site.distribution == 'print' %}
+-->
+### Interlude: The law of excluded middle
 
 Although intuitionistic logic differs a lot from classical logic when it comes to its *semantics*, i.e. in the way the whole system is built (which we described above), it actually doesn't differ so much in terms of *syntax*, i.e. if we try to deduce the axiom schemas/rules of inference that correspond to the definitions of the structures outlined above, we would see that they are virtually the same as the ones that define classical logic. There is, however, one exception concerning the *double negation elimination axiom* that we saw earlier, a version of which is known as *the law of excluded middle*.
 
@@ -414,6 +418,10 @@ Why? in intuitionistic logic saying that something is false amounts to *construc
 
 
 The question of whether you can use the law of excluded middle spawned a heated debate between the classical logic proponent David Hilbert and the intuitionistic logic proponent L.E.J. Brouwer, known as *the Brouwer–Hilbert controversy*.
+
+<!--
+{%endif%}
+-->
 
 ## Logics as categories
 
