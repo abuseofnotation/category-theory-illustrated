@@ -1,4 +1,4 @@
-pandoc --from markdown --to epub3  --strip-comments \
+pandoc --from markdown --to epub3  --mathml --strip-comments \
  epub/title.txt \
  _chapters/00_about.md \
  _chapters/01_set.md \

@@ -3,15 +3,13 @@ layout: default
 title: Types
 ---
 
-Types
-===
+# Types
 
-In this chapter we will talk about types. This might be disappointing for you, if you expected to learn about as many *new* categories as possible (which you don't even suspect are really categories till the unexpected reveal), as we've been talking about the category of types in a given programming language ever since the first chapter, and we already know how they form a category. We are also already familiar with the Curry-Howard correspondence that connects types and logic. However, types are not just about programming languages. And they are more than just another category. They are also at the heart of a mathematical theory known as *type theory*. 
+In this chapter we will talk about types. This might be disappointing for you, if you expected to learn about as many *new* categories as possible (which you don't even suspect are really categories till the unexpected reveal)---we've been talking about the category of types in a given programming language ever since the first chapter, and we already know how they form a category. However, types are not just about programming languages. And they are more than just another category. They are also at the heart of a mathematical theory known as *type theory*. 
 
-Type theory is an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and it is as powerful tool as any of those formalisms. 
+Type theory is an alternative to set theory, as well as category theory itself, as a foundational language of mathematics, and it is as powerful a tool as any of those formalisms. 
 
-Sets, Types and Russell's paradox
-===
+## Sets, Types and Russell's paradox
 
 We started talking about sets again. Most books about category theory (and mathematics in general) begin with sets, and often go back to sets. Even in a book about category theory, like this one, the standard definitions of most mathematical objects involve sets. Indeed, upon hearing the definition about monoids being one-object categories, a person who only knows about sets might say:
 
@@ -32,11 +30,11 @@ However, this initial understanding of sets is somewhat *too simple*, (or *naive
 Russell's paradox
 ---
 
-Besides being interesting on its own right, Russell's paradox is one of the motivations for creating type theory, so we will start this chapter by understanding how and why it occurs. 
+Besides being interesting in its own right, Russell's paradox is one of the motivations for creating type theory, so we will start this chapter by understanding how and why it occurs. 
 
 Most sets that we saw (like the empty set and singleton sets) do not contain *themselves*. 
 
-![Sets that don't contains themselves](../06_type/sets_dont_contain_themselves.svg)
+![Sets that don't contain themselves](../06_type/sets_dont_contain_themselves.svg)
 
 However, as the elements of sets are again sets, *a set can contain itself*. 
 
@@ -44,7 +42,7 @@ However, as the elements of sets are again sets, *a set can contain itself*.
 
 This ability is the root cause of Russell's paradox. 
 
-The paradox occurs when we will try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\\\{x \mid x ∉ x \\\}$).
+The paradox occurs when we will try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\{x \mid x \notin x\}$).
 
 ![Russell's paradox - option one](../06_type/russells_paradox.svg)
 
@@ -56,12 +54,11 @@ Hmm, something is not quite right here either --- because of the new adjustments
 
 And removing the set, so it's no longer an element of itself would just take us back to where we started, so we have no way to go --- this is Russell's paradox. 
 
-Resolving the paradox in set theory
----
+### Resolving the paradox in set theory
 
 The set of sets that do not contain themselves doesn't sound like a very useful set. And it really isn't --- in fact, I haven't seen it mentioned for any other reason, other than the construction of Russell's paradox. So, most people's initial reaction when learning about Russell's paradox would be something like this: 
 
->"Wait, can't we just add some rules that say that you cannot draw the set of set that don't contain itself?"
+>"Wait, can't we just add some rules that say that you cannot draw the set of sets that don't contain themselves?"
 
 This was exactly what the mathematicians Ernst Zermelo and Abraham Fraenkel set out to do (no pun intended). And the extra rules they added led to a new definition of set theory, known as *Zermelo–Fraenkel set theory*, or *ZFC* (the *C* at the end is a separate story) which is a version of set theory that is free of paradoxes. ZFC was a success, and it is still in use today, however it compromises one of the best features that sets have, namely their *simplicity*. 
 
@@ -79,7 +76,7 @@ In contrast, ZFC is defined by a larger number of (more restrictive) axioms, as 
 
 There are a total of about 8 such axioms (depending on the flavour of the theory). They are curated in a way that allows us to construct all sets that are interesting, without being able to construct the infamous set that contains itself. However, accepting ZFC would mean accepting that set theory is not as simple and straightforward, as it looks like. 
 
-Indeed, it is more complex than category theory, and more complex than this other theory about which we will learn about in a minute...
+Indeed, it is more complex than category theory, and more complex than the other theory which we will learn about in a minute...
 
 Resolving the paradox with type theory
 ---
@@ -116,21 +113,19 @@ It only starts to make some sense once we realize that we can always convert the
 
 As you would see shortly, the concept of types has to do a lot with the concept of functions.
 
-What is type theory
-===
+## What is type theory
 
 > "Every propositional function φ(x)—so it is contended—has, in addition to its range of truth, a range of significance, i.e. a range within which x must lie if φ(x) is to be a proposition at all, whether true or false. This is the first point in the theory of types; the second point is that ranges of significance form types, i.e. if x belongs to the range of significance of φ(x), then there is a class of objects, the *type* of x, all of which must also belong to the range of significance of φ(x)" --- Bertrand Russell - Principles of Mathematics
 
-In the last section, we almost fell in the trap of explaining types as something that is are "like sets, but... " (e.g. they are like sets, but a term can only be a member of one type). However, while it may be technically true, any such explanation would not be at all appropriate, as, while types started as alternative to sets, they actually ended up being quite different. So, thinking in terms of sets won't get you far. Indeed, if we take the proverbial set theorist from the previous section, and ask them about types, their truthful response would have be:
+In the last section, we almost fell in the trap of explaining types as something that are "like sets, but... " (e.g. they are like sets, but a term can only be a member of one type). However, while it may be technically true, any such explanation would not be at all appropriate, as, while types started as alternative to sets, they actually ended up being quite different. So, thinking in terms of sets won't get you far. Indeed, if we take the proverbial set theorist from the previous section, and ask them about types, their truthful response would have to be:
 
-> "Have you seen a set? Well, it has nothing to do with it.
+> "Have you seen a set? Well, it has nothing to do with it."
 
-So let's see how do we define a type theory in its own right. 
+So let's see how we define a type theory in its own right. 
 
 But first...
 
-Long disclaimer
----
+### Long disclaimer
 
 Before we begin, let's get this long disclaimer out of the way:
 
@@ -140,14 +135,13 @@ Have I confused you enough? No?
 
 The term "type theory" (uncountable) refers to the whole field of study of type theories, just like category theory is the study of categories. But, (take a deep breath) you can sometimes think of the different type systems as "different versions of type theory" and so, when people talk about a given set of features that are common to all type systems, they sometimes use the term "type theory" to refer to any random type system that has these features.
 
-What are types?
----
+### What are types?
 
 Anyhow, let's get back to our subject (however we want to call it). As we said, type theory was born out of Russell's search for a way to define all collections of objects that are *interesting*, without accidentally defining collections that lead us astray (e.g. to his eponymous paradox), and without having to make up a multitude of additional axioms (a-la ZFC). 
 
 He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer). The idea is the following: The *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*.
 
-Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no (interesting) functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it (there are no functions where it is the source either). This set is like a oasis at the center of the desert... or perhaps a little desert in the center of big oasis... Contact me if you can think of some good metaphor.
+Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no (interesting) functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it (there are no functions where it is the source either). This set is like an oasis at the center of the desert... or perhaps a little desert in the center of big oasis... Contact me if you can think of some good metaphor.
 
 <!--
 
@@ -161,8 +155,7 @@ Even worse, as a dead end is at least reachable.
 
 -->
 
-Building types
----
+### Building types
 
 We saw that type theory is not so different from set theory when it comes to *structure that it produces* --- all types (at least on the first level) are sets, although not all sets are types. And all functions are... well functions. However, type theory is very different from set theory when it comes to *the way the structure comes about*, in the same way as the intuitionistic approach to logic is different from the classical approach (by the way, if this metaphor made the connection between type theory and intuitionistic logic too obvious for you, do me a favor, please don't mention it and act surprised when we make it explicit).
 
@@ -176,8 +169,7 @@ In type theory, we start with a space that is empty.
 
 From there, we have to build our types. One by one. With our bare hands (OK, we do have some cool mathematical tools that assist us).
 
-Type formation, term introduction, term elimination
----
+### Type formation, term introduction, term elimination
 
 > "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
 
@@ -217,23 +209,21 @@ Finally, as we don't want to construct types just for the sake of constructing n
 
 ![A type and an arrow, coming from it ](../06_type/rule_term_elimination.svg)
 
-OK, I think we got too far in trying to define type theory without actually defining type theory, so we will proceed with the formulas... after our second long disclaimer.
+OK, I think we went too far in trying to define type theory without actually defining type theory, so we will proceed with the formulas... after our second long disclaimer.
 
-Picking a theory (another long disclaimer)
----
+### Picking a theory (another long disclaimer)
 
 As we said in the first long disclaimer, there is not one, but many type theories. So if we want to do type theory, we have first pick *a* type theory (if this sentence confuses you, read the first disclaimer again).
 
 Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about the features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
 
-To please both parties, (and annoy them both, at the same time), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers: unlike Lambda Calculus that, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
+To please both parties, (and annoy them both, at the same time), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers: unlike Lambda Calculus, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
 
 Also, last but not least, Haskell constructors and functions can have names (believe me, this helps).
 
 Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called *Polymorphic Lambda Calculus* or *System F*. 
 
-Base types. The boolean type
-===
+## Base types. The boolean type
 
 So, let's start with an empty space, when nothing is defined. 
 
@@ -242,25 +232,23 @@ So, let's start with an empty space, when nothing is defined.
 So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Bool} &:\ \mathrm{Type} \\
 \mathrm{True} &:\ \mathrm{Bool} \\
 \mathrm{False} &:\ \mathrm{Bool}
-\end{array}
+\end{aligned}
 $$
 
 Let's go through this definition:
 
-Type formation
----
+### Type formation
 
-First, $Bool: Type$, says that there exist a type that we call "Bool".
+First, $Bool: Type$, says that there exists a type that we call "Bool".
 
 ![The Boolean type without values --- an empty circle](../06_type/bool_type_empty.svg)
 
 
-Term introduction
----
+### Term introduction
 
 Then, $True : Bool$ says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. In the diagram, we will represent that as an arrow from the singleton  type $1$ (known as the `Unit` type in Haskell), as per the Elementary Theory of the Category of Sets (see chapter 2).
 
@@ -272,17 +260,16 @@ And $False : Bool$ creates another such value.
 
 Et voila, we have just defined a type!
 
-Term elimination
----
+### Term elimination
 
-Wait, scratch that. We actually haven't defined a type. Or rather we have defined one, but it is quite useless. For it would only be useful once we define at least one arrow, coming *from* it(otherwise, it will just be a one-way street). For the Booleans, this function is usually called $ifElse$.
+Wait, scratch that. We actually haven't defined a type. Or rather we have defined one, but it is quite useless. For it would only be useful once we define at least one arrow, coming *from* it (otherwise, it will just be a one-way street). For the Booleans, this function is usually called $ifElse$.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{ifElse} : \forall a.\ \mathrm{Bool} \to a \to a \to a \\
 \mathrm{ifElse}\ True\ a\ b\ =\ a\\
-\mathrm{ifElse}\ False\ a\ b\ =\ b \\
-\end{array}
+\mathrm{ifElse}\ False\ a\ b\ =\ b 
+\end{aligned}
 $$
 
 You can see that the functions in Haskell are pretty rudimentary to define --- you just map each individual value of one type, to the value of another one.
@@ -294,40 +281,38 @@ ifElse True 1 2 --1
 ifElse False 1 2 --2
 ```
 
-Isomorphisms between types
----
+### Isomorphisms between types
 
 But why (with the risk of repeating myself) does this exact type has to be the Boolean type? What is stopping our colleague Bobby who always wants to do everything their way, to define their own version of Boolean and using it in their project.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{BobbysBool} &:\ \mathrm{Type} \\
 \mathrm{BobbysTrue} &:\ \mathrm{BobbysBool} \\
 \mathrm{BobbysFalse} &:\ \mathrm{BobbysBool}
-\end{array}
+\end{aligned}
 $$
 
 The answer is "nothing". But that is not a huge deal --- we can just whip up a function to convert their Bool to ours:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 convert\ BobbysBool &\to Bool \\
 convert\ BobbysTrue\ &=\ True \\
 convert\ BobbyFalse\ &=\ False 
-\end{array}
+\end{aligned}
 $$
 
 This function is also reversible. Which means that the two types are isomorphic i.e. they are one and the same type, *up to a (unique) isomorphism*.
 
 
-Other base types
----
+### Other base types
+
 Almost forgot: in the same way as we constructed the Booleans, we can construct any other finite/base types, such as the type of balls.
 
 ![The type of balls: a circle with several colorful balls](../06_type/balls_construct.svg)
 
-Polymorphic types. The Maybe type
-===
+## Polymorphic types. The Maybe type
 
 Now, we will define the type that is known in Haskell as, $Maybe$ (and what in other languages is usually called $Option$). If you haven't encountered it, the Haskell documentation provides a very good description:
 
@@ -336,15 +321,14 @@ Now, we will define the type that is known in Haskell as, $Maybe$ (and what in o
 But, once you learn to read it, the type definition, by itself is clear enough:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{array}
+\end{aligned}
 $$
 
-Type formation
----
+### Type formation
 
 $Maybe$ looks a lot like $Bool$, but, unlike $Bool$, $Maybe$ is a *polymorphic* type, as we can tell by looking at the *type formation rule*
 
@@ -358,14 +342,14 @@ Maybe is polymorphic i.e. there is not just one $Maybe$, but many $Maybe$'s --- 
 
 Polymorphic types are arrows from the universe of types, to itself (i.e. the kind of $Maybe$ is $Type \to Type$), while $Bool$ is just a $Type$.
 
-Term introduction: Nothing
----
+### Term introduction: Nothing
+
 Now, it's time to fill our type.
 
 The first line is similar to what we saw with boolean. 
 
 $$
-\mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}[a] \\
+\mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}[a]
 $$
 
 It says that there is a value called $Nothing$ for all $Maybe$ types (that's what $\forall$ means -- "for all").
@@ -373,8 +357,7 @@ It says that there is a value called $Nothing$ for all $Maybe$ types (that's wha
 ![The `Maybe Boolean` type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_nothing.svg)
 
 
-Term introduction: Just
----
+### Term introduction: Just
 
 Of course there would be no point in having many $Maybe$s if they all are all the same. That's where the second line comes.
 
@@ -386,8 +369,7 @@ The constructor $Just$ represents an arrow from type $a$ to type $Maybe[a]$ e.g.
 
 ![The $Maybe Boolean$ type without values: A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_full.svg)
 
-Using Maybe
----
+### Using Maybe
 
 The $Maybe$ type is used for handling errors i.e. for defining *partial functions*. Let's say we want to define a function that does not have an arrow for all values in the source. Does this mean that this function cannot be defined?
 
@@ -397,23 +379,21 @@ No, we just have to wrap the target type in $Maybe$ and it becomes a regular fun
 
 ![A function from  $Nat$ to $Maybe Boolean$: returns $Just False$ for composite numbers, $Just True$ for primes and $Nothing$ for 0 and 1](../06_type/isprime_int_maybe_bool.svg)
 
-Term elimination
----
+### Term elimination
 
 To close the case, we define one function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 maybe : \forall\ a\ b.\ b\ \to (a \to b) \to Maybe[a] &\to b \\
 maybe\ n\ f\ Nothing\ &=\ n \\
-maybe\ n\ f\ Just[x]\ &=\ f\ x \\
-\end{array}
+maybe\ n\ f\ Just[x]\ &=\ f\ x 
+\end{aligned}
 $$
 
 Notice that this function defines an arrows from type $Maybe\ a$ to any type $b$, provided that a function $a \to b$, and a value of $b$ is provided.
 
-Inductive types. The natural number type.
-===
+## Inductive types. The natural number type.
 
 Learning mathematics can feel overwhelming at first: you might not know how to proceed with such huge, even infinite, body of knowledge. But, it turns out the answer is simple: you start off knowing 0 things. Then, you learn 1 theory -- congrats, you have learned your first theory and so you would know a total of 1 theories. Then, you learn 1 more theory and you would already know a total of 2 theories. Then learn 1 more theory and then 1 more and, given enough time and dedication, you may learn all theories.
 
@@ -427,34 +407,31 @@ This argument applies not only to mathematical theories, but to everything else 
 Or as Haskellians say:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathbb{N} &:\ \mathrm{Type} \\
 \mathrm{Zero} &:\ \mathbb{N} \\
 \mathrm{Succ} &:\ \mathbb{N} \to \mathbb{N}
-\end{array}
+\end{aligned}
 $$
-
 
 Let's follow the arrows. 
 
-Type formation
----
+### Type formation
 
 The first line indicates that the natural numbers type is a normal non-polymorphic, or "monomorphic" type.
 
 $$
-\mathbb{N} :\ \mathrm{Type} \\
+\mathbb{N} :\ \mathrm{Type}
 $$
 
 ![The Natural numbers type without values --- an empty circle](../06_type/nat_type_empty.svg)
 
-Term introduction: Zero
----
+### Term introduction: Zero
 
 The first rule is also trivial.
 
 $$
-\mathrm{Zero} :\ \mathbb{N} \\
+\mathrm{Zero} :\ \mathbb{N}
 $$
 
 It allows us to construct one value, called zero 
@@ -466,8 +443,7 @@ i.e. it is a *mot à mot* repetition of Peano's first axiom.
 
 > 1. $0$ is a natural number.
 
-Term introduction: Successors
----
+### Term introduction: Successors
 
 The second rule is more interesting. 
 
@@ -475,7 +451,7 @@ $$
 \mathrm{Succ} :\ \mathbb{N} \to \mathbb{N}
 $$
 
-It says that there is  constructor, called "Successor" $Succ$ (or `+1`, as we can would call it) i.e. this is the equivalent of 
+It says that there is a constructor, called "Successor" $Succ$ (or `+1`, as we would call it) i.e. this is the equivalent of 
 
 > 2. If $n$ is a natural number, $n+1$ is a natural number.
 
@@ -499,17 +475,16 @@ Hm, this notation is a bit clunky, if only there were a better way to represent 
 
 And this is how you define an *inductive* type (or a *recursive* type, we can also call it). 
 
-Term elimination
----
+### Term elimination
 
-Wait, there are also elimination rule, I always forget elimination rules. Here it is:
+Wait, there are also elimination rules, I always forget elimination rules, here they are.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 foldNat : \mathbb{N} \to a \to (a \to a) &\to a\\
 foldNat\ Zero\ z\ s\ &=\ z\\
-foldNat\ (Succ\ a)\ z\ s\ &= s\ (foldNat\ a\ z\ s)\\
-\end{array}
+foldNat\ (Succ\ a)\ z\ s\ &= s\ (foldNat\ a\ z\ s)
+\end{aligned}
 $$
 
 This allows us, for example, to convert our `Nat`s to the normal Haskell `Nat`s:
@@ -520,38 +495,35 @@ foldNat (Succ (Succ Zero)) 0 (+ 1) -- 2
 
 Any other canonical function that converts natural numbers to other types can also be defined using the elimination rule.
 
-Composite types. The list type.
-===
+## Composite types. The list type.
 
 The landscape of types would be a really... flat place, without the *composite types*. Those are the types that allow you to unite several values of other types, into one. 
 
-The ultimate composite type is the list. The linked list specifically, is a thing of beauty:
+The ultimate composite type is the list. The linked list , specifically, is a thing of beauty:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{List} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nil} &:\ \forall a.\ \mathrm{List}[a] \\
 \mathrm{Cons} &:\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
-\end{array}
+\end{aligned}
 $$
 
 Let's unpack:
 
-Type formation
----
+### Type formation
 
 The type formation rule tells us that $List$ (like $Maybe$) is a composite type. 
 
 $$
-\mathrm{List} :\ \mathrm{Type} \to \mathrm{Type} \\
+\mathrm{List} :\ \mathrm{Type} \to \mathrm{Type}
 $$
 
 This means, that there is not one, but many  $List$ types, such as $List[Nat]$ $List[Bool]$ etc (infinitely many, if you consider lists of lists (of lists)). Those are usually read as "List of natural numbers", "List of Booleans" etc. 
 
 ![The `List Nat` and `List Bool` types without values --- A type-universe function, connecting `Bool` and `Nat` to `List Bool` and `List Nat` empty circles.](../06_type/list_type_empty.svg)
 
-Term introduction: Nil
----
+### Term introduction: Nil
 
 Now, let's check the constructors. The first defines a static value, one for each list, representing the empty list. 
 
@@ -563,8 +535,7 @@ $$
 
 We will call this value $Nil$ (native Haskell lists use the `[]` symbol).
 
-Term introduction: Cons
----
+### Term introduction: Cons
 
 And now for the more interesting part: $Cons$, our second term introduction rule, ($Cons$ is short for constructor, by the way) can be viewed as the operation of adding the value $a$ to a list (and returning that list).
 
@@ -590,22 +561,21 @@ As we said, the $List$ type is inductive i.e. every arrow that you draw generate
 
 The result is a type with values that are... well, *lists* of other values, 
 
-Term elimination
----
+### Term elimination
 
 Now, let's write the term elimination rule.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 foldList \ :\ (b \to a \to b) \to b \to List[a] &\to b \\
 foldList\ f\ z Nil &= z\\
-foldList\ f\ z (Cons\ x\ xs) &= foldList\ f\ (f\ z\ x)\ xs\\
-\end{array}
+foldList\ f\ z (Cons\ x\ xs) &= foldList\ f\ (f\ z\ x)\ xs
+\end{aligned}
 $$
 
 This rule is also the most useful function for manipulating lists.
 
-**Task 1:** There is a certain mapping from $List$ to $Boolean$ which is so useful, that some dialects of Lisp have no $Boolean$ type and all and rely just on this mapping. Draw it.
+**Task 1:** There is a certain mapping from $List$ to $Boolean$ which is so useful, that some dialects of Lisp have no $Boolean$ type at all and rely just on this mapping. Draw it.
 
 ![The list type: (Nil) (1,Nil), (1,(1,Nil)), (1,(1,Nil)) etc. and the `Boolean` type: True and False with places to draw arrows List to Bool](../06_type/list_bool_task.svg)
 
@@ -623,13 +593,11 @@ foldList f False
 
 **Task 4:** The $List Unit$ type is actually isomorphic to another type that we reviewed here. Find out which.
 
-Positive and negative types. Either and Tuples.
-===
+## Positive and negative types. Either and Tuples.
 
 Now, we will quickly present two more types, (hm... I have the feeling that I actually have seen those before).
 
-Either
----
+### Either
 
 The $Either$ type is an interesting one. 
 
@@ -638,15 +606,14 @@ The $Either$ type is an interesting one.
 It is a type that is parametrized by two types $a$ and $b$, and has two constructors/term introduction rules --- one constructor, called $Left$, that takes a value of $a$. And another one, called $Right$ that takes a $b$. Here is the definition of Either (excluding the term elimination rule).
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Either} &:\ \mathrm{Type} \to \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
 \mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
-\end{array}
+\end{aligned}
 $$
 
-Tuple
----
+### Tuple
 
 The next type that we will introduce is the $Tuple$ type, which is also parametrized by $a$ and $b$, but each value of it contains *both* a value of $a$ and a value of $b$. 
 
@@ -655,33 +622,32 @@ The next type that we will introduce is the $Tuple$ type, which is also parametr
 Here we will do something different --- instead of the definition, we will directly present the type elimination rules.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 first\ :\ \forall\ a\ b. Tuple[a\ b] \to a \\
 second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
-\end{array}
+\end{aligned}
 $$
 
-**Task 5:** Write an elimination rule for Tuple. Write an introduction rule for Either.
+**Task 5:** Write a constructor of Tuple. Write a `fold` function for Either.
 
-Positive and negative types
----
+### Positive and negative types
 
 The $Either$ type is uniquely defined by its introduction rules i.e. the elimination rules can be derived from the introduction rules.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
 \mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
-\end{array}
+\end{aligned}
 $$
 
 $Tuple$, on the other hand, is defined by its elimination rules i.e. the introduction rules can be derived from them:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 first\ :\ \forall\ a\ b. Tuple[a\ b] \to a \\
 second\ :\ \forall\ a\ b. Tuple[a\ b] \to b
-\end{array}
+\end{aligned}
 $$
 
 Types that, like $Either$, are defined by their introduction rules are called *positive types*. Types that are defined by their elimination are *negative*. All types that we saw so far (except $Tuple$) are positive.
@@ -690,46 +656,43 @@ Positive and negative types are dual to each other.
 
 Positive/negative types correspond to the categorical concepts of limit/colimit, but we will learn more about those later.
 
-**Task 6:** Besides $Tuple$, there is one very important negative type, which covered in this chapter (and in various other places).
+**Task 6:** Besides $Tuple$, there is one very important negative type, which we covered in this chapter (and in various other places).
 
-Conclusion
----
+### Conclusion
 
 In this section, we started from almost nothing --- just $1$ type. Then we defined a lot of stuff, very quickly.
 
 ![All types we have seen so far (with combinations): Unit, Bool, Maybe Bool, Nat, Maybe Nat, List of Nat, Bool or Nat](../06_type/all_types.svg)
 
-One can see that some types that programmers use are still missing, but those can be defined in much the same way as the types we already defined: e.g. $char$ is just a base type $string$ is just $List[chars]$ etc.
+One can see that some types that programmers use are still missing, but those can be defined in much the same way as the types we already defined: e.g. $char$ is just a base type, $string$ is just $List[char]$ etc.
 
 
-Church encoding: From Haskell to Lambda Calculus 
-===
+## Church encoding: From Haskell to Lambda Calculus 
 
-In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADK's). So, it's not obvious that it is possible to achieve the same things with just functions. However, it is possible: there exist a mechanism for encoding every type as a function, known as *Church encoding*, in the name of the creator of Lambda Calculus Alonzo Church. 
+In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADTs). So, it's not obvious that it is possible to achieve the same things with just functions. However, it is possible: there exist a mechanism for encoding every type as a function, known as *Church encoding*, named after the creator of Lambda Calculus, Alonzo Church. 
 
-Base types. the Boolean type
----
+### Base types. the Boolean type
 
 Consider the Boolean type, which we defined like this:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Bool} &:\ \mathrm{Type} \\
 \mathrm{True} &:\ \mathrm{Bool} \\
 \mathrm{False} &:\ \mathrm{Bool}
-\end{array}
+\end{aligned}
 $$
 
 Here is a version of the same thing, with just functions.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 type\ \mathrm{Bool} &= \forall a. a \to a \to a \\
 false &: \mathrm{Bool} \\
 false\ a\ b &= b \\
 true &: \mathrm{Bool} \\
-true\ a\ b &= a \\
-\end{array}
+true\ a\ b &= a 
+\end{aligned}
 $$
 
 Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ which accepts two values of type $a$ for all $a$ and returns another one. We can see that under this definition, $True$ is a function that returns the first $a$, and $False$ is a function that returns the second one.
@@ -737,10 +700,10 @@ Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ whi
 Don't believe that these can function as booleans? Here is an implementation of the $ifElse$ function:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 ifElse &: \forall a. \mathrm{Bool} \to a \to a \to a \\
-ifElse &\ v\ a\ b\  = v\ a\ b \\
-\end{array}
+ifElse &\ v\ a\ b\  = v\ a\ b 
+\end{aligned}
 $$
 
 The implementation is trivial, because the datatype itself is doing the work. This is one of the main principle behind the "Church encodings" of datatypes as they are called --- the datatype encodes the term elimination rule.
@@ -754,59 +717,48 @@ Here is how you would use this:
 
 
 
-$$
-\begin{array}{lcl}
-\mathbb{N} &:\ \mathrm{Type} \\
-\mathrm{Zero} &:\ \mathbb{N} \\
-\mathrm{Succ} &:\ \mathbb{N} \to \mathbb{N}
-\end{array}
-$$
-
-
-Polymorphic types. The Maybe type
----
+### Polymorphic types. The Maybe type
 
 The Boolean type is, of course, a basic type. So, let's consider the $Maybe$ type, which is more complex:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{array}
+\end{aligned}
 $$
 
 $Maybe$ is more complex, because it can *contain another value* in itself (with the $Just$ constructor). Here is where we learn another important principle of Church encoding: using curried functions to hold values.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 type\ Maybe[a] &= \forall m. m \to (a \to m) \to m \\
 nothing &: Maybe[a] \\
 nothing\ n\ j &= n \\
 just &:\ a \to Maybe[a] \\
-just\ val\ n\ j\ &= (j\ val) \\
-\end{array}
+just\ val\ n\ j\ &= (j\ val) 
+\end{aligned}
 $$
 
-The general principle
----
+### The general principle
 
 By now, you have probably seen that the Church-encoding of the type has the same constructors as the "normal" type  the difference is only that it accepts them as parameters. 
 
 If we have a type which is like $Maybe$, but with just one value (like the $1$ type)...
 
 $$
-\begin{array}{lcl}
-\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
-\end{array}
+\begin{aligned}
+\mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] 
+\end{aligned}
 $$
 
-...it's Church encoding would be...
+...its Church encoding would be...
 
 $$
-\begin{array}{lcl}
-\forall m. m \to m \\
-\end{array}
+\begin{aligned}
+\forall m. m \to m 
+\end{aligned}
 $$
 
 (This is indeed the Church encoding of the $1$ type)
@@ -814,50 +766,48 @@ $$
 And then, if we extend the type to also have the $Just$ constructor...
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{array}
+\end{aligned}
 $$
 
 ...the encoding is extended like this...
 
 $$
-\begin{array}{lcl}
-\forall m. m \to (a \to m) \to m \\
-\end{array}
+\begin{aligned}
+\forall m. m \to (a \to m) \to m 
+\end{aligned}
 $$
 
 This is why the signature of the Church-encoded type is almost identical as the signature of the $fold$ function, used to eliminate it:
 
 $$
-\begin{array}{lcl}
-foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
-\end{array}
+\begin{aligned}
+foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m 
+\end{aligned}
 $$
 
 and the $fold$ function is trivial
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
-foldMaybe\ n\ j\ maybe &= maybe\ n\ j \\
-\end{array}
+foldMaybe\ n\ j\ maybe &= maybe\ n\ j 
+\end{aligned}
 $$
 
 The general principle of Church encoding, is that instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
 
 **Task 7:** Write a Church-encoded version of the natural numbers type
 
-Polymorphic lambda calculus -- Formal definition
-===
+## Polymorphic lambda calculus -- Formal definition
 
-So far, we saw how Lambda Calculus *works*. Now, we are about to see how it is defined formally. The answer is that, as all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
+So far, we saw how Lambda Calculus *works*. Now, we are about to see how it is defined formally. The answer is that, like all type systems, it is defined by *typing rules*. And what are typing rules? Well, basically they are also arrows. (Surprised?) 
 
-Natural deduction
----
+### Natural deduction
 
-Yes, Haskell's, typing rules are indeed arrows, but they are defined in a language that is different from Haskell, called *natural deduction*. Natural deduction is like Haskell, but it uses a syntax where, where the premise and the conclusion are separated by a horizontal dash, e.g. instead of...
+Yes, Haskell's, typing rules are indeed arrows, but they are defined in a language that is different from Haskell, called *natural deduction*. Natural deduction is like Haskell, but it uses a syntax where the premise and the conclusion are separated by a horizontal dash, e.g. instead of...
 
 $$
 a \to b
@@ -865,39 +815,27 @@ $$
 
 ...we write...
 
-$$\frac
-    a
-    b
-$$
+$$\frac{a}{b}$$
 
 Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. We defined it in Haskell like this:
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Bool} &:\ \mathrm{Type} \\
 \mathrm{True} &:\ \mathrm{Bool} \\
 \mathrm{False} &:\ \mathrm{Bool}
-\end{array}
+\end{aligned}
 $$
 
 If we want to define it using natural deduction, so it is one of the "primitive" types that are part of the type system itself (as it is defined in most programming languages), it would look like this.
 
-$$\frac
-    {}               
-    {\mathrm{Bool} :: \mathrm{Type}}
-$$
+$$\frac{{}}{{\mathrm{Bool} :: \mathrm{Type}}}$$
 
 This means that there is a type called Bool (technically, this is not a typing rule, but a "kinding" rule (and thus the double-colon)).
 
-$$\frac
-    {}               
-    {\mathrm{True} : \mathrm{Bool}}
-$$
+$$\frac{{}}{{\mathrm{True} : \mathrm{Bool}}}$$
 
-$$\frac
-    {}
-    {\mathrm{False} : \mathrm{Bool}}
-$$
+$$\frac{{}}{{\mathrm{False} : \mathrm{Bool}}}$$
 
 $\mathrm{True}$ and $\mathrm{False}$ are Booleans.
 
@@ -905,8 +843,7 @@ Oh I forgot, in natural deduction it is permitted to have conclusions without pr
 
 **Task 8:** Define the elimination rule for Booleans, using natural deduction.
 
-Contexts
----
+### Contexts
 
 Is this *too* simple? Let's add the concept of the typing *context* (or typing *environment*) to the mix.
 
@@ -916,113 +853,84 @@ We usually denote the context with the letter $\Gamma$, and we use the $\vdash$ 
 
 So, when we consider the context, the above definition becomes
 
-$$\frac
-    {}               
-    {\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}
-$$
+$$\frac{{}}{{\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}}$$
 
 i.e. the context includes the type $\mathrm{Bool}$ 
 
-$$\frac
-    {}               
-    {\Gamma \vdash \mathrm{True} : \mathrm{Bool}}
-$$
+$$\frac{{}}{{\Gamma \vdash \mathrm{True} : \mathrm{Bool}}}$$
 
 i.e. the context includes the value $\mathrm{True}$ of type $\mathrm{Bool}$
 
-$$\frac
-    {}
-    {\Gamma \vdash \mathrm{False} : \mathrm{Bool}}
-$$
+$$\frac{{}}{{\Gamma \vdash \mathrm{False} : \mathrm{Bool}}}$$
 
 i.e. the context includes the value $\mathrm{False}$ of type $\mathrm{Bool}$
 
 Thus, we straight away define the Boolean type to be part of the context.
 
-Value-level arrows 
----
+### Value-level arrows 
 
 With that, we list the axioms of Lambda Calculus, which contain nothing more than the definition of the type of value-level arrows (functions).
 
 There are several typing rules that we have to define, starting with the trivial rule *Var*, that states the following: if we previously said that $x$ has type $A$, then $x$ has type $A$.
 
-$$\frac
-    {x : A \in \Gamma}
-    {\Gamma \vdash x : A}
-$$
+$$\frac{{x : A \in \Gamma}}{{\Gamma \vdash x : A}}$$
 
 Now, we proceed to define the types of the arrows.
 
 We start with the type formation rule (or the *kinding* rule).
 
-$$\frac
-    {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
-    {\Gamma \vdash A \to B :: Type}
-$$
+$$\frac{{\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}}{{\Gamma \vdash A \to B :: Type}}$$
 
 And then the two typing rules. One is the *term introduction* for lambda terms, which is called *abstraction* (or *Abs*).
 
-$$\frac
-    {\Gamma, x:A \vdash y: B}
-    {\Gamma \vdash \lambda z : A \to B}
-$$
+$$\frac{{\Gamma, x:A \vdash y: B}}{{\Gamma \vdash \lambda z : A \to B}}$$
 
 (i.e. if we have a way given a value $x$ of type $A$ to obtain a value $y$ of type $B$, then we have ourselves a function $A \to B$).
 
 And there is also term elimination for lambdas, i.e. function *application* (App).
 
-$$\frac
-    {\Gamma \vdash z: A \to B, \Gamma \vdash x: A}
-    {\Gamma \vdash z x : B }
-$$
+$$\frac{{\Gamma \vdash z: A \to B, \Gamma \vdash x: A}}{{\Gamma \vdash z x : B }}$$
 
 To understand how those rules work, let's take the function $length: string \to int$ as an example. The abstraction rule for this function would be: 
 
-$$\frac
-    {\Gamma, x:string \vdash y: int}
-    {\Gamma \vdash \lambda length : string \to int}
-$$
+$$\frac{{\Gamma, x:string \vdash y: int}}{{\Gamma \vdash \lambda length : string \to int}}$$
 
 And the *application* rule would be
 
-$$\frac
-    {\Gamma \vdash length: string \to int, \Gamma \vdash x: string}
-    {\Gamma \vdash length\ x : int }
-$$
+$$\frac{{\Gamma \vdash length: string \to int, \Gamma \vdash x: string}}{{\Gamma \vdash length\ x : int }}$$
 
 Those rules are all you need to define value-level arrows.
 
-Simply-typed Lambda Calculus
----
+### Simply-typed Lambda Calculus
 
 The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they define a simpler type system aptly called *Simply-typed Lambda Calculus* (STLC). This is a system which is just like Polymorphic Lambda Calculus, except that... it is not polymorphic i.e. we cannot define the polymorphic types like $Maybe$, just monomorphic ones (like Boolean).
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
 \mathrm{Just} &:\ \forall a.\ a \to \mathrm{Maybe}[a]
-\end{array}
+\end{aligned}
 $$
 
 The best we can do is to define a separate versions of the type, e.g. one which works just for $\mathrm{int}$.
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{MaybeInt} &:\ \mathrm{Type} \\
 \mathrm{NoInt} &:\ \mathrm{MaybeInt} \\
 \mathrm{JustInt} &: \mathrm{int} \to \mathrm{MaybeInt}
-\end{array}
+\end{aligned}
 $$
 
 And one for $\mathrm{string}$
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 \mathrm{MaybeString} &:\ \mathrm{Type} \\
 \mathrm{NoString} &:\ \mathrm{MaybeString} \\
 \mathrm{JustString} &:\mathrm{string} \to \mathrm{MaybeString}
-\end{array}
+\end{aligned}
 $$
 
 Furthermore, in STLC we cannot define a *functions* that work for polymorphic $Maybe$ (regardless of the type they are holding), so we have to redefine not only the types, but all functions that use them.
@@ -1031,8 +939,7 @@ To combat this problem, and to ascend ourselves from *Simply-typed* to *Polymorp
 
 But, actually we should talk about Kinds first...
 
-Kinds
----
+### Kinds
 
 In the expression "$x: A$" , "$A$" denotes the type of the value. But then what is $Type$ in the Expression "$A :: Type$"? We cannot say that $Type$ is a *type*, cause we will see Russell, lurking behind our back, with his eponymous paradox. In Lambda Calculus, it is resolved in the following way:
 
@@ -1042,62 +949,39 @@ In the expression "$x: A$" , "$A$" denotes the type of the value. But then what 
 
 This means that besides a type system and typing rules, we have a *kind-system* and *kinding rules*. But please, don't throw this book out of the window -- the kinding system for both STLC is pretty easy to define: there is just one kind, that we call $\mathrm{Type}$ (sometimes it is marked with a $*$).
 
-$$\frac
-    {}
-    {\Gamma \vdash Type}
-$$
+$$\frac{{}}{{\Gamma \vdash Type}}$$
 
 And then the type definition rules are defined like this (i.e. everything is of kind $\mathrm{Type}$:
 
-$$\frac
-    {}
-    {\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}
-$$
+$$\frac{{}}{{\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}}$$
 
 And for Polymorphic Lambda Calculus, we would see in the next section.
 
-Type-level arrows 
----
+### Type-level arrows 
 
 We started defining STLC by defining value-level *variables*, using the trivial *Var* typing rule, 
 
-$$\frac
-    {x : A \in \Gamma}
-    {\Gamma \vdash x : A}
-$$
+$$\frac{{x : A \in \Gamma}}{{\Gamma \vdash x : A}}$$
 
 In Polymorphic Lambda Calculus we also have *type-level variables*, which are defined with a similar *TVar* *kinding* rule.
 
-$$\frac
-    {A :: K \in \Gamma}
-    {\Gamma \vdash A :: K}
-$$
+$$\frac{{A :: K \in \Gamma}}{{\Gamma \vdash A :: K}}$$
 
 Now, let's proceed with defining the type of the arrows themselves. 
 
 In Polymorphic Lambda Calculus, as in STLC, we have value-level arrows that convert values to other values...
 
-$$\frac
-    {\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}
-    {\Gamma \vdash A \to B :: Type}
-$$
+$$\frac{{\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}}{{\Gamma \vdash A \to B :: Type}}$$
 
 And, we also have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
 
-$$\frac
-    {\Gamma, (\alpha :: A) \vdash (B :: Type)}
-    {\Gamma \vdash \forall (\alpha :: A). (B.A :: Type)}
-$$
+$$\frac{{\Gamma, (\alpha :: A) \vdash (B :: Type)}}{{\Gamma \vdash \forall (\alpha :: A). (B :: Type)}}$$
 
 For example, for the $Maybe$ type, this rule would say
 
-$$\frac
-    {\Gamma, (\alpha :: Type) \vdash Maybe[\alpha]:: Type}
-    {\Gamma \vdash \forall (\alpha :: type). Maybe[\alpha]:: Type}
-$$
+$$\frac{{\Gamma, (\alpha :: Type) \vdash Maybe[\alpha]:: Type}}{{\Gamma \vdash \forall (\alpha :: type). Maybe[\alpha]:: Type}}$$
 
-Polymorphic functions
----
+### Polymorphic functions
 
 The more interesting (and harder) part of polymorphism is augmenting value-level arrows to work with polymorphic types i.e. to have functions which accept a type as an argument, in addition to a value.
 
@@ -1119,34 +1003,25 @@ Here are the typing rules of polymorphic functions themselves:
 
 *Type abstraction* (or *TAbs*)
 
-$$\frac
-    {\Gamma, (\alpha :: A) \vdash z : C}
-    {\Gamma \vdash (\Lambda \alpha :: A . z) : \forall (\alpha :: A) . C}
-$$
+$$\frac{{\Gamma, (\alpha :: A) \vdash z : C}}{{\Gamma \vdash (\Lambda \alpha :: A . z) : \forall (\alpha :: A) . C}}$$
 
 And *type application* (*TApp*)
 
-$$\frac
-    {\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}
-    {\Gamma \vdash z'[X] : C[\alpha := X]}
-$$
+$$\frac{{\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}}{{\Gamma \vdash z'[X] : C[\alpha := X]}}$$
 
 <!--
 
-TODO Interlude: Higher-kinds --- System F Omega
-===
+## TODO Interlude: Higher-kinds --- System F Omega
 
 "System Fω can be stratified into an infinite hierarchy of Systems Fn, where F0 corresponds to the usual polymorphic System F (quantifying over kinds ∗), F1 to System F with type operators (quantifying over kinds e.g. ∗ → ∗), F2 additionally quantifying over kinds e.g. (∗ → ∗) → ∗ ("to the left of 2 arrows", so to speak), and so on."
 
 -->
 
-Types and Categories
-===
+## Types and Categories
 
 In the last chapter, we established the main principles behind the Curry-Howard isomorphism, between types and logics and categories.
 
-Types are objects functions are morphisms
----
+### Types are objects functions are morphisms
 
 Every type is an object
 
@@ -1156,14 +1031,13 @@ And every value-level arrow (function) is a morphism.
 
 ![A bunch of balls, connected with each other with arrows](category_arrow.svg)
 
-Values are morphisms too
----
+### Values are morphisms too
 
 We said that category theory is all about arrows. Here, we seemingly turned away from this, and we started drawing values and internal diagrams again, as for examples the natural numbers type.
 
 ![The Natural numbers type: 0, 1, 2, 3 etc.](../06_type/nat_type_full_normal.svg)
 
-But there is no discrepancy. We said that in type theory, "the only values are the ones which are sources and targets of arrows". In the case of natural numbers, it is the $successor$ arrow, and the $zero$ arrow).
+But there is no discrepancy. We said that in type theory, "the only values are the ones which are sources and targets of arrows". In the case of natural numbers, it is the $successor$ arrow, and the $zero$ arrow.
 
 ![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to 1, one arrow pointing from 1 to 2  etc.](category_nat_internal.svg)
 
@@ -1190,20 +1064,17 @@ But we do have one more arrow: $s : \mathbb{N} \to \mathbb{N}$. So, what happens
 Rather than going *back* to values, we went *full circle* and discovered that values are just convenient way to draw arrows.
 
 
-Simply-typed Lambda calculus is a cartesian closed category
----
+### Simply-typed Lambda calculus is a cartesian closed category
 
-If we view types as objects and arrows and values as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the prev chapter. 
+If we view types as objects and arrows and values as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the previous chapter. 
 
 > Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
 
-Untyped lambda calculus is a monoid
----
+### Untyped lambda calculus is a monoid
 
 And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
 
-Polymorphic Lambda calculus is...
----
+### Polymorphic Lambda calculus is...
 
 We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
 
@@ -1211,15 +1082,13 @@ We will get on with this in the next chapter.
 
 <!--
 
-Addendum: The connection between tuple function top and bottom.
-===
+## Addendum: The connection between tuple function top and bottom.
 TODO
 Tuple and functions are related via tensor-hom
 Terminal objects are nullary products
 --> 
 
-Appendix: definitions in Haskell
-===
+## Appendix: definitions in Haskell
 
 I thought a lot about whether to provide the definitions of the basic types in executable Haskell, or as formulas (i.e. monospaced or modern). At the end, I decided that formulas are better, but all of them are indeed Haskell, with several caveats:
 
@@ -1317,10 +1186,9 @@ main = do
 {% if site.distribution != 'print' %}
 -->
 
-Answers
-===
+## Answers
 
-**Task 1:** There is a certain mapping from `List` to `Boolean` which is very intuitive. So intuitive, that some dialects of Lisp have no `Boolean` type and all and rely just on this mapping. Try to guess this mapping.
+**Task 1:** There is a certain mapping from `List` to `Boolean` which is very intuitive. So intuitive, that some dialects of Lisp have no `Boolean` type at all and rely just on this mapping. Try to guess this mapping.
 
 ---
 
@@ -1371,21 +1239,22 @@ It is the *function* type. We can think of functions as "objects that can be eva
 
 Here it is
 
+
 $$
-\begin{array}{lcl}
+\begin{aligned}
 type\ \mathbb{N} &= \forall b. b \to (b \to b) \to b \\
 zero &: \mathbb{N} \\
 zero\ z\ s &= z \\
 succ &: \mathbb{N} \to \mathbb{N} \\
-succ\ n\ z\ s &= s\ (n\ z\ s) \\
-\end{array}
+succ\ n\ z\ s &= s\ (n\ z\ s) 
+\end{aligned}
 $$
 
 $$
-\begin{array}{lcl}
+\begin{aligned}
 foldNat &: \forall a\ b. b \to (b \to b) \to \mathbb{N} \to b \\
-foldNat\ z\ s\ n &= n\ z\ s \\
-\end{array}
+foldNat\ z\ s\ n &= n\ z\ s 
+\end{aligned}
 $$
 
 **Task 8:** Define the elimination rule for Booleans, using natural deduction.
