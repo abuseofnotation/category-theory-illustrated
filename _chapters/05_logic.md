@@ -437,9 +437,9 @@ But as usual there is a caveat --- not all categories can be converted to logica
 
 Categories that adhere to these criteria are called *cartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined --- orders.
 
-By the way, the parallel between logics and categories also relates them to types (in programming languages and in general), and it is known as Curry-Howard isomorphism, or Curry-Howard-Lambek isomorphism.
+By the way, the parallel between logics and categories also is known as Curry-Howard correspondence, (or Curry-Howard-Lambek correspondence).
 
-**Task 5:** The Curry-Howard-Lambek isomorphism is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
+**Task 5:** The Curry-Howard-Lambek correspondence is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
 
 **Task 6:** We will concentrate on proving that some categories form logics. But meanwhile, you can prove that all logics form categories, using the definition of a category that we used in the previous chapter. 
 
@@ -590,6 +590,23 @@ And then
 
 > A logical system any logical system can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
 {: .theorem}
+
+Or as a table.
+
+| Intuitionistic logic        | Cartesian closed category        |
+|-----------------------------|----------------------------------|
+| Proposition                 | Object                           |
+| Implication                 | Morphism                         |
+| Primary proposition         | Morphism 1 → A (global element)  |
+| Implication object (A → B)  | Exponential object               |
+| And (A ∧ B)                 | Product A × B                    |
+| Or (A ∨ B)                  | Coproduct A + B                  |
+| True (⊤)                    | Terminal object (1)              |
+| False (⊥)                   | Initial object (0)               |
+| Negation      A → ⊥         | Morphism A → 0                   |
+
+
+
 
 ## A taste of categorical logic
 
