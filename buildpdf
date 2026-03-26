@@ -1,5 +1,5 @@
 pandoc --from markdown --to pdf  --strip-comments \
- --pdf-engine=lualatex \
+ -t html \
  --template=epub/template.tex \
  _chapters/00_about.md \
  _chapters/01_set.md \

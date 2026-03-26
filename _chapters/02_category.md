@@ -690,8 +690,7 @@ Thus, we established a connection between associativity and commutativity.
 {% if site.distribution == 'print' %}
 -->
 
-Answers
-===
+## Answers
 
 ---
 

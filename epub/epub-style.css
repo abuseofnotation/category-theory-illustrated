@@ -23,6 +23,39 @@ span.underline{ text-decoration: underline; }
 q { quotes: "“" "”" "‘" "’"; }
 div.column{ display: inline-block; vertical-align: top; width: 50%; }
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
 img {
   width: 100%;
+}
+
+
+.definition, .theorem {
+  border-left : 3px solid black;
+  padding: 10px 0 0 0;
+  color: black;
+  position: relative;
+}
+
+.definition:before {
+  content:"DEFINITION:";
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  top: -5px;
+}
+
+.theorem:before {
+  content:"THEOREM:";
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  top: -5px;
+  bottom: 0;
+  margin: auto;
+}
+
+figcaption {
+  font-size: 10px;
 }

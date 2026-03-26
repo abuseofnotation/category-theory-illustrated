@@ -3,14 +3,6 @@
   font-family: "MellSans", sans-serif;
 }
 
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('RubikMonoOne.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'MellMono', sans-serif;
   font-style: italic;

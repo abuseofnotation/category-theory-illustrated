@@ -570,7 +570,7 @@ As we said, the "logical" orders (those who account for all those conditions) ha
 
 And then we say...
 
-> An intuitionistic logical system can be seen as a Heyting algebra---the joins/meets are the "and" and "or" operations, the greatest/least objects are the values "True" and "False" and the implication object is the implication operation.
+> The logical system of intuitionistic logic can be seen as a Heyting algebra---the joins/meets are the "and" and "or" operations, the greatest/least objects are the values "True" and "False" and the implication object is the implication operation.
 {: .theorem}
 
 ![Heyting algebra](../05_logic/heyting_algebra.svg)
@@ -588,25 +588,21 @@ We phrased the above definition in terms of *thin* categories (orders), but if w
 
 And then
 
-> A logical system any logical system can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
+> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
 {: .theorem}
 
-Or as a table.
+Or as a table:
 
 | Intuitionistic logic        | Cartesian closed category        |
 |-----------------------------|----------------------------------|
 | Proposition                 | Object                           |
 | Implication                 | Morphism                         |
-| Primary proposition         | Morphism 1 → A (global element)  |
 | Implication object (A → B)  | Exponential object               |
 | And (A ∧ B)                 | Product A × B                    |
 | Or (A ∨ B)                  | Coproduct A + B                  |
 | True (⊤)                    | Terminal object (1)              |
 | False (⊥)                   | Initial object (0)               |
 | Negation      A → ⊥         | Morphism A → 0                   |
-
-
-
 
 ## A taste of categorical logic
 
@@ -678,8 +674,7 @@ In general, doing intuitionistic logic is this --- we start by the things that w
 {% if site.distribution == 'print' %}
 -->
 
-Answers
-===
+## Answers
 
 ---
 

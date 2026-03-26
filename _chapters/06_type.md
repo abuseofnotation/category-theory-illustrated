@@ -1055,17 +1055,13 @@ Now we are ready to see how it relates to
 
 ## Types and Categories
 
-### Logic and types
+We already drew some parallels between type theory and category theory, but there is more than just mere parallels: when viewed through the proper angle, type systems *are* a certain type of categories. And, more: we already know which one! 
 
-Now, we might draw some parallel between the definition of a type system, and the BHK interpretation of logic that we saw in the previous chapter: propositions can be viewed are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types*. 
+### Types are objects arrows are morphisms
 
-Finally a proof of a given proposition is represented by a value of the corresponding type. 
+Let's start from the basics.
 
-In the last chapter, we mentioned the Curry-Howard-Lambek correspondence between logics and categories. Now, we are adding a third branch of the correspondence --- types.
-
-### Types are objects functions are morphisms
-
-Every type is an object
+Every type is an object.
 
 ![category_type.svg](A bunch of balls)
 
@@ -1073,8 +1069,9 @@ And every value-level arrow (function) is a morphism.
 
 ![A bunch of balls, connected with each other with arrows](category_arrow.svg)
 
-### Values are morphisms too
+And now for something not so trivial --- values. 
 
+### Values are morphisms too
 We said that category theory is all about arrows. Here, we seemingly turned away from this, and we started drawing values and internal diagrams again, as for examples the natural numbers type.
 
 ![The Natural numbers type: 0, 1, 2, 3 etc.](../06_type/nat_type_full_normal.svg)
@@ -1083,7 +1080,7 @@ But there is no discrepancy. We said that in type theory, "the only values are t
 
 ![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to 1, one arrow pointing from 1 to 2  etc.](category_nat_internal.svg)
 
- This means that *values are actually just another way to represent arrows*. 
+This means that *values are actually just another way to represent arrows*. 
 
 For example, the type of natural numbers be represented externally like this. 
 
@@ -1107,11 +1104,10 @@ Rather than going *back* to values, we went *full circle* and discovered that va
 
 ### Simply-typed Lambda calculus is a cartesian closed category
 
-If we view types as objects and arrows and values as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. Here we also can remember what we studied in the previous chapter. 
+If we view types as objects and arrows and values as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. 
 
-> Joachim Lambek established that, Simply-typed lambda calculus corresponds to exactly the type of category that also correspond to intuitionistic logic -- Cartesian Closed Category.
-
-### Untyped lambda calculus is a monoid
+> Simply-typed lambda calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the exponential object is the lambda type.
+{: .theorem}
 
 And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
 
@@ -1119,9 +1115,18 @@ And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-mon
 
 We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
 
-We will get on with this in the next chapter.
+We will get on with this in the next chapter!
 
-To conclude here, there is a table of all term from the Curry-Howard-Lambek correspondence.
+### Logic and types
+
+Here we also can remember what we studied in the previous chapter. 
+
+> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
+{: .theorem}
+
+Now, we might draw some parallel between the definition of a type system, and the BHK interpretation of logic that we saw in the previous chapter: propositions can be viewed are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types*. Finally a proof of a given proposition is represented by a value of the corresponding type. 
+
+In short, in the last chapter, we talked about the Curry-Howard-Lambek correspondence between logics and categories and now, we are adding a third branch of the correspondence --- types.
 
 | Intuitionistic logic        | System F (types / terms)        | Cartesian closed category        |
 |-----------------------------|--------------------------------|----------------------------------|
