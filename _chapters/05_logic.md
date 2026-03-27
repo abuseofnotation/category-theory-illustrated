@@ -570,8 +570,7 @@ As we said, the "logical" orders (those who account for all those conditions) ha
 
 And then we say...
 
-> The logical system of intuitionistic logic can be seen as a Heyting algebra---the joins/meets are the "and" and "or" operations, the greatest/least objects are the values "True" and "False" and the implication object is the implication operation.
-{: .theorem}
+> The logical system of intuitionistic logic can be seen as a Heyting algebra---the "and" and "or" operations are the joins/meets, the values "True" and "False" are the greatest and least objects and the implication operation is the exponential object.
 
 ![Heyting algebra](../05_logic/heyting_algebra.svg)
 
@@ -588,21 +587,8 @@ We phrased the above definition in terms of *thin* categories (orders), but if w
 
 And then
 
-> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
+> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
 {: .theorem}
-
-Or as a table:
-
-| Intuitionistic logic        | Cartesian closed category        |
-|-----------------------------|----------------------------------|
-| Proposition                 | Object                           |
-| Implication                 | Morphism                         |
-| Implication object (A → B)  | Exponential object               |
-| And (A ∧ B)                 | Product A × B                    |
-| Or (A ∨ B)                  | Coproduct A + B                  |
-| True (⊤)                    | Terminal object (1)              |
-| False (⊥)                   | Initial object (0)               |
-| Negation      A → ⊥         | Morphism A → 0                   |
 
 ## A taste of categorical logic
 
@@ -646,7 +632,6 @@ This is again a well-known result in logic (if I am not mistaken, it will be a d
 ## Interlude: Free Heytung algebras -- making ourselves a logic
 
 Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
-
 
 Anyway, making a logical lattice involves picking some primary propositions and graphing the connections between them. First, we pick the primary propositions that we want to work with, those are the statements that depend on our problem domain (or, in this case, just our color preferences). 
 

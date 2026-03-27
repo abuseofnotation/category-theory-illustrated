@@ -356,7 +356,7 @@ TODO: FSM as monoids
 https://faculty.uml.edu/klevasseur/ads/s-monoid-of-fsm.html
 -->
 
-## Groups/monoids categorically
+## Groups/monoids as categories
 
 
 Now it's the place for the grand reveal --- *groups/monoids are categories*. More precisely, monoids are a *specific type of categories*, (and groups too). 

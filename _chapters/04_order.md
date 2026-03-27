@@ -518,8 +518,6 @@ In other words, the transitivity law tells us that the $≤$ relationship compos
 
 (we have to also verify that the relation is associative, but that's easy)
 
-### Formal definition
-
 So, we suspect that preorders are categories, but is it really so? Let's review the definition of a category again.
 
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
@@ -540,9 +538,6 @@ Orders are special types of categories (all orders are categories, but not all c
 ![Orders compared to other categories](../04_order/order_category.svg)
 
 Whereas preorders, two object, whereas have *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
-
-> A preorder, any preorder, can be seen as a category with at most one morphism between two given objects --- if one object is bigger then there is a morphism between them. The converse is also true: any category with at most one morphism between two given objects can be seen as a preorder (called also a *thin* category.
-{: .theorem}
 
 ![Orders compared to other categories](../04_order/arrows_one_arrow.svg)
 
@@ -587,9 +582,14 @@ Speaking in category-theoretic terms, we can say that:
 
 Which of course means that *products* correspond to *meets* (duality).
 
-### Orders as thin categories
+### Formal definition
 
-In category-theoretic terms, orders (categories that have at most one morphism with a given type signature) are known as "thin" categories, and are often used for exploring categorical concepts in a context that is easier to understand than in normal (non-thin) categories. For example, as we saw, understanding the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts.
+In category-theoretic terms, orders (categories that have at most one morphism with a given type signature) are known as "thin" categories.
+
+> A preorder, any preorder, can be seen as a category with at most one morphism between two given objects --- if one object is bigger then there is a morphism between them. The converse is also true: any category with at most one morphism between two given objects can be seen as a preorder (called also a *thin* category).
+{: .theorem}
+
+Thin categories are often used for exploring categorical concepts in a context that is easier to understand than in normal (non-thin) categories. For example, as we saw, understanding the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts.
 
 Thin categories are also helpful in contexts when we want to keep it simple and we aren't particularly interested in the differences between the morphisms that go from one object to another. We will see an example of that in the next chapter.
 

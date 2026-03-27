@@ -571,7 +571,7 @@ However, unlike $Succ$, which has signature $X \to X$ (i.e. for each $X$, there 
 
 ![The `Cons` function --- An arrow from the `Nat` type, pointing to the type of arrows from list type to itself: x -> (1,x), x -> (2,x), x -> (3,x) etc. ](../06_type/list_type_cons_internal.svg)
 
-This is the place to mention that arrows between types are types as well, that is, for any types $A$ and $B$, there is a type $A \to B$ (called *Lambda* type, in type theory) which has all arrows that connect $A$ and $B$ as values (we will see how this type is defined soon).
+This is the place to mention that in Lambda calculus arrows between types are types as well (a feature sometimes called "first-class functions" in programming context), that is, for any types $A$ and $B$, there is a type $A \to B$, called the *Lambda* type of $A$ and $B$, which has all arrows that connect $A$ and $B$ as values.
 
 So, let's start plotting these arrows, starting with the base value $Nil$.
 
@@ -1053,17 +1053,17 @@ Now we are ready to see how it relates to
 
 -->
 
-## Types and Categories
+## Type systems as Categories
 
 We already drew some parallels between type theory and category theory, but there is more than just mere parallels: when viewed through the proper angle, type systems *are* a certain type of categories. And, more: we already know which one! 
 
-### Types are objects arrows are morphisms
+### Types as objects arrows as morphisms
 
 Let's start from the basics.
 
 Every type is an object.
 
-![category_type.svg](A bunch of balls)
+![A bunch of balls](category_type.svg)
 
 And every value-level arrow (function) is a morphism.
 
@@ -1100,35 +1100,47 @@ But we do have one more arrow: $s : \mathbb{N} \to \mathbb{N}$. So, what happens
 
 ![An internal diagram of the natural numbers type](category_nat_external_one.svg)
 
-Rather than going *back* to values, we went *full circle* and discovered that values are just convenient way to draw arrows.
+Rather than going *back* to values, we went *full circle* and discovered that values are just a more convenient way to draw arrows.
 
-### Simply-typed Lambda calculus is a cartesian closed category
+### Simply-typed Lambda calculus as a Cartesian Closed Category
 
-If we view types as objects and arrows and values as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theory that we studied --- the Lambda Calculus. 
+OK, we got it: if we view types as objects and arrows *and values* as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theories that we studied, starting with the Simply-typed Lambda Calculus. 
 
-> Simply-typed lambda calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the exponential object is the lambda type.
+We know that the special feature 
+
+> Simply-typed lambda calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the Lambda type is the exponential object.
 {: .theorem}
 
-And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short).
-
-### Polymorphic Lambda calculus is...
+### Polymorphic Lambda calculus as...
 
 We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
 
 We will get on with this in the next chapter!
 
-### Logic and types
+<!--
+{% if site.distribution != 'print' %}
+-->
 
-Here we also can remember what we studied in the previous chapter. 
+### Untyped Lambda calculus as a Cartesian Closed Monoid 
 
-> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the product/coproducts are the "and" and "or" operations, the initial/terminal objects are the values "True" and "False" and the exponential object is the implication operation.
+And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short). Those are cartesian
+
+<!--
+{%endif%}
+-->
+
+## Curry Howard correspondence
+
+Now, we might drew some parallel between the definition of a type system, and the BHK interpretation of *logic* that we saw in the previous chapter: propositions can be viewed are *types* and a proof of a given proposition is represented by a value of the corresponding type. 
+
+Here we also can remember the correspondence between logics and categories that we studied in the previous chapter. 
+
+> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
 {: .theorem}
 
-Now, we might draw some parallel between the definition of a type system, and the BHK interpretation of logic that we saw in the previous chapter: propositions can be viewed are *types*, the *implies* operations are *functions*, *and* operations are composite types (objects), and *or* operations are *sum types*. Finally a proof of a given proposition is represented by a value of the corresponding type. 
+But this is the exact same definition that we now have about types. So, we may say the correspondence is actually threefold.
 
-In short, in the last chapter, we talked about the Curry-Howard-Lambek correspondence between logics and categories and now, we are adding a third branch of the correspondence --- types.
-
-| Intuitionistic logic        | System F (types / terms)        | Cartesian closed category        |
+| Intuitionistic logic        | Simply-typed Lambda calculus   | Cartesian closed category        |
 |-----------------------------|--------------------------------|----------------------------------|
 | Proposition                 | Type                           | Object                           |
 | Implication                 | Arrow                          | Morphism                         |
@@ -1139,6 +1151,8 @@ In short, in the last chapter, we talked about the Curry-Howard-Lambek correspon
 | True (⊤)                    | Unit type                      | Terminal object (1)              |
 | False (⊥)                   | Empty type                     | Initial object (0)               |
 | Negation  A → ⊥             | Function A → Empty             | Morphism A → 0                   |
+
+In short, in the last chapter, we talked about the Curry-Howard-Lambek correspondence between logics and categories and now, we are adding a third branch of the correspondence --- types.
 
 <!--
 
