@@ -143,7 +143,7 @@ He thought a lot (at least I imagine he did) and he managed to devise a formal s
 > A type is something that can be the source and/or target of an arrow.
 {: .definition}
 
-(To make the definiton more general, we use the more general term --- "arrow", but you can think of arrows as functions for now.)
+(To make the definition more general, we use the more general term --- "arrow", but you can think of arrows as functions for now.)
 
 Let's think again about the set of all sets that don't contain themselves. Besides being the cause of Russell paradox, this set is quite useless (unless we count causing paradoxes as useful). And if we dig into it, we eventually discover why: there are no (interesting) functions from any other set to this set, so *we cannot get to it* from anywhere. And, conversely, we cannot get anywhere from it (there are no functions where it is the source either). This set is like an oasis at the center of the desert... or perhaps a little desert in the center of big oasis... Contact me if you can think of some good metaphor.
 
@@ -1071,7 +1071,8 @@ And every value-level arrow (function) is a morphism.
 
 And now for something not so trivial --- values. 
 
-### Values are morphisms too
+### Values as morphisms too
+
 We said that category theory is all about arrows. Here, we seemingly turned away from this, and we started drawing values and internal diagrams again, as for examples the natural numbers type.
 
 ![The Natural numbers type: 0, 1, 2, 3 etc.](../06_type/nat_type_full_normal.svg)
@@ -1104,41 +1105,35 @@ Rather than going *back* to values, we went *full circle* and discovered that va
 
 ### Simply-typed Lambda calculus as a Cartesian Closed Category
 
-OK, we got it: if we view types as objects and arrows *and values* as morphisms, the entire type theory/type system can be viewed as a category. Let's talk a bit about the specific type theories that we studied, starting with the Simply-typed Lambda Calculus. 
+OK, we got it: if we view types as objects and arrows *and values* as morphisms, the entire type theory/type system can be viewed as a category. But which category? To understand, we review the special features that Lambda Calculus has: we know that it has the Lambda type, AKA the function type, so we need a category with a function type. To define it, you also need the terminal object ($1$ object) and products, so we are searching for a category has to has those. Surprisingly, we already know which category has all those features. We examined it in the previous chapter, when we covered logic.
 
-We know that the special feature 
-
-> Simply-typed lambda calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the Lambda type is the exponential object.
+> Simply-typed Lambda Calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the Lambda type is the exponential object.
 {: .theorem}
-
-### Polymorphic Lambda calculus as...
-
-We established that value-level arrows correspond to morphisms in the category of the type system. But what about *type-level arrows* (AKA polymorphic types)? 
-
-We will get on with this in the next chapter!
-
-<!--
-{% if site.distribution != 'print' %}
--->
 
 ### Untyped Lambda calculus as a Cartesian Closed Monoid 
 
-And *untyped* Lambda Calculus? it corresponds to Cartesian Closed Monoids (C-monoids for short). Those are cartesian
+We won't cover it in depth, but I think that it is worth mentioning that there is also such a thing as a *Untyped* Lambda Calculus. This is a language that only has only one type --- function and every function accepts every other, as an argument.
 
-<!--
-{%endif%}
--->
+So, how does Untyped Lambda Calculus fit in our picture? It fits perfectly: it corresponds to Cartesian Closed Monoids (C-monoids for short). Those are cartesian closed categories with only one object.
 
-## Curry Howard correspondence
+### Polymorphic Lambda calculus as...
 
-Now, we might drew some parallel between the definition of a type system, and the BHK interpretation of *logic* that we saw in the previous chapter: propositions can be viewed are *types* and a proof of a given proposition is represented by a value of the corresponding type. 
+We established that value-level arrows correspond *to morphisms*.
 
-Here we also can remember the correspondence between logics and categories that we studied in the previous chapter. 
+But what about *type-level arrows* (AKA polymorphic types)? What do they correspond to 
+
+We will get on with this in the next chapter!
+
+## Curry-Howard-Lambek correspondence
+
+Before we close this off, let's think about the following: why are Lambda Calculus and Intuitionistic logic both correspond by the same type of categories --- Cartesian Closed.
+
+To understand, we look into the correspondence between logics and categories that we studied in the previous chapter. 
 
 > The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
 {: .theorem}
 
-But this is the exact same definition that we now have about types. So, we may say the correspondence is actually threefold.
+But this is the exact same definition that we now have about types! So, actually the similarities between Intuitionistic Logic and Lambda Calculus don't end with both of them being "categorical". They are actually one and the same thing: Logical propositions can be viewed are *types*. And a proof of a given proposition is nothing but a value of the corresponding type. 
 
 | Intuitionistic logic        | Simply-typed Lambda calculus   | Cartesian closed category        |
 |-----------------------------|--------------------------------|----------------------------------|
@@ -1152,14 +1147,13 @@ But this is the exact same definition that we now have about types. So, we may s
 | False (⊥)                   | Empty type                     | Initial object (0)               |
 | Negation  A → ⊥             | Function A → Empty             | Morphism A → 0                   |
 
-In short, in the last chapter, we talked about the Curry-Howard-Lambek correspondence between logics and categories and now, we are adding a third branch of the correspondence --- types.
+In short, in the last chapter, we talked about the correspondence (known as Curry-Howard-Lambek correspondence) between Intuitionistic logic and Cartesian Closed Categories and now we are adding a third branch of the correspondence --- Lambda Calculus.
 
 <!--
 
 ## Addendum: The connection between tuple function top and bottom.
-TODO
-Tuple and functions are related via tensor-hom
 Terminal objects are nullary products
+Tuple and functions are related via tensor-hom
 --> 
 
 ## Appendix: definitions in Haskell

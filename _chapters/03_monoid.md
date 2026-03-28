@@ -12,8 +12,9 @@ Since we are done with categories, let's look at some other structures that are 
 
 Like categories, monoids/groups are abstract systems consisting of a set of elements and operations, however, the operations look different than the operations we have for categories. Here is the definition:
 
->A monoid is defined by a collection/set of elements $A$ (called the monoid's *underlying set*, together with an associative *monoid operation* --- a rule for combining two elements that produces a third element one of the same kind --- $A \times A \to A$. Also, there should be an identity element.
 {: .definition}
+
+>A monoid is defined by a collection/set of elements $A$ (called the monoid's *underlying set*, together with an associative *monoid operation* --- a rule for combining two elements that produces a third element one of the same kind --- $A \times A \to A$. Also, there should be an identity element.
 
 Let's take our familiar colorful balls.
 
@@ -159,8 +160,9 @@ Connecting the dots (or the triangles in this case) shows us that there are just
 
 The rotations of a triangle form a monoid --- the *rotations are objects* (of which the zero-degree rotation is the identity) and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
 
-Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with triangles, as we shall see later.
 {: .nota-bene}
+
+Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with triangles, as we shall see later.
 
 ### Cyclic groups/monoids
 
@@ -174,8 +176,9 @@ But it gets much simpler to grasp if we notice the following: although our group
 
 Symmetry groups that have such "main" rotation are called cyclic
 
-Groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. The "main" rotation is called the group's *generator*.
 {: .definition}
+
+Groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. The "main" rotation is called the group's *generator*.
 
 All rotation groups/monoids are cyclic groups. Another example of a cyclic monoid is, yes, the natural numbers under addition, with $+1$ as the generator.
 
@@ -213,8 +216,9 @@ There are commutative groups that are not cyclic, but, as we shall see below, th
 
 We already mentioned group isomorphisms, but we didn't define what they are. Let's do that now: 
 
-> An isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \circ b) = f(a) \circ f(b)$.
 {: .definition}
+
+> An isomorphism between two groups is an isomorphism ($f$) between their respective sets of elements, such that for any $a$ and $b$ we have $f(a \circ b) = f(a) \circ f(b)$.
 
 Visually, the diagrams of isomorphic groups have the same structure.
 
@@ -243,8 +247,9 @@ Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 
 We already saw a lot of commutative groups that are also cyclic, but we didn't see any commutative groups that are *not* cyclic. So let's examine some of those like. Here, instead of looking into individual examples, we will present the general way in which commutative non-cyclic groups are produced --- it is by uniting cyclic groups using the concept of *group product*.
 
-> Given any two groups, we can combine them to create a third group, comprised of all possible pairs of elements from the two groups and of the sum of all their actions. 
 {: .definition}
+
+> Given any two groups, we can combine them to create a third group, comprised of all possible pairs of elements from the two groups and of the sum of all their actions. 
 
 Let's see how the resulting group looks after taking the product of the following two groups (which, having just two elements and one operation, are both isomorphic to $Z_2$). To make it easier to imagine them, we can think of the first one as based on the vertical reflection of a figure and the second, as the horizontal reflection.
 
@@ -299,8 +304,10 @@ Product groups are *commutative*, provided that the *groups that form them* are 
 
 Products provide one way to create non-cyclic commutative groups --- by creating a product of two or more cyclic groups. The fundamental theory of finite abelian groups (or of finite *commutative* groups as we call them here) is a result that tells us that *this is the only way* to produce non-cyclic commutative groups i.e. 
 
-> All finite commutative groups are either cyclic or products of cyclic groups.
+
 {: .theorem}
+
+> All finite commutative groups are either cyclic or products of cyclic groups.
 
 We can use this law to gain an intuitive understanding of what commutative groups are, but also to test whether a given group can be broken down to a product of more elementary groups.
 
@@ -494,8 +501,10 @@ One thing that we *didn't say* in the prev section: every such permutation group
 
 This is a result known as the Cayley's theorem. In short:
 
-> Any group is isomorphic to its corresponding permutation group. 
+
 {: .theorem}
+
+> Any group is isomorphic to its corresponding permutation group. 
 
 Or formally, if we use $Perm$ to denote the permutation group then Cayley's theorem states that $Perm(A) \cong A$ for any $A$.
 
@@ -567,10 +576,11 @@ So a monoid, any monoid, can be seen as a *category with one object*
 
 Let's check if that is really true, by reviewing the definition of a category:
 
+{: .definition}
+
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have an identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
-{: .definition}
 
 Let's see what these laws imply for categories with one object:
 
@@ -584,8 +594,9 @@ But if the category has one object, all morphisms would have the same type signa
 
 We see that aside from the little-confusing fact that *monoid objects are morphisms* when viewed categorically, this describes exactly what monoids are. 
 
-> A monoid, any monoid, can be seen as a *category with one object*---the morphisms of the category are the monoid elements, the identity morphism is the identity element and the monoid operation is composition of morphisms. The converse is also true: any category with one object can be seen as a monoid 
 {: .definition}
+
+> A monoid, any monoid, can be seen as a *category with one object*---the morphisms of the category are the monoid elements, the identity morphism is the identity element and the monoid operation is composition of morphisms. The converse is also true: any category with one object can be seen as a monoid 
 
 Philosophically, defining a monoid as a one-object category corresponds to the view of monoids as a model of how a set of (associative) actions that are performed on a given object alter its state. Provided that the object's state is determined solely by the actions that are performed on it, we can leave it out of the equation and concentrate on how the actions are combined. And as per usual, the actions (and elements) can be anything, from mixing colors, to adding quantities to a given set of things etc.
 

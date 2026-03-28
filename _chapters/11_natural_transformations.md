@@ -3,8 +3,7 @@ layout: default
 title: Natural transformations
 ---
 
-Natural transformations 
-===
+# Natural transformations 
 
 > I didn’t invent categories to study functors; I invented them to study natural transformations. --- Saunders Mac Lane
 
@@ -12,15 +11,13 @@ In this chapter, we will introduce the concept of a morphism between functors, o
 
 Natural transformations really are at the heart of category theory, however, their importance is not obvious at first. So, before introducing them, I like to talk, once more, about the body of knowledge that this heart maintains (I am good with metaphors... in principle).
 
-Equivalent categories
-===
+## Equivalent categories
 
 Our first section aims to introduce natural transformation as a motivating example for creating a way to say that two categories are equal. But for that, we need to understand what equal categories are and should be.
 
 So, are you ready to hear about equivalent categories and natural transformations? Actually it is my opinion that you are not (no offence, they are just very hard!). So, we will take a longer route. I can put this next section anywhere in this book, and it would always be neither here nor there. But anyway, if you are studying math, you are probably interested in the *nature of the universe*. "What is the quintessential characteristic of all things in this world?" I hear you ask...
 
-Objects are overrated AKA Heraclitus was right!
----
+### Objects are overrated AKA Heraclitus was right!
 
 > The world is the collection of facts, not of things. --- Ludwig Wittgenstein
 
@@ -36,8 +33,7 @@ So, instead of thinking about objects that just happen to have some morphisms be
 
 Although old, dating back to Parmenides' alleged rival Heraclitus, this view has been largely unexplored, until the 20th century, when a real mathematical revolution happened: Bertrand Russell created type theory, his student Ludwig Wittgenstein wrote a little book, from which the above quote comes, and this book inspired a group of mathematicians and logicians, known as the "Vienna circle". Part of this group was Rudolph Carnap who coined the word "functor"...
 
-Isomorphism invariance
----
+### Isomorphism invariance
 
 An embodiment of Heraclitus' view in the realm of category theory is the concept of *isomorphism invariance* that we implicitly touched several times. 
 
@@ -47,8 +43,7 @@ In short, in category theory **isomorphism = equality**.
 
 The key to understanding category theory lies in understanding isomorphism invariance. And the key to understanding isomorphism invariance are natural transformations.
 
-Categorical isomorphisms are *not* isomorphism-invariant
----
+### Categorical isomorphisms are *not* isomorphism-invariant
 
 Let's return to the question that we were pondering at the beginning of the previous chapter --- what does it mean for two categories to be equal? 
 
@@ -67,8 +62,7 @@ For this reason, we need a new concept of equality of categories. A concept that
 
 **Heraclitus:** Who cares bro, they are isomorphic.
 
-Equivalences are isomorphism invariant
----
+### Equivalences are isomorphism invariant
 
 To understand equivalent categories better, let's go back to the functor between a given map and the area it represents (we will only consider the thin categories (AKA orders) for now). This functor would be invertible (and the categories --- isomorphic) when the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
 
@@ -88,8 +82,7 @@ However, going from one of them to the other would lead you at least to an *isom
 
 In this case we say that the orders are *equivalent*.
 
-Defining equivalence in terms of objects
----
+### Defining equivalence in terms of objects
 
 We know that two orders are isomorphic if there are two functors, such that going from one to the other and back again leads you to the same object.
 
@@ -119,8 +112,7 @@ One way of defining equivalence of categories is by generalizing the notion of e
 
 However, we will leave this (pardon my French) as an *exercise for the reader*. Why? We already did this when we generalized the notion of normal set-theoretic functions to *functors*, and so it makes more sense to build up on that notion. Also, we need a motivating example for introducing natural transformations, remember?
 
-Defining equivalence in terms of morphisms
----
+### Defining equivalence in terms of morphisms
 
 In the chapter about orders, we presented a definition of order *isomorphisms*, that is based on *objects*:
 
@@ -148,8 +140,7 @@ Like we said at the beginning, with isomorphisms, going back and forth brings us
 
 There is only one problem, though --- *we never said what it means for functors to be isomorphic*.
 
-Natural transformations, natural isomorphisms and categorical equivalence
-===
+## Natural transformations, natural isomorphisms and categorical equivalence
 
 So, how can we make the above definition "come to life"? The title of this chapter outlines the things we need to define: 
 
@@ -173,8 +164,7 @@ The functors have the same signature. Naturally. How else can there be morphisms
 
 Now, a functor is comprised of two mappings (object mapping and morphism mapping) so a mapping between functors, would consist of "object mapping mapping" and "morphism mapping mapping" (yes, I often do get in trouble with my choice of terminology, why do you ask?).
 
-Object mapping mapping
----
+### Object mapping mapping
 
 Let's first connect the object mappings of the two functors, creating what we called "object mapping mapping". 
 
@@ -186,8 +176,7 @@ Note that this mapping does not map every object from the target category,  i.e.
 
 **Task 2:** When exactly would the mapping encompass all objects?
 
-Morphism mapping mapping
----
+### Morphism mapping mapping
 
 The morphism part might seem hard... until we realize that, once the connections between the object mappings are already established, there is only one way to connect the morphisms --- we take each morphism of the source category and connect the two morphisms given by the two functors, in the target category. And that's all there is to it. 
 
@@ -195,8 +184,7 @@ The morphism part might seem hard... until we realize that, once the connections
 
 Oh, actually, there is also this condition that the above diagram should commute (the naturality condition), but that happens pretty much automatically.
 
-The naturality condition
----
+### The naturality condition
 
 Just like anything else in category theory, natural transformations have some laws that they are required to pass. In this case it's one law, typically called the naturality law, or the naturality condition. 
 
@@ -218,8 +206,7 @@ Which means natural transformation make up a...
 
 (Oh wait, it's too early for that, is it?)
 
-Natural isomorphisms 
----
+### Natural isomorphisms 
 
 After understanding natural transformations, natural isomorphisms, are a no-brainer: a natural transformation is just a family of morphisms in a given category that satisfy certain criteria, then what would a natural *isomorphism* be? That's right --- it is a family of *isomorphisms* that satisfy the same criteria. The diagram is the same as the one for ordinary natural transformation, except that $\alpha$ are not just ordinary morphisms, but isomorphisms.
 
@@ -233,8 +220,7 @@ We also have:
 
 $F(f) \circ  \alpha  =   \alpha  \circ G(f)$ i.e. the two paths going from **black** to **yellow** are also equivalent.
 
-Constructing categorical equivalences
----
+### Constructing categorical equivalences
 
 I am sorry, what were we talking about again? Oh yeah --- categorical equivalence. Remember that categorical equivalence is the reason why we tackle natural transformations and isomorphisms? Or perhaps it was the other way around? Never mind, let's recap what we discussed so far:
 
@@ -270,15 +256,13 @@ i.e. naturality condition assures us that the morphisms in the target of the fun
 
 With this, we are finished with categorical equivalence, but not with natural transformations --- natural transformations are a very general concept, and categorical equivalences are only a very narrow case of them.
 
-Natural transformations in programming. Natural transformations on the list functor
-===
+## Natural transformations in programming. Natural transformations on the list functor
 
 In the course of this book, we learned that programming/computer science is the study of the category of types in programming languages. However (in order to avoid this being too obvious) in the computer science context, we use different terms for the standard category-theoretic concepts. 
 
 We learned that objects are known as *types*, products and coproducts are, respectively, *objects/tuple* types and *sum* types. And, in the last chapter, we learned that functors are known as *generic types*. Now it's the time to learn what natural transformations are in this context. They are known as *(parametrically) polymorphic functions*.
 
-Pointed functors again
----
+### Pointed functors again
 
 Now, suppose this sounds a bit vague. If only we had some example of a natural transformation in programming, that we can use... But wait, we did show a natural transformation in the previous chapter, when we talked about pointed functors. 
 
@@ -290,8 +274,7 @@ And this clearly is a natural transformation. As a matter of fact, if we get dow
 
 Actually, the only difference between the two transformations is that an equivalence is defined by a natural *natural isomorphism* of a given functors to the identity functor ( $ID \cong f \circ g $ and $ID \cong g \circ f$), while a pointed functor is defined by a one-way *natural transformation* from the identity functor ($ID \to f $)  i.e. the equivalence functor is pointed, but not the other way around). 
 
-Polymorphic functions as natural transformations 
----
+### Polymorphic functions as natural transformations 
 
 We said that a natural transformation is equivalent to a (parametrically) polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated):
 
@@ -353,8 +336,7 @@ Do the same for the rest of the transformations.
 
 ---
 
-The naturality condition 
----
+### The naturality condition 
 
 Before, we said that we shouldn't worry too much about naturality, as it is satisfied every time. Statistically, however, this is not true --- as far as I am concerned, about 99.999 percent of transformations aren't really natural (I wonder if you can compute that percentage properly?). But at the same time, it just so happens (my favourite phrase when writing about maths) that all transformations that we care about *are* natural. 
 
@@ -372,8 +354,7 @@ $$\alpha \circ F\ f \cong G\ f \circ \alpha$$
 
 And in TypeScript, when we are talking specifically about the identity functor and the list functor, the equality is expressed as:
 
-```
-[x].map(f) == [f(x)]
+``## `
 ```
 
 So, is this equation true in our case? To verify it, we take one last peak at the world of values.
@@ -416,8 +397,7 @@ $$ F\ f \circ F\ g \circ take1 \circ reverse$$
 
 **Task 4:** Prove the above results, using the formula of the naturality condition.
 
-Non-natural transformations
----
+### Non-natural transformations
 
 "Unnatural", or "non-natural" transformations (let's call them just *transformations*) are mentioned so rarely, that we might be inclined to ask if they exist. The answer is "yes and no". Why yes? On one hand, transformations, consist of an innumerable amount of morphisms, forming an ever more innumerable amount of squares and obviously nothing stops some of these squares to be non-commuting. 
 
@@ -442,17 +422,15 @@ $$\forall\ a.\ F a \to G a$$
 The key is that the definition should be valid *for all* types a. For this reason, there is no way for us to specify a different arrows for different types, without resorting to type downcasting, which is not permitted in languages like Haskell (as it breaks the principle of parametricity).
 
 <!--
-{% if site.distribution == 'print' %}
+{% if site.distribution != 'print' %}
 -->
 
-Interlude: Skolem variables and parametrization
----
+### Interlude: Skolem variables and parametrization
 
 Let's try to define the "semi-natural" transformation that we described above (the ones that include a single condition for a single value or type) e.g. an abstract function that reverses all lists, except the list of booleans). In Typescript, it will look something like this.
 
 ```typescript
-function unnatural<A> (a: Array<A>): Array <A>{
-    if(typeof a[0] === 'string') {
+function unnatu## ral<A> (a: Array<A>): Array <A>{
         return a
     } else {
         return a.reverse()
@@ -475,8 +453,7 @@ By the way, in programming, this principle is called "parametricity" and the nat
 {%endif%}
 -->
 
-Natural transformations again
-===
+## Natural transformations again
 
 Now, after we saw the definition of natural transformations, it is time to see the definition of natural transformations (and if you feel that the quality of the humour in this book is deteriorating, that's only because *things are getting serious*).
 
@@ -488,8 +465,7 @@ This diagram might prompt us into viewing natural transformations as some kind o
 
 Oh wait, I just realized we never covered product categories... but don't worry, we will cover them now.
 
-Product groups and product categories
----
+### Product groups and product categories
 
 We haven't covered product categories, however some pages ago, when we covered monoids and groups, we talked about the concept of a *product group*. The good news is that product *categories* are a generalization of product *groups*...
 
@@ -497,8 +473,7 @@ The bad news is that you probably don't remember much about product groups, as c
 
 But don't worry, we will do a more in-depth treatment now:
 
-Product groups
----
+### Product groups
 
 Given two groups $G$ and $H$, whose sets of elements can also be denoted $G$ and $H$... 
 
@@ -544,8 +519,7 @@ $$(g1, h1) \circ (g2, h2) = ( (g1 \circ g2), (h1 \circ h2))$$
 
 And that are product groups.
 
-Product categories
----
+### Product categories
 
 We are back at tackling product *categories*. 
 
@@ -567,8 +541,7 @@ And, finally, we make a category out of that set by taking all morphisms coming 
 
 This is the *product category* of the two categories.
 
-Natural transformations as functors of product categories
----
+### Natural transformations as functors of product categories
 
 In this section we are interested with the products of one particular category, namely the category we called $2$, containing two objects and one morphism (stylishly represented in black and white).
 
@@ -600,11 +573,11 @@ This perspective helps us realize that a natural transformation can be viewed as
 We can even retrieve the structure of the source category of these functors, which (as categories are by definition structure and nothing more) is equivalent to retrieving the category itself.
 
 <!--
-{% if site.distribution == 'print' %}
+{% if site.distribution != 'print' %}
 -->
 
-Interlude: Naturality in product group operations
----
+
+### Interlude: Naturality in product group operations
 
 Now, we will have one really peculiar interlude, in which we will show that the group operation of product groups is actually a natural transformation. 
 
@@ -626,21 +599,18 @@ You can prove that the naturality condition indeed does hold (correct by constru
 {%endif%}
 -->
 
-Composing natural transformations
-===
+## Composing natural transformations
 
 Natural transformations are surely a different beast than normal morphisms and functors and so they don't compose in the same way. However, they do compose and here we will show how.
 
-The identity natural transformation
----
+### The identity natural transformation
 
 Let's first get one trivial definition out of the way: for each functor, we have the identity natural transformation (actually a natural isomorphism) between it and itself.
 
 ![The identity natural transformation](../11_natural_transformations/identity_natural_transformation.svg)
 
 
-Horizontal composition
----
+### Horizontal composition
 
 The setup for composing natural transformations may look complicated the first time you see it: we need three categories $C$, $D$ and $E$ (just as composition of morphisms requires three objects). We need a total of four functors, distributed on two pairs, one pair of functors that goes from $C$ to $D$ and one that goes from $D$ to $E$ (so we can compose these two pairs of functors together, to get a new pair of functors that go $C \to E$). However, we will try to keep it simple and we will treat the natural transformation as a map from a morphism to a commuting square. As we showed above, this mapping already contains the two functors in itself.
 
@@ -671,8 +641,7 @@ So, there is a natural transformation between the composite functor $F' \circ F 
 **Task 6:** Show that natural transformations indeed compose i.e. that if you have natural transformations $F'Ff \Rightarrow F'Gf$  and  $F'Gf \Rightarrow G'Gf$ you have $F'Ff \Rightarrow G'Gf$. 
 
 
-Whiskering
----
+### Whiskering
 
 And an interesting special case of horizontal composition is horizontal composition involving the identity natural transformation: given a natural transformation $\bar\alpha$ involving functors with signature $D \to E$ and some functor with signature $F : C \to D$, we can take $\alpha$ to be the identity natural transformation between functor $F$ and itself and compose it with $\bar\alpha$. 
 
@@ -686,8 +655,7 @@ So, this is how you compose natural transformations. It's too bad that this is f
 
 Well, OK, there is actually another way of composing categories, which might actually work.
 
-Vertical composition
----
+### Vertical composition
 
 Recall that categorical composition involves three objects and two successive arrows between them. For vertical composition of natural transformations, we will need three (or more) *functors* with the same type signature, say $F, G, H: C \to D$ i.e. (same source and target category) and two successive *natural transformations* between those functors i.e. $\alpha: F \to G$ and $\beta: G \to H$. 
 
@@ -695,8 +663,7 @@ Recall that categorical composition involves three objects and two successive ar
 
 We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism, which we call $b \circ a : F \to H$ (the composition operator is the  usual white circle, as opposed to the black one, which denotes horizontal composition). And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
 
-Categories of functors
----
+### Categories of functors
 
 Now, we are approaching the end of the chapter, we will introduce our category and call it quits. To do that, we first introduce a more compressed notation for vertical composition of natural transformations (where they do indeed look vertical).
 
@@ -729,8 +696,7 @@ And you can already see the new category that is formed: For each two categories
 
 Natural transformations compose with vertical compositions, and, of course, the identity natural transformation is the identity morphism.
 
-Interchange law
----
+### Interchange law
 
 Vertical and horizontal composition of natural transformations are related to each other in the following way: 
 
@@ -754,8 +720,7 @@ $$(β \circ α) \bullet (\bar β \circ \bar α) = (β \bullet \bar β) \circ (α
 
 ---
 
-2-Categories
----
+### 2-Categories
 
 At this point you might be wondering the following (although statistically you are more likely to wonder what the heck is all this about): We know that all categories are objects of $Cat$, the category of small categories, in which functors play the role of morphisms. 
 
@@ -766,11 +731,10 @@ So, what does that make of $Cat$? I don't know, perhaps we can call natural tran
 But wait, actually it's way too early for you to find out. We haven't even covered limits...
 
 <!--
-{% if site.distribution == 'print' %}
+{% if site.distribution != 'print' %}
 -->
 
-Answers 
-===
+## Answers 
 
 ---
 

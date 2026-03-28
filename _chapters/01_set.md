@@ -87,8 +87,9 @@ The empty set has some special properties, for example, it is a subset of every 
 
 Now is the time to admit something: this chapter isn't actually about sets. It is about functions and we only started this way because there is no way to explain functions without explaining sets (although if you read on, you'll find that there actually is one).
 
-> A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
 {: .definition}
+
+> A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
 
 These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there). We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from this set to a value from the other one. These different terms demonstrate the multifaceted nature of the concept of function.
 
@@ -299,8 +300,9 @@ Or alternatively, if you want to express it as a formula (where $\circ$ is the c
 
 The external diagram is a more appropriate representation of the concept of composition, as it is more general. In fact, it is *so* general that it can actually serve as a *definition of functional composition*.
 
-> The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that all the paths in this diagram are equivalent.
 {: .definition}
+
+> The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that all the paths in this diagram are equivalent.
 
 ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
@@ -348,8 +350,9 @@ Invertible functions are called *isomorphisms*. When there exists an invertible 
 
 Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets), or more formally:
 
-> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
 {: .definition}
+
+> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
 
 Notice how the identity function comes in handy.
 

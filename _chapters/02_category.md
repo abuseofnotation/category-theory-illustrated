@@ -115,8 +115,9 @@ Now, we will look into a category-theoretic definition of the product set. We ca
 
 Such definitions are driven by a conceptual model of the object we want to define. For example, we can agree that a product is something like this:
 
-> The product of $A$ and $B$, contains an element of $A$, an element of $B$, and nothing more.
 {: .definition}
+
+> The product of $A$ and $B$, contains an element of $A$, an element of $B$, and nothing more.
 
 Now, based on that conceptual model, we must, given two sets, devise a way to pinpoint the set that is their product, by looking at the functions that come from/to them. 
 
@@ -126,8 +127,9 @@ So, we said that a product of $A$ and $B$ contains an element of $A$ and an elem
 
 Now if we switch to the (semi) external view, this diagram already provides some definition of what a product is:
 
-> The product of $A$ and $B$, denoted $A \times B$, is a set, such that there exists functions $A \times B \to A$ and $A \times B \to B$...
 {: .definition}
+
+> The product of $A$ and $B$, denoted $A \times B$, is a set, such that there exists functions $A \times B \to A$ and $A \times B \to B$...
 
 In other words, if we have a set $C$ for which there are functions $C \to A$ and $A \times B \to B$, then $C$ can potentially be equal to $A \times B$.
 
@@ -151,10 +153,11 @@ As an example, take the set of triples, $A \times B \times X$ and the canonical 
 
 More formally, we can define the product in the following way.
 
-> The product of $A$ and $B$, denoted $A \times B$, is a set, such that: 
-1. There exist two "projection" functions $A \times B \to A$ and $A \times B \to B$. 
-2. For any impostor product $I$, that also has such projection functions ($I \to A$ and $I \to B$), there must also exist a unique function with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the projections of the impostor would be just the composition of $g$ with the projections of the product.
 {: .definition}
+
+> The product of $A$ and $B$, denoted $A \times B$, is a set, such that: 
+> 1. There exist two "projection" functions $A \times B \to A$ and $A \times B \to B$.
+> 2. For any impostor product $I$, that also has such projection functions ($I \to A$ and $I \to B$), there must also exist a unique function with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the projections of the impostor would be just the composition of $g$ with the projections of the product.
 
 We prove that a given set is a product by giving a formula for the function $g$, such that it fits our criteria. Given functions  $g^{1}: I \to A$ and $g^{2}: I \to B$, the function $g$ would be just the function that makes up a pair of the results of those two functions, so if $i$ is an element of $I$, then $g = (i) \to (g^{1}(i), g^{2}(i))$.
 
@@ -221,10 +224,12 @@ All these sets express relationships which are more vague than the simple sum, a
 
 Here is the definition
 
+
+{: .definition}
+
 > The sum of $A$ and $B$, denoted $A + B$, is a set, such that: 
 1. There exists two "projection" functions $A \to A + B$ and $B \to A + B$. 
 2. For any impostor sum $I$, that also has such projection functions ($A \to I$ and $B \to I$), there must also exist a unique function with the type signature $g: A + B \to I$, that converts the real sum to the impostor sum, such that the projections of the impostor sum be just the composition of $g$ with the projections.
-{: .definition}
 
 ![Coproduct, external diagram](../02_category/coproduct_morphisms.svg)
 
@@ -332,8 +337,9 @@ And let's examine the functions from the singleton set, to that random set.
 
 It's easy to see that there would be exactly one function for each element of the set. So we may say that:
 
-> Each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
 {: .theorem}
+
+> Each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
 
 So, we can say that what we call "elements" of a set are the functions from the singleton set to it.
 
@@ -355,8 +361,9 @@ It turns out that this property defines the singleton set uniquely i.e. there is
 
 And because there is no other set, other than the singleton set that has this property, we can use it as a definition of the singleton set: 
 
-> The singleton set $1$ is one such that there exist a unique functions from any other set to it i.e. we have $\forall  X  \exists!  X \to 1$, then $1$ is the singleton set.
 {: .definition}
+
+> The singleton set $1$ is one such that there exist a unique functions from any other set to it i.e. we have $\forall  X  \exists!  X \to 1$, then $1$ is the singleton set.
 
 ![Terminal object](../02_category/terminal_object.svg)
 
@@ -376,13 +383,15 @@ The empty set is, of course, the set that has no elements, but how would we say 
 
 In the previous chapter, we noted an interesting property of the empty set:
 
-> There is a unique function from the empty set to any other set.
 {: .definition}
+
+> There is a unique function from the empty set to any other set.
 
 And, again, since the empty set is the only set that has this property, we can reverse the above statement and use it as a definition: 
 
-> The empty set is a set such that there exists a function from it to any other set.
 {: .definition}
+
+> The empty set is a set such that there exists a function from it to any other set.
 
 *Task 3:* why is the functions to the empty set unique?
 
@@ -446,8 +455,9 @@ Notice the somehow weird, (but actually completely logical) symmetry (or perhaps
 
 By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we gain the ability to zoom out and see the whole universe where we have been previously trapped. In the same way that the whole realm of sets can be thought of as one category, a programming language can also be thought of as a category. The concept of a category allows us to find and analyze similarities between these and other structures.
 
-The word "Object" is used in both programming languages and in category theory, but has completely different meanings. A categorical object is equivalent to a _type_ or a _class_ in programming language theory.
 {: .nota-bene}
+
+The word "Object" is used in both programming languages and in category theory, but has completely different meanings. A categorical object is equivalent to a _type_ or a _class_ in programming language theory.
 
 ### Sets VS Categories
 
@@ -497,8 +507,9 @@ Formally, this requirement says that there should exist an _operation_, usually 
 
 If you remember, in set theory, we picked functions, as opposed to the other types of relations because they are composable. Here we just invent the concept of a morphism and define it to be composable (in the same way as we invented the (co)products and later the empty and singleton set). Let's see where this definition gets us.
 
-Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f \circ g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "\circ" as "after", e.g. $f \;\text{after}\; $g.
 {: .nota-bene}
+
+Note, that functional composition is read from right to left. e.g. applying $g$ and then applying $f$ is written $f \circ g$ and not the other way around. (You can think of it as a shortcut to $f(g(a))$). Some may find it useful to pronounce "\circ" as "after", e.g. $f \;\text{after}\; $g.
 
 ### The law of identity
 
@@ -542,26 +553,29 @@ More formally, a commuting diagram is a diagram in which given two objects $a$ a
 
 The diagram above is one of the simplest commuting diagrams.
 
-Despite the fact that all diagrams in books commute, in general, **not all diagrams commute**. That is, there are many morphisms with the same type signature that are not equivalent to one another.
 {: .nota-bene}
+
+Despite the fact that all diagrams in books commute, in general, **not all diagrams commute**. That is, there are many morphisms with the same type signature that are not equivalent to one another.
 
 ### Formal definition
 
 For future reference, let's restate what a category is:
 
+{: .definition}
+
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have an identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
-{: .definition}
 
 This is it. 
 
 And, because categories behave as sets, many set-theoretic definitions are also valid for categories, for example, if we rewrite the definition of a set product, change "set" to "object" and "function" to "morphism", we get the general definition of a categorical product:
 
+{: .definition}
+
 > The product of $A$ and $B$, denoted $A \times B$, is ~~a set~~ an object, such that: 
 1. There exists two "projection" ~~functions~~ morphisms $A \times B \to A$ and $A \times B \to B$. 
 2. For any impostor product $I$, that also has such projection ~~functions~~ morphisms ($I \to A$ and $I \to B$), there must also exist a unique ~~function~~ morphism with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the above two ~~functions~~ morphisms would be just the composition of $g$ with the projections of the product.
-{: .definition}
 
 ## Addendum: Why are categories like that?
 

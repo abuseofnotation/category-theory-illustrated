@@ -12,8 +12,9 @@ However, currently we are not interested in the *criteria* that we can use to or
 
 Mathematically, the order as a construct is represented (much like a monoid) by two components. 
 
->An order is a set of elements, together with a *binary relation* between the elements of the set, which obeys certain laws.
 {: .definition}
+
+>An order is a set of elements, together with a *binary relation* between the elements of the set, which obeys certain laws.
 
 We denote the elements of our set, as usual, like this.
 
@@ -50,8 +51,9 @@ However (this is where it gets interesting) not all such functions (and not all 
 
 Incidentally, (or rather not incidentally at all), these rules are nearly equivalent to the mathematical laws that define the criteria of the order relationship i.e. those are the rules that define which element can point to which. 
 
->A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymetry, totality.
 {: .definition}
+
+>A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymetry, totality.
 
 Let's check what they are.
 
@@ -123,8 +125,9 @@ Law of totality does not look so "set in stone" as the rest of the laws i.e. we 
 
 Remove the law of totality from the laws of linear orders and we get a *partial order* (also a *partially-ordered set*, or *poset*).
 
->An partial order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity and antisymmetry.
 {: .definition}
+
+>An partial order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity and antisymmetry.
 
 Every linear order is also a partial order (just as a group is still a monoid), but not the other way around. 
 
@@ -181,10 +184,11 @@ The *least upper bound* of two elements that are connected as part of an order i
 
 The join of $a$ and $b$ is the smallest element $c$ that is bigger than then, formally:
 
+{: .definition}
+
 > The  *join* of objects $A$ and $B$ is an object $G$, such that:
 > 1. It is bigger than both of these objects, so $A ≤ G$ and $B ≤ G$.
 > 2. It is smaller than any other object that is bigger than them, so for any other object $P$ such that $P ≤ A$ and $P ≤ B$ then we should also have $G ≤ P$.
-{: .definition}
 
 ![Join with other elements](../04_order/join_other_elements.svg)
 
@@ -255,8 +259,9 @@ Given a collection of sets containing a combination of a given set of elements..
 
 ...we can define what is called the *inclusion order* of those sets.
 
-> The inclusion order of sets is a binary relation that we can use to order a collection of sets (usually sets that contain some common elements) in which $a$ comes before $b$ if $a$ *includes* $b$, or in other words if $b$ is a *subset* of $a$.
 {: .definition}
+
+> The inclusion order of sets is a binary relation that we can use to order a collection of sets (usually sets that contain some common elements) in which $a$ comes before $b$ if $a$ *includes* $b$, or in other words if $b$ is a *subset* of $a$.
 
 ![A color mixing poset, ordered by inclusion](../04_order/color_mixing_poset_inclusion.svg)
 
@@ -280,15 +285,17 @@ So far, we saw two different partial orders, one based on color mixing, and one 
 
 The partial orders that meet the first criteria are called *lattices*. The ones that meet the second one are called *distributive lattices*. Let's write that down:
 
-> Partial orders in which all elements have *joins* and *meets* is called a *lattice*. A lattice whose *meet* and *join* operations *distribute* over one another is called a distributive lattice.
 {: .definitions}
+
+> Partial orders in which all elements have *joins* and *meets* is called a *lattice*. A lattice whose *meet* and *join* operations *distribute* over one another is called a distributive lattice.
 
 And the "prime" elements which we use to construct the inclusion order are the elements that are not the *join* of any other elements. They are also called *join-irreducible* elements.
 
 So we may phrase the theorem like this:
 
-> Each distributive lattice is isomorphic to an inclusion order of its *join-irreducible* elements.
 {: .theorem}
+
+> Each distributive lattice is isomorphic to an inclusion order of its *join-irreducible* elements.
 
 By the way, the partial orders that are *not* distributive lattices are also isomorphic to inclusion orders, it is just that they are isomorphic to inclusion orders that *do not contain all possible combinations* of elements.
 
@@ -394,8 +401,9 @@ Given two sets (we will use partial order of numbers by division and the prime i
 
 An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism, it has to *respect those arrows*.
 
-> An isomorphism between two orders is an invertible function between their underlying sets, such that applying this function (let's call it $F$) to any two elements that have a certain order in one set (let's call them $a$ and $b$) should result in two elements that have a corresponding order in the other set (i.e. $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 {: .definition}
+
+> An isomorphism between two orders is an invertible function between their underlying sets, such that applying this function (let's call it $F$) to any two elements that have a certain order in one set (let's call them $a$ and $b$) should result in two elements that have a corresponding order in the other set (i.e. $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 
 Such functions are called *order-preserving* functions. 
 
@@ -415,8 +423,9 @@ The antisymmetry law mandated that you cannot have an object that is at the same
 
 The result is a structure called a *preorder*:
 
->An preorder is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity and transitivity.
 {: .definition}
+
+>An preorder is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity and transitivity.
 
 Preorder is not exactly an order in the everyday sense --- it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 
@@ -520,10 +529,11 @@ In other words, the transitivity law tells us that the $≤$ relationship compos
 
 So, we suspect that preorders are categories, but is it really so? Let's review the definition of a category again.
 
+{: .definition}
+
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have the identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
-{: .definition}
 
 Looks like we have law number 2 covered, with transitivity. What about the identity law? We have it too, under the name *reflexivity*. 
 
@@ -558,19 +568,21 @@ If you recall, this is an operation that corresponds to *set inclusion* in the c
 
 But wait, wasn't there some other operation that that corresponded to set inclusion? Oh yes, the *join* operation in orders. And not merely that, but joins in orders are defined in the exact same way as the categorical coproducts.
 
+{: .definition}
+
 > The coproduct of $A$ and $B$, denoted $A + B$, is an object, such that: 
 1. There exists two "projection" morphisms $A \to A + B$ and $B \to A + B$. 
 2. For any impostor coproduct $I$, that also has such projection morphisms ($A \to I$ and $B \to I$), there must also exist a unique morphism with the type signature $g: A + B \to I$, that converts the real coproduct to the impostor, such that the projections of the impostor would be just the composition of $g$ with the projections of the product.
-{: .definition}
 
 ![Joins as coproduct](../04_order/coproduct_morphisms.svg)
 
 In the realm of orders, we define join as:
 
+{: .definition}
+
 > The  *join* of objects $A$ and $B$ is an object $G$, such that:
 > 1. It is bigger than both of these objects, so $A ≤ G$ and $B ≤ G$.
 > 2. It is smaller than any other object that is bigger than them, so for any other object $P$ such that $P ≤ A$ and $P ≤ B$ then we should also have $G ≤ P$.
-{: .definition}
 
 ![Joins as coproduct](../04_order/coproduct_join_morphisms.svg)
 

@@ -15,9 +15,10 @@ Logic is the science of the *possible*. As such, it is at the root of all other 
 
 So, we may say:
 
+{: .definition}
+
 > Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form ("formally"). 
 > On top of that, logic tries to organize those rules in *logical systems* (or *formal systems* as they are also called).
-{: .definition}
 
 Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory, as we described it in the first chapter --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way, which we will understand later. So, let's begin.
 
@@ -87,8 +88,9 @@ For example, our previous example will not stop being true if we *substitute* "S
 
 We call such propositions tautologies.
 
-> Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. 
 {: .definition}
+
+> Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. 
 
 You can turn each tautology into contradiction, or the other way around, by adding a "not". 
 
@@ -114,8 +116,9 @@ Realizing that the colors of the balls in modus ponens are superficial, we may w
 
 This structure (the one that looks like a coloring book in our example) is called *axiom schema*. And the propositions that are produced by it are *axioms*. 
 
-> An axiom schema is a formula (containing variables), from which we can derive propositions (by replacing those variables with proposition).
 {: .definition}
+
+> An axiom schema is a formula (containing variables), from which we can derive propositions (by replacing those variables with proposition).
 
 Note that the propositions that we plug into the schema don't have to be primary. For example, having the proposition $a$ (that is symbolized below by the orange ball) and the proposition stating that $a$ implies $a \lor b$ (which is one of the tautologies that we saw above), we can plug those propositions into the *modus ponens* and prove that $a \lor b$ is true. 
 
@@ -127,8 +130,9 @@ And *rules of inference* are almost the same thing as axiom schemas e.g. axiom s
 
 Knowing that we can use axiom schemas/rules of inference to generate new propositions, we might ask whether it is possible to create a small collection of such schemas/rules that is curated in such a way that it enables us to generate *all* possible propositions. You would be happy (although a little annoyed, I imagine) to learn that there exist not only one, but many such collections. And yes, collections of this sort are what we call *logical systems*.
 
-> A logical system (known also as formal system) is a collection of axiom schemas/rules of inference such that by applying them we can produce all possible propositions.
 {: .definition}
+
+> A logical system (known also as formal system) is a collection of axiom schemas/rules of inference such that by applying them we can produce all possible propositions.
 
 Here is one such collection which consists of the following five axiom schemes *in addition to the inference rule modus ponens* (These are axiom schemes, even though we use colors).
 
@@ -154,12 +158,13 @@ The existence of the world of forms implies that, even if there are many things 
 
 Logical operators, then, are just our all-too-familiar functions.
 
+{: .definition}
+
 > According to the classical interpretation of logic: 
 >
 > 1. A *primary proposition* is something that is either true or false (a boolean value. 
 > 2. A *logical operator* is a *function* that takes a one or several boolean values and return another boolean value.
-> 3. A *composite proposition* something that results of the application of logical operators to other propositions.
-{: .definition}
+> 3. A *composite proposition* is something that results of the application of logical operators to other propositions.
 
 Let's review all logical operators in this semantic context.
 
@@ -327,12 +332,13 @@ This bivalence is at the heart of what is called the Brouwer–Heyting–Kolmogo
 
 Here is a definition of the BHK interpretation (note that the BHK interpretation the main concept is not that of proposition, but that of proof).
 
+{: .definition}
+
 > According to the BHK interpretation of logic: 
 >
 > 1. A *primary proposition* is something for which a proof is given.
 > 2. A *logical operator* is a construction that unites several proofs into another proof.
 > 3. A *composite proposition* is something for which a proof can be constructed, by combining primary propositions using logical operators.
-{: .definition}
 
 The original formulation of the BHK interpretation is not based on any particular mathematical theory. Here, we will first illustrate it using the language of set theory (just so we can abandon it a little later).
 
@@ -411,8 +417,9 @@ Although intuitionistic logic differs a lot from classical logic when it comes t
 
 ![The formula of the principle of the excluded middle](../05_logic/excluded_middle_formula.svg)
 
-> The law of excluded middle is valid in classical logic and is true when we look at its truth tables, but there is no justification for it terms of the BHK interpretation. 
 {: .theorem}
+
+> The law of excluded middle is valid in classical logic and is true when we look at its truth tables, but there is no justification for it terms of the BHK interpretation. 
 
 Why? in intuitionistic logic saying that something is false amounts to *constructing a proof* that it is false (that it implies the bottom value) and there is no method/function/algorithm that can either prove that a given proposition is either true and false.
 
@@ -437,9 +444,7 @@ But as usual there is a caveat --- not all categories can be converted to logica
 
 Categories that adhere to these criteria are called *cartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined --- orders.
 
-By the way, the parallel between logics and categories also is known as Curry-Howard correspondence, (or Curry-Howard-Lambek correspondence).
-
-**Task 5:** The Curry-Howard-Lambek correspondence is also the basis of special types of programming languages called "proof assistants" which help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
+**Task 5:** There is a special types of programming languages called "proof assistants" that help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
 
 **Task 6:** We will concentrate on proving that some categories form logics. But meanwhile, you can prove that all logics form categories, using the definition of a category that we used in the previous chapter. 
 
@@ -523,8 +528,9 @@ We will describe this object in the same way we described all other operations -
 
 Modus ponens is the essence of the *implies* operation, and, because we already know how the operations that it contains (*and* and *implies*) are represented in our lattice, we can directly use it as a definition by saying that the object $A → B$ is the one for which modus ponens rule holds.
 
-> The implication object $A → B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
 {: .definition}
+
+> The implication object $A → B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
 
 This definition is not complete, however, because (as usual) $A → B$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$ 
 
@@ -540,14 +546,17 @@ So how do we set apart the real formula from all those "imposter" formulas? If y
 
 So, after choosing the best way to express the relationship (they are all equivalent) we are ready to present our final definition: 
 
-> The implication object $A → B$ is the topmost object which is related to objects $A$ and $B$ in such a way that $A ∧ (A → B) → B$.
 {: .definition}
 
-The existence of this implication object (called *exponential object* or *hom-object* in category-theoretic terms) is the final condition for an order/lattice to be a representation of logic.
+> The implication object(called also *exponential object* or *internal homomorphism object) $A → B$ is the topmost object which is related to objects $A$ and $B$ in such a way that $A ∧ (A → B) → B$.
 
-Note, by the way, that this definition of implication object is valid specifically for intuitionistic logic. For classical logic, the definition of  is simpler --- there $A → B$ is just $\lnot A ∨ B$, because of the law of excluded middle. 
+The existence of this implication object is the final condition for an order/lattice to be a representation of logic.
 
-Note also, that there might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, implication object is defined *up to a (unique) isomorphism*.
+This definition of implication object is valid specifically for intuitionistic logic. For classical logic, the definition of is simpler --- there $A → B$ is just another way to spell $\lnot A ∨ B$, because of the law of excluded middle. 
+
+{: .nota-bene}
+
+There might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, implication object is defined *up to a (unique) isomorphism*.
 
 ### The *if and only if* operation
 
@@ -565,8 +574,9 @@ So, we talked about a lot of stuff, now it's time to lay the definitions. We saw
 
 As we said, the "logical" orders (those who account for all those conditions) have special names. They are called *Heyting algebras*.
 
-> A order that has joins/meets, greatest/least objects and a implication object is called a Heyting algebra.
 {: .definition}
+
+> A order that has joins/meets, greatest/least objects and a implication object is called a Heyting algebra.
 
 And then we say...
 
@@ -582,13 +592,15 @@ By the way, a lattice can follow the laws of *classical logic*, as well. it has 
 
 We phrased the above definition in terms of *thin* categories (orders), but if we adjust the terminology, they will also be valid for all other categories as well.
 
-> A category that has products/coproducts, initial/terminal objects and an exponential objects is Cartesian Closed.
 {: .definition}
+
+> A category that has products/coproducts, initial/terminal objects and an exponential objects is Bicartesian closed.
 
 And then
 
-> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
+> The logical system of intuitionistic logic can be seen as a Bicartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
 {: .theorem}
+
 
 ## A taste of categorical logic
 
@@ -629,7 +641,7 @@ And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semanti
 
 This is again a well-known result in logic (if I am not mistaken, it will be a deduction theorem of some sort): if $A \models B$), then the statement $(A → B)$ will always be true.
 
-## Interlude: Free Heytung algebras -- making ourselves a logic
+## Interlude: Free Heyting algebras -- making ourselves a logic
 
 Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
 
