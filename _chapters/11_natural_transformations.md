@@ -291,7 +291,6 @@ And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well,
 Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary.
 
 ```typescript
-
 function alpha<A>(a: F<A>) : G<A> {
 }
 
@@ -354,7 +353,8 @@ $$\alpha \circ F\ f \cong G\ f \circ \alpha$$
 
 And in TypeScript, when we are talking specifically about the identity functor and the list functor, the equality is expressed as:
 
-``## `
+```
+[x].map(f) == [f(x)]
 ```
 
 So, is this equation true in our case? To verify it, we take one last peak at the world of values.
@@ -430,7 +430,7 @@ The key is that the definition should be valid *for all* types a. For this reaso
 Let's try to define the "semi-natural" transformation that we described above (the ones that include a single condition for a single value or type) e.g. an abstract function that reverses all lists, except the list of booleans). In Typescript, it will look something like this.
 
 ```typescript
-function unnatu## ral<A> (a: Array<A>): Array <A>{
+function unnatural<A> (a: Array<A>): Array <A>{
         return a
     } else {
         return a.reverse()

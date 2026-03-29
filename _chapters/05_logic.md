@@ -369,8 +369,6 @@ But in order to use about the proof, we need to also have an implies *set*, or a
 
 If we have that set, the *modus ponens* rule of inference is nothing more than the process of *functional application*. i.e. if we have a pair, containing a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
 
-(In order to define this formally, we also need to define functions in terms of sets i.e. we need to have a set representing $A \to B$ for each $A$ and $B$. We will come back to this later.)
-
 ### The If and only if operation
 
 In the section on classical logic, we proved that two propositions $A$ and $B$ are equivalent if $A$ implies $B$ and $B$ implies $A$. But if the *implies* operation is just a function, then proposition are equivalent precisely when there are two functions, converting each of them to the other i.e. when the sets containing the propositions are *isomorphic*.
@@ -442,7 +440,7 @@ But as usual there is a caveat --- not all categories can be converted to logica
 
 ![Logic as a category](../05_logic/logic_curry_category.svg)
 
-Categories that adhere to these criteria are called *cartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined --- orders.
+Categories that adhere to these criteria are called *bicartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined --- orders.
 
 **Task 5:** There is a special types of programming languages called "proof assistants" that help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
 
@@ -719,7 +717,7 @@ Here you are on your own, sorry :)
 
 ---
 
-**Task 6:** Try to prove that logics indeed form categories, using the definition of a category that we used in the previous chapter. What is missing?
+**Task 6:** Try to prove that logics indeed form categories, using the definition of a category that we used in the previous chapter. 
 
 We want to prove that there is a category with logical propositions as object and implication as morphism.
 Let's check the axioms:

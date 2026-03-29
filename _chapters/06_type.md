@@ -41,7 +41,7 @@ However, as the elements of sets are again sets, *a set can contain itself*.
 
 This ability is the root cause of Russell's paradox. 
 
-The paradox occurs when we will try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\{x \mid x \notin x\}$).
+The paradox occurs when we try to visualize *the set of all sets that do not contain themselves*. In the original set notation, it can be defined, as the set such that it contains all sets $x$ such that $x$ is not a member of $x$ (or $\{x \mid x \notin x\}$).
 
 ![Russell's paradox - option one](../06_type/russells_paradox.svg)
 
@@ -102,11 +102,11 @@ In type theory, a term can have only one type. (note that the red ball in the sm
 
 Due to this law, types cannot contain themselves, so Russell's paradox, is entirely avoided. 
 
-The law may sound weird e.g. because a term can only belong to one type, in type theory, the natural number 1 is denoted as $1: \mathbb{N}$) and it is an entirely separate object from the integer 1 (denoted or $1: \mathbb{Z}$) 
+The law may sound weird e.g. because a term can only belong to one type, in type theory, the natural number 1 is denoted as $1: \mathbb{N}$ and it is an entirely separate object from the integer 1 (denoted as $1: \mathbb{Z}$) 
 
 ![A set and a subset](../06_type/int_nat_type.svg)
 
-It only starts to make some sense once we realize that we can always convert the more general version of the value to the more specific one, using the image function that we learned about in the first chapter.
+It only starts to make some sense once we realize that we can always convert one version of the value to the other, using the image function that we learned about in the first chapter.
 
 ![A set and a subset](../06_type/int_nat_type_function.svg)
 
@@ -140,8 +140,9 @@ Anyhow, let's get back to our subject (however we want to call it). As we said, 
 
 He thought a lot (at least I imagine he did) and he managed to devise a formal system that fits all these criteria, based on a revolutionary new idea... which is basically the same idea that is at the heart of category theory (I don't know why he never got credit for being a category theory pioneer). The idea is the following: The *interesting* collections, the collections that we want to talk about in the first place, are the *collections that are the source and target of functions*. So, we might say.
 
-> A type is something that can be the source and/or target of an arrow.
 {: .definition}
+
+> A type is something that can be the source and/or target of an arrow.
 
 (To make the definition more general, we use the more general term --- "arrow", but you can think of arrows as functions for now.)
 
@@ -179,8 +180,10 @@ From there, we have to build our types. One by one. With our bare hands (OK, we 
 
 Before introducing the specific formulae for building types, I want to elaborate on the general idea. In the last section, we said:
 
-> A type is something that can be the source and/or target of an arrow.
+
 {: .definition}
+
+> A type is something that can be the source and/or target of an arrow.
 
 This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lens of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions (and more generally arrows).
 
@@ -201,7 +204,7 @@ class MyType<A> {
 
 What kinds of rules? We can categorize them in three groups.
 
-First off, a type has to have a *definition* which specifies what it is. Note that this arrow is different from what we perceive as an arrow --- it is not a value-level arrow (from one type to the other), but is a type-level arrow (from one kind of type, to another (we will discuss kinds later)). This is known as a *type formation rule*. 
+First off, a type has to have a *definition* which specifies what it is. Note that this arrow is different from what we perceive as an arrow --- it is not a value-level arrow (going from one type to the other), but is a type-level arrow (from one category of types, to another). This is known as a *type formation rule*. 
 
 ![A type represented as a ball](../06_type/rule_type_formation.svg)
 
@@ -216,11 +219,12 @@ Finally, as we don't want to construct types just for the sake of constructing n
 
 In summary
 
+{: .definition}
+
 >A type is defined by defining these three arrows:
 >1. One type-level arrow (type formation).
 >2. At least one value-level arrow for which the type is the target (term introduction).
 >3. At least one value-level arrow for which it is the source (term elimination).
-{: .definition}
 
 OK, I think we went too far in trying to define type theory without actually defining type theory, so we will proceed with the formulas... after our second long disclaimer.
 
@@ -228,7 +232,7 @@ OK, I think we went too far in trying to define type theory without actually def
 
 As we said in the first long disclaimer, there is not one, but many type theories. So if we want to do type theory, we have first pick *a* type theory (if this sentence confuses you, read the first disclaimer again).
 
-Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about the features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that has only has (anonymous) functions and nothing else.
+Picking a type theory (or a type system let's call it), also involves picking a *language* that this theory is described in terms of. When hearing about language, programmers would probably think of the popular feature-rich programming languages like TypeScript or Java. *Type theorists*, on the other hand, have different preferences --- since they are interested in the type system, not the language, they don't really care about the features, and so the language of choice of most of them is the simplest, most minimal language that is possible to exist, namely *Lambda Calculus*. If you haven't heard about it, this is language that only has (anonymous) functions and nothing else.
 
 To please both parties, (and annoy them both, at the same time), we will go with a language that is somewhere in between --- namely (a subset of) *Haskell*. This will not make much difference in terms of the theory, as Haskell is based on Lambda calculus, but will make things easier for programmers: unlike Lambda Calculus, which only has functions, Haskell supports defining product constructors as a primitive (which itself makes no difference from a formal standpoint, as we can easily go from products to functions via currying and uncurrying). 
 
@@ -236,13 +240,31 @@ Also, last but not least, Haskell constructors and functions can have names (bel
 
 Since we are picking Haskell, we will work in the type theory/type system of Haskell. This is a type system, discovered by Jean-Yves Girard in 1972, called *Polymorphic Lambda Calculus* or *System F*. 
 
+### The Unit type
+
+We start with an empty space, when nothing is defined, except for the singleton type, known as the $Unit$ type in Haskell.
+
+![An empty diagram, containing only the unit type](../06_type/unit_type.svg)
+
+A type which has only one value, which we can use as a starting point.
+
+{: .definition}
+
+> The $Unit$ type ($1$) is the type with one value.
+
+### The Lambda type
+
+There is actually one more prerequisite which is not so easy to explain: namely the *arrow types* for each pair of objects, known as the *Lambda* types. In Lambda Calculus arrows between types are types as well (a feature sometimes called "first-class functions" in programming context).
+
+{: .definition}
+
+> For any types $A$ and $B$, there is a type $A \to B$, called the *Lambda* type of $A$ and $B$, which has all arrows that connect $A$ and $B$ as values. 
+
+We won't go into more detail here, because the Lambda type is defined and works in the same way as the implication object in intuitionistic logic, as defined in the previous chapter. As you will learn, it also has the same role.
+
 ## Base types. The boolean type
 
-So, let's start with an empty space, when nothing is defined. 
-
-![An empty diagram](../06_type/empty_type.svg)
-
-So, let's define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
+Once we have a starting point we can define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
 $$
 \begin{aligned}
@@ -263,7 +285,7 @@ First, $Bool: Type$, says that there exists a type that we call "Bool".
 
 ### Term introduction
 
-Then, $True : Bool$ says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. In the diagram, we will represent that as an arrow from the singleton  type $1$ (known as the `Unit` type in Haskell), as per the Elementary Theory of the Category of Sets (see chapter 2).
+Then, $True : Bool$ says that "$True$ is a boolean" i.e. it adds one value to this newly created datatype. In the diagram, we will represent that as an arrow from the singleton type, known as the $Unit$ type in Haskell, as per the Elementary Theory of the Category of Sets from chapter 2.
 
 ![ The Boolean type with one value: a circle with one ball --- True](../06_type/bool_type_true.svg)
 
@@ -312,7 +334,7 @@ $$
 \begin{aligned}
 convert\ BobbysBool &\to Bool \\
 convert\ BobbysTrue\ &=\ True \\
-convert\ BobbyFalse\ &=\ False 
+convert\ BobbysFalse\ &=\ False 
 \end{aligned}
 $$
 
@@ -328,7 +350,7 @@ $$
 \mathrm{Ball} &:\ \mathrm{Type} \\
 \mathrm{OrangeBall} &:\ \mathrm{Ball} \\
 \mathrm{RedBall} &:\ \mathrm{Ball} \\
-\mathrm{YellowBall} &:\ \mathrm{Ball} \\
+\mathrm{YellowBall} &:\ \mathrm{Ball} 
 \end{aligned}
 $$
 
@@ -381,7 +403,7 @@ It says that there is a value called $Nothing$ for all $Maybe$ types (that's wha
 
 ### Term introduction: Just
 
-Of course there would be no point in having many $Maybe$s if they all are all the same. That's where the second line comes.
+Of course there would be no point in having many $Maybe$s if they all are the same. That's where the second line comes.
 
 $$
 \mathrm{Just} :\ \forall a.\ a \to \mathrm{Maybe}[a]
@@ -413,7 +435,7 @@ maybe\ n\ f\ Just[x]\ &=\ f\ x
 \end{aligned}
 $$
 
-Notice that this function defines an arrows from type $Maybe\ a$ to any type $b$, provided that a function $a \to b$, and a value of $b$ is provided.
+Notice that this function defines an arrow from type $Maybe[a]$ to any type $b$, provided that a function $a \to b$, and a value of $b$ is provided.
 
 ## Inductive types. The natural number type.
 
@@ -483,7 +505,7 @@ But right now we have just one term (value) of the natural numbers type: $Zero$.
 
 ![The successor function of the Natural numbers type --- 0 points to s(0)](../06_type/nat_type_one_double_diagram.svg)
 
-And now, we have one more value so we have to draw one more $Succ$ arrow. This time the result is $Succ Succ Zero$ i.e. two.
+And now, we have one more value so we have to draw one more $Succ$ arrow. This time the result is $Succ\ Succ\ Zero$ i.e. two.
 
 ![The successor function of the Natural numbers type --- 0 points to s(0), s(0) points to s(s(0))](../06_type/nat_type_two_double_diagram.svg)
 
@@ -559,7 +581,7 @@ We will call this value $Nil$ (native Haskell lists use the `[]` symbol).
 
 ### Term introduction: Cons
 
-And now for the more interesting part: $Cons$, our second term introduction rule, ($Cons$ is short for constructor, by the way) can be viewed as the operation of adding the value $a$ to a list (and returning that list).
+And now for the more interesting part: $Cons$, our second term introduction rule, ($Cons$ is short for construct, by the way) can be viewed as the operation of adding the value $a$ to a list (and returning that list).
 
 $$
 \mathrm{Cons} :\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
@@ -571,7 +593,7 @@ However, unlike $Succ$, which has signature $X \to X$ (i.e. for each $X$, there 
 
 ![The `Cons` function --- An arrow from the `Nat` type, pointing to the type of arrows from list type to itself: x -> (1,x), x -> (2,x), x -> (3,x) etc. ](../06_type/list_type_cons_internal.svg)
 
-This is the place to mention that in Lambda calculus arrows between types are types as well (a feature sometimes called "first-class functions" in programming context), that is, for any types $A$ and $B$, there is a type $A \to B$, called the *Lambda* type of $A$ and $B$, which has all arrows that connect $A$ and $B$ as values.
+Why are we able to have arrows coming from other arrows? Perhaps this is the place to remind you that in Lambda calculus arrows between types are types as well.
 
 So, let's start plotting these arrows, starting with the base value $Nil$.
 
@@ -609,7 +631,7 @@ f = undefined
 foldList f False 
 ```
 
-**Task 3:** I present to you the type $List Unit$ where $Unit$ is the singleton type, known as $1$ (a type with one value). Draw the values of $List Unit$ until you run out of space.
+**Task 3:** I present to you the type $List Unit$ (where $Unit$ is the singleton type, (a type with one value). Draw the values of $List Unit$ until you run out of space.
 
 ![The list type, containing one value (`Nil`) the Unit type (containing one circle), with function `(Unit) -> Nil -> (Unit, Nil)`.](../06_type/list_unit_task.svg)
 
@@ -682,7 +704,7 @@ Positive/negative types correspond to the categorical concepts of limit/colimit,
 
 ### Conclusion
 
-In this section, we started from almost nothing --- just $1$ type. Then we defined a lot of stuff, very quickly.
+In this section, we started from almost nothing --- just the $Unit$ type. Then we defined a lot of stuff, very quickly.
 
 ![All types we have seen so far (with combinations): Unit, Bool, Maybe Bool, Nat, Maybe Nat, List of Nat, Bool or Nat](../06_type/all_types.svg)
 
@@ -691,7 +713,7 @@ One can see that some types that programmers use are still missing, but those ca
 
 ## Church encoding: From Haskell to Lambda Calculus 
 
-In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADTs) and it is not obvious that it is possible to achieve the same things with just functions. However, it *is* possible: there exist a mechanism for encoding every type as a function, known as *Church encoding*, named after the creator of Lambda Calculus, Alonzo Church. 
+In the previous section, we did define a lot of stuff, very quickly, But we relied on Haskell's Generalized Algebraic Datatypes (GADTs) and it is not obvious that it is possible to achieve the same things with just functions. However, it *is* possible: there exists a mechanism for encoding every type as a function, known as *Church encoding*, named after the creator of Lambda Calculus, Alonzo Church. 
 
 ### Base types. the Boolean type
 
@@ -765,7 +787,7 @@ $$
 
 ### The general principle
 
-By now, you have probably seen that the Church-encoding of the type has the same constructors as the "normal" type  the difference is only that it accepts them as parameters. 
+By now, you have probably seen that the Church-encoding of the type has the same constructors as the "normal" type --- the difference is only that it accepts them as parameters. 
 
 If we have a type which is like $Maybe$, but with just one value (like the $1$ type)...
 
@@ -810,16 +832,9 @@ foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m
 \end{aligned}
 $$
 
-and the $fold$ function is trivial
+and the $fold$ function itself is trivial. Generally, the Church encoding of the type is basically a curried  $fold$ function, a function, which, given the same arguments as the "folding" functions, produces the same results.
 
-$$
-\begin{aligned}
-foldMaybe &: \forall a\ m. m \to (a \to m) \to Maybe[a] \to m \\
-foldMaybe\ n\ j\ maybe &= maybe\ n\ j 
-\end{aligned}
-$$
-
-The general principle of Church encoding, is that instead of providing constructors for types, which we later eliminate with the $fold$, we produce a function, which, given the same arguments as the "folding" functions, produces the same results.
+The general principle of Church encoding, is that a type is fully characterized by what you can do with it, so instead of providing constructors for types, which we later eliminate with the $fold$, we skip straight to the $fold$.
 
 **Task 7:** Write a Church-encoded version of the natural numbers type
 
@@ -869,7 +884,7 @@ Oh I forgot, in natural deduction it is permitted to have conclusions without pr
 
 Is this *too* simple? Let's add the concept of the typing *context* (or typing *environment*) to the mix.
 
-Here's the deal: Types and variables have to be stored *somewhere*. So, given a bunch of values (e.g. $x$, $y$, $z$ etc.) and a bunch of types (e.g. $A$, $B$, $C$ etc.), a context is a *set* (Oops, I did it again) of all variables and their types e.g. ${ (x, A), (y, B), (z, B)... }$.
+Here's the deal: Types and variables have to be stored *somewhere*. So, given a bunch of values (e.g. $x$, $y$, $z$ etc.) and a bunch of types (e.g. $A$, $B$, $C$ etc.), a context is a *set* (Oops, I did it again) of all variables and their types e.g. ${ (x, A), (y, B), (z, C)... }$.
 
 We usually denote the context with the letter $\Gamma$, and we use the $\vdash$ symbol to denote something that follows from that context (oh, no not another arrow) e.g. $\Gamma \vdash a : b$ means that in the context $\Gamma$, there is a variable $a$ that has the type $b$.).
 
@@ -927,8 +942,9 @@ Those rules are all you need to define value-level arrows.
 
 The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they define a simpler type system aptly called *Simply-typed Lambda Calculus*.
 
-> The *simply-typed Lambda Calculus* (STLC) is the type system which only has one type --- function (lambda), with typing rules *Abs* and *App* (for term introduction and elimination). It also has the *Var* typing rule.
 {: .definition}
+
+> The *simply-typed Lambda Calculus* (STLC) is the type system which only has one type constructor --- function (lambda), with typing rules *Abs* and *App* (for term introduction and elimination). It also has the *Var* typing rule.
 
 ### Polymorphism
 
@@ -1008,7 +1024,7 @@ $$\frac{\Gamma, (\alpha :: A) \vdash (B :: Type)}{\Gamma \vdash \forall (\alpha 
 
 For example, for the $Maybe$ type, this rule would say
 
-$$\frac{\Gamma, (\alpha :: Type) \vdash Maybe[\alpha]:: Type}{\Gamma \vdash \forall (\alpha :: type). Maybe[\alpha]:: Type}$$
+$$\frac{\Gamma, (\alpha :: Type) \vdash Maybe[\alpha]:: Type}{\Gamma \vdash \forall (\alpha :: Type). Maybe[\alpha]:: Type}$$
 
 ### Polymorphic functions
 
@@ -1040,10 +1056,11 @@ $$\frac{\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}{
 
 And with this, we conclude the definition of System F.
 
-> The *polymorphic Lambda Calculus* (System F) is the type system which only has one type --- polymorphic function, with typing rules *Abs* and *App* (for introduction and elimination of terms) and kinding rules *TAbs* and *TApp* (for introduction and elimination of types). It also has the *Var* typing rule. and *TVar* kinding rule.
 {: .definition}
 
-Now we are ready to see how it relates to 
+> The *polymorphic Lambda Calculus* (System F) is the type system which only has one type constructor --- polymorphic lambda, with typing rules *Abs* and *App* (for introduction and elimination of terms) and kinding rules *TAbs* and *TApp* (for introduction and elimination of types). It also has the *Var* typing rule. and *TVar* kinding rule.
+
+Now we are ready to see how it relates to our main subject matter.
 
 <!--
 
@@ -1063,11 +1080,11 @@ Let's start from the basics.
 
 Every type is an object.
 
-![A bunch of balls](category_type.svg)
+![A bunch of balls](../06_type/category_type.svg)
 
 And every value-level arrow (function) is a morphism.
 
-![A bunch of balls, connected with each other with arrows](category_arrow.svg)
+![A bunch of balls, connected with each other with arrows](../06_type/category_arrow.svg)
 
 And now for something not so trivial --- values. 
 
@@ -1079,40 +1096,45 @@ We said that category theory is all about arrows. Here, we seemingly turned away
 
 But there is no discrepancy. We said that in type theory, "the only values are the ones which are sources and targets of arrows". In the case of natural numbers, it is the $successor$ arrow, and the $zero$ arrow.
 
-![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to 1, one arrow pointing from 1 to 2  etc.](category_nat_internal.svg)
+![An internal diagram of the natural numbers type, one arrow pointing from the one-element set to value 0, one arrow, pointing from 0 to 1, one arrow pointing from 1 to 2  etc.](../06_type/category_nat_internal.svg)
 
 This means that *values are actually just another way to represent arrows*. 
 
 For example, the type of natural numbers be represented externally like this. 
 
-![An internal diagram of the natural numbers type](category_nat_external_zero.svg)
+![An external diagram of the functions of the natural numbers type --- 0: 1 -> N  and S: N -> N](../06_type/category_nat_external_zero.svg)
 
 This is where we go back to a simple theorem about set/type elements that we learned in the second chapter:
 
-> Each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
 {: .theorem}
+
+> Each element of any set $X$ is isomorphic to a function $$1 \to X$$ (where $$1$$ means the singleton set).
 
 So, arrow from $1 \to X$ for some type $X$ is equivalent to a *value* of $X$ when we view it as a set.
 
 This means that the *arrow* from $1 \to \mathbb{N}$ which we call $0$ is isomorphic to the *value* $0$.
 
-So let's see if we have more $1 \to \mathbb{N}$
-But we do have one more arrow: $s : \mathbb{N} \to \mathbb{N}$. So, what happens when we combine the two 
+Besides $1 \to \mathbb{N}$, we have one more arrow $s : \mathbb{N} \to \mathbb{N}$. So, what happens when we combine the two? We get another  $1 \to \mathbb{N}$ arrow --- $s \circ 0$, the successor of $0$, i.e. $1$.
 
-![An internal diagram of the natural numbers type](category_nat_external_one.svg)
+![An external diagram of the functions of the natural numbers type with added one more arrow s.0, the composition of s and 0](../06_type/category_nat_external_one.svg)
 
-Rather than going *back* to values, we went *full circle* and discovered that values are just a more convenient way to draw arrows.
+And if we do this again, we get $s \circ s \circ 0$.
+
+![An external diagram of the functions of the natural numbers type with added one more arrow s.s.0, the composition of s and s.0](../06_type/category_nat_external_two.svg)
+
+We can see that it plays out in the same way as the old definition. Rather than going *back* to values, we went *full circle* and discovered (or rediscovered, since we knew it from the Elementary Theory of the Category of Sets) that values are just a more convenient way to draw arrows.
 
 ### Simply-typed Lambda calculus as a Cartesian Closed Category
 
 OK, we got it: if we view types as objects and arrows *and values* as morphisms, the entire type theory/type system can be viewed as a category. But which category? To understand, we review the special features that Lambda Calculus has: we know that it has the Lambda type, AKA the function type, so we need a category with a function type. To define it, you also need the terminal object ($1$ object) and products, so we are searching for a category has to has those. Surprisingly, we already know which category has all those features. We examined it in the previous chapter, when we covered logic.
 
-> Simply-typed Lambda Calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the Lambda type is the exponential object.
 {: .theorem}
+
+> Simply-typed Lambda Calculus can be seen as a Cartesian Closed Category---the tuple and either types are the "and" and "or" operations, the Unit and Empty types are the values "True" and "False" and the Lambda type is the exponential object.
 
 ### Untyped Lambda calculus as a Cartesian Closed Monoid 
 
-We won't cover it in depth, but I think that it is worth mentioning that there is also such a thing as a *Untyped* Lambda Calculus. This is a language that only has only one type --- function and every function accepts every other, as an argument.
+We won't cover it in depth, but I think that it is worth mentioning that there is also such a thing as a *Untyped* Lambda Calculus. This is a language that only has one type --- function and every function accepts every other, as an argument.
 
 So, how does Untyped Lambda Calculus fit in our picture? It fits perfectly: it corresponds to Cartesian Closed Monoids (C-monoids for short). Those are cartesian closed categories with only one object.
 
@@ -1120,20 +1142,27 @@ So, how does Untyped Lambda Calculus fit in our picture? It fits perfectly: it c
 
 We established that value-level arrows correspond *to morphisms*.
 
-But what about *type-level arrows* (AKA polymorphic types)? What do they correspond to 
+But what about *type-level arrows* (AKA polymorphic types)? What do they correspond to? 
 
 We will get on with this in the next chapter!
 
 ## Curry-Howard-Lambek correspondence
 
-Before we close this off, let's think about the following: why are Lambda Calculus and Intuitionistic logic both correspond by the same type of categories --- Cartesian Closed.
+Before we close this off, let's think about the following: why do Lambda Calculus and Intuitionistic logic correspond to almost the same type of categories --- Cartesian Closed.
 
 To understand, we look into the correspondence between logics and categories that we studied in the previous chapter. 
 
-> The logical system of intuitionistic logic can be seen as a Cartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
 {: .theorem}
 
-But this is the exact same definition that we now have about types! So, actually the similarities between Intuitionistic Logic and Lambda Calculus don't end with both of them being "categorical". They are actually one and the same thing: Logical propositions can be viewed are *types*. And a proof of a given proposition is nothing but a value of the corresponding type. 
+> The logical system of intuitionistic logic can be seen as a Bicartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
+
+This is almost the exact same definition that we now have about types (the only difference is that Lambda Calculus can work without coproducts and an initial object, so it's a Cartesian Closed category, whereas Intuitionistic logic needs those, so it's *Bi*cartesian).
+
+This means that the similarities between Intuitionistic Logic and Lambda Calculus don't end with both of them being "categorical". They are actually one and the same thing: 
+
+- Logical propositions can be viewed as *types*. 
+- A proof of a given proposition is nothing but a value of the corresponding type. - The Lambda type is the implication object. 
+- Functional application (App) is *modus ponens*.
 
 | Intuitionistic logic        | Simply-typed Lambda calculus   | Cartesian closed category        |
 |-----------------------------|--------------------------------|----------------------------------|
@@ -1325,7 +1354,11 @@ $$
 
 **Task 8:** Define the elimination rule for Booleans, using natural deduction.
 
-TODO
+The elimination rule(the $ifElse$ function) expressed as a typing rule is this: 
+
+$$\frac{\Gamma \vdash b : \mathrm{Bool} \qquad \Gamma \vdash x : a \qquad \Gamma \vdash y : a}{\Gamma \vdash \mathrm{ifElse}\ b\ x\ y : a}$$
+
+Given a boolean $b$, and two values of some type $a$, we can produce a value of type $a$. 
 
 <!--
 {%endif%}

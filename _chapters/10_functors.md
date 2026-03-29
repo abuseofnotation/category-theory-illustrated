@@ -148,6 +148,8 @@ In other words, a functor is a phrase that *acts as a function*, only not a func
 
 Later, one of the inventors of category theory Sanders Mac Lane borrowed the word, to describe a something that *acts as function between categories*, which he defined in the following way:
 
+{: .definition}
+
 > A functor between two categories (let's call them $A$ and $B$) consists of two mappings --- a mapping that maps each *object* in $A$ to an object in $B$ and a mapping that maps each *morphism* between any objects in $A$ to a morphism between objects in $B$, in a way that *preserves the structure* of the category. 
 
 ![Functor](../10_functors/functor.svg)
@@ -161,6 +163,8 @@ In the definition above, we use the word "mapping" to avoid misusing the word "f
 ![Functor for objects](../10_functors/functor_objects.svg)
 
 A more formal definition of object mapping involves the concept of an *underlying set* of a category: Given a category $A$, the underlying set of $A$ is a set that has the objects of $A$ as elements. Utilizing this concept, we say that the object mapping of a functor between two categories is *a function between their underlying sets*. The definition of a function is still the same:
+
+{: .definition}
 
 > A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
 
@@ -180,18 +184,23 @@ Notice how the concepts of *homomorphism set* and of *underlying set* allowed us
 
 So these are the two mappings (one between objects and one between morphisms) that constitute a functor. But not every pair of such two mappings is a functor. As we said, in addition to existing, the mappings should *preserve the structure* of the source category into the target category. To see what that means, we revisit the definition of a category from chapter 2:
 
+{: .definition}
+
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have the identity morphism.
 > 2. There should be a way to compose two morphisms with an appropriate type signature into a third one, in a way that is associative.
 
 So this definition translates to the following two *functor laws*
 
-1. Functions between morphisms should *preserve identities* i.e. all identity morphisms should be mapped to other identity morphisms.
+{: .definition}
+
+> A functor between two categories (let's call them $A$ and $B$) consists of two mappings --- a mapping that maps each *object* in $A$ to an object in $B$ and a mapping that maps each *morphism* between any objects in $A$ to a morphism between objects in $B$, in a way that *preserves the structure* of the category: 
+> 1. Functions between morphisms should *preserve identities* i.e. all identity morphisms should be mapped to other identity morphisms.
  ![Functor](../10_functors/functor_laws_identity.svg)
-
-2. Functors should also *preserve composition* i.e. for any two morphisms $f$ and $g$, the morphism that corresponds to their composition $F(g•f)$ in the source category should be mapped to the morphism that corresponds to the composition of their counterparts in the target directory, so $F(g•f) = F(g)•F(f)$.
-
- ![Functor](../10_functors/functor_laws_composition.svg)
+>
+> 2. Functors should also *preserve composition* i.e. for any two morphisms $f$ and $g$, the morphism that corresponds to their composition $F(g•f)$ in the source category should be mapped to the morphism that corresponds to the composition of their counterparts in the target directory, so $F(g•f) = F(g)•F(f)$.
+>
+>![Functor](../10_functors/functor_laws_composition.svg)
 
 And these laws conclude the definition of functors --- a simple but, as we will see shortly, very powerful concept. 
 
@@ -217,9 +226,11 @@ You might have noticed that diagrams play a special role in category theory --- 
 
 For example, in chapter 1 we presented the following definition of functional composition.
 
-> The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that this diagram commutes.
+{: .definition}
 
-![Functional composition - general definition](../10_functors/functions_compose_general.svg)
+> The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that this diagram commutes.
+>
+> ![Functional composition - general definition](../10_functors/functions_compose_general.svg)
 
 We all see the benefit of defining stuff by means of diagrams as opposed to writing lengthy definitions like
 
@@ -238,6 +249,8 @@ For this reason, aside from a finite category that encodes the diagram's structu
 ![diagram as a functor](../10_functors/diagram_functor.svg)
 
 This is how the concept of functors allows us to formalize the notion of diagrams: 
+
+{: .definition}
 
 > A *diagram* is comprised of one finite category (called an *index category*) and a functor from it to some other category.
 
@@ -302,7 +315,11 @@ The answer is structure --- thoughts have the structure of the situation, that's
 
 So, after this slight detour, we will return to our usual modus operandi.
 
-Hey, do you know that in group theory, there is this cool thing called *group homomorphism* (or *monoid homomorphism* when we are talking about monoids) --- it is a function between the groups' underlying sets which preserves the group operation.
+Hey, do you know that in group theory, there is this cool thing called *group homomorphism*.
+
+{: .definition}
+
+> *Group homomorphism* (or *monoid homomorphism* when we are talking about monoids) is a function $F$ between the groups'/monoids' underlying sets that preserves the group operation i.e. $F(a * b) = F(a) + F(b)$ (where $+$ and $*$ are the group's operators).
 
 So, for example, If the time of the day right now is 00:00 o'clock (or 12 PM) then what would the time be after $n$ hours? The answer to this question can be expressed as a function with the set of integers as source and target.
 
@@ -314,16 +331,20 @@ This function is interesting --- it preserves the operation of (modular) additio
 
 Or to put it formally, if we call it (the function) $F$, then we have the following equation: $F(a + b) = F(a) + F(b)$ (where $+$ in the right-hand side of the equation means modular addition). Because this equation holds, the $F$ function is a *group homomorphism* between the group of integers under addition and the group of modulo arithmetic with base 11 under modular addition (where you can replace 11 with any other number).
 
-
 The groups don't have to be so similar for there to be a homomorphism between them. Take, for example, the function that maps any number $n$ to 2 to the *power of $n$,* so  $n \to 2ⁿ$ (here, again, you can replace 2 with any other number). This function gives a rise to a group homomorphism between the group of integers under addition and the integers under multiplication, or $F(a + b) = F(a) \times F(b)$.
 
 ![Group homomorphism between different groups](../10_functors/group_homomorphism_addition_multiplication.svg)
 
-Wait, what were we talking about, again? Oh yeah --- group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups and revisit our first example and (to make the diagram simpler, we use $mod2$ instead of $mod11$).
+Wait, what were we talking about, again? Oh yeah:
+
+Group homomorphisms are functors. To see why, we switch to the category-theoretic representation of groups and revisit our first example and (to make the diagram simpler, we use $mod2$ instead of $mod11$).
 
 ![Group homomorphism as a functor](../10_functors/group_homomorphism_functor.svg)
 
-It seems that when we view groups/monoid as one-object categories, a group/monoid homomorphism is just a functor between these categories. Let's see if that is the case.
+{: .theorem}
+> When we view groups/monoid as one-object categories, a group/monoid homomorphism is just a functor between these categories. 
+
+Let's see if that is the case.
 
 ### Object mapping
 
@@ -332,7 +353,6 @@ Groups/monoids have just one object when viewed as categories, so there is also 
 ### Morphism mapping
 
 Because of the above, the morphism mapping is the only relevant component of the group homomorphism. In the category-theoretic perspective, group objects (like $1$ and $2$ $3$ etc.) correspond to morphisms (like $+1$, $+2$ $+3$ etc.) and so the morphism mapping is just mapping between the group's objects, as we can see in the diagram.
-
 
 ### Functor laws
 
@@ -344,10 +364,13 @@ And many algebraic operations satisfy this equation, for example the functor law
 
 **Task 3:** Prove that the first functor law (preservation of identities) of groups can be proven from the second law. Note that this is valid for groups, but not monoids.
 
-
 ## Functors in orders
 
-And now let's talk about a concept that is completely unrelated to functors, nudge-nudge (hey, bad jokes are better than no jokes at all, right?) In the theory of orders, we have the concept of functions between orders (which is unsurprising, given that orders, like monoids/groups, are based on sets) and one very interesting type of such function, which has applications in calculus and analysis, is a *monotonic function* (also called *monotone map*). This is a function between two orders that *preserves the order of the objects in the source order, in the target order. So a function $F$ is monotonic when for every $a$ and $b$ in the source order, if $a ≤ b$ then $F(a) ≤ F(b)$.
+And now let's talk about a concept that is completely unrelated to functors, nudge-nudge (hey, bad jokes are better than no jokes at all, right?) In the theory of orders, we have the concept of functions between orders (which is unsurprising, given that orders, like monoids/groups, are based on sets) and one very interesting type of such function, which has applications in calculus and analysis, is a *monotonic function* (also called *monotone map*). 
+
+{: .definition}
+
+> A monotonic function is a function between two orders that *preserves the order of the objects in the source order, in the target order. So, a function $F$ is monotonic when for every $a$ and $b$ in the source order, if $a ≤ b$ then $F(a) ≤ F(b)$.
 
 For example, the function that maps the current time to the distance traveled by some object is monotonic because the distance traveled increases (or stays the same) as time increases.
 
@@ -358,6 +381,10 @@ If we plot this or any other monotonic function on a line graph, we see that it 
 ![A monotonic function, represented as a line-graph](../10_functors/monotone_map_plot.svg)
 
 Now we are about to prove that monotonic functions are functors too, ready?
+
+{: .theorem}
+
+When we view order as thin categories, monotone maps are functors.
 
 ### Object mapping
 
@@ -389,7 +416,11 @@ $$F(a) ≤ F(c)$$
 
 OK, enough with this abstract nonsense, let's talk about "normal" functions --- ones between numbers. 
 
-In calculus, there is this concept of *linear functions* (also called "degree one polynomials") that are sometimes defined as functions of the form $f(x) = xa$ i.e. ones that contain no operations other than multiplying the argument by some constant (designated as $a$ in the example). 
+In calculus, there is this concept of *linear functions* (also called "degree one polynomials"):
+
+{: .definition}
+
+> Linear functions are functions of the form $f(x) = xa$ that contain no operations other than multiplying the argument by some constant (designated as $a$ in the example). 
 
 But if we start plotting some such functions we will realize that there is another way to describe them --- their graphs are always comprised of straight lines.
 
@@ -397,7 +428,13 @@ But if we start plotting some such functions we will realize that there is anoth
 
 **Task 5:** Why are the graphs of linear functions comprised of straight lines?
 
-Another interesting property of these functions is that most of them *preserve* addition, that is for any $x$ and $y$, you have $f(x) + f(y) = f(x + y)$. We already know that this equation is equivalent to the second functor law. So linear functions are just *functors between the group of natural numbers under addition and itself.* As we will see later, they are example of functors in the *category of vector spaces*.
+Another interesting property of these functions is that most of them *preserve* addition, that is for any $x$ and $y$, you have $f(x) + f(y) = f(x + y)$. We already know that this equation is equivalent to the second functor law. So:
+
+{: .theorem}
+
+> Linear functions are just functors between the group of natural numbers under addition and itself.
+
+As we will see later, they are example of functors in the *category of vector spaces.
 
 ![Linear functions](../10_functors/linear_function_functor.svg)
 
@@ -427,9 +464,9 @@ A type theory/type system forms a category, and in that category there are some 
 
 But let's start with the basics: defining the concept of a functor in type-theoretic context is as simple as changing some of the terms that are used, and optionally, changing the font we use in our formulas from "modern" to "monospaced". 
 
-> A functor between two ~~categories~~ type universes (let's call them `A` and `B`) consists of a mapping that maps each ~~object~~ *type* in `A` to a type in `B` and a mapping that maps each ~~morphism~~ *function* between types in `A` to a function between types in `B`, in a way that preserves the structure of the ~~category~~ type system.
+{: .definition}
 
-(Note that we are introducing a new term "type universe" this is just a name for the collection of all types that are in existence)
+> A functor between two ~~categories~~ of types (let's call them `A` and `B`) consists of a mapping that maps each ~~object~~ *type* in `A` to a type in `B` and a mapping that maps each ~~morphism~~ *function* between types in `A` to a function between types in `B`, in a way that preserves the structure of the ~~category~~ type system.
 
 Comparing these definitions makes us realize that mathematicians and programmers are two very different communities, that are united by the fact that they both use functors (and by their appreciation of peculiar typefaces).
 
@@ -470,10 +507,13 @@ class Array<A> {
 Aside from facilitating code reuse by bringing in all standard functions of simple types in a more complex context, `map` allows us to work in a way that is predictable, courtesy of the functor laws, which in programming context look like this.
 
 Identity law:
-``## `
+```
+a.map(a => a) == a
 ```
 Composition law:
-``## `
+
+```
+a.map(f).map(g) == a.map((a) => g(f(a)))
 ```
 
 **Task 7:** Use examples to convince yourself that the laws are followed.
@@ -496,15 +536,19 @@ Now, before we close it off, we will review one more functor-related concept tha
 
 ### Endofunctors
 
-To understand what pointed endofunctors are, we have to first understand what are *endofunctors*, and we already saw some examples of those in the last section. Let me explain: from the way the diagrams there looked like, we might get the impression that different type universes belong to different categories.
+To understand what pointed endofunctors are, we have to first understand what are *endofunctors*, and we already saw some examples of those in the last section. Let me explain: from the way the diagrams there looked like, we might get the impression that the functors in programming connect different categories.
 
 ![A functor in programming](../10_functors/functor_programming.svg)
 
-But that is not the case a type system is a category, so all type universes are actually part of one and the same category.
+But that is not the case a type system is a category, and all functors go from this category to itself. 
 
 ![A functor in programming](../10_functors/functor_programming_endo.svg)
 
-Yes, these are exactly what we call *endofunctors* i.e. ones that have one and the same category as source and target.
+Yes, these are exactly what we call *endofunctors*.
+
+{: .definition}
+
+> Endofunctors are functors that have one and the same category as source and target.
 
 ### The identity functor
 
@@ -516,11 +560,18 @@ And it might be familiar, because an identity functor is similar to an identity 
 
 ### Pointed functors
 
-Finally, the identity functor, together with all other functors to which the identity functor can be *naturally transformed* are called *pointed functors* (i.e. a functor is pointed if there exist a natural transformation from the identity functor to it). As we will see shortly, the list functor is a pointed functor.
+Finally, we can define pointed functors:
+
+{: .definition}
+
+> The identity functor, together with all other functors to which the identity functor can be *naturally transformed* are called *pointed functors* (i.e. a functor is pointed if there exist a natural transformation from the identity functor to it). 
+
+As we will see shortly, the list functor is a pointed functor.
 
 ![Pointed functor](../10_functors/pointed_functor.svg)
 
 We still haven't discussed what does it mean for one functor to be naturally transformed to another one (although the commuting diagram above can give you some idea), however, if we concentrate solely on the category of types in programming languages, then *a natural transformation is just a polymorphic function* e.g. this one is $a \to List\ a$, that preserves the structure of the types i.e. one for which this diagram commutes. 
+
 ![Pointed functor in Set](../10_functors/pointed_functor_set.svg)
 
 In the case of this functor, the function in question is $a \to [\ a\ ]$ --- the function that puts every value in a "singleton" list. 
@@ -529,7 +580,11 @@ We will stop here, as natural transformations are a complex thing, and we want t
 
 ## The category of small categories
 
-Ha, I got you this time (or at least I *hope* I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do now. And (surprise again) the new category won't be the category of functors (don't worry, we will introduce that in the next chapter). Instead, we will examine the category of (small) categories, that has all the categories that we saw so far as objects and functors as its morphisms, like $Set$ - the category of sets, $Mon$, the category of monoids, $Ord$, the category of orders etc.
+Ha, I got you this time (or at least I *hope* I did) - you probably thought that I won't introduce another category in this chapter, but this is exactly what I am going to do now. And (surprise again) the new category won't be the category of functors (don't worry, we will introduce that in the next chapter). Instead, we will examine the category of (small) categories:
+
+{: .definition}
+
+> The category of small categories is a category that has small categories (like $Set$ - the category of sets, $Mon$, the category of monoids, $Ord$, the category of orders etc) for objects and functors for morphisms
 
 ![The category of categories](../10_functors/category_of_categories.svg)
 
@@ -658,17 +713,18 @@ You can show that this works in the other direction as well, but it is a little 
 
 **Task 7:** Use examples to convince yourself that the laws are followed.
 
-Trivial exercise, the point here is playing a bit to familiarize yourself with the laws, everyone has a favourite set and functions which they use, here are mine:
+The point here is playing a bit to familiarize yourself with the laws, you can use any set and functions, here is an example:
 
 Identity law:
-``## `
+```
+[1, 2, 3].map(a => a) == [1, 2, 3]
 ```
 Composition law:
 ```
 let f = (a) => a + 1
-le## t g = (a) => a * 2
+let g = (a) => a * 2
+[1, 2, 3].map(f).map(g) == [1, 2, 3].map((a) => g(f(a)))
 ```
-
 ---
 
 **Task 8:** Go through the functor definition and see how do functors compose. 
