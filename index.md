@@ -61,7 +61,7 @@ _Thanks to my regular [Patreon](https://patreon.com/abuseofnotation) supporters:
 # Hire me
 
 If you have an interesting project, to which you think I can contribute, consider hiring me for:
-- Technical communication
+- Technical writing/technical communication/
 - Information design 
 - UI/UX and front-end development
 - Product design
