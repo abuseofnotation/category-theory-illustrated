@@ -37,7 +37,11 @@ Although old, dating back to Parmenides' alleged rival Heraclitus, this view has
 
 An embodiment of Heraclitus' view in the realm of category theory is the concept of *isomorphism invariance* that we implicitly touched several times. 
 
-All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are *isomorphism-invariant*. Or, equivalently, they define an objects *up to an isomorphism*. Or, in other words, if there are two or more objects that are isomorphic to one another, and one of them has a given property, then the rest of them would to also have this property as well. 
+All categorical constructions that we covered (products/coproducts, initial/terminal objects, functional objects in logic) are *isomorphism-invariant*. Or, equivalently, they define an objects *up to an isomorphism*. 
+
+{: .definition}
+
+> A property is called isomorphism-invariant when if there are two or more objects that are isomorphic to one another, and one of them has a given property, then the rest of them would to also have this property as well. 
 
 In short, in category theory **isomorphism = equality**.
 
@@ -100,7 +104,11 @@ To formalize that notion, we remember the concept of *equivalence classes* that 
 
 ![Orders with isomorphic equivalence classes](../11_natural_transformations/equivalent_order_classes.svg)
 
-You can see that they are isomorphic. And that is no coincidence: two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
+You can see that they are isomorphic. And that is no coincidence: 
+
+{: .definition}
+
+> Two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
 
 This is a definition for equivalence of orders, but unfortunately, it does not hold for all categories --- when we are working with orders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e. to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
 
@@ -116,6 +124,8 @@ However, we will leave this (pardon my French) as an *exercise for the reader*. 
 
 In the chapter about orders, we presented a definition of order *isomorphisms*, that is based on *objects*:
 
+{: .definition}
+
 > An order isomorphism is essentially an isomorphism  between the orders' underlying sets (invertible function). However, besides their underlying sets, orders also have the arrows that connect them, so there is one more condition: in order for an invertible function to constitute an order isomorphism it has to *respect those arrows*, in other words it should be *order preserving*. More specifically, applying this function (let's call it $F$) to any two elements in one set ($a$ and $b$) should result in two elements that have the same corresponding order in the other set (so $a ≤ b$ if and only if $F(a) ≤ F(b)$). 
 
 That a way to define them, but it is not the best way. Now that we know about functors (which, as we said, serve as functions between the orders and other categories), we can devise a new, simpler definition, which would also be valid for all categories, not just orders, and for all forms of equality (isomorphism and equivalence).
@@ -124,15 +134,19 @@ That a way to define them, but it is not the best way. Now that we know about fu
 
 We begin with the definition of **set isomorphism**:
 
+{: .definition}
 > Two **sets** $A$ and $B$ are **isomorphic** (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 To amend it so it is valid for all categories  by just replacing the word "function" with "functor" and "set" with "category":
 
+{: .definition}
 > Two **categories** $A$ and $B$ are **isomorphic** (or $A \cong B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{B}$ and $g \circ f = ID_{A}$.
 
 **Task 1:** Check if that definition is valid.
 
 Believe it or not, this definition, is just one find-and-replace operation away from the definition of *equivalence*. We get there only by replace equality with isomorphism (so, $=$ with $\cong$). 
+
+{: .definition}
 
 > Two **categories** $A$ and $B$ are **equivalent** (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{B}$ and $g \circ f \cong ID_{A}$.
 
@@ -188,11 +202,21 @@ Oh, actually, there is also this condition that the above diagram should commute
 
 Just like anything else in category theory, natural transformations have some laws that they are required to pass. In this case it's one law, typically called the naturality law, or the naturality condition. 
 
-Before we state this law, let's recap where are we now: We have two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each object of the target of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some objects of the image of $G$. This is a *transformation*, but not necessarily a *natural* one. A transformation is natural, when this diagram commutes for all morphisms in $C$.
+Before we state this law, let's recap where are we now: 
 
-![The commuting square of a natural transformation](../11_natural_transformations/natural_transformation_square.svg)
+{: .definition}
 
-i.e. a transformation is natural when every morphism $f$ in $C$ is mapped to morphisms $F(f)$ by $F$ and to $G(f)$ by $G$ (not very imaginative names, I know), in such a way, that we have $\alpha \circ F(f) = G(f) \circ \alpha$ i.e. when starting from the white square, when going right and then down (via the yellow square) is be equivalent to going down and then right (via the black one).
+> Let $F$ and $G$ be two functors that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$). A transformation between them is a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$, that map each object of the target of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some objects of the image of $G$. 
+
+This is a *transformation*, but not necessarily a *natural* one.
+
+{: .definition}
+
+> A transformation is natural when every morphism $f$ in $C$ is mapped to morphisms $F(f)$ by $F$ and to $G(f)$ by $G$ in such a way, that we have $\alpha \circ F(f) = G(f) \circ \alpha$ i.e. when this diagram commutes.
+>
+>![The commuting square of a natural transformation](../11_natural_transformations/natural_transformation_square.svg)
+
+i.e. when starting from the white square, when going right and then down (via the yellow square) is be equivalent to going down and then right (via the black one).
 
 We may view a natural transformation is a mapping between morphisms and commutative squares: two functors and a natural transformation between two categories means that for each morphism in the source category of the functors, there exist one commutative square at the target category.
 
@@ -208,7 +232,9 @@ Which means natural transformation make up a...
 
 ### Natural isomorphisms 
 
-After understanding natural transformations, natural isomorphisms, are a no-brainer: a natural transformation is just a family of morphisms in a given category that satisfy certain criteria, then what would a natural *isomorphism* be? That's right --- it is a family of *isomorphisms* that satisfy the same criteria. The diagram is the same as the one for ordinary natural transformation, except that $\alpha$ are not just ordinary morphisms, but isomorphisms.
+If a natural transformation is just a family of morphisms in a given category that satisfy certain criteria, then what would a natural *isomorphism* be? That's right --- it is a family of *isomorphisms* that satisfy the same criteria. 
+
+The diagram is the same as the one for ordinary natural transformation, except that $\alpha$ are not just ordinary morphisms, but isomorphisms.
 
 ![Two functors and a natural transformation](../11_natural_transformations/natural_isomorphism.svg)
 
@@ -216,7 +242,7 @@ And the turning those morphisms into isomorphisms makes the diagram commute in m
 
 $\alpha \circ F(f) = G(f) \circ \alpha$ i.e. the two paths going from **white** to **blue** are equivalent.
 
-We also have:
+we also have:
 
 $F(f) \circ  \alpha  =   \alpha  \circ G(f)$ i.e. the two paths going from **black** to **yellow** are also equivalent.
 
@@ -229,6 +255,8 @@ I am sorry, what were we talking about again? Oh yeah --- categorical equivalenc
 2. And then, we discussed that for categories that are not thin (thick?) the situation is a bit more complex since they can have more than one morphism between two objects, and we should worry not only about isomorphic objects, but about *isomorphic morphisms*. 
 
 Now, we will show how these two notions are formalized by the definition that we presented.
+
+{: .definition}
 
 > Two **categories** $A$ and $B$ are **equivalent** (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{A}$ and $g \circ f \cong ID_{A}$.
 
@@ -278,15 +306,19 @@ Actually, the only difference between the two transformations is that an equival
 
 We said that a natural transformation is equivalent to a (parametrically) polymorphic function in programming. But wait, wasn't natural transformation something else (and much more complicated):
 
+{: .definition}
+
 > Two functors $F$ and $G$ that have the same type signature (so $F : C \to D$ and $G : C \to D$ for some categories $C$ and $D$), and a family of morphisms in the target category $D$ (denoted $\alpha : F \Rightarrow G$) one for each object in $C$. Morphisms that map each object of the target of $F$ (or the image of $F$ in $D$ as it is also called) to some object in the target of $G$. 
 
 Indeed it is (I wasn't lying to you, in case you are wondering), however, in the case of programming, the source and target categories of both functors are the same category ($Set$), so the whole condition regarding the functors' type signatures can be dropped. 
+
+{: .definition}
 
 > Two ~~functors~~ generic types $F$ and $G$ ~~that have the same type signature~~ and a family of morphisms in $Set$ (denoted $\alpha : Set \Rightarrow Set$) one for each object in $Set$, that map each target object of the functor $F$ (or the image of $F$ in $D$ as it is also called) to some target objects of functor $G$. 
 
 As we know from the last chapter, a functor in programming is a generic type (which, has to have the `map` function with the appropriate signature). 
 
-And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morphisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell notation, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. 
+And what is a "family of morphisms in $Set$ one for each object in $Set$"? Well, the morphisms in the category $Set$ are functions, so that's just a bunch of functions, one for each type.  In Haskell/System F, if we denote a random type by the letter $$a$$), it is $alpha : \forall a. F a \to G a$.  But that's exactly what polymorphic functions are. 
 
 Here is how would we write the above definition in a more traditional language  (we use capital `<A>` instead of $a$, as customary.
 
@@ -541,6 +573,11 @@ And, finally, we make a category out of that set by taking all morphisms coming 
 
 This is the *product category* of the two categories.
 
+
+{: .definition}
+
+> The product category of two categories $C$ and $D$, denoted $C \times D$ is a category that has the product set of $C$ and $D$'s underlying sets as its underlying set. And it's morphisms are the combined morphisms of $C$, and $D$, transformed in such a way that they modify one element of the pair. That is for each morphism $f$ in $C$ we have a morphism $(f(c), d)$ in $C \times D$ and likewise for each morphism in $D$.
+
 ### Natural transformations as functors of product categories
 
 In this section we are interested with the products of one particular category, namely the category we called $2$, containing two objects and one morphism (stylishly represented in black and white).
@@ -560,7 +597,11 @@ So, given a product category of $2$ and some other category $C$...
 
 ![Product category](../11_natural_transformations/product_category_natural_transformation.svg)
 
-Furthermore, this connection is two-way: any natural transformation from $C$ to some other category (call it $D$, as it is customary) can be represented as a functor $2 \times C \to D$.
+Furthermore, this connection is two-way: 
+
+{: .theorem}
+
+> Any natural transformation from category $C$ to any other category $D$, can be represented as a functor $2 \times C \to D$ and vice versa.
 
 That is, if we have a natural transformations $\alpha : F \Rightarrow G$ (where  $F: C \to D$ and  $G: C \to D$), then, we also have a functor  $2 \times C \to D$, such that if we take the subcategory of $2 \times C$ comprised of just those objects that have the $0$ object as part of the pair, and the morphisms between them, we get a functor that is equivalent to $F$, and if we consider the subcategory that contains $1$, then the functor is equivalent to $G$ (we write $\alpha(-,0)=F$ and $\alpha(-,1)=G$). Et voilà!
 
@@ -605,10 +646,13 @@ Natural transformations are surely a different beast than normal morphisms and f
 
 ### The identity natural transformation
 
-Let's first get one trivial definition out of the way: for each functor, we have the identity natural transformation (actually a natural isomorphism) between it and itself.
+Let's first get one trivial definition out of the way: 
+
+{: .definition}
+
+> For each functor, we have the identity natural transformation (actually a natural isomorphism) between it and itself.
 
 ![The identity natural transformation](../11_natural_transformations/identity_natural_transformation.svg)
-
 
 ### Horizontal composition
 
@@ -661,7 +705,9 @@ Recall that categorical composition involves three objects and two successive ar
 
 ![Vertical composition of natural transformations](../11_natural_transformations/vertical_composition.svg)
 
-We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism, which we call $b \circ a : F \to H$ (the composition operator is the  usual white circle, as opposed to the black one, which denotes horizontal composition). And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
+We can combine each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) to get a new morphism, which we call $b \circ a : F \to H$ (the composition operator is the usual white circle, as opposed to the black one, which denotes horizontal composition). And the set of all such morphisms are precisely the components of a new natural transformation: $\beta \circ \alpha : F \to H$.
+
+> Given three *functors* $F, G, H: C \to D$ and two successive *natural transformations* between those functors i.e. $\alpha: F \to G$ and $\beta: G \to H$, there is a natural transformation $\beta \circ \alpha : F \to H$, with the composition of each morphism of the natural transformation $\alpha$ (e.g. $a: F \to G$) and the corresponding morphism of the natural transformation $\beta$ (say $b:G \to H$) as its components.
 
 ### Categories of functors
 
@@ -690,7 +736,11 @@ In this notation, we display natural transformations as (double) arrows between 
 
 ![Vertical composition of natural transformations in Cat](../11_natural_transformations/vertical_composition_cat_2.svg)
 
-And you can already see the new category that is formed: For each two categories (like $C$ and $D$ in this case), there exists a category which has functors for objects and natural transformations as morphisms. 
+And you can already see the new category that is formed: 
+
+{: .definition}
+
+> For each two categories $C$ and $D$, there exists a category which has the $C \to D$ functors as objects and the natural transformations between those functors as morphisms. 
 
 ![Vertical composition of natural transformations in Cat](../11_natural_transformations/functor_category.svg)
 
