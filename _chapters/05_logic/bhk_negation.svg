@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 595.3 189.5"
+   version="1.1"
+   id="svg15613"
+   sodipodi:docname="bhk_negation.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata15619">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15617" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1080"
+     inkscape:window-height="1851"
+     id="namedview15615"
+     showgrid="false"
+     inkscape:zoom="0.45612132"
+     inkscape:cx="212.66272"
+     inkscape:cy="1388.8849"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg15613"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="true">
+    <sodipodi:guide
+       position="292.22408,-198.06508"
+       orientation="1,0"
+       id="guide22002"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <circle
+     style="fill:#e6e7e8;stroke:#bbbcbe;stroke-width:6;stroke-miterlimit:10;stroke-opacity:1"
+     id="circle15601"
+     r="85.599998"
+     cy="93.981987"
+     cx="289.11407" />
+  <g
+     id="g2836-2-5-2-6-2-1-8-0-9-7"
+     transform="matrix(2.9762035,-0.0695724,0.0695724,2.9762035,-527.97629,-236.06965)">
+    <path
+       d="m 273.21167,117.26782 c -0.57835,-0.53701 -1.18546,-1.05059 -1.82141,-1.54094 0.005,0.90274 -0.23069,1.50591 -0.26419,2.48087 1.09658,-0.45317 1.14943,-0.45438 2.0856,-0.93993 z"
+       id="path1478-7-9-0-19-0-0-3-9-8-1-5-7-8-9-2-0"
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:2.33962;stroke-miterlimit:10"
+       sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:nodetypes="cc"
+       d="m 258.51116,118.25902 c 3.29725,-1.32608 7.78168,-1.34656 12.99022,-1.1695"
+       id="path1480-1-3-1-5-7-6-7-2-9-5-4-2-5-6-0-9"
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:none;stroke:#838383;stroke-width:1.32416;stroke-miterlimit:10;stroke-dasharray:none;paint-order:markers fill stroke" />
+  </g>
+  <g
+     id="g22000"
+     transform="matrix(1.4098106,0,0,1.4098106,-158.31496,-554.91804)">
+    <circle
+       style="fill:#ffffff;stroke:#ececec;stroke-width:3.08177;stroke-miterlimit:10;stroke-dasharray:none"
+       id="circle3385-1-8"
+       r="25.304661"
+       cy="459.87036"
+       cx="352.12897" />
+    <g
+       id="g3-4-1"
+       style="stroke:#000000;stroke-width:3.7;stroke-dasharray:none"
+       transform="matrix(0.89886273,0,0,-0.89886273,29.849184,412.31785)">
+      <path
+         style="fill:#ffffff;stroke:#000000;stroke-width:3.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 360.86122,-61.060089 v 22.696003"
+         id="path2-8-3" />
+      <path
+         style="fill:#ffffff;stroke:#000000;stroke-width:3.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="m 347.36709,-61.060089 h 27.42239"
+         id="path3-1-1" />
+    </g>
+  </g>
+  <circle
+     style="fill:#39bced;stroke:#008dd2;stroke-width:4.79275;stroke-miterlimit:10"
+     id="circle15605"
+     r="34.188278"
+     cy="94.214569"
+     cx="237.51506" />
+</svg>

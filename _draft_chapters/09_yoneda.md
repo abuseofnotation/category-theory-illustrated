@@ -19,3 +19,11 @@ This set forms a category where the morphism sets are the objects (again morphis
 
 With the homomorphism functors, we can *represent* any category in the category of sets. This is why homomorphism functors and all functors that are isomorphic to them are called *representable* functors.
 
+
+
+
+Sets are completely determined by their elements. Similarly, objects in a locally small category are determined by their generalised elements.
+
+https://emptylimit.github.io/discussion/generalised-elements.html
+
+https://maartenfokkinga.github.io/utwente/mmf91m.pdf

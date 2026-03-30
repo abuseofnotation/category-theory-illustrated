@@ -1,0 +1,42 @@
+.comic-web-panel .background {
+  fill: whitesmoke;
+}
+
+.comic-web-panel .panel-frame {
+  stroke: black;
+  stroke-width: 4;
+  fill-opacity: 0;
+}
+.comic-web-panel .balloon .frame {
+  fill: white;
+  stroke: black;
+  stroke-width:1;
+  rx: 39px;
+  ry: 39px;
+}
+
+.comic-web-panel .balloon text {
+  font-family: sans-serif;
+  fill: black;
+}
+
+.comic-web-panel .balloon-narrator .frame {
+  rx: 0;
+  ry: 0;
+}
+
+
+.comic-web-panel .balloon-jencel .frame {
+  stroke: navy;
+}
+.comic-web-panel .balloon-jencel text {
+  fill: navy;
+}
+
+.comic-web-panel .balloon-alyssa .frame {
+  stroke: red;
+}
+.comic-web-panel .balloon-alyssa text {
+  fill: red;
+}
+

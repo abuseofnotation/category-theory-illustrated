@@ -1,4 +1,4 @@
-pandoc --from markdown --to epub3  --strip-comments \
+pandoc --from markdown --to epub3  --mathml --strip-comments --lua-filter="epub/filter.lua"\
  epub/title.txt \
  _chapters/00_about.md \
  _chapters/01_set.md \
@@ -6,6 +6,7 @@ pandoc --from markdown --to epub3  --strip-comments \
  _chapters/03_monoid.md \
  _chapters/04_order.md \
  _chapters/05_logic.md \
+ _chapters/06_type.md \
  _chapters/10_functors.md \
  _chapters/11_natural_transformations.md \
  epub/title.txt \
@@ -13,5 +14,7 @@ pandoc --from markdown --to epub3  --strip-comments \
  --toc \
  --epub-cover-image=cover_print.png \
  --resource-path=_chapters/02_category \
- --css=epub/epub-style.css \
+ --css=epub/epub-style.css
 # --verbose
+
+ open book.epub

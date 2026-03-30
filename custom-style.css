@@ -1,18 +1,6 @@
 :root {
-  --color: #57a445;
-}
-
-body {
-  font-size: 25px;
+  --color: #57a445; } body { font-size: 25px;
   font-family: "MellSans", sans-serif;
-}
-
-
-@font-face {
-    font-family: 'Rubik';
-    src: url('RubikMonoOne.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -44,14 +32,14 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .content h1 {  
-  font-size: 60px;
-  font-weight: bold;
-  color: #009fda;
+  font-size: 100px;
 }
 
 
 h2 {
   font-size: 50px;
+  font-weight: bold;
+  color: #009fda;
 }
 
 h3 {
@@ -62,3 +50,58 @@ h4 {
   font-size: 30px;
   color: rgb(55, 55, 55);
 }
+.presentation-controls {
+  visibility: hidden;
+}
+
+.definition, .theorem {
+  border-left : 3px solid black;
+  padding: 10px 0 0 0;
+  color: black;
+  position: relative;
+}
+
+.definition:before {
+  content:"DEFINITION:";
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  top: -5px;
+}
+
+.theorem:before {
+  content:"THEOREM:";
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  left: 0px;
+  top: -5px;
+  bottom: 0;
+  margin: auto;
+}
+
+.presentation {
+
+  img, .definition, .theorem, table, pre, mjx-mtable, mjx-frac {
+    margin: 600px 0px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1000px 50px;
+  }
+
+  .presentation-controls {
+    visibility: visible;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    text-align: center;
+    .button {
+      line-height: 0;
+    }
+  }
+}
+

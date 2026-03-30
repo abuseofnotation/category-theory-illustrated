@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="0 0 595.3 177"
    version="1.1"
    id="svg3397"
    sodipodi:docname="bhk_implies.svg"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata3403">
     <rdf:RDF>
@@ -20,7 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -35,19 +35,21 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-width="1080"
+     inkscape:window-height="1851"
      id="namedview3399"
      showgrid="false"
-     inkscape:zoom="1.8797245"
-     inkscape:cx="255.88856"
-     inkscape:cy="118.9004"
+     inkscape:zoom="1.3291659"
+     inkscape:cx="391.22278"
+     inkscape:cy="226.08163"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg3397"
      inkscape:document-rotation="0"
-     inkscape:pagecheckerboard="0" />
+     inkscape:pagecheckerboard="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <g
      id="g8880-3-88"
      transform="matrix(0.75024244,0,0,0.75024244,-128.97607,-69.779696)">
@@ -79,15 +81,10 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:30.00970078px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75024301"
+     style="font-style:normal;font-weight:normal;font-size:30.0097px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.750243"
      x="266.82175"
      y="-2.2733741"
-     id="text9288"><tspan
-       sodipodi:role="line"
-       id="tspan9286"
-       x="266.82175"
-       y="24.278177"
-       style="stroke-width:0.75024301" /></text>
+     id="text9288" />
   <g
      id="g8880"
      transform="matrix(0.75024244,0,0,0.75024244,69.21824,-126.28444)">
@@ -137,4 +134,16 @@
        d="m -178.84657,227.76608 c 117.349022,-36.54845 358.08625,-35.1964 481.62623,-3.09572"
        sodipodi:nodetypes="cc" />
   </g>
+  <circle
+     style="fill:#f58235;stroke:#e76524;stroke-width:4.059;stroke-miterlimit:10;stroke-dasharray:none"
+     id="circle15603"
+     r="14.689879"
+     cy="92.273964"
+     cx="410.29312" />
+  <circle
+     style="fill:#39bced;stroke:#008dd2;stroke-width:3.24699922;stroke-miterlimit:10;stroke-dasharray:none"
+     id="circle15605"
+     r="14.605404"
+     cy="92.971985"
+     cx="191.57713" />
 </svg>

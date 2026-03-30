@@ -3,6 +3,8 @@ layout: default
 title: About 
 ---
 
+# About
+
 <p style="text-align: center">
     In memory of 
 </p>
@@ -40,8 +42,7 @@ Tom Lehrer
 \pagebreak 
 </div>
 
-The story behind this book
-===
+## The story behind this book
 
 I was interested in math as a kid, but was always messing up calculations, so I decided it was not my thing and started pursuing other interests, like writing and visual art.
 
@@ -51,8 +52,7 @@ Some 5 years ago I found myself jobless for a few months and decided to publish 
 
 A few years after that some people found my notes and encouraged me write more. They were so nice that I forgot my imposter syndrome and got to work on the next several chapters.
 
-On math
-===
+## On math
 
 Ever since Newton's Principia, the discipline of mathematics is viewed in the somewhat demeaning position of "science and engineering's workhorse" --- only "useful" as a means for helping scientists and engineers to make technological and scientific advancements, i.e., it is viewed as just a tool for solving "practical" problems. 
 
@@ -75,8 +75,7 @@ There is nothing wrong with this approach, but mathematics is so much more than 
 
 Category theory embodies all these aspects of mathematics, so I think it's very good grounds to writing a book where all of them shine --- a book that isn't based on solving of problems, but exploring concepts and seeking connections between them. A book that is, overall, pretty.
 
-Who is this book for 
-====
+## Who is this book for 
 
 So, who is this book for? Some people would phrase the question as "Who *should* read this book", but if you ask it this way, then the answer is "nobody". Indeed, if you think in terms of "should", mathematics (or at least the type of mathematics that is reviewed here) won't help you much, although it is falsely advertised as a solution to many problems (whereas it is, in fact, (as we established) something much more).
 
@@ -108,8 +107,17 @@ Some people say that we don’t use maths in our daily life. But, if true, that 
 
 And so "Who is this book for" is not to be read as who should, but who *can* read it. Then, the answer is "everyone".
 
-About category theory
-===
+## About the language
+
+Explaining mathematics involves a tradeoff between understandable/approachable and being rigorous/correct. Between the the first-grade teacher who says that if you have one apple and you get another one you'd have two, and presenting a 200-page wall of formulas that prove the same statement, as Russell and Whitehead did in "Principia Mathematica". 
+
+Here, I try to stay in the middle of this spectrum ("the middle way", as the Buddist teachings call it). This is simply my niche, this is simply because there *aren't so many texts* that are there (a math student often has to make by themselves the leap between talking about apples and oranges and talking about formal statements). 
+
+I think that this is because being in the middle is *hard*. You have to build bridges in both directions, to take care of both the less and more advanced, to have both the pictures and formulas. 
+
+And I did put of effort to have both: although I am sloppy/handwavy, I value correctness over everything else. Every statement has been checked extensively by me and other people who helped me with this project and all statements that can possibly leave the reader with the wrong impression have been edited. 
+
+## About category theory
 
 Like we said, the fundaments of mathematics are the fundaments of thought. Category theory allows us to formalize those fundaments that we use in our daily (intellectual) lives.
 
@@ -121,8 +129,8 @@ Category theory formalizes the concept of diagrams and their components --- arro
 
 As a consequence of that, category theory and diagrams are also a very understandable way to communicate a formal concept clearly, something I hope to demonstrate in the following pages.
 
-Summary
-===
+
+## Summary
 
 In this book we will visit various such modes of knowledge and along the way, see all kinds of mathematical objects, viewed through the lens of categories.
 
@@ -138,8 +146,7 @@ The connection between all these different disciplines is examined in chapter 6,
 
 In chapter 7 we review another more interesting and more advanced categorical concept, the concept of a *natural transformation*.
 
-Acknowledgments
-===
+## Acknowledgments
 
 Thanks to my wife Dimitrina, for all her support.
 

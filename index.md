@@ -39,17 +39,33 @@ _Discover the beauty of mathematics through the lens of category theory with thi
 
 [Kiran](https://kirancodes.me/), Postdoc Researcher at the University of Illinois Urbana Champaign
 
-Support
+Support my work
 ===
 
 I want to make this book into the best introductory text, not only to category theory, but to mathematics as a whole. 
 
 It seems that I would need some help, though.
 
-- *Publishers*, if you are interested in publishing my book, contact me via [email](mailto:marinovboris@protonmail.com)
+- If you want to get the whole version of the book, as well as other stuff I created, you can [buy it](https://abuseofnotation.gumroad.com).
 
-- *Co-authors and/or technical reviewers*, post an issue or PR on [Github](https://github.com/abuseofnotation/category-theory-illustrated). 
+- You can support me on [Patreon](https://patreon.com/abuseofnotation) too.
 
-- And if you want to get the whole version of the book as a pdf or an epub, as well as a lot of additional perks, support me on [Patreon](https://patreon.com/abuseofnotation) or [Ko-fi](https://ko-fi.com/abuseofnotation).
+_Thanks to my regular [Patreon](https://patreon.com/abuseofnotation) supporters:_
 
-_Thanks to my regular supporters: Artiom Kasapu, Meme Gawd, Al King, David Mankins, Michael Kuzmin, Simon Parry and everyone else who helped me in any way to complete this project._
+## Abdul Basit Ahmad
+## Simon Parry
+## David Mankins
+## Meme Gawd
+## Artiom Casapu
+
+# Hire me
+
+If you have an interesting project, to which you think I can contribute, consider hiring me for:
+- Technical writing/technical communication/
+- Information design 
+- UI/UX and front-end development
+- Product design
+
+# Meet me
+
+I will be speaking about Category theory at [Zurihac 2026](https://zfoh.ch/zurihac2026/)
