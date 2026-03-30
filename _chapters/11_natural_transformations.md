@@ -68,7 +68,7 @@ For this reason, we need a new concept of equality of categories. A concept that
 
 ### Equivalences are isomorphism invariant
 
-To understand equivalent categories better, let's go back to the functor between a given map and the area it represents (we will only consider the thin categories (AKA orders) for now). This functor would be invertible (and the categories --- isomorphic) when the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
+To understand equivalent categories better, let's go back to the functor between a given map and the area it represents (we will only consider the thin categories (AKA preorders) for now). This functor would be invertible (and the categories --- isomorphic) when the map should represent the area completely i.e. there should be arrow for each road and a point for each little place.
 
 ![Isomorphic categories](../11_natural_transformations/isomorphic_map.svg)
 
@@ -84,23 +84,23 @@ However, going from one of them to the other would lead you at least to an *isom
 
 ![Equivalent categories](../11_natural_transformations/equivalent_map_equivalence.svg)
 
-In this case we say that the orders are *equivalent*.
+In this case we say that the preorders are *equivalent*.
 
 ### Defining equivalence in terms of objects
 
-We know that two orders are isomorphic if there are two functors, such that going from one to the other and back again leads you to the same object.
+We know that two preorders are isomorphic if there are two functors, such that going from one to the other and back again leads you to the same object.
 
-And two orders are equivalent if going from one of them to the other and back again leads you to the same object, *or to an object that is isomorphic to the one you started with.* 
+And two preorders are equivalent if going from one of them to the other and back again leads you to the same object, *or to an object that is isomorphic to the one you started with.* 
 
-![Equivalent orders](../11_natural_transformations/equivalent_orders.svg)
+![Equivalent preorders](../11_natural_transformations/equivalent_orders.svg)
 
-But when does this happen? To understand this, we plot the orders as a Hasse diagram.
+But when does this happen? To understand this, we plot the preorders as a Hasse diagram.
 
-![Equivalent orders](../11_natural_transformations/equivalent_orders_hasse.svg)
+![Equivalent preorders](../11_natural_transformations/equivalent_orders_hasse.svg)
 
 You can see that, although not all objects are connected one-to-one, *all objects at a given level are connected to objects of the corresponding level*.
 
-To formalize that notion, we remember the concept of *equivalence classes* that we covered in the chapter about orders. Let's visualize the relationship of the equivalence classes of the two orders that we saw above.
+To formalize that notion, we remember the concept of *equivalence classes* that we covered in the chapter about orders. Let's visualize the relationship of the equivalence classes of the two preorders that we saw above.
 
 ![Orders with isomorphic equivalence classes](../11_natural_transformations/equivalent_order_classes.svg)
 
@@ -108,15 +108,15 @@ You can see that they are isomorphic. And that is no coincidence:
 
 {: .definition}
 
-> Two orders are equivalent precisely when the orders made of their equivalence classes are isomorphic.
+> Two preorders are equivalent precisely when the preorders made of their equivalence classes are isomorphic.
 
-This is a definition for equivalence of orders, but unfortunately, it does not hold for all categories --- when we are working with orders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e. to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
+This is a definition for equivalence of preorders, but unfortunately, it does not hold for all categories --- when we are working with preorders, we can get away by just thinking about *objects*, but categories demands that we think about morphisms i.e. to prove two categories are equivalent, we should establish an isomorphism between their *morphisms*. 
 
 For example, the following two categories are *not* equivalent, although their equivalence classes are isomorphic --- the category on the left has just one morphism, but the category on the right has two.
 
 ![Non-equivalent categories](../11_natural_transformations/unequal_categories.svg)
 
-One way of defining equivalence of categories is by generalizing the notion of equivalence classes of orders to what we call *skeletons* of categories, a skeleton of a category being a subcategory in which all objects that are isomorphic to one another are "merged" into one object (isomorphic objects are necessarily identical).
+One way of defining equivalence of categories is by generalizing the notion of equivalence classes of preorders to what we call *skeletons* of categories, a skeleton of a category being a subcategory in which all objects that are isomorphic to one another are "merged" into one object (isomorphic objects are necessarily identical), i.ethe skeleton of a preorder is a partial order.
 
 However, we will leave this (pardon my French) as an *exercise for the reader*. Why? We already did this when we generalized the notion of normal set-theoretic functions to *functors*, and so it makes more sense to build up on that notion. Also, we need a motivating example for introducing natural transformations, remember?
 
@@ -258,7 +258,7 @@ Now, we will show how these two notions are formalized by the definition that we
 
 {: .definition}
 
-> Two **categories** $A$ and $B$ are **equivalent** (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{A}$ and $g \circ f \cong ID_{A}$.
+> Two **categories** $A$ and $B$ are **equivalent** (or $A \simeq B$) if there exist *functors* $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g \cong ID_{A}$ and $g \circ f \cong ID_{B}$.
 
 To understand, this how are the two related, let's construct the identity functor of the category that we have been using as an example all this time. Note that we are drawing the one and the same category two times (as opposed to just drawing an arrow coming from each object to itself), to make the diagrams more readable.
 

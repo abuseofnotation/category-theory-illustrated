@@ -177,7 +177,7 @@ All numerical operations can be expressed as functions acting on the set of (dif
 
 ### Number sets
 
-Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {1, 2, 3... }$. 
+Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {0, 1, 2, 3... }$. 
 
 ### Number functions
 
@@ -352,9 +352,9 @@ Isomorphism means "same form" in Greek (although actually their form is the only
 
 {: .definition}
 
-> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
 
-Notice how the identity function comes in handy.
+(Notice how the identity function comes in handy).
 
 ### Isomorphism and identity
 
@@ -396,7 +396,7 @@ $g \circ g' = id$
 
 which is true, because $g$ and $g'$ are isomorphic and isomorphic functions composed are equal to identity.
 
-By the way, there is another way to obtain the isomorphism &mdash; by composing the two morphisms one way in order to get the third function and then taking its reverse. But to do this, we have to prove that the function we get from composing two bijective functions is also bijective. 
+By the way, there is another way to obtain the isomorphism &mdash; by composing the two morphisms one way in order to get the third function and then taking its reverse. But to do this, we have to prove that the function we get from composing two isomorphisms is also an isomorphism. 
 
 ### Isomorphisms Between Singleton Sets
 
@@ -552,7 +552,7 @@ Yes. As the singleton set contains exactly one element, so there is only one way
 
 **Task 6: **Again, what about the other way around? 
 
-For any set $A$, there is one function from a singleton set to $A$ (i.e. $\emptyset \to A$, for each element of $A$. We will encounter these functions in the following chapter.
+For any set $A$, there is one function from a singleton set to $A$ (i.e. $\1 \to A$, for each element of $A$. We will encounter these functions in the following chapter.
 
 ---
 

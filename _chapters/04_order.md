@@ -53,7 +53,7 @@ Incidentally, (or rather not incidentally at all), these rules are nearly equiva
 
 {: .definition}
 
->A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymetry, totality.
+>A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymmetry, totality.
 
 Let's check what they are.
 
@@ -515,7 +515,7 @@ State machines are, however not Turing-complete, that is, they cannot encode any
 |---   | ---   | ---        |
 -->
 
-## Orders as categories
+## Preorders as categories
 
 We saw that preorders are a powerful concept, so let's take a deeper look at the law that governs them --- the transitivity law. What this law tells us that if we have two pairs of relationship $a ≤ b$ and $b ≤ c$, then we automatically have a third one $a ≤ c$. 
 
@@ -539,11 +539,9 @@ Looks like we have law number 2 covered, with transitivity. What about the ident
 
 ![Reflexivity](../04_order/reflexivity.svg)
 
-So it's official --- preorders are categories (sounds kinda obvious, especially after we also saw that orders can be reduced to sets and functions using the inclusion order, and sets and functions form a category in their own right).
+So it's official --- preorders are categories (sounds kinda obvious, especially after we also saw that preorders can be reduced to sets and functions using the inclusion order, and sets and functions form a category in their own right).
 
-And since partial orders and total orders are preorders too, they are categories as well. 
-
-Orders are special types of categories (all orders are categories, but not all categories are orders). Most categories have many different morphisms between given two objects. For example, in the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
+Preorders are special types of categories (all preorders are categories, but not all categories are preorders). Most categories have many different morphisms between given two objects. For example, in the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
 
 ![Orders compared to other categories](../04_order/order_category.svg)
 
@@ -553,9 +551,18 @@ Whereas preorders, two object, whereas have *at most one morphism*, that is, we 
 
 So, like a monoid is a category that has one object, an order is a category that has at most one *morphism* between two objects. 
 
-An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in orders *all diagrams commute*.
+An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in preorders *all diagrams commute*.
 
 **Task 6:** Prove this. 
+
+
+### Partial orders and total orders as categories
+
+We said that partial orders and total orders are preorders. This means that they are categories as well. 
+
+Preorders in particular are what is known in category theory as *skeletal* categories --- categories in which there are no isomorphic objects i.e. in which all isomorphic objects are identical.
+
+And total orders I guess we don't have a specific "categorical" name for them, but they are a certain type of categories as well.
 
 ### Products and coproducts
 

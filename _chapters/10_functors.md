@@ -81,7 +81,7 @@ It can alternatively be viewed as two "twin" functions such that each of which e
 
 {: .definition}
 
-> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{A}$.
+> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
 
 ### Order isomorphisms
 
@@ -198,7 +198,7 @@ So this definition translates to the following two *functor laws*
 > 1. Functions between morphisms should *preserve identities* i.e. all identity morphisms should be mapped to other identity morphisms.
  ![Functor](../10_functors/functor_laws_identity.svg)
 >
-> 2. Functors should also *preserve composition* i.e. for any two morphisms $f$ and $g$, the morphism that corresponds to their composition $F(g•f)$ in the source category should be mapped to the morphism that corresponds to the composition of their counterparts in the target directory, so $F(g•f) = F(g)•F(f)$.
+> 2. Functors should also *preserve composition* i.e. for any two morphisms $f$ and $g$, the morphism that corresponds to their composition $F(g•f)$ in the source category should be mapped to the morphism that corresponds to the composition of their counterparts in the target category, so $F(g•f) = F(g)•F(f)$.
 >
 >![Functor](../10_functors/functor_laws_composition.svg)
 
@@ -404,7 +404,7 @@ $$a ≤ b \to F(a) ≤ F(b)$$
 
 and 
 
-$$b ≤ c \to F(a) ≤ F(b)$$
+$$b ≤ c \to F(b) ≤ F(c)$$
 
 then obviously 
 
@@ -432,7 +432,7 @@ Another interesting property of these functions is that most of them *preserve* 
 
 {: .theorem}
 
-> Linear functions are just functors between the group of natural numbers under addition and itself.
+> Linear functions are just functors between the monoid of natural numbers under addition and itself.
 
 As we will see later, they are example of functors in the *category of vector spaces.
 
@@ -614,7 +614,7 @@ The answer is this:
 
 ![the finite category 2](../10_functors/finite_two_task_solution.svg)
 
-Isomorphisms are equaluty in category theory, so flipping the arrow from the left to the right doesn't count as a new category.
+Isomorphism means equality in category theory, so flipping the arrow from the left to the right doesn't count as a new category.
 
 For the third category we have to specify what composing the morphism with itself would yield: 
 

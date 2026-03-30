@@ -434,13 +434,13 @@ Aside from being an alternative to classical logic, the BHK interpretation is in
 
 Such higher-level interpretations of logic are sometimes called *algebraic* interpretations, *algebraic* being an umbrella term describing all structures that can be represented using category theory, like groups and orders.
 
-So, you might suspect already: objects are propositions and morphisms are proofs. And a logical system any logical system can be seen as a category.
+So, you might suspect already: objects are propositions and morphisms are proofs. And a logical system can be seen as a category.
 
 But as usual there is a caveat --- not all categories can be converted to logical systems, only some of them. So, to conclude our theorem, we will enumerate the criteria that a given category has to adhere to, in order for it to be "logical". These criteria have to guarantee that the category has an object that corresponds to every valid logical propositions and that no objects corresponds to an invalid ones. 
 
 ![Logic as a category](../05_logic/logic_curry_category.svg)
 
-Categories that adhere to these criteria are called *bicartesian closed categories*. To describe them here directly, but instead we would start with a similar but simpler structures that we already examined --- orders.
+Categories that adhere to these criteria are called *bicartesian closed categories*.  But before describing them them directly, we would start with a similar but simpler structures that we already examined --- orders.
 
 **Task 5:** There is a special types of programming languages called "proof assistants" that help you verify logical proofs. Install a proof assistant and try to see how it works. I recommend the Coq Tutorial by Mike Nahas for Coq/Roql, the Natural Numbers Game for Lean or the HoTT Game for Agda.
 
@@ -695,7 +695,7 @@ In the BHK interpretation, the proof of $A ∨ B$ the well-known disjoint union/
 **Task 3**: Verify there cannot exist a function from any set to the empty set.
 
 For any non-empty set $A$, there cannot be a function $f: A → ∅$ because:
-A function must assign to each element of $A$ exactly one element of $∅$ ut ∅ has no elements, so there's nothing to assign.
+A function must assign to each element of $A$ exactly one element of $∅$ but ∅ has no elements, so there's nothing to assign.
 
 The only exception is when $A$ is also empty (see next question).
 

@@ -393,7 +393,7 @@ And, again, since the empty set is the only set that has this property, we can r
 
 > The empty set is a set such that there exists a function from it to any other set.
 
-*Task 3:* why is the functions to the empty set unique?
+*Task 3:* why is the function from the empty set unique?
 
 ![Initial object](../02_category/initial_object.svg)
 
@@ -621,7 +621,7 @@ Or quite simply
 
 Incidentally, this is the definition of a mathematical law called _commutativity_.
 
-A simple context where this law applies --- the natural numbers are commutative under the operation of addiction, e.g. 1 + 2 = 2 + 1 (we will learn more about this in the chapter on groups).
+A simple context where this law applies --- the natural numbers are commutative under the operation of addition, e.g. 1 + 2 = 2 + 1 (we will learn more about this in the chapter on groups).
 
 **Task 5:** If our objects are sets, what set operations can play the part of the dot in this example (i.e. which ones are commutative)?
 
@@ -722,7 +722,7 @@ So, there is exactly one function from $1 \to 1$. But functions $1 \to X$ corres
 
 ---
 
-**Task 3:** Why is the function to the empty set unique?
+**Task 3:** Why is the function from the empty set unique?
 
 As we established, there is exactly one such function, the peculiar "empty function".
 
