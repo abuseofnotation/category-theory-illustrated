@@ -552,7 +552,7 @@ Yes. As the singleton set contains exactly one element, so there is only one way
 
 **Task 6: **Again, what about the other way around? 
 
-For any set $A$, there is one function from a singleton set to $A$ (i.e. $\1 \to A$, for each element of $A$. We will encounter these functions in the following chapter.
+For any set $A$, there is one function from a singleton set to $A$ (i.e. $1 \to A$, for each element of $A$. We will encounter these functions in the following chapter.
 
 ---
 
