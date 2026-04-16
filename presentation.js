@@ -59,6 +59,8 @@
     }
     document.getElementById('next').onclick = next
     document.getElementById('prev').onclick = prev
+    document.getElementById('next').style.display = "none"
+    document.getElementById('prev').style.display = "none"
 
     // Enable scrolling through the presentation
     // with keyboard left and right arrows
