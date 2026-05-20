@@ -14,7 +14,7 @@ Mathematically, the order as a construct is represented (much like a monoid) by 
 
 {: .definition}
 
->An order is a set of elements, together with a *binary relation* between the elements of the set, which obeys certain laws.
+>An order is a set of elements, together with a *binary relation* between the elements of the set, that obeys certain laws.
 
 We denote the elements of our set, as usual, like this.
 
@@ -53,7 +53,7 @@ Incidentally, (or rather not incidentally at all), these rules are nearly equiva
 
 {: .definition}
 
->A linear order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity, antisymmetry, totality.
+>A linear order is a set of elements, together with a *binary relation* between the elements of the set, that obeys the laws of reflexivity, transitivity, antisymmetry, totality.
 
 Let's check what they are.
 
@@ -127,7 +127,7 @@ Remove the law of totality from the laws of linear orders and we get a *partial 
 
 {: .definition}
 
->An partial order is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity, transitivity and antisymmetry.
+>An partial order is a set of elements, together with a *binary relation* between the elements of the set, that obeys the laws of reflexivity, transitivity and antisymmetry.
 
 Every linear order is also a partial order (just as a group is still a monoid), but not the other way around. 
 
@@ -425,7 +425,7 @@ The result is a structure called a *preorder*:
 
 {: .definition}
 
->An preorder is a set of elements, together with a *binary relation* between the elements of the set, which obeys the laws of reflexivity and transitivity.
+>An preorder is a set of elements, together with a *binary relation* between the elements of the set, that obeys the laws of reflexivity and transitivity.
 
 Preorder is not exactly an order in the everyday sense --- it can have arrows coming from any point to any other: if a partial order can be used to model who is better than who at soccer, then a preorder can be used to model who has beaten who, either directly (by playing him) or indirectly.
 

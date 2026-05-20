@@ -10,7 +10,7 @@
    viewBox="0 0 595.3 243.5"
    version="1.1"
    id="svg15613"
-   sodipodi:docname="join_bigger_true.svg"
+   sodipodi:docname="join_true_answer.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    width="595.29999"
    height="243.5">
@@ -22,6 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -40,9 +41,9 @@
      inkscape:window-height="836"
      id="namedview15615"
      showgrid="false"
-     inkscape:zoom="3.9437014"
-     inkscape:cx="295.9873"
-     inkscape:cy="132.7754"
+     inkscape:zoom="0.6971545"
+     inkscape:cx="388.21594"
+     inkscape:cy="181.41704"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -53,18 +54,18 @@
   <g
      inkscape:transform-center-y="-7.1122447"
      inkscape:transform-center-x="5.0319336"
-     transform="matrix(0.45544351,-0.01539291,0.0536615,0.63475329,294.74692,-171.48262)"
+     transform="matrix(0.45544351,-0.01539291,0.0536615,0.63475329,308.0884,-186.17439)"
      id="g1482-7-0-1-0-3-6"
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.38899994;stroke-miterlimit:10" />
   <g
      inkscape:transform-center-y="-7.1122447"
      inkscape:transform-center-x="5.0319336"
-     transform="matrix(0.45544351,-0.01539291,0.0536615,0.63475329,302.84817,-974.16306)"
+     transform="matrix(0.45544351,-0.01539291,0.0536615,0.63475329,316.18965,-988.85482)"
      id="g1482-7-0-1-0-3-6-7"
      style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:6.38899994;stroke-miterlimit:10" />
   <g
      id="g2836-2-5-3-4"
-     transform="matrix(1.9784478,-1.9258505,2.3713778,2.3266167,-583.62307,370.29853)">
+     transform="matrix(1.9784478,-1.9258505,2.3713778,2.3266167,-570.28159,355.60676)">
     <path
        d="m 273.21167,117.26782 c -0.57835,-0.53701 -1.18546,-1.05059 -1.82141,-1.54094 0.005,0.90274 -0.23069,1.50591 -0.26419,2.48087 1.09658,-0.45317 1.14943,-0.45438 2.0856,-0.93993 z"
        id="path1478-7-9-0-19-0-0-3-9-2-9"
@@ -79,12 +80,33 @@
        style="display:inline;fill:none;stroke:#838383;stroke-width:1.18987;stroke-miterlimit:10;stroke-dasharray:none;paint-order:markers fill stroke" />
   </g>
   <g
+     id="g2840-8-6"
+     transform="matrix(1.2139477,0,0,1.2139477,-110.19155,96.824477)">
+    <g
+       id="g14671"
+       transform="translate(-34.145105,-11.267885)">
+      <circle
+         cx="287.10617"
+         cy="-66.750526"
+         id="circle3371-3-2-2"
+         style="opacity:0.12999998;fill:#000000;stroke:#333333;stroke-width:6.93699121;stroke-miterlimit:10"
+         r="28.441664"
+         transform="scale(1,-1)" />
+      <circle
+         style="fill:#39bced;stroke:#008dd2;stroke-width:4.23591661;stroke-miterlimit:10"
+         id="circle15605-5-5-8"
+         r="30.216249"
+         cy="64.024811"
+         cx="281.5965" />
+    </g>
+  </g>
+  <g
      style="fill:#000000;stroke:#333333"
-     transform="matrix(1.4035241,0,0,-1.4035241,104.89974,403.90344)"
+     transform="matrix(1.4035241,0,0,-1.4035241,118.24121,389.21167)"
      id="g5757-5-2-9" />
   <g
      id="g2836-2-5-3-4-9"
-     transform="matrix(-2.7609978,0.00685425,-0.06815121,3.3214354,1089.0005,-309.35652)">
+     transform="matrix(-2.7609978,0.00685425,-0.06815121,3.3214354,1102.342,-324.04829)">
     <path
        d="m 273.21167,117.26782 c -0.57835,-0.53701 -1.18546,-1.05059 -1.82141,-1.54094 0.005,0.90274 -0.23069,1.50591 -0.26419,2.48087 1.09658,-0.45317 1.14943,-0.45438 2.0856,-0.93993 z"
        id="path1478-7-9-0-19-0-0-3-9-2-9-7"
@@ -100,7 +122,7 @@
   </g>
   <g
      id="g4977"
-     transform="matrix(1.4035241,0,0,1.4035241,-864.09488,1063.0937)">
+     transform="matrix(1.4035241,0,0,1.4035241,-848.35037,1042.9263)">
     <g
        style="fill:#000000;stroke:#333333"
        transform="matrix(1,0,0,-1,748.97747,-597.53202)"
@@ -136,7 +158,7 @@
   </g>
   <g
      id="g2836-2-5-3-4-9-4"
-     transform="matrix(2.7609978,-0.00685425,0.06815121,-3.3214354,-407.74328,491.57646)">
+     transform="matrix(2.7609978,-0.00685425,0.06815121,-3.3214354,-391.35897,477.13826)">
     <path
        d="m 273.21167,117.26782 c -0.57835,-0.53701 -1.18546,-1.05059 -1.82141,-1.54094 0.005,0.90274 -0.23069,1.50591 -0.26419,2.48087 1.09658,-0.45317 1.14943,-0.45438 2.0856,-0.93993 z"
        id="path1478-7-9-0-19-0-0-3-9-2-9-7-7"
@@ -152,7 +174,7 @@
   </g>
   <g
      id="g2762-1-3"
-     transform="matrix(0.93934489,0,0,0.93934489,-26.8188,3.516468)">
+     transform="matrix(0.93934489,0,0,0.93934489,-13.477333,-11.175303)">
     <circle
        cx="323.01764"
        cy="91.036781"
@@ -181,44 +203,5 @@
        d="M 326.6431,82.826944 V 112.81938"
        id="path14709-8"
        inkscape:connector-curvature="0" />
-  </g>
-  <g
-     id="g2836-2-5-3-4-5"
-     transform="matrix(2.2847091,-1.5502452,-1.8015958,-2.7912058,-51.885117,871.937)"
-     inkscape:transform-center-x="-15.769184"
-     inkscape:transform-center-y="-21.821696">
-    <path
-       d="m 273.21167,117.26782 c -0.57835,-0.53701 -1.18546,-1.05059 -1.82141,-1.54094 0.005,0.90274 -0.23069,1.50591 -0.26419,2.48087 1.09658,-0.45317 1.14943,-0.45438 2.0856,-0.93993 z"
-       id="path1478-7-9-0-19-0-0-3-9-2-9-3"
-       inkscape:connector-curvature="0"
-       style="display:inline;fill:#dddddd;stroke:#838383;stroke-width:2.33962011;stroke-miterlimit:10"
-       sodipodi:nodetypes="cccc" />
-    <path
-       sodipodi:nodetypes="cc"
-       d="m 216.78428,127.77866 c 12.10435,-7.21944 41.96002,-12.58655 54.7171,-10.68914"
-       id="path1480-1-3-1-5-7-6-7-2-0-2-5"
-       inkscape:connector-curvature="0"
-       style="display:inline;fill:none;stroke:#838383;stroke-width:1.18987;stroke-miterlimit:10;stroke-dasharray:none;paint-order:markers fill stroke" />
-  </g>
-  <g
-     id="g2840-8-6"
-     transform="matrix(1.2139477,0,0,1.2139477,-123.53303,111.51625)">
-    <g
-       id="g14671"
-       transform="translate(-34.145105,-11.267885)">
-      <circle
-         cx="287.10617"
-         cy="-66.750526"
-         id="circle3371-3-2-2"
-         style="opacity:0.12999998;fill:#000000;stroke:#333333;stroke-width:6.93699121;stroke-miterlimit:10"
-         r="28.441664"
-         transform="scale(1,-1)" />
-      <circle
-         style="fill:#39bced;stroke:#008dd2;stroke-width:4.23591661;stroke-miterlimit:10"
-         id="circle15605-5-5-8"
-         r="30.216249"
-         cy="64.024811"
-         cx="281.5965" />
-    </g>
   </g>
 </svg>

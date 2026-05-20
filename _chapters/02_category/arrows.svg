@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:i="&amp;#38;ns_ai;"
+   xmlns:i="&amp;#38;#38;ns_ai;"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -13,7 +13,7 @@
    version="1.1"
    id="svg1893"
    sodipodi:docname="arrows.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata1899">
     <rdf:RDF>
@@ -36,19 +36,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2276"
-     inkscape:window-height="1283"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
      id="namedview1895"
      showgrid="false"
      inkscape:snap-bbox="true"
      inkscape:snap-global="true"
      inkscape:zoom="2.3349572"
-     inkscape:cx="326.82094"
+     inkscape:cx="218.68191"
      inkscape:cy="50.881862"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g1889" />
+     inkscape:current-layer="switch1891" />
   <switch
      transform="translate(0 -209)"
      id="switch1891">
@@ -57,27 +57,25 @@
        id="g1889"
        transform="translate(10.178158,5.8979328)">
       <circle
-         cx="381.58987"
-         cy="291.34216"
+         cx="375.16577"
+         cy="291.77045"
          r="30.896246"
          id="circle266-9"
-         style="opacity:0.13;stroke:#000000;stroke-width:7.53567;stroke-miterlimit:10" />
+         style="opacity:0.12999998;stroke:#000000;stroke-width:7.5356698;stroke-miterlimit:10" />
       <circle
-         cy="119.77"
-         cx="454.19"
+         cy="124.23663"
+         cx="452.31204"
          stroke-miterlimit="10"
          transform="rotate(22.196)"
          r="33.001999"
-         fill="#999491"
-         stroke="#858585"
-         stroke-width="8.049"
-         id="circle1877" />
+         id="circle1877"
+         style="fill:#999491;stroke:#858585;stroke-width:4.14900017;stroke-miterlimit:10;stroke-dasharray:none" />
       <circle
-         cx="197.73561"
-         cy="292.48212"
+         cx="198.16388"
+         cy="289.05594"
          r="30.896246"
          id="circle266-9-3"
-         style="opacity:0.13;stroke:#000000;stroke-width:7.53567;stroke-miterlimit:10" />
+         style="opacity:0.12999998;stroke:#000000;stroke-width:7.5356698;stroke-miterlimit:10" />
       <path
          d="m 222.375,263.16 c 0,0 1.349,-0.377 3.681,-0.949 1.228,-0.316 2.577,-0.693 4.235,-1.076 1.658,-0.384 3.438,-0.828 5.526,-1.279 8.045,-1.796 18.933,-3.538 29.841,-4.411 10.909,-0.874 22.025,-0.825 30.314,-0.252 4.084,0.317 7.607,0.473 9.961,0.77 l 1.486,0.14 1.919,-14.87 c 10.605,6.895 20.3,14.39 28.774,22.49 a 189.074,189.074 0 0 0 -32.943,11.372 l 1.797,-14.81 -1.486,-0.142 c -2.353,-0.297 -5.755,-0.513 -9.774,-0.715 -8.102,-0.52 -18.91,-0.575 -29.632,0.352 -10.787,0.813 -21.366,2.549 -29.289,4.284 -1.966,0.39 -3.746,0.835 -5.404,1.218 -1.658,0.384 -3.007,0.76 -4.112,1.016 -2.333,0.572 -3.56,0.888 -3.56,0.888 z"
          fill="#9d539f"
@@ -99,15 +97,13 @@
          stroke-width="0.3"
          id="path1885" />
       <circle
-         cy="191.463"
-         cx="286.21701"
+         cy="188.9061"
+         cx="287.94907"
          stroke-miterlimit="10"
          transform="rotate(22.196)"
          r="33.001999"
-         fill="#b5b5b1"
-         stroke="#878578"
-         stroke-width="8.049"
-         id="circle1887" />
+         id="circle1887"
+         style="fill:#b5b5b1;stroke:#878578;stroke-width:4.14900017;stroke-miterlimit:10;stroke-dasharray:none" />
     </g>
     <circle
        cx="390.29419"

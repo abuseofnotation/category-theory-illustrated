@@ -20,7 +20,7 @@ So, we may say:
 > Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form ("formally"). 
 > On top of that, logic tries to organize those rules in *logical systems* (or *formal systems* as they are also called).
 
-Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory, as we described it in the first chapter --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way, which we will understand later. So, let's begin.
+Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way, which we will understand later. So, let's begin.
 
 ### Primary propositions
 
@@ -32,23 +32,27 @@ In the context of logic itself, these propositions are abstracted away (i.e. we 
 
 ### Composing propositions
 
-At the heart of logic, as in category theory, is the concept of *composition* --- if we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operators, like "and", "or" "follows" etc. The results would be new propositions, which we might call *composite propositions* to emphasize the fact that they are not primary. 
+At the heart of logic, as in category theory, is the concept of *composition* --- if we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operators, like "and", "or" and "follows".
 
-This composition resembles the way in which two monoid objects are combined into one using the monoid operation. Actually, some logical operations do form monoids, like for example the operation *and*, with the proposition $true$ serving as the identity element.
+The results will be new propositions, which we might call *composite propositions* (to emphasize the fact that they are not primary). 
+
+![Composite propositions --- a ∧ b, a ∨ b, a -> b](../05_logic/logic_composite_propositions.svg)
+
+Note that $∧$ is the symbol for *and* and $∨$ is the symbol for $or$ and $\to$ is the symbol for *follows*.
+
+It is important to emphasize that propositions that are composed of several premises (symbolized by gray balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls) and that they compose in the same way (although in the leftmost proposition the green ball is wrapped in a gray ball to make the diagram prettier).
+
+![Balls as propositions](../05_logic/balls_propositions.svg)
+
+You might think that composition of logical propositions resembles the way in which two monoid objects are combined into one using the monoid operation. Actually, some logical operations do form monoids, like for example the operation *and*, with the proposition $true$ serving as the identity element.
 
 ![Logical operations that form monoids](../05_logic/logic_monoid.svg)
 
-However, unlike monoids/groups, logics study combinations not just with one but with *many* logical operations and *the ways in which they relate to one another*, for example, in logic we might be interested in the law of distributivity of *and* and $or$ operations and what it entails.
+However, unlike monoids/groups, logics study combinations not just with one but with *many* logical operations and *the ways in which they relate to one another*, for example, in logic we might be interested in the law of distributivity of *and* and $or$ operations, which is represented by the following *tautology* (we will explain what that means later).
 
 ![The distributivity operation of "and" and "or"](../05_logic/logic_distributivity.svg)
 
-Important to note that $∧$ is the symbol for *and* and $∨$ is the symbol for $or$ (although the law above is actually valid even if *and* and $or$ are flipped).
-
-### The equivalence of primary and composite propositions
-
-When looking at the last diagram, it is important to emphasize that,  propositions that are composed of several premises (symbolized by gray balls, containing some other balls) are not in any way different from "primary" propositions (single-color balls) and that they compose in the same way (although in the leftmost proposition the green ball is wrapped in a gray ball to make the diagram prettier).
-
-![Balls as propositions](../05_logic/balls_propositions.svg)
+Note that $∧$ is the symbol for *and* and $∨$ is the symbol for $or$ (although the law above is actually valid even if *and* and $or$ are flipped).
 
 ### Modus ponens
 
@@ -118,7 +122,7 @@ This structure (the one that looks like a coloring book in our example) is calle
 
 {: .definition}
 
-> An axiom schema is a formula (containing variables), from which we can derive propositions (by replacing those variables with proposition).
+> An axiom schema is a formula (containing variables), from which we can derive propositions (by replacing those variables with propositions).
 
 Note that the propositions that we plug into the schema don't have to be primary. For example, having the proposition $a$ (that is symbolized below by the orange ball) and the proposition stating that $a$ implies $a \lor b$ (which is one of the tautologies that we saw above), we can plug those propositions into the *modus ponens* and prove that $a \lor b$ is true. 
 
@@ -152,9 +156,13 @@ We will look into two interpretations --- one very old and the other, relatively
 
 The above is a summary of a worldview that is due to the Greek philosopher Plato and is sometimes called Plato's *theory of forms*. Originally, the discipline of logic represents an effort to think and structure our thoughts in a way that they apply to this world of forms i.e. in a "formal" way. Today, this original paradigm of logic is known as "classical logic". Although it all started with Plato, most of it is due to the 20th century mathematician David Hilbert.
 
-The existence of the world of forms implies that, even if there are many things that we, people, don't know and would not ever know, at least *somewhere out there* there exists an answer to every question. In logic, this translates to *the principle of bivalence* that states that *each proposition is either true or false*. And, due to this principle, propositions in classical logic can be aptly represented in set theory by the boolean set, which contains those two values.
+The existence of the world of forms implies that, even if there are many things that we, people, don't know and would not ever know, at least *somewhere out there* there exists an answer to every question. In logic, this translates to *the principle of bivalence* that states that *each proposition is either true or false*. 
 
-![The set of boolean values](../05_logic/boolean_set.svg)
+![The boolean values --- True and False](../05_logic/true_false.svg)
+
+Due to this principle, propositions in classical logic can be aptly represented in set theory by the boolean set, which contains those two values.
+
+![The set of boolean values --- Contains the values True and False](../05_logic/boolean_set.svg)
 
 Logical operators, then, are just our all-too-familiar functions.
 
@@ -340,7 +348,7 @@ Here is a definition of the BHK interpretation (note that the BHK interpretation
 > 2. A *logical operator* is a construction that unites several proofs into another proof.
 > 3. A *composite proposition* is something for which a proof can be constructed, by combining primary propositions using logical operators.
 
-The original formulation of the BHK interpretation is not based on any particular mathematical theory. Here, we will first illustrate it using the language of set theory (just so we can abandon it a little later).
+The original formulation of the BHK interpretation is not based on any particular mathematical theory.  Here, we will first illustrate it using the language of set theory (just so we can abandon it a little later).
 
 ### The And and Or operations
 
@@ -359,15 +367,15 @@ The principle for determining whether the proposition is true or false is simila
 
 ### The Implies operation
 
-Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist an arrow which can convert a proof of $A$ to a proof of $B$. 
+Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist arrows that can convert a proof of $A$ to a proof of $B$. 
 
 ![Implies in the BHK interpretation](../05_logic/bhk_implies.svg)
 
-But in order to use about the proof, we need to also have an implies *set*, or a *homomorphism set* as it is called in set theory), that is, a set containing all arrows between given two objects with one element for each arrow.
+But in order to use about the proof, we need to also have an implies *set*, or a *homomorphism set* as it is called in set theory), that is, a set containing all arrows between given two objects, with one element for each arrow.
 
 ![Implies object in the BHK interpretation](../05_logic/bhk_implies_object.svg)
 
-If we have that set, the *modus ponens* rule of inference is nothing more than the process of *functional application*. i.e. if we have a pair, containing a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
+Then, *modus ponens* is nothing more than the process of *functional application*. i.e. if we have a pair, containing a proof of $A$ and a function $A \to B$ we can call this function to obtain a proof of $B$.
 
 ### The If and only if operation
 
@@ -381,11 +389,11 @@ In the section on classical logic, we proved that two propositions $A$ and $B$ a
 
 So according to BHK interpretation saying that $A$ is true, means that that we possess a proof of $A$ --- simple enough. But it's a bit harder to express the fact that $A$ is false: it is not enough to say that we *don't have a proof* of $A$ (the fact that don't have it, doesn't mean it doesn't exist). Instead, we must show that claiming that $A$ is true leads to a *contradiction*.
 
-To express this, intuitionistic logic defines the constant $⊥$ which plays the role of *False* (also known as the "bottom value"). $⊥$ is defined as the proof of a formula that does not have any proofs. And the equivalent of false propositions are the ones that imply that the bottom value is provable (which is a contradiction). So instead of 
+To express this, intuitionistic logic defines the constant $⊥$ which plays the role of *False* (also known as the "bottom value"). $⊥$ is defined as the proof of a formula that does not have any proofs. And the equivalent of false propositions are the ones that imply that the bottom value is provable (which is a contradiction). So instead of...
 
 ![Negation in the classical interpretation: Not A](../05_logic/classical_negation.svg)
 
-we can write
+...we can write:
 
 ![Negation in the BHK interpretation: A implies Bottom](../05_logic/bhk_negation.svg)
 
@@ -478,17 +486,15 @@ Logic allows you to combine any two propositions in and *and* or *or* relationsh
 
 And there is one important law of the  *and* and *or* operations, that is not always present in all lattices. It concerns the connection between the two, i.e. way that they distribute, over one another.
 
-![The distributivity operation of "and" and "or"](../05_logic/logic_distributivity.svg)
+{: .definition}
 
-Lattices that obey this law are called *distributive lattices*.
+> A lattice is distributive, if for every three objects $A$, $B$ and $C$, we have $A ∧ (B ∨ C) \cong (A ∧ B) ∨ (A ∧ C)$.
 
 Wait, where have we heard about distributive lattices before? In the previous chapter we said that they are isomorphic to *inclusion orders* i.e. orders of sets, that contain a given collection of elements, and that contain *all combinations* of a given set of elements. The fact that they popped up again is not coincidental --- "logical" orders are isomorphic to inclusion orders. To understand why, you only need to think about the BHK interpretation --- the elements which participate in the inclusion are our prime propositions. And the inclusions are all combinations of these elements, in an *or* relationship (for simplicity's sake, we are ignoring the *and* operation.)
 
 ![A color mixing poset, ordered by inclusion](../05_logic/logic_poset_inclusion.svg)
 
-The *or* and *and* operations (or, more generally, the *coproduct* and the *product*) are, of course, categorically dual, which would explain why the symbols that represent them $\lor$ and $\land$ are the one and the same symbol, but flipped vertically. 
-
-And even the symbol itself looks like a representation of the way the arrows converge. This is probably not the case, as this symbol is used way before Hasse diagrams were a thing --- for all we know the $\lor$ symbol is probably symbolizes the "u" in "uel" (the Latin word for "or") and the *and* symbol is just a flipped "u") --- but I still find the similarity fascinating.
+The *or* and *and* operations (or, more generally, the *coproduct* and the *product*) are, of course, categorically dual, which would explain why the symbols that represent them $\lor$ and $\land$ are the one and the same symbol, but flipped vertically. And even the symbol itself looks like a representation of the way the arrows converge (although it is probably not the case, as this symbol is used way before Hasse diagrams were a thing).
 
 ### The *negation* operation
 
@@ -506,21 +512,26 @@ Conversely, the proof of *True* which we write as $\top$, expressing the stateme
 
 ![True, represented as a Hasse diagram](../05_logic/lattice_true.svg)
 
-So *True* and *False* are just the *greatest* and *least* objects of our order (in category-theoretic terms *terminal* and *initial* object.) 
-
+So *True* and *False* are just the *greatest* and *least* objects of our order (in category-theoretic terms *terminal* and *initial* object). This is another example of the categorical concept of duality --- $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (although if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them). 
 ![The whole logical system, represented as a Hasse diagram](../05_logic/lattice_true_false.svg)
 
-This is another example of the categorical concept of duality --- $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (although if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them). 
-
-In fact, the whole lattice can be turned upside down and (switching the directions of the arrows and the dual concepts True/False and/or) the logic inside it will still be valid!
+So, to summarize, not only should our distributive lattice be *distributive*, but it also has to be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*).
 
 ### The *implies* operation
 
-So, by now we know that our distributive lattice has to also be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*) in order to represent logic. As we said, every lattice has representations of propositions implying one another (i.e. it has arrows), but to really represents a logical system it also has to have *implication objects* i.e. there needs to be a rule that identifies a unique object $A → B$ for each pair of objects $A$ and $B$, such that all axioms of logic are followed. 
+There is one final condition for our logic-representing lattice. 
 
-![Implies operation](../05_logic/implies.svg)
+As we said, every lattice has representations of propositions implying one another (i.e. it has arrows).
 
-We will describe this object in the same way we described all other operations --- by defining a structure consisting of a of objects and arrows in which $A → B$ plays a part. And this structure is actually a categorical reincarnation our favorite rule of inference, the *modus ponens*.
+![An arrow (implication): A -> B](../05_logic/implies.svg)
+
+...but to really represents a logical system, a lattice it also has to have *implication objects* i.e. there needs to be a unique "implies object" $A \Rightarrow B$ for each pair of objects $A$ and $B$, which represents the proposition $A$ implies $B$.
+
+![An arrow object: an object representing A -> B](../05_logic/implies_objects.svg)
+
+In set theory, this object is just the "homomorphism set", the set of arrows, but here we are doing category theory, so we will describe this object in the categorical way: by defining a structure consisting of a of objects and arrows in which $A \Rightarrow B$ plays a part. 
+
+And this structure is actually a categorical reincarnation our favorite rule of inference, the *modus ponens*.
 
 ![Implies operation](../05_logic/implies_modus_ponens.svg)
 
@@ -528,37 +539,47 @@ Modus ponens is the essence of the *implies* operation, and, because we already 
 
 {: .definition}
 
-> The implication object $A → B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A → B) → B$.
+> The implication object $A \Rightarrow B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A \Rightarrow B) → B$.
 
-This definition is not complete, however, because (as usual) $A → B$ is *not the only object* that fits in this formula. For example, the set $A → B ∧ C$ is also one such object, as is $A → B ∧ C ∧ D$ 
+This definition is not complete, however, because (as usual) $A \Rightarrow B$ is *not the only object* that fits in this formula. For example, the set $A \Rightarrow B ∧ C$ is also one such object, as is $A \Rightarrow B ∧ C ∧ D$ 
 
 ![Implies operation with universal property](../05_logic/implies_modus_ponens_impostors.svg)
 
-So how do we set apart the real formula from all those "imposter" formulas? If you remember the definitions of the *categorical product* (or of its equivalent for orders, the *meet* operation) you would already know where this is going: we recognize that $A \to B$ is the upper *limit* of $A → B ∧ C$. So, $A → B ∧ C ∧ D$ and all other imposter formulas that can be in the place of $X$ in $A ∧ X → B$ are below it. The relationship can be described in a variety of ways:
-
-* We can say that $A \to B$ is the most *trivial* result for which the formula $A ∧ X → B$ is satisfied and that all other results are *stronger* 
-* We can say that all other formulas lie *below* $A → B$ in the Hasse diagram (so, the more trivial the result it, the upper it resides in the Hasse diagram).
-* We can say that all other results imply $A \to B$ but not the other way around (which again means the same thing).
+So how do we set apart the real object from all those "imposter" objects? If you remember the definitions of the *categorical product* (or of its equivalent for orders, the *meet* operation) you would already know where this is going: we recognize that $A \Rightarrow B$ is the upper *limit* of $A \Rightarrow B ∧ C$. So, $A \Rightarrow B ∧ C ∧ D$ and all other imposter formulas that can be in the place of $X$ in $A ∧ X → B$ are below it. 
 
 ![Implies operation with universal property](../05_logic/implies_universal_property.svg)
 
-So, after choosing the best way to express the relationship (they are all equivalent) we are ready to present our final definition: 
+The relationship can be described in a variety of ways.
+
+Logically, we say this:
 
 {: .definition}
 
-> The implication object(called also *exponential object* or *internal homomorphism object) $A → B$ is the topmost object which is related to objects $A$ and $B$ in such a way that $A ∧ (A → B) → B$.
+> The *implication proposition* $A \Rightarrow B$ (called also *entailment*) is the most *trivial* proposition $X$ for which the formula $A ∧ X → B$ (i.e. $A ∧ (A \Rightarrow B) → B$) is satisfied.
+
+When we think of *orders*, we can say:
+
+{: .definition}
+
+> The *exponential element* $A \Rightarrow B$ (called also a *relative pseudo-complement* of $A$ in respect to $B$) is the *biggest/topmost* object $X$ such that the meet of $X$ and $A$ is smaller than $B$, so $(A ∧ X) → B$  (i.e. $A ∧ (A \Rightarrow B) → B$).
+
+Finally, here is a general *categorical* definition:
+
+{: .definition}
+
+> The *exponential object* (called also *internal homomorphism object*) $A \Rightarrow B$ is object $X$ such that: 
+> 1. The product of $X$ and $A$ is connected to $B$ with a morphism, so $(A \times X) → B$  (i.e. $A \times (A \Rightarrow B) → B$).
+> 2. For any impostor exponential object$I$, that also has such morphism, there must also exist a unique function (called universal morphism) with the type signature $g: I \to A \to B$, that converts the impostor exponential to the real exponential, such that the morphism connecting the impostor to $B$ would be a result of the composition of $g$.
 
 The existence of this implication object is the final condition for an order/lattice to be a representation of logic.
 
-This definition of implication object is valid specifically for intuitionistic logic. For classical logic, the definition of is simpler --- there $A → B$ is just another way to spell $\lnot A ∨ B$, because of the law of excluded middle. 
+Note that this definition of implication object is valid specifically for intuitionistic logic. For classical logic, the definition of is simpler: because of the law of excluded middle there $A \Rightarrow B$ is just another way to spell $\lnot A ∨ B$.  
 
-{: .nota-bene}
-
-There might be several objects that play the role of $A → B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, implication object is defined *up to a (unique) isomorphism*.
+Note that, as usual, we treat isomorphic objects as equal: there might be several objects that play the role of $A \Rightarrow B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, implication object is defined *up to a (unique) isomorphism*.
 
 ### The *if and only if* operation
 
-When we examined the *if and only if* operation can be defined in terms *implies*, that is $A \leftrightarrow B$ is equivalent to $A \to B \land B \to A$.
+When we examined the *if and only if* operation can be defined in terms *implies*, that is $A \leftrightarrow B$ is equivalent to $A \Rightarrow B \land B \Rightarrow A$.
 
 ![Implies identity](../05_logic/isomorphism.svg)
 
@@ -574,17 +595,13 @@ As we said, the "logical" orders (those who account for all those conditions) ha
 
 {: .definition}
 
-> A order that has joins/meets, greatest/least objects and a implication object is called a Heyting algebra.
+> An order that has joins/meets, greatest/least objects and a implication object is called a Heyting algebra.
 
 And then we say...
 
+{: .definition}
+
 > The logical system of intuitionistic logic can be seen as a Heyting algebra---the "and" and "or" operations are the joins/meets, the values "True" and "False" are the greatest and least objects and the implication operation is the exponential object.
-
-![Heyting algebra](../05_logic/heyting_algebra.svg)
-
-By the way, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
-
-![Boolean algebra](../05_logic/boolean_algebra.svg)
 
 ### Formal definition for categories
 
@@ -596,8 +613,11 @@ We phrased the above definition in terms of *thin* categories (orders), but if w
 
 And then
 
-> The logical system of intuitionistic logic can be seen as a Bicartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
 {: .theorem}
+
+> The logical system of intuitionistic logic can be seen as a Bicartesian Closed Category---the "and" and "or" operations are the product/coproducts, the values "True" and "False" are the initial/terminal objects and the implication operation is the exponential object.
+
+By the way, a lattice can follow the laws of *classical logic*, as well. it has to be *bounded* and *distributive* and in addition to that it has to be *complemented* which is to say that each proposition $A$, there exist an a unique proposition $\neg A$ (such that $A ∨ \neg A = 1$ and $A ∧ \neg A = 0$). These lattices are called *boolean algebras*.
 
 
 ## A taste of categorical logic
@@ -606,64 +626,93 @@ In the previous section we saw some definitions, here we will convince ourselves
 
 ### True and False
 
-The join (or least upper bound) of the *topmost* object $\top$ (which plays the role of the value *True*) and any other object that you can think of, is... $\top$ itself (or something isomorphic to it, which, as we said, is the same thing). This follows trivially from the fact that the join of two objects must be bigger or equal than both of these objects, and that there is no other object that is bigger or equal to the $\top$ is $\top$ itself. This is simply because $\top$ (as any other object) is equal to itself and because there is by definition no object that is bigger than it.
+The join (or least upper bound) of the *topmost* object $\top$ (which plays the role of the value *True*) and any other object that you can think of...
 
-![Implies identity](../05_logic/join_true.svg)
+![The join of True and X: Three Balls, True and X and their join, with arrows pointing from True and X to the join](../05_logic/join_true.svg)
 
-This corresponds to the logical statement that $A \lor \top$ is equal to $\top$ i.e. it is true. Hence, the above observation is a proof of that statement, (an alternative to truth tables).
+...is the $\top$ itself (or something isomorphic to it, which, as we said, is the same thing). 
 
-**Task 7**: Think of the duel situation, with False. What does it imply, logically?
+![The join of True and X: Three Balls, True and X and their join, with arrows pointing from True and X to the join, and one arrow pointing from the join to True](../05_logic/join_true_answer.svg)
+
+This follows trivially from the fact that the join of two objects must be bigger or equal than both of these objects, and by definition the only object that is bigger or equal to the $\top$ is $\top$ itself (this is because $\top$ (as any other object) is equal to itself).
+
+This diagram corresponds to the following logical statement $A \lor \top \cong \top$. So, in order to test if we worked properly, we have to check if this statement is a tautology (and hence a theorem). And indeed it is:
+
+{: .theorem}
+
+> For any object $A$, $A \lor \top = \top$.
+
+**Task 7**: Think of the dual situation, with False. What does it imply, logically?
 
 ### And and Or
-Above, we saw that the join between any random object and the top object is the top object itself. But, does this situation only occur when the second object is $\top$? Wouldn't the same thing happen if $\top$ it is replaced by any other object that is higher than the first one?
 
-![Implies identity](../05_logic/join_bigger_true.svg)
+Let's try something else, take two objects $A$ and $B$ such that there is an arrow between them $A \to B$ and find their join.
 
-The answer is "Yes": when we are looking for the join of two object, we are looking for the *least* upper bound i.e. the *lowest* object that is above both of them. So, any time we have two objects and one is higher than the other, their join would be (isomorphic to) the higher object.
+![Objects A and B, and their join, with an arrow connecting A and B and to arrows from A and B to the join](../05_logic/join_bigger.svg)
 
-![Implies identity](../05_logic/join_bigger.svg)
+When we are looking for the join of two object, we are looking for the *least* upper bound i.e. the *lowest* object that is equal or bigger than both of them. So, any time we have two objects and one is higher than the other, their join would be (isomorphic to) the higher object.
 
-In other words, if $A \to B$, then $A \lor B \leftrightarrow B$
+![Objects A and B, and their join, with an arrow connecting A and B and to arrows and a second arrow from the join to B: B is isomorphic to the join.](../05_logic/join_bigger_answer.svg)
+
+In other words we have a new theorem (which can also be confirmed with truth tables and/or other axioms).
+
+{: .theorem}
+
+> If $A \to B$, then $A \lor B = B$
+
+Note that this is actually a generalization of the previous result, which says that join between any random object and the $\top$ object is  $\top$ itself (since for any object $A$, we always have $A \to \top$).
+
+![Objects A and True, and their join, with an arrow connecting A and True and a second arrow from the join to True: True is isomorphic to the join.](../05_logic/join_bigger_true.svg)
 
 ### Implies
 
-For our first example with implies, let's take the formula $A → B$, and examine the case when $A$ and $B$ are the same object. We said that, $A → B$ ($A → A$ in our case) is the topmost object $X$ for which the criteria given by the formula $A ∧ X → B$ is satisfied. But in this case, the formula is satisfied for any $X$, (because it evaluates to $A ∧ X → A$, which is always true), i.e. the topmost object that satisfies it is... the topmost object there is i.e. (an object isomorphic to) $True$. 
+For our first example with implies, let's take the formula $A \Rightarrow B$ (note that we use a double arrow $\Rightarrow$ so as not to confuse $A \Rightarrow B$ (the object) with $A \to B$ (the statement that $A$ implies $B$). And examine the case when $A$ and $B$ are the same object. 
+
+We said that, $A \Rightarrow B$ ($A \Rightarrow A$ in our case) is the topmost object $X$ for which the criteria given by the formula $A ∧ X → B$ is satisfied. But in this case, the formula is satisfied for any $X$, (because it evaluates to $A ∧ X → A$, which is always true), i.e. the topmost object that satisfies it is... the topmost object there is i.e. (an object isomorphic to) $True$. 
 
 ![Implies identity](../05_logic/implies_identity.svg)
 
-Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotle), namely that $A → A$ is always true, or that everything implies itself (everything follows from itself).
+Does this make sense? Of course it does: in fact, we just proved one of the most famous laws in logic (called the law of identity, as per Aristotle):
+
+{: .theorem}
+
+> For any $A$, $A → A$ is always true, i.e. everything implies itself (everything follows from itself).
 
 And what happens if $A$ implies $B$ in any model, i.e. if $A \models B$ (semantic consequence)? In this case, $A$ would be below $B$ in our Hasse diagram (e.g. $A$ is the blue ball and $B$ is the orange one). Then the situation is somewhat similar to the previous case: $A ∧ X → B$ will be true, no matter what $X$ is (simply because $A$ already implies $B$, by itself). And so $A → B$ will again correspond to the $\top$ object.
 
 ![Implies when A follows from B](../05_logic/implies_b_follows.svg)
 
-This is again a well-known result in logic (if I am not mistaken, it will be a deduction theorem of some sort): if $A \models B$), then the statement $(A → B)$ will always be true.
+This is again a well-known result in logic:
+
+{: .theorem}
+
+> (sometimes called deduction theorem) $A$ implies $B$ in any model, then ($A \models B$), then the statement $(A \Leftarrow B) $ will always be true.
 
 ## Interlude: Free Heyting algebras -- making ourselves a logic
 
-Perhaps the best way to understand the way logic lattices work is to make one ourselves. 
-
-Anyway, making a logical lattice involves picking some primary propositions and graphing the connections between them. First, we pick the primary propositions that we want to work with, those are the statements that depend on our problem domain (or, in this case, just our color preferences). 
+Once we know all this, doing logic is easy: first, we pick the primary propositions that we want to work with, those are the statements that depend on our problem domain (or, in this case, just our color preferences). 
 
 ![Logic as an order](../05_logic/algebra_balls.svg)
 
+Then, depending of the flavor of logic that we selected, in this case intuitionistic logic, we start graphing the *composite propositions*, we have to have $A \land B$,  $A \lor B$ for all $A$s and $B$s.
 
-Then, depending of the flavor of logic that we selected (intuitionistic, boolean), we start graphing the composite propositions, we have to have $A \land B$,  $A \lor B$ for all $A$s and $B$s.
+![Heyting algebra](../05_logic/heyting_algebra.svg)
 
-![Logic as an order](../05_logic/algebra_summary.svg)
+(By the way, we can just as well model Boolean algebra algebraically)
 
-Then, we also have to create a proposition $A \to B$, for all $A$-s and $B$-s, which would make our list of propositions grow indefinitely (side note: drawing such diagrams is very hard and I can never be quite sure which is the correct place for each proposition, so please report me any errors you might see: I can send you a 100$ check, like Donald Knuth, but only if you promise not to cash it, as I am broke)).
+![Boolean algebra](../05_logic/boolean_algebra.svg)
 
-![Logic as an order](../05_logic/algebra_summary_full.svg)
+Then we are able to determine which propositions follow from any proposition by just following the path of the arrows coming from it. 
 
-Whew, that was lengthy. But it is worth it, as when we are finished we will have a list of *all possible propositions that can be true* and we will be able to determine which propositions follow from any proposition by just following the path of the arrows coming from it. 
+![Logic as an order](../05_logic/heyting_algebra_path.svg)
 
-Like, for example, if we discover that the proposition $B \land C$ is true, that implies that both $B$ and $C$ are also true in their own right, (which, in turn, implies that $A \lor B$, $A \lor C$ etc. are true). 
+Note that we also have to graph the compostite of the composite propositions, which will make our list infinite (drawing such diagrams is very hard and I can never be quite sure which is the correct place for each proposition, so please report me any errors you might see: I can send you a 100$ check, like Donald Knuth, but only if you promise not to cash it, as I am broke).
 
-![Logic as an order](../05_logic/algebra_summary_path.svg)
+![Logic as an order](../05_logic/heyting_algebra_full.svg)
 
-In general, doing intuitionistic logic is this --- we start by the things that we already know and then we find the path that leads us to the things that we are interested in proving (or, depending on the viewpoint, we construct the proof by manipulating the proofs that we already have) . The only thing we are not able to do (in intuitionistic logic, specifically) is to prove that a given fact cannot be reached from on our path, that it cannot be proved from the axioms ("you cannot prove a negative").
+In general, doing logic is this --- we start by the things that we already know and then we find the path that leads us to the things that we are interested in proving (or, depending on the viewpoint, we construct the proof by manipulating the proofs that we already have). 
 
+The only thing we are not generally able to do (in intuitionistic logic, specifically) is to prove that a given fact *cannot be reached* from on our path, i.e. that it cannot be proved from the axioms ("you cannot prove a negative").
 
 <!--
 {% if site.distribution == 'print' %}

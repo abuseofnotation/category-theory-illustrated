@@ -44,7 +44,13 @@ Perhaps unsurprisingly, everything in set theory is defined in terms of sets. A 
 ![Balls](../01_set/elements.svg)
 
 
-Let's construct a set, call it $G$ (as gray) that contains *all* of them as elements. There can only be one such set: because a set has no structure (there is no order, no ball goes before or after another, there are no members which are "special" with respect to their membership of the set.) Two sets that contain the same elements are just two pictures of the same set.
+Let's construct a set, call it $G$ (as gray) that contains *all* of them as elements. There can only be one such set, because a sets have no structure.
+
+{: .definition}
+
+> A set is a collection of items, that contains no structure, other than which items belong to it.
+
+So, there is no order, no position, no ball goes before or after another, there are no members which are "special" with respect to their membership of the set. Two sets that contain the same elements are just pictures of the same set.
 
 ![The set of all balls](../01_set/all.svg)
 
@@ -59,17 +65,29 @@ Let's construct one more set. The set of *all balls that are warm in color*. Let
 
 ![The set of all balls of warm colors](../01_set/subset.svg)
 
-Notice that $Y$ contains only elements that are also present in $G$. That is, every element of the set of $Y$ is also an element in the set $G$. When two sets have this relation, we may say that $Y$ is a *subset* of $G$ (or $Y \subseteq G$). A subset resides completely inside its superset when the two are drawn together.
+Notice that $Y$ contains only elements that are also present in $G$. When two sets have this relation, we may say that $Y$ is a *subset* of $G$.
+
+{: .definition}
+
+> $Y$ is a subset of $G$ when (or $Y \subseteq G$) if every element of the set of $Y$ is also an element in the set $G$.  
+
+A subset resides completely inside its superset when the two are drawn together.
 
 ![Y and G together](../01_set/set_subset.svg)
 
 ### Singleton Sets
 
-The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid &mdash; simply put, there are things that are *one of a kind*. The set of kings/queens that a given kingdom has is a singleton set. 
+The set of all *red balls* contains just one ball. We said above that sets summarize *several* elements into one. Still, sets that contain just one element are perfectly valid &mdash, there are things that are *one of a kind*. 
+ 
+{: .definition}
+
+> A singleton set is a set that contains one element.
+
+The set of kings/queens that a given kingdom has is a singleton set. 
 
 ![The singleton set of red balls](../01_set/singleton.svg)
 
-What's the point of the singleton set? Well, it is part of the language of set theory, e.g., if we have a function which expects a set of given items, but if there is only one item that meets the criteria, we can just create a singleton set with that item.
+What's the point of singleton sets? Well, it is part of the language of set theory, e.g., if we have a function which expects a set of given items, but if there is only one item that meets the criteria, we can just create a singleton set with that item.
 
 ### The Empty set
 
@@ -77,7 +95,14 @@ Of course if one is a valid answer, zero can be also. If we want a set of all *b
 
 ![The empty set](../01_set/void.svg)
 
-Because a set is defined only by the items it contains, the empty set is *unique* &mdash; there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. Formally, the empty set is marked with the symbol $\varnothing$ (so $B = W = \varnothing$).
+
+Because a set is defined only by the items it contains, the empty set is *unique* &mdash; there is no difference between the set that contains zero *balls* and the set that contains zero *numbers*, for instance. 
+
+{: .definition}
+
+> The empty set is a set that contains no elements.
+
+Formally, the empty set is marked with the symbol $\varnothing$ (so $B = W = \varnothing$).
 
 The empty set has some special properties, for example, it is a subset of every other set. Mathematically speaking, $\forall A  \to \varnothing \subseteq A$ ($\forall$ means "for all")
 
@@ -89,7 +114,7 @@ Now is the time to admit something: this chapter isn't actually about sets. It i
 
 {: .definition}
 
-> A function is a relationship between two sets that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
+> A function is many-to-one a relationship between two sets: one that matches each element of one set, called the *source set* of the function, with exactly one element from another set, called the *target set* of the function. 
 
 These two sets are also called the *domain* and *codomain* of the function, or its *input* and *output*.  In programming, they go by the name of *argument type* and *return type*. In logic, they correspond to the *premise* and *conclusion* (we will get there). We might also say, depending on the situation, that a given function *goes* from this set to that other one, *connects* this set to the other, or that it *converts* a value from this set to a value from the other one. These different terms demonstrate the multifaceted nature of the concept of function.
 
@@ -101,7 +126,7 @@ Here is a function $f$, which converts each ball from the set $R$ to the ball wi
 
 This is probably one of the simplest type of function that exists &mdash; it encodes a *one-to-one relationship* between the sets. That is to say, *one* element from the source is connected to exactly *one* element from the target (and the other way around).
 
-But functions can also express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). Below is one such function.
+But functions usually express relationships of the type *many-to-one*, where *many* elements from the source might be connected to *one* element from the target (but not the other way around). Below is one such function.
 
 ![Function from a bigger set to a smaller one](../01_set/function_big_small.svg)
 
@@ -115,7 +140,11 @@ An example might be the relationship between some kind of pattern or structure a
 
 We saw how versatile functions are, but there is one thing that you cannot have in a function. You cannot have a source element that is not mapped to anything, or that is mapped to more than one target element &mdash; that would constitute a *many-to-many* relationship and as we said functions express many-to-one relationships. There is a reason for that "design decision", and we will arrive at it shortly.
 
-### Functions in everyday life
+<!--
+{% if site.distribution == 'print'%}
+-->
+
+### Interlude: Functions in everyday life
 
 Sets and functions can express relationships between all kinds of objects, and even people. Every question that you ask that has an answer can be expressed as a function.
 
@@ -129,17 +158,29 @@ Note that the question "Who is my child?" is *NOT* a straightforward function, b
 
 **Task 2:** Do all functions that we drew at the beginning *express* something? Do you think that a function should express something in order to be valid? 
 
+<!--
+{%endif%}
+-->
+
 ### The Identity Function
 
-For every set $G$, no matter what it represents, we can define the function that does nothing, or in other words, a function which maps every element of $G$ to itself. It is called *the identity function* of $G$ or $ID_{G}: G → G$.
+For every set $G$, no matter what it represents, we can define the function that does nothing:
+
+{: .definition}
+
+>The identity function for a set $G$, $ID_{G}: G \to G$ is a function which maps every element of $G$ to itself. 
 
 ![The identity function](../01_set/function_identity.svg)
 
-You can think of $ID_{G}$ as a function which represents the set $G$ in the realm of functions. Its existence allows us to prove many theorems, that we "know" by intuition, formally.
+You can think of $ID_{G}$ as a function which represents the set $G$ in the realm of functions. 
 
 ### Functions and Subsets
 
-For each set and subset, no matter what they represent, we can define a function (called the *image* of the subset) that maps each element of the subset to itself:
+Another interesting collection of functions (there is one for each subset).
+
+{: .theorem}
+
+> For each set and subset, we can define a function (called the *image* of the subset) that maps each element of the subset to itself.
 
 ![Function from a smaller set to a bigger one](../01_set/function_small_big.svg)
 
@@ -147,7 +188,11 @@ Every set is a subset of itself, in which case this function is the same as the 
 
 ### Functions and the Empty Set
 
-Although it doesn't look like it, there is a unique function from the empty set to any other set.
+Although it doesn't look like it...
+
+{: .theorem}
+
+> There is a unique function from the empty set to any other set.
 
 ![Function with empty set](../01_set/function_empty.svg)
 
@@ -163,9 +208,14 @@ So, evidently, this function has to exist!
 
 ### Functions and Singleton Sets
 
-There is a unique function from any set to any singleton set.
+And another function that we meet often is this one.
 
 ![Function with a singleton set](../01_set/function_singleton.svg)
+
+
+{: .theorem}
+
+> There is a unique function from any set to any singleton set.
 
 **Task 5:** Is this really the only way to connect *any* set to a singleton set in a valid way?
 
@@ -173,7 +223,7 @@ There is a unique function from any set to any singleton set.
 
 ## Sets and numbers
 
-All numerical operations can be expressed as functions acting on the set of (different types of) numbers. 
+All numerical operations can be expressed as functions acting on the sets of (different types of) numbers. 
 
 ### Number sets
 
@@ -199,7 +249,6 @@ Overall everything is permitted, as long as you can always provide exactly one r
 Note that most mathematical operations, such as addition, multiplication, etc. require two numbers in order to produce a result. This does not mean that they are not functions, it just means they're a little fancier. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
 ## Sets and Functions in Programming
-
 
 Sets are used extensively in programming, especially in their incarnation as *types* (also called *classes*). All sets of numbers that we discussed earlier also exist in most languages as types.
 
@@ -242,7 +291,7 @@ We then link all those functions into a whole program, often by using a thing ca
 
 ## Functional Composition 
 
-Now, we were just about to reach the heart of the matter regarding the topic of functions. And that is functional composition. Assume that we have two functions,  and the target of the first one is the same set as the source of the second one, like $g: Y → P$ and $f: P → G$.
+Now, we were just about to reach the heart of the matter regarding the topic of functions. And that is functional composition. Assume that we have two functions,  and the target of the first one is the same set as the source of the second one
 
 ![Matching functions](../01_set/functions_matching.svg)
 
@@ -250,11 +299,18 @@ If we apply the first function $g$ to some element from set $Y$, we will get an 
 
 ![Applying one function after another](../01_set/functions_one_after_another.svg)
 
-In this way, we can define a function that is the equivalent to performing the operation described above: a function such that, if you follow the arrow $h$ for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow both the $g$ and $f$ arrows. Let us call it $h: Y → G$. We may say that $h$ is the *composition* of $g$ and $f$, or $h = f \circ g$ (notice that the first function is on the right, so it's similar to $b = f(g(a)$).
+We can define a function that is the equivalent to performing the operation described above: 
+
+
+{: .theorem}
+
+> For any three sets $Y$, $P$ and $G$ and two functions $g: Y \to P$ and $f: P \to G$ we can define a function  $f \circ g$, such that, if you follow the $f \circ g$ arrow for any element of set $Y$ you will get to the same element of the set $G$ as the one you will get if you follow the $g$ arrow and then the $f$ arrow. We call $f \circ g$ the *composition* of $g$ and $f$.
+
+ (notice that in $f \circ g$ the first function is on the right, so it's similar to $f(g(a)$).
 
 ![Functional composition](../01_set/functions_compose.svg)
 
-Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed(composed) again). This insight is captured by the property called associativity, which we will look into later.
+Composition is the essence of all things categorical. The key insight is that the sum of two parts is no more complex than the parts themselves (and therefore can be summed (composed) again). This insight is captured by the property called associativity, which we will look into later.
 
 **Task 8:** Think about which qualities of a function make composition possible, e.g., does it work with other types of relationships, like many-to-many and one-to-many.
 
@@ -268,7 +324,7 @@ If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every funct
 
 For example, if we again take the relationship between a person and his mother as a function with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
 
-Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's partner is our father, etc.
+Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's sister is our aunt etc.
 
 ### Composition in engineering
 
@@ -294,7 +350,7 @@ Alternatively, we can just *say* that the arrow paths are all equivalent (all ar
 
 ![An external diagram, showing functional composition of two functions](../01_set/functions_compose_sets.svg)
 
-Or alternatively, if you want to express it as a formula (where $\circ$ is the composition operator).
+Or alternatively, if you want to express it as a formula.
 
 ![An external diagram, showing functional composition of two functions, as a formula](../01_set/functions_compose_formula.svg)
 
@@ -303,8 +359,8 @@ The external diagram is a more appropriate representation of the concept of comp
 {: .definition}
 
 > The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that all the paths in this diagram are equivalent.
-
-![Functional composition - general definition](../01_set/functions_compose_general.svg)
+>
+> ![Functional composition - general definition](../01_set/functions_compose_general.svg)
 
 If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
@@ -320,9 +376,17 @@ If we want compose more than two functions we might wonder if the order in which
 
 The answer is that order of composition doesn't matter --- as long as we compose the same functions, the result would always be the same. 
 
+![Composing functions f (g c) = (f g) c](../01_set/associativity_formula_function.svg)
+
+i.e. there are many ways to get the same function.
+
 ![Composing functions f g and c --- showing the two paths f (g c) and (f g) c as a tree.](../01_set/associativity_function_tree.svg)
 
 This property of functions is called *associativity*.
+
+{: .theorem}
+
+> Functional composition is associative i.e., for any functions $f$ $g$ and $c$ with the appropriate type signature $(f \circ g ) \circ c$  is the same as $f \circ (g \circ c)$
 
 *Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
@@ -330,7 +394,13 @@ This property of functions is called *associativity*.
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
-In fact, we can say (although this is not an official definition) that category theory is the study of things that are *function-like* (we call them *morphisms*). Things that are not necessarily functions but have a source and a target like functions, they compose with one another like functions (associatively) and they can be represented by external diagrams.
+In fact, we can say (although this is not an official definition) that...
+
+{: .definition}
+
+> Category theory is the study of things that are *function-like* (we call them *morphisms*)...
+
+Those things are not necessarily functions, but have a source and a target like functions, they compose with one another like functions (associatively) and they can be represented by external diagrams.
 
 And there is another way of defining category theory, without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. 
 
@@ -354,15 +424,21 @@ Isomorphism means "same form" in Greek (although actually their form is the only
 
 > Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
 
-(Notice how the identity function comes in handy).
+Notice how the identity function comes in handy. In fact, notice that the concept of isomorphism is defined only by using the identity function and functional composition, this is our first completely *categorical* definition.
 
 ### Isomorphism and identity
 
-If you look closely you would see that the identity function is invertible too (its reverse is itself), so each set is isomorphic to itself in that way.
+If you look closely you would see that the identity function is invertible too (its reverse is itself), 
+
+{: .theorem}
+
+> The identity function is an isomorphism.
+
+So each set is isomorphic to itself in that way.
 
 ![The identity function](../01_set/isomorphism_identity.svg)
 
-Therefore, the concept of an isomorphism contains the concept of equality &mdash; all equal things are also isomorphic.
+So, the concept of an isomorphism contains the concept of equality &mdash; all equal things are also isomorphic.
 
 ### Isomorphism and composition
 
@@ -375,6 +451,10 @@ For example, if you have a function "is the partner of" that goes from the set o
 ### Composing isomorphisms
 
 Another interesting fact about isomorphisms is that if we have two isomorphisms that have a set in common, then we can obtain a third isomorphism between the other two sets that would be the result of their (the isomorphisms) composition.
+
+{: .theorem}
+
+> Two sets that are both isomorphic to a third one are isomorphic to one another.
 
 Composing two isomorphisms into another isomorphism is possible by composing the two pairs of functions that make up the isomorphism in the two directions. 
 
@@ -408,10 +488,7 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 ![Isomorphic singletons](../01_set/singleton_isomorphism.svg)
 
-Following the logic from the last paragraph, each statement about something that is one of a kind can be transferred to a statement about another thing that is one of a kind. 
-
 ## Equivalence relations and isomorphisms
-
 
 We said that isomorphic sets aren't necessarily the same set (although the reverse is true). However, it is hard to get away from the notion that being isomorphic means that they are *equal* or *equivalent* in some respect. For example, all people who are connected by the *isomorphic* mother/child relationship share some of the same genes. 
 
@@ -421,7 +498,13 @@ And in computer science, if we have functions that convert an object of type $A$
 
 What does it mean for two things to be equivalent? The question sounds quite philosophical, but there is actually is a formal way to answer it, i.e., there is a mathematical concept that captures the concept of equality in a rather elegant way &mdash; the concept of an *equivalence relation*. 
 
-So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition, it's when it follows three laws, which correspond to three intuitive ideas about equality. Let's review them.
+So what is an equivalence relation? We already know what a relation is --- it is a connection between two sets (an example of which is function). But when is a relation an equivalence relation? Well, according the definition, it's when it follows three laws, which correspond to three intuitive ideas about equality. 
+
+{: .definition}
+
+> An equivalence relation between sets is a relation that obeys the laws of reflexivity, transitivity, and symmetry.
+
+Let's review them.
 
 #### Reflexivity
 
@@ -451,6 +534,12 @@ In mathematical terms: if $A=B$ then $B=A$.
 
 ### Isomorphisms as equivalence relations
 
+You probably suspect that...
+
+{: .theorem}
+
+> Isomorphisms are equivalence relations
+
 Isomorphisms *are* indeed equivalence relations. And "incidentally", we already have all the information needed to prove it (in the same way in which James Bond seems to always incidentally have exactly the gadgets that are needed to complete his mission). 
 
 We said that the most characteristic property of the equivalence relation is its *symmetry*. And this property is satisfied by isomorphisms, due to the isomorphisms' most characteristic property, namely the fact that they are *invertible*.
@@ -466,7 +555,6 @@ What I am trying to say with all this is that it *makes sense* to treat any isom
 -->
 
 ## Interlude --- numbers as isomorphisms
-
 
 Many people would say that the concept of a number is the most basic concept in mathematics. But actually they are wrong --- *sets and isomorphisms are more basic*! Or at least, numbers can be defined using sets and isomorphisms. 
 
@@ -490,9 +578,11 @@ Before we close this chapter, there is one meta-note that we should definitely m
 {%endif%}
 -->
 
+<!--
+{% if site.distribution == 'print' %}
+-->
 
 ## Addendum: The case of composition in software development
-
 
 > An unstructured monolithic design is not a good idea, except maybe for a tiny operating system in, say, a toaster, but even there it is arguable.--- Andrew S. Tanenbaum
 
@@ -509,9 +599,6 @@ Anyway, the composition approach is sometimes used in programming, and when it i
 If you _want_ to look further, look at the Haskell programming language, or some of the numerous libraries for functional programming for other languages. There is also a whole programming paradigm based on functional composition, called "concatenative programming" utilized in languages like Forth and Factor.
 
 
-<!--
-{% if site.distribution == 'print' %}
--->
 
 ## Answers
 
