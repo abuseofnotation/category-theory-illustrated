@@ -178,14 +178,7 @@ From there, we have to build our types. One by one. With our bare hands (OK, we 
 
 > "In general, we can think of data as defined by some collection of selectors and constructors, together with specified conditions that these procedures must fulfill in order to be a valid representation." --- Harold Abelson, Gerald Jay Sussman, Julie Sussman --- Structure and Interpretation of Computer Programs
 
-Before introducing the specific formulae for building types, I want to elaborate on the general idea. In the last section, we said:
-
-
-{: .definition}
-
-> A type is something that can be the source and/or target of an arrow.
-
-This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lens of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions (and more generally arrows).
+Before introducing the specific formulae for building types, I want to elaborate on the general idea. In the last section, we said that a type is something that can be the source and/or target of an arrow. This definition may seem a bit vague, but it is trivial when we look at how types are defined in computer programming. It is obvious, even when viewed through the lens of traditional imperative languages, that the definition of a type consists of the definitions of rules for constructing functions (and more generally arrows).
 
 ```
 class MyType<A> {
@@ -266,6 +259,7 @@ We won't go into more detail here, because the Lambda type is defined and works 
 
 Once we have a starting point we can define some types. But how? Let's start with base types, like the *booleans*. For them, the process is quite simple, because we can just straight out *list out their values*.
 
+{: .definition}
 $$
 \begin{aligned}
 \mathrm{Bool} &:\ \mathrm{Type} \\
@@ -299,6 +293,8 @@ Et voila, we have just defined a type!
 
 Wait, scratch that. We actually haven't defined a type. Or rather we have defined one, but it is quite useless. For it would only be useful once we define at least one arrow, coming *from* it (otherwise, it will just be a one-way street). For the Booleans, this function is usually called $ifElse$.
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{ifElse} : \forall a.\ \mathrm{Bool} \to a \to a \to a \\
@@ -320,6 +316,8 @@ ifElse False 1 2 --2
 
 But why (with the risk of repeating myself) does this exact type has to be the Boolean type? What is stopping our colleague Bobby who always wants to do everything their way, to define their own version of Boolean and using it in their project.
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{BobbysBool} &:\ \mathrm{Type} \\
@@ -329,6 +327,8 @@ $$
 $$
 
 The answer is "nothing". But that is not a huge deal --- we can just whip up a function to convert their Bool to ours:
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -344,6 +344,8 @@ This function is also reversible. Which means that the two types are isomorphic 
 ### Other base types
 
 Almost forgot: in the same way as we constructed the Booleans, we can construct any other finite/base types, such as the type of balls.
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -364,6 +366,8 @@ Now, we will define the type that is known in Haskell as, $Maybe$ (and what in o
 
 But, once you learn to read it, the type definition, by itself is clear enough:
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
@@ -375,6 +379,8 @@ $$
 ### Type formation
 
 $Maybe$ looks a lot like $Bool$, but, unlike $Bool$, $Maybe$ is a *polymorphic* type, as we can tell by looking at the *type formation rule*
+
+{: .definition}
 
 $$
 \mathrm{Maybe} :\ \mathrm{Type} \to \mathrm{Type} 
@@ -392,6 +398,8 @@ Now, it's time to fill our type.
 
 The first line is similar to what we saw with boolean. 
 
+{: .definition}
+
 $$
 \mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}[a]
 $$
@@ -404,6 +412,8 @@ It says that there is a value called $Nothing$ for all $Maybe$ types (that's wha
 ### Term introduction: Just
 
 Of course there would be no point in having many $Maybe$s if they all are the same. That's where the second line comes.
+
+{: .definition}
 
 $$
 \mathrm{Just} :\ \forall a.\ a \to \mathrm{Maybe}[a]
@@ -426,6 +436,8 @@ No, we just have to wrap the target type in $Maybe$ and it becomes a regular fun
 ### Term elimination
 
 To close the case, we define one function for deconstructing/eliminating the type maybe i.e. to convert it to something else, by using a function for converting its underlying type.
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -450,6 +462,8 @@ This argument applies not only to mathematical theories, but to everything else 
 
 Or as Haskellians say:
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathbb{N} &:\ \mathrm{Type} \\
@@ -464,6 +478,8 @@ Let's follow the arrows.
 
 The first line indicates that the natural numbers type is a normal non-polymorphic, or "monomorphic" type.
 
+{: .definition}
+
 $$
 \mathbb{N} :\ \mathrm{Type}
 $$
@@ -473,6 +489,8 @@ $$
 ### Term introduction: Zero
 
 The first rule is also trivial.
+
+{: .definition}
 
 $$
 \mathrm{Zero} :\ \mathbb{N}
@@ -490,6 +508,8 @@ i.e. it is a *mot à mot* repetition of Peano's first axiom.
 ### Term introduction: Successors
 
 The second rule is more interesting. 
+
+{: .definition}
 
 $$
 \mathrm{Succ} :\ \mathbb{N} \to \mathbb{N}
@@ -523,6 +543,9 @@ And this is how you define an *inductive* type (or a *recursive* type, we can al
 
 Wait, there are also elimination rules, I always forget elimination rules, here they are.
 
+
+{: .definition}
+
 $$
 \begin{aligned}
 foldNat : \mathbb{N} \to a \to (a \to a) &\to a\\
@@ -545,6 +568,8 @@ The landscape of types would be a really... flat place, without the *composite t
 
 The ultimate composite type is the list. The linked list , specifically, is a thing of beauty:
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{List} &:\ \mathrm{Type} \to \mathrm{Type} \\
@@ -557,7 +582,9 @@ Let's unpack:
 
 ### Type formation
 
-The type formation rule tells us that $List$ (like $Maybe$) is a composite type. 
+The type formation rule tells us that $List$ (like $Maybe$) is a polymorphic type. 
+
+{: .definition}
 
 $$
 \mathrm{List} :\ \mathrm{Type} \to \mathrm{Type}
@@ -571,6 +598,9 @@ This means, that there is not one, but many  $List$ types, such as $List[Nat]$ $
 
 Now, let's check the constructors. The first defines a static value, one for each list, representing the empty list. 
 
+
+{: .definition}
+
 $$
 \mathrm{Nil} :\ \forall a.\ \mathrm{List}[a]
 $$
@@ -582,6 +612,8 @@ We will call this value $Nil$ (native Haskell lists use the `[]` symbol).
 ### Term introduction: Cons
 
 And now for the more interesting part: $Cons$, our second term introduction rule, ($Cons$ is short for construct, by the way) can be viewed as the operation of adding the value $a$ to a list (and returning that list).
+
+{: .definition}
 
 $$
 \mathrm{Cons} :\ \forall a.\ a \to \mathrm{List}[a] \to \mathrm{List}[a]
@@ -608,6 +640,8 @@ The result is a type with values that are... well, *lists* of other values,
 ### Term elimination
 
 Now, let's write the term elimination rule.
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -649,11 +683,14 @@ The $Either$ type is an interesting one.
 
 It is a type that is parametrized by two types $a$ and $b$, and has two constructors/term introduction rules --- one constructor, called $Left$, that takes a value of $a$. And another one, called $Right$ that takes a $b$. Here is the definition of Either (excluding the term elimination rule).
 
+
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Either} &:\ \mathrm{Type} \to \mathrm{Type} \to \mathrm{Type} \\
-\mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
-\mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
+\mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a\ b] \\
+\mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a\ b]
 \end{aligned}
 $$
 
@@ -664,6 +701,8 @@ The next type that we will introduce is the $Tuple$ type, which is also parametr
 ![The Tuple type ](../06_type/tuple_type.svg)
 
 Here we will do something different --- instead of the definition, we will directly present the type elimination rules.
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -678,14 +717,18 @@ $$
 
 The $Either$ type is uniquely defined by its introduction rules i.e. the elimination rules can be derived from the introduction rules.
 
+{: .definition}
+
 $$
 \begin{aligned}
-\mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a]\,b \\
-\mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a]\,b
+\mathrm{Left} &:\ \forall a\,b.\ a \to \mathrm{Either}[a\ b] \\
+\mathrm{Right} &:\ \forall a\,b.\ b \to \mathrm{Either}[a\ b]
 \end{aligned}
 $$
 
 $Tuple$, on the other hand, is defined by its elimination rules i.e. the introduction rules can be derived from them:
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -719,6 +762,9 @@ In the previous section, we did define a lot of stuff, very quickly, But we reli
 
 Consider the Boolean type, which we defined like this:
 
+
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Bool} &:\ \mathrm{Type} \\
@@ -728,6 +774,8 @@ $$
 $$
 
 Here is a version of the same thing, with just functions.
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -742,6 +790,8 @@ $$
 Here $Bool$ is just a shorthand for the function $\forall a. a \to a \to a $ which accepts two values of type $a$ for all $a$ and returns another one. We can see that under this definition, $True$ is a function that returns the first $a$, and $False$ is a function that returns the second one.
 
 Don't believe that these can function as booleans? Here is an implementation of the $ifElse$ function:
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -765,6 +815,8 @@ Here is how you would use this:
 
 The Boolean type is, of course, a basic type. So, let's consider the $Maybe$ type, which is more complex:
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
@@ -774,6 +826,8 @@ $$
 $$
 
 $Maybe$ is more complex, because it can *contain another value* in itself (with the $Just$ constructor). Here is where we learn another important principle of Church encoding: using curried functions to hold values.
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -791,6 +845,8 @@ By now, you have probably seen that the Church-encoding of the type has the same
 
 If we have a type which is like $Maybe$, but with just one value (like the $1$ type)...
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] 
@@ -798,6 +854,8 @@ $$
 $$
 
 ...its Church encoding would be...
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -809,6 +867,8 @@ $$
 
 And then, if we extend the type to also have the $Just$ constructor...
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Nothing} &:\ \forall a.\ \mathrm{Maybe}[a] \\
@@ -818,6 +878,8 @@ $$
 
 ...the encoding is extended like this...
 
+{: .definition}
+ 
 $$
 \begin{aligned}
 \forall m. m \to (a \to m) \to m 
@@ -825,6 +887,8 @@ $$
 $$
 
 This is why the signature of the Church-encoded type is almost identical as the signature of the $fold$ function, used to eliminate it:
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -855,6 +919,8 @@ $$
 $$\frac{a}{b}$$
 
 Aside from that, there is no big difference between natural deduction and Haskell. Take, for example the boolean type. We defined it in Haskell like this:
+ 
+{: .definition}
 
 $$
 \begin{aligned}
@@ -866,11 +932,17 @@ $$
 
 If we want to define it using natural deduction, so it is one of the "primitive" types that are part of the type system itself (as it is defined in most programming languages), it would look like this.
 
+{: .definition}
+
 $$\frac{}{\mathrm{Bool} :: \mathrm{Type}}$$
 
 This means that there is a type called Bool (technically, this is not a typing rule, but a "kinding" rule (and thus the double-colon)).
 
+{: .definition}
+ 
 $$\frac{}{\mathrm{True} : \mathrm{Bool}}$$
+
+{: .definition}
 
 $$\frac{}{\mathrm{False} : \mathrm{Bool}}$$
 
@@ -890,13 +962,19 @@ We usually denote the context with the letter $\Gamma$, and we use the $\vdash$ 
 
 So, when we consider the context, the above definition becomes
 
+{: .definition}
+
 $$\frac{}{\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}$$
 
 i.e. the context includes the type $\mathrm{Bool}$ 
 
+{: .definition}
+
 $$\frac{}{\Gamma \vdash \mathrm{True} : \mathrm{Bool}}$$
 
 i.e. the context includes the value $\mathrm{True}$ of type $\mathrm{Bool}$
+
+{: .definition}
 
 $$\frac{}{\Gamma \vdash \mathrm{False} : \mathrm{Bool}}$$
 
@@ -910,31 +988,53 @@ With that, we list the axioms of Lambda Calculus, which contain nothing more tha
 
 There are several typing rules that we have to define, starting with the trivial rule *Var*, that states the following: if we previously said that $x$ has type $A$, then $x$ has type $A$.
 
-$$\frac{x : A \in \Gamma}{\Gamma \vdash x : A}$$
+{: .definition}
+
+> Variable typing rule (Var)
+>
+>$$\frac{x : A \in \Gamma}{\Gamma \vdash x : A}$$
 
 Now, we proceed to define the types of the arrows.
 
 We start with the type formation rule (or the *kinding* rule).
 
-$$\frac{\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}{\Gamma \vdash A \to B :: Type}$$
+{: .definition}
+
+> Lambda type formation rule
+>
+>$$\frac{\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}{\Gamma \vdash A \to B :: Type}$$
 
 And then the two typing rules. One is the *term introduction* for lambda terms, which is called *abstraction* (or *Abs*).
 
-$$\frac{\Gamma, x:A \vdash y: B}{\Gamma \vdash \lambda z : A \to B}$$
+{: .definition}
+
+> Lambda term introduction rule (Abs)
+>
+>$$\frac{\Gamma, x:A \vdash y: B}{\Gamma \vdash \lambda z : A \to B}$$
 
 (i.e. if we have a way given a value $x$ of type $A$ to obtain a value $y$ of type $B$, then we have ourselves a function $A \to B$).
 
 And there is also term elimination for lambdas, i.e. function *application* (*App*).
 
-$$\frac{\Gamma \vdash z: A \to B, \Gamma \vdash x: A}{\Gamma \vdash z x : B }$$
+{: .definition}
 
-To understand how those rules work, let's take the function $length: string \to int$ as an example. The abstraction rule for this function would be: 
+> Lambda term elimination rule (App)
+>
+>$$\frac{\Gamma \vdash z: A \to B, \Gamma \vdash x: A}{\Gamma \vdash z x : B }$$
 
-$$\frac{\Gamma, x:string \vdash y: int}{\Gamma \vdash \lambda length : string \to int}$$
+To understand how those rules work, let's take the function $length: string \to int$ as an example. 
 
-And the *application* rule would be
+{: .definition}
 
-$$\frac{\Gamma \vdash length: string \to int, \Gamma \vdash x: string}{\Gamma \vdash length\ x : int }$$
+> Term introduction of "length"
+>
+>$$\frac{\Gamma, x:string \vdash y: int}{\Gamma \vdash \lambda length : string \to int}$$
+
+{: .theorem}
+
+> Term application of "length"
+>
+> $$\frac{\Gamma \vdash length: string \to int, \Gamma \vdash x: string}{\Gamma \vdash length\ x : int }$$
 
 Those rules are all you need to define value-level arrows.
 
@@ -950,6 +1050,8 @@ The rules we reviewed so far don't define Polymorphic Lambda Calculus, but they 
 
 Simply-typed lambda calculus is just like Polymorphic Lambda Calculus, except that... it is not polymorphic i.e. we cannot define the polymorphic types like $Maybe$.
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{Maybe} &:\ \mathrm{Type} \to \mathrm{Type} \\
@@ -960,6 +1062,8 @@ $$
 
 The best we can do is to define a separate versions of the type, e.g. one which works just for $\mathrm{int}$.
 
+{: .definition}
+
 $$
 \begin{aligned}
 \mathrm{MaybeInt} &:\ \mathrm{Type} \\
@@ -969,6 +1073,8 @@ $$
 $$
 
 And one for $\mathrm{string}$
+
+{: .definition}
 
 $$
 \begin{aligned}
@@ -994,9 +1100,15 @@ In the expression "$x: A$" , "$A$" denotes the type of the value. But then what 
 
 This means that besides a type system and typing rules, we have a *kind-system* and *kinding rules*. But please, don't throw this book out of the window -- the kinding system for both STLC is pretty easy to define: there is just one kind, that we call $\mathrm{Type}$ (sometimes it is marked with a $*$).
 
-$$\frac{}{\Gamma \vdash Type}$$
+{: .definition}
+
+> Kinding rule in STLC
+>
+> $$\frac{}{\Gamma \vdash Type}$$
 
 And then the type definition rules are defined like this (i.e. everything is of kind $\mathrm{Type}$:
+
+{: .theorem}
 
 $$\frac{}{\Gamma \vdash \mathrm{Bool} :: \mathrm{Type}}$$
 
@@ -1006,24 +1118,45 @@ And for Polymorphic Lambda Calculus, we would see in the next section.
 
 We started defining STLC by defining value-level *variables*, using the trivial *Var* typing rule, 
 
-$$\frac{x : A \in \Gamma}{\Gamma \vdash x : A}$$
+{: .definition}
 
-In Polymorphic Lambda Calculus we also have *type-level variables*, which are defined with a similar *TVar* *kinding* rule.
+> Variable typing rule (Var)
+>
+>$$\frac{x : A \in \Gamma}{\Gamma \vdash x : A}$$
 
-$$\frac{A :: K \in \Gamma}{\Gamma \vdash A :: K}$$
+In Polymorphic Lambda Calculus we also have *type-level variables*, which are defined with a similar rule.
+
+{: .definition}
+
+> Type Variable kinding rule (TVar)
+>
+>$$\frac{A :: K \in \Gamma}{\Gamma \vdash A :: K}$$
 
 Now, let's proceed with defining the type of the arrows themselves. 
 
 In Polymorphic Lambda Calculus, as in STLC, we have value-level arrows that convert values to other values...
 
-$$\frac{\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}{\Gamma \vdash A \to B :: Type}$$
+{: .definition}
+
+>Lambda type formation rule
+>
+>$$\frac{\Gamma \vdash A :: Type, \Gamma \vdash B :: Type}{\Gamma \vdash A \to B :: Type}$$
+
 
 And, we also have *type-level* arrows that convert types to other types. They are defined with this kinding rule:
 
-$$\frac{\Gamma, (\alpha :: A) \vdash (B :: Type)}{\Gamma \vdash \forall (\alpha :: A). (B :: Type)}$$
+{: .definition}
+
+>Type-level lambda kind formation rule
+>
+>$$\frac{\Gamma, (\alpha :: A) \vdash (B :: Type)}{\Gamma \vdash \forall (\alpha :: A). (B :: Type)}$$
 
 For example, for the $Maybe$ type, this rule would say
 
+{: .definition}
+
+>Type-level lambda type formation rule for Maybe
+>
 $$\frac{\Gamma, (\alpha :: Type) \vdash Maybe[\alpha]:: Type}{\Gamma \vdash \forall (\alpha :: Type). Maybe[\alpha]:: Type}$$
 
 ### Polymorphic functions
@@ -1032,27 +1165,44 @@ The more interesting (and harder) part of polymorphism is augmenting value-level
 
 For example, if we work in the context of STLC and we use the $MaybeString$ type that we defined in the last section (and that works only with strings), we can define a function with the following type signature 
 
-$$z :: string \to MaybeString$$
+{: .definition}
+
+>A monomorphic function 
+>
+>$$z :: string \to MaybeString$$
 
 Using the capabilities of Polymorphic Lambda Calculus,  we can abstract the type $String$ (with the rule *TAbs* to build a polymorphic function, which looks like this.
 
-$$z' :: \forall \alpha. \alpha \to Maybe\ \alpha$$
+{: .definition}
+
+>A polymorphic function, using *TAbs*
+>
+> $$z' :: \forall \alpha. \alpha \to Maybe\ \alpha$$
 
 And then, we use *TApp* to apply the type parameter $String$ to the abstract function to get our original function. 
 
-$$z = z'[String]$$
+{: .definition}
+
+>A monomorphic function, using *TApp*
+>
+> $$z = z'[String]$$
 
 (This is not a real Haskell syntax, as Haskell does type application automatically --- you just provide the value and the language deduces the type from it).
 
 Here are the typing rules of polymorphic functions themselves:
 
-*Type abstraction* (or *TAbs*)
 
-$$\frac{\Gamma, (\alpha :: A) \vdash z : C}{\Gamma \vdash (\Lambda \alpha :: A . z) : \forall (\alpha :: A) . C}$$
+{: .definition}
 
-And *type application* (*TApp*)
+>*Type abstraction* (or *TAbs*)
+>
+>$$\frac{\Gamma, (\alpha :: A) \vdash z : C}{\Gamma \vdash (\Lambda \alpha :: A . z) : \forall (\alpha :: A) . C}$$
 
-$$\frac{\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}{\Gamma \vdash z'[X] : C[\alpha := X]}$$
+{: .definition}
+
+>*Type application* (*TApp*)
+>
+>$$\frac{\Gamma \vdash z' : \forall (\alpha :: A) . C , \Gamma  \vdash (X :: A)}{\Gamma \vdash z'[X] : C[\alpha := X]}$$
 
 And with this, we conclude the definition of System F.
 

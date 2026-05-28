@@ -5,7 +5,6 @@ title: Sets
 
 # Sets
 
-
 Ready, *set*, begin... (you don't know how hard I tried to resist to making that pun). We begin our inquiry with the theory of sets. Set theory and category theory share many similarities. We can view category theory as a *generalization* of set theory. That is, it's meant to describe the same thing as set theory (everything?), but to do it in a more abstract manner, one that is more versatile and (hopefully) simpler. 
 
 Also, sets are an *example of a category* (the *proto-example*, we might say), and it is useful to have examples. 
@@ -390,7 +389,7 @@ This property of functions is called *associativity*.
 
 *Task 10:* Draw the above diagrams as internal diagrams: define three functions that compose with one another (you can use the two functions that we defined earlier, you only would have to make a third one) compose them in the two ways shown above and check if the result is the same.
 
-### Category theory --- a hint for the definition
+### Category theory --- hints for the definition
 
 At this point you might be worried that I had forgotten that I am supposed to talk about category theory and I am just presenting a bunch of irrelevant concepts. I may indeed do that sometimes, but not right now --- the fact that *functional composition* can be presented without even mentioning category theory doesn't stop it from being one of category theory's *most important concepts*. 
 
@@ -398,7 +397,7 @@ In fact, we can say (although this is not an official definition) that...
 
 {: .definition}
 
-> Category theory is the study of things that are *function-like* (we call them *morphisms*)...
+> Category theory is the study of things that are *function-like* (that compose in an associative way).
 
 Those things are not necessarily functions, but have a source and a target like functions, they compose with one another like functions (associatively) and they can be represented by external diagrams.
 
@@ -418,13 +417,21 @@ If we have a one-to-one-function that connects sets that are of the same size (a
 
 Invertible functions are called *isomorphisms*. When there exists an invertible function between two sets, we say that the sets are *isomorphic*. For example, because we have an invertible function that converts the temperature measured in *Celsius* to temperature measured in *Fahrenheit*, and vise versa, we can say that temperatures measured in Celsius and Fahrenheit are isomorphic.
 
-Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets), or more formally:
+Isomorphism means "same form" in Greek (although actually their form is the only thing which is different between two isomorphic sets).
+
+Now it's time to define isomorphisms formally. One way to do that is the following:
 
 {: .definition}
 
-> Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
+> (Internal) Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist a one-to-one relationship between their elements.
 
-Notice how the identity function comes in handy. In fact, notice that the concept of isomorphism is defined only by using the identity function and functional composition, this is our first completely *categorical* definition.
+This definition does not tell us anything about the most important quality of isomorphisms --- invertability. So, we will present a different one:
+
+{: .definition}
+
+> (External) Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
+
+Notice how the identity function comes in handy. In fact, notice that the concept of isomorphism is defined only by using the identity function and functional composition, this is our first completely external, completely *categorical* definition (if you don't count composition itself).
 
 ### Isomorphism and identity
 
@@ -488,7 +495,7 @@ The function is invertible, which means that all singleton sets are isomorphic t
 
 ![Isomorphic singletons](../01_set/singleton_isomorphism.svg)
 
-## Equivalence relations and isomorphisms
+## Isomorphisms and equivalence 
 
 We said that isomorphic sets aren't necessarily the same set (although the reverse is true). However, it is hard to get away from the notion that being isomorphic means that they are *equal* or *equivalent* in some respect. For example, all people who are connected by the *isomorphic* mother/child relationship share some of the same genes. 
 

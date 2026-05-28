@@ -14,7 +14,7 @@ Mathematically, the order as a construct is represented (much like a monoid) by 
 
 {: .definition}
 
->An order is a set of elements, together with a *binary relation* between the elements of the set, that obeys certain laws.
+>An order is a set of elements, together with a *binary relation* between these elements, denoted with $≤$ ("bigger or equal to") that obeys certain laws.
 
 We denote the elements of our set, as usual, like this.
 
@@ -53,7 +53,7 @@ Incidentally, (or rather not incidentally at all), these rules are nearly equiva
 
 {: .definition}
 
->A linear order is a set of elements, together with a *binary relation* between the elements of the set, that obeys the laws of reflexivity, transitivity, antisymmetry, totality.
+>A linear order is a set of elements, together with a *binary relation* between these elements, that obeys the laws of reflexivity, transitivity, antisymmetry, totality.
 
 Let's check what they are.
 
@@ -127,7 +127,7 @@ Remove the law of totality from the laws of linear orders and we get a *partial 
 
 {: .definition}
 
->An partial order is a set of elements, together with a *binary relation* between the elements of the set, that obeys the laws of reflexivity, transitivity and antisymmetry.
+>An partial order is a set of elements, together with a *binary relation* between those elements, that obeys the laws of reflexivity, transitivity and antisymmetry.
 
 Every linear order is also a partial order (just as a group is still a monoid), but not the other way around. 
 
@@ -235,7 +235,11 @@ To stay true to our form, let's revisit our color-mixing monoid and create a *co
 
 ![A color mixing poset](../04_order/color_mixing_poset.svg)
 
-If you go through it, you will notice that the join of any two colors is the color that they make up when mixed. Nice, right?
+If you go through it, you will notice a curious property of the join 
+
+{: .theorem}
+
+> In the color-mixing order, the join of any two colors is the color that they make up when mixed. 
 
 ![Join in a color mixing poset](../04_order/color_mixing_poset_join.svg)
 
@@ -245,11 +249,15 @@ We saw that when we order numbers by "bigger or equal to", they form a linear or
 
 ![Divides poset](../04_order/divides_poset.svg)
 
-And it so happens (actually for very good reason) that the join operation again corresponds to an operation that is relevant in the context of the objects --- the join of two numbers in this partial order is their *least common multiple*. 
+And it so happens (actually for very good reason) that the join operation again corresponds to an operation that is relevant in the context of the objects:
 
-And the *meet* (the opposite of join) of two numbers is their *greatest common divisor*.
+{: .theorem}
+
+> In the partial order of numbers by division, the join of any two numbers is their *least common multiple*.  And their *meet* is their *greatest common divisor*.
 
 ![Divides poset](../04_order/divides_poset_meet.svg)
+
+Let's dig a bit into why this happens.
 
 ### The inclusion partial order
 
@@ -261,11 +269,16 @@ Given a collection of sets containing a combination of a given set of elements..
 
 {: .definition}
 
-> The inclusion order of sets is a binary relation that we can use to order a collection of sets (usually sets that contain some common elements) in which $a$ comes before $b$ if $a$ *includes* $b$, or in other words if $b$ is a *subset* of $a$.
+> The *inclusion order* of a given collection of sets (usually sets that contain some common elements) is an order, based on the following binary relation: $A$ comes before $B$ if $A$ *includes* $B$, or in other words if $B$ is a *subset* of $A$.
 
 ![A color mixing poset, ordered by inclusion](../04_order/color_mixing_poset_inclusion.svg)
 
-In this case the *join* operation of two sets is their *union*, and the *meet* operation is their set *intersection*.
+This means that...
+
+{: .theorem}
+>  the *join* operation of two sets in an inclusion order is their *union*, and the *meet* operation is their set *intersection*.
+
+### Birkhoff's representation theorem
 
 This diagram might remind you of something --- if we take the colors that are contained in each set and mix them into one color, we get the color-blending partial order that we saw earlier.
 
@@ -274,9 +287,6 @@ This diagram might remind you of something --- if we take the colors that are co
 The order example with the number dividers is also isomorphic to an inclusion order, namely the inclusion order of all possible sets of *prime* numbers, including repeating ones (or alternatively the set of all *prime powers*). This is confirmed by the fundamental theory of arithmetic, which states that every number can be written as a product of primes in exactly one way.
 
 ![Divides poset](../04_order/divides_poset_inclusion.svg)
-
-
-### Birkhoff's representation theorem
 
 So far, we saw two different partial orders, one based on color mixing, and one based on number division, that can be represented by the inclusion orders of all possible combinations of sets of some *basic elements* (the primary colors in the first case, and the prime numbers (or prime powers) in the second one.) Many other partial orders can be defined in this way. Which ones exactly, is a question that is answered by an amazing result called *Birkhoff's representation theorem*. They are the *finite* partial orders that meet the following two criteria: 
 
@@ -541,20 +551,25 @@ Looks like we have law number 2 covered, with transitivity. What about the ident
 
 So it's official --- preorders are categories (sounds kinda obvious, especially after we also saw that preorders can be reduced to sets and functions using the inclusion order, and sets and functions form a category in their own right).
 
-Preorders are special types of categories (all preorders are categories, but not all categories are preorders). Most categories have many different morphisms between given two objects. For example, in the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
+Preorders are categories, but not all categories are preorders. Most categories have many different morphisms between given two objects. For example, in the category of sets where there are potentially infinite amount of functions from, say, the set of integers and the set of boolean values, as well as a lot of functions that go the other way around.
 
 ![Orders compared to other categories](../04_order/order_category.svg)
 
-Whereas preorders, two object, whereas have *at most one morphism*, that is, we either have $a ≤ b$ or we do not. 
+Whereas preorders, two object, whereas have *at most one morphism*, that is, we either have $A ≤ B$ or we do not. 
 
 ![Orders compared to other categories](../04_order/arrows_one_arrow.svg)
 
 So, like a monoid is a category that has one object, an order is a category that has at most one *morphism* between two objects. 
 
+{: .definition}
+
+> A preorder, any preorder, can be seen as a *category with at most one morphism between two given objects*--- for any $A$ and $B$, we say that if $A ≤ B$ then a morphism $A \to B$ exists. The identity morphism exist because of reflexivity. 
+> The converse is also true: any category with no more than one morphism between two objects can be seen as a preorder. 
+
+
 An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in preorders *all diagrams commute*.
 
 **Task 6:** Prove this. 
-
 
 ### Partial orders and total orders as categories
 
@@ -591,22 +606,19 @@ In the realm of orders, we define join as:
 > 1. It is bigger than both of these objects, so $A ≤ G$ and $B ≤ G$.
 > 2. It is smaller than any other object that is bigger than them, so for any other object $P$ such that $P ≤ A$ and $P ≤ B$ then we should also have $G ≤ P$.
 
-![Joins as coproduct](../04_order/coproduct_join_morphisms.svg)
-
 We can see that the two definitions, and their corresponding diagrams, are basically the same, we just replaced "bigger" with "has a unique morphism" (because in orders all morphisms are unique). 
 
 Speaking in category-theoretic terms, we can say that:
-> The *categorical coproduct* in the *category of preorders* is the *join* operation. 
+
 {: .theorem}
+
+> The *categorical coproduct* in the *category of preorders* is the *join* operation. 
 
 Which of course means that *products* correspond to *meets* (duality).
 
-### Formal definition
+### Thin categories
 
 In category-theoretic terms, orders (categories that have at most one morphism with a given type signature) are known as "thin" categories.
-
-> A preorder, any preorder, can be seen as a category with at most one morphism between two given objects --- if one object is bigger then there is a morphism between them. The converse is also true: any category with at most one morphism between two given objects can be seen as a preorder (called also a *thin* category).
-{: .theorem}
 
 Thin categories are often used for exploring categorical concepts in a context that is easier to understand than in normal (non-thin) categories. For example, as we saw, understanding the *order-theoretic* concepts of meets and joins would help you better understand the *more general categorical* concepts of products and coproducts.
 

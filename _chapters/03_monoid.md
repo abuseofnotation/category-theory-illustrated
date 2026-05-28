@@ -14,7 +14,8 @@ Like categories, monoids/groups are abstract systems consisting of a set of elem
 
 {: .definition}
 
->A monoid is defined by a collection/set of elements $A$ (called the monoid's *underlying set*, together with an associative *monoid operation* --- a rule for combining two elements that produces a third element one of the same kind --- $A \times A \to A$. Also, there should be an identity element.
+>A monoid is defined by a collection/set of elements $A$ (called the monoid's *underlying set*), together with an associative *monoid operation* --- a rule for combining two elements that produces a third element one of the same kind --- $A \circ A \to A$. 
+> Also, there should be an identity element $I$, such that $I \circ A = A$ and $A \circ I = A$.
 
 Let's take our familiar colorful balls.
 
@@ -71,11 +72,14 @@ Anyways, the natural numbers also form a monoid under multiplication as well.
 
 ### Monoids and boolean algebra
 
-Thinking about operations that we covered, we may remember the boolean operations *and* and *or*. Both of them form monoids, which operate on the set, consisting of just two values $\{ True, False \}$. 
+Thinking about operations that we covered, we may remember the boolean operations *and* and *or*. The operation *and* forms a monoid on the set, consisting of just two values $\{ True, False \}$, in which $True$ is the identity element (the symbol $\land$ means *and*).
 
-**Task 4:** Prove that **AND** $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all possible values. Do the same for *or*.
+![Logical operations that form monoids](../03_monoid/logic_monoid.svg)
 
-**Task 5:** Which are the identity elements of the *and* and *or* operations?
+The operation *or* also forms a similar monoid.
+
+**Task 4:** Prove that **and** $\land$ is associative by expanding the formula $(A \land B) \land C = A \land (B \land C)$ with all possible values. Do the same for *or*.
+**Task 5:** Which are the identity elements of the *or* operations?
 
 ## Monoid operations in terms of sets
 
@@ -115,7 +119,10 @@ All monoids that we examined so far are also *commutative*. We will see some non
 
 ### Groups
 
-A group is a monoid such that for each of its elements, there is another element which is the so-called "inverse" of the first one where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more --- formally we say that for all elements $x$, there must exist $x'$ such that $x • x' = i$ (where $i$ is the identity element).
+A group is a monoid such that for each of its elements, there is another element which is the so-called "inverse" of the first one where the element and its inverse cancel each other out when applied one after the other. Plain-English definitions like this make you appreciate mathematical formulas more:
+
+{: .definition}
+> A group is a monoid in which every element $A$, has an inverse element, denoted usually as $-A$, such that $A \circ -A = I$ (where $I$ is the identity element).
 
 If we view *monoids* as a means of modelling the effect of applying a set of (associative) actions, we use *groups* to model the effects of actions which are also *reversible*.
 
@@ -178,7 +185,7 @@ Symmetry groups that have such "main" rotation are called cyclic
 
 {: .definition}
 
-Groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. The "main" rotation is called the group's *generator*.
+>Groups and monoids that have an object that is capable of generating all other objects by its repeated application, are called *cyclic groups*. The group's "main" object is called the *generator*.
 
 All rotation groups/monoids are cyclic groups. Another example of a cyclic monoid is, yes, the natural numbers under addition, with $+1$ as the generator.
 

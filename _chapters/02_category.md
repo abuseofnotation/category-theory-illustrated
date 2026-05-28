@@ -339,7 +339,7 @@ This probably provokes a lot of questions and we have a whole chapter about logi
 {%endif%}
 -->
 
-## Defining the rest of set theory externally
+## Defining the rest of set theory ~~externally~~ categorically
 
 So far in the book, we saw some amazing ways of defining set-theoretic constructs without looking at the set elements and by only using external diagrams.
 
@@ -377,15 +377,15 @@ It's easy to see that there would be exactly one function for each element of th
 
 So, we can say that what we call "elements" of a set are the functions from the singleton set to it.
 
-### Defining the singleton set externally
-
-Now, after coming up with a definition of a set _element_, based on functions, we can try to draw the elements of our set as an external diagram.
+So, our example set would look like this.
 
 ![Functions from the singleton set](../02_category/elements_singleton_functions_partly_external.svg)
 
 However, our diagram is not yet fully external, as it depends on the idea of the singleton set, i.e. the set with one _element_. Furthermore, this makes the whole definition circular, as we cannot define the concept of a one-element set, without the concept of element.
 
-To avoid these difficulties, we devise a way to define the singleton set, using just functions. We do it in the same way that we did for products and sums - by using a unique property that the singleton set has. In particular, in the last chapter we learned the following:
+### Defining the singleton set externally
+
+We define the singleton set externally in the same way as we did define products and sums - by using a unique property that the singleton set has. In particular, in the last chapter we learned the following:
 
 {: .theorem}
 
@@ -455,6 +455,8 @@ The similarity of the diagrams, is due to a similar general approach of defining
 
 After seeing the functional definition of set elements, we might be inclined to ask the following: If elements are represented by functions, then how do you _apply_ a given function to an element of a set, (and retrieve an element of another set)?
 
+![Functional application - internal diagram](../02_category/application_internal_function.svg)
+
 The answer is surprisingly simple --- _selecting_ an element from a set is the same as constructing a function from the singleton set to that element.
 
 ![Functional application - internal diagram](../02_category/application_internal.svg)
@@ -479,7 +481,7 @@ The short answer: because it is more general than the traditional definition, th
 
 You may say that they apply to entirely different _categories of objects_ (nudge, nudge).
 
-## Categories briefly
+### Categories briefly
 
 Maybe it is about time to see what a category is. Here is a short definition: A category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
@@ -521,11 +523,7 @@ Wait a minute, we said that all sets form a category, but at the same time, any 
 
 This particular equivalence (a set as a category with no morphisms) is, however, rarely useful. Not because it's incorrect in any way, but rather because category theory is _all about the morphisms_ --- if the _arrows_ in set theory are nothing but a connection between the sets that serve as their source and a destination, in category theory it's the _objects_ that are nothing but a source and destination for the arrows that connect them to other objects. This is why, in the diagram above, the arrows, and not the objects, are colored: if you ask me, the category of sets should really be called _the category of functions_.
 
-Speaking of which, note that objects in a category can be connected by multiple arrows and that having the same source and target sets does not in any way make arrows equivalent.
-
-![Two objects connected with multiple arrows](../02_category/arrows.svg)
-
-If we go back to sets, there are, for example, an infinite number of functions that go from number to boolean, and the fact that they have the same input type and the same output type (or the same _type signature_, as we like to say) does not in any way make them equivalent to one another.
+Speaking of which, note that objects in a category can be connected by multiple arrows and that having the same source and target sets does not in any way make arrows equivalent, as in set theory there are, for example, an infinite number of functions that go from number to boolean, and the fact that they have the same input type and the same output type (or the same _type signature_, as we like to say) does not in any way make them equivalent to one another.
 
 ![Two sets connected with multiple functions](../02_category/set_arrows.svg)
 
@@ -615,7 +613,7 @@ For future reference, let's restate what a category is:
 
 > A category is a collection of *objects* (we can think of them as points) and *morphisms* (arrows) that go from one object to another, where:
 > 1. Each object has to have an identity morphism.
-> 2. There should be a way to compose two morphisms with an appropriate type signature into a third one in a way that is associative.
+> 2. There should be a way to compose two morphisms with an appropriate type signature into a third one, in a way that is associative.
 
 This is it. 
 

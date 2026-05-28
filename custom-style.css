@@ -75,7 +75,7 @@ h4 {
 
 .presentation {
 
-  img, .definition, .theorem, table, pre, mjx-mtable, mjx-frac, .prev-next {
+  img, .definition, .theorem, table, pre, .prev-next {
     margin: 600px 0px;
   }
 

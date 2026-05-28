@@ -14,7 +14,7 @@ const isPrev = (el) => {
   // List of elements which we want to focus on for
   // our presentation (all other elements would be 
   // ignored.
-  const elementsToFocus = "img, h1, h2, h3, h4, h5, h6, .definition, .theorem, table, pre, mjx-mtable, mjx-frac, .prev-next"
+  const elementsToFocus = "img, h1, h2, h3, h4, h5, h6, .definition, .theorem, table, pre, .prev-next"
 
   // Set scrolling behavior
   const scrollConfig = {

@@ -17,8 +17,9 @@ So, we may say:
 
 {: .definition}
 
-> Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to their form ("formally"). 
-> On top of that, logic tries to organize those rules in *logical systems* (or *formal systems* as they are also called).
+> Logic studies the *rules* by which knowing one thing leads you to conclude (or *prove*) that some other thing is also true, regardless of the things' domain (e.g. scientific discipline) and by only referring to the form of the proof ( i.e. "formally"). 
+>
+> On top of that, logic tries to organize those rules and arguments in *logical systems* (or *formal systems* as they are also called).
 
 Seeing this description, we might think that the subject of logic is quite similar to the subject of set theory and category theory --- instead of the word "formal" we used another similar word, namely "abstract", and instead of "logical system" we said "theory". This observation would be quite correct --- today most people agree that every mathematical theory is actually logic plus some additional definitions added to it. For example, part of the reason why *set theory* is so popular as a theory for the foundations of mathematics is that it can be defined by adding just one single primitive to the standard axioms of logic which we will see shortly --- the binary relation that indicates *set membership*. Category theory is close to logic too, but in a quite different way, which we will understand later. So, let's begin.
 
@@ -32,7 +33,7 @@ In the context of logic itself, these propositions are abstracted away (i.e. we 
 
 ### Composing propositions
 
-At the heart of logic, as in category theory, is the concept of *composition* --- if we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operators, like "and", "or" and "follows".
+At the heart of logic, as in category theory, is the concept of *composition* --- if we have two or more propositions that are somehow related to one another, we can combine them into one using a logical operators, like "and", "or" and "implies/entails".
 
 The results will be new propositions, which we might call *composite propositions* (to emphasize the fact that they are not primary). 
 
@@ -44,35 +45,35 @@ It is important to emphasize that propositions that are composed of several prem
 
 ![Balls as propositions](../05_logic/balls_propositions.svg)
 
-You might think that composition of logical propositions resembles the way in which two monoid objects are combined into one using the monoid operation. Actually, some logical operations do form monoids, like for example the operation *and*, with the proposition $true$ serving as the identity element.
-
-![Logical operations that form monoids](../05_logic/logic_monoid.svg)
-
-However, unlike monoids/groups, logics study combinations not just with one but with *many* logical operations and *the ways in which they relate to one another*, for example, in logic we might be interested in the law of distributivity of *and* and $or$ operations, which is represented by the following *tautology* (we will explain what that means later).
-
-![The distributivity operation of "and" and "or"](../05_logic/logic_distributivity.svg)
-
-Note that $∧$ is the symbol for *and* and $∨$ is the symbol for $or$ (although the law above is actually valid even if *and* and $or$ are flipped).
-
 ### Modus ponens
 
 As an example of a proposition that contains multiple levels of nesting (and also as a great introduction of the subject of logic in its own right), consider one of the oldest (it was already known by Stoics at 3rd century B.C.) and most famous propositions ever, namely the *modus ponens*. Usually it is presented like this:
 
-> All humans  are mortal
+{: .theorem}
+
+> If Socrates is human, then Socrates is mortal.
 >
-> Socrates is human
+> But Socrates is human.
 >
-> Therefore, Socrates is mortal.
+> So, Socrates is mortal.
 
 Or we also can say:
 
-> If today is Tuesday, then John will go to work.
->
-> Today is Tuesday.
->
-> Therefore, John will go to work.
+{: .theorem}
 
-You see the pattern--- modus ponens is a proposition that is composed of two other propositions (which here we denote $A$ and $B$) and it states that if proposition $A$ is true and also if proposition $(A → B)$ is true (that is if $A$ implies $B$), then $B$ is true as well. In our first example, if we know that "Socrates is a human" ($A$) and that "humans are mortal"---or "being human implies being mortal" ($A \to B$), we also know that "Socrates is mortal" ($B$).
+> If it rains, the ground gets wet.
+> 
+> It rains.
+> 
+> Therefore the ground gets wet.
+
+You see the pattern: 
+
+{: .definition}
+
+> Modus ponens is a proposition, comprised of two other propositions, denoted $A$ and $B$, that states that if the proposition $A$ is true, and that if $A$ implies $B$ $(A \to B)$, then $B$ is true as well i.e. $(A \land (A \Rightarrow B) )\to B$.
+
+In our first example, if we know that "Socrates is a human" ($A$) and that "humans are mortal"---or "being human implies being mortal" ($A \to B$), we also know that "Socrates is mortal" ($B$).
 
 Here is how we can express the same thing with a diagram.
 
@@ -82,9 +83,23 @@ We can see that the modus ponens proposition is composed of two other propositio
 
 Going one more level down, we notice that the $C$ propositions is itself composed of two propositions in an *and*, relationship --- $A$ and let's call the other one $D$ (so $A ∧ D$), where $D$ is itself composed of two propositions, this time in a $implies$ relationship --- $A → B$. But all of this is better visualized in the diagram.
 
+### Relations between logical operators 
+
+You might think that composition of logical propositions resembles the way in which two monoid objects are combined into one using the monoid operation and, as we saw, some logical operations do form monoids.
+
+However, unlike monoid/group theory, logic studies combinations of not just with one but with *many* logical operations and *the ways in which they relate to one another*, for example, in logic we are interested in the way "and" and "implies" operators relate to each other in "modus ponens". Or in the law of distributivity of *and* and $or$ operations, which is represented by the following *tautology* (we will explain what that means later).
+
+![The distributivity operation of "and" and "or"](../05_logic/logic_distributivity.svg)
+
+OK, we mentioned tautologies, now let's explain what they are.
+
 ### Tautologies
 
-We often cannot tell whether a given composite proposition is true or false without knowing the values of the propositions that it is made of. However, with propositions such as *modus ponens* we can: modus ponens is *always true*, regardless of whether the propositions that form it are true or false. If we want to be fancy, we can also say that it is *true in all models of the logical system*, a model being a set of real-world premises are taken to be signified by our propositions.
+In most cases, we cannot tell whether a given composite proposition is true or false without knowing the values of the propositions that it is made of e.g. we cannot say if "A and B" or "A or B" is true, without knowing if A or B are true.
+
+![Composite propositions --- a ∧ b, a ∨ b, a -> b](../05_logic/logic_composite_propositions.svg)
+
+However, with propositions such as *modus ponens* we can: modus ponens is *always true*, regardless of whether the propositions that form it are true or false. If we want to be fancy, we can also say that it is *true in all models of the logical system*, a model being a set of real-world premises are taken to be signified by our propositions.
 
 For example, our previous example will not stop being true if we *substitute* "Socrates" with any other name, nor if we substitute "mortal" for any other quality that humans possess.
 
@@ -94,9 +109,9 @@ We call such propositions tautologies.
 
 {: .definition}
 
-> Propositions that are always true are called *tautologies*. And their more-famous counterparts that are always false are called *contradictions*. 
+> Propositions that are always true, regardless of are the value of the propositions that form them are called *tautologies*. 
 
-You can turn each tautology into contradiction, or the other way around, by adding a "not". 
+And their more-famous counterparts that are always false are called *contradictions*. You can turn each tautology into contradiction, or the other way around, by adding a "not". 
 
 The other statements, ones which may be true or false depending on the values of some other propositions are called "contingent statements". In logic, we don't care about contingent statements --- after all, those are studied in all other sciences (and we are not like other sciences).
 
@@ -114,21 +129,31 @@ We will learn how to determine which propositions are a tautologies shortly, but
 
 Tautologies are useful because they are the basis of *axiom schemas*/*rules of inference*. And *axiom schemas* and *rules of inference* serve as starting point from which we can generate other true logical statements by means of substitution.
 
-Realizing that the colors of the balls in modus ponens are superficial, we may want to represent the general structure of modus ponens that all of its variations share.
+Realizing that the colors of the balls in modus ponens are superficial, we may want to represent the general structure (schema) of modus ponens that all of its variations share.
 
-![Modus ponens](../05_logic/modus_ponens_schema.svg)
+![The general structure of modus ponens: a black-and white configuration of balls, symbolizing modus ponens](../05_logic/modus_ponens_schema.svg)
 
-This structure (the one that looks like a coloring book in our example) is called *axiom schema*. And the propositions that are produced by it are *axioms*. 
+From then on, we can get to any modus-ponens proposition composed of primary proposition by just applying coloring.
+
+![Variations of the general structure of modus ponens: copies of the general schema in which the balls are painted in different colors](../05_logic/modus_ponens_variations.svg)
+
+This structure (the coloring book in our example) is called *axiom schema*. And the propositions that are produced by it are *axioms*. 
 
 {: .definition}
 
-> An axiom schema is a formula (containing variables), from which we can derive propositions (by replacing those variables with propositions).
+> An axiom schema is a formula (containing placeholders), from which we can derive propositions (by replacing those placeholders with propositions). 
 
 Note that the propositions that we plug into the schema don't have to be primary. For example, having the proposition $a$ (that is symbolized below by the orange ball) and the proposition stating that $a$ implies $a \lor b$ (which is one of the tautologies that we saw above), we can plug those propositions into the *modus ponens* and prove that $a \lor b$ is true. 
 
 ![Using modus ponens for rule of inference](../05_logic/modus_ponens_composite.svg)
 
 And *rules of inference* are almost the same thing as axiom schemas e.g. axiom schemas can be easily applied as rules of inference and the other way around. 
+
+Final note, in the previous chapter we repurposed one tautology (modus ponens) as an axiom schema. It is obvious that we can do the same thing for all other tautologies as well.
+
+{: .theorem}
+
+> Every tautology can be used as an axiom schema.
 
 ### Logical systems
 
@@ -144,7 +169,7 @@ Here is one such collection which consists of the following five axiom schemes *
 
 Proving that this and other similar logical systems are complete (can really generate all other propositions) is due to Gödel and is known as "Gödel's completeness theorem" (Gödel is so important that I specifically searched for the "ö" letter so I can spell his name right).
 
-### Conclusion
+### Interpretations of logic
 
 We now have an idea about how do some of the main logical constructs (axioms, rules of inference) work. But in order to prove that they indeed work, and to understand *what they are*, we need to do so through a specific *interpretation* of those constructs. 
 
@@ -360,6 +385,9 @@ As the existence of a proof of a proposition is taken to mean that the propositi
 
 ![And in the BHK interpretation](../05_logic/bhk_and.svg)
 
+{: .theorem}
+> According to the BHK interpretation, a proof of $A \land B$ is a product of a proofs of $A$ and $B$ ($A \times B$).
+
 The principle for determining whether the proposition is true or false is similar to that of primary propositions --- if the pair of proofs of $A$ and  $B$ exist (i.e. if both proofs exist) then the proof of $A \land B$ can be constructed (and so $A \land B$ is "true").
 
 
@@ -367,11 +395,16 @@ The principle for determining whether the proposition is true or false is simila
 
 ### The Implies operation
 
-Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. Saying that $A$ implies $B$ ($A \to B$) would just mean that there exist arrows that can convert a proof of $A$ to a proof of $B$. 
+Now for the punchline: in the BHK interpretation, the *implies* operation is just a *function* between proofs. 
+
 
 ![Implies in the BHK interpretation](../05_logic/bhk_implies.svg)
 
-But in order to use about the proof, we need to also have an implies *set*, or a *homomorphism set* as it is called in set theory), that is, a set containing all arrows between given two objects, with one element for each arrow.
+
+{: .theorem}
+> According to the BHK interpretation, saying that $A$ implies $B$ ($A \to B$), would just mean that there exist an arrow (function) that can convert a proof of $A$ to a proof of $B$. 
+
+But in order to reason about proofs , we need to also have an implies *set*, or a *homomorphism set* as it is called in set theory), that is, a set containing all arrows between given two objects, with one element for each arrow.
 
 ![Implies object in the BHK interpretation](../05_logic/bhk_implies_object.svg)
 
@@ -396,6 +429,10 @@ To express this, intuitionistic logic defines the constant $⊥$ which plays the
 ...we can write:
 
 ![Negation in the BHK interpretation: A implies Bottom](../05_logic/bhk_negation.svg)
+
+{: .theorem}
+
+> According to the BHK interpretation, $\lnot A$ can be read as $A \to \bot$
 
 In set theory, the $⊥$ constant is expressed by the empty set.
 
@@ -484,6 +521,10 @@ By now you probably realized that the *and* and *or* operations are the bread an
 
 Logic allows you to combine any two propositions in and *and* or *or* relationship, so, in order for an order to be "logical" (to be a correct representation for a logical system,) *it has to have $meet$ and $join$ operations for all elements*. Incidentally we already know how such orders are called --- they are called *lattices*.
 
+{: .definition}
+
+> An order which has meets and joins for all elements is called a lattice.
+
 And there is one important law of the  *and* and *or* operations, that is not always present in all lattices. It concerns the connection between the two, i.e. way that they distribute, over one another.
 
 {: .definition}
@@ -515,6 +556,9 @@ Conversely, the proof of *True* which we write as $\top$, expressing the stateme
 So *True* and *False* are just the *greatest* and *least* objects of our order (in category-theoretic terms *terminal* and *initial* object). This is another example of the categorical concept of duality --- $\top$ and $\bot$ are dual to each other, which makes a lot of sense if you think about it, and also helps us remember their symbols (although if you are like me, you'll spent a year before you stop wondering which one is which, every time I see them). 
 ![The whole logical system, represented as a Hasse diagram](../05_logic/lattice_true_false.svg)
 
+{: .definition}
+> A lattice that has a least and greatest elements is called a *bounded lattice*.
+
 So, to summarize, not only should our distributive lattice be *distributive*, but it also has to be *bounded* i.e. it has to have greatest and least elements (which play the roles of *True* and *False*).
 
 ### The *implies* operation
@@ -542,7 +586,6 @@ Modus ponens is the essence of the *implies* operation, and, because we already 
 > The implication object $A \Rightarrow B$ is an object which is related to objects $A$ and $B$ in such a way that such that $A ∧ (A \Rightarrow B) → B$.
 
 This definition is not complete, however, because (as usual) $A \Rightarrow B$ is *not the only object* that fits in this formula. For example, the set $A \Rightarrow B ∧ C$ is also one such object, as is $A \Rightarrow B ∧ C ∧ D$ 
-
 ![Implies operation with universal property](../05_logic/implies_modus_ponens_impostors.svg)
 
 So how do we set apart the real object from all those "imposter" objects? If you remember the definitions of the *categorical product* (or of its equivalent for orders, the *meet* operation) you would already know where this is going: we recognize that $A \Rightarrow B$ is the upper *limit* of $A \Rightarrow B ∧ C$. So, $A \Rightarrow B ∧ C ∧ D$ and all other imposter formulas that can be in the place of $X$ in $A ∧ X → B$ are below it. 
@@ -551,23 +594,26 @@ So how do we set apart the real object from all those "imposter" objects? If you
 
 The relationship can be described in a variety of ways.
 
-Logically, we say this:
-
-{: .definition}
-
-> The *implication proposition* $A \Rightarrow B$ (called also *entailment*) is the most *trivial* proposition $X$ for which the formula $A ∧ X → B$ (i.e. $A ∧ (A \Rightarrow B) → B$) is satisfied.
-
 When we think of *orders*, we can say:
 
 {: .definition}
 
-> The *exponential element* $A \Rightarrow B$ (called also a *relative pseudo-complement* of $A$ in respect to $B$) is the *biggest/topmost* object $X$ such that the meet of $X$ and $A$ is smaller than $B$, so $(A ∧ X) → B$  (i.e. $A ∧ (A \Rightarrow B) → B$).
+> For any two elements in an order $A$ and $B$, the *exponential element* $A \Rightarrow B$ (called also a *relative pseudo-complement* of $A$ in respect to $B$) is the *biggest/topmost* object $X$ such that the meet of $X$ and $A$ is smaller than $B$, so $(A ∧ X) → B$  (i.e. $A ∧ (A \Rightarrow B) → B$).
+
+
+
+Logically, we say this:
+
+{: .definition}
+
+> For any propositions $A$ and $B$, the *implication proposition* $A \Rightarrow B$ (called also *entailment*) is the most *trivial* proposition $X$ for which the formula $A ∧ X → B$ (i.e. $A ∧ (A \Rightarrow B) → B$) is satisfied.
+
 
 Finally, here is a general *categorical* definition:
 
 {: .definition}
 
-> The *exponential object* (called also *internal homomorphism object*) $A \Rightarrow B$ is object $X$ such that: 
+> For any objects $A$ and $B$ in a categoruy, the *exponential object* (called also *internal homomorphism object*) $A \Rightarrow B$ is object $X$ such that: 
 > 1. The product of $X$ and $A$ is connected to $B$ with a morphism, so $(A \times X) → B$  (i.e. $A \times (A \Rightarrow B) → B$).
 > 2. For any impostor exponential object$I$, that also has such morphism, there must also exist a unique function (called universal morphism) with the type signature $g: I \to A \to B$, that converts the impostor exponential to the real exponential, such that the morphism connecting the impostor to $B$ would be a result of the composition of $g$.
 
@@ -576,14 +622,6 @@ The existence of this implication object is the final condition for an order/lat
 Note that this definition of implication object is valid specifically for intuitionistic logic. For classical logic, the definition of is simpler: because of the law of excluded middle there $A \Rightarrow B$ is just another way to spell $\lnot A ∨ B$.  
 
 Note that, as usual, we treat isomorphic objects as equal: there might be several objects that play the role of $A \Rightarrow B$, for some $A$ and $B$, but they would be isomorphic to each other i.e. like meets and joins, implication object is defined *up to a (unique) isomorphism*.
-
-### The *if and only if* operation
-
-When we examined the *if and only if* operation can be defined in terms *implies*, that is $A \leftrightarrow B$ is equivalent to $A \Rightarrow B \land B \Rightarrow A$.
-
-![Implies identity](../05_logic/isomorphism.svg)
-
-We have something similar for categorical logic as well --- We say that when two propositions are connected to each other, then, particularly when we speak of orders, they are isomorphic.
 
 ### Formal definition for orders
 
@@ -686,7 +724,7 @@ This is again a well-known result in logic:
 
 {: .theorem}
 
-> (sometimes called deduction theorem) $A$ implies $B$ in any model, then ($A \models B$), then the statement $(A \Leftarrow B) $ will always be true.
+> (sometimes called deduction theorem) $A$ implies $B$ in any model, then ($A \models B$), then the statement $(A \Rightarrow B)$ will always be true.
 
 ## Interlude: Free Heyting algebras -- making ourselves a logic
 
