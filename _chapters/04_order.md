@@ -222,10 +222,14 @@ The diagrams that we use in this section are called "Hasse diagrams" and they wo
 
 In terms of arrows, the rule means that if you add an arrow to a point, the point *to* which the arrow points must always be above the one *from* which it points.
 
-![A join diagram](../04_order/hasse.svg)
 
-This arrangement allows us to compare any two points by just seeing which one is above the other e.g. we can determine the *join* of two elements, by just identifying the elements that they connect to and see which one is lowest.
+Hasse diagrams allow us to compare any two points by just seeing which one is above the other e.g. we can determine the *join* of two elements, by just identifying the elements that they connect to and see which one is lowest.
 
+![A join diagram with a valid join](../04_order/hasse.svg)
+
+Likewize, we immediately see if two elements have no join.
+
+![A join diagram](../04_order/hasse_2.svg)
 
 ### Color-mixing partial order
 
@@ -537,7 +541,11 @@ In other words, the transitivity law tells us that the $≤$ relationship compos
 
 (we have to also verify that the relation is associative, but that's easy)
 
+
+### Formal definition
+
 So, we suspect that preorders are categories, but is it really so? Let's review the definition of a category again.
+
 
 {: .definition}
 
@@ -566,8 +574,7 @@ So, like a monoid is a category that has one object, an order is a category that
 > A preorder, any preorder, can be seen as a *category with at most one morphism between two given objects*--- for any $A$ and $B$, we say that if $A ≤ B$ then a morphism $A \to B$ exists. The identity morphism exist because of reflexivity. 
 > The converse is also true: any category with no more than one morphism between two objects can be seen as a preorder. 
 
-
-An interesting fact that follows from the fact that the they have at most one morphism between given two objects is that in preorders *all diagrams commute*.
+An interesting fact that follows from they having at most one morphism between given two objects, is that in preorders *all diagrams commute automatically*.
 
 **Task 6:** Prove this. 
 

@@ -386,23 +386,44 @@ $$
 \mathrm{Maybe} :\ \mathrm{Type} \to \mathrm{Type} 
 $$
 
-Maybe is polymorphic i.e. there is not just one $Maybe$, but many $Maybe$'s --- one for each type `a` e.g. Let's take the type $Bool$ as an example. Because $Bool$ is a type, then (according to this rule) $Maybe[Bool]$ is also a type.
+Maybe is polymorphic i.e. there is not just one $Maybe$, but many $Maybe$'s --- one for each type `a` . Polymorphic types are arrows from the universe of types, to itself. 
+
+![The `Maybe` type without values --- A type-universe function, connecting `Bool` and `Nat` to `Maybe Bool` and `Maybe Nat` empty circles.](../06_type/list_type_empty.svg)
+
+This is why the kind of $Maybe$ is $Type \to Type$, while $Bool$ is just a $Type$. 
+
+Let's take just the type $Bool$ as an example. Applying it to the type-level arrow, we get 
+
+{: .definition}
+
+$$
+\mathrm{MaybeBool} :\ \mathrm{Type} 
+$$
+
+i.e. because $Bool$ is a type, then $Maybe[Bool]$ is also a type.
 
 ![The `Maybe Boolean` type without values --- A type-universe function, connecting the Bool circle to a new empty circle.](../06_type/maybe_type_empty.svg)
-
-Polymorphic types are arrows from the universe of types, to itself (i.e. the kind of $Maybe$ is $Type \to Type$), while $Bool$ is just a $Type$.
 
 ### Term introduction: Nothing
 
 Now, it's time to fill our type.
 
-The first line is similar to what we saw with boolean. 
+The first line is 
 
 {: .definition}
 
 $$
 \mathrm{Nothing} :\ \forall a.\ \mathrm{Maybe}[a]
 $$
+
+Or if we take $a$ to be $Bool$, it is just:
+
+{: .definition}
+
+$$
+\mathrm{Nothing} :\ \mathrm{Maybe}[Bool]
+$$
+
 
 It says that there is a value called $Nothing$ for all $Maybe$ types (that's what $\forall$ means -- "for all").
 
@@ -418,6 +439,16 @@ Of course there would be no point in having many $Maybe$s if they all are the sa
 $$
 \mathrm{Just} :\ \forall a.\ a \to \mathrm{Maybe}[a]
 $$
+
+or for booleans
+
+
+{: .definition}
+
+$$
+\mathrm{Just} :\ Bool \to \mathrm{Maybe}[Bool]
+$$
+
 
 The constructor $Just$ represents an arrow from type $a$ to type $Maybe[a]$ e.g. from $Boolean$ to $Maybe[Boolean]$.
 

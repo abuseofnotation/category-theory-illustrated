@@ -211,7 +211,6 @@ And another function that we meet often is this one.
 
 ![Function with a singleton set](../01_set/function_singleton.svg)
 
-
 {: .theorem}
 
 > There is a unique function from any set to any singleton set.
@@ -220,17 +219,41 @@ And another function that we meet often is this one.
 
 **Task 6:** Again, what about the other way around?
 
-## Sets and numbers
+### Hom sets
+
+Given two sets $A$ and $B$ with a bunch of functions between them (here we don't draw the set elements and draw each function as a single arrow)...
+
+![Sets A and B, and three functions going from one to the other](../01_set/hom_a_b.svg)
+
+...we can construct the *function set* (usually called *hom set*) of $A$ to $B$, containing those functions as elements.
+
+![A set containing the three functions](../01_set/hom_set.svg)
+
+If there are no functions, this set is empty.
+
+{: .definition}
+> For objects $A$ and $B$ the homomorphism set of $A$ to $B$, (denoted $A \Rightarrow B$) is the set containing one element for each function that goes from $A$ to $B$.
+
+Note that this is only in one direction, the functions between $B$ and $A$ belong in a different hom set.
+
+## Numbers
 
 All numerical operations can be expressed as functions acting on the sets of (different types of) numbers. 
 
 ### Number sets
 
-Because not all functions work on all numbers, we separate the set of numbers to several sets, many of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {0, 1, 2, 3... }$. 
+Because not all functions work on all numbers, we separate the set of numbers to several sets, some of which are subsets to one another, such the set of whole numbers $\mathbb{Z} := {... -3 -2, -1, 0, 1, 2, 3... }$, the set of positive whole numbers, (also called "natural" numbers), $\mathbb{N} := {0, 1, 2, 3... }$. 
+
+![The set of natural numbers and the set of integers](../01_set/number_sets.svg)
+
+
+(Because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
 
 ### Number functions
 
-Each numerical operation is a function between two of these sets. For example, squaring a number is a function from the set of real numbers to the set of real non-negative numbers (because both sets are infinite, we cannot draw them in their entirety, however we can draw a part of them).
+> Every generalization of number has first presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible. --- Bertrand Russell, from Introduction to Mathematical Philosophy
+
+Each numerical operation is a function between two number sets. For example, squaring a number is a function from the set of real numbers to the set of real non-negative numbers. 
 
 ![The square function](../01_set/square.svg)
 
@@ -242,51 +265,51 @@ I will use the occasion to reiterate some of the more important characteristics 
 
 Overall everything is permitted, as long as you can always provide exactly one result (also known as *The result™*) per value. For numerical operations, this is always true, simply because math is designed this way.
 
-> Every generalization of number has first presented itself as needed for some simple problem: negative numbers were needed in order that subtraction might be always possible, since otherwise a − b would be meaningless if a were less than b; fractions were needed in order that division might be always possible; and complex numbers are needed in order that extraction of roots and solution of equations may be always possible.  
-> Bertrand Russell, from Introduction to Mathematical Philosophy
-
 Note that most mathematical operations, such as addition, multiplication, etc. require two numbers in order to produce a result. This does not mean that they are not functions, it just means they're a little fancier. Depending on what we need, we may present those operations as functions from the sets of *tuples* of numbers to the set of numbers, or we may say that they take a number and return a function. More on that later.
 
 ## Sets and Functions in Programming
 
 Sets are used extensively in programming, especially in their incarnation as *types* (also called *classes*). All sets of numbers that we discussed earlier also exist in most languages as types.
 
-Sets and types
----
 
-Sets are not exactly the same thing as types, but all types are (or can be seen as) sets. For example, we can view the `Boolean` type as a set containing two elements &mdash; `true` and `false`.
+### Sets and types
+
+Sets are not the same thing as types, but types can be seen as sets (or they *have* sets we can say). 
+
+For example, we can view the `Boolean` type as a set containing two elements &mdash; `true` and `false`.
 
 ![Set of boolean values](../01_set/boolean.svg)
 
-Another very basic set that is used in programming is the set of keyboard characters, or `Char`. Characters are actually used rarely by themselves and mostly as parts of sequences.
+Another very basic set that is used in programming is the set of keyboard characters, or `Char`. 
 
 ![Set of characters](../01_set/char.svg)
 
-Most of the types that are used in programming are *composite* types ---  they are a combination of the primitive ones that are listed here. Again, we will cover these later.
+Most of the sets that we use in programming are *composite* sets e.g.  make a list of `Char`s and you have a string. We will see how this happens later.
 
 **Task 7:** What is the type equivalent of subsets in programming?
 
 ### Functions and methods/subroutines
 
-Some functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions &mdash; they sometimes take one value of a given type (or in other words, an element that belongs to a given set) and always return exactly one element which belongs to another type (or set). For example, here is a function that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
+Functions in programming (also called methods, subroutines, etc.) kinda resemble mathematical functions --- they take an element that belongs to a given set and return exactly one element which belongs to another set. 
+
+For example, here is a method that takes an argument of type `Char` and returns a `Boolean`, indicating whether the character is a letter.
 
 ![A function from Char to Boolean](../01_set/char_boolean.svg)
 
-However functions in most programming languages can also be quite different from mathematical functions &mdash; they can perform various operations that have nothing to do with returning a value. These operations are sometimes called side effects. 
+However functions in most programming languages can also be quite different from mathematical functions &mdash; they can perform various operations that have nothing to do with returning a value. These operations are sometimes called *side effects*. 
 
 Why are functions in programming different? Well, figuring a way to encode *effectful* functions in a way that is mathematically sound isn't trivial and at the time when most programming paradigms that are in use today were created, people had bigger problems than the their functions not being mathematically sound (e.g. actually being able to run any program at all). 
 
-Nowadays, many people feel that mathematical functions are too limiting and hard to use. And they might be right. But mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you almost everything about what the function does (this is probably the reason why most functional languages are strongly-typed).
 
 ### Purely-functional programming languages
 
-We said that while all mathematical functions are also programming functions, the reverse is not true for *most* programming languages. However, there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages. An example of a such language is Haskell, which we will meet later.
+Many people feel that mathematical functions are too limiting and hard to use. And they might have a point, but mathematical functions have one big advantage over non-mathematical ones &mdash; their type signature tells you almost everything about what the function does (this is probably the reason why most functional languages are strongly-typed). This is why there are some languages that only permit mathematical functions, and for which this equality holds. They are called *purely-functional* programming languages. An example of a such language is Haskell, which we will meet later.
 
 Such languages don't support functions that perform operations like rendering stuff on screen, doing I/O, etc. (in this context, such operations are called "side effects".
 
-In purely functional programming languages, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly perform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
+There, such operations are *outsourced* to the language's runtime. Instead of writing functions that directly perform a side effect, for example `console.log('Hello')`, we write functions that return a type that represents that side effect (for example, in Haskell side effects are handled by the `IO` type) and the runtime then executes those functions for us. 
 
-We then link all those functions into a whole program, often by using a thing called *continuation passing style*.
+We then compose all those functions into a program (by breaking them down to a thing called *continuation passing style*).
 
 ## Functional Composition 
 
@@ -317,19 +340,25 @@ Composition is the essence of all things categorical. The key insight is that th
 
 To understand how powerful composition is, consider the following: one set being connected to another means that each function from the second set can be transferred to a corresponding function from the first one.
 
-If we have a function $g: P → Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \circ g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
+If we have a function $g: P \to Y$ from set $P$ to set $Y$, then for every function $f$ from the set $Y$ to any other set, there is a corresponding function $f \circ g$ from the set $P$ to the same set. In other words, every time you define a new function from $Y$ to some other set, you gain one function from $P$ to that same set for free.
 
-![Functional composition connect](../01_set/morphism_general.svg)
+![Connections from functional composition: a function connecting two sets P -> Y, a bunch of functions Y -> X, connecting Y to other sets, resulting in a bunch of functions P -> X](../01_set/morphism_general.svg)
 
-For example, if we again take the relationship between a person and his mother as a function with the set of all people in the world as source, and the set of all people that have children as its target, composing this function with other similar functions would give us all relatives on a person's mother side.
+For example, if we take the relationship between a person and his mother as a function called "mother" with the set of all people in the world as source, and the same set as target, then composing this function with itself would yield the function "grandmother", composing it with the function "sister" would yield the function "aunt".
 
-Although you might be seeing functional composition for the first time, the intuition behind it is there &mdash; we all know that each person whom our mother is related to is automatically our relative as well &mdash; our mother's father is our grandfather, our mother's sister is our aunt etc.
+![Connections from functional composition: a function labeled "mother" connecting the set of all people to itself, and the compositions of "mother" with itself, as well as with the function "sister", resulting in a bunch of new functions ("grandmother" and "aunt"](../01_set/morphism_general.svg)
+
+And if we keep composing these two functions (as well as their male counterparts "father" and "brother", we would obtain all possible ancestral relationships.
+
+This example highlights an important ability that is enabled to functional composition --- the ability to break-down composite relationships to their basic building blocks.
 
 ### Composition in engineering
 
-Besides being useful for *analyzing* relationships that already exist, the principle of composition can help you in the practice of *building* objects that exhibit such relationships i.e. engineering. 
+Besides being useful for *analyzing* relationships that already exist, the principle of composition enables you to *build* objects that exhibit such relationships (AKA engineering). 
 
-One of the main ways in which modern engineering differs from ancient craftsmanship is the concept of a *part/module/component* --- a product that performs a given function that is not made to be used directly, but is instead optimized to be combined with other such products in order to form a "end-user" product. For example, an *espresso machine* is just a combination of the components, such as , *pump, heater, grinder group* etc, when composed in an appropriate way.
+The main way in which modern engineering differs from ancient craftsmanship is the concept of a *part/module/component* --- a product that performs a given function that is not made to be used directly, but is instead optimized to be combined with other such products in order to form a "end-user" product.
+
+For example, an *espresso machine* is just a combination of the components, such as , *pump, heater, grinder group* etc, when composed in an appropriate way.
 
 ![A espresso machine ](../01_set/machine.svg)
 

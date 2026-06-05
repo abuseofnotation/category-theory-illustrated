@@ -20,7 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,17 +39,27 @@
      inkscape:window-height="1016"
      id="namedview15615"
      showgrid="false"
-     inkscape:zoom="1.2901059"
-     inkscape:cx="-10.851826"
-     inkscape:cy="94.75"
+     inkscape:zoom="2.5802118"
+     inkscape:cx="343.77023"
+     inkscape:cy="119.17626"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="switch15611" />
+     inkscape:current-layer="switch15611"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showguides="false" />
   <switch
      id="switch15611">
     <g
        id="g15609">
+      <circle
+         style="fill:#f2f2f2;stroke:#b3b3b3;stroke-width:0;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+         id="circle15601-3"
+         r="85.599998"
+         cy="102.29785"
+         cx="297.26242" />
       <circle
          style="fill:#e6e7e8;stroke:#bbbcbe;stroke-width:6;stroke-miterlimit:10;stroke-opacity:1"
          id="circle15601"
@@ -57,17 +67,17 @@
          cy="95.300003"
          cx="292.39999" />
       <circle
-         style="fill:#f58235;stroke:#e76524;stroke-width:6;stroke-miterlimit:10"
+         style="fill:#f58235;stroke:#e76524;stroke-width:5.63059187;stroke-miterlimit:10"
          id="circle15603"
-         r="42.799999"
-         cy="95.300003"
-         cx="335.20001" />
+         r="40.164928"
+         cy="96.544983"
+         cx="333.79092" />
       <circle
-         style="fill:#39bced;stroke:#008dd2;stroke-width:6;stroke-miterlimit:10"
+         style="fill:#39bced;stroke:#008dd2;stroke-width:5.63059187;stroke-miterlimit:10"
          id="circle15605"
-         r="42.799999"
-         cy="95.300003"
-         cx="249.60001" />
+         r="40.164928"
+         cy="95.615891"
+         cx="249.9554" />
     </g>
   </switch>
 </svg>
