@@ -11,7 +11,7 @@
    version="1.1"
    id="svg290"
    sodipodi:docname="balls_arithmetic.svg"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    width="595.29999"
    height="223">
   <metadata
@@ -45,13 +45,13 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="2560"
-     inkscape:window-height="1376"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
      id="namedview292"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="294.81048"
-     inkscape:cy="81.929955"
+     inkscape:zoom="0.99999999"
+     inkscape:cx="296.36485"
+     inkscape:cy="-28.356273"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
@@ -60,171 +60,163 @@
      inkscape:guide-bbox="true"
      inkscape:document-rotation="0" />
   <circle
-     cx="172.00294"
-     cy="152.90643"
+     cx="190.42784"
+     cy="176.31949"
      r="21.732838"
      id="circle258-8"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.30069017;stroke-miterlimit:10" />
   <circle
-     cx="267.61407"
-     cy="155.0811"
+     cx="286.03897"
+     cy="178.49416"
      r="21.732838"
      id="circle260-7"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.30069017;stroke-miterlimit:10" />
   <circle
-     fill="#fce600"
-     stroke="#ffdd00"
-     cx="167.76237"
-     cy="145.66216"
+     cx="186.18727"
+     cy="169.07521"
      r="21.732838"
      id="circle272-3"
-     style="stroke-width:5.30069;stroke-miterlimit:10" />
+     style="fill:#fce600;stroke:#ffdd00;stroke-width:5.30069017;stroke-miterlimit:10" />
   <circle
-     fill="#39bced"
-     stroke="#008dd2"
-     cx="263.37354"
-     cy="147.83682"
+     cx="281.79843"
+     cy="171.24988"
      r="21.732838"
      id="circle274-5"
-     style="stroke-width:5.30069;stroke-miterlimit:10" />
+     style="fill:#39bced;stroke:#008dd2;stroke-width:5.30069017;stroke-miterlimit:10" />
   <ellipse
-     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
+     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62715995"
      id="path357-1"
-     cx="217.06706"
-     cy="148.12508"
+     cx="235.49196"
+     cy="171.53813"
      rx="10.920961"
      ry="10.828999" />
   <circle
-     cx="82.795029"
-     cy="153.94392"
+     cx="101.21992"
+     cy="177.35698"
      r="21.60948"
      id="circle3369-5"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.2706;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.27059984;stroke-miterlimit:10" />
   <circle
-     fill="#d71920"
-     stroke="#be1e2d"
-     cx="78.578552"
-     cy="146.65291"
+     cx="97.003441"
+     cy="170.06596"
      r="21.60948"
      id="circle3383-7"
-     style="stroke-width:5.2706;stroke-miterlimit:10" />
+     style="fill:#d71920;stroke:#be1e2d;stroke-width:5.27059984;stroke-miterlimit:10" />
   <ellipse
-     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
+     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62715995"
      id="path357-4-0"
-     cx="125.14213"
-     cy="147.43239"
+     cx="143.56703"
+     cy="170.84544"
      rx="10.920961"
      ry="10.828999" />
   <circle
-     cx="495.38004"
-     cy="155.63356"
+     cx="486.93491"
+     cy="181.16794"
      r="21.732838"
      id="circle260-7-6"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.30069017;stroke-miterlimit:10" />
   <circle
-     fill="#39bced"
-     stroke="#008dd2"
-     cx="491.1395"
-     cy="148.3893"
+     cx="482.69437"
+     cy="173.92368"
      r="21.732838"
      id="circle274-5-2"
-     style="stroke-width:5.30069;stroke-miterlimit:10" />
+     style="fill:#39bced;stroke:#008dd2;stroke-width:5.30069017;stroke-miterlimit:10" />
   <ellipse
-     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
+     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62715995"
      id="path357-1-9"
-     cx="447.08374"
-     cy="148.80623"
+     cx="438.63861"
+     cy="174.34061"
      rx="10.920961"
      ry="10.828999" />
   <circle
-     cx="404.21857"
-     cy="155.77199"
+     cx="395.77344"
+     cy="181.30637"
      r="21.484453"
      id="circle3371"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.24011;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.24010992;stroke-miterlimit:10" />
   <circle
-     fill="#f58235"
-     stroke="#e76524"
-     cx="400.02649"
-     cy="148.52318"
+     cx="391.58136"
+     cy="174.05756"
      r="21.484453"
      id="circle3385"
-     style="stroke-width:5.24011;stroke-miterlimit:10" />
+     style="fill:#f58235;stroke:#e76524;stroke-width:5.24010992;stroke-miterlimit:10" />
   <rect
-     style="fill:#000000;fill-rule:evenodd;stroke-width:0.687923"
+     style="fill:#000000;fill-rule:evenodd;stroke-width:0.68792301"
      id="rect42"
      width="35.2635"
      height="3.7368894"
-     x="313.52997"
-     y="144.48975" />
+     x="320.64114"
+     y="168.60991" />
   <rect
-     style="fill:#000000;fill-rule:evenodd;stroke-width:0.687923"
+     style="fill:#000000;fill-rule:evenodd;stroke-width:0.68792301"
      id="rect42-3"
      width="35.2635"
      height="3.7368894"
-     x="313.332"
-     y="150.51573" />
+     x="320.44318"
+     y="174.63589" />
   <circle
-     cx="265.59952"
-     cy="75.265228"
+     cx="296.75232"
+     cy="44.938171"
      r="21.732838"
      id="circle258-8-6"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.30069;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.30069017;stroke-miterlimit:10" />
   <circle
-     fill="#fce600"
-     stroke="#ffdd00"
-     cx="261.35895"
-     cy="68.020966"
+     cx="292.51175"
+     cy="37.693909"
      r="21.732838"
      id="circle272-3-5"
-     style="stroke-width:5.30069;stroke-miterlimit:10" />
+     style="fill:#fce600;stroke:#ffdd00;stroke-width:5.30069017;stroke-miterlimit:10" />
   <circle
-     cx="176.3916"
-     cy="76.302719"
+     cx="207.54442"
+     cy="45.975662"
      r="21.60948"
      id="circle3369-5-6"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.2706;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.27059984;stroke-miterlimit:10" />
   <circle
-     fill="#d71920"
-     stroke="#be1e2d"
-     cx="172.17513"
-     cy="69.011719"
+     cx="203.32794"
+     cy="38.684662"
      r="21.60948"
      id="circle3383-7-2"
-     style="stroke-width:5.2706;stroke-miterlimit:10" />
+     style="fill:#d71920;stroke:#be1e2d;stroke-width:5.27059984;stroke-miterlimit:10" />
   <ellipse
-     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62716"
+     style="fill:#333333;fill-rule:evenodd;stroke-width:1.62715995"
      id="path357-4-0-9"
-     cx="218.73871"
-     cy="69.791199"
+     cx="249.89153"
+     cy="39.464142"
      rx="10.920961"
      ry="10.828999" />
   <circle
-     cx="405.44214"
-     cy="77.387039"
+     cx="399.11832"
+     cy="44.231552"
      r="21.484453"
      id="circle3371-0"
-     style="opacity:0.13;stroke:#000000;stroke-width:5.24011;stroke-miterlimit:10" />
+     style="opacity:0.12999998;stroke:#000000;stroke-width:5.24010992;stroke-miterlimit:10" />
   <circle
-     fill="#f58235"
-     stroke="#e76524"
-     cx="401.25006"
-     cy="70.138229"
+     cx="394.92624"
+     cy="36.982746"
      r="21.484453"
      id="circle3385-9"
-     style="stroke-width:5.24011;stroke-miterlimit:10" />
+     style="fill:#f58235;stroke:#e76524;stroke-width:5.24010992;stroke-miterlimit:10" />
   <rect
-     style="fill:#000000;fill-rule:evenodd;stroke-width:0.687923"
+     style="fill:#000000;fill-rule:evenodd;stroke-width:0.68792301"
      id="rect42-36"
      width="35.2635"
      height="3.7368894"
-     x="314.75354"
-     y="66.104813" />
+     x="328.22867"
+     y="32.949329" />
   <rect
-     style="fill:#000000;fill-rule:evenodd;stroke-width:0.687923"
+     style="fill:#000000;fill-rule:evenodd;stroke-width:0.68792301"
      id="rect42-3-0"
      width="35.2635"
      height="3.7368894"
-     x="314.55557"
-     y="72.130783" />
+     x="328.0307"
+     y="38.9753" />
+  <path
+     inkscape:connector-curvature="0"
+     d="m 314.70578,86.254693 c 1.04639,5.717517 1.32777,5.963397 1.5824,13.297887 0.006,2.16287 0.0612,7.43472 -0.004,8.6853 l -0.0136,0.78781 5.74501,0.38923 c -3.6263,5.83157 -7.65477,11.20321 -12.1058,15.95396 -2.27325,-6.04523 -5.13658,-11.74737 -8.39766,-16.95853 l 6.18623,0.54513 0.0136,-0.78785 c 0.0651,-1.25105 0.0517,-6.4609 -0.0197,-8.58569 -0.21149,-6.83577 -0.54093,-7.31727 -1.61028,-12.934737 z"
+     id="path1881-4"
+     sodipodi:nodetypes="cccccccccccc"
+     style="fill:#333333;stroke-width:0.56238401"
+     inkscape:transform-center-x="-87.681243"
+     inkscape:transform-center-y="-65.053826" />
 </svg>

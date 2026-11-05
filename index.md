@@ -52,20 +52,12 @@ It seems that I would need some help, though.
 
 _Thanks to my regular [Patreon](https://patreon.com/abuseofnotation) supporters:_
 
+## Harrison Hwang
+## 係、各位網友、吓
 ## Abdul Basit Ahmad
-## Simon Parry
+## Karoshibee
 ## David Mankins
 ## Meme Gawd
 ## Artiom Casapu
 
-# Hire me
 
-If you have an interesting project, to which you think I can contribute, consider hiring me for:
-- Technical writing/technical communication/
-- Information design 
-- UI/UX and front-end development
-- Product design
-
-# Meet me
-
-I will be speaking about Category theory at [Zurihac 2026](https://zfoh.ch/zurihac2026/)

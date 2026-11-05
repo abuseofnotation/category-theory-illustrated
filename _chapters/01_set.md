@@ -167,7 +167,7 @@ For every set $G$, no matter what it represents, we can define the function that
 
 {: .definition}
 
->The identity function for a set $G$, $ID_{G}: G \to G$ is a function which maps every element of $G$ to itself. 
+>The identity function for a set $G$, $ID_{G}: G \to G$ is a function that maps every element of $G$ to itself. 
 
 ![The identity function](../01_set/function_identity.svg)
 
@@ -232,6 +232,7 @@ Given two sets $A$ and $B$ with a bunch of functions between them (here we don't
 If there are no functions, this set is empty.
 
 {: .definition}
+
 > For objects $A$ and $B$ the homomorphism set of $A$ to $B$, (denoted $A \Rightarrow B$) is the set containing one element for each function that goes from $A$ to $B$.
 
 Note that this is only in one direction, the functions between $B$ and $A$ belong in a different hom set.
@@ -346,7 +347,7 @@ If we have a function $g: P \to Y$ from set $P$ to set $Y$, then for every funct
 
 For example, if we take the relationship between a person and his mother as a function called "mother" with the set of all people in the world as source, and the same set as target, then composing this function with itself would yield the function "grandmother", composing it with the function "sister" would yield the function "aunt".
 
-![Connections from functional composition: a function labeled "mother" connecting the set of all people to itself, and the compositions of "mother" with itself, as well as with the function "sister", resulting in a bunch of new functions ("grandmother" and "aunt"](../01_set/morphism_general.svg)
+![Connections from functional composition: a function labeled "mother" connecting the set of all people to itself, and the compositions of "mother" with itself, as well as with the function "sister", resulting in a bunch of new functions ("grandmother" and "aunt"](../01_set/morphism_ancestral.svg)
 
 And if we keep composing these two functions (as well as their male counterparts "father" and "brother", we would obtain all possible ancestral relationships.
 
@@ -430,7 +431,11 @@ In fact, we can say (although this is not an official definition) that...
 
 Those things are not necessarily functions, but have a source and a target like functions, they compose with one another like functions (associatively) and they can be represented by external diagrams.
 
-And there is another way of defining category theory, without defining category theory: it is what you get if you replace the concept of equality with the concept of *isomorphism*. 
+And there is another way of defining category theory, without defining category theory: 
+
+{: .definition}
+
+> Category theory is what you get if you treat isomorphisms as equality. 
 
 We haven't talked about isomorphisms yet, but this is what we will be doing for the rest of this chapter.
 
@@ -461,6 +466,16 @@ This definition does not tell us anything about the most important quality of is
 > (External) Two sets $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist functions $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
 
 Notice how the identity function comes in handy. In fact, notice that the concept of isomorphism is defined only by using the identity function and functional composition, this is our first completely external, completely *categorical* definition (if you don't count composition itself).
+
+And with the external definition comes also a *visual* definition.
+
+{: .definition}
+
+> Two sets are isomorphic if there exist functions, such that all the paths in this diagram are equivalent.
+>
+> ![Isomorphism: external definition](../01_set/isomorphism_external.svg)
+
+
 
 ### Isomorphism and identity
 

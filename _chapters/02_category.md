@@ -35,7 +35,7 @@ Naturally, the product comes equipped with two functions, one for each property,
 
 {: .theorem}
 
-For each set $C$, that is a product of $A$ and $B$, there are two functions $C \to A$ and $C \to B$, called the product's *projections* that retrieve back its (the product's) constituent values).
+> For each set $C$, that is a product of some sets $A$ and $B$, there  are two functions $C \to A$ and $C \to B$, called the product's *projections* that retrieve back its (the product's) constituent values).
 
 (in programming terms, we would dub these the "getters")
 
@@ -193,26 +193,71 @@ So, the function $g$ exist for every object $I$.
 
 {: .definition}
 
-> The product of $A$ and $B$, denoted $A \times B$, defined in such a way that all the paths in this diagram are equivalent, for all objects $I$, that are connected to $A \times B$.
+> The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that all the paths in this diagram are equivalent, for all objects $I$, that are also connected to $A$ and $B$.
 > ![Product, universal property](../02_category/product_universal_property.svg)
 
 You would see a lot of similar definitions and diagrams in this book. In category theory, we often (always) define properties that a given object might possess, by defining a structure such that all similar objects can be converted to it. This is what we call a *universal property*, but it is too early to go into more detail, (after all we haven't even yet said what category theory is).
 
-### Isomorphism and equality
+### Uniqueness of products "up to an isomorphism" 
 
-If we remember the three definitions of products in terms of sets and set structure, that we saw earlier and try to determine which of them is the "real" product, which is defined by the universal property, we will see that they *all* are the real product. This is because they are all isomorphic to one another. This is OK: when we represent things using universal properties, isomorphism is treated as equality. 
+If we remember the three definitions of products in terms of sets and set structure, that we saw earlier and try to determine which of them is the "real" product, which is defined by the universal property, we will see that they *all* are the real product. 
+
+To understand why, let's see what will happen if we have a second set that is also the product of two sets (for example, if we simultaneously use two different definitions from the ones that we saw earlier). 
+
+![Product uniqueness - two sets that are both the product of sets A and B](../02_category/product_uniqueness.svg)
+
+You see that we drew the projections of the two products, but we have to draw some more arrows. By the universal property, our product, it has to have a unique arrow coming from every object that has projections to $A$ and $B$, including the second product.
+
+![Product uniqueness - two sets that are both the product of sets A and B, with an arrow connecting one of them to the other](../02_category/product_uniqueness_arrow.svg)
+
+And by the same property the first product would be connected to the second (in fact, saying "first" and "second" doesn't make much sense). 
+
+![Product uniqueness - two sets that are both the product of sets A and B, with two opposite arrows connecting them to one another](../02_category/product_uniqueness_arrows.svg)
+
+And it's not hard to prove that those two arrows in fact define an isomorphism.
+
+So, it looks like the universal property of products is such that if we have two products, they would necessarily be *isomorphic* to one another. 
+
+{: .theorem}
+
+> If two sets $C$ and $C'$ both satisfy a given universal property (such as being the product of $A$ and $B$), then they are isomorphic.
+
+And the reverse is also true:
 
 {: .theorem}
 
 > If a set $C$ satisfies a given universal property (such as being the product of $A$ and $B$), then any set isomorphic to $C'$ would also satisfy it.
 
-(This is so, because you can easily construct the universal morphism from $C'$ from the universal morphism of $C$).
-
-We say that the product of two sets is "unique up to *an isomorphism*. This is a shorthand for "there are actually more than one of it, but they are all isomorphic to each other, so we don't care".
-
-<!--TODO diagram-->
+Due to these, if we view isomorphism as equality, we can say that the product of two sets is "unique up to *an isomorphism* i.e. "there can actually be more than one of it, but they are all isomorphic to each other, so we don't care".
 
 This is the same viewpoint that we often adopt in programming, especially when we work on the higher level: although there might be many different implementations list or a pair, or many different formats in which a given data can be stored, as long as we have a way to convert one to the other (and vice versa they are all the same to us.
+
+Interlude: proving the isomorphism
+---
+
+Now let's prove that two sets that we constructed in the previous example are indeed isomorphic.
+
+![Product uniqueness - two sets that are both the product of sets A and B, with two opposite arrows connecting them to one another](../02_category/product_uniqueness_arrows.svg)
+
+This would entail proving that the composition of the two functions is equal to the identity function, e.g. if we call the two functions $f: C \to C'$ and $g: C' \to C$, this would mean that $f \circ g = ID_{C}$ and $g \circ f = ID_{C'}$.
+
+What do we know about $f$ and $g$? We know that they are related in a special way with the projection functions, that we dubbed earlier $f^{1}$ and $f^{2}$. 
+
+Namely that the projection of $C'$ (so $f^{1} : C' \to A$) are equal to the composition of this function with the projections of $C$ (so f^{1} \circ g : C \to A$ (note that we use the same name $f^{1} for both the projections of $C$ and $C'$)).
+
+So, we have 
+
+$f^{1} =  f^{1} \circ g$
+
+And we also we have the same thing for $f$
+
+$f^{1}  =  f^{1} \circ f$
+
+And combining the two, we get 
+
+$f^{1}  =  f^{1} \circ (f \circ g)$
+
+But, as you remember, 
 
 <!--
 
@@ -343,7 +388,11 @@ This probably provokes a lot of questions and we have a whole chapter about logi
 
 So far in the book, we saw some amazing ways of defining set-theoretic constructs without looking at the set elements and by only using external diagrams.
 
-In the first chapter, we defined functions and functional composition with this diagram.
+In the first chapter, we defined isomorphisms externally.
+
+![Isomorphism: external definition](../02_category/isomorphism.svg)
+
+We defined functions and functional composition.
 
 ![Functional composition](../02_category/functions_compose_sets.svg)
 
@@ -403,7 +452,7 @@ And because there is no other set, other than the singleton set that has this pr
 
 {: .definition}
 
-> The singleton set $1$ is one such that there exist a unique functions from any other set to it i.e. we have $\forall  X  \exists!  X \to 1$, then $1$ is the singleton set.
+> The singleton set $1$ is one such that there exist a unique function from any other set to it i.e. for any set $X$ there exist a unique function $X \to 1$.
 
 ![Terminal object](../02_category/terminal_object.svg)
 
@@ -485,14 +534,13 @@ You may say that they apply to entirely different _categories of objects_ (nudge
 
 Maybe it is about time to see what a category is. Here is a short definition: A category consists of objects (an example of which are sets) and morphisms that go from one object to another (which behave as functions) and that are composable. We can say a lot more about categories, and even present a formal definition, but for now, it is sufficient for you to remember that sets are one example of a category and that categorical objects are like sets, except that we don't _see_ their elements i.e. category-theoretic notions are captured by the external diagrams, while strictly set-theoretic notions can be captured by internal ones.
 
-![Category theory and set theory compared](../02_category/set_category.svg)
-
 When we are within the realm of sets, we can view each set as a collection of individual elements. In category theory, we don't have such a notion. However, taking this notion away allows us to define concepts such as the sum and product sets in a whole different and more general way. Plus we always have a way to "go back" to set theory, using the tricks from the last section.
 
 | Category Theory       | Set theory         |
 | --------------------- | ------------------ |
 | Category              | **N/A**            |
-| Objects and Morphisms | Sets and functions |
+| Object                | Set                |
+| Morphism              | Function           |
 | **N/A**               | Element            |
 
 By switching to external diagrams, we lose sight of the particular (the elements of our sets), but we gain the ability to zoom out and see the whole universe where we have been previously trapped. 
@@ -551,21 +599,21 @@ Note, that functional composition is read from right to left. e.g. applying $g$ 
 
 ### The law of identity
 
-To have numbers, you have to have a zero. The zero of category theory is what we call the "identity morphism" for each object. In short, this is a morphism that doesn't do anything.
+To have numbers, you have to have a zero. The zero of category theory is what we call the "identity morphism" for each object. In short, this is a morphism that doesn't do anything. A structure must have an identity mophism for each object in order for it to be called a category --- this is known as the _law of identity_.
 
 ![The identity morphism (but can also be any other morphism)](../02_category/identity.svg)
 
 It's important to mark this morphism because there can be (let's again add this very important, and by now probably also very boring, reminder) many morphisms that go from one object to the same object (for example, in the category of sets, we deal with a multitude of functions that have the set of numbers as source and target, such as $\operatorname{negate}$, $\operatorname{square}$, $\operatorname{add\ one}$, and are not at all the identity morphism).
 
-Wait, we had The way identity is formalized in an interesting way:
+So how is the identity morphism defined? We already encountered the identity functions for sets, but it was defined internally (as ffunctions that map every element to itself). 
+
+And now we present the external definition:
 
 {: .definition}
 
 > The identity morphisms of each object $A$, $B$, denoted $ID_{A}: A \to A$, $ID_{B}: B \to B$ etc. are such that for any  $f: A \to B$ we have $f \circ ID_{A} = ID_{B} \circ f = f$
 
-So they really "does nothing".
-
-A structure must have an identity morphism for each object in order for it to be called a category --- this is known as the _law of identity_.
+So they really "does nothing". And it is easy to see that that the identity functions are identity morphisms for sets.
 
 **Task 4:** What is the identity morphism in the category of sets?
 
@@ -624,6 +672,13 @@ And, because categories behave as sets, many set-theoretic definitions are also 
 > The product of $A$ and $B$, denoted $A \times B$, is ~~a set~~ an object, such that: 
 1. There exists two "projection" ~~functions~~ morphisms $A \times B \to A$ and $A \times B \to B$. 
 2. For any impostor product $I$, that also has such projection ~~functions~~ morphisms ($I \to A$ and $I \to B$), there must also exist a unique ~~function~~ morphism with the type signature $g: I \to A \times B$, that converts the impostor product to the real product, such that the above two ~~functions~~ morphisms would be just the composition of $g$ with the projections of the product.
+
+Same for the defintion of the isomorphism from the first chapter:
+
+{: .definition}
+
+> Two ~~sets~~ objects $A$ and $B$ are isomorphic (or $A ≅ B$) if there exist ~~functions~~ morphisms $f: A \to B$ and its reverse $g: B \to A$, such that $f \circ g = ID_{A}$ and $g \circ f = ID_{B}$.
+
 
 So, we have been doing category theory from the first chapter, after all.
 
