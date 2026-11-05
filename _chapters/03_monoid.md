@@ -14,7 +14,7 @@ Like categories, monoids/groups are abstract systems consisting of a set of elem
 
 {: .definition}
 
->A monoid is defined by a collection/set of elements $A$ (called the monoid's *underlying set*), together with an associative *monoid operation* --- a rule for combining two elements that produces a third element one of the same kind --- $A \circ A \to A$. 
+>A monoid is defined by a collection/set of elements $A$ (called the monoid's *underlying set*), together with an associative *monoid operation* --- a rule for combining two elements that produces a third element of the same kind --- $A \circ A \to A$. 
 > Also, there should be an identity element $I$, such that $I \circ A = A$ and $A \circ I = A$.
 
 Let's take our familiar colorful balls.
@@ -50,7 +50,7 @@ As you probably remember from the last chapter, functional composition is also a
 ## Basic monoids 
 
 
-To keep the suspense, before we discuss the relationship between monoids and categories, we are going through see some simple examples of monoids. 
+To keep the suspense, before we discuss the relationship between monoids and categories, we are going to see some simple examples of monoids. 
 
 ### Monoids and numbers
 
@@ -132,7 +132,7 @@ The existence of the inverse elements enables *even more* algebraic operations e
 
 (The operation of removing an element is equivalent to adding the inverse element and then cancelling out the inverses)
 
-A nice example of a group, which is related to a monoid we covered, is the set of integers under addition --- the operation is again ($+$), but the objects are the *integers* $\mathbb{Z}$, not the natural numbers $\mathbb{N}$ (so it's not $$\{ 0, 1, 2, 3 ...\}$$, but $$\{... -3, -2 -1, 0, 1, 2, 3 ...\}$$). The negative numbers are added, as the natural numbers don't have inverses. The inverse of each number is its opposite number (positive numbers' inverse are negatives and vice versa). 
+A nice example of a group, which is related to a monoid we covered, is the set of integers under addition --- the operation is again ($+$), but the objects are the *integers* $\mathbb{Z}$, not the natural numbers $\mathbb{N}$ (so it's not $$\{ 0, 1, 2, 3 ...\}$$, but $$\{... -3, -2 -1, 0, 1, 2, 3 ...\}$$). The negative numbers are included, as the natural numbers don't have inverses. The inverse of each number is its opposite number (positive numbers' inverses are negatives and vice versa). 
 
 In this instance, the above formula becomes $x + (-x) = 0$
 
@@ -152,13 +152,15 @@ The study of groups is a field that is much bigger than the theory of monoids (a
 ## Symmetry groups and group classifications
 
 
-An interesting kind of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fitted before the action was applied).
+An interesting kind of groups/monoids are the groups of *symmetries* of geometric figures. Given some geometric figure, a symmetry is an action after which the figure is not displaced (e.g. it can fit into the same mold that it fit before the action was applied).
 
 We won't use the balls this time, because in terms of symmetries, they have just one position and hence just one action --- the identity action (which is its own reverse, by the way). 
 
-Instead, let's take this triangle, which, for our purposes, is the same as any other triangle. We are not interested in the triangle itself, but in its rotations. The only thing we need to make ourselves believe is that this is an "unrotated" triangle i.e. the one which represents the identity rotation.
+Instead, let's take this triangle, which, for our purposes, is the same as any other triangle: we are not interested in the triangle itself, but on the actions which are performed on it.
 
 ![A triangle](../03_monoid/symmetry_group.svg)
+
+The only thing we need to make ourselves believe is that this is an "unrotated" triangle i.e. the one which represents the identity rotation.
 
 ### Groups of rotations
 
@@ -170,9 +172,7 @@ Connecting the dots (or the triangles in this case) shows us that there are just
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_actions.svg)
 
-The rotations of a triangle form a monoid --- the *rotations are objects* (of which the zero-degree rotation is the identity) and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
-
-{: .nota-bene}
+The rotations of a triangle form a monoid --- again, the *rotations are objects*. The zero-degree rotation is the identity, and the monoid operation which combines two rotations into one is just the operation of performing the first rotation and then performing the second one.
 
 Note once again that the elements in the group are the *rotations*, not the triangles themselves, actually the group has nothing to do with triangles, as we shall see later.
 
@@ -182,7 +182,7 @@ The diagram that enumerates all the rotations of a more complex geometrical figu
 
 ![The group of rotations in a more complex figure](../03_monoid/symmetry_rotation_square.svg)
 
-But it gets much simpler to grasp if we notice the following: although our group has many rotations, and there are more still for figures with more sides (if I am not mistaken, the number of rotations is equal to the number of the sides), *all those rotations can be reduced to the repetitive application of just one rotation*, (for example, the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
+But it gets much simpler to grasp if we notice the following: although our group has many rotations, and there are more still for figures with more sides, *all those rotations can be reduced to the repetitive application of just one rotation*, (for example, the 120-degree rotation for triangles and the 45-degree rotation for octagons). Let's make up a symbol for this rotation.
 
 ![The group of rotations in a triangle](../03_monoid/symmetry_rotation_cyclic.svg)
 
@@ -216,7 +216,7 @@ All cyclic groups that have the same number of elements (or that are of the *sam
 
  For example, the group of rotations of the triangle is isomorphic to the group of integers under the addition with modulo $3$. 
 
-![The group of numbers under addition](../03_monoid/symmetry_modular.svg)
+![The group of rotations of a triangle next to the group numbers under addition modulo 3](../03_monoid/symmetry_modular.svg)
 
 All cyclic groups are *commutative* (or "abelian" as they are also called). 
 
@@ -234,7 +234,7 @@ We already mentioned group isomorphisms, but we didn't define what they are. Let
 
 Visually, the diagrams of isomorphic groups have the same structure.
 
-![Group isomorphism between different representations of S3](../03_monoid/group_isomorphism.svg)
+![The group of rotations of a triangle is isomorphic to the group numbers under addition modulo 3](../03_monoid/group_isomorphism.svg)
 
 As in category theory, in group theory isomorphic groups are considered instances of one and the same group. For example, the one above is called $Z_3$.
 
@@ -250,23 +250,23 @@ The smallest non-trivial group is the group $Z_2$ which has two elements.
 
 ![The smallest non-trivial group](../03_monoid/smallest_group.svg)
 
-$Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set under the operation that negates a given value.
+$Z_2$ is also known as the *boolean group*, due to the fact that it is isomorphic to the ${ True, False }$ set under the XOR (excluded or) operation.
 
 Like $Z_3$, $Z_1$ and $Z_2$ are cyclic.
 
 ## Group/monoid products
 
-We already saw a lot of commutative groups that are also cyclic, but we didn't see any commutative groups that are *not* cyclic. So let's examine some of those like. Here, instead of looking into individual examples, we will present the general way in which commutative non-cyclic groups are produced --- it is by uniting cyclic groups using the concept of *group product*.
+We already saw a lot of commutative groups that are also cyclic, but we didn't see any commutative groups that are *not* cyclic. So, let's examine some of those. Here, instead of looking into individual examples, we will present the general way in which commutative non-cyclic groups are produced --- it is by uniting cyclic groups using the concept of *group product*.
 
 {: .definition}
 
-> Given any two groups, we can combine them to create a third group, comprised of all possible pairs of elements from the two groups and of the sum of all their actions. 
+> Given two groups $A$ and $B$, we can combine them to create a third group, $A \times B$. The underlying set of the group is the product of the underlying sets of the groups $A \times B$ and the group operation is comprised of combination of the group operations of $A$ and $B$. 
 
 Let's see how the resulting group looks after taking the product of the following two groups (which, having just two elements and one operation, are both isomorphic to $Z_2$). To make it easier to imagine them, we can think of the first one as based on the vertical reflection of a figure and the second, as the horizontal reflection.
 
 ![Two trivial groups, each with two elements](../03_monoid/groups_product.svg)
 
-(again we have to pick an element of each group to represent the identity rotatiom, so, pretend that the left versions of the figures are the "unflipped" versions, while the right ones are flipped (although it can work the other way around too))
+(again we have to pick an element of each group to represent the identity rotation, so, pretend that the left versions of the figures are the "unflipped" versions, while the right ones are flipped (although it can work the other way around too))
 
 We get the set of elements of the new group by taking *the Cartesian product* of the set of elements of the first group and the set of elements of the second.
 
@@ -276,7 +276,7 @@ And the *actions* of a product group are comprised of the actions of the first g
 
 ![Klein four](../03_monoid/klein_four_as_product.svg)
 
-The product of the two groups presented is called the *Klein four-group* and it is the simplest *non-cyclic commutative* group. 
+The product of the two groups presented is called the *Klein four-group* and it is the smallest *non-cyclic commutative* group. 
 
 Another way to present the Klein four-group is the *group of symmetries of a non-square rectangle*.
 
@@ -328,9 +328,9 @@ As there doesn't exist a color that, when mixed with itself, can produce all oth
 
 However, as we saw earlier, the color mixing monoid *is commutative*.
 
-There is a result (fundamental theorem of finite commutative groups) that says such monoids are necessarily *products* of some simpler monoids.
+There is a result (fundamental theorem of finite commutative groups) that says such groups are necessarily *products* of some simpler groups.
 
-And it is not hard to find those monoids --- although there isn't one color that can produce all other colors, there are three colors that can do that --- the prime colors. This observation leads us to the conclusion that the color-mixing monoid, can be represented as the product of three monoids, corresponding to the three primary colors.
+And it is not hard to find those monoids --- although there isn't one color that can produce all other colors, there are three colors that can do that --- the prime colors. This observation leads us to the conclusion that the color-mixing monoid, can be represented as the product of three monoids corresponding to the three primary colors.
 
 ![color-mixing group as a product](../03_monoid/color_mixing_product.svg)
 
@@ -348,13 +348,13 @@ In both cases it would be cyclic.
 {% if site.distribution == 'print'%}
 -->
 
-### Interlude: Cyclic product groups and the Chinese remainer theorem
+### Interlude: Cyclic product groups and the Chinese remainder theorem
 
 Most product groups (even the product of cyclic groups) would be non-cyclic, because it would have the generators of both groups that comprise it, i.e. even if the two original groups are cyclic and thus have 1 generator each, their product would still have 2 generators. But there is one exception where product group of two cyclic groups would still be cyclic.
 
 {: .theorem}
 
-The product group of two groups is cyclic if the groups that comprise it are cyclic, and if the number of elements of those groups (their *orders*) don't have a common divisor other than 1 (i.e. if they are *relatively prime numbers*). 
+The product group of two groups is cyclic if the groups that comprise it are cyclic, and if the number of elements of those groups (their *orders*) doesn't have a common divisor other than 1 (i.e. if they are *relatively prime numbers*). 
 
 So, if you combine two groups with orders that have some common divisor (as $2$ and $2$, which are both divided by 2), then, their product would not be cyclic. But, if you combine two groups with orders that are relatively prime, (like $2$ and $3$) you would get a cyclic group.
 
@@ -405,7 +405,7 @@ This is not to say that the definition that we examined, where we describe them 
 
 ### Monoid elements as objects 
 
-When we defined monoids, we presented their elements as *objects* and their operation --- as a function/morphism that converts two objects into a third one. Then, we introduced a way for representing such operations using set theory --- as functions that take a *pair* of elements from the monoid’s set and return one other monoid element. 
+When we defined monoids, we presented their elements as *elements of a set* and their operation --- as a function that takes a *pair* of elements from the set and return another element from the same set.
 
 ![The color-mixing operation as a function](../03_monoid/color_mixing_operation.svg)
 
@@ -417,31 +417,33 @@ Under this correspondence, this specific mixing in the color-mixing monoid...
 
 ![Monoid operations as functions from pair of objects to a third object: (A X B) -> C)](../03_monoid/operation_pairs.svg)
 
-However, this is not the only way to represent multi-argument functions set-theoretically --- there is another, equally interesting way, that doesn't rely on any data structures, but only on functions.
+However, this is not the only way to represent multi-argument functions (and monoid operations) --- there is another, equally interesting way, that doesn't rely on any data structures, but only on functions.
 
 ### Monoid elements as morphisms
 
+We saw that for some groups, like the group of integers, where the group objects are ...objects, and for others, like the groups of rotations, the group objects are understood as *actions*.
 
-We saw that for some groups, like the groups of symmetries and rotations, the group elements can be understood not as objects but as *actions*. This is actually true for all other groups as well, e.g. the *red ball* in our color-blending monoid can be seen as the action of *adding the color red* to the mix, the number $2$ in the monoid of addition can be seen as the operation $+2$ etc. 
+![The group of rotations of a triangle next to the group numbers under addition modulo 3](../03_monoid/symmetry_modular.svg)
+
+But then we established an isomorphism between the different types of groups.
+
+![The group of rotations of a triangle is isomorphic to the group numbers under addition modulo 3](../03_monoid/group_isomorphism.svg)
+
+This means that both viewpoints are valid for *all* groups. And the second one is even more intuitive i.e. that all monoid objects can be seen as actions. For example, the number ($2$) in the monoid of addition can be seen as the operation of adding that number ($+2$) etc. 
+
+The *green ball* in our color-blending monoid can be seen as an object that we can mix with other objects.
+
+![Monoid operations as functions from pair of objects to a third object: (A X B) -> C)](../03_monoid/operation_pairs.svg)
+
+But it also can be seen as the action of *adding the color green* to the mix etc.
 
 ![Monoid operations as functions (A X B) -> C) = A -> B -> C](../03_monoid/operation_functions.svg)
 
-This transformation is called *currying* in the name of Haskell Curry, although it was invented some years earlier by Moses Schönfinkel (*Schönfinkelisation* didn't stick out for some reason). 
-
-Anyway, Schönfinkel discovered that the following two expressions are isomorphic.
+And the two viewpoints are isomorphic 
 
 ![The equivalence of curried and uncurried functions](../03_monoid/curry.svg)
 
-i.e.  that any function that takes a pair of objects, can be transformed to a function that takes one object and returns a *function* that takes the other one and returns the result.
-
-{: .theorem}
-
-> (Tensor Hom adjunction / Currying)  for all types $A$, $B$, $C$, any function with signature $A\times B \to C$ can be converted with a function with signature $A \to (B \to C)$ and vice versa, so 
->$$
->A\times B \to C \cong A \to (B \to C)
->$$.
-
-And monoid operation are just functions that accept a pair, only they are functions such that both elements of the pair (as well as the result) are of the same type.
+i.e.  any function that takes a pair of objects, can be transformed to a function that takes one object and returns a *function* that takes the other one and returns the result.
 
 {: .theorem}
 
@@ -475,25 +477,19 @@ And because the monoid operation is always given in the context of a given monoi
 
 ### Monoid operations as functional composition
 
-As we said, the monoid elements are represented as functions. So what about the monoid operation? It corresponds to  *functional composition*. 
+As we said, the monoid object can be represented as functions. But what would happen to the monoid operation in this case? It corresponds to  *functional composition*. 
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_set.svg)
 
-Due to the fact that the functions that represent the elements of a given monoid have the same set as both source and target (the monoid's underlying set), they all can be composed with one another. And the result of such compositions would also have the same signature.
+Due to the fact that the functions that represent monoid objects have the same set as both source and target (e.g the function $+1 : \mathbb{N} \to \mathbb{N}$ has the set $\mathbb{N}$ as source and target), they all can be composed with one another. And the result of such compositions would also be composable.
 
 This is true for all monoids, e.g. number-adding functions can also be combined using functional composition 
 
-$$
-1 + 1 \cong (+1) \circ (+1) 
-$$
-
-In other words, in addition to representing the monoid elements in the set as *objects* that are combined using a function, we can represent them as *functions* themselves.
-
-(we draw just one of the arrow per function, cause else the drawing would literary take forever).
+(we draw just one of the arrow per function, cause else the drawing would literally take forever).
 
 ![The group of integers - set notation](../03_monoid/integer_group_set.svg)
 
-So, basically, the functions that represent the elements of a monoid also form a monoid, under the operation of functional composition (and the functions that represent the elements that form a group also form a group). 
+This means that the functions that represent the objects of a monoid also form a monoid, under the operation of functional composition (and the functions that represent the elements that form a group also form a group). 
 
 **Task 10:** Which are the identity elements of function groups?
 
@@ -506,7 +502,27 @@ So, basically, the functions that represent the elements of a monoid also form a
 
 ### Interlude: Currying 
 
-As we said, any function that accepts a pair of arguments of a given type (say $A$ and $B$) and maps them into some result of type $C$, so $A\times B\to C$  (in the case of monoids, the signature would be $A \times A \to A$, as all monoid objects are of the same type), there exists a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to (B \to C)$, and vice versa. This function is given by a higher-order function, called `curry`. 
+In mathematics, the transformation between those two viewpoints (monoid object as set elements and actions) is informally called *currying* in the name of Haskell Curry, although it was invented some years earlier by Moses Schönfinkel (*Schönfinkelisation* didn't stick for some reason). 
+
+Anyway, Schönfinkel discovered that any function that accepts a pair of arguments of a given type (say $A$ and $B$) and maps them into some result of type $C$, so $A\times B\to C$  (in the case of monoids, the signature would be $A \times A \to A$, as all monoid objects are of the same type), there exists a function that maps the first of the two arguments (i.e. from $A$) to *another function* that maps the second argument to the final result (i.e. $B \to C$). So $A\to (B \to C)$, and vice versa. 
+
+{: .theorem}
+
+> (Currying)  for all types $A$, $B$, $C$, any function with signature $A\times B \to C$ can be converted to a function with signature $A \to (B \to C)$ and vice versa, so 
+>$$
+>A\times B \to C \cong A \to (B \to C)
+>$$.
+
+As we saw, monoid operations are functions that accept a pair, only they are functions such that both elements of the pair (as well as the result) are of the same type.
+
+{: .theorem}
+
+> (Currying for monoids) For any monoid $A$, we have
+> $$
+> A \times A \to A \cong A \to A \to A
+> $$.
+
+This isomorphism is given by a higher-order function, called `curry`. 
 
 ```typescript
 const curry = <A, B, C> 
@@ -542,24 +558,29 @@ This is one part of the isomorphism, the other part is the equivalent function f
 
 ### Cayley's theorem
 
-Let's recap: in the previous section, we showed how the elements of every group/monoid correspond to functions from the monoid's underlying set to itself (AKA to permutations), and we said that those permutations make up a monoid of their own, under functional composition --- the monoid of permutations, let's call it. 
+Let's recap: in the previous section, we showed how the elements of every group/monoid correspond to functions from the monoid's underlying set to itself. Functions that have the same set as both source and target are called *permutations*.
+
+We also said that those permutations make up a monoid of their own, under functional composition --- the monoid of permutations, let's call it. 
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_cayley.svg)
 
-One thing that we *didn't say* in the prev section: every such permutation group/monoid is isomorphic to the monoid from which it is constructed.
+One thing that we *didn't say* in the prev section, is that every such permutation group/monoid is isomorphic to the monoid from which it is constructed.
 
 ![The group of rotations in a triangle --- set notation and normal notation](../03_monoid/symmetry_rotation_comparison.svg)
 
-This is a result known as the Cayley's theorem. In short:
-
+This is a result known as the Cayley's theorem.
 
 {: .theorem}
 
-> Any group is isomorphic to its corresponding permutation group. 
+> (Cayley's theorem)  Any group is isomorphic to its corresponding permutation group: For any group $A$, $Perm(A) \cong A$ (we use $Perm$ to denote the permutation group).
 
-Or formally, if we use $Perm$ to denote the permutation group then Cayley's theorem states that $Perm(A) \cong A$ for any $A$.
+Or in other words, representing the elements of a monoid/group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*), so for example, for the numbers monoid we have:
 
-Or in other words, representing the elements of a monoid/group as permutations actually yields a representation of the monoid itself (sometimes called its *standard representation*) e.g. a triangle is a figure such that if you flip it two times it would go back to the original position (and everything that you can flip two times and go back to the original position is a triangle).
+$$
+1 + 1 \cong (+1) \circ (+1) 
+$$
+
+And likewise for any other expression (or any other monoid).
 
 Cayley's theorem is a very important result, so the fact that it does not look impressive in this context only shows the power of the categorical framework (and how much we learned).
 
@@ -571,7 +592,7 @@ Cayley's theorem is a very important result, so the fact that it does not look i
 
 Before we dive, note that symmetric groups are not the same thing as *symmetry* groups. Once we have that out of the way, we can understand what they actually are: given a natural number $n$, the symmetric group of $n$, denoted $\mathrm{S}_n$ (symmetric group of degree $n$) is the group of all possible permutations of a set with $n$ elements. The number of the elements of such groups is equal to $1\times 2\times 3...\times n$ or $n!$ (n-factorial). 
 
-So, for example, the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function.
+So, for example, the group $\mathrm{S}_1$ of permutations of the one-element set has just 1 element (because a 1-element set has no other functions to itself other than the identity function).
 
 ![The S1 symmetric group](../03_monoid/s1.svg)
 
@@ -595,7 +616,7 @@ Here are some examples:
 
 $\mathrm{S}_3$ is also isomorphic to $Dih3$ (but no other symmetric group is isomorphic to a dihedral group)
 
-Based on this insight, can state Cayley's theorem in terms of symmetric groups in the following way: 
+Based on this insight, we can state Cayley's theorem in terms of symmetric groups in the following way: 
 
 > All groups are isomorphic to subgroups of symmetric groups.
 
@@ -613,7 +634,7 @@ We saw that converting the monoid's elements to actions/functions yields an accu
 
 ![The group of rotations in a triangle - set notation](../03_monoid/symmetry_rotation_cayley.svg)
 
-However, it is obvious that it is the *functions* of the monoids, not their sets that are important (after all, with monoids you have the same set everywhere) , so we can try depicting it as a categorical (external) diagram.
+However, it is obvious that it is the *functions/morphisms* of the monoids, not their sets that are important (after all, a monoid is based on just one set), so we can try depicting it as a categorical (external) diagram.
 
 ![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_external.svg)
 
@@ -621,7 +642,7 @@ But wait, if the monoids' underlying *sets* correspond to *objects* in category 
 
 ![The group of rotations in a triangle - categorical notation](../03_monoid/symmetry_rotation_category.svg)
 
-So a monoid, any monoid, can be seen as a *category with one object*
+So a monoid, any monoid, can be seen as a *category with one object*.
 
 ### Formal definition
 
@@ -643,7 +664,7 @@ For categories with just one object, there would also be one identity morphism. 
 
 But if the category has one object, all morphisms would have the same type signature (they would just be $A \to A$). So then *all morphisms would be composable with one another*. The monoid operation does exactly that --- given any two objects (or two morphisms, if we use the categorical terminology), it creates a third.
 
-We see that aside from the little-confusing fact that *monoid objects are morphisms* when viewed categorically, this describes exactly what monoids are. 
+We see that aside from the slightly confusing fact that *monoid objects are morphisms* when viewed categorically, this describes exactly what monoids are. 
 
 {: .definition}
 
@@ -666,11 +687,11 @@ Let's imagine one specific set of categories: categories that, besides having on
 
 ![Presentation of an infinite cyclic monoid](../03_monoid/infinite_cyclic_presentation.svg)
 
-Those category corresponds exactly to *cyclic monoids*: the morphism is the generator. And this one, in particular, is the monoid of natural numbers.
+This type of categories corresponds exactly to *cyclic monoids*: the morphism is the generator. And this one, in particular, is the monoid of natural numbers.
 
 ### Z3
 
-Let's turn our attention to the second component of the presentation --- the laws describing the result of the *composition* of given two morphism (or, in our case with cyclic monoids, the result of composing the only morphism that forms the monoid with itself). 
+Let's turn our attention to the second component of the presentation --- the laws describing the result of the *composition* of given morphisms (or, in our case with cyclic monoids, the result of composing the only morphism that forms the monoid with itself). 
 
 In our previous presentation, we pictured $Z3$, the group of triangle rotations like this.
 
@@ -773,7 +794,7 @@ What's even more important is that this property can be used to actually *define
 
 For the monoid of natural numbers under addition, it is zero: $n + 0 = n$ and $0 + n = n$.
 
-For the monoid of natural numbers under *multiplication* --- 1: $n × 1 = n$ and $1 × n = n$
+For the monoid of natural numbers under *multiplication* --- 1: $n × 1 = n$ and $1 × n = n$.
 
 ---
 
@@ -833,7 +854,7 @@ For **AND** operation the identity element is $True$, for **OR**, it is $False$.
 
 Take any group with 3 elements $\{e, a, b\}$ where $e$ is identity.
 
-In such a group, we necessary have 
+In such a group, we necessarily have 
 
 $$a \circ b = e$$
 
@@ -841,7 +862,7 @@ and
 
 $$b \circ a = e$$
 
-Why? $a \circ b$ cannot be equal to $a$, as that would make $b$ the identity element, $b = e$ (and the group would really be $\{e, a\}$), and it cannot be equal to $b$, as it would make $a$ idenity.
+Why? $a \circ b$ cannot be equal to $a$, as that would make $b$ the identity element, $b = e$ (and the group would really be $\{e, a\}$), and it cannot be equal to $b$, as it would make $a$ identity.
 
 In other words, $a$ and $b$ are each other's inverses.
 
@@ -867,7 +888,7 @@ This is a nice exercise in relating spatial intuition to computation.
 
 A non-square rectangle has two independent ways it can be rotated, while keeping the symmetry -- horizontal and vertical (let's annotate them $H$ and $V$).
 
-For each of these two ways, there are two positions in which the figure can be, let's call them "normal" and "flipped". Let's annotated them $0$ and $1$. So, we have:
+For each of these two ways, there are two positions in which the figure can be, let's call them "normal" and "flipped". Let's annotate them $0$ and $1$. So, we have:
 
 $$H = \{0, 1 \}$$
 

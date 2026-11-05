@@ -39,6 +39,14 @@ _Discover the beauty of mathematics through the lens of category theory with thi
 
 [Kiran](https://kirancodes.me/), Postdoc Researcher at the University of Illinois Urbana Champaign
 
+Video Lectures
+===
+
+[Zurihac 2026 - Part 1](https://www.youtube.com/watch?v=Xr1gcdb_IvA&t=18s)
+[Zurihac 2026 - Part 2](https://www.youtube.com/watch?v=mul96pw49CI)
+
+Invite me to speak at your conference: contacts below.
+
 Support my work
 ===
 
@@ -59,5 +67,3 @@ _Thanks to my regular [Patreon](https://patreon.com/abuseofnotation) supporters:
 ## David Mankins
 ## Meme Gawd
 ## Artiom Casapu
-
-
