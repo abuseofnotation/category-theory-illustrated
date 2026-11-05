@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">5</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">a45a1958-5560-4c5f-98ef-cd3d88f6c7e0</dc:identifier>
+        <dc:title>Category Theory Illustrated</dc:title>
+        <dc:creator opf:file-as="Panic, Jencel" opf:role="aut">Jencel Panic</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (7.6.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2026-06-05T10:28:09+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta name="calibre:timestamp" content="2026-06-05T10:28:27.791332+00:00"/>
+        <meta name="calibre:title_sort" content="Category Theory Illustrated"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="Category Theory Illustrated - Jencel Panic.jpg"/>
+    </guide>
+</package>

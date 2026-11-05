@@ -1,53 +1,29 @@
-Limits and colimits
+Universal properties
 ===
 
-As you probably notice, natural transformations are so general that the only way to approach them is through reviewing some special cases. 
+OK, we covered natural transformations, so where to from now? To more advanced stuff, of course! In particular, we will look into one of the concept which is defined using natural transformations, the concept of a limit.
 
-So far, we covered natural transformations between endofunctors and especially natural transformations involving the *identity functor*.
+In the past chapters we learned about various categorical objects that we didn't define formally: products, the free monoid, the homomorphism object(AKA lambda object)... all of these objects had some contrived definitions that involved arrows "imposter" objects and mysterious universal properties. 
 
-![Pointed functor](../11_natural_transformations/identity_functor.svg)
-
-e.g. natural transformations from the identity functor to some other functor (which makes the other functor a  *pointed* functor) or *natural isomorphisms* between some composition of two functors and the identity functor, which establishes a category equivalence.
-
-Now, we will talk about natural transformations that involve a *constant functor*.
-
-The constant functor
----
-
-I don't remember if I covered constant functors, but they are easy. For every object in $D$, there is a functor $C 
-\to D$ which takes all objects to this object, and all functors to the identity morphism. Easy, right?
-
-Natural transformations between two constant functors
----
-
-A natural transformation between two constant functors is a morphism (and the other way around).
-
-**Task:** Verify that.
-
-Natural transformations involving constant functors.
----
-
-Limits and colimits
-====
-
-Products are one example of what is known in category theory as *limits*. A limit is an object that summarizes a structure (also called a diagram) consisting of other objects and morphisms in a way that allows us to retrieve some of it.
-
-A limit also has to be unique in the sense that you cannot have two limit objects for the same structure.
-
-The notion of a limit is strongly related with the notion of a commuting diagrams. This is not obvious when we are examining products because the diagram of products does not have several routes reaching to the same point.
-
-Limits can be defined formally, just like everything else that we examine, but we won't bother to do that here.
-
-Products are Limits
----
-
-OK, we said that limits summarize a structure. What is the structure that a product is summarizing? It is a structure that consists of two objects (sets) that are have no connections between them.
- 
-![External diagram](../11_natural_transformations/product_part_external.svg)
- 
-Why is the product unique when it comes to representing the two objects? Because any other object that also represents them is connected to the product through a morphism (this is known as the *universal property* of limits).
+Now, we will see that all of those objects are defined in the same way --- they are all *universal* objects.
 
 
+Universal objects and universal properties.
+===
+
+Before we talk about all these concepts, we need to explain what do we mean by "universal" objects. To do that, we will reexamine the concepts of *initial* and *terminal* object that we studied before.
+
+{: .definition}
+
+> In a given category, the terminal object (denoted $0$) is one such that there exist a unique morphism from it to any other object. The initial object ($1$) is one such that there exist a unique morphism from any other object to it.
+
+In the category of sets, the terminal object is the *empty* set and the initial object is the *singleton* set.
+
+Now, once we cleared that, defining universal objects is easy:
+
+{: .definition}
+
+An object is universal if it's either initial or terminal.
 
 
 
