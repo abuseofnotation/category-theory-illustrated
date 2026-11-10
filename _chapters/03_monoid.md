@@ -54,7 +54,7 @@ To keep the suspense, before we discuss the relationship between monoids and cat
 
 ### Monoids and numbers
 
-Mathematics is not only about numbers, however, numbers do tend to pop up in most of its areas, and monoids are no exception. The set of natural numbers $\mathbb{N}$ ($$\{ 0, 1, 2, 3 ...\}$$) forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said). This monoid is denoted $\left< \mathbb{N},+ \right>$ (in general, all monoids are denoted by specifying the set and the operation, enclosed in angle brackets).
+The prototypical example of a monoid, the equivalent to what sets are for categories, are numbers, more specifically natural numbers. The set of natural numbers $\mathbb{N}$ ($$\{ 0, 1, 2, 3 ...\}$$) forms a monoid when combined with the all too familiar operation of addition (or *under* addition as it is traditionally said). This monoid is denoted $\left< \mathbb{N},+ \right>$ (in general, all monoids are denoted by specifying the set and the operation, enclosed in angle brackets).
 
 ![The monoid of numbers under addition](../03_monoid/numbers_addition.svg)
 
@@ -132,22 +132,11 @@ The existence of the inverse elements enables *even more* algebraic operations e
 
 (The operation of removing an element is equivalent to adding the inverse element and then cancelling out the inverses)
 
-A nice example of a group, which is related to a monoid we covered, is the set of integers under addition --- the operation is again ($+$), but the objects are the *integers* $\mathbb{Z}$, not the natural numbers $\mathbb{N}$ (so it's not $$\{ 0, 1, 2, 3 ...\}$$, but $$\{... -3, -2 -1, 0, 1, 2, 3 ...\}$$). The negative numbers are included, as the natural numbers don't have inverses. The inverse of each number is its opposite number (positive numbers' inverses are negatives and vice versa). 
+A nice example of a group, which is related to a monoid we covered, is the set of integers under addition --- the operation is again ($+$), but the objects are the *integers* $\mathbb{Z}$, not the natural numbers $\mathbb{N}$ (the negative numbers are included).
 
 In this instance, the above formula becomes $x + (-x) = 0$
 
-### Summary
-
-Before we move on --- the algebraic structures that we saw above can be summarized based on the laws that define them in this table:
-
-|               | Semigroups    | Monoids   | Groups    |
-|---            | ---           | ---       | ---       |
-|Associativity  | X             | X         | X         |
-|Identity       |               | X         | X         |
-|Invertability  |               |           | X         |
-
 The study of groups is a field that is much bigger than the theory of monoids (and perhaps bigger than category theory itself). And one of its biggest branches is the study of "symmetry groups" which we will look into next.
-
 
 ## Symmetry groups and group classifications
 
@@ -270,7 +259,7 @@ Let's see how the resulting group looks after taking the product of the followin
 
 We get the set of elements of the new group by taking *the Cartesian product* of the set of elements of the first group and the set of elements of the second.
 
-![Two trivial groups and their product group, containg all combinations of an element from the first with the ](../03_monoid/groups_product_four.svg)
+![Two trivial groups and their product group, containing all combinations of an element from the first group, combined with an element of the second](../03_monoid/groups_product_four.svg)
 
 And the *actions* of a product group are comprised of the actions of the first group, combined with the actions of the second, where each action is applied only to the element that is a member of its original group, leaving the other element unchanged.
 
@@ -329,6 +318,10 @@ As there doesn't exist a color that, when mixed with itself, can produce all oth
 However, as we saw earlier, the color mixing monoid *is commutative*.
 
 There is a result (fundamental theorem of finite commutative groups) that says such groups are necessarily *products* of some simpler groups.
+
+{: .theorem}
+
+> All finite commutative groups are either cyclic or products of cyclic groups.
 
 And it is not hard to find those monoids --- although there isn't one color that can produce all other colors, there are three colors that can do that --- the prime colors. This observation leads us to the conclusion that the color-mixing monoid, can be represented as the product of three monoids corresponding to the three primary colors.
 
