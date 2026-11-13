@@ -36,8 +36,19 @@ So far so good, the question is in which category (let's go).
 
 ## Products
 
-We'll start with products, if you remember, 
+We'll start with products. If you remember, we defined them like this:
 
+{: .definition}
+
+> The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that this diagram commutes for all objects $I$).
+
+So, 
+
+> ![A "factoring" function from an object I , to the product, factors functions to the elements -- external diagrram: A function from I to the product, a function from the product to the elements and the result of composing those two functions is a function from I to the elements.](../02_category/product_universal_property.svg)
+
+
+
+![Product, external diagram: two sets, represented as points and several other sets (product candidates) that have arrows pointing to both of them. One of them is the product, another, a triple product and there are some which are not marked. All product candidates have arrows, pointing to the "real" product.](../02_category/product_morphisms.svg)
 
 ## Universal properties 
 Universal properties in #categorytheory are a very simple concept, which is formalized in a very complex manner. 

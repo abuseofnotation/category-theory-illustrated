@@ -117,15 +117,15 @@ but it also contains information about which of those objects comes first and wh
 
 So, if an ordered pair isn't a set, does that mean that we have to define it as a "primitive" type like we defined sets if we want to use them? That's possible, but there is another approach. We can define a construct that is _isomorphic_ to the ordered pair, using only sets. And mathematicians have come up with multiple ingenious ways to do that. Here is the first one, which was suggested by Norbert Wiener in 1914. Note the smart use of the fact that the empty set is unique.
 
-![A pair, represented by sets](../02_category/pair_as_set_2.svg)
+![A pair, represented by sets: A set that contains two sets, one of which contains the first object and another which contains the second object and an empty set.](../02_category/pair_as_set_2.svg)
 
 The next one was suggested by Felix Hausdorff in the same year. In order to use that one, we just have to define $1$, and $2$ first.
 
-![A pair, represented by sets](../02_category/pair_as_set_3.svg)
+![A pair, represented by sets: A set that contains two other sets, one containing the element 1 and the first object, the other, containing the element 2 and the second object](../02_category/pair_as_set_3.svg)
 
 Suggested in 1921 by Kazimierz Kuratowski, this one uses just the component of the pair.
 
-![A pair, represented by sets](../02_category/pair_as_set_1.svg)
+![A pair, represented by sets: A set that contains two sets, one containing the first element and the other -- both the first and the second elements.](../02_category/pair_as_set_1.svg)
 
 All of these definitions work by _zooming in_ into the individual elements of the product. We may think of this as a _low-level_ approach to the definition, one which which focuses on the product's _internal_ structure. But, more interesting, at least for category theory, is the _high-level_ approach --- instead of zooming in we _zoom out_, we stay completely oblivious to the contents of our sets and focus only on the functions that are associated with the product.
 
@@ -139,11 +139,11 @@ Now, based on that conceptual model, we must, given two sets, devise a way to pi
 
 So, we said that a product of $A$ and $B$ contains an $A$ and $B$. So, what are the functions that can fulfils these criteria? Of course that would be the projections, the functions for retrieving back the two elements: $A \times B \to A$ and $A \times B \to B$. 
 
-![Product](../02_category/product_functions.svg)
+![Product, internal diagram: two sets containg various elements and one set, containing all possible pairs of elements from the first set, combined with an element from the second set.](../02_category/product_functions.svg)
 
 Now if we switch to the (semi) external view, this diagram already provides some definition of what a product is:
 
-![Product, external diagram](../02_category/product_external.svg)
+![Product, external diagram: two sets, represented as points and a third one (the product), that has arrows pointing to both of the sets.](../02_category/product_external.svg)
 
 {: .definition}
 
@@ -155,11 +155,11 @@ In other words, if we have a set $C$ for which there are functions $C \to A$ and
 
 However, this definition is not complete, as the product $A$ and $B$, is not the *only* set for which such functions can be defined. For example, a set of triples, that we already examined (or the triple product) $A \times B \times X$ for any element $X$ also qualifies. Any other set that would happen to have some functions to $A$ and $B$, and would, by this definition, be "impostor product".
 
-![Product, external diagram](../02_category/product_candidates.svg)
+![Product, external diagram: two sets, represented as points and several other sets (product candidates) that have arrows pointing to both of them. One of them is the product, another, a triple product and there are some which are not marked.](../02_category/product_candidates.svg)
 
 To expose those impostors, we go back to our conceptual definition. Remember that we said  $A \times B$ contains an element of $A$, an element of $B$ _and nothing more_. This tells us that each of these impostors $I$ can be *converted* to $A \times B$, i.e. that there is an arrow $I \to A \times B$ . Why? As we said, all such sets would be _more complex_ than the product. And you can always have a function that converts a more complex structure to a simpler one by just throwing information away.
 
-![Product, external diagram](../02_category/product_morphisms.svg)
+![Product, external diagram: two sets, represented as points and several other sets (product candidates) that have arrows pointing to both of them. One of them is the product, another, a triple product and there are some which are not marked. All product candidates have arrows, pointing to the "real" product.](../02_category/product_morphisms.svg)
 
 We can know that this arrow would exist for every product because any element of the impostor set $I$, containing an element of $A$, an element of $B$ _and something more_, there exist an element of the set $A \times B$ that contains the same element of $A$ and the same element of $B$ (and nothing more). So, we can define a function $I \to A \times B$, that throws away that extra information. 
 
@@ -168,15 +168,17 @@ And even more interestingly, the projection functions (for retrieving the elemen
 
 As an example, take the set of triples, $A \times B \times X$ for any $X$. The canonical function that converts it to a product $A \times B \times X \to A \times B$ is the function that just removes the third element $X$. 
 
-![Triple product, internal diagram](../02_category/product_triple_internal.svg)
+![A "factoring" function from the triple product, to the product -- internal diagram: A function from the set of triples to a set of pairs, which just "throws" the third element of the triple away.](../02_category/product_triple_internal.svg)
 
 And we can see that the projections can be easily defined using this function. 
 
-![Triple product, internal diagram](../02_category/product_triple_internal_diagram.svg)
+
+![A "factoring" function from the triple product, to the product, factors functions to the elements -- internal diagram: A function from the set of triples to a set of pairs, which just "throws" the third element of the triple, composed with the functions for retrieving an element from the pair --- the result is exactly a function which retrieves an element from the triple](../02_category/product_triple_internal_diagram.svg)
+
 
 That is, if we dub this function $g: A \times B \times X \to A \times B$ and let $f^{1}$ and $f^{2}$ be the projections of the product ($f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$), then, the arrow that connects the triple $A \times B \times X$ to $A$ and $B$ are just the compositions $f^{1}\circ g$ and $f^{2} \circ g$. It is almost as if $A \times B \times X$ *is only connected to $A$ and $B$ because of this function*.
 
-![Triple product, external diagram](../02_category/product_triple.svg)
+![A "factoring" function from the triple product, to the product, factors functions to the elements external --- diagrram: A function from the triple product, to the product, a function from the product to the elements and the result of composing those two functions is a function from the triple product to the elements.](../02_category/product_triple.svg)
 
 More formally, we can define the product in the following way.
 
@@ -193,8 +195,10 @@ So, the function $g$ exist for every object $I$.
 
 {: .definition}
 
-> The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that all the paths in this diagram are equivalent, for all objects $I$, that are also connected to $A$ and $B$.
-> ![Product, universal property](../02_category/product_universal_property.svg)
+> The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that all the paths in this diagram are equivalent for all objects $I$, that are also connected to $A$ and $B$ (i.e. the diagram commutes for all objects $I$).
+
+> ![A "factoring" function from an object I , to the product, factors functions to the elements -- external diagrram: A function from I to the product, a function from the product to the elements and the result of composing those two functions is a function from I to the elements.](../02_category/product_universal_property.svg)
+
 
 You would see a lot of similar definitions and diagrams in this book. In category theory, we often (always) define properties that a given object might possess, by defining a structure such that all similar objects can be converted to it. This is what we call a *universal property*, but it is too early to go into more detail, (after all we haven't even yet said what category theory is).
 
