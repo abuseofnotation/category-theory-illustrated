@@ -109,7 +109,7 @@ And so "Who is this book for" is not to be read as who should, but who *can* rea
 
 ## About the language
 
-Explaining mathematics involves a tradeoff between understandable/approachable and being rigorous/correct. Between the the first-grade teacher who says that if you have one apple and you get another one you'd have two, and presenting a 200-page wall of formulas that prove the same statement, as Russell and Whitehead did in "Principia Mathematica". 
+Explaining mathematics involves a tradeoff between understandable/approachable and being rigorous/correct. Between the first-grade teacher who says that if you have one apple and you get another one you'd have two, and presenting a 200-page wall of formulas that prove the same statement, as Russell and Whitehead did in "Principia Mathematica". 
 
 Here, I try to stay in the middle of this spectrum ("the middle way", as the Buddist teachings call it). This is simply my niche, this is simply because there *aren't so many texts* that are there (a math student often has to make by themselves the leap between talking about apples and oranges and talking about formal statements). 
 

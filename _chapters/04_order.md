@@ -25,6 +25,7 @@ And the *binary relation* is a relation between two elements, which is often den
 ![Binary relation](../04_order/binary_relation.svg)
 
 As for the laws, they are different depending on the type of order. 
+
 ## Linear order
 
 Let's start with an example --- the most straightforward type of order that you think of is *linear order* i.e. one in which every object has its place depending on every other object. In this case the ordering criteria is completely deterministic and leaves no room for ambiguity in terms of which element comes before which. For example, order of colors, sorted by the length of their light-waves (or by how they appear in the rainbow).
@@ -53,7 +54,7 @@ Incidentally, (or rather not incidentally at all), these rules are nearly equiva
 
 {: .definition}
 
->A linear order is a set of elements, together with a *binary relation* between these elements, that obeys the laws of reflexivity, transitivity, antisymmetry, totality.
+>A linear order is a set of elements, together with a *binary relation* between these elements, that obeys the laws of *reflexivity, transitivity, antisymmetry* and *totality*.
 
 Let's check what they are.
 
@@ -109,7 +110,11 @@ If we think about it, this isomorphism is actually closer to the everyday notion
 
 ![Linear order isomorphisms](../04_order/linear_order_isomorphism.svg)
 
-From the fact that any finite order of objects is isomorphic to the natural numbers, it also follows that all linear orders of the same magnitude are isomorphic to one another.
+And not only are they isomorphic to (a subset of) the natural numbers, but they are also isomorphic to one another.
+
+{: .theorem}
+
+All linear orders of the same magnitude are isomorphic to one another.
 
 So, the linear order is simple, but it is also (and I think that this isomorphism proves it) the most *boring* order ever, especially when looked from a category-theoretic viewpoint --- all finite linear orders (and most infinite ones) are just isomorphic to the natural numbers and so all of their diagrams look the same way.
 
@@ -127,7 +132,7 @@ Remove the law of totality from the laws of linear orders and we get a *partial 
 
 {: .definition}
 
->An partial order is a set of elements, together with a *binary relation* between those elements, that obeys the laws of reflexivity, transitivity and antisymmetry.
+>An partial order is a set of elements, together with a *binary relation* between those elements, that obeys the laws of *reflexivity, transitivity* and *antisymmetry* (but no totality).
 
 Every linear order is also a partial order (just as a group is still a monoid), but not the other way around. 
 
@@ -153,9 +158,19 @@ An example of this is a partial order that contains a bunch of linearly-ordered 
 
 ![Soccer order - two hierarchies](../04_order/player_order_two.svg)
 
-The different linear orders that make up the partial order are called *chains*. There are two chains in this diagram $m \to g \to f$ and $d \to o$.
+They are called *chains* e.g. there are two chains in this diagram $m \to g \to f$ and $d \to o$, we can define them like this:
 
-The chains in an order don't have to be completely disconnected from each other in order for it to be partial. They can be connected as long as the connections are not all *one-to-one* i.e. ones when the last element from one chain is connected to the first element of the other one (this would effectively unite them into one chain.) 
+{: .definition}
+
+The different linear orders that make up the partial order are called *chains*. 
+
+Or we can go the other way around:
+
+{: .definition}
+
+An order that has only one chain is linear, an order that has more than one chain is partial. 
+
+The chains in a given order don't have to be completely disconnected from each other in order for it to be partial. They can be connected as long as the connections are not all *one-to-one* i.e. ones when the last element from one chain is connected to the first element of the other one (this would effectively unite them into one chain.) 
 
 ![Soccer order - two hierarchies and a join](../04_order/player_order_two_join.svg)
 
@@ -165,7 +180,10 @@ The above set is not linearly-ordered --- although we know that $d ≤ g$ and th
 
 Although partial orders don't give us a definitive answer to "Who is better than who?", some of them still can give us an answer to the more important question (in sports, as well as in other domains), namely "Who is number one?" i.e. who is the champion, the player who is better than anyone else. Or, more generally, the element that is bigger than all other elements. 
 
-> The *greatest element* of an order is an element $a$, such that we have we have $x ≤ a$ for any other element $x$, 
+{: .definition}
+
+> The *greatest element* of an order is an element $a$, such that we have we have $x ≤ a$ for any other element $x$. 
+
 Some (not all) partial orders do have such element --- in our last diagram $m$ is the greatest element, in this diagram, the green element is the biggest one.
 
 ![Join diagram with one more element](../04_order/join_additional_element.svg)

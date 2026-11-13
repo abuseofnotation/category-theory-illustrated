@@ -491,14 +491,6 @@ So each set is isomorphic to itself in that way.
 
 So, the concept of an isomorphism contains the concept of equality &mdash; all equal things are also isomorphic.
 
-### Isomorphism and composition
-
-An interesting fact about isomorphisms is that if we have functions that convert a member of set $A$ to a member of set $B$, and the other way around, then, because of functional composition, we know that any function from $A$ has a corresponding function from $B$ and the other way around.
-
-![The architecture of isomorphism](../01_set/isomorphism_general.svg)
-
-For example, if you have a function "is the partner of" that goes from the set of all married people to the same set, then that function is invertible. That is not to say that you are the same person as your significant other, but rather that every statement about you, or every relation you have to some other person or object is also a relation between them and this person/object, and vice versa. 
-
 ### Composing isomorphisms
 
 Another interesting fact about isomorphisms is that if we have two isomorphisms that have a set in common, then we can obtain a third isomorphism between the other two sets that would be the result of their (the isomorphisms) composition.
