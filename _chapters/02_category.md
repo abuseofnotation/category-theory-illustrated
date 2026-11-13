@@ -232,6 +232,10 @@ Due to these, if we view isomorphism as equality, we can say that the product of
 
 This is the same viewpoint that we often adopt in programming, especially when we work on the higher level: although there might be many different implementations list or a pair, or many different formats in which a given data can be stored, as long as we have a way to convert one to the other (and vice versa they are all the same to us.
 
+
+<!--
+TODO
+
 Interlude: proving the isomorphism
 ---
 
@@ -243,7 +247,7 @@ This would entail proving that the composition of the two functions is equal to 
 
 What do we know about $f$ and $g$? We know that they are related in a special way with the projection functions, that we dubbed earlier $f^{1}$ and $f^{2}$. 
 
-Namely that the projection of $C'$ (so $f^{1} : C' \to A$) are equal to the composition of this function with the projections of $C$ (so f^{1} \circ g : C \to A$ (note that we use the same name $f^{1} for both the projections of $C$ and $C'$)).
+Namely that the projection of $C'$ (so $f^{1} : C' \to A$) are equal to the composition of this function with the projections of $C$ (so $f^{1} \circ g : C \to A$ (note that we use the same name $f^{1}$ for both the projections of $C$ and $C'$)).
 
 So, we have 
 
@@ -258,6 +262,8 @@ And combining the two, we get
 $f^{1}  =  f^{1} \circ (f \circ g)$
 
 But, as you remember, 
+
+-->
 
 <!--
 

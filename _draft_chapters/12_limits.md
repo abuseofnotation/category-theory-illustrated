@@ -32,9 +32,11 @@ An object is universal if it's either initial or terminal.
 
 So far so good, the question is in which category (let's go).
 
+## Categorical concepts as universal properties.
+
 ## Products
 
-Let's start with products.
+We'll start with products, if you remember, 
 
 
 ## Universal properties 
