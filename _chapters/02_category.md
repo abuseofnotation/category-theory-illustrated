@@ -196,7 +196,7 @@ So, the function $g$ exist for every object $I$.
 {: .definition}
 
 > The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that all the paths in this diagram are equivalent for all objects $I$, that are also connected to $A$ and $B$ (i.e. the diagram commutes for all objects $I$).
-
+>
 > ![A "factoring" function from an object I , to the product, factors functions to the elements -- external diagrram: A function from I to the product, a function from the product to the elements and the result of composing those two functions is a function from I to the elements.](../02_category/product_universal_property.svg)
 
 

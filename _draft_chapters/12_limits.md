@@ -40,18 +40,27 @@ We'll start with products. If you remember, we defined them like this:
 
 {: .definition}
 
-> The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that this diagram commutes for all objects $I$).
+> The product of $A$ and $B$, denoted $A \times B$, is an object that is connected to $A$ and $B$ and such that this diagram commutes for all objects $I$.
 
-So, 
+We said that the product $A \times B$ obviously has to have arrows pointing to $A$ and $B$ (the projections $f^{1} : A \times B \to A$ and $f^{2} : A \times B \to B$) but there are many I's for which those arrows also exist (the example we gave was the set of triples $A \times B \times X$ for some unrelated $X$). 
 
-> ![A "factoring" function from an object I , to the product, factors functions to the elements -- external diagrram: A function from I to the product, a function from the product to the elements and the result of composing those two functions is a function from I to the elements.](../02_category/product_universal_property.svg)
+Then, we discovered that all of those arrows that go from $I$ to $A$ and $B$ also passes through the product and its projections, so for example the arrow $f: A \times B \times X \to A$ is the composition of the arrow $h: A \times B \times X \to A \times B$ and $f^{1}$.
 
 
+From here we define the product as a terminal/initial object (they are terminal). 
+
+Given some objects $A$ and $B$ the product $A \times B$ is the terminal object in a category where the objects are $I$'s. (don't forget that $A \times B$ technically is also one of the $I$-s, as it is connected with itself with the identity morphism.
 
 ![Product, external diagram: two sets, represented as points and several other sets (product candidates) that have arrows pointing to both of them. One of them is the product, another, a triple product and there are some which are not marked. All product candidates have arrows, pointing to the "real" product.](../02_category/product_morphisms.svg)
 
+Now, what would the morphisms of such a category be? They are not *all* morphisms between those objects, mind you (and the category of $I$s is not a subcategory of the category we are dealing with. For example, there might be a morphism $A \to B \to X \to A \to B$, which 
+
+They are only the ones that are connected to the product's elements.
+
+
 ## Universal properties 
-Universal properties in #categorytheory are a very simple concept, which is formalized in a very complex manner. 
+
+Universal properties are a very simple concept, which is formalized in a very complex manner. 
 
 Roughly,  it's just a situation where every path that leads to a an object A' must go through object A first (or more precisely,  that there is a unique way for it to go through A).
 
