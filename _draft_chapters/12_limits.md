@@ -2,7 +2,6 @@
 
 OK, we covered natural transformations, so where to from now? To more advanced stuff, of course! In particular, we will look into one of the concept which is defined using natural transformations, the concept of a universal object/universal property.
 
-
 ## What are universal objects 
 
 In the past chapters we learned about various categorical objects that we didn't define formally: products, the free monoid, the homomorphism object(AKA lambda object)... all of these objects had some contrived definitions that involved arrows "imposter" objects and mysterious universal properties. 
