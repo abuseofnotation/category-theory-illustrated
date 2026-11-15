@@ -233,7 +233,7 @@ If there are no functions, this set is empty.
 
 {: .definition}
 
-> For objects $A$ and $B$ the homomorphism set of $A$ to $B$, (denoted $A \Rightarrow B$) is the set containing one element for each function that goes from $A$ to $B$.
+> For any two sets $A$ and $B$ the homomorphism set of $A$ to $B$, (denoted $A \Rightarrow B$ or $Hom(A,B)$) is the set containing one element for each function that goes from $A$ to $B$.
 
 Note that this is only in one direction, the functions between $B$ and $A$ belong in a different hom set.
 
