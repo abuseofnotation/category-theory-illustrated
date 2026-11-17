@@ -272,11 +272,15 @@ Now, we ask ourselves, in which cases does there exist an isomorphism between th
 
 ![An equivalence diagram](../11_natural_transformations/equivalent_orders_functors.svg)
 
-The answer becomes trivial if we draw the isomorphism arrows connecting the three "interesting" objects in a different way (remember, this is the same category on the top and the bottom) --- we can see that these are exactly the arrows that enable us to construct an isomorphism between the two functors (the others are just identity arrows).
+The answer becomes trivial if we redraw the two isomorphism arrows $O \cong G$ and $F \cong G$, connecting the three "interesting" objects, in a way that they connect the upper picture of the category, with the lower diagram (remember, this is the same category on the top and the bottom, and these are the same morphisms that we had before).
 
 ![An equivalence diagram, showing a transformation](../11_natural_transformations/equivalent_orders_transformation.svg)
 
-And when would this isomorphism be such that preserves the structure of the category (so that each morphism from the output of the composite functor has an equivalent one in the output of the identity)? Exactly when the isomorphism is *natural* i.e. when every morphism is mapped to a commuting square, e.g. here is the commuting square of the morphism that is marked in red.
+We can see that these are exactly the arrows that enable us to construct an isomorphism between the two functors  i.e. two functors are isomorphic exactly when the functor you get when composing them with one another has each arrow pointing to the same object that you started from (the grey identity arrows) or to an object that is isomorphic of that object (the green arrows).
+
+And when would this isomorphism  preserve the structure of the category (so that each morphism from the output of the composite functor has an equivalent one in the output of the identity)? 
+
+Exactly when the isomorphism is *natural* i.e. when every morphism is mapped to a commuting square, e.g. here is the commuting square of the morphism that is marked in red.
 
 ![ An equivalence diagram, showing a natural transformation](../11_natural_transformations/equivalent_orders_natural_transformation.svg)
 

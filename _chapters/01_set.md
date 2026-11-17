@@ -389,7 +389,7 @@ The external diagram is a more appropriate representation of the concept of comp
 
 > The composition of two functions $f$ and $g$ is a third function $h$ defined in such a way that all the paths in this diagram are equivalent.
 >
-> ![Functional composition - general definition](../01_set/functions_compose_general.svg)
+> ![Functional composition - general definition: three sets ](../01_set/functions_compose_general.svg)
 
 If you continue reading this book, you will hear more about diagrams in which all paths are equivalent (they are called *commuting diagrams*, by the way).
 
