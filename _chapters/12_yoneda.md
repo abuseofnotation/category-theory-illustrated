@@ -37,45 +37,56 @@ So, for any given category $C$, there is a bunch of those homomorphism sets, or 
 
 (Note that some the morphisms are results of composition).
 
+### Hom(A,-) sets
+
+Now, let's think about the morphisms between those hom-sets. Hom-sets are sets, and so morphisms between them are *functions* (although the morphisms that are contained in them are not necessarily functions). More specifically, they are functions that convert the set of morphisms with a given type signature, a set of morphisms with another type signature.
+
+As you suspect, there is no general/formulaic way to connect morphisms with random type signatures, however, there is one way to connect morphisms with *appropriate* type signatures: composition.
+
+To utilize it, we pick a starting point for out structure of hom-sets, an object from $C$ from which we will begin (usually called $A$, the first letter of the alphabet), discarding all hom-sets that aren't connected to it, leaving only the hom-sets that start from $A$ (we usually denote those $Hom(A,-)$, the dash being a placeholder for any object). 
+
+![A category next to its Hom(A,-) hom-sets, that start with the same object: A category which has objects A X and Y and some morphisms between them, and three hom-sets: hom(A, A) and hom(A, X) hom(A, Y).](../12_yoneda/hom_sets_a.svg)
+
+We already see a partial correspondence there is exactly one hom-set for each object of $C$ (except for the ones we discarded.
+
 ### Morphisms between hom-sets
 
-As hom-sets are sets, morphisms between them are *functions* (although the morphisms that are contained in them are not necessarily functions). More specifically, they are functions that convert the set of morphisms with a given type signature, a set of morphisms with another type signature.
+Now, the functions: given a hom-set $Hom(A, X)$ containing the morphisms between $A$ and some random object $X$ and a hom-set $Hom(A, Y)$ -- morphisms between $A$ and some *other* object $Y$, what would a function between them ($Hom(A, X) \to Hom(A, Y)$) look like? 
 
-As you suspect, there is no general/formulaic way to connect morphisms with *any* type signatures, however, there is one way to connect morphisms with *appropriate* type signatures: composition.
+![Hom-sets Hom(A, X) and Hom(A, Y): Hom(A,X) contains one element, the A->X arrow. Hom(A,Y) contains two elements: the composition with A->X arrow with the first and the second X->Y arrows respectively.](../12_yoneda/hom_sets_morphisms_zoom_1.svg)
 
-To utilize it, we pick a starting point for out structure of hom-sets, an object from $C$ from which we will begin (usually called $A$, the first letter of the alphabet).
+Let's inspect it point-wise: a function, $Hom(A, X) \to Hom(A, Y)$ would be a function that converts any morphism $g: A \to X$, some morphism $fg: A \to Y$. As we hinted, the answer is composition: a way to map a morphism $g: A \to X$ to a morphism $fg: A \to Y$ is (by the definition of a category) just a morphism $f: X \to Y$. 
 
-![A category next to its hom-sets, that start with the same object: A category which has objects A B and C and some morphisms between them, and three hom-sets: hom(A, A) and hom(A, B) hom(A, C).](../12_yoneda/hom_sets_a.svg)
+![Hom-sets Hom(A, X) and Hom(A, Y) and one function between them: Hom(A,X) contains one element, the A->X arrow. Hom(A,Y) contains two elements: the composition with A->X arrow with the first and the second X->Y arrows respectively. There is one function between them, that maps the A->X arrow with the one of the functions that are a composition of A->X and X->Y.](../12_yoneda/hom_sets_morphisms_zoom_2.svg)
 
-Now, once we pick $A$, let's look at only the hom-sets of the morphisms that start from $A$ (called $Hom(A,-)$, the dash being a placeholder for any object). We already see a partial correspondence between those sets and $C$, as there is exactly one hom-set for each object of $C$ (except for the objects that are not connected to $A$ at all).
+That is, the functions between hom-sets $Hom(A, X) \to Hom(A, Y)$ corresponds to the morphisms from $f: X \to Y$. 
 
-Now, the functions: given a hom-set $Hom(A, X)$ containing the morphisms between $A$ and some random object $X$ and a hom-set $Hom(A, Y) with morphisms between $A$ and some *other* object $Y$, what would a function between them ($Hom(A, X) \to Hom(A, Y)$) look like 
+![All functions between Hom-sets Hom(A, X) and Hom(A, Y): Two functions Hom(A,X) -> Hom(A, Y), displayed internally. They correspond to the two morphisms X->Y in C](../12_yoneda/hom_sets_morphisms_zoom_3.svg)
 
-![A category with three morphisms, next to its hom-sets: A category which has objects A X and Y that has one morphism from A to X, one morphism from X to Y and their composition --- a morphism from A to Y, next to three hom-sets: hom(A, X) and hom(X, Y) and hom(A, Y) that contain those morphisms.](../12_yoneda/hom_sets_morphisms_1.svg)
 
-Let's inspect it point-wise: a function, $Hom(A, X) \to Hom(A, Y)$ would be a function that converts any morphism $g: A \to X$, some morphism $fg: A \to Y$. As we hinted, the answer is composition: a way to map a morphism $g: A \to X$ to a morphism $fg: A \to Y$ is by definition just a morphism $f: X \to Y$. 
-
-That is, the sets of functions between hom-sets $Hom(A, X) \to Hom(A, Y)$ corresponds to the the set of functions from $f: X \to Y$. 
-
-![A category with three morphisms, next to its hom-sets: A category which has objects A X and Y that has one morphism from A to X, one morphism from X to Y and their composition --- a morphism from A to Y, next to three hom-sets: hom(A, X) and hom(X, Y) and hom(A, Y) that contain those morphisms.](../12_yoneda/hom_sets_morphisms_2.svg)
+So, in other words, there is a connection between the morphisms $f: X \to Y$ and functions $Hom(A,f): Hom(A, X) \to Hom(X,Y)$.
 
 {: .theorem}
 
-> For every morphism between $f: X \to Y$ between any two objects in a any category, we can define a corresponding function between the objects' hom-sets: $Hom(A,f): Hom(A, X) \to Hom(X,Y)$ representing the result of composing $f$ with each of the morphisms from $Hom(A,X)$. That is, for any morphism $g: A \to X$ (which is an element of $Hom(A, X)), composing it with some function $f: X \to Y$ would give you a morphism $f \circ g: A \to Y$ (an element from $Hom(A,Y)$.
+> For every morphism between $f: X \to Y$ between any two objects in a any category, we can define a corresponding function between the objects' hom-sets: $Hom(A,f): Hom(A, X) \to Hom(X,Y)$ representing the result of composing $f$ with each of the morphisms from $Hom(A,X)$. That is, for any morphism $g: A \to X$ (which is an element of $Hom(A, X)$), composing it with some function $f: X \to Y$ would give you a morphism $f \circ g: A \to Y$ (an element from $Hom(A,Y)$.
 
-So, in other words, there is a connection between morphisms $f: X \to Y$ and functions $Hom(A,f): Hom(A, X) \to Hom(X,Y)$.
+But more importantly, this connection is there for any objects $X$ and $Y$, (and since we have a hom-set for all of them), it actually builds up to a general connection between a category $C$ and the collection of hom-sets $Hom(A,-)$ in $C$.
+
+![A category next to its hom(A,-) hom-sets and their morphisms: A category which has objects A X and Y and some morphisms between them, and three hom-sets: hom(A, A) and hom(A, X) hom(A, Y) which have the exact same morphisms](../12_yoneda/hom_sets_a_morphisms.svg)
 
 ### Hom functors
 
-So, there is a connection between morphisms $f: X \to Y$ and functions $Hom(A,f): Hom(A, X) \to Hom(X,Y)$. But more importantly, this connection is there for any objects $X$ and $Y$, (and since we have a hom-set for all of them), it actually builds up to a general connection between a category $C$ and the collection of hom-sets $Hom(A,-)$ in $C$.
+So, with the morphisms in place, we have all the necessary components to build the Hom functor, $C \to Hom(A,-)$. 
 
-{: .definition}
+![A category next to its hom(A,-) hom-sets and their morphisms: A category which has objects A X and Y and some morphisms between them, and three hom-sets: hom(A, A) and hom(A, x) Hom(A, Y) which have the exact same morphisms](../12_yoneda/hom_functor_a.svg)
 
-Given a category $C$ and any object from this category $A$, there is a functor $C \to hom(A,-)$ called a hom-functor, that maps any object $X$ from $A$ to the set of morphisms $Hom(A, X)$ and any morphism $f$, to the function $Hom(A,f)$ that composes morphisms.
+The only question is what happens to the objects and morphism in $C$ that aren't related to $A$, are mapped to the empty set and the empty functions that connects it to any other set.
 
-There is almost nothing to prove: $Hom(A,f)$  obviously preserves composition in $C$, simply because it is defined in terms of composition in $C$. 
+{: .theorem}
 
-And all objects in $C$ that aren't related to $A$, are mapped to the empty set. 
+Given a category $C$ and any object from this category $A$, there is a functor $C \to Hom(A,-)$ called a hom-functor, that maps any object $X$ from $A$ to the set of morphisms $Hom(A, X)$ and any morphism $f$, to the function $Hom(A,f)$ that composes morphisms.
+
+There is almost nothing to prove: the mapping obviously preserves composition in $C$, simply because it is defined in terms of composition in $C$.
 
 ## Yoneda embedding
 
